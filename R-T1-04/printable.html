@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hyperventilation with Underlying Cause — Early DKA Masquerading as Panic Attack — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Hyperventilation with Underlying Cause — Early DKA Masquerading as Panic Attack</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Madison Carver</strong></span><span class="patient-chip">24 years female</span><span class="patient-chip">141 lbs (64 kg)</span><span class="patient-chip">5'6"</span><span class="patient-chip">CC: Rapid deep breathing for ~3 hours; feels anxious, nauseated, and 'can't catch a normal breath.' Coworker called 911 thinking she was having a panic attack.</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Dispatch: 24-year-old female, possible panic attack, hyperventilating, conscious and talking. Retail business.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Small independent bookstore, back office. Patient seated in a desk chair, leaning slightly forward, hands resting on the desk. Good lighting; clear access. Coworker present.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Tuesday, 10:20, mild spring morning</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. Coworker is calm and helpful; no behavioral threat. Aisles and exits clear.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Female coworker reports patient 'has been breathing weird all morning,' looks 'really stressed,' and 'mentioned she didn't take her insulin last night.' Coworker has known patient for two years and says 'she's anxious sometimes but it doesn't usually look like this.'</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Young adult female, alert, sitting upright in a chair</li><li>Visibly rapid, DEEP, regular breaths — chest wall rising fully each breath, NOT shallow panicky breathing</li><li>Mild diaphoresis on forehead; flushed cheeks; lips slightly dry</li><li>Insulin pump clipped to waistband; infusion set tubing visible into the abdomen</li><li>Half-finished water bottle on desk; no food</li><li>MedicAlert bracelet on left wrist: 'TYPE 1 DIABETES'</li><li>No tripod posture, no accessory muscle use, no audible wheeze, no stridor</li><li>If a provider gets close to the patient's face — faintly sweet/fruity (acetone) breath odor</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">24-year-old female with longstanding Type 1 diabetes (diagnosed age 12) who has been feeling progressively unwell for the last two days — frequent urination, constant thirst, fatigue, and decreased appetite. Last night she slept poorly and skipped her insulin pump basal because she 'wasn't eating' and the pump site felt itchy. This morning at the bookstore where she works, coworkers noticed she was sweating, breathing very fast and deep, and looked anxious. She reports nausea, intermittent crampy mid-abdominal pain, mild lightheadedness, and a sensation she 'can't get a deep enough breath in,' though she denies chest pain, cough, wheezing, leg swelling, fever, or sick contacts. She has not vomited yet today. She has felt 'high' on her finger-stick glucose readings the last two days (mid-300s) but hasn't given correction boluses because she thought maybe the pump or sensor was wrong. Her insulin pump infusion set is visible on her abdomen but looks slightly crusted at the entry point. She does not feel like she is having a panic attack — 'this feels different from those.'</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">NKDA</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Insulin aspart via insulin pump (basal + meal boluses) — basal suspended overnight per patient, Levothyroxine 75 mcg PO daily, Sertraline 50 mg PO daily, Multivitamin PO daily</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Type 1 Diabetes Mellitus since age 12 (insulin pump x4 years), Hashimoto thyroiditis (on levothyroxine), Generalized anxiety disorder — no recent panic attacks; last seen by psychiatrist 6 months ago</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">A few sips of water this morning; last solid food was dinner ~14 hours ago (light salad, did not finish it).</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Felt unwell with polyuria/polydipsia x2 days → skipped overnight basal insulin (pump site itchy, not eating) → woke fatigued → at work coworkers noticed rapid deep breathing, sweating, anxious-looking presentation → coworker called 911 reporting 'panic attack.'</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">EMS arrives at the bookstore back office to find a 24-year-old female sitting in a desk chair, alert, anxious-appearing, breathing rapidly and deeply. Coworker reports a possible panic attack. The picture is deceptive: respirations are FAST and DEEP (Kussmaul), not shallow, and SpO2 is normal at 99% — she is not actually hypoxic or short of breath in the traditional sense. She has Type 1 diabetes with an insulin pump, skipped her overnight basal, polyuria/polydipsia x2 days, mild abdominal pain, faintly fruity breath, and a MedicAlert bracelet visible. This is the assessment window. The teaching point: a complete primary survey, targeted history, breath odor, and a FINGER-STICK GLUCOSE — not a paper bag — is what discriminates DKA from panic attack. Crews that anchor on 'panic attack' and skip glucose will go down the wrong-turn branch.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">118</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">108/68</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">99%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">32</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">22</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.8°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">480</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent — speaking in full sentences, no stridor, no drooling</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 32, DEEP and regular (Kussmaul pattern); chest wall rises fully each breath; NO accessory muscle use, NO retractions, NO prolonged expiratory phase, lung sounds CLEAR bilaterally</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong regular radial pulse, slightly fast; warm/dry-to-slightly-moist skin; cap refill 2 sec; mucous membranes slightly dry</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink, flushed cheeks · warm · mildly diaphoretic forehead, otherwise dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal at 4 mm, briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Symmetric, intact, follows commands, moves all extremities</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"I can't slow it down. I've been peeing all day and so thirsty. My stomach hurts. I didn't take my insulin last night. I don't think this is a panic attack."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Lung sounds CLEAR bilaterally in all fields — no wheezes, no crackles, no diminished air entry</li><li>Capnography (if applied): normal waveform shape, EtCO2 LOW at 22 mmHg (compensatory hyperventilation blowing off CO2 to buffer metabolic acidosis)</li><li>Faintly sweet/fruity (acetone) breath odor when close to the patient's face</li><li>Dry mucous membranes; dry-cracked lips; sunken-appearing eyes</li><li>Insulin pump visible at left waistband; infusion site on left lower abdomen looks slightly red/crusted</li><li>Mild diffuse mid-abdominal tenderness on palpation; no rebound, no guarding</li><li>MedicAlert bracelet: 'TYPE 1 DIABETES'</li><li>Patient denies tingling around mouth/fingertips (would be expected with primary hyperventilation/panic)</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Primary survey (ABC); note Kussmaul pattern, clear lungs, normal SpO2 — NOT primary respiratory failure</div></div>
+        <div class="action-excerpt">Patient Care Goals: Assure adequate oxygenation and ventilation. Recognize impending respiratory failure. Promptly identify and intervene for patients who require escalation of therapy. Deliver appropriate therapy by differentiating likely cause of respiratory distress. Alleviate respiratory distress.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Targeted history: onset, prior episodes, diabetes, insulin compliance, sick days, urinary frequency, thirst</div></div>
+        <div class="action-excerpt">Inclusion Criteria: Adult or pediatric patient with symptoms of hyperglycemia (e.g., polyuria, polydipsia, weakness, dizziness, abdominal pain, tachypnea). Adult or pediatric patient with history of diabetes and other medical symptoms. Notes/Educational Pearls — Key Considerations: Consider causes for hyperglycemia by thinking about the 3 I's: Insulin: This refers to any medication changes for insulin or oral medications including poor compliance or malfunctioning insulin pump. Ischemia: This refers to hyperglycemia sometimes being an indication of physiologic stress in a patient and can be a clue to myocardial ischemia in particular. Infection: Underlying infection can cause derangements in glucose control.</div>
+        <div class="action-ref">↳ MATC: Hyperglycemia</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Check finger-stick blood glucose — THIS is the discriminator (will read 480 mg/dL)</div></div>
+        <div class="action-excerpt">Assessment — Monitoring: Check blood glucose level. Performance Measures: When in scope of practice, point of care blood glucose checked for all patients with symptoms of altered level of consciousness, seizure, stroke, or hyperglycemia.</div>
+        <div class="action-ref">↳ MATC: Hyperglycemia</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Assess breath odor (acetone/fruity = DKA); auscultate lungs (clear → not bronchospasm)</div></div>
+        <div class="action-excerpt">Pertinent Assessment Findings: Concomitant trauma. Abdominal pain, 'fruity breath,' and rapid-deep respirations (Kussmaul respirations) may be associated with DKA.</div>
+        <div class="action-ref">↳ MATC: Hyperglycemia</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Secondary survey: dry mucous membranes, sunken eyes, abdominal exam, skin turgor</div></div>
+        <div class="action-excerpt">Secondary survey pertinent to altered blood glucose level: Constitutional: assess for tachycardia, hypotension, and tachypnea. Eyes: assess for sunken eyes from dehydration. Nose/mouth/ears: assess for dry mucous membranes or tongue bite from seizure. Abdominal pain including nausea and vomiting especially in children. Neurologic: Assess Glasgow Coma Score (GCS) and mental status. Assess for focal neurologic deficit: motor and sensory.</div>
+        <div class="action-ref">↳ MATC: Hyperglycemia</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Apply SpO2 + waveform capnography; document baseline (low EtCO2 ≈ 22 confirms compensation)</div></div>
+        <div class="action-excerpt">Monitoring: Pulse oximetry and EtCO2 should be routinely used as adjuncts to other forms of monitoring in patients with respiratory complaints. Patient Safety Considerations: Normal EtCO2 (35–45 mmHg) with tachypnea and respiratory distress is an indicator of impending respiratory failure.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">Supplemental O2 only if SpO2 &lt; 94% (here 99% on RA — no O2 needed)</div></div>
+        <div class="action-excerpt">Airway: Give supplemental oxygen for dyspnea to a target of 94–98% saturation. Escalate from a nasal cannula as needed to reach this goal.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">DKA recognized; IV + fluids started</div>
+        <div class="phase-trigger">Trigger: Crew recognized the metabolic cause of the Kussmaul respirations after obtaining a finger-stick glucose of 480 mg/dL, identifying classic DKA history (T1DM, missed insulin, polyuria/polydipsia, abd pain, fruity breath), and is now treating per the Hyperglycemia Guideline rather than the Respiratory Distress Guideline.</div>
+        <div class="phase-desc">Crew has identified the underlying cause: early diabetic ketoacidosis with compensatory Kussmaul respirations. Glucose reads 480 mg/dL, patient is mildly dehydrated, hemodynamics borderline (HR 118, BP 108/68), normal SpO2. Treatment now follows the Hyperglycemia Guideline: establish IV access, begin a normal saline bolus at the protocol rate (20 mL/kg at 1000 mL/hr → for 64 kg, 1280 mL total goal), obtain a 12-lead EKG to screen for hyperkalemia or ACS, place the patient on cardiac monitor, and prepare for transport. Insulin and bicarbonate are NOT given prehospital. The teaching point in this phase is correct prehospital DKA management — fluids + monitor + transport, not insulin or bicarb.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">114</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">112/70</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">99%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">30</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">23</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.8°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">478</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 30, deep regular (Kussmaul); lungs clear; SpO2 99% on room air; EtCO2 23</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong regular pulses; warm extremities; cap refill 2 sec; IV established in L AC with 18g; NS infusing wide-open through pressure bag</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink, flushed cheeks · warm · mildly diaphoretic, mucous membranes still dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal, briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Symmetric, intact</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Thank you for listening. I really didn't think this was a panic attack."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Lungs remain clear; no change in respiratory pattern yet (acidosis will not correct prehospital)</li><li>12-lead obtained: sinus tachycardia, no peaked T waves, no STEMI</li><li>Patient appears slightly less anxious now that crew has a plan and is talking through it</li><li>Insulin pump suspended per crew/patient decision in consult with online medical control</li><li>Nausea improving; no vomiting</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Establish IV access (18g AC if able); place on cardiac monitor</div></div>
+        <div class="action-excerpt">Treatment and Interventions: If glucose greater than 250 mg/dL with symptoms of dehydration, vomiting, abdominal pain, or altered level of consciousness: Provide volume expansion with normal saline bolus.</div>
+        <div class="action-ref">↳ MATC: Hyperglycemia</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Normal saline 1280 mL bolus IV (64 kg × 20 mL/kg) at 1000 mL/hr; reassess</div></div>
+        <div class="action-excerpt">If glucose greater than 250 mg/dL with symptoms of dehydration, vomiting, abdominal pain, or altered level of consciousness: Provide volume expansion with normal saline bolus. Adult: Normal saline 20 mL/kg at rate of 1000 mL/hr; if symptoms of hypovolemic shock, follow Shock Guideline.</div>
+        <div class="action-ref">↳ MATC: Hyperglycemia</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Obtain 12-lead EKG — screen for hyperkalemia (peaked T) and ACS</div></div>
+        <div class="action-excerpt">Obtain 12-lead EKG to assess for findings consistent with hyperkalemia or acute coronary syndrome.</div>
+        <div class="action-ref">↳ MATC: Hyperglycemia</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Evaluate for concomitant sepsis/infection (temperature, infusion-site exam, recent illness)</div></div>
+        <div class="action-excerpt">Evaluate for possible concomitant sepsis and septic shock. Notes/Educational Pearls — Infection: Underlying infection can cause derangements in glucose control.</div>
+        <div class="action-ref">↳ MATC: Hyperglycemia</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Reassess vitals, mental status, and recheck glucose every 15 min en route</div></div>
+        <div class="action-excerpt">Reassess patient: Reassess vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment), mental status, and signs of dehydration. If mental status changes, reassess blood glucose level and provide appropriate treatment if hypoglycemia has developed.</div>
+        <div class="action-ref">↳ MATC: Hyperglycemia</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Do NOT give bicarbonate empirically; do NOT push insulin prehospital</div></div>
+        <div class="action-excerpt">If findings of hyperkalemia, consider administration of sodium bicarbonate 1 mEq/kg (max dose of 50 mEq) IV bolus over 5 minutes and consider albuterol 5 mg via nebulizer (can be repeated if no response is seen). Patient Safety Considerations: Overly aggressive administration of fluid in hyperglycemic patients may cause cerebral edema or dangerous hyponatremia. Asymptomatic hyperglycemia poses no risk to the patient while inappropriately aggressive interventions to manage blood sugar may harm patients.</div>
+        <div class="action-ref">↳ MATC: Hyperglycemia</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Transport to closest appropriate ED with continued NS, monitor, and reassessment</div></div>
+        <div class="action-excerpt">Disposition: Transport to closest appropriate receiving facility.</div>
+        <div class="action-ref">↳ MATC: Hyperglycemia</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Transport; stable en route</div>
+        <div class="phase-trigger">Trigger: Crew is transporting with appropriate DKA management in progress. Hemodynamics are stable, mental status is unchanged, and a structured handoff to the receiving facility is anticipated.</div>
+        <div class="phase-desc">En route to the ED. NS bolus has infused approximately 600 mL of the 1280 mL goal. Patient remains alert, oriented, and cooperative. Kussmaul respirations persist as expected — acidosis will not correct without insulin at the receiving facility — but HR is trending down, BP is stable, glucose remains in the high 400s, and mental status is unchanged. Crew gives a clean radio report including the deceptive presentation (looked like panic attack at first), the key discriminator (finger-stick glucose 480), the working diagnosis (DKA), and treatment so far. Bedside handoff at the ED uses a structured format (SBAR or similar) and the patient is transitioned to the ED bed with continued NS, monitor, and pump suspended.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">108</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">114/72</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">99%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">28</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">24</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.8°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">462</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 28, deep regular; lungs clear; SpO2 99%; EtCO2 24</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR 108, BP 114/72, warm pink extremities, strong pulses; NS ~600 mL infused via pressure infusion</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · less diaphoretic; mucous membranes slightly improved</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal, briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Symmetric, intact</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Breathing still feels weird, but I feel a little less awful."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Patient reports nausea is better; abdominal pain still present but tolerable</li><li>Repeat glucose 462 mg/dL (essentially unchanged — expected, no insulin given)</li><li>Patient remains GCS 15; no change in mental status</li><li>Insulin pump remains suspended</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess vitals, mental status, glucose, and dehydration signs q15 min en route</div></div>
+        <div class="action-excerpt">Reassess patient: Reassess vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment), mental status, and signs of dehydration.</div>
+        <div class="action-ref">↳ MATC: Hyperglycemia</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Monitor for AMS, headache, ICP signs — stop fluids and elevate head if cerebral edema suspected</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Overly aggressive administration of fluid in hyperglycemic patients may cause cerebral edema or dangerous hyponatremia. Cerebral edema is a leading cause of death in children with DKA but is very rare in adults. Closely monitor for signs of altered mental status, increased intracranial pressure, and immediately discontinue IV fluids and elevate head of bed if signs of increased ICP develop. Reassess and manage airway as needed.</div>
+        <div class="action-ref">↳ MATC: Hyperglycemia</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Structured ED handoff: pertinent history, glucose 480, DKA, fluids given, deceptive presentation</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Document reassessment of vital signs and mental status after administration of IV fluids. Document glucose level (if in scope of practice) when indicated.</div>
+        <div class="action-ref">↳ MATC: Hyperglycemia</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Treated as panic attack; acidosis worsening</div>
+        <div class="phase-trigger">Trigger: Crew accepted dispatch's 'panic attack' label, coached the patient through slow breathing or had her breathe into a paper bag to rebreathe CO2, and did not obtain a finger-stick glucose. Compensatory hyperventilation is reversed, PaCO2 rises, arterial pH falls, and the metabolic acidosis worsens.</div>
+        <div class="phase-desc">Crew accepted the dispatch label and the surface presentation. They coached slow breathing or had the patient breathe into a paper bag to 'rebreathe CO2.' No finger-stick glucose was checked. Coaching/rebreathing has the opposite of the intended effect: it raises the patient's PaCO2, which removes her compensatory hyperventilation, drops her arterial pH further, and worsens the metabolic acidosis. Over a few minutes she becomes more lethargic, her speech slows, her respirations become slightly more shallow (no longer fully compensating), she vomits once, and her mental status deteriorates from GCS 15 to GCS 12 (E3 V4 M5). This is the wrong-turn branch — the teaching point is that anchoring on a dispatch label without doing the assessment causes harm.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">124</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">102/64</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">96%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">22</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">32</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">99°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">488</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">12</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent for now; protective reflexes intact but mentation declining</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 22, shallower than baseline (no longer fully compensating); lungs clear; SpO2 96%; EtCO2 has RISEN to 32 mmHg</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR 124, BP 102/64; cool peripheries developing; cap refill 3 sec</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale, less flushed · cool peripherally, warm core · diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal, briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Symmetric but slower; obeys commands when prompted but eyes drift closed when unstimulated</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Sleepy … (drifts off, opens eyes when name called) … just want to … rest."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Patient just vomited a small amount of clear/yellow fluid</li><li>Speech now slow and confused: knows her name, vaguely knows the date, intermittently confuses where she is</li><li>Coworker says: 'She's worse than when you got here'</li><li>Insulin pump and MedicAlert bracelet still visible — student has another chance to notice</li><li>If glucose is finally checked now: 488 mg/dL — DKA is now obvious</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Stop CO2 rebreathing immediately; reassess airway, breathing, mental status</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: With depressed mental status, initial focus is on airway protection, oxygenation, ventilation, and perfusion.</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Check finger-stick glucose NOW; treat the underlying cause, not the breathing pattern</div></div>
+        <div class="action-excerpt">Look for treatable causes of altered mental status (AMS): Blood glucose level. Performance Measures: Hypoglycemia considered and treated appropriately: Blood glucose level obtained.</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize DKA: T1DM + missed insulin + polyuria + Kussmaul + glucose 488 + fruity breath</div></div>
+        <div class="action-excerpt">Inclusion Criteria: Adult or pediatric patient with altered level of consciousness. Adult or pediatric patient with symptoms of hyperglycemia (e.g., polyuria, polydipsia, weakness, dizziness, abdominal pain, tachypnea). Pertinent Assessment Findings: Abdominal pain, 'fruity breath,' and rapid-deep respirations (Kussmaul respirations) may be associated with DKA.</div>
+        <div class="action-ref">↳ MATC: Hyperglycemia</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Manage airway: position, suction available, supplemental O2 to keep SpO2 ≥ 94%</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Oxygen. Patient Safety Considerations: With depressed mental status, initial focus is on airway protection, oxygenation, ventilation, and perfusion.</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Establish IV; start NS 1280 mL bolus (64 kg × 20 mL/kg) at 1000 mL/hr</div></div>
+        <div class="action-excerpt">If glucose greater than 250 mg/dL with symptoms of dehydration, vomiting, abdominal pain, or altered level of consciousness: Provide volume expansion with normal saline bolus. Adult: Normal saline 20 mL/kg at rate of 1000 mL/hr; if symptoms of hypovolemic shock, follow Shock Guideline.</div>
+        <div class="action-ref">↳ MATC: Hyperglycemia</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Screen for shock (BP, HR, cap refill, lactate if available) — treat per Shock Guideline if criteria met</div></div>
+        <div class="action-excerpt">Inclusion Criteria: Signs of poor perfusion (due to a medical cause) such as one or more of the following: Altered mental status. Delayed capillary refill (&gt; 3 seconds). Tachycardia or bradycardia for age, out of proportion to temperature. Cool/mottled or flushed/ruddy skin.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

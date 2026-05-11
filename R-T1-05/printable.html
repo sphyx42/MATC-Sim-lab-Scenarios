@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pneumonia Presentation — Adult with Early Sepsis — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Pneumonia Presentation — Adult with Early Sepsis</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Eleanor Voss</strong></span><span class="patient-chip">68 years female</span><span class="patient-chip">154 lbs (70 kg)</span><span class="patient-chip">5'5"</span><span class="patient-chip">CC: Three days of productive cough, fever, and progressive weakness; feeling 'really sick' since this morning.</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Dispatch: 68-year-old female, generally weak, fever and cough for several days, daughter on scene requests EMS. Conscious and talking. Single-family residence.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Single-family ranch home. Patient in a recliner in the living room with a small blanket and a half-finished cup of tea on the side table. Lighting adequate; clear path to cot and door.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Monday, 09:20, cool overcast morning</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. Small dog confined in another room by daughter. No environmental hazards.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Adult daughter present, calm and helpful. Reports mom has had a worsening cough for three days, fever started yesterday, was 'a little fuzzy' on names this morning which is what made her call.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Older adult female reclined, flushed cheeks, looks tired and ill</li><li>Box of tissues on side table; visible yellow-green sputum on used tissues</li><li>Thermometer on the table reads 102.4°F</li><li>Empty acetaminophen blister pack and water glass within reach</li><li>Patient coughs intermittently during exam — wet, productive sounding</li><li>Skin appears warm and slightly flushed; mild diaphoresis on forehead</li><li>Patient speaking in mostly full sentences but pauses to take breaths every several words</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">68-year-old female with a 3-day history of progressive illness that started as fatigue and a dry cough she initially attributed to seasonal allergies. The cough became productive over the second day, with thick yellow-green sputum, and was accompanied by chills, body aches, and a low-grade fever measured at home (101.2°F yesterday evening). Overnight she became more short of breath, with a sharp right-sided chest discomfort that worsens on deep inspiration and coughing. This morning her daughter found her weak, flushed, and a bit confused about what day it was — though she rapidly oriented after a few minutes of conversation. She denies hemoptysis, leg swelling, recent travel, sick contacts at home, vomiting, or diarrhea. She had a flu shot in October. No prior pneumonias. No prior intubation or ICU stay. She normally walks her dog 3 blocks daily without dyspnea.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">Sulfa drugs — rash</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Lisinopril 20 mg PO daily, Metformin 1000 mg PO BID, Atorvastatin 20 mg PO daily, Acetaminophen 500 mg PRN for joint pain (took 1 g overnight for fever)</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Hypertension, Type 2 diabetes mellitus (well-controlled, A1c ~6.9), Mild hyperlipidemia, Osteoarthritis (knees)</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Few sips of water and half a slice of toast about 4 hours ago; no real intake in 24 hours due to feeling 'too tired to eat'</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Three days of cough and fatigue → productive cough with yellow-green sputum on day 2 → fevers, chills, body aches → night of dyspnea and right-sided pleuritic discomfort → morning fatigue and brief disorientation prompted daughter to call 911.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">EMS arrives to find a 68-year-old female with three days of productive cough, fever, weakness, and now mild dyspnea. She is alert and oriented x3 after a brief warm-up, speaking in mostly full sentences with occasional breath-catching pauses. She is visibly flushed, mildly diaphoretic, with a wet productive cough during the exam. Vital signs reveal a constellation that should prompt sepsis screening: temp 102.4°F, HR 112, RR 24, BP 102/64 (borderline), SpO2 91% room air. Right basilar crackles are present on focused auscultation. The teaching window of this Tier 1 scenario is: do a complete assessment, recognize this is not 'just pneumonia' — it is pneumonia plus early sepsis criteria (fever + tachycardia + tachypnea + suspected infection source) — and treat the whole patient (oxygen titration, IV access, fluid bolus, sepsis alert) rather than only the cough.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">112</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">102/64</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">91%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">24</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">32</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">102.4°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">138</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent — speaking, no stridor, no drooling, no foreign material</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 24, mild tachypnea, mostly full sentences with occasional breath-pauses, no obvious accessory muscle use at rest, productive wet cough intermittently</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong but rapid regular radial pulse; warm flushed extremities; cap refill ~2 sec</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">flushed · hot · mildly diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal at 3 mm, briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Symmetric, intact, follows commands</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"I've just been so tired … this cough … doesn't quit. My chest is sore on the right when I breathe in deep."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Focused auscultation: bilateral upper lobes clear; LEFT lower lobe clear; RIGHT lower lobe focal coarse crackles (rales) on inspiration with mild bronchial breath sounds</li><li>Mild egophony over right lower lobe area (when assessed)</li><li>Productive cough with thick yellow-green sputum (visible on used tissues)</li><li>Patient reports right-sided pleuritic chest discomfort worse with deep breath and cough</li><li>Capnography (if applied): normal waveform shape, EtCO2 ~32 mmHg (low-normal — consistent with tachypnea / early sepsis)</li><li>Glucose 138 mg/dL (slightly elevated, consistent with stress + DM)</li><li>No JVD, no peripheral edema, no rash, no lip/tongue swelling — argues against CHF and anaphylaxis</li><li>Daughter notes patient was briefly 'fuzzy on names' this morning — now oriented after warming up and talking</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Primary survey (ABC); recognize respiratory distress with suspected pulmonary infection</div></div>
+        <div class="action-excerpt">Patient Care Goals: Assure adequate oxygenation and ventilation. Recognize impending respiratory failure. Promptly identify and intervene for patients who require escalation of therapy. Inclusion Criteria: Patients aged 2 and older with respiratory distress due to disease processes including: Wheezing/bronchospasm from suspected pulmonary infection (e.g., pneumonia, acute bronchitis).</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Targeted history: onset, sputum, fever, sick contacts, prior steroids, hospitalizations</div></div>
+        <div class="action-excerpt">History: Onset of symptoms. Concurrent symptoms (e.g., fever, cough, rhinorrhea, tongue/lip swelling, rash, labored breathing, foreign body aspiration). Sick contacts. Treatments prior to EMS: Oxygen, inhaler, nebulizer, other treatments, chronic or recent steroids. Hospitalizations: Number of emergency department visits in the past year, number of hospital admissions in the past year, number of ICU admissions (ever), previously intubated (ever).</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Full vital signs including TEMPERATURE and SpO2; note 102.4°F, HR 112, RR 24, BP 102/64, SpO2 91%</div></div>
+        <div class="action-excerpt">Exam: Full set of vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment), temperature, and O2 saturation. Consider temperature and waveform capnography.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Auscultate all lung fields (anterior + posterior, upper/middle/lower); identify focal RLL crackles</div></div>
+        <div class="action-excerpt">Exam: Air entry (normal vs. diminished, prolonged expiratory phase). Breath sounds (wheezes, crackles, rales, rhonchi, diminished, clear).</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize early sepsis: suspected infection + ≥2 of fever, HR&gt;100, RR&gt;20, AMS, hypotension</div></div>
+        <div class="action-excerpt">Inclusion Criteria: Signs of poor perfusion (due to a medical cause) such as one or more of the following: Altered mental status. Respiratory rate greater than 20 breaths per minute in adults or elevated in children. Hypotension for age (lowest acceptable systolic blood pressure in mmHg): Greater than 10 years old: 90. Tachycardia or bradycardia for age, out of proportion to temperature. Potential etiologies of shock: Distributive (sepsis, anaphylaxis, neurogenic, overdose, endocrine). Key Considerations: In most adults, tachycardia is the first sign of compensated shock, and may persist for hours.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Apply continuous SpO2 and waveform capnography; cardiac monitor; document baseline</div></div>
+        <div class="action-excerpt">Monitoring: Pulse oximetry and EtCO2 should be routinely used as adjuncts to other forms of monitoring in patients with respiratory complaints. Continuous cardiac monitoring may be indicated in patients with respiratory distress associated with suspected acute or decompensated congestive heart failure (CHF) or dysrhythmia.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Check blood glucose (result 138 mg/dL — no correction needed)</div></div>
+        <div class="action-excerpt">Check blood sugar, and correct if less than 60 mg/dL.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Full assessment performed</div>
+        <div class="phase-trigger">Trigger: Crew completed targeted history, full vitals with temperature, multi-field auscultation identifying focal RLL crackles, and recognized the early sepsis pattern (fever + tachycardia + tachypnea + suspected pulmonary infection source). They now have the assessment data needed to drive protocol-grounded treatment of the whole patient.</div>
+        <div class="phase-desc">Crew has completed a full assessment and recognized both the pneumonia picture (focal RLL crackles, productive yellow-green sputum, fever, pleuritic chest pain) AND the early sepsis pattern (fever + HR 112 + RR 24 + suspected infection source + borderline BP 102/64 + brief AMS earlier). They now begin protocol-driven treatment: titrate oxygen to 94-98% (not 100%), establish IV access, start a 500 mL NS fluid bolus for the borderline BP / early septic shock, place the patient supine-tilted-comfortable, and prepare for a sepsis alert to the receiving ED. Capnography continues to read low-normal EtCO2 consistent with tachypnea/early perfusion stress.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">108</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">108/66</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">95%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">22</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">33</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">102.4°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">138</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 22 on titrated O2 via nasal cannula 3 L/min, mostly full sentences, productive cough less frequent</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong rapid regular pulse; IV established in left AC (18 ga); NS bolus running wide-open</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">still flushed but slightly less so · warm · diaphoresis improving</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal, briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Intact, oriented x3</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"The oxygen helps a little. Still feel pretty rotten. The fluid feels cold going in."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Focal RLL crackles unchanged on reassessment (expected — pneumonia does not clear with EMS treatment)</li><li>Capnography waveform normal shape; EtCO2 32-34 mmHg</li><li>Patient tolerating O2 by nasal cannula; no need for NRB given SpO2 response</li><li>Daughter informed of plan and which ED</li><li>Patient continues to deny chest pressure or radiation; pleuritic right-sided ache only on deep inspiration</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Supplemental O2 by nasal cannula titrated to SpO2 94-98% (NOT 100%); escalate as needed</div></div>
+        <div class="action-excerpt">Airway: Give supplemental oxygen for dyspnea to a target of 94–98% saturation. Escalate from a nasal cannula as needed to reach this goal.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Establish IV access (18 ga preferred); if 2 failed attempts/&lt;90 sec, place IO</div></div>
+        <div class="action-excerpt">Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">NS fluid bolus 500 mL IV pressure-infused &lt;15 min (70 kg × 30 mL/kg = 2100 mL goal; reassess after each 500 mL)</div></div>
+        <div class="action-excerpt">IV fluid volume goal attained by giving boluses that are pressure infused over less than 15 minutes each based on patient's condition and clinical impression. Fluid volume goal to achieve a mean arterial pressure (adults) or other targets (pediatrics). Adult: Physiologic target: MAP goal 65 mmHg. Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops. Key Considerations: Early, aggressive IV fluid administration is essential in the treatment of suspected septic shock.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Position patient semi-upright (Fowler's/position of comfort) — supports respiratory mechanics</div></div>
+        <div class="action-excerpt">Patient positioning can significantly impact respiratory mechanics. Patients with severe bronchospasm should be left in the position of comfort (perhaps tripod) whenever possible. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics. This can both improve the ability to ventilate and limit aspiration.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Advance notification to receiving ED — call sepsis alert with vitals and infection source</div></div>
+        <div class="action-excerpt">Provide advanced notification to the hospital. Performance Measures: Percentage of patients with suspected shock for whom advanced notification to the hospital was provided.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">Acetaminophen 1000 mg PO/PR for fever (70 kg × 15 mg/kg = 1050 mg → cap at 1000 mg max)</div></div>
+        <div class="action-excerpt">Antipyretics for fever – nonsteroidal anti-inflammatory agents are contraindicated in infants less than 6 months of age. Acetaminophen (15 mg/kg; maximum dose of 1000 mg). Ibuprofen (10 mg/kg; maximum dose of 800 mg).</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Reassessed; trending toward goal</div>
+        <div class="phase-trigger">Trigger: Crew reassessed full vitals, mental status, and lung sounds after the initial 500 mL NS bolus and oxygen titration, documenting the improving trend (HR down, BP up, SpO2 in target range, mentation clear). This meets the protocol's expectation of reassessment after each intervention and q15min documentation in shock.</div>
+        <div class="phase-desc">Post-bolus reassessment is documented and the patient is trending in the right direction. HR is drifting down (108 → 102), BP is up slightly into safer territory (112/68, MAP ~83), RR is 20, SpO2 is 95% on 3 L NC, EtCO2 waveform is normal at 34, and the patient is fully alert and oriented x3 with no further confusion. Focal RLL crackles persist (the pneumonia is still there — fluid and O2 don't fix pneumonia, antibiotics do). Crew transports semi-upright with continued reassessment q5min, has called a sepsis alert ahead, and gives a clean bedside handoff with full timeline, vitals trend, treatments, and infection source.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">102</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">112/68</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">95%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">20</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">34</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">101.8°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">138</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 20 on 3 L NC, comfortable, full sentences, productive cough less frequent</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong regular pulse; NS infusing at maintenance rate after first 500 mL completed; second 500 mL bolus prepared if BP trends down</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">still flushed from fever but less so · warm · drying</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal, briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Intact, fully oriented x3</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"I feel a little less out-of-breath now. Thank you. I'm still really tired."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Focal RLL crackles persist (expected — pneumonia)</li><li>EtCO2 waveform normal shape, value 34 mmHg</li><li>Patient reports feeling 'a bit better, still very tired'</li><li>Daughter following in private vehicle to ED</li><li>Documented timeline: dispatch → on-scene assessment → IV → bolus start → titrated O2 → reassessment → sepsis alert called</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess full vitals, mental status, lung sounds after bolus and O2; document trend</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Medications administered. Full vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) with reassessment q 15 minutes or more frequently as appropriate. Amount of fluids given.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continuous SpO2, EtCO2, cardiac monitor en route; serial BP q5min; watch for re-deterioration</div></div>
+        <div class="action-excerpt">Monitoring: Pulse oximetry and EtCO2 should be routinely used as adjuncts to other forms of monitoring in patients with respiratory complaints. Continuous cardiac monitoring may be indicated in patients with respiratory distress associated with suspected acute or decompensated congestive heart failure (CHF) or dysrhythmia.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Repeat 500 mL NS bolus if SBP &lt;100 or MAP &lt;65 (total goal up to 30 mL/kg = ~2100 mL)</div></div>
+        <div class="action-excerpt">Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Transport to ED with sepsis alert; bedside handoff with timeline, vitals trend, treatments, source</div></div>
+        <div class="action-excerpt">Provide advanced notification to the hospital. Performance Measures: Percentage of patients with suspected shock for whom advanced notification to the hospital was provided. Mean time from abnormal vitals to initiation of a fluid bolus.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Pneumonia-only; sepsis missed</div>
+        <div class="phase-trigger">Trigger: Crew narrowed on pneumonia from the productive cough and crackles, applied high-flow oxygen targeting 100% SpO2, did not perform a sepsis screen, did not establish IV access, and did not give a fluid bolus. Patient's borderline BP has now dropped and AMS is recurring — uncompensated shock is emerging because the perfusion problem was unrecognized and untreated.</div>
+        <div class="phase-desc">Crew anchored on 'pneumonia' from the productive cough, fever, and crackles, applied a non-rebreather at 15 L/min to push the SpO2 to 100%, did not check or did not act on the temperature/HR/RR/BP pattern as sepsis criteria, did not establish IV access, and did not give a fluid bolus. They are transporting routinely without a sepsis alert. En route, the borderline BP has dropped (now 86/52), the patient is more fatigued and intermittently confused, and SpO2 reads 99% on the NRB — masking the perfusion problem. The teaching point: the diagnosis is pneumonia AND early sepsis. Treating only the cough/oxygenation while ignoring the perfusion picture lets compensated shock decompensate.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">124</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">86/52</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">99%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">26</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">26</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">102.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">138</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">13</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent on NRB</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 26 on NRB 15 L/min, slightly more labored than initial, productive cough less frequent (more fatigue than improvement)</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Rapid weak peripheral pulses; cap refill ~3 sec; no IV access established</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">flushed centrally, peripherally cool and mottled — distributive shock pattern emerging · warm trunk, cool extremities · diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal, briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Symmetric but more sluggish; opens eyes to voice, confused about location and time</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Where … are we? I'm cold."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>No IV access; no fluid given</li><li>NRB at 15 L/min — SpO2 reads 99% (masks the perfusion picture; the problem is not oxygenation, it's perfusion)</li><li>Capnography (if continued): EtCO2 now 26 mmHg — low; tachypnea + early hypoperfusion signature</li><li>Daughter (calling from a private vehicle) reports patient was 'clearer at home' — confirms AMS is a delta</li><li>Crew has not called a sepsis alert</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize uncompensated shock: SBP 86, HR 124, RR 26, EtCO2 26, new AMS — distributive/septic</div></div>
+        <div class="action-excerpt">Inclusion Criteria: Altered mental status. Respiratory rate greater than 20 breaths per minute in adults. Hypotension for age: Greater than 10 years old: 90. Tachycardia or bradycardia for age. Treatment and Interventions: Pulse oximetry and EtCO2 (reading of less than 25 mmHg may be sign of poor perfusion). Key Considerations: Hypotension indicates uncompensated shock, which may progress to cardiopulmonary failure within minutes.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Establish IV/IO now; pressure-infuse 500 mL NS bolus (70 kg × 30 mL/kg = 2100 mL goal)</div></div>
+        <div class="action-excerpt">Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle. IV fluid volume goal attained by giving boluses that are pressure infused over less than 15 minutes each based on patient's condition and clinical impression. Adult: Physiologic target: MAP goal 65 mmHg. Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Titrate O2 down to nasal cannula 2-4 L; target SpO2 94-98%, NOT 100%</div></div>
+        <div class="action-excerpt">Airway: Give supplemental oxygen for dyspnea to a target of 94–98% saturation. Escalate from a nasal cannula as needed to reach this goal.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Call sepsis alert NOW; advance notification with vitals trend, lactate concern, infection source</div></div>
+        <div class="action-excerpt">Provide advanced notification to the hospital. Performance Measures: Percentage of patients with suspected shock for whom advanced notification to the hospital was provided.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">If shock unresponsive to fluids → norepinephrine 0.05–0.5 mcg/kg/min (3.5–35 mcg/min for 70 kg)</div></div>
+        <div class="action-excerpt">Vasopressors (shock unresponsive to IV fluids) titrated to physiologic targets. Cardiogenic, hypovolemic, obstructive shock and distributive shock: Norepinephrine 0.05–0.5 mcg/kg/minute. Preference in both neurogenic and infectious (sepsis) causes of distributive shock.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

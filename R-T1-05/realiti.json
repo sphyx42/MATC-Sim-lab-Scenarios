@@ -1,0 +1,321 @@
+{
+  "scenarioId": "R-T1-05",
+  "scenarioName": "Pneumonia Presentation — Adult with Early Sepsis",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1200,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "68-year-old female with a 3-day history of progressive illness that started as fatigue and a dry cough she initially attributed to seasonal allergies. The cough became productive over the second day, with thick yellow-green sputum, and was accompanied by chills, body aches, and a low-grade fever measured at home (101.2°F yesterday evening). Overnight she became more short of breath, with a sharp right-sided chest discomfort that worsens on deep inspiration and coughing. This morning her daughter found her weak, flushed, and a bit confused about what day it was — though she rapidly oriented after a few minutes of conversation. She denies hemoptysis, leg swelling, recent travel, sick contacts at home, vomiting, or diarrhea. She had a flu shot in October. No prior pneumonias. No prior intubation or ICU stay. She normally walks her dog 3 blocks daily without dyspnea.",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives to find a 68-year-old female with three days of productive cough, fever, weakness, and now mild dyspnea. She is alert and oriented x3 after a brief warm-up, speaking in mostly full sentences with occasional breath-catching pauses. She is visibly flushed, mildly diaphoretic, with a wet productive cough during the exam. Vital signs reveal a constellation that should prompt sepsis screening: temp 102.4°F, HR 112, RR 24, BP 102/64 (borderline), SpO2 91% room air. Right basilar crackles are present on focused auscultation. The teaching window of this Tier 1 scenario is: do a complete assessment, recognize this is not 'just pneumonia' — it is pneumonia plus early sepsis criteria (fever + tachycardia + tachypnea + suspected infection source) — and treat the whole patient (oxygen titration, IV access, fluid bolus, sepsis alert) rather than only the cough. → Full assessment performed: Crew has completed a full assessment and recognized both the pneumonia picture (focal RLL crackles, productive yellow-green sputum, fever, pleuritic chest pain) AND the early sepsis pattern (fever + HR 112 + RR 24 + suspected infection source + borderline BP 102/64 + brief AMS earlier). They now begin protocol-driven treatment: titrate oxygen to 94-98% (not 100%), establish IV access, start a 500 mL NS fluid bolus for the borderline BP / early septic shock, place the patient supine-tilted-comfortable, and prepare for a sepsis alert to the receiving ED. Capnography continues to read low-normal EtCO2 consistent with tachypnea/early perfusion stress. → Reassessed; trending toward goal: Post-bolus reassessment is documented and the patient is trending in the right direction. HR is drifting down (108 → 102), BP is up slightly into safer territory (112/68, MAP ~83), RR is 20, SpO2 is 95% on 3 L NC, EtCO2 waveform is normal at 34, and the patient is fully alert and oriented x3 with no further confusion. Focal RLL crackles persist (the pneumonia is still there — fluid and O2 don't fix pneumonia, antibiotics do). Crew transports semi-upright with continued reassessment q5min, has called a sepsis alert ahead, and gives a clean bedside handoff with full timeline, vitals trend, treatments, and infection source."
+  },
+  "patientInformation": {
+    "patientName": "Eleanor Voss",
+    "patientCondition": "Three days of productive cough, fever, and progressive weakness; feeling 'really sick' since this morning.",
+    "patientAge": 68,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 2,
+    "patientHeight": 165,
+    "patientWeight": 70,
+    "patientPhotoId": 82,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a 68-year-old female with three days of productive cough, fever, weakness, and now mild dyspnea. She is alert and oriented x3 after a brief warm-up, speaking in mostly full sentences with occasional breath-catching pauses. She is visibly flushed, mildly diaphoretic, with a wet productive cough during the exam. Vital signs reveal a constellation that should prompt sepsis screening: temp 102.4°F, HR 112, RR 24, BP 102/64 (borderline), SpO2 91% room air. Right basilar crackles are present on focused auscultation. The teaching window of this Tier 1 scenario is: do a complete assessment, recognize this is not 'just pneumonia' — it is pneumonia plus early sepsis criteria (fever + tachycardia + tachypnea + suspected infection source) — and treat the whole patient (oxygen titration, IV access, fluid bolus, sepsis alert) rather than only the cough.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 112,
+        "bpSys": 102,
+        "bpDia": 64,
+        "respRate": 24,
+        "spo2": 91,
+        "etco2": 32,
+        "temp": 39.1,
+        "obstruction": 0,
+        "custMeasure1": 138,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Primary survey (ABC); recognize respiratory distress with suspected pulmonary infection",
+        "Targeted history: onset, sputum, fever, sick contacts, prior steroids, hospitalizations",
+        "Full vital signs including TEMPERATURE and SpO2; note 102.4°F, HR 112, RR 24, BP 102/64, SpO2 91%",
+        "Auscultate all lung fields (anterior + posterior, upper/middle/lower); identify focal RLL crackles",
+        "Recognize early sepsis: suspected infection + ≥2 of fever, HR>100, RR>20, AMS, hypotension",
+        "Apply continuous SpO2 and waveform capnography; cardiac monitor; document baseline",
+        "Check blood glucose (result 138 mg/dL — no correction needed)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Full assessment performed",
+      "description": "Crew has completed a full assessment and recognized both the pneumonia picture (focal RLL crackles, productive yellow-green sputum, fever, pleuritic chest pain) AND the early sepsis pattern (fever + HR 112 + RR 24 + suspected infection source + borderline BP 102/64 + brief AMS earlier). They now begin protocol-driven treatment: titrate oxygen to 94-98% (not 100%), establish IV access, start a 500 mL NS fluid bolus for the borderline BP / early septic shock, place the patient supine-tilted-comfortable, and prepare for a sepsis alert to the receiving ED. Capnography continues to read low-normal EtCO2 consistent with tachypnea/early perfusion stress.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 108,
+        "bpSys": 108,
+        "bpDia": 66,
+        "respRate": 22,
+        "spo2": 95,
+        "etco2": 33,
+        "temp": 39.1,
+        "obstruction": 0,
+        "custMeasure1": 138,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Supplemental O2 by nasal cannula titrated to SpO2 94-98% (NOT 100%); escalate as needed",
+        "Establish IV access (18 ga preferred); if 2 failed attempts/<90 sec, place IO",
+        "NS fluid bolus 500 mL IV pressure-infused <15 min (70 kg × 30 mL/kg = 2100 mL goal; reassess after each 500 mL)",
+        "Position patient semi-upright (Fowler's/position of comfort) — supports respiratory mechanics",
+        "Advance notification to receiving ED — call sepsis alert with vitals and infection source",
+        "Acetaminophen 1000 mg PO/PR for fever (70 kg × 15 mg/kg = 1050 mg → cap at 1000 mg max)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Reassessed; trending toward goal",
+      "description": "Post-bolus reassessment is documented and the patient is trending in the right direction. HR is drifting down (108 → 102), BP is up slightly into safer territory (112/68, MAP ~83), RR is 20, SpO2 is 95% on 3 L NC, EtCO2 waveform is normal at 34, and the patient is fully alert and oriented x3 with no further confusion. Focal RLL crackles persist (the pneumonia is still there — fluid and O2 don't fix pneumonia, antibiotics do). Crew transports semi-upright with continued reassessment q5min, has called a sepsis alert ahead, and gives a clean bedside handoff with full timeline, vitals trend, treatments, and infection source.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 102,
+        "bpSys": 112,
+        "bpDia": 68,
+        "respRate": 20,
+        "spo2": 95,
+        "etco2": 34,
+        "temp": 38.8,
+        "obstruction": 0,
+        "custMeasure1": 138,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Reassess full vitals, mental status, lung sounds after bolus and O2; document trend",
+        "Continuous SpO2, EtCO2, cardiac monitor en route; serial BP q5min; watch for re-deterioration",
+        "Repeat 500 mL NS bolus if SBP <100 or MAP <65 (total goal up to 30 mL/kg = ~2100 mL)",
+        "Transport to ED with sepsis alert; bedside handoff with timeline, vitals trend, treatments, source"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Pneumonia-only; sepsis missed",
+      "description": "Crew anchored on 'pneumonia' from the productive cough, fever, and crackles, applied a non-rebreather at 15 L/min to push the SpO2 to 100%, did not check or did not act on the temperature/HR/RR/BP pattern as sepsis criteria, did not establish IV access, and did not give a fluid bolus. They are transporting routinely without a sepsis alert. En route, the borderline BP has dropped (now 86/52), the patient is more fatigued and intermittently confused, and SpO2 reads 99% on the NRB — masking the perfusion problem. The teaching point: the diagnosis is pneumonia AND early sepsis. Treating only the cough/oxygenation while ignoring the perfusion picture lets compensated shock decompensate.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 124,
+        "bpSys": 86,
+        "bpDia": 52,
+        "respRate": 26,
+        "spo2": 99,
+        "etco2": 26,
+        "temp": 39.2,
+        "obstruction": 0,
+        "custMeasure1": 138,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize uncompensated shock: SBP 86, HR 124, RR 26, EtCO2 26, new AMS — distributive/septic",
+        "Establish IV/IO now; pressure-infuse 500 mL NS bolus (70 kg × 30 mL/kg = 2100 mL goal)",
+        "Titrate O2 down to nasal cannula 2-4 L; target SpO2 94-98%, NOT 100%",
+        "Call sepsis alert NOW; advance notification with vitals trend, lactate concern, infection source",
+        "If shock unresponsive to fluids → norepinephrine 0.05–0.5 mcg/kg/min (3.5–35 mcg/min for 70 kg)"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Primary survey (ABC); recognize respiratory distress with suspected pulmonary infection",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Targeted history: onset, sputum, fever, sick contacts, prior steroids, hospitalizations",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Full vital signs including TEMPERATURE and SpO2; note 102.4°F, HR 112, RR 24, BP 102/64, SpO2 91%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Auscultate all lung fields (anterior + posterior, upper/middle/lower); identify focal RLL crackles",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize early sepsis: suspected infection + ≥2 of fever, HR>100, RR>20, AMS, hypotension",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply continuous SpO2 and waveform capnography; cardiac monitor; document baseline",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check blood glucose (result 138 mg/dL — no correction needed)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Supplemental O2 by nasal cannula titrated to SpO2 94-98% (NOT 100%); escalate as needed",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access (18 ga preferred); if 2 failed attempts/<90 sec, place IO",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "NS fluid bolus 500 mL IV pressure-infused <15 min (70 kg × 30 mL/kg = 2100 mL goal; reassess after each 500 mL)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Position patient semi-upright (Fowler's/position of comfort) — supports respiratory mechanics",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Advance notification to receiving ED — call sepsis alert with vitals and infection source",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Acetaminophen 1000 mg PO/PR for fever (70 kg × 15 mg/kg = 1050 mg → cap at 1000 mg max)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess full vitals, mental status, lung sounds after bolus and O2; document trend",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous SpO2, EtCO2, cardiac monitor en route; serial BP q5min; watch for re-deterioration",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Repeat 500 mL NS bolus if SBP <100 or MAP <65 (total goal up to 30 mL/kg = ~2100 mL)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to ED with sepsis alert; bedside handoff with timeline, vitals trend, treatments, source",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize uncompensated shock: SBP 86, HR 124, RR 26, EtCO2 26, new AMS — distributive/septic",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV/IO now; pressure-infuse 500 mL NS bolus (70 kg × 30 mL/kg = 2100 mL goal)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Titrate O2 down to nasal cannula 2-4 L; target SpO2 94-98%, NOT 100%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Call sepsis alert NOW; advance notification with vitals trend, lactate concern, infection source",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "If shock unresponsive to fluids → norepinephrine 0.05–0.5 mcg/kg/min (3.5–35 mcg/min for 70 kg)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

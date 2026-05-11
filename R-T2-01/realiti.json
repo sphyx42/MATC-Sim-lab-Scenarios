@@ -1,0 +1,342 @@
+{
+  "scenarioId": "R-T2-01",
+  "scenarioName": "Severe Asthma, Failing First-Line Treatment",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1500,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "28-year-old female with longstanding severe asthma since childhood, on chronic inhaled corticosteroid plus albuterol PRN with frequent oral prednisone tapers. She was intubated and ICU-admitted for asthma exacerbation approximately 2 years ago. Symptoms began roughly 6 hours before EMS arrival with progressive dyspnea, chest tightness, and audible wheezing after she ran out of her rescue albuterol inhaler two days ago and was unable to refill it. She used a roommate's old MDI several times this afternoon with minimal effect. Over the last 90 minutes she has become unable to speak more than 1-2 words at a time, is now tripoding in her apartment doorway, and her roommate called 911 when she said 'I can't … breathe.' She denies fever, chest pain, hemoptysis, leg swelling, recent travel, or known sick contacts. No new medication exposures, no food triggers, no insect stings. Today's trigger is most consistent with poorly controlled severe asthma compounded by absence of her rescue inhaler.",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives to a 28-year-old known severe asthmatic in significant respiratory distress. She is tripoding, speaking in 1-2 word phrases, diaphoretic, with marked accessory muscle use and diffuse expiratory wheezing. SpO2 86% on room air, RR 36, HR 132, BP 146/92. The history — prior intubation, out of rescue inhaler, hours of progressive symptoms — flags her as a near-fatal asthma risk. The teaching point of this Tier 2 scenario is that this patient will not respond to DuoNeb alone: the student must recognize severity, initiate first-line bronchodilator immediately, and be ready to escalate (IM epi, IV magnesium, steroids, and ultimately PPV / RSI prep) when first-line therapy fails. → DuoNeb given, minimal response: First DuoNeb is in. After ~5-7 minutes the patient is no better: SpO2 has climbed only 2 points (86 → 88), RR is still 34, she is still in 1-2 word speech, still tripoding, accessory muscles still working hard, diffuse wheeze unchanged, capnography still shark-fin. This is the protocol's trigger for escalation — IM epinephrine for impending respiratory failure, IV magnesium for severe bronchoconstriction, IV/IM steroids, and continuous albuterol while preparing for non-invasive ventilation. The student needs to make a deliberate, ordered call to escalate now, not wait for another neb. → Post Epi + Mag, improving: Roughly 5-10 minutes after IM epinephrine and the start of the IV magnesium drip, the patient is turning the corner. Wheezing is now MORE pronounced bilaterally — a good sign in this context because it means air is actually moving through previously near-silent airways. SpO2 has climbed to 92% on high-flow O2 with continuous albuterol, RR is down to 26, she is speaking in 4-6 word sentences, accessory muscle use is decreasing, capnography is starting to lose its shark-fin shape. The student must understand that increased wheezing here is good news, continue therapy in transit, repeat IM epi q5-15 min as needed, and not back off treatment because she looks better. Reassessment confirms response."
+  },
+  "patientInformation": {
+    "patientName": "Alyssa Mendoza",
+    "patientCondition": "Severe shortness of breath, can only speak in 1-2 word phrases. Out of inhaler. Known asthmatic with prior intubation.",
+    "patientAge": 28,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 2,
+    "patientHeight": 165,
+    "patientWeight": 68,
+    "patientPhotoId": 34,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives to a 28-year-old known severe asthmatic in significant respiratory distress. She is tripoding, speaking in 1-2 word phrases, diaphoretic, with marked accessory muscle use and diffuse expiratory wheezing. SpO2 86% on room air, RR 36, HR 132, BP 146/92. The history — prior intubation, out of rescue inhaler, hours of progressive symptoms — flags her as a near-fatal asthma risk. The teaching point of this Tier 2 scenario is that this patient will not respond to DuoNeb alone: the student must recognize severity, initiate first-line bronchodilator immediately, and be ready to escalate (IM epi, IV magnesium, steroids, and ultimately PPV / RSI prep) when first-line therapy fails.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 132,
+        "bpSys": 146,
+        "bpDia": 92,
+        "respRate": 36,
+        "spo2": 86,
+        "etco2": 32,
+        "temp": 37,
+        "obstruction": 70,
+        "custMeasure1": 108,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize severe bronchospasm with impending respiratory failure (1-2 word speech, SpO2 86%, tripoding, prior intubation)",
+        "Leave patient in position of comfort (tripod); do NOT force supine",
+        "Apply high-flow O2 — escalate from NC to NRB to target SpO2 94-98%",
+        "Continuous SpO2 + waveform EtCO2 + cardiac monitor; 12-lead if able",
+        "Albuterol 5 mg + Ipratropium 0.5 mg nebulized (DuoNeb), O2-driven; start now while preparing escalation",
+        "Establish IV access early — IV mag and IV steroids are coming"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "DuoNeb given, minimal response",
+      "description": "First DuoNeb is in. After ~5-7 minutes the patient is no better: SpO2 has climbed only 2 points (86 → 88), RR is still 34, she is still in 1-2 word speech, still tripoding, accessory muscles still working hard, diffuse wheeze unchanged, capnography still shark-fin. This is the protocol's trigger for escalation — IM epinephrine for impending respiratory failure, IV magnesium for severe bronchoconstriction, IV/IM steroids, and continuous albuterol while preparing for non-invasive ventilation. The student needs to make a deliberate, ordered call to escalate now, not wait for another neb.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 138,
+        "bpSys": 150,
+        "bpDia": 94,
+        "respRate": 34,
+        "spo2": 88,
+        "etco2": 34,
+        "temp": 37,
+        "obstruction": 65,
+        "custMeasure1": 110,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Epinephrine 0.3 mg IM (1 mg/mL) lateral thigh (68 kg × 0.01 mg/kg = 0.68 mg → cap at 0.3 mg max); may repeat q5-15 min",
+        "Magnesium sulfate 2 g IV over 10-15 min (68 kg × 40 mg/kg = 2720 mg → cap at 2 g max)",
+        "Dexamethasone 16 mg IV (68 kg × 0.6 mg/kg = 40.8 mg → cap at 16 mg max); single dose",
+        "Continuous albuterol 5 mg nebulized — repeat back-to-back, unlimited frequency",
+        "Prepare CPAP or two-person BVM with PEEP 5 cmH2O; nebulizer can run in-line with NIV",
+        "Watch for fatigue signs: rising EtCO2, drowsiness, paradoxical chest = impending failure"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Post Epi + Mag, improving",
+      "description": "Roughly 5-10 minutes after IM epinephrine and the start of the IV magnesium drip, the patient is turning the corner. Wheezing is now MORE pronounced bilaterally — a good sign in this context because it means air is actually moving through previously near-silent airways. SpO2 has climbed to 92% on high-flow O2 with continuous albuterol, RR is down to 26, she is speaking in 4-6 word sentences, accessory muscle use is decreasing, capnography is starting to lose its shark-fin shape. The student must understand that increased wheezing here is good news, continue therapy in transit, repeat IM epi q5-15 min as needed, and not back off treatment because she looks better. Reassessment confirms response.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 124,
+        "bpSys": 138,
+        "bpDia": 86,
+        "respRate": 26,
+        "spo2": 92,
+        "etco2": 35,
+        "temp": 37,
+        "obstruction": 45,
+        "custMeasure1": 110,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Reassess: lung sounds (wheeze now louder = air moving), SpO2, RR, speech, EtCO2 waveform",
+        "Continue albuterol 5 mg nebulized back-to-back during transport (unlimited frequency)",
+        "Repeat IM epinephrine 0.3 mg q5-15 min if signs of impending failure recur",
+        "Complete the IV magnesium 2 g over 10-15 min infusion; watch BP for transient hypotension (fluid bolus if needed)",
+        "Transport priority to ED; notify receiving facility of near-fatal asthma, prior intubation hx, meds given",
+        "Document RR, SpO2, EtCO2/waveform, accessory use, breath sounds, mental status — before and after each intervention"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "No escalation, silent chest",
+      "description": "BRANCH — crew anchored on 'just another neb.' DuoNeb is still running. Patient has been deteriorating for the last 5-10 minutes. She is now drowsy, head bobbing, no longer tripoding because she does not have the energy. Her wheezing has DIMINISHED — but this is NOT improvement. This is silent chest: she is moving so little air that there is nothing to wheeze. EtCO2 has climbed from 32 to 58 mmHg — CO2 retention from fatigue and ventilatory failure. SpO2 is 82% on high-flow O2. She is on the verge of respiratory arrest. The student must recognize this immediately, abandon the 'wait it out' plan, and run the full rescue: IM epinephrine NOW, IV magnesium, IV steroid, two-person BVM with PEEP and continuous albuterol in-line, and prepare for RSI. This is the salvageable window before it becomes a cardiac arrest from hypoxia.",
+      "monitorType": 0,
+      "trendTime": 55,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 142,
+        "bpSys": 102,
+        "bpDia": 64,
+        "respRate": 22,
+        "spo2": 82,
+        "etco2": 58,
+        "temp": 37,
+        "obstruction": 90,
+        "custMeasure1": 110,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize silent chest + rising EtCO2 + drowsiness = impending respiratory arrest — initiate rescue NOW",
+        "Two-person BVM with PEEP 5 cmH2O, slow rate 8-10/min, continuous neb in-line; gentle ventilation to avoid air trapping",
+        "Epinephrine 0.3 mg IM (1 mg/mL) lateral thigh NOW (68 kg × 0.01 mg/kg = 0.68 → cap 0.3 mg); repeat q5-15 min",
+        "Magnesium sulfate 2 g IV over 10-15 min (68 kg × 40 mg/kg = 2720 → cap 2 g)",
+        "Dexamethasone 16 mg IV (68 kg × 0.6 mg/kg = 40.8 → cap 16 mg); single dose",
+        "Prepare for RSI: pre-O2 with BVM/PEEP, ketamine 1-2 mg/kg + rocuronium 1 mg/kg drawn up; largest tube; bougie ready",
+        "Anticipate post-tube hypotension and air trapping — ventilate slowly, low rate, allow full exhalation"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Recognize severe bronchospasm with impending respiratory failure (1-2 word speech, SpO2 86%, tripoding, prior intubation)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Leave patient in position of comfort (tripod); do NOT force supine",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply high-flow O2 — escalate from NC to NRB to target SpO2 94-98%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous SpO2 + waveform EtCO2 + cardiac monitor; 12-lead if able",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Albuterol 5 mg + Ipratropium 0.5 mg nebulized (DuoNeb), O2-driven; start now while preparing escalation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access early — IV mag and IV steroids are coming",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 0.3 mg IM (1 mg/mL) lateral thigh (68 kg × 0.01 mg/kg = 0.68 mg → cap at 0.3 mg max); may repeat q5-15 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Magnesium sulfate 2 g IV over 10-15 min (68 kg × 40 mg/kg = 2720 mg → cap at 2 g max)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Dexamethasone 16 mg IV (68 kg × 0.6 mg/kg = 40.8 mg → cap at 16 mg max); single dose",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous albuterol 5 mg nebulized — repeat back-to-back, unlimited frequency",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Prepare CPAP or two-person BVM with PEEP 5 cmH2O; nebulizer can run in-line with NIV",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Watch for fatigue signs: rising EtCO2, drowsiness, paradoxical chest = impending failure",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess: lung sounds (wheeze now louder = air moving), SpO2, RR, speech, EtCO2 waveform",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue albuterol 5 mg nebulized back-to-back during transport (unlimited frequency)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Repeat IM epinephrine 0.3 mg q5-15 min if signs of impending failure recur",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Complete the IV magnesium 2 g over 10-15 min infusion; watch BP for transient hypotension (fluid bolus if needed)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport priority to ED; notify receiving facility of near-fatal asthma, prior intubation hx, meds given",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document RR, SpO2, EtCO2/waveform, accessory use, breath sounds, mental status — before and after each intervention",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize silent chest + rising EtCO2 + drowsiness = impending respiratory arrest — initiate rescue NOW",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Two-person BVM with PEEP 5 cmH2O, slow rate 8-10/min, continuous neb in-line; gentle ventilation to avoid air trapping",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 0.3 mg IM (1 mg/mL) lateral thigh NOW (68 kg × 0.01 mg/kg = 0.68 → cap 0.3 mg); repeat q5-15 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Magnesium sulfate 2 g IV over 10-15 min (68 kg × 40 mg/kg = 2720 → cap 2 g)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Dexamethasone 16 mg IV (68 kg × 0.6 mg/kg = 40.8 → cap 16 mg); single dose",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Prepare for RSI: pre-O2 with BVM/PEEP, ketamine 1-2 mg/kg + rocuronium 1 mg/kg drawn up; largest tube; bougie ready",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Anticipate post-tube hypotension and air trapping — ventilate slowly, low rate, allow full exhalation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

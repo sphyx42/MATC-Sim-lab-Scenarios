@@ -1,0 +1,551 @@
+{
+  "meta": {
+    "scenarioId": "R-T1-04",
+    "id": "R-T1-04",
+    "name": "Hyperventilation with Underlying Cause — Early DKA Masquerading as Panic Attack",
+    "version": 1,
+    "difficulty": "beginner",
+    "category": "Respiratory",
+    "protocols": [
+      "medical-hyperglycemia",
+      "resp-respiratory-distress",
+      "medical-altered-mental-status",
+      "medical-shock"
+    ],
+    "totalTimeSeconds": 1080,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "respiratory",
+      "DKA",
+      "hyperglycemia",
+      "Kussmaul",
+      "hyperventilation",
+      "diabetes",
+      "type-1-diabetes",
+      "fingerstick-glucose",
+      "metabolic-acidosis",
+      "assessment",
+      "tier-1",
+      "beginner",
+      "anchoring-bias"
+    ]
+  },
+  "patient": {
+    "name": "Madison Carver",
+    "age": 24,
+    "ageUnit": "years",
+    "sex": "female",
+    "weight": 64,
+    "weightLbs": 141,
+    "height": 168,
+    "chiefComplaint": "Rapid deep breathing for ~3 hours; feels anxious, nauseated, and 'can't catch a normal breath.' Coworker called 911 thinking she was having a panic attack.",
+    "history": {
+      "hpi": "24-year-old female with longstanding Type 1 diabetes (diagnosed age 12) who has been feeling progressively unwell for the last two days — frequent urination, constant thirst, fatigue, and decreased appetite. Last night she slept poorly and skipped her insulin pump basal because she 'wasn't eating' and the pump site felt itchy. This morning at the bookstore where she works, coworkers noticed she was sweating, breathing very fast and deep, and looked anxious. She reports nausea, intermittent crampy mid-abdominal pain, mild lightheadedness, and a sensation she 'can't get a deep enough breath in,' though she denies chest pain, cough, wheezing, leg swelling, fever, or sick contacts. She has not vomited yet today. She has felt 'high' on her finger-stick glucose readings the last two days (mid-300s) but hasn't given correction boluses because she thought maybe the pump or sensor was wrong. Her insulin pump infusion set is visible on her abdomen but looks slightly crusted at the entry point. She does not feel like she is having a panic attack — 'this feels different from those.'",
+      "pastMedical": [
+        "Type 1 Diabetes Mellitus since age 12 (insulin pump x4 years)",
+        "Hashimoto thyroiditis (on levothyroxine)",
+        "Generalized anxiety disorder — no recent panic attacks; last seen by psychiatrist 6 months ago"
+      ],
+      "medications": [
+        "Insulin aspart via insulin pump (basal + meal boluses) — basal suspended overnight per patient",
+        "Levothyroxine 75 mcg PO daily",
+        "Sertraline 50 mg PO daily",
+        "Multivitamin PO daily"
+      ],
+      "allergies": [
+        "NKDA"
+      ],
+      "lastOralIntake": "A few sips of water this morning; last solid food was dinner ~14 hours ago (light salad, did not finish it).",
+      "events": "Felt unwell with polyuria/polydipsia x2 days → skipped overnight basal insulin (pump site itchy, not eating) → woke fatigued → at work coworkers noticed rapid deep breathing, sweating, anxious-looking presentation → coworker called 911 reporting 'panic attack.'"
+    }
+  },
+  "scene": {
+    "dispatch": "Dispatch: 24-year-old female, possible panic attack, hyperventilating, conscious and talking. Retail business.",
+    "location": "Small independent bookstore, back office. Patient seated in a desk chair, leaning slightly forward, hands resting on the desk. Good lighting; clear access. Coworker present.",
+    "time": "Tuesday, 10:20, mild spring morning",
+    "safety": "Scene safe. Coworker is calm and helpful; no behavioral threat. Aisles and exits clear.",
+    "bystanders": "Female coworker reports patient 'has been breathing weird all morning,' looks 'really stressed,' and 'mentioned she didn't take her insulin last night.' Coworker has known patient for two years and says 'she's anxious sometimes but it doesn't usually look like this.'",
+    "visualCues": [
+      "Young adult female, alert, sitting upright in a chair",
+      "Visibly rapid, DEEP, regular breaths — chest wall rising fully each breath, NOT shallow panicky breathing",
+      "Mild diaphoresis on forehead; flushed cheeks; lips slightly dry",
+      "Insulin pump clipped to waistband; infusion set tubing visible into the abdomen",
+      "Half-finished water bottle on desk; no food",
+      "MedicAlert bracelet on left wrist: 'TYPE 1 DIABETES'",
+      "No tripod posture, no accessory muscle use, no audible wheeze, no stridor",
+      "If a provider gets close to the patient's face — faintly sweet/fruity (acetone) breath odor"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives at the bookstore back office to find a 24-year-old female sitting in a desk chair, alert, anxious-appearing, breathing rapidly and deeply. Coworker reports a possible panic attack. The picture is deceptive: respirations are FAST and DEEP (Kussmaul), not shallow, and SpO2 is normal at 99% — she is not actually hypoxic or short of breath in the traditional sense. She has Type 1 diabetes with an insulin pump, skipped her overnight basal, polyuria/polydipsia x2 days, mild abdominal pain, faintly fruity breath, and a MedicAlert bracelet visible. This is the assessment window. The teaching point: a complete primary survey, targeted history, breath odor, and a FINGER-STICK GLUCOSE — not a paper bag — is what discriminates DKA from panic attack. Crews that anchor on 'panic attack' and skip glucose will go down the wrong-turn branch.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent — speaking in full sentences, no stridor, no drooling",
+        "breathing": "RR 32, DEEP and regular (Kussmaul pattern); chest wall rises fully each breath; NO accessory muscle use, NO retractions, NO prolonged expiratory phase, lung sounds CLEAR bilaterally",
+        "circulation": "Strong regular radial pulse, slightly fast; warm/dry-to-slightly-moist skin; cap refill 2 sec; mucous membranes slightly dry",
+        "skin": {
+          "color": "pink, flushed cheeks",
+          "temperature": "warm",
+          "moisture": "mildly diaphoretic forehead, otherwise dry"
+        },
+        "pupils": "Equal at 4 mm, briskly reactive",
+        "motorFunction": "Symmetric, intact, follows commands, moves all extremities",
+        "otherFindings": [
+          "Lung sounds CLEAR bilaterally in all fields — no wheezes, no crackles, no diminished air entry",
+          "Capnography (if applied): normal waveform shape, EtCO2 LOW at 22 mmHg (compensatory hyperventilation blowing off CO2 to buffer metabolic acidosis)",
+          "Faintly sweet/fruity (acetone) breath odor when close to the patient's face",
+          "Dry mucous membranes; dry-cracked lips; sunken-appearing eyes",
+          "Insulin pump visible at left waistband; infusion site on left lower abdomen looks slightly red/crusted",
+          "Mild diffuse mid-abdominal tenderness on palpation; no rebound, no guarding",
+          "MedicAlert bracelet: 'TYPE 1 DIABETES'",
+          "Patient denies tingling around mouth/fingertips (would be expected with primary hyperventilation/panic)"
+        ],
+        "patientSpeech": "I can't slow it down. I've been peeing all day and so thirsty. My stomach hurts. I didn't take my insulin last night. I don't think this is a panic attack."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 118,
+        "bpSys": 108,
+        "bpDia": 68,
+        "respRate": 32,
+        "spo2": 99,
+        "etco2": 22,
+        "temp": 37.1,
+        "tempF": 98.8,
+        "obstruction": 0,
+        "glucose": 480,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "primary-survey",
+          "shortAction": "Primary survey (ABC); note Kussmaul pattern, clear lungs, normal SpO2 — NOT primary respiratory failure",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Care Goals + Pertinent Assessment — recognize that deep, rapid breathing with clear lungs, normal SpO2, and low EtCO2 is compensatory hyperventilation for metabolic acidosis, not a primary respiratory problem.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Patient Care Goals: Assure adequate oxygenation and ventilation. Recognize impending respiratory failure. Promptly identify and intervene for patients who require escalation of therapy. Deliver appropriate therapy by differentiating likely cause of respiratory distress. Alleviate respiratory distress."
+        },
+        {
+          "id": "targeted-history",
+          "shortAction": "Targeted history: onset, prior episodes, diabetes, insulin compliance, sick days, urinary frequency, thirst",
+          "priority": "critical",
+          "rationale": "MATC Hyperglycemia Inclusion Criteria 4 + Educational 3 I's — polyuria, polydipsia, tachypnea in a known diabetic with missed insulin is a textbook DKA-trigger history. This step IS the assessment that uncovers the underlying cause.",
+          "protocolReference": "MATC: Hyperglycemia",
+          "protocolExcerpt": "Inclusion Criteria: Adult or pediatric patient with symptoms of hyperglycemia (e.g., polyuria, polydipsia, weakness, dizziness, abdominal pain, tachypnea). Adult or pediatric patient with history of diabetes and other medical symptoms. Notes/Educational Pearls — Key Considerations: Consider causes for hyperglycemia by thinking about the 3 I's: Insulin: This refers to any medication changes for insulin or oral medications including poor compliance or malfunctioning insulin pump. Ischemia: This refers to hyperglycemia sometimes being an indication of physiologic stress in a patient and can be a clue to myocardial ischemia in particular. Infection: Underlying infection can cause derangements in glucose control."
+        },
+        {
+          "id": "fingerstick-glucose",
+          "shortAction": "Check finger-stick blood glucose — THIS is the discriminator (will read 480 mg/dL)",
+          "priority": "critical",
+          "rationale": "MATC Hyperglycemia Assessment 1a + Altered Mental Status Assessment 9 + Performance Measures — point-of-care glucose is the single discriminating test that distinguishes panic attack from DKA. Any patient with tachypnea, AMS, or symptoms of hyperglycemia gets a glucose. Skipping this is the most common error in this presentation.",
+          "protocolReference": "MATC: Hyperglycemia",
+          "protocolExcerpt": "Assessment — Monitoring: Check blood glucose level. Performance Measures: When in scope of practice, point of care blood glucose checked for all patients with symptoms of altered level of consciousness, seizure, stroke, or hyperglycemia."
+        },
+        {
+          "id": "breath-odor",
+          "shortAction": "Assess breath odor (acetone/fruity = DKA); auscultate lungs (clear → not bronchospasm)",
+          "priority": "critical",
+          "rationale": "MATC Hyperglycemia Pertinent Assessment 2 + AMS Assessment 11 — fruity breath and Kussmaul respirations are the classic DKA bedside findings; breath odor distinguishes metabolic causes (acidosis, alcohol, uremia) when AMS is on the differential.",
+          "protocolReference": "MATC: Hyperglycemia",
+          "protocolExcerpt": "Pertinent Assessment Findings: Concomitant trauma. Abdominal pain, 'fruity breath,' and rapid-deep respirations (Kussmaul respirations) may be associated with DKA."
+        },
+        {
+          "id": "secondary-survey-dehydration",
+          "shortAction": "Secondary survey: dry mucous membranes, sunken eyes, abdominal exam, skin turgor",
+          "priority": "critical",
+          "rationale": "MATC Hyperglycemia Assessment 2 — secondary survey pertinent to altered glucose looks specifically at dehydration markers (sunken eyes, dry mucous membranes), abdominal pain (common in pediatric/new DKA), tachycardia, hypotension, and tachypnea.",
+          "protocolReference": "MATC: Hyperglycemia",
+          "protocolExcerpt": "Secondary survey pertinent to altered blood glucose level: Constitutional: assess for tachycardia, hypotension, and tachypnea. Eyes: assess for sunken eyes from dehydration. Nose/mouth/ears: assess for dry mucous membranes or tongue bite from seizure. Abdominal pain including nausea and vomiting especially in children. Neurologic: Assess Glasgow Coma Score (GCS) and mental status. Assess for focal neurologic deficit: motor and sensory."
+        },
+        {
+          "id": "monitor-spo2-etco2",
+          "shortAction": "Apply SpO2 + waveform capnography; document baseline (low EtCO2 ≈ 22 confirms compensation)",
+          "priority": "important",
+          "rationale": "MATC Respiratory Distress Monitoring 2a + Patient Safety 1 — pulse oximetry and EtCO2 are routine in respiratory complaints; a LOW EtCO2 with tachypnea and clear lungs supports compensatory hyperventilation rather than bronchospasm or impending respiratory failure.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Monitoring: Pulse oximetry and EtCO2 should be routinely used as adjuncts to other forms of monitoring in patients with respiratory complaints. Patient Safety Considerations: Normal EtCO2 (35–45 mmHg) with tachypnea and respiratory distress is an indicator of impending respiratory failure."
+        },
+        {
+          "id": "supplemental-o2",
+          "shortAction": "Supplemental O2 only if SpO2 < 94% (here 99% on RA — no O2 needed)",
+          "priority": "supplemental",
+          "rationale": "MATC Respiratory Distress Treatment 1a — supplemental O2 titrated to 94–98%; this patient is already 99% so routine O2 is not indicated and could mask oxygenation trend.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Airway: Give supplemental oxygen for dyspnea to a target of 94–98% saturation. Escalate from a nasal cannula as needed to reach this goal."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "dka-recognized",
+          "if": "Glucose checked and DKA recognized",
+          "condition": "Crew performs a proper primary and secondary survey, takes a targeted history (diabetes, missed insulin, polyuria/polydipsia, abdominal pain), assesses breath odor, and obtains a finger-stick glucose reading of 480 mg/dL. They recognize DKA as the underlying cause of the Kussmaul respirations and treat the metabolic problem, not the breathing pattern.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "fingerstick-glucose",
+            "targeted-history",
+            "breath-odor",
+            "secondary-survey-dehydration"
+          ]
+        },
+        {
+          "targetPhaseId": "panic-attack-anchoring",
+          "if": "Treated as panic attack; no glucose checked",
+          "condition": "Crew accepts the dispatch label of 'panic attack' and coaches the patient through slow breathing or has her breathe into a paper bag to 'rebreathe CO2.' Glucose is NOT obtained. The CO2 rebreathing reverses the patient's compensatory hyperventilation, raises PaCO2, and drops pH further — the metabolic acidosis worsens and the patient deteriorates.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": [
+            "fingerstick-glucose",
+            "targeted-history"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dka-recognized",
+      "name": "DKA recognized; IV + fluids started",
+      "description": "Crew has identified the underlying cause: early diabetic ketoacidosis with compensatory Kussmaul respirations. Glucose reads 480 mg/dL, patient is mildly dehydrated, hemodynamics borderline (HR 118, BP 108/68), normal SpO2. Treatment now follows the Hyperglycemia Guideline: establish IV access, begin a normal saline bolus at the protocol rate (20 mL/kg at 1000 mL/hr → for 64 kg, 1280 mL total goal), obtain a 12-lead EKG to screen for hyperkalemia or ACS, place the patient on cardiac monitor, and prepare for transport. Insulin and bicarbonate are NOT given prehospital. The teaching point in this phase is correct prehospital DKA management — fluids + monitor + transport, not insulin or bicarb.",
+      "triggerCondition": "Crew recognized the metabolic cause of the Kussmaul respirations after obtaining a finger-stick glucose of 480 mg/dL, identifying classic DKA history (T1DM, missed insulin, polyuria/polydipsia, abd pain, fruity breath), and is now treating per the Hyperglycemia Guideline rather than the Respiratory Distress Guideline.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "RR 30, deep regular (Kussmaul); lungs clear; SpO2 99% on room air; EtCO2 23",
+        "circulation": "Strong regular pulses; warm extremities; cap refill 2 sec; IV established in L AC with 18g; NS infusing wide-open through pressure bag",
+        "skin": {
+          "color": "pink, flushed cheeks",
+          "temperature": "warm",
+          "moisture": "mildly diaphoretic, mucous membranes still dry"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Symmetric, intact",
+        "otherFindings": [
+          "Lungs remain clear; no change in respiratory pattern yet (acidosis will not correct prehospital)",
+          "12-lead obtained: sinus tachycardia, no peaked T waves, no STEMI",
+          "Patient appears slightly less anxious now that crew has a plan and is talking through it",
+          "Insulin pump suspended per crew/patient decision in consult with online medical control",
+          "Nausea improving; no vomiting"
+        ],
+        "patientSpeech": "Thank you for listening. I really didn't think this was a panic attack."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 114,
+        "bpSys": 112,
+        "bpDia": 70,
+        "respRate": 30,
+        "spo2": 99,
+        "etco2": 23,
+        "temp": 37.1,
+        "tempF": 98.8,
+        "obstruction": 0,
+        "glucose": 478,
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "iv-access",
+          "shortAction": "Establish IV access (18g AC if able); place on cardiac monitor",
+          "priority": "critical",
+          "rationale": "MATC Hyperglycemia Treatment 2a + Shock Treatment 8 — IV access is required for fluid resuscitation in symptomatic hyperglycemia with dehydration markers; cardiac monitor for arrhythmia screening.",
+          "protocolReference": "MATC: Hyperglycemia",
+          "protocolExcerpt": "Treatment and Interventions: If glucose greater than 250 mg/dL with symptoms of dehydration, vomiting, abdominal pain, or altered level of consciousness: Provide volume expansion with normal saline bolus."
+        },
+        {
+          "id": "ns-bolus",
+          "shortAction": "Normal saline 1280 mL bolus IV (64 kg × 20 mL/kg) at 1000 mL/hr; reassess",
+          "priority": "critical",
+          "rationale": "MATC Hyperglycemia Treatment 2a-i — adult symptomatic hyperglycemia gets NS 20 mL/kg at 1000 mL/hr. For 64 kg this is 1280 mL total goal. Closely watch for signs of fluid overload or cerebral edema (rare in adults).",
+          "protocolReference": "MATC: Hyperglycemia",
+          "protocolExcerpt": "If glucose greater than 250 mg/dL with symptoms of dehydration, vomiting, abdominal pain, or altered level of consciousness: Provide volume expansion with normal saline bolus. Adult: Normal saline 20 mL/kg at rate of 1000 mL/hr; if symptoms of hypovolemic shock, follow Shock Guideline."
+        },
+        {
+          "id": "twelve-lead",
+          "shortAction": "Obtain 12-lead EKG — screen for hyperkalemia (peaked T) and ACS",
+          "priority": "important",
+          "rationale": "MATC Hyperglycemia Assessment 4 — 12-lead EKG to assess for hyperkalemia or ACS in any symptomatic hyperglycemic patient.",
+          "protocolReference": "MATC: Hyperglycemia",
+          "protocolExcerpt": "Obtain 12-lead EKG to assess for findings consistent with hyperkalemia or acute coronary syndrome."
+        },
+        {
+          "id": "evaluate-sepsis",
+          "shortAction": "Evaluate for concomitant sepsis/infection (temperature, infusion-site exam, recent illness)",
+          "priority": "important",
+          "rationale": "MATC Hyperglycemia Assessment 3 + Educational 3 I's (Infection) — infection is a common DKA trigger; in this patient the slightly red insulin pump site is suspicious and should be documented.",
+          "protocolReference": "MATC: Hyperglycemia",
+          "protocolExcerpt": "Evaluate for possible concomitant sepsis and septic shock. Notes/Educational Pearls — Infection: Underlying infection can cause derangements in glucose control."
+        },
+        {
+          "id": "reassess",
+          "shortAction": "Reassess vitals, mental status, and recheck glucose every 15 min en route",
+          "priority": "important",
+          "rationale": "MATC Hyperglycemia Treatment 5 — reassess vitals, mental status, hydration; if mental status changes, recheck glucose to rule out iatrogenic hypoglycemia (irrelevant here since no insulin is given prehospital).",
+          "protocolReference": "MATC: Hyperglycemia",
+          "protocolExcerpt": "Reassess patient: Reassess vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment), mental status, and signs of dehydration. If mental status changes, reassess blood glucose level and provide appropriate treatment if hypoglycemia has developed."
+        },
+        {
+          "id": "no-bicarb-no-insulin",
+          "shortAction": "Do NOT give bicarbonate empirically; do NOT push insulin prehospital",
+          "priority": "critical",
+          "rationale": "MATC Hyperglycemia Treatment 4 + Patient Safety 1-2 — bicarbonate is reserved for documented hyperkalemia; insulin therapy belongs at the receiving facility. Overly aggressive interventions can cause harm (cerebral edema, hyponatremia, hypokalemia).",
+          "protocolReference": "MATC: Hyperglycemia",
+          "protocolExcerpt": "If findings of hyperkalemia, consider administration of sodium bicarbonate 1 mEq/kg (max dose of 50 mEq) IV bolus over 5 minutes and consider albuterol 5 mg via nebulizer (can be repeated if no response is seen). Patient Safety Considerations: Overly aggressive administration of fluid in hyperglycemic patients may cause cerebral edema or dangerous hyponatremia. Asymptomatic hyperglycemia poses no risk to the patient while inappropriately aggressive interventions to manage blood sugar may harm patients."
+        },
+        {
+          "id": "transport",
+          "shortAction": "Transport to closest appropriate ED with continued NS, monitor, and reassessment",
+          "priority": "critical",
+          "rationale": "MATC Hyperglycemia Treatment 6a — disposition is transport to the closest appropriate receiving facility for definitive insulin and electrolyte management.",
+          "protocolReference": "MATC: Hyperglycemia",
+          "protocolExcerpt": "Disposition: Transport to closest appropriate receiving facility."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "transport-stable",
+          "if": "Fluids running and transporting to ED",
+          "condition": "Crew has IV access, NS bolus running at protocol rate, 12-lead obtained, patient on monitor, and is transporting. En-route reassessment confirms hemodynamic stability and unchanged mental status.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "iv-access",
+            "ns-bolus",
+            "transport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "transport-stable",
+      "name": "Transport; stable en route",
+      "description": "En route to the ED. NS bolus has infused approximately 600 mL of the 1280 mL goal. Patient remains alert, oriented, and cooperative. Kussmaul respirations persist as expected — acidosis will not correct without insulin at the receiving facility — but HR is trending down, BP is stable, glucose remains in the high 400s, and mental status is unchanged. Crew gives a clean radio report including the deceptive presentation (looked like panic attack at first), the key discriminator (finger-stick glucose 480), the working diagnosis (DKA), and treatment so far. Bedside handoff at the ED uses a structured format (SBAR or similar) and the patient is transitioned to the ED bed with continued NS, monitor, and pump suspended.",
+      "triggerCondition": "Crew is transporting with appropriate DKA management in progress. Hemodynamics are stable, mental status is unchanged, and a structured handoff to the receiving facility is anticipated.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "RR 28, deep regular; lungs clear; SpO2 99%; EtCO2 24",
+        "circulation": "HR 108, BP 114/72, warm pink extremities, strong pulses; NS ~600 mL infused via pressure infusion",
+        "skin": {
+          "color": "pink",
+          "temperature": "warm",
+          "moisture": "less diaphoretic; mucous membranes slightly improved"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Symmetric, intact",
+        "otherFindings": [
+          "Patient reports nausea is better; abdominal pain still present but tolerable",
+          "Repeat glucose 462 mg/dL (essentially unchanged — expected, no insulin given)",
+          "Patient remains GCS 15; no change in mental status",
+          "Insulin pump remains suspended"
+        ],
+        "patientSpeech": "Breathing still feels weird, but I feel a little less awful."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 108,
+        "bpSys": 114,
+        "bpDia": 72,
+        "respRate": 28,
+        "spo2": 99,
+        "etco2": 24,
+        "temp": 37.1,
+        "tempF": 98.8,
+        "obstruction": 0,
+        "glucose": 462,
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "reassess-enroute",
+          "shortAction": "Reassess vitals, mental status, glucose, and dehydration signs q15 min en route",
+          "priority": "critical",
+          "rationale": "MATC Hyperglycemia Treatment 5a — serial reassessment is required; documents response to fluids and detects deterioration early.",
+          "protocolReference": "MATC: Hyperglycemia",
+          "protocolExcerpt": "Reassess patient: Reassess vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment), mental status, and signs of dehydration."
+        },
+        {
+          "id": "watch-cerebral-edema",
+          "shortAction": "Monitor for AMS, headache, ICP signs — stop fluids and elevate head if cerebral edema suspected",
+          "priority": "important",
+          "rationale": "MATC Hyperglycemia Patient Safety 1 — cerebral edema is rare in adults but is the leading cause of DKA death in children; crew must recognize the warning signs and act.",
+          "protocolReference": "MATC: Hyperglycemia",
+          "protocolExcerpt": "Patient Safety Considerations: Overly aggressive administration of fluid in hyperglycemic patients may cause cerebral edema or dangerous hyponatremia. Cerebral edema is a leading cause of death in children with DKA but is very rare in adults. Closely monitor for signs of altered mental status, increased intracranial pressure, and immediately discontinue IV fluids and elevate head of bed if signs of increased ICP develop. Reassess and manage airway as needed."
+        },
+        {
+          "id": "handoff",
+          "shortAction": "Structured ED handoff: pertinent history, glucose 480, DKA, fluids given, deceptive presentation",
+          "priority": "important",
+          "rationale": "MATC Hyperglycemia Key Documentation + Performance Measures — document reassessment, glucose, fluids given; structured handoff prevents loss of the cognitive thread of 'looked like a panic attack but wasn't.'",
+          "protocolReference": "MATC: Hyperglycemia",
+          "protocolExcerpt": "Key Documentation Elements: Document reassessment of vital signs and mental status after administration of IV fluids. Document glucose level (if in scope of practice) when indicated."
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "panic-attack-anchoring",
+      "name": "Treated as panic attack; acidosis worsening",
+      "description": "Crew accepted the dispatch label and the surface presentation. They coached slow breathing or had the patient breathe into a paper bag to 'rebreathe CO2.' No finger-stick glucose was checked. Coaching/rebreathing has the opposite of the intended effect: it raises the patient's PaCO2, which removes her compensatory hyperventilation, drops her arterial pH further, and worsens the metabolic acidosis. Over a few minutes she becomes more lethargic, her speech slows, her respirations become slightly more shallow (no longer fully compensating), she vomits once, and her mental status deteriorates from GCS 15 to GCS 12 (E3 V4 M5). This is the wrong-turn branch — the teaching point is that anchoring on a dispatch label without doing the assessment causes harm.",
+      "triggerCondition": "Crew accepted dispatch's 'panic attack' label, coached the patient through slow breathing or had her breathe into a paper bag to rebreathe CO2, and did not obtain a finger-stick glucose. Compensatory hyperventilation is reversed, PaCO2 rises, arterial pH falls, and the metabolic acidosis worsens.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": {
+          "eye": 3,
+          "verbal": 4,
+          "motor": 5
+        },
+        "airway": "Patent for now; protective reflexes intact but mentation declining",
+        "breathing": "RR 22, shallower than baseline (no longer fully compensating); lungs clear; SpO2 96%; EtCO2 has RISEN to 32 mmHg",
+        "circulation": "HR 124, BP 102/64; cool peripheries developing; cap refill 3 sec",
+        "skin": {
+          "color": "pale, less flushed",
+          "temperature": "cool peripherally, warm core",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Symmetric but slower; obeys commands when prompted but eyes drift closed when unstimulated",
+        "otherFindings": [
+          "Patient just vomited a small amount of clear/yellow fluid",
+          "Speech now slow and confused: knows her name, vaguely knows the date, intermittently confuses where she is",
+          "Coworker says: 'She's worse than when you got here'",
+          "Insulin pump and MedicAlert bracelet still visible — student has another chance to notice",
+          "If glucose is finally checked now: 488 mg/dL — DKA is now obvious"
+        ],
+        "patientSpeech": "Sleepy … (drifts off, opens eyes when name called) … just want to … rest."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 124,
+        "bpSys": 102,
+        "bpDia": 64,
+        "respRate": 22,
+        "spo2": 96,
+        "etco2": 32,
+        "temp": 37.2,
+        "tempF": 99.0,
+        "obstruction": 0,
+        "glucose": 488,
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "stop-rebreathing",
+          "shortAction": "Stop CO2 rebreathing immediately; reassess airway, breathing, mental status",
+          "priority": "critical",
+          "rationale": "MATC AMS Patient Safety 1 — once mental status worsens during a presumed-panic intervention, the priority is airway protection, oxygenation, ventilation, and perfusion. CO2 rebreathing in a compensating acidotic patient is the cause of decline and must be stopped.",
+          "protocolReference": "MATC: Altered Mental Status",
+          "protocolExcerpt": "Patient Safety Considerations: With depressed mental status, initial focus is on airway protection, oxygenation, ventilation, and perfusion."
+        },
+        {
+          "id": "now-check-glucose",
+          "shortAction": "Check finger-stick glucose NOW; treat the underlying cause, not the breathing pattern",
+          "priority": "critical",
+          "rationale": "MATC AMS Assessment 9 + Performance Measures — point-of-care glucose is mandatory in any patient with altered mental status. This is the bailout for the wrong-turn branch.",
+          "protocolReference": "MATC: Altered Mental Status",
+          "protocolExcerpt": "Look for treatable causes of altered mental status (AMS): Blood glucose level. Performance Measures: Hypoglycemia considered and treated appropriately: Blood glucose level obtained."
+        },
+        {
+          "id": "recognize-dka-now",
+          "shortAction": "Recognize DKA: T1DM + missed insulin + polyuria + Kussmaul + glucose 488 + fruity breath",
+          "priority": "critical",
+          "rationale": "MATC Hyperglycemia Inclusion 1 + Pertinent Assessment 2 — the picture is now unmistakable. Cross to the Hyperglycemia Guideline and start fluids.",
+          "protocolReference": "MATC: Hyperglycemia",
+          "protocolExcerpt": "Inclusion Criteria: Adult or pediatric patient with altered level of consciousness. Adult or pediatric patient with symptoms of hyperglycemia (e.g., polyuria, polydipsia, weakness, dizziness, abdominal pain, tachypnea). Pertinent Assessment Findings: Abdominal pain, 'fruity breath,' and rapid-deep respirations (Kussmaul respirations) may be associated with DKA."
+        },
+        {
+          "id": "ams-airway",
+          "shortAction": "Manage airway: position, suction available, supplemental O2 to keep SpO2 ≥ 94%",
+          "priority": "critical",
+          "rationale": "MATC AMS Treatment 1 + Patient Safety 1 — protect the airway in a patient now GCS 12 with a recent emesis; have suction ready and elevate head.",
+          "protocolReference": "MATC: Altered Mental Status",
+          "protocolExcerpt": "Treatment and Interventions: Oxygen. Patient Safety Considerations: With depressed mental status, initial focus is on airway protection, oxygenation, ventilation, and perfusion."
+        },
+        {
+          "id": "iv-fluids-now",
+          "shortAction": "Establish IV; start NS 1280 mL bolus (64 kg × 20 mL/kg) at 1000 mL/hr",
+          "priority": "critical",
+          "rationale": "MATC Hyperglycemia Treatment 2a-i — adult with glucose > 250 + symptoms of dehydration/AMS gets a NS bolus at the protocol rate; this is the recovery path back onto the default treatment.",
+          "protocolReference": "MATC: Hyperglycemia",
+          "protocolExcerpt": "If glucose greater than 250 mg/dL with symptoms of dehydration, vomiting, abdominal pain, or altered level of consciousness: Provide volume expansion with normal saline bolus. Adult: Normal saline 20 mL/kg at rate of 1000 mL/hr; if symptoms of hypovolemic shock, follow Shock Guideline."
+        },
+        {
+          "id": "shock-screen",
+          "shortAction": "Screen for shock (BP, HR, cap refill, lactate if available) — treat per Shock Guideline if criteria met",
+          "priority": "important",
+          "rationale": "MATC Hyperglycemia Treatment 1 + Shock Guideline — once perfusion markers are abnormal (HR 124, cap refill 3 sec, cool peripheries), cross-check shock criteria; DKA can co-exist with septic shock and the trigger for this presentation may be infection at the pump site.",
+          "protocolReference": "MATC: Shock",
+          "protocolExcerpt": "Inclusion Criteria: Signs of poor perfusion (due to a medical cause) such as one or more of the following: Altered mental status. Delayed capillary refill (> 3 seconds). Tachycardia or bradycardia for age, out of proportion to temperature. Cool/mottled or flushed/ruddy skin."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "dka-recognized",
+          "if": "Recognize error; check glucose; begin DKA care",
+          "condition": "Crew stops the rebreathing, finally obtains a finger-stick glucose, recognizes DKA, and crosses to the Hyperglycemia Guideline (IV access, NS bolus, monitor, transport). The patient stabilizes hemodynamically and mental status recovers as the compensatory hyperventilation resumes and fluids are infused.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "stop-rebreathing",
+            "now-check-glucose",
+            "recognize-dka-now",
+            "iv-fluids-now"
+          ]
+        }
+      ]
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

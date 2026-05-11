@@ -1,0 +1,517 @@
+{
+  "meta": {
+    "scenarioId": "R-T1-02",
+    "id": "R-T1-02",
+    "name": "COPD Exacerbation vs. CHF — 72yo with Dual History",
+    "version": 1,
+    "difficulty": "beginner",
+    "category": "Respiratory",
+    "protocols": [
+      "resp-respiratory-distress",
+      "resp-airway-management"
+    ],
+    "totalTimeSeconds": 1200,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "respiratory",
+      "COPD",
+      "CHF",
+      "differential",
+      "assessment",
+      "auscultation",
+      "DuoNeb",
+      "albuterol",
+      "ipratropium",
+      "CPAP",
+      "nitroglycerin-pitfall",
+      "tier-1",
+      "beginner"
+    ]
+  },
+  "patient": {
+    "name": "Eleanor Brennan",
+    "age": 72,
+    "ageUnit": "years",
+    "sex": "female",
+    "weight": 68,
+    "weightLbs": 150,
+    "height": 163,
+    "chiefComplaint": "Worsening shortness of breath over 3 days; productive cough with green sputum; can no longer walk to the bathroom without stopping.",
+    "history": {
+      "hpi": "72-year-old female with longstanding COPD (30 pack-year smoking history, quit 4 years ago) and a remote diagnosis of compensated heart failure with preserved ejection fraction, on chronic Lasix and well-controlled. She developed a 'head cold' about 5 days ago — runny nose, sore throat, low-grade fevers — that progressed into a productive cough with thick green sputum starting 3 days ago. Over the last 48 hours her shortness of breath has steadily worsened: she has been using her albuterol HFA 'every couple of hours' (her usual is 'maybe twice a day') and has needed her home O2 at 2 L/min around the clock instead of just at night. This morning she could barely make it from the bed to the bathroom without stopping to catch her breath. She finished a 5-day prednisone taper two weeks ago for a prior COPD flare. She specifically denies any new chest pain, orthopnea worse than her baseline (she sleeps on 2 pillows always), paroxysmal nocturnal dyspnea, weight gain (her bathroom scale today reads the same as last week — 150 lb), and her ankle swelling is unchanged from her chronic trace edema. She has been taking her Lasix 40 mg daily as prescribed and her pill bottle confirms compliance. The picture is gradual respiratory decline with sputum production and recent URI on a background of dual COPD/CHF history — favoring COPD exacerbation triggered by viral URI.",
+      "pastMedical": [
+        "COPD (GOLD stage 2-3) — 30 pack-year smoker, quit 4 years ago",
+        "Heart failure with preserved ejection fraction (HFpEF), compensated, last echo EF 55%",
+        "Hypertension",
+        "Hyperlipidemia",
+        "Osteoarthritis (knees)",
+        "2 prior ED visits for COPD exacerbation in the last year (no admissions, never intubated, never ICU)"
+      ],
+      "medications": [
+        "Tiotropium (Spiriva) 18 mcg DPI, 1 inhalation daily",
+        "Albuterol HFA 90 mcg, 2 puffs PRN (using every 2-3 hours x 48 hours)",
+        "Prednisone 40 mg PO — completed 5-day taper 2 weeks ago for prior COPD flare",
+        "Furosemide (Lasix) 40 mg PO daily — compliant per pill bottle count",
+        "Lisinopril 10 mg PO daily",
+        "Atorvastatin 40 mg PO at bedtime",
+        "Home O2 2 L/min via nasal cannula (nighttime baseline; now using 24/7)"
+      ],
+      "allergies": [
+        "Sulfa drugs (rash)"
+      ],
+      "lastOralIntake": "Tea and a piece of toast at breakfast (~3 hours ago); minimal appetite for 2 days",
+      "events": "5-day URI → productive cough with green sputum x 3 days → increasing albuterol use and continuous home O2 → progressive dyspnea on minimal exertion → daughter visited, found mom unable to talk in full sentences and called 911. No chest pain, no syncope, no new orthopnea or PND, no weight gain, no missed Lasix."
+    }
+  },
+  "scene": {
+    "dispatch": "Dispatch: 72-year-old female, trouble breathing, conscious. Apartment, third floor with elevator. Daughter on scene.",
+    "location": "Third-floor apartment in a senior-living complex. Patient seated in a recliner near the window with home O2 tubing trailing to a stationary concentrator humming in the corner. Living room is tidy; daughter has cleared a path to the front door.",
+    "time": "Tuesday, 14:20, mid-spring afternoon",
+    "safety": "Scene safe. No pets in the room. Daughter is calm and helpful. Home O2 concentrator is running — flammables/ignition not relevant for this encounter.",
+    "bystanders": "Adult daughter (lives across town, visits twice a week) is present, gives clear history, has a brown paper bag with mom's pill bottles ready to hand over.",
+    "visualCues": [
+      "Elderly female in a recliner, leaning slightly forward, home O2 nasal cannula in place",
+      "Pursed-lip breathing on expiration; mild accessory neck muscle use",
+      "Speaking in 4-6 word phrases between breaths; mildly anxious but cooperative",
+      "Tissues with greenish sputum in a wastebasket beside the chair",
+      "Albuterol HFA, tiotropium DPI, and an empty prednisone pill organizer on the side table",
+      "Furosemide bottle on the table with the daughter — pill count matches a compliant patient",
+      "Bathroom scale visible at the doorway; daughter notes mom checks it daily and the weight is stable",
+      "No prominent ankle edema beyond chronic trace; legs not elevated; no JVD visible across the room"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives to a 72-year-old female with known COPD and known compensated HFpEF in mild-to-moderate respiratory distress. She is alert, anxious, speaking in short 4-6 word phrases, using pursed-lip breathing, with mild accessory muscle use. Home O2 nasal cannula is in place at 2 L/min. SpO2 on her home O2 is 88%. She has a productive cough with green sputum. This is the assessment window. The teaching point is that both COPD and CHF are on her chart, but a directed exam — auscultation, JVD/edema check, trend over days, medication compliance, sputum, weight stability — will differentiate them well before treatment is chosen. The wrong reflex is to anchor on the CHF history and skip the COPD-favoring physical findings.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent — speaking, no stridor, no drooling, productive cough with greenish sputum",
+        "breathing": "RR 28, mild-to-moderate distress, pursed-lip breathing on expiration, prolonged expiratory phase, mild accessory neck muscle use, diffuse expiratory wheezes and coarse rhonchi bilaterally",
+        "circulation": "Strong regular radial pulse; warm extremities; cap refill < 2 sec; NO JVD with patient at 45 degrees",
+        "skin": {
+          "color": "pink, no cyanosis",
+          "temperature": "warm",
+          "moisture": "slightly diaphoretic"
+        },
+        "pupils": "Equal at 3 mm, briskly reactive",
+        "motorFunction": "Symmetric, intact, follows commands",
+        "otherFindings": [
+          "Lung sounds: diffuse expiratory wheezes and coarse rhonchi in ALL fields bilaterally — NO basilar crackles/rales",
+          "Prolonged expiratory phase; pursed-lip breathing — classic obstructive pattern",
+          "Air entry diminished but symmetric; no unilateral findings",
+          "NO JVD at 45 degrees",
+          "Lower extremities: chronic trace pedal edema only — daughter confirms this is unchanged baseline; NO new pitting edema",
+          "Productive cough with thick green sputum (tissues in wastebasket); 5-day URI history",
+          "Weight stable per daughter and home scale — no recent gain",
+          "Capnography (when applied): shark-fin waveform, EtCO2 ~48 mmHg (chronically elevated baseline for end-stage COPD)",
+          "Speaking in 4-6 word phrases between breaths",
+          "Tiotropium DPI, albuterol HFA, recently-completed prednisone taper on side table — points to obstructive disease as primary"
+        ],
+        "patientSpeech": "Been coughing up … green stuff … for three days … my breathing pills … aren't holding me."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 104,
+        "bpSys": 148,
+        "bpDia": 86,
+        "respRate": 28,
+        "spo2": 88,
+        "etco2": 48,
+        "temp": 37.4,
+        "tempF": 99.3,
+        "obstruction": 50,
+        "glucose": 118,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "primary-survey",
+          "shortAction": "Rapid primary survey (ABC); recognize moderate respiratory distress in elderly patient with dual COPD/CHF history",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Patient Care Goals — assure oxygenation/ventilation, recognize impending respiratory failure, deliver appropriate therapy by differentiating likely cause.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Patient Care Goals: Assure adequate oxygenation and ventilation. Recognize impending respiratory failure. Promptly identify and intervene for patients who require escalation of therapy. Deliver appropriate therapy by differentiating likely cause of respiratory distress. Alleviate respiratory distress."
+        },
+        {
+          "id": "history-onset-trigger",
+          "shortAction": "Targeted history: onset (days vs. hours), URI/sputum, prior treatments, hospitalization/ICU/intubation history",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Assessment 1 — gradual onset over days with URI and sputum favors COPD exacerbation; abrupt onset with orthopnea/PND/weight gain favors acute CHF.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "History: Onset of symptoms. Concurrent symptoms (e.g., fever, cough, rhinorrhea, tongue/lip swelling, rash, labored breathing, foreign body aspiration). Usual triggers of symptoms (e.g., cigarette smoke, change in weather, upper respiratory infections, exercise). Treatments prior to EMS: Oxygen, inhaler, nebulizer, other treatments, chronic or recent steroids. Hospitalizations: Number of emergency department visits in the past year, number of hospital admissions in the past year, number of ICU admissions (ever), previously intubated (ever)."
+        },
+        {
+          "id": "review-meds-compliance",
+          "shortAction": "Review home meds (inhalers + Lasix); confirm Lasix compliance; check weight trend",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Notes 4c + Pertinent Assessment 4b — dialysis/diuretic noncompliance and recent weight gain support fluid overload; compliant Lasix + stable weight argues against acute CHF.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Pertinent Assessment Findings: Fluid overload etiology (e.g., CHF, pulmonary edema) is suggested by: Jugular venous distention; Rales on auscultation; Peripheral edema; History of CHF, diuretic therapy, dialysis noncompliance, hypertension. Notes: Acute heart failure is a common cause of pulmonary edema – other causes include: Opioid overdose; High altitude exposure; Kidney failure or dialysis noncompliance; Lung damage caused by gases or severe infection."
+        },
+        {
+          "id": "auscultate-multi-fields",
+          "shortAction": "Auscultate all lung fields (anterior + posterior, upper/middle/lower) BEFORE treatment — wheezes vs. crackles",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Assessment 2b/c + Pertinent Assessment 4 — wheezing favors bronchospasm (COPD/asthma); rales/crackles favor pulmonary edema (CHF). This is the single highest-yield differentiator.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Exam: Air entry (normal vs. diminished, prolonged expiratory phase). Breath sounds (wheezes, crackles, rales, rhonchi, diminished, clear). Pertinent Assessment Findings: Etiology of respiratory distress: Bronchospastic etiology (e.g., asthma, COPD) is suggested by: Wheezing on auscultation; 'Shark fin' waveform capnograph or prolonged expiratory phase; History of asthma/COPD. Fluid overload etiology (e.g., CHF, pulmonary edema) is suggested by: Jugular venous distention; Rales on auscultation; Peripheral edema; History of CHF, diuretic therapy, dialysis noncompliance, hypertension."
+        },
+        {
+          "id": "check-jvd-edema",
+          "shortAction": "Check JVD (head of bed 45°) and lower-extremity edema; compare to chronic baseline",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Pertinent Assessment 4b — JVD and new pitting edema support fluid overload; their absence (with chronic trace edema only) argues against acute CHF as the driver.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Fluid overload etiology (e.g., CHF, pulmonary edema) is suggested by: Jugular venous distention; Rales on auscultation; Peripheral edema; History of CHF, diuretic therapy, dialysis noncompliance, hypertension."
+        },
+        {
+          "id": "monitor-spo2-etco2",
+          "shortAction": "Apply continuous SpO2 and waveform capnography; note shark-fin waveform vs. normal waveform",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Monitoring 2a + Pertinent Assessment 3 — shark-fin capnography confirms bronchospasm; CHF tends to have a more normal waveform with lower EtCO2.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Monitoring: Pulse oximetry and EtCO2 should be routinely used as adjuncts to other forms of monitoring in patients with respiratory complaints. Pertinent Assessment Findings: A 'shark fin' on waveform capnography suggests significant bronchospasm and obstructive physiology. Notes: When assessing for cause of respiratory distress, CHF tends to be associated with lower levels of EtCO2 compared to COPD. EtCO2 values that are extremely low and high are markers of poor outcomes and need for intubation or ICU admission."
+        },
+        {
+          "id": "twelve-lead-ekg",
+          "shortAction": "Acquire 12-lead ECG to screen for ischemia/dysrhythmia as CHF trigger",
+          "priority": "important",
+          "rationale": "MATC Respiratory Distress Monitoring 2c — 12-lead is indicated to assess for dysrhythmia or ischemia in patients with risk factors or possible CHF presentation.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "12-lead EKG may be indicated to assess for dysrhythmia or ischemia, particularly in patients with risk factors for coronary artery disease and/or presentation consistent with CHF."
+        },
+        {
+          "id": "supplemental-o2",
+          "shortAction": "Titrate supplemental O2 (NC → NRB) toward SpO2 94–98%; permissive 90% acceptable in COPD",
+          "priority": "important",
+          "rationale": "MATC Respiratory Distress Treatment 1a + Airway Management Key Considerations — target 94–98%, but permissive hypoxia at SpO2 ≥ 90% is appropriate in chronic COPD to avoid blunting hypoxic drive.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Airway: Give supplemental oxygen for dyspnea to a target of 94–98% saturation. Escalate from a nasal cannula as needed to reach this goal."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "proper-assessment-complete",
+          "if": "Auscultated, JVD/edema checked, history clarified",
+          "condition": "Crew completes a directed respiratory assessment: auscultates in multiple lung fields (finds diffuse wheezes/rhonchi, NO crackles), checks JVD (none) and pedal edema (chronic trace only, unchanged), reviews medications and confirms Lasix compliance and stable weight, notes 5-day URI with productive green sputum and worsening albuterol use. They correctly categorize the picture as COPD exacerbation triggered by viral URI — not acute decompensated CHF.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["auscultate-multi-fields", "check-jvd-edema", "history-onset-trigger", "review-meds-compliance"]
+        },
+        {
+          "targetPhaseId": "anchored-on-chf",
+          "if": "Anchored on CHF history; skipped exam",
+          "condition": "Crew sees 'history of CHF' on the medication list and the elderly female with shortness of breath, anchors on acute pulmonary edema, and starts CPAP + sublingual nitroglycerin without first auscultating in multiple fields, checking JVD/edema, or trending the onset. Bronchodilators and steroids are delayed. The patient's true problem (COPD exacerbation) is not being treated.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["auscultate-multi-fields", "check-jvd-edema"]
+        }
+      ]
+    },
+    {
+      "id": "proper-assessment-complete",
+      "name": "Proper assessment performed",
+      "description": "Assessment is complete and documented. Findings strongly favor COPD exacerbation: diffuse expiratory wheezes and coarse rhonchi in all fields, NO basilar crackles, NO JVD, only chronic trace pedal edema (unchanged), 5-day URI with green sputum, stable weight, compliant Lasix, shark-fin capnography with mildly elevated EtCO2 (chronic baseline for advanced COPD). Crew correctly initiates the COPD treatment limb: DuoNeb (albuterol 5 mg + ipratropium 0.5 mg) nebulized with O2, oral steroid, IV access, continuous monitoring. The teaching point is that correct categorization enables correct treatment AND avoids the harms of inappropriate CHF treatment (NTG-induced hypotension).",
+      "triggerCondition": "Crew completed directed respiratory assessment — multi-field auscultation, JVD/edema check, medication and weight trend review — and correctly identified the picture as COPD exacerbation rather than acute CHF.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "RR 26, mild-moderate distress, neb mask in place delivering DuoNeb, prolonged expiratory phase still present",
+        "circulation": "Strong regular pulse; warm pink extremities",
+        "skin": {
+          "color": "pink",
+          "temperature": "warm",
+          "moisture": "slightly moist"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Symmetric, intact",
+        "otherFindings": [
+          "Bilateral wheezing audible on neb mask; air entry similar to baseline",
+          "Pursed-lip breathing easing slightly; patient tolerating mask well",
+          "Mild fine tremor of hands appearing (expected albuterol side effect)",
+          "Capnography: still shark-fin shape but slightly less pronounced; EtCO2 46",
+          "Patient calmer; nodding and following plan",
+          "IV established (18 gauge AC, saline lock); 12-lead acquired showing sinus tach, no ST changes, no ectopy"
+        ],
+        "patientSpeech": "This is what … the hospital usually … gives me."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 110,
+        "bpSys": 150,
+        "bpDia": 86,
+        "respRate": 26,
+        "spo2": 93,
+        "etco2": 46,
+        "temp": 37.4,
+        "tempF": 99.3,
+        "obstruction": 45,
+        "glucose": 118,
+        "trendTimeSeconds": 35,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "duoneb",
+          "shortAction": "Albuterol 5 mg + Ipratropium 0.5 mg nebulized (DuoNeb), O2-driven; albuterol may repeat unlimited frequency, ipratropium up to 3 doses",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress 4a — for suspected bronchospasm/COPD: albuterol 5 mg neb to all patients in distress with bronchospasm signs; ipratropium 0.5 mg up to 3 doses with albuterol.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Suspected bronchospasm, asthma, COPD: Inhaled Medications: While albuterol 2.5 mg nebulized is usually sufficient for mild wheezing without clinical distress, albuterol 5 mg nebulized (or 6 puffs metered dose inhaler) should be administered to all patients in respiratory distress with signs of bronchospasm (e.g., known asthmatics, quiet wheezers). Repeat at this dose with unlimited frequency for ongoing respiratory distress. Ipratropium 0.5 mg nebulized should be given up to 3 doses in conjunction with albuterol."
+        },
+        {
+          "id": "steroid-po",
+          "shortAction": "Dexamethasone 16 mg PO (68 kg × 0.6 mg/kg = 40.8 mg → cap at 16 mg max); single dose preferred",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress 4b — dexamethasone 0.6 mg/kg PO, max 16 mg; single-dose equivalence per Note 3 makes it preferred PO steroid. Patient is not critical enough to require IV.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Steroids should be administered in the prehospital setting. PO steroid options for patients not critical enough to require IV placement include: Dexamethasone (0.6 mg/kg, maximum dose of 16 mg) PO solution or IV solution given PO, or Prednisolone/prednisone (1 mg/kg, maximum dose 60 mg) PO. Notes/Educational Pearls: Single dose dexamethasone has been found equally effective as several days dosing of other steroids, so dexamethasone is preferred over other po steroids."
+        },
+        {
+          "id": "iv-access",
+          "shortAction": "Establish IV access (saline lock or KVO) in case IV mag or IV steroid needed",
+          "priority": "important",
+          "rationale": "MATC Respiratory Distress Treatment 3 — IV access should be placed when IV medication may be indicated.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "IV Access and Fluids – IV access should be placed when IV medication administration is indicated, or when there are clinical concerns of dehydration so that IV fluids can be administered."
+        },
+        {
+          "id": "position-of-comfort",
+          "shortAction": "Maintain position of comfort (upright); do not force supine; coach pursed-lip breathing",
+          "priority": "important",
+          "rationale": "MATC Airway Management 3d — position of comfort improves respiratory mechanics; pursed-lip breathing is a learned compensation for COPD.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Patient positioning can significantly impact respiratory mechanics. Patients with severe bronchospasm should be left in the position of comfort (perhaps tripod) whenever possible. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics. This can both improve the ability to ventilate and limit aspiration."
+        },
+        {
+          "id": "continuous-monitoring",
+          "shortAction": "Continuous SpO2, EtCO2, ECG monitoring during nebulizer (expect mild albuterol-induced tachycardia/tremor)",
+          "priority": "important",
+          "rationale": "MATC Respiratory Distress Monitoring 2a/2b — continuous SpO2/EtCO2 and cardiac monitoring as adjunct; albuterol-induced sinus tach is expected, not a reason to stop.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Pulse oximetry and EtCO2 should be routinely used as adjuncts to other forms of monitoring in patients with respiratory complaints. Continuous cardiac monitoring may be indicated in patients with respiratory distress associated with suspected acute or decompensated congestive heart failure (CHF) or dysrhythmia."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "responding-to-copd-treatment",
+          "if": "Reassessed after DuoNeb; improving",
+          "condition": "Crew reassesses after the first DuoNeb — repeats auscultation, RR, SpO2, EtCO2, work of breathing, speech. Findings: less wheeze, improved air entry, SpO2 up to 95%, RR down to 22, EtCO2 waveform less shark-fin, patient speaking in fuller phrases. Crew continues bronchodilator PRN, transports, and gives clean handoff.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["duoneb", "steroid-po"]
+        }
+      ]
+    },
+    {
+      "id": "responding-to-copd-treatment",
+      "name": "Responding to COPD treatment",
+      "description": "Post-DuoNeb reassessment is clear: wheezing is reduced, air entry improved bilaterally, RR 22, SpO2 95% on the nebulizer flow, EtCO2 waveform more normal in shape, patient speaking in fuller 7-8 word phrases. Mild albuterol-related fine tremor and modestly increased HR are expected and benign. Crew transports on continuous albuterol PRN, with dexamethasone given, IV established, and a complete documented timeline. Bedside handoff includes baseline lung sounds, treatment response, and the assessment-based reasoning that ruled out acute CHF.",
+      "triggerCondition": "Crew completed a reassessment after DuoNeb and documented improvement (decreased wheeze, improved SpO2, decreased RR, more normal capnography waveform, better speech) — meeting the protocol's expectation of reassessment after each intervention.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "RR 22, minimal accessory muscle use, expiratory phase less prolonged, mild end-expiratory wheeze only, residual coarse rhonchi at bases (chronic baseline)",
+        "circulation": "Strong regular pulse; warm pink extremities",
+        "skin": {
+          "color": "pink",
+          "temperature": "warm",
+          "moisture": "dry"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Intact",
+        "otherFindings": [
+          "Speaking in 7-8 word phrases with normal pauses",
+          "Mild fine tremor of hands (expected albuterol side effect)",
+          "Capnography waveform near-normal shape; EtCO2 44 (still mildly above population norm, consistent with her chronic COPD baseline)",
+          "Reports symptoms are 'a lot easier — I can finish my sentences now'",
+          "Dexamethasone PO has been given; IV is established; 12-lead reviewed and unremarkable"
+        ],
+        "patientSpeech": "That breathing treatment really helped. I can talk again. Still a little tight, but much better."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 108,
+        "bpSys": 144,
+        "bpDia": 82,
+        "respRate": 22,
+        "spo2": 95,
+        "etco2": 44,
+        "temp": 37.4,
+        "tempF": 99.3,
+        "obstruction": 25,
+        "glucose": 118,
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "reassess-after-treatment",
+          "shortAction": "Reassess lung sounds, RR, SpO2, EtCO2, speech, work of breathing AFTER DuoNeb; compare to baseline",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Documentation + Performance Measures — reassessment after each intervention is the protocol expectation; documents response and drives further decisions.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Document key aspects of the exam at baseline and after each intervention: Respiratory rate; Oxygen saturation; EtCO2/waveform shape; Use of accessory muscles; Breath sounds and quality; Mental status; Response to interventions. Performance Measures: Time to improved SPO2 and/or decreased respiratory rate. Normalizing change in vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) temperature, O2 saturation, and capnography values with treatment."
+        },
+        {
+          "id": "continue-neb-prn",
+          "shortAction": "Continue/repeat albuterol 5 mg nebulized PRN en route; ipratropium up to 3 total doses if ongoing wheeze",
+          "priority": "important",
+          "rationale": "MATC Respiratory Distress 4a — albuterol may be repeated with unlimited frequency for ongoing distress.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Repeat at this dose with unlimited frequency for ongoing respiratory distress. Ipratropium 0.5 mg nebulized should be given up to 3 doses in conjunction with albuterol."
+        },
+        {
+          "id": "transport-handoff",
+          "shortAction": "Transport to ED; bedside handoff with timeline, before/after exam, and assessment-based reasoning ruling out CHF",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Performance Measures — document time to bronchodilator, response to treatment, and clinical reasoning supports continuity.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Performance Measures: Time to bronchodilator administration in patients with wheezing. Percentage of asthma/COPD patients receiving steroids and bronchodilators. Time to improved SPO2 and/or decreased respiratory rate. Normalizing change in vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) temperature, O2 saturation, and capnography values with treatment."
+        }
+      ]
+    },
+    {
+      "id": "anchored-on-chf",
+      "name": "Anchored on CHF; NTG + CPAP given",
+      "description": "Crew anchored on the 'history of CHF' on her med list and the elderly-female-with-SOB picture. Without first auscultating in multiple fields, checking JVD/edema, or trending the onset, they assumed acute pulmonary edema and started: CPAP at 10 cmH2O AND sublingual nitroglycerin 0.4 mg. Bronchodilators and steroids were not given. Two problems are now apparent: (1) the treatment doesn't help, because the underlying physiology is bronchospasm with mucus plugging from a viral URI, not fluid overload; (2) the nitroglycerin drops her BP — she was running 148/86 with COPD-related sympathetic tone, and post-NTG she is 96/58 with new lightheadedness. CPAP is tolerable for her but expiratory air-trapping risks worsening her dynamic hyperinflation. The patient is now actively deteriorating from inappropriate therapy. The teaching point: anchoring on chart history without doing the physical exam can not only fail to treat the real problem — it can introduce iatrogenic harm.",
+      "triggerCondition": "Crew skipped multi-field auscultation and JVD/edema assessment, anchored on the chart history of CHF, and initiated CPAP + sublingual nitroglycerin without confirming a fluid-overload picture. Bronchodilators and steroids were not yet given.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert but anxious",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent, CPAP mask in place at 10 cmH2O",
+        "breathing": "RR 30, ongoing accessory muscle use, still wheezing diffusely under CPAP — work of breathing has NOT improved; expiratory phase actually longer (air trapping under PEEP)",
+        "circulation": "Pulse strong but now thready at radial; BP dropped after NTG",
+        "skin": {
+          "color": "pale",
+          "temperature": "cool",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Intact but reports feeling lightheaded",
+        "otherFindings": [
+          "BP down from 148/86 to 96/58 after sublingual NTG — symptomatic lightheadedness",
+          "CPAP not improving wheezes — diffuse expiratory wheezes still audible under mask",
+          "Patient anxious, reaching to remove CPAP mask",
+          "Bronchodilators have NOT been given — significant treatment delay",
+          "Capnography: shark-fin pattern persists; EtCO2 climbing toward 52",
+          "Daughter is asking 'why is her blood pressure dropping?'"
+        ],
+        "patientSpeech": "I feel … woozy now … the mask … is making it … harder."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 118,
+        "bpSys": 96,
+        "bpDia": 58,
+        "respRate": 30,
+        "spo2": 89,
+        "etco2": 52,
+        "temp": 37.4,
+        "tempF": 99.3,
+        "obstruction": 55,
+        "glucose": 118,
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-miscategorization",
+          "shortAction": "STOP and reassess: recognize this is COPD bronchospasm, not pulmonary edema (no JVD/rales, post-NTG hypotension)",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Pertinent Assessment 4 — fluid overload requires JVD/rales/edema; their absence with wheezing + COPD history points to bronchospasm. NTG-induced hypotension is a strong feedback signal that the working diagnosis is wrong.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Pertinent Assessment Findings: Etiology of respiratory distress: Bronchospastic etiology (e.g., asthma, COPD) is suggested by: Wheezing on auscultation; 'Shark fin' waveform capnograph or prolonged expiratory phase; History of asthma/COPD. Fluid overload etiology (e.g., CHF, pulmonary edema) is suggested by: Jugular venous distention; Rales on auscultation; Peripheral edema; History of CHF, diuretic therapy, dialysis noncompliance, hypertension."
+        },
+        {
+          "id": "fluid-bolus-low-bp",
+          "shortAction": "IV fluid bolus 250–500 mL for NTG-induced hypotension (SBP < 100)",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress 5b — for SBP < 100 mmHg in respiratory distress with pulmonary edema, fluid bolus 250–500 mL; here the protocol logic also applies because NTG was inappropriately given and dropped BP.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "SBP less than 100 mmHg: IV fluid bolus 250–500 mL; Consider vasopressor: Norepinephrine 0.02–2 mcg/kg/min."
+        },
+        {
+          "id": "start-duoneb-now",
+          "shortAction": "Albuterol 5 mg + Ipratropium 0.5 mg nebulized (DuoNeb) NOW; can be delivered in-line with CPAP",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress 4a + Treatment 1d — bronchodilators are the correct treatment for COPD exacerbation and can be administered in-line with NIV.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Airway: If indicated, bronchodilators should be administered in line with NIV. Suspected bronchospasm, asthma, COPD: Inhaled Medications: Albuterol 5 mg nebulized (or 6 puffs metered dose inhaler) should be administered to all patients in respiratory distress with signs of bronchospasm (e.g., known asthmatics, quiet wheezers). Repeat at this dose with unlimited frequency for ongoing respiratory distress. Ipratropium 0.5 mg nebulized should be given up to 3 doses in conjunction with albuterol."
+        },
+        {
+          "id": "give-steroid",
+          "shortAction": "Dexamethasone 16 mg PO (68 kg × 0.6 mg/kg = 40.8 mg → cap at 16 mg max) — or IV equivalent if patient critical",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress 4b — steroids should be administered in the prehospital setting; dose was missed initially and should be given now.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Steroids should be administered in the prehospital setting. PO steroid options for patients not critical enough to require IV placement include: Dexamethasone (0.6 mg/kg, maximum dose of 16 mg) PO solution or IV solution given PO. IV steroid options for critically ill patients include: Dexamethasone (0.6 mg/kg, maximum dose of 16 mg) IV/IM, or Methylprednisolone (2 mg/kg, maximum dose 125 mg) IV/IM."
+        },
+        {
+          "id": "decide-cpap",
+          "shortAction": "Reassess CPAP utility — consider continuing only if tolerated and improving; do NOT discontinue abruptly",
+          "priority": "important",
+          "rationale": "MATC Airway Management Safety #9-10 — once initiated do not discontinue CPAP abruptly (mask-seal break risks atelectasis); but if patient deteriorates on NIV, remove and escalate. Bronchodilators can run in-line.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Patient Safety Considerations: Once initiated and patient is tolerating mask, DO NOT discontinue CPAP/BiPAP until patient is on the emergency department stretcher and hospital CPAP/BiPAP is immediately available for patient to be switched over, or physician is at bedside and requesting CPAP/BiPAP be discontinued. Breaking the mask seal causes a significant decrease in airway pressures and may lead to abrupt decompensation due to atelectasis and alveolar collapse. If patient deteriorates on CPAP/BiPAP (e.g., worsened mental status, increasing EtCO2, vomiting), remove CPAP/BiPAP and escalate airway management options as above."
+        }
+      ]
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

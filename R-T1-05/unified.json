@@ -1,0 +1,515 @@
+{
+  "meta": {
+    "scenarioId": "R-T1-05",
+    "id": "R-T1-05",
+    "name": "Pneumonia Presentation — Adult with Early Sepsis",
+    "version": 1,
+    "difficulty": "beginner",
+    "category": "Respiratory",
+    "protocols": [
+      "resp-respiratory-distress",
+      "medical-shock",
+      "resp-airway-management"
+    ],
+    "totalTimeSeconds": 1200,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "respiratory",
+      "pneumonia",
+      "sepsis",
+      "early-sepsis",
+      "fluid-resuscitation",
+      "oxygen-titration",
+      "fever",
+      "qSOFA",
+      "geriatric",
+      "tier-1",
+      "beginner",
+      "assessment"
+    ]
+  },
+  "patient": {
+    "name": "Eleanor Voss",
+    "age": 68,
+    "ageUnit": "years",
+    "sex": "female",
+    "weight": 70,
+    "weightLbs": 154,
+    "height": 165,
+    "chiefComplaint": "Three days of productive cough, fever, and progressive weakness; feeling 'really sick' since this morning.",
+    "history": {
+      "hpi": "68-year-old female with a 3-day history of progressive illness that started as fatigue and a dry cough she initially attributed to seasonal allergies. The cough became productive over the second day, with thick yellow-green sputum, and was accompanied by chills, body aches, and a low-grade fever measured at home (101.2°F yesterday evening). Overnight she became more short of breath, with a sharp right-sided chest discomfort that worsens on deep inspiration and coughing. This morning her daughter found her weak, flushed, and a bit confused about what day it was — though she rapidly oriented after a few minutes of conversation. She denies hemoptysis, leg swelling, recent travel, sick contacts at home, vomiting, or diarrhea. She had a flu shot in October. No prior pneumonias. No prior intubation or ICU stay. She normally walks her dog 3 blocks daily without dyspnea.",
+      "pastMedical": [
+        "Hypertension",
+        "Type 2 diabetes mellitus (well-controlled, A1c ~6.9)",
+        "Mild hyperlipidemia",
+        "Osteoarthritis (knees)"
+      ],
+      "medications": [
+        "Lisinopril 20 mg PO daily",
+        "Metformin 1000 mg PO BID",
+        "Atorvastatin 20 mg PO daily",
+        "Acetaminophen 500 mg PRN for joint pain (took 1 g overnight for fever)"
+      ],
+      "allergies": [
+        "Sulfa drugs — rash"
+      ],
+      "lastOralIntake": "Few sips of water and half a slice of toast about 4 hours ago; no real intake in 24 hours due to feeling 'too tired to eat'",
+      "events": "Three days of cough and fatigue → productive cough with yellow-green sputum on day 2 → fevers, chills, body aches → night of dyspnea and right-sided pleuritic discomfort → morning fatigue and brief disorientation prompted daughter to call 911."
+    }
+  },
+  "scene": {
+    "dispatch": "Dispatch: 68-year-old female, generally weak, fever and cough for several days, daughter on scene requests EMS. Conscious and talking. Single-family residence.",
+    "location": "Single-family ranch home. Patient in a recliner in the living room with a small blanket and a half-finished cup of tea on the side table. Lighting adequate; clear path to cot and door.",
+    "time": "Monday, 09:20, cool overcast morning",
+    "safety": "Scene safe. Small dog confined in another room by daughter. No environmental hazards.",
+    "bystanders": "Adult daughter present, calm and helpful. Reports mom has had a worsening cough for three days, fever started yesterday, was 'a little fuzzy' on names this morning which is what made her call.",
+    "visualCues": [
+      "Older adult female reclined, flushed cheeks, looks tired and ill",
+      "Box of tissues on side table; visible yellow-green sputum on used tissues",
+      "Thermometer on the table reads 102.4°F",
+      "Empty acetaminophen blister pack and water glass within reach",
+      "Patient coughs intermittently during exam — wet, productive sounding",
+      "Skin appears warm and slightly flushed; mild diaphoresis on forehead",
+      "Patient speaking in mostly full sentences but pauses to take breaths every several words"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a 68-year-old female with three days of productive cough, fever, weakness, and now mild dyspnea. She is alert and oriented x3 after a brief warm-up, speaking in mostly full sentences with occasional breath-catching pauses. She is visibly flushed, mildly diaphoretic, with a wet productive cough during the exam. Vital signs reveal a constellation that should prompt sepsis screening: temp 102.4°F, HR 112, RR 24, BP 102/64 (borderline), SpO2 91% room air. Right basilar crackles are present on focused auscultation. The teaching window of this Tier 1 scenario is: do a complete assessment, recognize this is not 'just pneumonia' — it is pneumonia plus early sepsis criteria (fever + tachycardia + tachypnea + suspected infection source) — and treat the whole patient (oxygen titration, IV access, fluid bolus, sepsis alert) rather than only the cough.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent — speaking, no stridor, no drooling, no foreign material",
+        "breathing": "RR 24, mild tachypnea, mostly full sentences with occasional breath-pauses, no obvious accessory muscle use at rest, productive wet cough intermittently",
+        "circulation": "Strong but rapid regular radial pulse; warm flushed extremities; cap refill ~2 sec",
+        "skin": {
+          "color": "flushed",
+          "temperature": "hot",
+          "moisture": "mildly diaphoretic"
+        },
+        "pupils": "Equal at 3 mm, briskly reactive",
+        "motorFunction": "Symmetric, intact, follows commands",
+        "otherFindings": [
+          "Focused auscultation: bilateral upper lobes clear; LEFT lower lobe clear; RIGHT lower lobe focal coarse crackles (rales) on inspiration with mild bronchial breath sounds",
+          "Mild egophony over right lower lobe area (when assessed)",
+          "Productive cough with thick yellow-green sputum (visible on used tissues)",
+          "Patient reports right-sided pleuritic chest discomfort worse with deep breath and cough",
+          "Capnography (if applied): normal waveform shape, EtCO2 ~32 mmHg (low-normal — consistent with tachypnea / early sepsis)",
+          "Glucose 138 mg/dL (slightly elevated, consistent with stress + DM)",
+          "No JVD, no peripheral edema, no rash, no lip/tongue swelling — argues against CHF and anaphylaxis",
+          "Daughter notes patient was briefly 'fuzzy on names' this morning — now oriented after warming up and talking"
+        ],
+        "patientSpeech": "I've just been so tired … this cough … doesn't quit. My chest is sore on the right when I breathe in deep."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 112,
+        "bpSys": 102,
+        "bpDia": 64,
+        "respRate": 24,
+        "spo2": 91,
+        "etco2": 32,
+        "temp": 39.1,
+        "tempF": 102.4,
+        "obstruction": 0,
+        "glucose": 138,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "primary-survey",
+          "shortAction": "Primary survey (ABC); recognize respiratory distress with suspected pulmonary infection",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Care Goals + Inclusion Criteria — wheezing/bronchospasm or productive cough from suspected pulmonary infection (e.g., pneumonia) falls within respiratory distress protocol; assessment first, treatment to follow.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Patient Care Goals: Assure adequate oxygenation and ventilation. Recognize impending respiratory failure. Promptly identify and intervene for patients who require escalation of therapy. Inclusion Criteria: Patients aged 2 and older with respiratory distress due to disease processes including: Wheezing/bronchospasm from suspected pulmonary infection (e.g., pneumonia, acute bronchitis)."
+        },
+        {
+          "id": "sample-history",
+          "shortAction": "Targeted history: onset, sputum, fever, sick contacts, prior steroids, hospitalizations",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Assessment 1 — directed history (onset, concurrent fever/cough, treatments prior to EMS, hospitalizations) drives diagnostic and risk-stratification decisions.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "History: Onset of symptoms. Concurrent symptoms (e.g., fever, cough, rhinorrhea, tongue/lip swelling, rash, labored breathing, foreign body aspiration). Sick contacts. Treatments prior to EMS: Oxygen, inhaler, nebulizer, other treatments, chronic or recent steroids. Hospitalizations: Number of emergency department visits in the past year, number of hospital admissions in the past year, number of ICU admissions (ever), previously intubated (ever)."
+        },
+        {
+          "id": "full-vitals-temp",
+          "shortAction": "Full vital signs including TEMPERATURE and SpO2; note 102.4°F, HR 112, RR 24, BP 102/64, SpO2 91%",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Assessment 2a — full vitals + temperature + SpO2 + capnography are part of the standard exam for respiratory complaints; temperature is what surfaces the infection picture.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Exam: Full set of vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment), temperature, and O2 saturation. Consider temperature and waveform capnography."
+        },
+        {
+          "id": "auscultate-lung-fields",
+          "shortAction": "Auscultate all lung fields (anterior + posterior, upper/middle/lower); identify focal RLL crackles",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Assessment 2b/2c — air entry and breath sounds in multiple fields distinguish pneumonia (focal crackles) from bronchospasm (diffuse wheeze) or pulmonary edema (bilateral rales) and direct therapy.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Exam: Air entry (normal vs. diminished, prolonged expiratory phase). Breath sounds (wheezes, crackles, rales, rhonchi, diminished, clear)."
+        },
+        {
+          "id": "recognize-sepsis-criteria",
+          "shortAction": "Recognize early sepsis: suspected infection + ≥2 of fever, HR>100, RR>20, AMS, hypotension",
+          "priority": "critical",
+          "rationale": "MATC Shock Inclusion Criteria + Key Considerations — recognize signs of poor perfusion from a medical cause (RR>20, tachycardia, borderline BP, transient AMS, fever as infection source); distributive (septic) shock is on the differential and tachycardia is the first sign of compensated shock in adults.",
+          "protocolReference": "MATC: Shock",
+          "protocolExcerpt": "Inclusion Criteria: Signs of poor perfusion (due to a medical cause) such as one or more of the following: Altered mental status. Respiratory rate greater than 20 breaths per minute in adults or elevated in children. Hypotension for age (lowest acceptable systolic blood pressure in mmHg): Greater than 10 years old: 90. Tachycardia or bradycardia for age, out of proportion to temperature. Potential etiologies of shock: Distributive (sepsis, anaphylaxis, neurogenic, overdose, endocrine). Key Considerations: In most adults, tachycardia is the first sign of compensated shock, and may persist for hours."
+        },
+        {
+          "id": "monitor-spo2-etco2",
+          "shortAction": "Apply continuous SpO2 and waveform capnography; cardiac monitor; document baseline",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Monitoring 2a + MATC Shock Treatment 4 — SpO2 and EtCO2 are routine; EtCO2 <25 may indicate poor perfusion; cardiac monitor for shock screening.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Monitoring: Pulse oximetry and EtCO2 should be routinely used as adjuncts to other forms of monitoring in patients with respiratory complaints. Continuous cardiac monitoring may be indicated in patients with respiratory distress associated with suspected acute or decompensated congestive heart failure (CHF) or dysrhythmia."
+        },
+        {
+          "id": "check-glucose",
+          "shortAction": "Check blood glucose (result 138 mg/dL — no correction needed)",
+          "priority": "important",
+          "rationale": "MATC Shock Treatment 5 — check blood sugar in any shock workup and correct if <60.",
+          "protocolReference": "MATC: Shock",
+          "protocolExcerpt": "Check blood sugar, and correct if less than 60 mg/dL."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "full-assessment-completed",
+          "if": "Full respiratory + sepsis assessment completed",
+          "condition": "Crew completes full assessment: targeted history, full vitals including temperature, multi-field auscultation that identifies focal right lower lobe crackles, recognition of the sepsis criteria pattern (fever + tachycardia + tachypnea + suspected pulmonary infection source ± transient AMS ± borderline BP), and applies continuous SpO2/EtCO2 monitoring. They now have the data to treat the whole patient, not just the cough.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["full-vitals-temp", "auscultate-lung-fields", "recognize-sepsis-criteria"]
+        },
+        {
+          "targetPhaseId": "pneumonia-only-mindset",
+          "if": "Crew narrows on pneumonia; skips sepsis screen",
+          "condition": "Crew anchors on 'this is pneumonia' from the productive cough and fever, applies high-flow O2 to push SpO2 to 100%, does not check temperature or does not interpret it in context, does not screen for sepsis criteria, does not establish IV access or give a fluid bolus. They move toward routine transport without recognizing that this is pneumonia PLUS early sepsis, and the patient's borderline BP is going to drop en route.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["recognize-sepsis-criteria", "full-vitals-temp"]
+        }
+      ]
+    },
+    {
+      "id": "full-assessment-completed",
+      "name": "Full assessment performed",
+      "description": "Crew has completed a full assessment and recognized both the pneumonia picture (focal RLL crackles, productive yellow-green sputum, fever, pleuritic chest pain) AND the early sepsis pattern (fever + HR 112 + RR 24 + suspected infection source + borderline BP 102/64 + brief AMS earlier). They now begin protocol-driven treatment: titrate oxygen to 94-98% (not 100%), establish IV access, start a 500 mL NS fluid bolus for the borderline BP / early septic shock, place the patient supine-tilted-comfortable, and prepare for a sepsis alert to the receiving ED. Capnography continues to read low-normal EtCO2 consistent with tachypnea/early perfusion stress.",
+      "triggerCondition": "Crew completed targeted history, full vitals with temperature, multi-field auscultation identifying focal RLL crackles, and recognized the early sepsis pattern (fever + tachycardia + tachypnea + suspected pulmonary infection source). They now have the assessment data needed to drive protocol-grounded treatment of the whole patient.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "RR 22 on titrated O2 via nasal cannula 3 L/min, mostly full sentences, productive cough less frequent",
+        "circulation": "Strong rapid regular pulse; IV established in left AC (18 ga); NS bolus running wide-open",
+        "skin": {
+          "color": "still flushed but slightly less so",
+          "temperature": "warm",
+          "moisture": "diaphoresis improving"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Intact, oriented x3",
+        "otherFindings": [
+          "Focal RLL crackles unchanged on reassessment (expected — pneumonia does not clear with EMS treatment)",
+          "Capnography waveform normal shape; EtCO2 32-34 mmHg",
+          "Patient tolerating O2 by nasal cannula; no need for NRB given SpO2 response",
+          "Daughter informed of plan and which ED",
+          "Patient continues to deny chest pressure or radiation; pleuritic right-sided ache only on deep inspiration"
+        ],
+        "patientSpeech": "The oxygen helps a little. Still feel pretty rotten. The fluid feels cold going in."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 108,
+        "bpSys": 108,
+        "bpDia": 66,
+        "respRate": 22,
+        "spo2": 95,
+        "etco2": 33,
+        "temp": 39.1,
+        "tempF": 102.4,
+        "obstruction": 0,
+        "glucose": 138,
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "titrated-oxygen",
+          "shortAction": "Supplemental O2 by nasal cannula titrated to SpO2 94-98% (NOT 100%); escalate as needed",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Treatment 1a + Airway Management Key Considerations 1 — target SpO2 94-98%; oxygen is a drug with an appropriate dose range and harms from both too much and too little; over-oxygenation in elderly is not benign.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Airway: Give supplemental oxygen for dyspnea to a target of 94–98% saturation. Escalate from a nasal cannula as needed to reach this goal."
+        },
+        {
+          "id": "iv-access",
+          "shortAction": "Establish IV access (18 ga preferred); if 2 failed attempts/<90 sec, place IO",
+          "priority": "critical",
+          "rationale": "MATC Shock Treatment 8 — establish IV access; if unable within 2 attempts or 90 seconds, place an IO.",
+          "protocolReference": "MATC: Shock",
+          "protocolExcerpt": "Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle."
+        },
+        {
+          "id": "fluid-bolus",
+          "shortAction": "NS fluid bolus 500 mL IV pressure-infused <15 min (70 kg × 30 mL/kg = 2100 mL goal; reassess after each 500 mL)",
+          "priority": "critical",
+          "rationale": "MATC Shock Treatment 9a — adult fluid goal up to 30 mL/kg isotonic fluid by giving rapid 500 mL boluses pressure-infused <15 min each, reassessing for MAP 65 and watching for pulmonary edema; early aggressive IV fluid is essential in suspected septic shock.",
+          "protocolReference": "MATC: Shock",
+          "protocolExcerpt": "IV fluid volume goal attained by giving boluses that are pressure infused over less than 15 minutes each based on patient's condition and clinical impression. Fluid volume goal to achieve a mean arterial pressure (adults) or other targets (pediatrics). Adult: Physiologic target: MAP goal 65 mmHg. Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops. Key Considerations: Early, aggressive IV fluid administration is essential in the treatment of suspected septic shock."
+        },
+        {
+          "id": "position-of-comfort",
+          "shortAction": "Position patient semi-upright (Fowler's/position of comfort) — supports respiratory mechanics",
+          "priority": "important",
+          "rationale": "MATC Airway Management 3d — patient positioning improves respiratory mechanics; position of comfort with head elevation supports oxygenation in respiratory distress.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Patient positioning can significantly impact respiratory mechanics. Patients with severe bronchospasm should be left in the position of comfort (perhaps tripod) whenever possible. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics. This can both improve the ability to ventilate and limit aspiration."
+        },
+        {
+          "id": "advance-notify-sepsis-alert",
+          "shortAction": "Advance notification to receiving ED — call sepsis alert with vitals and infection source",
+          "priority": "critical",
+          "rationale": "MATC Shock Treatment 13 + Performance Measures — advance notification to the hospital is required for suspected shock; calling a sepsis alert mobilizes ED resources (cultures, antibiotics, lactate, rapid triage) before arrival.",
+          "protocolReference": "MATC: Shock",
+          "protocolExcerpt": "Provide advanced notification to the hospital. Performance Measures: Percentage of patients with suspected shock for whom advanced notification to the hospital was provided."
+        },
+        {
+          "id": "antipyretic-acetaminophen",
+          "shortAction": "Acetaminophen 1000 mg PO/PR for fever (70 kg × 15 mg/kg = 1050 mg → cap at 1000 mg max)",
+          "priority": "supplemental",
+          "rationale": "MATC Shock Treatment 15a — antipyretics for fever; acetaminophen 15 mg/kg max 1000 mg. (Patient already took 500 mg overnight — verify dose timing before redosing.)",
+          "protocolReference": "MATC: Shock",
+          "protocolExcerpt": "Antipyretics for fever – nonsteroidal anti-inflammatory agents are contraindicated in infants less than 6 months of age. Acetaminophen (15 mg/kg; maximum dose of 1000 mg). Ibuprofen (10 mg/kg; maximum dose of 800 mg)."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "reassessed-improving",
+          "if": "Reassessed after fluid bolus + O2 titration",
+          "condition": "Crew reassesses after the first 500 mL NS bolus and oxygen titration: rechecks BP, HR, RR, SpO2, mental status, lung sounds. Findings: HR drifting down toward 100, BP improving toward 112/68, RR 20, SpO2 95% on NC, EtCO2 normal waveform, patient fully oriented and reporting feeling marginally better. This is the right answer — protocol-grounded treatment of pneumonia + early sepsis with documented reassessment.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["fluid-bolus", "titrated-oxygen"]
+        }
+      ]
+    },
+    {
+      "id": "reassessed-improving",
+      "name": "Reassessed; trending toward goal",
+      "description": "Post-bolus reassessment is documented and the patient is trending in the right direction. HR is drifting down (108 → 102), BP is up slightly into safer territory (112/68, MAP ~83), RR is 20, SpO2 is 95% on 3 L NC, EtCO2 waveform is normal at 34, and the patient is fully alert and oriented x3 with no further confusion. Focal RLL crackles persist (the pneumonia is still there — fluid and O2 don't fix pneumonia, antibiotics do). Crew transports semi-upright with continued reassessment q5min, has called a sepsis alert ahead, and gives a clean bedside handoff with full timeline, vitals trend, treatments, and infection source.",
+      "triggerCondition": "Crew reassessed full vitals, mental status, and lung sounds after the initial 500 mL NS bolus and oxygen titration, documenting the improving trend (HR down, BP up, SpO2 in target range, mentation clear). This meets the protocol's expectation of reassessment after each intervention and q15min documentation in shock.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "RR 20 on 3 L NC, comfortable, full sentences, productive cough less frequent",
+        "circulation": "Strong regular pulse; NS infusing at maintenance rate after first 500 mL completed; second 500 mL bolus prepared if BP trends down",
+        "skin": {
+          "color": "still flushed from fever but less so",
+          "temperature": "warm",
+          "moisture": "drying"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Intact, fully oriented x3",
+        "otherFindings": [
+          "Focal RLL crackles persist (expected — pneumonia)",
+          "EtCO2 waveform normal shape, value 34 mmHg",
+          "Patient reports feeling 'a bit better, still very tired'",
+          "Daughter following in private vehicle to ED",
+          "Documented timeline: dispatch → on-scene assessment → IV → bolus start → titrated O2 → reassessment → sepsis alert called"
+        ],
+        "patientSpeech": "I feel a little less out-of-breath now. Thank you. I'm still really tired."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 102,
+        "bpSys": 112,
+        "bpDia": 68,
+        "respRate": 20,
+        "spo2": 95,
+        "etco2": 34,
+        "temp": 38.8,
+        "tempF": 101.8,
+        "obstruction": 0,
+        "glucose": 138,
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "reassess-after-treatment",
+          "shortAction": "Reassess full vitals, mental status, lung sounds after bolus and O2; document trend",
+          "priority": "critical",
+          "rationale": "MATC Shock Documentation + MATC Respiratory Distress Key Documentation Elements — reassessment after each intervention with full vital signs q15min or more frequently; document response to interventions.",
+          "protocolReference": "MATC: Shock",
+          "protocolExcerpt": "Key Documentation Elements: Medications administered. Full vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) with reassessment q 15 minutes or more frequently as appropriate. Amount of fluids given."
+        },
+        {
+          "id": "continue-monitoring-en-route",
+          "shortAction": "Continuous SpO2, EtCO2, cardiac monitor en route; serial BP q5min; watch for re-deterioration",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Monitoring 2a/2b + MATC Shock Treatment 4 — continuous SpO2, EtCO2, and cardiac monitoring; in shock, vital signs reassessed q15min or more frequently.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Monitoring: Pulse oximetry and EtCO2 should be routinely used as adjuncts to other forms of monitoring in patients with respiratory complaints. Continuous cardiac monitoring may be indicated in patients with respiratory distress associated with suspected acute or decompensated congestive heart failure (CHF) or dysrhythmia."
+        },
+        {
+          "id": "additional-bolus-if-needed",
+          "shortAction": "Repeat 500 mL NS bolus if SBP <100 or MAP <65 (total goal up to 30 mL/kg = ~2100 mL)",
+          "priority": "important",
+          "rationale": "MATC Shock Treatment 9a — fluid goal up to 30 mL/kg by repeated rapid boluses unless MAP 65 achieved or pulmonary edema develops; reassess after each.",
+          "protocolReference": "MATC: Shock",
+          "protocolExcerpt": "Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops."
+        },
+        {
+          "id": "transport-handoff",
+          "shortAction": "Transport to ED with sepsis alert; bedside handoff with timeline, vitals trend, treatments, source",
+          "priority": "critical",
+          "rationale": "MATC Shock Treatment 13 + Performance Measures — advance notification to hospital; clean bedside handoff supports continuity of care and time-sensitive sepsis bundle.",
+          "protocolReference": "MATC: Shock",
+          "protocolExcerpt": "Provide advanced notification to the hospital. Performance Measures: Percentage of patients with suspected shock for whom advanced notification to the hospital was provided. Mean time from abnormal vitals to initiation of a fluid bolus."
+        }
+      ]
+    },
+    {
+      "id": "pneumonia-only-mindset",
+      "name": "Pneumonia-only; sepsis missed",
+      "description": "Crew anchored on 'pneumonia' from the productive cough, fever, and crackles, applied a non-rebreather at 15 L/min to push the SpO2 to 100%, did not check or did not act on the temperature/HR/RR/BP pattern as sepsis criteria, did not establish IV access, and did not give a fluid bolus. They are transporting routinely without a sepsis alert. En route, the borderline BP has dropped (now 86/52), the patient is more fatigued and intermittently confused, and SpO2 reads 99% on the NRB — masking the perfusion problem. The teaching point: the diagnosis is pneumonia AND early sepsis. Treating only the cough/oxygenation while ignoring the perfusion picture lets compensated shock decompensate.",
+      "triggerCondition": "Crew narrowed on pneumonia from the productive cough and crackles, applied high-flow oxygen targeting 100% SpO2, did not perform a sepsis screen, did not establish IV access, and did not give a fluid bolus. Patient's borderline BP has now dropped and AMS is recurring — uncompensated shock is emerging because the perfusion problem was unrecognized and untreated.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": {
+          "eye": 3,
+          "verbal": 4,
+          "motor": 6
+        },
+        "airway": "Patent on NRB",
+        "breathing": "RR 26 on NRB 15 L/min, slightly more labored than initial, productive cough less frequent (more fatigue than improvement)",
+        "circulation": "Rapid weak peripheral pulses; cap refill ~3 sec; no IV access established",
+        "skin": {
+          "color": "flushed centrally, peripherally cool and mottled — distributive shock pattern emerging",
+          "temperature": "warm trunk, cool extremities",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Symmetric but more sluggish; opens eyes to voice, confused about location and time",
+        "otherFindings": [
+          "No IV access; no fluid given",
+          "NRB at 15 L/min — SpO2 reads 99% (masks the perfusion picture; the problem is not oxygenation, it's perfusion)",
+          "Capnography (if continued): EtCO2 now 26 mmHg — low; tachypnea + early hypoperfusion signature",
+          "Daughter (calling from a private vehicle) reports patient was 'clearer at home' — confirms AMS is a delta",
+          "Crew has not called a sepsis alert"
+        ],
+        "patientSpeech": "Where … are we? I'm cold."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 124,
+        "bpSys": 86,
+        "bpDia": 52,
+        "respRate": 26,
+        "spo2": 99,
+        "etco2": 26,
+        "temp": 39.2,
+        "tempF": 102.6,
+        "obstruction": 0,
+        "glucose": 138,
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recover-recognize-shock",
+          "shortAction": "Recognize uncompensated shock: SBP 86, HR 124, RR 26, EtCO2 26, new AMS — distributive/septic",
+          "priority": "critical",
+          "rationale": "MATC Shock Inclusion Criteria + Key Considerations — altered mental status, RR >20, hypotension <90 SBP, tachycardia, low EtCO2 (<25 sign of poor perfusion) are uncompensated shock; hypotension is a late and ominous sign and progression to cardiopulmonary failure can occur within minutes.",
+          "protocolReference": "MATC: Shock",
+          "protocolExcerpt": "Inclusion Criteria: Altered mental status. Respiratory rate greater than 20 breaths per minute in adults. Hypotension for age: Greater than 10 years old: 90. Tachycardia or bradycardia for age. Treatment and Interventions: Pulse oximetry and EtCO2 (reading of less than 25 mmHg may be sign of poor perfusion). Key Considerations: Hypotension indicates uncompensated shock, which may progress to cardiopulmonary failure within minutes."
+        },
+        {
+          "id": "recover-iv-fluids",
+          "shortAction": "Establish IV/IO now; pressure-infuse 500 mL NS bolus (70 kg × 30 mL/kg = 2100 mL goal)",
+          "priority": "critical",
+          "rationale": "MATC Shock Treatment 8 + 9a — IV access (or IO if 2 attempts or 90 sec); fluid goal up to 30 mL/kg by 500 mL rapid boluses pressure-infused, reassessing for MAP 65 and pulmonary edema.",
+          "protocolReference": "MATC: Shock",
+          "protocolExcerpt": "Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle. IV fluid volume goal attained by giving boluses that are pressure infused over less than 15 minutes each based on patient's condition and clinical impression. Adult: Physiologic target: MAP goal 65 mmHg. Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops."
+        },
+        {
+          "id": "recover-titrate-o2",
+          "shortAction": "Titrate O2 down to nasal cannula 2-4 L; target SpO2 94-98%, NOT 100%",
+          "priority": "important",
+          "rationale": "MATC Respiratory Distress Treatment 1a + MATC Airway Management Key Considerations 1 — target SpO2 94-98%; oxygen is a drug with harms from too much; over-oxygenation in elderly with possible chronic lung disease can worsen CO2 retention and masks the perfusion picture.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Airway: Give supplemental oxygen for dyspnea to a target of 94–98% saturation. Escalate from a nasal cannula as needed to reach this goal."
+        },
+        {
+          "id": "recover-sepsis-alert",
+          "shortAction": "Call sepsis alert NOW; advance notification with vitals trend, lactate concern, infection source",
+          "priority": "critical",
+          "rationale": "MATC Shock Treatment 13 + Performance Measures — advance notification is required for suspected shock; sepsis alert is the recovery action that brings ED resources to bear on arrival.",
+          "protocolReference": "MATC: Shock",
+          "protocolExcerpt": "Provide advanced notification to the hospital. Performance Measures: Percentage of patients with suspected shock for whom advanced notification to the hospital was provided."
+        },
+        {
+          "id": "recover-vasopressor-readiness",
+          "shortAction": "If shock unresponsive to fluids → norepinephrine 0.05–0.5 mcg/kg/min (3.5–35 mcg/min for 70 kg)",
+          "priority": "supplemental",
+          "rationale": "MATC Shock Treatment 11a — vasopressors for shock unresponsive to IV fluids; norepinephrine is preferred in distributive (sepsis) shock at 0.05–0.5 mcg/kg/min.",
+          "protocolReference": "MATC: Shock",
+          "protocolExcerpt": "Vasopressors (shock unresponsive to IV fluids) titrated to physiologic targets. Cardiogenic, hypovolemic, obstructive shock and distributive shock: Norepinephrine 0.05–0.5 mcg/kg/minute. Preference in both neurogenic and infectious (sepsis) causes of distributive shock."
+        }
+      ]
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

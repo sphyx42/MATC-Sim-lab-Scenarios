@@ -1,0 +1,347 @@
+{
+  "scenarioId": "R-T1-01",
+  "scenarioName": "Asthma Exacerbation, Moderate — Adult Responds to DuoNeb",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 900,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "47-year-old male with longstanding asthma since childhood developed progressive shortness of breath and wheezing this morning after working outside in the yard (heavy pollen, freshly cut grass). Symptoms started as mild chest tightness about two hours before EMS arrival. He used his albuterol HFA rescue inhaler twice (2 puffs each, ~45 minutes apart) with only brief partial relief. He came inside, sat down, and called his wife at work when he found himself winded just walking to the kitchen. He denies chest pain, fever, recent illness, leg swelling, hemoptysis, or sick contacts. He reports a similar exacerbation 8 months ago that resolved with an ED nebulizer treatment and a course of oral steroids. Last hospital admission for asthma was over 5 years ago; never intubated; never ICU.",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives to find a 47-year-old known asthmatic seated upright on the couch in mild-to-moderate distress. He speaks in short 3-5 word phrases, has audible expiratory wheezing, mild accessory muscle use, and is anxious but cooperative. Skin is warm, pink, slightly moist; no cyanosis. This is the assessment window: the student needs to put hands on the patient and a stethoscope on the chest BEFORE reaching for the nebulizer. Auscultation, work-of-breathing assessment, speech assessment, and SpO2/EtCO2 baseline come first. The teaching point of this Tier 1 scenario is that a proper respiratory assessment guides treatment and lets the crew measure a response. → DuoNeb after proper assessment: Baseline assessment is documented: bilateral diffuse expiratory wheezing, prolonged expiratory phase, RR 26, SpO2 92% on room air, mild accessory muscle use, speaking in short phrases. Crew initiates DuoNeb (albuterol 5 mg + ipratropium 0.5 mg nebulized) with O2 driving the neb, gives oral dexamethasone, and begins setting up IV. The teaching point is that this is the right textbook moderate-asthma treatment AND that the next critical step is to reassess after treatment — not just hand the patient off improved-looking. → Reassessed after neb; improved: Post-DuoNeb reassessment is documented: bilateral air entry has improved, wheezing is now mild and only on end-expiration, prolonged expiratory phase has largely resolved, RR is down to 18, SpO2 is 97% on the nebulizer flow, EtCO2 waveform has normalized, and the patient is speaking in full sentences. Mild albuterol tremor and modestly increased HR are expected. Crew transports on continuous albuterol-as-needed, with documented response, and gives a clean bedside handoff with the full timeline."
+  },
+  "patientInformation": {
+    "patientName": "Marcus Holloway",
+    "patientCondition": "Shortness of breath with audible wheezing for ~90 minutes, not relieved by home rescue inhaler. Known asthmatic.",
+    "patientAge": 47,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 178,
+    "patientWeight": 84,
+    "patientPhotoId": 57,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a 47-year-old known asthmatic seated upright on the couch in mild-to-moderate distress. He speaks in short 3-5 word phrases, has audible expiratory wheezing, mild accessory muscle use, and is anxious but cooperative. Skin is warm, pink, slightly moist; no cyanosis. This is the assessment window: the student needs to put hands on the patient and a stethoscope on the chest BEFORE reaching for the nebulizer. Auscultation, work-of-breathing assessment, speech assessment, and SpO2/EtCO2 baseline come first. The teaching point of this Tier 1 scenario is that a proper respiratory assessment guides treatment and lets the crew measure a response.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 108,
+        "bpSys": 144,
+        "bpDia": 88,
+        "respRate": 26,
+        "spo2": 92,
+        "etco2": 34,
+        "temp": 37,
+        "obstruction": 40,
+        "custMeasure1": 112,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Primary survey (ABC); identify moderate respiratory distress with bronchospasm",
+        "Targeted history: onset, triggers, prior inhaler use, prior intubation/ICU, allergies",
+        "Auscultate all lung fields (anterior + posterior, upper/middle/lower) BEFORE treatment",
+        "Assess work of breathing: speech, accessory muscle use, retractions, mental status",
+        "Apply continuous SpO2 and waveform capnography; document baseline",
+        "Supplemental O2 (nasal cannula → NRB) titrated to SpO2 94–98%",
+        "Allow position of comfort (upright/tripod); do not force supine"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "DuoNeb after proper assessment",
+      "description": "Baseline assessment is documented: bilateral diffuse expiratory wheezing, prolonged expiratory phase, RR 26, SpO2 92% on room air, mild accessory muscle use, speaking in short phrases. Crew initiates DuoNeb (albuterol 5 mg + ipratropium 0.5 mg nebulized) with O2 driving the neb, gives oral dexamethasone, and begins setting up IV. The teaching point is that this is the right textbook moderate-asthma treatment AND that the next critical step is to reassess after treatment — not just hand the patient off improved-looking.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 116,
+        "bpSys": 146,
+        "bpDia": 86,
+        "respRate": 24,
+        "spo2": 95,
+        "etco2": 35,
+        "temp": 37,
+        "obstruction": 35,
+        "custMeasure1": 112,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Albuterol 5 mg + Ipratropium 0.5 mg nebulized (DuoNeb), O2-driven; albuterol may repeat unlimited frequency, ipratropium up to 3 doses",
+        "Dexamethasone 10 mg PO (84 kg × 0.6 mg/kg = 50.4 mg → cap at 16 mg max); single dose",
+        "Establish IV access (saline lock or KVO) for med readiness if escalation needed",
+        "Continuous SpO2, EtCO2, ECG monitoring during nebulizer (albuterol → tachycardia/tremor)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Reassessed after neb; improved",
+      "description": "Post-DuoNeb reassessment is documented: bilateral air entry has improved, wheezing is now mild and only on end-expiration, prolonged expiratory phase has largely resolved, RR is down to 18, SpO2 is 97% on the nebulizer flow, EtCO2 waveform has normalized, and the patient is speaking in full sentences. Mild albuterol tremor and modestly increased HR are expected. Crew transports on continuous albuterol-as-needed, with documented response, and gives a clean bedside handoff with the full timeline.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 110,
+        "bpSys": 138,
+        "bpDia": 82,
+        "respRate": 18,
+        "spo2": 97,
+        "etco2": 36,
+        "temp": 37,
+        "obstruction": 15,
+        "custMeasure1": 112,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Reassess lung sounds, RR, SpO2, EtCO2, speech, work of breathing AFTER neb; compare to baseline",
+        "Continue/repeat albuterol 5 mg neb PRN en route; ipratropium up to 3 total doses if ongoing wheeze",
+        "Transport to ED; bedside handoff with timeline + before/after lung sounds and vitals"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Neb given without auscultation",
+      "description": "Crew skipped a proper baseline assessment and went straight to the nebulizer based on audible wheezing and the patient's history. The DuoNeb does help — the patient feels somewhat better — but no one ever auscultated. There was a left-sided localized decrease in air entry that they did not detect, and no baseline lung-sound documentation to compare against. They also don't know if EtCO2 waveform has changed. This is a 'lucky outcome' branch: the patient is improving for the right protocol reason, but the crew's documentation and decision-making are missing the pieces the protocol explicitly requires.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 114,
+        "bpSys": 142,
+        "bpDia": 84,
+        "respRate": 22,
+        "spo2": 94,
+        "etco2": 35,
+        "temp": 37,
+        "obstruction": 30,
+        "custMeasure1": 112,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Stop, auscultate all lung fields now; document findings; note any unilateral asymmetry",
+        "Apply continuous SpO2 + waveform capnography if not already; document waveform shape",
+        "Document treatment response (RR, SpO2, EtCO2, lung sounds, speech) against best available baseline"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "No reassessment; deterioration missed",
+      "description": "Crew started the DuoNeb and immediately moved to packaging the patient for transport without reassessing. They miss that the patient is in fact NOT responding adequately: wheezing is tighter, accessory muscle use is up, RR has climbed, and SpO2 is trending down. This is moderate-to-severe asthma progressing toward severe exacerbation that needs escalation per protocol (continuous neb, IV mag, consider IM epi for impending failure) — and the crew is about to walk a deteriorating patient down the front steps without knowing it. The teaching point: reassessment after each intervention is the trigger for escalation.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 128,
+        "bpSys": 150,
+        "bpDia": 90,
+        "respRate": 32,
+        "spo2": 89,
+        "etco2": 42,
+        "temp": 37,
+        "obstruction": 65,
+        "custMeasure1": 112,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize deterioration: rising RR, falling SpO2, normal-rising EtCO2 with distress = impending failure",
+        "Continuous albuterol 5 mg nebulized (unlimited frequency); ipratropium up to 3 doses",
+        "Magnesium sulfate 2 g IV (84 kg × 40 mg/kg = 3360 mg → cap at 2 g max) over 10–15 min",
+        "Consider Epinephrine 0.3 mg IM (84 kg × 0.01 mg/kg = 0.84 mg → cap at 0.3 mg max) if no improvement"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Primary survey (ABC); identify moderate respiratory distress with bronchospasm",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Targeted history: onset, triggers, prior inhaler use, prior intubation/ICU, allergies",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Auscultate all lung fields (anterior + posterior, upper/middle/lower) BEFORE treatment",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Assess work of breathing: speech, accessory muscle use, retractions, mental status",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply continuous SpO2 and waveform capnography; document baseline",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Supplemental O2 (nasal cannula → NRB) titrated to SpO2 94–98%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Allow position of comfort (upright/tripod); do not force supine",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Albuterol 5 mg + Ipratropium 0.5 mg nebulized (DuoNeb), O2-driven; albuterol may repeat unlimited frequency, ipratropium up to 3 doses",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Dexamethasone 10 mg PO (84 kg × 0.6 mg/kg = 50.4 mg → cap at 16 mg max); single dose",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access (saline lock or KVO) for med readiness if escalation needed",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous SpO2, EtCO2, ECG monitoring during nebulizer (albuterol → tachycardia/tremor)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess lung sounds, RR, SpO2, EtCO2, speech, work of breathing AFTER neb; compare to baseline",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue/repeat albuterol 5 mg neb PRN en route; ipratropium up to 3 total doses if ongoing wheeze",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to ED; bedside handoff with timeline + before/after lung sounds and vitals",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Stop, auscultate all lung fields now; document findings; note any unilateral asymmetry",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply continuous SpO2 + waveform capnography if not already; document waveform shape",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document treatment response (RR, SpO2, EtCO2, lung sounds, speech) against best available baseline",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize deterioration: rising RR, falling SpO2, normal-rising EtCO2 with distress = impending failure",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous albuterol 5 mg nebulized (unlimited frequency); ipratropium up to 3 doses",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Magnesium sulfate 2 g IV (84 kg × 40 mg/kg = 3360 mg → cap at 2 g max) over 10–15 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Consider Epinephrine 0.3 mg IM (84 kg × 0.01 mg/kg = 0.84 mg → cap at 0.3 mg max) if no improvement",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

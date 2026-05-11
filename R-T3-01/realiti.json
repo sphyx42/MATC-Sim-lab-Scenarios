@@ -1,0 +1,518 @@
+{
+  "scenarioId": "R-T3-01",
+  "scenarioName": "Respiratory Failure Requiring Advanced Airway",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1800,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "58-year-old female with severe (GOLD stage IV) COPD, on 4 L home nasal cannula 24/7, who has been progressively decompensating for the last 8 hours. Husband reports she had an upper-respiratory illness this week with productive yellow-green sputum. She used her albuterol/ipratropium nebulizer every 2 hours overnight with minimal relief and finished her last prednisone burst three days ago. This morning she became too short of breath to walk to the bathroom; by midday she was tripoding at the kitchen table speaking only 2-3 word phrases. Over the last hour she has stopped speaking, stopped responding to her husband by name, and her color has turned dusky. He called 911 when she 'looked like she was sleeping but breathing funny.' She has been intubated twice before (2022, 2024) for COPD exacerbation, both times in the ED.",
+    "discussion": "",
+    "course": "Initial Contact: On arrival you find a 58-year-old female with severe COPD slumped forward in a kitchen chair, GCS 8 (E2 V2 M4) and falling. RR 38 and shallow, SpO2 78% on her home 4 L nasal cannula, EtCO2 78 mmHg, dusky perioral cyanosis. Husband reports 8-hour progressive decompensation despite home nebs and a recent prednisone burst, with two prior intubations for the same problem. This is respiratory failure with loss of protective reflexes — BVM and advanced airway preparation are both indicated NOW. → BVM optimized: After 2-3 minutes of optimized two-person BVM with a PEEP valve at 5 cmH2O and head elevated, the patient's SpO2 has climbed from 78% to 92%, EtCO2 has come down from 78 to 64, and color is improving. However, she still requires positive-pressure ventilation to maintain those numbers — her own respiratory drive is inadequate and her mental status remains GCS 8 with absent protective reflexes. This is the decision point: the crew now has a preoxygenated, BVM-dependent patient who cannot be left on BVM for transport. SGA versus RSI versus continued BVM-to-ED is the choice. → RSI prep complete: Crew has chosen RSI. SpO2 is 95% on optimized BVM with PEEP. Two IVs running, monitor on, suction running, video laryngoscope ready, 7.5 mm cuffed ETT and bougie at the head, SGA staged at bedside, post-intubation sedation drawn up. Ketamine 140 mg IV (70 kg x 2 mg/kg) and rocuronium 84 mg IV (70 kg x 1.2 mg/kg) are about to be pushed. The crew is prepared, preoxygenated, and positioned. → Tube placed and confirmed: First-pass success. 7.5 mm cuffed ETT at 21 cm at the lip. Waveform EtCO2 shows a square, sustained capnograph (now 54 and trending toward 45). Bilateral chest rise. Equal breath sounds. No epigastric sounds. SpO2 is climbing from 90 (low during attempt) to 96%. The patient is paralyzed and unresponsive. The single most important next action is post-intubation sedation BEFORE paralytic wears off — and BEFORE the tube is taped. → Sedated; transporting: Patient is intubated, sedated, and being transported to the closest appropriate facility. EtCO2 is 46 with a normal square waveform, SpO2 99%, HR 88, BP 132/78. Sedation is being titrated to a RASS goal of -3 to -4 with re-dose midazolam or a ketamine drip. The crew reassessed tube depth after each move from kitchen-chair to stretcher to ambulance. Receiving facility notified. This is the protocol-correct end state."
+  },
+  "patientInformation": {
+    "patientName": "Eleanor Pruitt",
+    "patientCondition": "Severe difficulty breathing, becoming unresponsive",
+    "patientAge": 58,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 2,
+    "patientHeight": 165,
+    "patientWeight": 70,
+    "patientPhotoId": 70,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "On arrival you find a 58-year-old female with severe COPD slumped forward in a kitchen chair, GCS 8 (E2 V2 M4) and falling. RR 38 and shallow, SpO2 78% on her home 4 L nasal cannula, EtCO2 78 mmHg, dusky perioral cyanosis. Husband reports 8-hour progressive decompensation despite home nebs and a recent prednisone burst, with two prior intubations for the same problem. This is respiratory failure with loss of protective reflexes — BVM and advanced airway preparation are both indicated NOW.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 118,
+        "bpSys": 152,
+        "bpDia": 92,
+        "respRate": 38,
+        "spo2": 78,
+        "etco2": 78,
+        "temp": 37.6,
+        "obstruction": 50,
+        "custMeasure1": 168,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Primary survey; recognize RESPIRATORY FAILURE (not just distress)",
+        "Open airway with jaw thrust; head elevated 30 degrees; suction secretions",
+        "Insert NPA (gag still present); have OPA ready as gag fades",
+        "Two-person, two-thumbs-up BVM with PEEP valve at 5 cmH2O",
+        "Inline waveform EtCO2 on BVM circuit; SpO2; cardiac monitor",
+        "Establish 2 large-bore IVs; anticipate RSI meds and post-tube sedation",
+        "Ventilate 10-12/min, 6-8 mL/kg IBW (~400 mL); just enough to see chest rise"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "BVM optimized",
+      "description": "After 2-3 minutes of optimized two-person BVM with a PEEP valve at 5 cmH2O and head elevated, the patient's SpO2 has climbed from 78% to 92%, EtCO2 has come down from 78 to 64, and color is improving. However, she still requires positive-pressure ventilation to maintain those numbers — her own respiratory drive is inadequate and her mental status remains GCS 8 with absent protective reflexes. This is the decision point: the crew now has a preoxygenated, BVM-dependent patient who cannot be left on BVM for transport. SGA versus RSI versus continued BVM-to-ED is the choice.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 110,
+        "bpSys": 148,
+        "bpDia": 88,
+        "respRate": 12,
+        "spo2": 92,
+        "etco2": 64,
+        "temp": 37.6,
+        "obstruction": 50,
+        "custMeasure1": 168,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Reassess: BVM is effective; SpO2 92%, EtCO2 64 and falling",
+        "Articulate SGA vs RSI decision; both are protocol-correct here",
+        "Continue preoxygenation 2+ minutes; consider apneic O2 via NC at 15 LPM",
+        "Run the 7 P's checklist: Prep, Preox, Pretreat, Paralyze+induce, Position, Place, Postintubation",
+        "Stage a same-size SGA at bedside as rescue airway",
+        "Select 7.5 mm cuffed ETT (adult female); bougie ready; VL preferred"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "RSI prep complete",
+      "description": "Crew has chosen RSI. SpO2 is 95% on optimized BVM with PEEP. Two IVs running, monitor on, suction running, video laryngoscope ready, 7.5 mm cuffed ETT and bougie at the head, SGA staged at bedside, post-intubation sedation drawn up. Ketamine 140 mg IV (70 kg x 2 mg/kg) and rocuronium 84 mg IV (70 kg x 1.2 mg/kg) are about to be pushed. The crew is prepared, preoxygenated, and positioned.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 108,
+        "bpSys": 144,
+        "bpDia": 86,
+        "respRate": 12,
+        "spo2": 95,
+        "etco2": 58,
+        "temp": 37.6,
+        "obstruction": 50,
+        "custMeasure1": 168,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Ketamine 140 mg IV push (70 kg x 2 mg/kg) for induction",
+        "Rocuronium 84 mg IV push (70 kg x 1.2 mg/kg); allow 60 sec for full paralysis",
+        "Attempt #1 with VL + bougie; limit to 15 sec OR SpO2 <90%",
+        "Inflate cuff to seal (~20 cmH2O); note depth at lip; manually secure tube"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Tube placed and confirmed",
+      "description": "First-pass success. 7.5 mm cuffed ETT at 21 cm at the lip. Waveform EtCO2 shows a square, sustained capnograph (now 54 and trending toward 45). Bilateral chest rise. Equal breath sounds. No epigastric sounds. SpO2 is climbing from 90 (low during attempt) to 96%. The patient is paralyzed and unresponsive. The single most important next action is post-intubation sedation BEFORE paralytic wears off — and BEFORE the tube is taped.",
+      "monitorType": 0,
+      "trendTime": 25,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 96,
+        "bpSys": 138,
+        "bpDia": 82,
+        "respRate": 12,
+        "spo2": 96,
+        "etco2": 54,
+        "temp": 37.6,
+        "obstruction": 30,
+        "custMeasure1": 168,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Confirm placement: waveform EtCO2 (gold standard) + bilateral breath sounds + chest rise + no epigastric sounds",
+        "Note depth at lip (21 cm female); secure with commercial device + C-collar to limit movement",
+        "Fentanyl 100 mcg IV (70 kg x ~1.5 mcg/kg; range 1-2 mcg/kg)",
+        "Midazolam 1.4 mg IV (70 kg x 0.02 mg/kg) for sedation — or ketamine 35 mg IV (70 kg x 0.5 mg/kg)",
+        "Place OG/NG tube for gastric decompression",
+        "Ventilate 10-12/min, ~6-8 mL/kg IBW, PEEP 5; titrate to EtCO2 35-45",
+        "Continuous EtCO2 + SpO2 during movement; reassess after each move"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Sedated; transporting",
+      "description": "Patient is intubated, sedated, and being transported to the closest appropriate facility. EtCO2 is 46 with a normal square waveform, SpO2 99%, HR 88, BP 132/78. Sedation is being titrated to a RASS goal of -3 to -4 with re-dose midazolam or a ketamine drip. The crew reassessed tube depth after each move from kitchen-chair to stretcher to ambulance. Receiving facility notified. This is the protocol-correct end state.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 88,
+        "bpSys": 132,
+        "bpDia": 78,
+        "respRate": 10,
+        "spo2": 99,
+        "etco2": 46,
+        "temp": 37.6,
+        "obstruction": 30,
+        "custMeasure1": 168,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Re-dose sedation BEFORE wear-off (midaz q15-30 min or ketamine bolus 35 mg / drip)",
+        "Three-point reassess (EtCO2, breath sounds, depth at lip) after every move",
+        "Transport to closest appropriate ED; pre-arrival report"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "RSI without pre-O2",
+      "description": "Crew skipped BVM optimization. Pre-induction SpO2 is still 78%. Ketamine and rocuronium have been pushed. Within 45 seconds of paralysis, SpO2 collapses from 78% to 70%, then 64% as the crew attempts laryngoscopy. The patient was never preoxygenated, so safe-apnea time is essentially zero. The teaching beat: this is exactly how peri-intubation hypoxic arrest happens, and the protocol's two-minute preoxygenation requirement exists to prevent it.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 138,
+        "bpSys": 162,
+        "bpDia": 96,
+        "respRate": 0,
+        "spo2": 70,
+        "etco2": 82,
+        "temp": 37.6,
+        "obstruction": 50,
+        "custMeasure1": 168,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "ABORT attempt: SpO2 <90% triggers stop; resume BVM ventilation",
+        "Two-person BVM with PEEP; re-preoxygenate to SpO2 >90% before any second attempt",
+        "If second attempt fails or BVM cannot reoxygenate: place SGA (staged at bedside)",
+        "Debrief: preoxygenation is mandatory; this is how peri-intubation arrests start"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Bucking tube; no sedation",
+      "description": "Tube is in and confirmed, but no post-intubation sedation was administered. Approximately 18 minutes after the rocuronium push, neuromuscular blockade is wearing off in this stressed, acidotic patient. The patient is now bucking the tube — coughing against it, hypertensive (BP 188/108), tachycardic (HR 132). She is at high risk for self-extubation, intracranial pressure spike (if any TBI co-exists), and a sympathetic storm. The teaching beat: paralysis without sedation is patient-experienced terror, and post-intubation sedation must be given proactively, not reactively.",
+      "monitorType": 0,
+      "trendTime": 35,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 132,
+        "bpSys": 188,
+        "bpDia": 108,
+        "respRate": 28,
+        "spo2": 94,
+        "etco2": 38,
+        "temp": 37.6,
+        "obstruction": 40,
+        "custMeasure1": 168,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Fentanyl 100 mcg IV NOW (70 kg x ~1.5 mcg/kg)",
+        "Midazolam 1.4 mg IV (70 kg x 0.02 mg/kg) OR ketamine 35-70 mg IV (0.5-1 mg/kg)",
+        "If still bucking after sedation: rocuronium 70 mg IV (70 kg x 1 mg/kg) for maintenance paralysis",
+        "Re-confirm tube depth + waveform EtCO2 + breath sounds after settling",
+        "Debrief: post-intubation sedation is REQUIRED, not optional"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Primary survey; recognize RESPIRATORY FAILURE (not just distress)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Open airway with jaw thrust; head elevated 30 degrees; suction secretions",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Insert NPA (gag still present); have OPA ready as gag fades",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Two-person, two-thumbs-up BVM with PEEP valve at 5 cmH2O",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Inline waveform EtCO2 on BVM circuit; SpO2; cardiac monitor",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish 2 large-bore IVs; anticipate RSI meds and post-tube sedation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Ventilate 10-12/min, 6-8 mL/kg IBW (~400 mL); just enough to see chest rise",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess: BVM is effective; SpO2 92%, EtCO2 64 and falling",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Articulate SGA vs RSI decision; both are protocol-correct here",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue preoxygenation 2+ minutes; consider apneic O2 via NC at 15 LPM",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Run the 7 P's checklist: Prep, Preox, Pretreat, Paralyze+induce, Position, Place, Postintubation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Stage a same-size SGA at bedside as rescue airway",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Select 7.5 mm cuffed ETT (adult female); bougie ready; VL preferred",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Ketamine 140 mg IV push (70 kg x 2 mg/kg) for induction",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Rocuronium 84 mg IV push (70 kg x 1.2 mg/kg); allow 60 sec for full paralysis",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Attempt #1 with VL + bougie; limit to 15 sec OR SpO2 <90%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Inflate cuff to seal (~20 cmH2O); note depth at lip; manually secure tube",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Confirm placement: waveform EtCO2 (gold standard) + bilateral breath sounds + chest rise + no epigastric sounds",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Note depth at lip (21 cm female); secure with commercial device + C-collar to limit movement",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Fentanyl 100 mcg IV (70 kg x ~1.5 mcg/kg; range 1-2 mcg/kg)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Midazolam 1.4 mg IV (70 kg x 0.02 mg/kg) for sedation — or ketamine 35 mg IV (70 kg x 0.5 mg/kg)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place OG/NG tube for gastric decompression",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Ventilate 10-12/min, ~6-8 mL/kg IBW, PEEP 5; titrate to EtCO2 35-45",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous EtCO2 + SpO2 during movement; reassess after each move",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Re-dose sedation BEFORE wear-off (midaz q15-30 min or ketamine bolus 35 mg / drip)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Three-point reassess (EtCO2, breath sounds, depth at lip) after every move",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to closest appropriate ED; pre-arrival report",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "ABORT attempt: SpO2 <90% triggers stop; resume BVM ventilation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Two-person BVM with PEEP; re-preoxygenate to SpO2 >90% before any second attempt",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "If second attempt fails or BVM cannot reoxygenate: place SGA (staged at bedside)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Debrief: preoxygenation is mandatory; this is how peri-intubation arrests start",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Fentanyl 100 mcg IV NOW (70 kg x ~1.5 mcg/kg)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Midazolam 1.4 mg IV (70 kg x 0.02 mg/kg) OR ketamine 35-70 mg IV (0.5-1 mg/kg)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "If still bucking after sedation: rocuronium 70 mg IV (70 kg x 1 mg/kg) for maintenance paralysis",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Re-confirm tube depth + waveform EtCO2 + breath sounds after settling",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Debrief: post-intubation sedation is REQUIRED, not optional",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

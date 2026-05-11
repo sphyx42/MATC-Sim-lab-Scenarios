@@ -1,0 +1,314 @@
+{
+  "scenarioId": "R-T1-02",
+  "scenarioName": "COPD Exacerbation vs. CHF — 72yo with Dual History",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1200,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "72-year-old female with longstanding COPD (30 pack-year smoking history, quit 4 years ago) and a remote diagnosis of compensated heart failure with preserved ejection fraction, on chronic Lasix and well-controlled. She developed a 'head cold' about 5 days ago — runny nose, sore throat, low-grade fevers — that progressed into a productive cough with thick green sputum starting 3 days ago. Over the last 48 hours her shortness of breath has steadily worsened: she has been using her albuterol HFA 'every couple of hours' (her usual is 'maybe twice a day') and has needed her home O2 at 2 L/min around the clock instead of just at night. This morning she could barely make it from the bed to the bathroom without stopping to catch her breath. She finished a 5-day prednisone taper two weeks ago for a prior COPD flare. She specifically denies any new chest pain, orthopnea worse than her baseline (she sleeps on 2 pillows always), paroxysmal nocturnal dyspnea, weight gain (her bathroom scale today reads the same as last week — 150 lb), and her ankle swelling is unchanged from her chronic trace edema. She has been taking her Lasix 40 mg daily as prescribed and her pill bottle confirms compliance. The picture is gradual respiratory decline with sputum production and recent URI on a background of dual COPD/CHF history — favoring COPD exacerbation triggered by viral URI.",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives to a 72-year-old female with known COPD and known compensated HFpEF in mild-to-moderate respiratory distress. She is alert, anxious, speaking in short 4-6 word phrases, using pursed-lip breathing, with mild accessory muscle use. Home O2 nasal cannula is in place at 2 L/min. SpO2 on her home O2 is 88%. She has a productive cough with green sputum. This is the assessment window. The teaching point is that both COPD and CHF are on her chart, but a directed exam — auscultation, JVD/edema check, trend over days, medication compliance, sputum, weight stability — will differentiate them well before treatment is chosen. The wrong reflex is to anchor on the CHF history and skip the COPD-favoring physical findings. → Proper assessment performed: Assessment is complete and documented. Findings strongly favor COPD exacerbation: diffuse expiratory wheezes and coarse rhonchi in all fields, NO basilar crackles, NO JVD, only chronic trace pedal edema (unchanged), 5-day URI with green sputum, stable weight, compliant Lasix, shark-fin capnography with mildly elevated EtCO2 (chronic baseline for advanced COPD). Crew correctly initiates the COPD treatment limb: DuoNeb (albuterol 5 mg + ipratropium 0.5 mg) nebulized with O2, oral steroid, IV access, continuous monitoring. The teaching point is that correct categorization enables correct treatment AND avoids the harms of inappropriate CHF treatment (NTG-induced hypotension). → Responding to COPD treatment: Post-DuoNeb reassessment is clear: wheezing is reduced, air entry improved bilaterally, RR 22, SpO2 95% on the nebulizer flow, EtCO2 waveform more normal in shape, patient speaking in fuller 7-8 word phrases. Mild albuterol-related fine tremor and modestly increased HR are expected and benign. Crew transports on continuous albuterol PRN, with dexamethasone given, IV established, and a complete documented timeline. Bedside handoff includes baseline lung sounds, treatment response, and the assessment-based reasoning that ruled out acute CHF."
+  },
+  "patientInformation": {
+    "patientName": "Eleanor Brennan",
+    "patientCondition": "Worsening shortness of breath over 3 days; productive cough with green sputum; can no longer walk to the bathroom without stopping.",
+    "patientAge": 72,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 2,
+    "patientHeight": 163,
+    "patientWeight": 68,
+    "patientPhotoId": 87,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives to a 72-year-old female with known COPD and known compensated HFpEF in mild-to-moderate respiratory distress. She is alert, anxious, speaking in short 4-6 word phrases, using pursed-lip breathing, with mild accessory muscle use. Home O2 nasal cannula is in place at 2 L/min. SpO2 on her home O2 is 88%. She has a productive cough with green sputum. This is the assessment window. The teaching point is that both COPD and CHF are on her chart, but a directed exam — auscultation, JVD/edema check, trend over days, medication compliance, sputum, weight stability — will differentiate them well before treatment is chosen. The wrong reflex is to anchor on the CHF history and skip the COPD-favoring physical findings.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 104,
+        "bpSys": 148,
+        "bpDia": 86,
+        "respRate": 28,
+        "spo2": 88,
+        "etco2": 48,
+        "temp": 37.4,
+        "obstruction": 50,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Rapid primary survey (ABC); recognize moderate respiratory distress in elderly patient with dual COPD/CHF history",
+        "Targeted history: onset (days vs. hours), URI/sputum, prior treatments, hospitalization/ICU/intubation history",
+        "Review home meds (inhalers + Lasix); confirm Lasix compliance; check weight trend",
+        "Auscultate all lung fields (anterior + posterior, upper/middle/lower) BEFORE treatment — wheezes vs. crackles",
+        "Check JVD (head of bed 45°) and lower-extremity edema; compare to chronic baseline",
+        "Apply continuous SpO2 and waveform capnography; note shark-fin waveform vs. normal waveform",
+        "Acquire 12-lead ECG to screen for ischemia/dysrhythmia as CHF trigger",
+        "Titrate supplemental O2 (NC → NRB) toward SpO2 94–98%; permissive 90% acceptable in COPD"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Proper assessment performed",
+      "description": "Assessment is complete and documented. Findings strongly favor COPD exacerbation: diffuse expiratory wheezes and coarse rhonchi in all fields, NO basilar crackles, NO JVD, only chronic trace pedal edema (unchanged), 5-day URI with green sputum, stable weight, compliant Lasix, shark-fin capnography with mildly elevated EtCO2 (chronic baseline for advanced COPD). Crew correctly initiates the COPD treatment limb: DuoNeb (albuterol 5 mg + ipratropium 0.5 mg) nebulized with O2, oral steroid, IV access, continuous monitoring. The teaching point is that correct categorization enables correct treatment AND avoids the harms of inappropriate CHF treatment (NTG-induced hypotension).",
+      "monitorType": 0,
+      "trendTime": 35,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 110,
+        "bpSys": 150,
+        "bpDia": 86,
+        "respRate": 26,
+        "spo2": 93,
+        "etco2": 46,
+        "temp": 37.4,
+        "obstruction": 45,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Albuterol 5 mg + Ipratropium 0.5 mg nebulized (DuoNeb), O2-driven; albuterol may repeat unlimited frequency, ipratropium up to 3 doses",
+        "Dexamethasone 16 mg PO (68 kg × 0.6 mg/kg = 40.8 mg → cap at 16 mg max); single dose preferred",
+        "Establish IV access (saline lock or KVO) in case IV mag or IV steroid needed",
+        "Maintain position of comfort (upright); do not force supine; coach pursed-lip breathing",
+        "Continuous SpO2, EtCO2, ECG monitoring during nebulizer (expect mild albuterol-induced tachycardia/tremor)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Responding to COPD treatment",
+      "description": "Post-DuoNeb reassessment is clear: wheezing is reduced, air entry improved bilaterally, RR 22, SpO2 95% on the nebulizer flow, EtCO2 waveform more normal in shape, patient speaking in fuller 7-8 word phrases. Mild albuterol-related fine tremor and modestly increased HR are expected and benign. Crew transports on continuous albuterol PRN, with dexamethasone given, IV established, and a complete documented timeline. Bedside handoff includes baseline lung sounds, treatment response, and the assessment-based reasoning that ruled out acute CHF.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 108,
+        "bpSys": 144,
+        "bpDia": 82,
+        "respRate": 22,
+        "spo2": 95,
+        "etco2": 44,
+        "temp": 37.4,
+        "obstruction": 25,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Reassess lung sounds, RR, SpO2, EtCO2, speech, work of breathing AFTER DuoNeb; compare to baseline",
+        "Continue/repeat albuterol 5 mg nebulized PRN en route; ipratropium up to 3 total doses if ongoing wheeze",
+        "Transport to ED; bedside handoff with timeline, before/after exam, and assessment-based reasoning ruling out CHF"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Anchored on CHF; NTG + CPAP given",
+      "description": "Crew anchored on the 'history of CHF' on her med list and the elderly-female-with-SOB picture. Without first auscultating in multiple fields, checking JVD/edema, or trending the onset, they assumed acute pulmonary edema and started: CPAP at 10 cmH2O AND sublingual nitroglycerin 0.4 mg. Bronchodilators and steroids were not given. Two problems are now apparent: (1) the treatment doesn't help, because the underlying physiology is bronchospasm with mucus plugging from a viral URI, not fluid overload; (2) the nitroglycerin drops her BP — she was running 148/86 with COPD-related sympathetic tone, and post-NTG she is 96/58 with new lightheadedness. CPAP is tolerable for her but expiratory air-trapping risks worsening her dynamic hyperinflation. The patient is now actively deteriorating from inappropriate therapy. The teaching point: anchoring on chart history without doing the physical exam can not only fail to treat the real problem — it can introduce iatrogenic harm.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 118,
+        "bpSys": 96,
+        "bpDia": 58,
+        "respRate": 30,
+        "spo2": 89,
+        "etco2": 52,
+        "temp": 37.4,
+        "obstruction": 55,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "STOP and reassess: recognize this is COPD bronchospasm, not pulmonary edema (no JVD/rales, post-NTG hypotension)",
+        "IV fluid bolus 250–500 mL for NTG-induced hypotension (SBP < 100)",
+        "Albuterol 5 mg + Ipratropium 0.5 mg nebulized (DuoNeb) NOW; can be delivered in-line with CPAP",
+        "Dexamethasone 16 mg PO (68 kg × 0.6 mg/kg = 40.8 mg → cap at 16 mg max) — or IV equivalent if patient critical",
+        "Reassess CPAP utility — consider continuing only if tolerated and improving; do NOT discontinue abruptly"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Rapid primary survey (ABC); recognize moderate respiratory distress in elderly patient with dual COPD/CHF history",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Targeted history: onset (days vs. hours), URI/sputum, prior treatments, hospitalization/ICU/intubation history",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Review home meds (inhalers + Lasix); confirm Lasix compliance; check weight trend",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Auscultate all lung fields (anterior + posterior, upper/middle/lower) BEFORE treatment — wheezes vs. crackles",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check JVD (head of bed 45°) and lower-extremity edema; compare to chronic baseline",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply continuous SpO2 and waveform capnography; note shark-fin waveform vs. normal waveform",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Acquire 12-lead ECG to screen for ischemia/dysrhythmia as CHF trigger",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Titrate supplemental O2 (NC → NRB) toward SpO2 94–98%; permissive 90% acceptable in COPD",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Albuterol 5 mg + Ipratropium 0.5 mg nebulized (DuoNeb), O2-driven; albuterol may repeat unlimited frequency, ipratropium up to 3 doses",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Dexamethasone 16 mg PO (68 kg × 0.6 mg/kg = 40.8 mg → cap at 16 mg max); single dose preferred",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access (saline lock or KVO) in case IV mag or IV steroid needed",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Maintain position of comfort (upright); do not force supine; coach pursed-lip breathing",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous SpO2, EtCO2, ECG monitoring during nebulizer (expect mild albuterol-induced tachycardia/tremor)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess lung sounds, RR, SpO2, EtCO2, speech, work of breathing AFTER DuoNeb; compare to baseline",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue/repeat albuterol 5 mg nebulized PRN en route; ipratropium up to 3 total doses if ongoing wheeze",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to ED; bedside handoff with timeline, before/after exam, and assessment-based reasoning ruling out CHF",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "STOP and reassess: recognize this is COPD bronchospasm, not pulmonary edema (no JVD/rales, post-NTG hypotension)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "IV fluid bolus 250–500 mL for NTG-induced hypotension (SBP < 100)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Albuterol 5 mg + Ipratropium 0.5 mg nebulized (DuoNeb) NOW; can be delivered in-line with CPAP",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Dexamethasone 16 mg PO (68 kg × 0.6 mg/kg = 40.8 mg → cap at 16 mg max) — or IV equivalent if patient critical",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess CPAP utility — consider continuing only if tolerated and improving; do NOT discontinue abruptly",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

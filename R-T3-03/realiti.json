@@ -1,0 +1,541 @@
+{
+  "scenarioId": "R-T3-03",
+  "scenarioName": "Severe Anaphylaxis Progressing to Arrest",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1800,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "42-year-old male with known severe peanut allergy was eating dinner at a Thai restaurant about 12 minutes before EMS arrival. Within minutes of his first bite he developed itching of the lips and tongue, generalized hives, throat tightness, wheezing, and lightheadedness. His wife retrieved his EpiPen from his jacket and he self-administered one 0.3 mg IM dose in the lateral thigh approximately 8 minutes ago. He felt briefly better for 2-3 minutes, then rapidly deteriorated — stridor returned, he became diaphoretic, and he slid to the floor. Wife called 911. He is now obviously in severe anaphylaxis with shock physiology AND impending airway loss. The restaurant manager states the dish was prepared in a wok shared with peanut-containing dishes.",
+    "discussion": "",
+    "course": "Initial Contact: On arrival you find a 42-year-old male supine on the floor of a Thai restaurant in severe anaphylaxis. He is obtunded but rousable, with audible inspiratory stridor, expiratory wheeze, diffuse urticaria, lip/tongue angioedema, and obvious shock physiology (mottled, diaphoretic, weak radial pulse). His wife reports he used one EpiPen 0.3 mg IM about 8 minutes ago with brief improvement followed by rapid decline. He is on lisinopril (ACE-I) which may worsen angioedema. This patient has airway compromise + respiratory compromise + distributive/hypovolemic shock simultaneously — a high-mortality anaphylaxis presentation already failing a single dose of IM epi. → Refractory anaphylaxis: Approximately 5 minutes after the EMS-delivered second IM epi, the patient remains in profound shock. BP is 60/palp despite the second IM epi and 1 L NS. Stridor is somewhat improved with nebulized epi but mental status is now drifting (GCS 10 → 8). Skin is more mottled. EtCO2 has fallen from 32 to 24 mmHg — falling cardiac output. This meets the MATC criterion for cardiovascular collapse despite IM epi and is the indication for an epinephrine IV infusion (0.05-0.5 mcg/kg/min) plus continued aggressive volume. → PEA arrest: Pulses lost. Monitor shows narrow-complex rhythm at ~130 with no carotid — pulseless electrical activity. This is an anaphylactic arrest: hypovolemic + distributive + obstructive (airway edema) all at once. The protocol playbook for non-shockable arrest applies (compressions + early epi), but anaphylaxis-specific interventions continue in parallel: massive fluid resuscitation, definitive airway despite edema, and anaphylaxis-cause-directed therapy. The H's and T's reversible-cause list applies — Hypovolemia and Hypoxia are the primary culprits here. → ROSC — post-arrest care: ROSC achieved. Sinus tachycardia at 118, BP 86/54 (still hypotensive but perfusing), EtCO2 28 on the ETT with continued BVM ventilation, GCS 4 (E1V1M2 — comatose, intubated). The patient remains in distributive shock physiology — vasodilation continues for hours after the trigger. Epi infusion continues to maintain MAP, volume continues, and ventilation is carefully titrated to avoid hyperventilation. Re-arrest risk is high. Destination should be a hospital capable of ICU admission and definitive airway management."
+  },
+  "patientInformation": {
+    "patientName": "Marcus Whelan",
+    "patientCondition": "Severe allergic reaction with airway swelling and shock after peanut exposure",
+    "patientAge": 42,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 180,
+    "patientWeight": 90,
+    "patientPhotoId": 51,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "On arrival you find a 42-year-old male supine on the floor of a Thai restaurant in severe anaphylaxis. He is obtunded but rousable, with audible inspiratory stridor, expiratory wheeze, diffuse urticaria, lip/tongue angioedema, and obvious shock physiology (mottled, diaphoretic, weak radial pulse). His wife reports he used one EpiPen 0.3 mg IM about 8 minutes ago with brief improvement followed by rapid decline. He is on lisinopril (ACE-I) which may worsen angioedema. This patient has airway compromise + respiratory compromise + distributive/hypovolemic shock simultaneously — a high-mortality anaphylaxis presentation already failing a single dose of IM epi.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 138,
+        "bpSys": 78,
+        "bpDia": 48,
+        "respRate": 30,
+        "spo2": 86,
+        "etco2": 32,
+        "temp": 37,
+        "obstruction": 60,
+        "custMeasure1": 132,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize severe anaphylaxis (skin + airway + shock); call code resource early",
+        "Epinephrine 0.3 mg IM (1 mg/mL) anterolateral thigh — repeat dose #1 by EMS now",
+        "NRB 15 LPM, cardiac monitor, SpO2 + waveform EtCO2, position upright if tolerated",
+        "Two large-bore IVs (16-18g) or IO if no IV in 90 sec",
+        "NS 1 L wide open / pressure bag (90 kg × 20 mL/kg = 1800 mL — start first L now)",
+        "Nebulized epinephrine 1 mg/mL 5 mL for stridor",
+        "Albuterol 5 mg nebulized for wheezing (in-line with epi or back-to-back)",
+        "Pre-brief difficult airway plan (edema); set up RSI + bougie + smaller ETT + cric kit",
+        "Diphenhydramine 50 mg IV (90 kg × 1 mg/kg = 90 mg → cap at 50 mg max) + Methylprednisolone 125 mg IV"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Refractory anaphylaxis",
+      "description": "Approximately 5 minutes after the EMS-delivered second IM epi, the patient remains in profound shock. BP is 60/palp despite the second IM epi and 1 L NS. Stridor is somewhat improved with nebulized epi but mental status is now drifting (GCS 10 → 8). Skin is more mottled. EtCO2 has fallen from 32 to 24 mmHg — falling cardiac output. This meets the MATC criterion for cardiovascular collapse despite IM epi and is the indication for an epinephrine IV infusion (0.05-0.5 mcg/kg/min) plus continued aggressive volume.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 145,
+        "bpSys": 60,
+        "bpDia": 38,
+        "respRate": 26,
+        "spo2": 82,
+        "etco2": 24,
+        "temp": 36.7,
+        "obstruction": 50,
+        "custMeasure1": 132,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize cardiovascular collapse refractory to IM epi — escalate to IV epi",
+        "Push-dose epi 10 mcg IV q3-5 min (dilute 1 mL of 0.1 mg/mL into 9 mL NS = 10 mcg/mL; give 1 mL)",
+        "Epinephrine infusion 0.1 mcg/kg/min (90 kg × 0.1 = 9 mcg/min); titrate 0.05-0.5 mcg/kg/min to MAP 65",
+        "NS second liter wide open through second IV (toward 60 mL/kg = 5400 mL total goal)",
+        "Third IM epi 0.3 mg if drip not yet running (q5-15 min interval)",
+        "Move to RSI: pre-O2 BVM, ketamine 90 mg + rocuronium 90 mg IV ready; bougie + 7.0 ETT + cric kit at head",
+        "Begin extrication to ambulance with ongoing resus; pre-alert closest ED with anaphylaxis-arrest pending"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "PEA arrest",
+      "description": "Pulses lost. Monitor shows narrow-complex rhythm at ~130 with no carotid — pulseless electrical activity. This is an anaphylactic arrest: hypovolemic + distributive + obstructive (airway edema) all at once. The protocol playbook for non-shockable arrest applies (compressions + early epi), but anaphylaxis-specific interventions continue in parallel: massive fluid resuscitation, definitive airway despite edema, and anaphylaxis-cause-directed therapy. The H's and T's reversible-cause list applies — Hypovolemia and Hypoxia are the primary culprits here.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 130,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 18,
+        "temp": 36.5,
+        "obstruction": 50,
+        "custMeasure1": 132,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "High-quality CPR: rate 100-120, depth 2-2.4 in, full recoil, switch q2 min",
+        "Epinephrine 1 mg IV/IO push immediately (non-shockable rhythm = priority); repeat q3-5 min",
+        "MASSIVE NS — 2 L wide open through both IVs (continue toward 4-6 L total for anaphylaxis arrest)",
+        "Advanced airway: RSI / supraglottic if edema blocks ETT; bougie + 7.0 cuffed tube, surgical airway ready",
+        "Continue epi infusion alongside ACLS bolus epi (anaphylaxis-specific)",
+        "Waveform EtCO2 on advanced airway: target >10 during CPR; abrupt rise = ROSC",
+        "H's & T's: confirm Hypovolemia + Hypoxia drive (anaphylaxis); continue cause-directed therapy",
+        "Consider glucagon 1-5 mg IV if on beta-blocker and refractory to epi (not this patient — note it)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "ROSC — post-arrest care",
+      "description": "ROSC achieved. Sinus tachycardia at 118, BP 86/54 (still hypotensive but perfusing), EtCO2 28 on the ETT with continued BVM ventilation, GCS 4 (E1V1M2 — comatose, intubated). The patient remains in distributive shock physiology — vasodilation continues for hours after the trigger. Epi infusion continues to maintain MAP, volume continues, and ventilation is carefully titrated to avoid hyperventilation. Re-arrest risk is high. Destination should be a hospital capable of ICU admission and definitive airway management.",
+      "monitorType": 0,
+      "trendTime": 25,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 118,
+        "bpSys": 86,
+        "bpDia": 54,
+        "respRate": 10,
+        "spo2": 94,
+        "etco2": 28,
+        "temp": 36.6,
+        "obstruction": 40,
+        "custMeasure1": 132,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Re-confirm ETT with waveform EtCO2 + bilateral breath sounds; secure to 22 cm at lip",
+        "Ventilate 10/min, target EtCO2 35-45; do NOT hyperventilate",
+        "Titrate FiO2 to SpO2 94-98%; do NOT hyperoxygenate",
+        "Continue epi infusion + volume to maintain MAP ≥65; expect ongoing distributive shock",
+        "12-lead EKG; screen for STEMI or arrest-induced ischemia",
+        "Continuous monitor for re-arrest; pads on; epi/fluids running; mechanical CPR device ready",
+        "Ketamine 50 mg IV q15 min for sedation (90 kg × 0.5-1 mg/kg = 45-90 mg)",
+        "Transport to closest STEMI/ICU-capable receiving center; pre-alert ED for post-arrest anaphylaxis"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "One-and-done IM epi",
+      "description": "JUDGMENT-ERROR BRANCH #1. The crew administers one IM epi 0.3 mg shortly after arrival and stops there. They focus on monitor application and a single IV but do not redose IM epi at 5 minutes, do not give nebulized epi for stridor, do not start a drip, and give only a 250 mL bolus. Approximately 4-5 minutes later the patient arrests in PEA — under far worse conditions than the default path. The recovery requires recognizing the omission, restarting aggressive epi (both IM repeat AND IV push-dose), opening a second large-bore line for massive volume, and securing a now-more-edematous airway.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 125,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 14,
+        "temp": 36.4,
+        "obstruction": 70,
+        "custMeasure1": 132,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize the miss: single IM epi was inadequate — RESCUE NOW",
+        "High-quality CPR + airway management; epi 1 mg IV push immediately",
+        "NS 2 L wide open through both IVs (place IO if second IV impossible)",
+        "Definitive airway under harder conditions: BVM with PEEP, video laryngoscopy + bougie + 7.0 ETT, surgical airway ready",
+        "Start epi infusion 0.1 mcg/kg/min (90 kg × 0.1 = 9 mcg/min) once round-of-CPR epi pushes done",
+        "Verbalize the omission to team — teaching/QI moment for after the call"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Insufficient fluid resus",
+      "description": "JUDGMENT-ERROR BRANCH #2. The crew correctly repeats IM epi and starts the epi drip but caps fluid at a single 250 mL bolus because 'his lungs are wheezy' (misinterpreting bronchospasm as pulmonary edema). With profound vasodilation and capillary leak the tank stays empty and the patient arrests in PEA. The drip is running into a hose with no water in it. Recovery requires recognition that anaphylactic wheeze is NOT pulmonary edema, opening a second IV/IO, and giving 2-3 L wide open during the resus.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 135,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 12,
+        "temp": 36.4,
+        "obstruction": 50,
+        "custMeasure1": 132,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize: anaphylaxis wheeze ≠ pulmonary edema. Give volume NOW",
+        "Second large-bore IV or humeral IO immediately for rapid volume",
+        "NS 2 L wide open through both access points (pressure bag/rapid infuser if available)",
+        "High-quality CPR; epi 1 mg IV q3-5 min (continue drip alongside)",
+        "Secure definitive airway during CPR; bougie + 7.0 ETT, BVM with PEEP",
+        "Verbalize the fluid omission to team — distinguishes bronchospasm from CHF in future"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Recognize severe anaphylaxis (skin + airway + shock); call code resource early",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 0.3 mg IM (1 mg/mL) anterolateral thigh — repeat dose #1 by EMS now",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "NRB 15 LPM, cardiac monitor, SpO2 + waveform EtCO2, position upright if tolerated",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Two large-bore IVs (16-18g) or IO if no IV in 90 sec",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "NS 1 L wide open / pressure bag (90 kg × 20 mL/kg = 1800 mL — start first L now)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Nebulized epinephrine 1 mg/mL 5 mL for stridor",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Albuterol 5 mg nebulized for wheezing (in-line with epi or back-to-back)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Pre-brief difficult airway plan (edema); set up RSI + bougie + smaller ETT + cric kit",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Diphenhydramine 50 mg IV (90 kg × 1 mg/kg = 90 mg → cap at 50 mg max) + Methylprednisolone 125 mg IV",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize cardiovascular collapse refractory to IM epi — escalate to IV epi",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Push-dose epi 10 mcg IV q3-5 min (dilute 1 mL of 0.1 mg/mL into 9 mL NS = 10 mcg/mL; give 1 mL)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine infusion 0.1 mcg/kg/min (90 kg × 0.1 = 9 mcg/min); titrate 0.05-0.5 mcg/kg/min to MAP 65",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "NS second liter wide open through second IV (toward 60 mL/kg = 5400 mL total goal)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Third IM epi 0.3 mg if drip not yet running (q5-15 min interval)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Move to RSI: pre-O2 BVM, ketamine 90 mg + rocuronium 90 mg IV ready; bougie + 7.0 ETT + cric kit at head",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Begin extrication to ambulance with ongoing resus; pre-alert closest ED with anaphylaxis-arrest pending",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "High-quality CPR: rate 100-120, depth 2-2.4 in, full recoil, switch q2 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 1 mg IV/IO push immediately (non-shockable rhythm = priority); repeat q3-5 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "MASSIVE NS — 2 L wide open through both IVs (continue toward 4-6 L total for anaphylaxis arrest)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Advanced airway: RSI / supraglottic if edema blocks ETT; bougie + 7.0 cuffed tube, surgical airway ready",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue epi infusion alongside ACLS bolus epi (anaphylaxis-specific)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Waveform EtCO2 on advanced airway: target >10 during CPR; abrupt rise = ROSC",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "H's & T's: confirm Hypovolemia + Hypoxia drive (anaphylaxis); continue cause-directed therapy",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Consider glucagon 1-5 mg IV if on beta-blocker and refractory to epi (not this patient — note it)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Re-confirm ETT with waveform EtCO2 + bilateral breath sounds; secure to 22 cm at lip",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Ventilate 10/min, target EtCO2 35-45; do NOT hyperventilate",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Titrate FiO2 to SpO2 94-98%; do NOT hyperoxygenate",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue epi infusion + volume to maintain MAP ≥65; expect ongoing distributive shock",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "12-lead EKG; screen for STEMI or arrest-induced ischemia",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous monitor for re-arrest; pads on; epi/fluids running; mechanical CPR device ready",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Ketamine 50 mg IV q15 min for sedation (90 kg × 0.5-1 mg/kg = 45-90 mg)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to closest STEMI/ICU-capable receiving center; pre-alert ED for post-arrest anaphylaxis",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize the miss: single IM epi was inadequate — RESCUE NOW",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "High-quality CPR + airway management; epi 1 mg IV push immediately",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "NS 2 L wide open through both IVs (place IO if second IV impossible)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Definitive airway under harder conditions: BVM with PEEP, video laryngoscopy + bougie + 7.0 ETT, surgical airway ready",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Start epi infusion 0.1 mcg/kg/min (90 kg × 0.1 = 9 mcg/min) once round-of-CPR epi pushes done",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Verbalize the omission to team — teaching/QI moment for after the call",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize: anaphylaxis wheeze ≠ pulmonary edema. Give volume NOW",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Second large-bore IV or humeral IO immediately for rapid volume",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "NS 2 L wide open through both access points (pressure bag/rapid infuser if available)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "High-quality CPR; epi 1 mg IV q3-5 min (continue drip alongside)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Secure definitive airway during CPR; bougie + 7.0 ETT, BVM with PEEP",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Verbalize the fluid omission to team — distinguishes bronchospasm from CHF in future",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

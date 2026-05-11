@@ -1,0 +1,473 @@
+{
+  "scenarioId": "R-T3-04",
+  "scenarioName": "Submersion/Drowning with Hypothermic Cardiac Arrest",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 2400,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "34-year-old previously healthy male was ice fishing alone on the southern edge of a frozen lake (water temperature estimated 35–38°F / 1.7–3.3°C — well below 43°F threshold). According to two ice-fishing companions ~150 yards away who heard him yell, he fell through thin ice approximately 15 minutes before EMS contact. The companions describe him going under after a brief struggle; estimated submersion time is at least 10 minutes, with the last 5 minutes underwater unwitnessed. They reached him with a rope and ice picks, pulled him onto the ice, then dragged him on a sled to the shore where bystanders started chest compressions without ventilations approximately 2 minutes before EMS arrival. The patient was last seen normal/alert/talking pre-fall. No reported head strike or diving mechanism — he reportedly stepped through thin ice. No known seizure activity, no alcohol on the breath of the companions but it cannot be ruled out for the patient at this time. Pulled fully wet and clothed (insulated bibs, boots, parka — all saturated). Outside ambient air ~15°F / -9°C with wind. On EMS contact: apneic, no shivering, pulseless after a deliberate 60-second carotid check, rectal core temperature 28.0°C / 82.4°F (severe hypothermia), initial monitored rhythm Ventricular Fibrillation (coarse).",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives at the boat launch to find a 34-year-old male flat on a plastic sled on the snowy shore, pulled from a frozen lake ~5 minutes ago after a 10-minute submersion. He is apneic, profoundly cold, wet, and not shivering. A panicked companion is doing aggressive, bouncing chest compressions that are visibly jostling the torso. The critical first move is to STOP the rough bystander CPR, perform a deliberate 60-second pulse check (because hypothermia slows circulation), and reframe this case as hypothermic arrest — not standard cardiac arrest. Airway-first (ABC, not CAB) because this is also a drowning. Core temperature, gentle handling, and getting the patient into a warmed cabin are co-equal priorities with ACLS. → Gentle resus + rewarming: Crew has taken over gently from the bystander, performed the deliberate 60-second pulse check, given 5 rescue breaths and started compressions in the ABC sequence, applied pads and delivered ONE 200 J biphasic shock for the coarse VFib. Recognizing core temp 28°C, they have withheld further defibrillation attempts pending rewarming. Patient is now in the warmed cabin (>24°C), clothing cut off (not pulled), dried, vapor-barriered, heat packs (with cloth barrier) on the anterior chest and axillae, forced-air warming blanket running. Advanced airway is placed with EtCO2 monitoring and ventilation at HALF the normothermic rate (5–6 bpm) to avoid hypocarbia-induced VF threshold drop. Humeral IO is in with warmed isotonic crystalloid running. Rhythm has now devolved to fine VF/asystole — expected at this core temp. Drugs are withheld (or doubled-interval per local medical direction). Crew is en route to an ECMO-capable center. The clinical work continues — gentle handling, rewarming, compressions, ventilation, transport — all the way to the hospital. → Rewarmed — ROSC: After approximately 25 minutes of relentless protocol-driven hypothermic resuscitation — gentle handling, ABC airway-first, halved ventilation rate, one shock at the start and then no further shocks until rewarmed, continuous compressions, active rewarming (heat packs, vapor barrier, forced-air blanket, warmed cabin), and warmed IO fluids — the patient's core temperature has climbed past 30°C. A second 200 J shock terminates the fine VF and produces a slow but organized rhythm. A deliberate 60-second pulse check confirms a weak central pulse. The patient is now in a fragile post-arrest state with a core temp of 30.2°C, profound bradycardia, hypotension, deep coma, and is exquisitely vulnerable to re-arrest. Post-ROSC care begins now — but the rewarming work is far from over, and the crew continues all the way to the ECMO-capable receiving facility."
+  },
+  "patientInformation": {
+    "patientName": "Tyler Brennan",
+    "patientCondition": "Apneic, pulseless adult male just pulled from a frozen lake after falling through the ice approximately 15 minutes ago; submerged at least 10 minutes; cold-water immersion with suspected hypothermic cardiac arrest.",
+    "patientAge": 34,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 180,
+    "patientWeight": 84,
+    "patientPhotoId": 41,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives at the boat launch to find a 34-year-old male flat on a plastic sled on the snowy shore, pulled from a frozen lake ~5 minutes ago after a 10-minute submersion. He is apneic, profoundly cold, wet, and not shivering. A panicked companion is doing aggressive, bouncing chest compressions that are visibly jostling the torso. The critical first move is to STOP the rough bystander CPR, perform a deliberate 60-second pulse check (because hypothermia slows circulation), and reframe this case as hypothermic arrest — not standard cardiac arrest. Airway-first (ABC, not CAB) because this is also a drowning. Core temperature, gentle handling, and getting the patient into a warmed cabin are co-equal priorities with ACLS.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": true,
+      "defibDisarm": false,
+      "parameters": {
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 12,
+        "temp": 28,
+        "obstruction": 30,
+        "custMeasure1": 96,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Scene safety — stay off the ice; work from shore; protect crew from cold exposure",
+        "STOP rough bystander CPR; gentle horizontal handling — rough movement can trigger VF",
+        "ABC sequence (not CAB) — airway first, then 5 rescue breaths, THEN compressions",
+        "Deliberate 60-second carotid pulse check (hypothermia slows circulation)",
+        "Obtain core temperature (rectal or epitympanic) — categorize hypothermia severity",
+        "High-quality CPR — 100–120/min, 2–2.4 inch depth, full recoil, minimal interruption",
+        "Apply defibrillator pads; reveal rhythm — coarse VFib",
+        "Defibrillate VFib ONCE at 200 J biphasic (Zoll); if core <30°C, withhold further shocks until rewarmed",
+        "Advanced airway (SGA or ET); ventilate at HALF normothermic rate (5 bpm) to avoid hypocarbia",
+        "Cut wet clothing off (don't pull) once in warmed cabin; dry skin; vapor barrier",
+        "Active rewarming — heat packs (with barrier) to torso, warm cabin >24°C, forced-air blanket if available",
+        "IO access (humeral); warmed isotonic crystalloid bolus to 42°C, 500 mL initial",
+        "Withhold ACLS drugs until core >30°C (Wilderness/Alaska); if AHA-guided, double intervals",
+        "Transport to ECMO/cardiopulmonary bypass-capable facility; early notification",
+        "Continue resuscitation through transport — 'not dead until warm and dead'"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Gentle resus + rewarming",
+      "description": "Crew has taken over gently from the bystander, performed the deliberate 60-second pulse check, given 5 rescue breaths and started compressions in the ABC sequence, applied pads and delivered ONE 200 J biphasic shock for the coarse VFib. Recognizing core temp 28°C, they have withheld further defibrillation attempts pending rewarming. Patient is now in the warmed cabin (>24°C), clothing cut off (not pulled), dried, vapor-barriered, heat packs (with cloth barrier) on the anterior chest and axillae, forced-air warming blanket running. Advanced airway is placed with EtCO2 monitoring and ventilation at HALF the normothermic rate (5–6 bpm) to avoid hypocarbia-induced VF threshold drop. Humeral IO is in with warmed isotonic crystalloid running. Rhythm has now devolved to fine VF/asystole — expected at this core temp. Drugs are withheld (or doubled-interval per local medical direction). Crew is en route to an ECMO-capable center. The clinical work continues — gentle handling, rewarming, compressions, ventilation, transport — all the way to the hospital.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": true,
+      "defibDisarm": false,
+      "parameters": {
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 6,
+        "spo2": 0,
+        "etco2": 16,
+        "temp": 28.4,
+        "obstruction": 20,
+        "custMeasure1": 96,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Continue high-quality CPR and active rewarming all the way to the hospital",
+        "Hold defibrillation attempts until core temperature exceeds 30°C",
+        "Ventilate at 5–6 bpm (half rate) through advanced airway; monitor EtCO2 (target 35–45)",
+        "Epinephrine 1 mg IV/IO ONLY when core >30°C; double intervals to 6–10 min until 35°C",
+        "Reassess rhythm/pulse every 2 minutes; pulse check minimum 60 sec each time",
+        "Warmed (42°C) isotonic crystalloid bolus 500 mL, repeat — maintain volume during rewarming",
+        "Early notification — ECMO/CPB team ready on arrival; communicate core temp and downtime",
+        "Document submersion time, water temp, downtime, core temp, all interventions"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Rewarmed — ROSC",
+      "description": "After approximately 25 minutes of relentless protocol-driven hypothermic resuscitation — gentle handling, ABC airway-first, halved ventilation rate, one shock at the start and then no further shocks until rewarmed, continuous compressions, active rewarming (heat packs, vapor barrier, forced-air blanket, warmed cabin), and warmed IO fluids — the patient's core temperature has climbed past 30°C. A second 200 J shock terminates the fine VF and produces a slow but organized rhythm. A deliberate 60-second pulse check confirms a weak central pulse. The patient is now in a fragile post-arrest state with a core temp of 30.2°C, profound bradycardia, hypotension, deep coma, and is exquisitely vulnerable to re-arrest. Post-ROSC care begins now — but the rewarming work is far from over, and the crew continues all the way to the ECMO-capable receiving facility.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 44,
+        "bpSys": 78,
+        "bpDia": 50,
+        "respRate": 9,
+        "spo2": 90,
+        "etco2": 32,
+        "temp": 30.2,
+        "obstruction": 15,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Maintain advanced airway; ventilate 8–10 bpm; target EtCO2 35–45 mmHg; SpO2 94–98%",
+        "Continue active rewarming; cabin >24°C; vapor barrier; trunk heat packs with barrier",
+        "Warmed isotonic crystalloid bolus (SBP 78 < 90); reassess after each 500 mL",
+        "Acquire post-ROSC 12-lead — look for STEMI vs hypothermic J waves",
+        "Check blood glucose — treat hypoglycemia per protocol if present",
+        "Continuous cardiac, EtCO2, and SpO2 monitoring; pads remain in place; ready to redefib if temp >30°C",
+        "Transport to ECMO/CPB-capable receiving facility; ongoing notification updates"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Rough handling — VF storm",
+      "description": "BRANCH (judgment error): The crew failed to stop the bystander's bouncing chest compressions, then compounded the problem by transferring the patient roughly — lifting by the extremities, jostling the torso onto the stretcher, and continuing aggressive movement through loading. The already-cold, irritable myocardium responded to the mechanical irritation with refractory ventricular fibrillation. Each shock attempt at this core temperature (28°C) is unable to convert; the rhythm immediately reverts to coarse, then fine VF. With no active rewarming committed to, the patient enters a futile VF storm. The teaching beat: in profound hypothermia, gentle handling isn't a courtesy — it's an antiarrhythmic intervention. Rough motion of cold extremities returns cold acidotic blood to the heart and triggers fibrillation.",
+      "monitorType": 0,
+      "trendTime": 25,
+      "jumpTime": 0,
+      "defibShock": true,
+      "defibDisarm": false,
+      "parameters": {
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 5,
+        "spo2": 0,
+        "etco2": 10,
+        "temp": 28.1,
+        "obstruction": 30,
+        "custMeasure1": 96,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "RECOVERY: stop all rough handling immediately; horizontal, gentle from here forward",
+        "RECOVERY: stop stacking shocks; hold defib until core >30°C",
+        "RECOVERY: cut wet clothes, vapor barrier, heat packs with barrier, cabin >24°C, warmed fluids",
+        "Continue resuscitation — 'not dead until warm and dead'; transport to ECMO-capable facility"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Standard ACLS — terminated early",
+      "description": "BRANCH (judgment error): The crew ran textbook normothermic ACLS — stacked shocks every 2 minutes, epinephrine 1 mg every 3–5 minutes at standard intervals, no doubled spacing for the cold patient, no core temperature obtained, no aggressive rewarming, wet clothing left in place. After approximately 20 minutes with the rhythm degrading from VF to fine VF to apparent asystole, the medic called medical control for termination of resuscitation, citing 'asystole 20 minutes, no ROSC.' This is the most dangerous failure mode in hypothermic arrest: the patient is not actually dead. Hypothermia protocol explicitly states a patient cannot be declared dead until rewarming has been attempted, AND apparent asystole at low core temp may simply be a profoundly slow rhythm that the monitor cannot resolve. The teaching beat: 'not dead until warm and dead' is a literal protocol rule, not a slogan.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 3,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 6,
+        "temp": 27.6,
+        "obstruction": 30,
+        "custMeasure1": 96,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "RECOVERY: obtain core temperature immediately; reframe as hypothermic arrest, not standard arrest",
+        "RECOVERY: do NOT terminate; restart aggressive rewarming + continue CPR",
+        "RECOVERY: stop standard-spaced epi; either withhold or double intervals until core >30°C → 35°C",
+        "RECOVERY: halve ventilation rate (5 bpm via advanced airway); avoid hypocarbia-induced VF",
+        "RECOVERY: transport to ECMO-capable facility; document Utstein elements; warm aggressively"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Scene safety — stay off the ice; work from shore; protect crew from cold exposure",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "STOP rough bystander CPR; gentle horizontal handling — rough movement can trigger VF",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "ABC sequence (not CAB) — airway first, then 5 rescue breaths, THEN compressions",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Deliberate 60-second carotid pulse check (hypothermia slows circulation)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Obtain core temperature (rectal or epitympanic) — categorize hypothermia severity",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "High-quality CPR — 100–120/min, 2–2.4 inch depth, full recoil, minimal interruption",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply defibrillator pads; reveal rhythm — coarse VFib",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Defibrillate VFib ONCE at 200 J biphasic (Zoll); if core <30°C, withhold further shocks until rewarmed",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Advanced airway (SGA or ET); ventilate at HALF normothermic rate (5 bpm) to avoid hypocarbia",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Cut wet clothing off (don't pull) once in warmed cabin; dry skin; vapor barrier",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Active rewarming — heat packs (with barrier) to torso, warm cabin >24°C, forced-air blanket if available",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "IO access (humeral); warmed isotonic crystalloid bolus to 42°C, 500 mL initial",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Withhold ACLS drugs until core >30°C (Wilderness/Alaska); if AHA-guided, double intervals",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to ECMO/cardiopulmonary bypass-capable facility; early notification",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue resuscitation through transport — 'not dead until warm and dead'",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue high-quality CPR and active rewarming all the way to the hospital",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Hold defibrillation attempts until core temperature exceeds 30°C",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Ventilate at 5–6 bpm (half rate) through advanced airway; monitor EtCO2 (target 35–45)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 1 mg IV/IO ONLY when core >30°C; double intervals to 6–10 min until 35°C",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess rhythm/pulse every 2 minutes; pulse check minimum 60 sec each time",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Warmed (42°C) isotonic crystalloid bolus 500 mL, repeat — maintain volume during rewarming",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Early notification — ECMO/CPB team ready on arrival; communicate core temp and downtime",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document submersion time, water temp, downtime, core temp, all interventions",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Maintain advanced airway; ventilate 8–10 bpm; target EtCO2 35–45 mmHg; SpO2 94–98%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue active rewarming; cabin >24°C; vapor barrier; trunk heat packs with barrier",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Warmed isotonic crystalloid bolus (SBP 78 < 90); reassess after each 500 mL",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Acquire post-ROSC 12-lead — look for STEMI vs hypothermic J waves",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check blood glucose — treat hypoglycemia per protocol if present",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous cardiac, EtCO2, and SpO2 monitoring; pads remain in place; ready to redefib if temp >30°C",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to ECMO/CPB-capable receiving facility; ongoing notification updates",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "RECOVERY: stop all rough handling immediately; horizontal, gentle from here forward",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "RECOVERY: stop stacking shocks; hold defib until core >30°C",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "RECOVERY: cut wet clothes, vapor barrier, heat packs with barrier, cabin >24°C, warmed fluids",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue resuscitation — 'not dead until warm and dead'; transport to ECMO-capable facility",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "RECOVERY: obtain core temperature immediately; reframe as hypothermic arrest, not standard arrest",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "RECOVERY: do NOT terminate; restart aggressive rewarming + continue CPR",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "RECOVERY: stop standard-spaced epi; either withhold or double intervals until core >30°C → 35°C",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "RECOVERY: halve ventilation rate (5 bpm via advanced airway); avoid hypocarbia-induced VF",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "RECOVERY: transport to ECMO-capable facility; document Utstein elements; warm aggressively",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

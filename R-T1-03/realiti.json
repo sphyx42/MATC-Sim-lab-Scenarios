@@ -1,0 +1,356 @@
+{
+  "scenarioId": "R-T1-03",
+  "scenarioName": "Upper Airway Obstruction, Partial — Evolving Allergic Airway Edema",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 900,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "28-year-old healthy female ate dinner at a new restaurant tonight with friends. She ordered a Thai noodle dish she had not had before. About 20–25 minutes after eating she developed an itchy sensation on her chest and neck, a 'thick' tongue, and a feeling that her throat was closing. She noticed her voice changing and a high-pitched whistling sound when she breathed in. She did not choke on any food, did not aspirate, never coughed up anything, and has been able to keep her own airway clear. She is talking — but her voice is muffled and 'wet' sounding. She denies wheezing, chest pain, dizziness, fainting, abdominal cramping, vomiting, or diarrhea, though she reports mild nausea. She has a history of mild shellfish allergy treated with oral diphenhydramine in the past (never IM epi, never ED, never intubated). She does not own an EpiPen. Friends called 911 when her voice changed and they heard her breathing from across the table.",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives at the restaurant to find a 28-year-old female seated upright at a table, leaning slightly forward, with audible inspiratory stridor heard from across the room. She is alert, oriented, and speaking — but her voice is muffled (hot-potato quality), and she has visible urticaria on her upper chest and neck plus mild lip and tongue swelling. She is maintaining her own airway and self-positioning for comfort. This is the assessment window: the student needs to recognize that stridor + muffled voice + recent food exposure + hives points strongly at an evolving allergic upper-airway reaction — NOT a choking foreign body and NOT simple anxiety. The teaching point is that a structured airway assessment (listen for stridor type, check voice quality, inspect oropharynx, ask about exposure, look for hives) drives the differential and unlocks the protocol-directed treatment in the next phase. → IM Epi given: Crew has identified anaphylaxis and administered IM epinephrine 0.3 mg (1 mg/mL) in the anterolateral thigh. Within 2–3 minutes the patient reports her throat feels 'less tight,' the inspiratory stridor softens noticeably, voice clears slightly, and the hives begin to fade. Heart rate is briefly higher (epinephrine effect) but blood pressure holds. Crew now establishes IV access, considers adjunct steroids and antihistamine per protocol, monitors for the need for a repeat IM epi dose at 5–15 minutes, and prepares to transport. This is the stabilization phase — students should be reassessing airway sounds and voice continuously and should be ready to escalate (repeat IM epi, prep advanced airway) if symptoms recur."
+  },
+  "patientInformation": {
+    "patientName": "Priya Anand",
+    "patientCondition": "Trouble breathing and trouble swallowing about 25 minutes after dinner; throat feels tight and 'thick.'",
+    "patientAge": 28,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 2,
+    "patientHeight": 165,
+    "patientWeight": 64,
+    "patientPhotoId": 34,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives at the restaurant to find a 28-year-old female seated upright at a table, leaning slightly forward, with audible inspiratory stridor heard from across the room. She is alert, oriented, and speaking — but her voice is muffled (hot-potato quality), and she has visible urticaria on her upper chest and neck plus mild lip and tongue swelling. She is maintaining her own airway and self-positioning for comfort. This is the assessment window: the student needs to recognize that stridor + muffled voice + recent food exposure + hives points strongly at an evolving allergic upper-airway reaction — NOT a choking foreign body and NOT simple anxiety. The teaching point is that a structured airway assessment (listen for stridor type, check voice quality, inspect oropharynx, ask about exposure, look for hives) drives the differential and unlocks the protocol-directed treatment in the next phase.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 112,
+        "bpSys": 118,
+        "bpDia": 76,
+        "respRate": 22,
+        "spo2": 94,
+        "etco2": 38,
+        "temp": 37,
+        "obstruction": 50,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Scene safety, BSI, form general impression (alert, leaning forward, audible stridor)",
+        "Primary survey: assess airway — listen for stridor type (inspiratory vs expiratory)",
+        "Check voice quality (muffled vs hoarse) and inspect oropharynx for swelling",
+        "Expose chest/neck/arms — identify urticaria, lip and tongue swelling",
+        "Targeted SAMPLE: new food, new med, sting, prior reactions, EpiPen on hand",
+        "Full vitals with continuous SpO2 and waveform capnography",
+        "Let patient self-position upright — do NOT force supine",
+        "Supplemental O2 titrated to SpO2 94–98% (NC or NRB, patient choice)",
+        "Recognize anaphylaxis criteria met (skin + respiratory after likely allergen)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "IM Epi given",
+      "description": "Crew has identified anaphylaxis and administered IM epinephrine 0.3 mg (1 mg/mL) in the anterolateral thigh. Within 2–3 minutes the patient reports her throat feels 'less tight,' the inspiratory stridor softens noticeably, voice clears slightly, and the hives begin to fade. Heart rate is briefly higher (epinephrine effect) but blood pressure holds. Crew now establishes IV access, considers adjunct steroids and antihistamine per protocol, monitors for the need for a repeat IM epi dose at 5–15 minutes, and prepares to transport. This is the stabilization phase — students should be reassessing airway sounds and voice continuously and should be ready to escalate (repeat IM epi, prep advanced airway) if symptoms recur.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 124,
+        "bpSys": 124,
+        "bpDia": 78,
+        "respRate": 20,
+        "spo2": 97,
+        "etco2": 37,
+        "temp": 37,
+        "obstruction": 25,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Epinephrine 0.3 mg IM in anterolateral thigh (1 mg/mL, adult ≥25 kg)",
+        "Reassess airway/voice/stridor at 2–3 min — confirm improvement or repeat IM epi",
+        "Establish IV access (preferably large bore) for adjunct meds and fluids",
+        "Diphenhydramine 50 mg IV (64 kg × 1 mg/kg = 64 mg → cap at 50 mg max)",
+        "Methylprednisolone 125 mg IV (or Dexamethasone 10 mg IV)",
+        "Prepare advanced airway equipment in case of progression to complete obstruction",
+        "Transport priority, continuous monitoring, reassess every 5 minutes"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Back blows attempted on awake patient",
+      "description": "Crew anchored on 'stridor must be a choking foreign body.' Despite the patient being awake, alert, talking, and giving a clear history of NO aspiration (she did not choke, never coughed, food went down fine), the crew positions her forward and delivers back blows; one provider readies for abdominal thrusts. The patient — already anxious from the sensation of a closing throat — panics. Her crying and gasping increase her work of breathing, the soft-tissue edema worsens, the inspiratory stridor becomes louder and now occurs on every breath, and the obstruction trends toward complete. This is the recovery beat: a thoughtful crew recognizes the maneuver is wrong, STOPS, returns the patient to her position of comfort, reassesses, and gives IM epinephrine. Failure to recover here puts her at imminent risk of complete airway closure.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 134,
+        "bpSys": 122,
+        "bpDia": 80,
+        "respRate": 28,
+        "spo2": 90,
+        "etco2": 34,
+        "temp": 37,
+        "obstruction": 75,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "STOP back blows / abdominal thrusts on this awake, talking patient",
+        "Reassess: stridor + hives + recent food = allergic, not foreign body",
+        "Epinephrine 0.3 mg IM anterolateral thigh NOW (rescue dose, 1 mg/mL)",
+        "Return patient to upright position of comfort, calm and reassure",
+        "Prepare advanced airway / SGA / surgical kit — obstruction progressing"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Stridor dismissed, IM Epi delayed",
+      "description": "Crew attributed the inspiratory stridor and voice change to 'anxiety' or a 'panic attack' because the patient is talking and sitting upright. They elect to monitor, place a nasal cannula, encourage slow breathing, and begin transport WITHOUT administering IM epinephrine. Over the next 8–10 minutes, the underlying allergic process continues unchecked: airway edema progresses, the inspiratory stridor becomes biphasic, drooling appears, voice becomes nearly unintelligible, and SpO2 begins to fall. The patient is now visibly tiring. This is the consequence beat — students see what 'delayed epi' looks like clinically. Recovery still hinges on IM epinephrine, but the airway is now actively threatening to close, and advanced-airway preparation must run in parallel.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 138,
+        "bpSys": 116,
+        "bpDia": 76,
+        "respRate": 30,
+        "spo2": 88,
+        "etco2": 32,
+        "temp": 37.1,
+        "obstruction": 85,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Re-recognize anaphylaxis (skin + airway progression after likely allergen)",
+        "Epinephrine 0.3 mg IM anterolateral thigh IMMEDIATELY (1 mg/mL)",
+        "Nebulized Epinephrine 5 mL of 1 mg/mL for ongoing stridor",
+        "Prep advanced airway (smaller ETT, bougie, SGA, surgical kit)",
+        "Repeat IM epi 0.3 mg at 5–15 min if no improvement",
+        "Emergent transport, notify receiving facility of difficult airway"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Scene safety, BSI, form general impression (alert, leaning forward, audible stridor)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Primary survey: assess airway — listen for stridor type (inspiratory vs expiratory)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check voice quality (muffled vs hoarse) and inspect oropharynx for swelling",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Expose chest/neck/arms — identify urticaria, lip and tongue swelling",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Targeted SAMPLE: new food, new med, sting, prior reactions, EpiPen on hand",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Full vitals with continuous SpO2 and waveform capnography",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Let patient self-position upright — do NOT force supine",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Supplemental O2 titrated to SpO2 94–98% (NC or NRB, patient choice)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize anaphylaxis criteria met (skin + respiratory after likely allergen)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 0.3 mg IM in anterolateral thigh (1 mg/mL, adult ≥25 kg)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess airway/voice/stridor at 2–3 min — confirm improvement or repeat IM epi",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access (preferably large bore) for adjunct meds and fluids",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Diphenhydramine 50 mg IV (64 kg × 1 mg/kg = 64 mg → cap at 50 mg max)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Methylprednisolone 125 mg IV (or Dexamethasone 10 mg IV)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Prepare advanced airway equipment in case of progression to complete obstruction",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport priority, continuous monitoring, reassess every 5 minutes",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "STOP back blows / abdominal thrusts on this awake, talking patient",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess: stridor + hives + recent food = allergic, not foreign body",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 0.3 mg IM anterolateral thigh NOW (rescue dose, 1 mg/mL)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Return patient to upright position of comfort, calm and reassure",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Prepare advanced airway / SGA / surgical kit — obstruction progressing",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Re-recognize anaphylaxis (skin + airway progression after likely allergen)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 0.3 mg IM anterolateral thigh IMMEDIATELY (1 mg/mL)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Nebulized Epinephrine 5 mL of 1 mg/mL for ongoing stridor",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Prep advanced airway (smaller ETT, bougie, SGA, surgical kit)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Repeat IM epi 0.3 mg at 5–15 min if no improvement",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Emergent transport, notify receiving facility of difficult airway",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

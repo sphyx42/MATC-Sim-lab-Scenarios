@@ -1,0 +1,329 @@
+{
+  "scenarioId": "R-T2-05",
+  "scenarioName": "Acute Asthma Progressing to Quiet Chest",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1500,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "34-year-old female with longstanding severe persistent asthma began wheezing 6 hours ago after a viral URI over the last 3 days. She has been using a friend's albuterol inhaler 'every 20 minutes for the last 2 hours' with no relief. She ran out of her controller meds (Symbicort, montelukast) and oral prednisone taper about 1 week ago — could not afford the refill. She was last admitted to the ICU 18 months ago for a near-fatal exacerbation requiring intubation. Tonight she became unable to lie down, then unable to walk to the bathroom, then unable to complete sentences. Her boyfriend called 911 when she stopped responding to him in full words.",
+    "discussion": "",
+    "course": "Initial Contact: On arrival you find a 34-year-old female tripoded on the couch in obvious severe respiratory distress. She is awake, anxious, speaking only 3-word phrases. Audible expiratory wheeze without a stethoscope. Retractions and accessory muscle use are obvious. Boyfriend reports severe asthma with prior ICU admission and intubation 18 months ago and that she has been off her controllers and steroids for about a week. This patient carries every high-risk-asthma marker in the MATC respiratory distress guideline. → Quiet chest recognized: Approximately 5 minutes into the call. The audible wheeze is noticeably DIMINISHING — but the patient is not better. She is more fatigued, slumped slightly forward, eyes half-closed, speaking only in 1-word phrases. EtCO2 has climbed from 40 to 52 mmHg with a flattening shark-fin. Lips and nail beds are mottled. SpO2 has drifted from 88 to 85%. The crew correctly recognizes that a quieting chest in a severe asthmatic is loss of air movement, NOT bronchodilator response. Per MATC: 'In the setting of severe bronchoconstriction, wheezing may not be heard.' This is impending respiratory failure and triggers immediate escalation. → Wheeze returns — air moving: About 2-3 minutes after IM epi and the start of the magnesium load with PPV support, audible expiratory wheeze RETURNS. Counterintuitively this is the good news: air is moving again. SpO2 climbs to 93%, EtCO2 trends back down to 44 mmHg, the shark-fin re-establishes a normal-ish morphology, and the patient brightens — eyes open, speaking 3-4 word phrases, accessory muscle use easing. Crew packages for transport on continued NIV/in-line neb, with RSI gear still drawn up and visible as the contingency."
+  },
+  "patientInformation": {
+    "patientName": "Devon Marsh",
+    "patientCondition": "Severe shortness of breath, can't catch her breath",
+    "patientAge": 34,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 2,
+    "patientHeight": 168,
+    "patientWeight": 65,
+    "patientPhotoId": 41,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "On arrival you find a 34-year-old female tripoded on the couch in obvious severe respiratory distress. She is awake, anxious, speaking only 3-word phrases. Audible expiratory wheeze without a stethoscope. Retractions and accessory muscle use are obvious. Boyfriend reports severe asthma with prior ICU admission and intubation 18 months ago and that she has been off her controllers and steroids for about a week. This patient carries every high-risk-asthma marker in the MATC respiratory distress guideline.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 132,
+        "bpSys": 138,
+        "bpDia": 84,
+        "respRate": 32,
+        "spo2": 88,
+        "etco2": 40,
+        "temp": 37.2,
+        "obstruction": 70,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Scene survey + primary survey; identify SEVERE asthma exacerbation",
+        "Flag HIGH-RISK asthma history (prior ICU/intubation, med non-compliance, repeat ED)",
+        "Leave patient tripoded; do NOT force supine",
+        "Place SpO2 and waveform EtCO2; cardiac monitor",
+        "Albuterol 5 mg + Ipratropium 0.5 mg nebulized (DuoNeb) NOW",
+        "Establish IV access early (anticipating mag/steroids/epi)",
+        "Dexamethasone 16 mg IV (65 kg × 0.6 mg/kg = 39 mg → cap at 16 mg max)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Quiet chest recognized",
+      "description": "Approximately 5 minutes into the call. The audible wheeze is noticeably DIMINISHING — but the patient is not better. She is more fatigued, slumped slightly forward, eyes half-closed, speaking only in 1-word phrases. EtCO2 has climbed from 40 to 52 mmHg with a flattening shark-fin. Lips and nail beds are mottled. SpO2 has drifted from 88 to 85%. The crew correctly recognizes that a quieting chest in a severe asthmatic is loss of air movement, NOT bronchodilator response. Per MATC: 'In the setting of severe bronchoconstriction, wheezing may not be heard.' This is impending respiratory failure and triggers immediate escalation.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 142,
+        "bpSys": 128,
+        "bpDia": 78,
+        "respRate": 36,
+        "spo2": 85,
+        "etco2": 52,
+        "temp": 37.2,
+        "obstruction": 90,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize quiet chest = impending respiratory failure (NOT improvement)",
+        "Epinephrine 0.3 mg IM, 1 mg/mL (65 kg × 0.01 mg/kg = 0.65 mg → cap at 0.3 mg max); may repeat q5-15 min",
+        "Magnesium sulfate 2 g IV over 10-15 min (65 kg × 40 mg/kg = 2600 mg → cap at 2 g max)",
+        "Continue back-to-back albuterol 5 mg nebs (unlimited frequency)",
+        "Prep NIV/CPAP or 2-person BVM with neb in-line; PEEP 5 cmH2O",
+        "Pre-brief RSI plan (least-invasive first); avoid intubation if PPV/meds work"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Wheeze returns — air moving",
+      "description": "About 2-3 minutes after IM epi and the start of the magnesium load with PPV support, audible expiratory wheeze RETURNS. Counterintuitively this is the good news: air is moving again. SpO2 climbs to 93%, EtCO2 trends back down to 44 mmHg, the shark-fin re-establishes a normal-ish morphology, and the patient brightens — eyes open, speaking 3-4 word phrases, accessory muscle use easing. Crew packages for transport on continued NIV/in-line neb, with RSI gear still drawn up and visible as the contingency.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 118,
+        "bpSys": 124,
+        "bpDia": 72,
+        "respRate": 26,
+        "spo2": 93,
+        "etco2": 44,
+        "temp": 37.1,
+        "obstruction": 50,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Interpret return of wheeze as IMPROVEMENT (air now moving)",
+        "Continue back-to-back albuterol 5 mg in-line on NIV/BVM",
+        "Reassess RR/SpO2/EtCO2/mental status; document trend",
+        "Do NOT break NIV seal until ED stretcher — atelectasis risk",
+        "Transport priority 1; continuous monitor; pre-alert ED for severe asthma"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Quiet chest misread",
+      "description": "JUDGMENT-ERROR BRANCH. Five minutes into the call the crew sees the wheeze diminishing and interprets it as response to DuoNeb. They continue nebulizer only and defer IM epinephrine, IV magnesium, and PPV preparation. They do not pick up that EtCO2 is climbing through 50, speech has dropped to 1-word, and mottling is appearing. The patient is, in fact, drifting toward respiratory arrest. Approximately 4-5 minutes after this misread, the patient slumps, eyes close, RR drops to 6 with agonal pauses, SpO2 falls to 70s, EtCO2 spikes past 70. Recovery now requires recognition of the miss and rapid escalation under far worse conditions — BVM with PEEP, IM epi NOW, mag, and almost certainly RSI.",
+      "monitorType": 0,
+      "trendTime": 55,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 150,
+        "bpSys": 92,
+        "bpDia": 58,
+        "respRate": 6,
+        "spo2": 74,
+        "etco2": 72,
+        "temp": 37,
+        "obstruction": 95,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Magnesium sulfate 2 g IV over 10-15 min (65 kg × 40 mg/kg = 2600 mg → cap at 2 g max)",
+        "Recognize the miss: quiet chest was failure, not response — RESCUE NOW",
+        "Two-person BVM with PEEP 5 cmH2O, in-line albuterol",
+        "Epinephrine 0.3 mg IM, 1 mg/mL (65 kg × 0.01 mg/kg = 0.65 mg → cap at 0.3 mg max) IMMEDIATELY",
+        "RSI: ketamine 1-2 mg/kg + rocuronium 1 mg/kg if BVM cannot ventilate",
+        "Anticipate cardiac arrest; pads on, defib ready"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Scene survey + primary survey; identify SEVERE asthma exacerbation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Flag HIGH-RISK asthma history (prior ICU/intubation, med non-compliance, repeat ED)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Leave patient tripoded; do NOT force supine",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place SpO2 and waveform EtCO2; cardiac monitor",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Albuterol 5 mg + Ipratropium 0.5 mg nebulized (DuoNeb) NOW",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access early (anticipating mag/steroids/epi)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Dexamethasone 16 mg IV (65 kg × 0.6 mg/kg = 39 mg → cap at 16 mg max)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize quiet chest = impending respiratory failure (NOT improvement)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 0.3 mg IM, 1 mg/mL (65 kg × 0.01 mg/kg = 0.65 mg → cap at 0.3 mg max); may repeat q5-15 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Magnesium sulfate 2 g IV over 10-15 min (65 kg × 40 mg/kg = 2600 mg → cap at 2 g max)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue back-to-back albuterol 5 mg nebs (unlimited frequency)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Prep NIV/CPAP or 2-person BVM with neb in-line; PEEP 5 cmH2O",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Pre-brief RSI plan (least-invasive first); avoid intubation if PPV/meds work",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Interpret return of wheeze as IMPROVEMENT (air now moving)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue back-to-back albuterol 5 mg in-line on NIV/BVM",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess RR/SpO2/EtCO2/mental status; document trend",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Do NOT break NIV seal until ED stretcher — atelectasis risk",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport priority 1; continuous monitor; pre-alert ED for severe asthma",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize the miss: quiet chest was failure, not response — RESCUE NOW",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Two-person BVM with PEEP 5 cmH2O, in-line albuterol",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 0.3 mg IM, 1 mg/mL (65 kg × 0.01 mg/kg = 0.65 mg → cap at 0.3 mg max) IMMEDIATELY",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "RSI: ketamine 1-2 mg/kg + rocuronium 1 mg/kg if BVM cannot ventilate",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Anticipate cardiac arrest; pads on, defib ready",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

@@ -1,0 +1,328 @@
+{
+  "scenarioId": "R-T1-04",
+  "scenarioName": "Hyperventilation with Underlying Cause — Early DKA Masquerading as Panic Attack",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1080,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "24-year-old female with longstanding Type 1 diabetes (diagnosed age 12) who has been feeling progressively unwell for the last two days — frequent urination, constant thirst, fatigue, and decreased appetite. Last night she slept poorly and skipped her insulin pump basal because she 'wasn't eating' and the pump site felt itchy. This morning at the bookstore where she works, coworkers noticed she was sweating, breathing very fast and deep, and looked anxious. She reports nausea, intermittent crampy mid-abdominal pain, mild lightheadedness, and a sensation she 'can't get a deep enough breath in,' though she denies chest pain, cough, wheezing, leg swelling, fever, or sick contacts. She has not vomited yet today. She has felt 'high' on her finger-stick glucose readings the last two days (mid-300s) but hasn't given correction boluses because she thought maybe the pump or sensor was wrong. Her insulin pump infusion set is visible on her abdomen but looks slightly crusted at the entry point. She does not feel like she is having a panic attack — 'this feels different from those.'",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives at the bookstore back office to find a 24-year-old female sitting in a desk chair, alert, anxious-appearing, breathing rapidly and deeply. Coworker reports a possible panic attack. The picture is deceptive: respirations are FAST and DEEP (Kussmaul), not shallow, and SpO2 is normal at 99% — she is not actually hypoxic or short of breath in the traditional sense. She has Type 1 diabetes with an insulin pump, skipped her overnight basal, polyuria/polydipsia x2 days, mild abdominal pain, faintly fruity breath, and a MedicAlert bracelet visible. This is the assessment window. The teaching point: a complete primary survey, targeted history, breath odor, and a FINGER-STICK GLUCOSE — not a paper bag — is what discriminates DKA from panic attack. Crews that anchor on 'panic attack' and skip glucose will go down the wrong-turn branch. → DKA recognized; IV + fluids started: Crew has identified the underlying cause: early diabetic ketoacidosis with compensatory Kussmaul respirations. Glucose reads 480 mg/dL, patient is mildly dehydrated, hemodynamics borderline (HR 118, BP 108/68), normal SpO2. Treatment now follows the Hyperglycemia Guideline: establish IV access, begin a normal saline bolus at the protocol rate (20 mL/kg at 1000 mL/hr → for 64 kg, 1280 mL total goal), obtain a 12-lead EKG to screen for hyperkalemia or ACS, place the patient on cardiac monitor, and prepare for transport. Insulin and bicarbonate are NOT given prehospital. The teaching point in this phase is correct prehospital DKA management — fluids + monitor + transport, not insulin or bicarb. → Transport; stable en route: En route to the ED. NS bolus has infused approximately 600 mL of the 1280 mL goal. Patient remains alert, oriented, and cooperative. Kussmaul respirations persist as expected — acidosis will not correct without insulin at the receiving facility — but HR is trending down, BP is stable, glucose remains in the high 400s, and mental status is unchanged. Crew gives a clean radio report including the deceptive presentation (looked like panic attack at first), the key discriminator (finger-stick glucose 480), the working diagnosis (DKA), and treatment so far. Bedside handoff at the ED uses a structured format (SBAR or similar) and the patient is transitioned to the ED bed with continued NS, monitor, and pump suspended."
+  },
+  "patientInformation": {
+    "patientName": "Madison Carver",
+    "patientCondition": "Rapid deep breathing for ~3 hours; feels anxious, nauseated, and 'can't catch a normal breath.' Coworker called 911 thinking she was having a panic attack.",
+    "patientAge": 24,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 2,
+    "patientHeight": 168,
+    "patientWeight": 64,
+    "patientPhotoId": 29,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives at the bookstore back office to find a 24-year-old female sitting in a desk chair, alert, anxious-appearing, breathing rapidly and deeply. Coworker reports a possible panic attack. The picture is deceptive: respirations are FAST and DEEP (Kussmaul), not shallow, and SpO2 is normal at 99% — she is not actually hypoxic or short of breath in the traditional sense. She has Type 1 diabetes with an insulin pump, skipped her overnight basal, polyuria/polydipsia x2 days, mild abdominal pain, faintly fruity breath, and a MedicAlert bracelet visible. This is the assessment window. The teaching point: a complete primary survey, targeted history, breath odor, and a FINGER-STICK GLUCOSE — not a paper bag — is what discriminates DKA from panic attack. Crews that anchor on 'panic attack' and skip glucose will go down the wrong-turn branch.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 118,
+        "bpSys": 108,
+        "bpDia": 68,
+        "respRate": 32,
+        "spo2": 99,
+        "etco2": 22,
+        "temp": 37.1,
+        "obstruction": 0,
+        "custMeasure1": 480,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Primary survey (ABC); note Kussmaul pattern, clear lungs, normal SpO2 — NOT primary respiratory failure",
+        "Targeted history: onset, prior episodes, diabetes, insulin compliance, sick days, urinary frequency, thirst",
+        "Check finger-stick blood glucose — THIS is the discriminator (will read 480 mg/dL)",
+        "Assess breath odor (acetone/fruity = DKA); auscultate lungs (clear → not bronchospasm)",
+        "Secondary survey: dry mucous membranes, sunken eyes, abdominal exam, skin turgor",
+        "Apply SpO2 + waveform capnography; document baseline (low EtCO2 ≈ 22 confirms compensation)",
+        "Supplemental O2 only if SpO2 < 94% (here 99% on RA — no O2 needed)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "DKA recognized; IV + fluids started",
+      "description": "Crew has identified the underlying cause: early diabetic ketoacidosis with compensatory Kussmaul respirations. Glucose reads 480 mg/dL, patient is mildly dehydrated, hemodynamics borderline (HR 118, BP 108/68), normal SpO2. Treatment now follows the Hyperglycemia Guideline: establish IV access, begin a normal saline bolus at the protocol rate (20 mL/kg at 1000 mL/hr → for 64 kg, 1280 mL total goal), obtain a 12-lead EKG to screen for hyperkalemia or ACS, place the patient on cardiac monitor, and prepare for transport. Insulin and bicarbonate are NOT given prehospital. The teaching point in this phase is correct prehospital DKA management — fluids + monitor + transport, not insulin or bicarb.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 114,
+        "bpSys": 112,
+        "bpDia": 70,
+        "respRate": 30,
+        "spo2": 99,
+        "etco2": 23,
+        "temp": 37.1,
+        "obstruction": 0,
+        "custMeasure1": 478,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Establish IV access (18g AC if able); place on cardiac monitor",
+        "Normal saline 1280 mL bolus IV (64 kg × 20 mL/kg) at 1000 mL/hr; reassess",
+        "Obtain 12-lead EKG — screen for hyperkalemia (peaked T) and ACS",
+        "Evaluate for concomitant sepsis/infection (temperature, infusion-site exam, recent illness)",
+        "Reassess vitals, mental status, and recheck glucose every 15 min en route",
+        "Do NOT give bicarbonate empirically; do NOT push insulin prehospital",
+        "Transport to closest appropriate ED with continued NS, monitor, and reassessment"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Transport; stable en route",
+      "description": "En route to the ED. NS bolus has infused approximately 600 mL of the 1280 mL goal. Patient remains alert, oriented, and cooperative. Kussmaul respirations persist as expected — acidosis will not correct without insulin at the receiving facility — but HR is trending down, BP is stable, glucose remains in the high 400s, and mental status is unchanged. Crew gives a clean radio report including the deceptive presentation (looked like panic attack at first), the key discriminator (finger-stick glucose 480), the working diagnosis (DKA), and treatment so far. Bedside handoff at the ED uses a structured format (SBAR or similar) and the patient is transitioned to the ED bed with continued NS, monitor, and pump suspended.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 108,
+        "bpSys": 114,
+        "bpDia": 72,
+        "respRate": 28,
+        "spo2": 99,
+        "etco2": 24,
+        "temp": 37.1,
+        "obstruction": 0,
+        "custMeasure1": 462,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Reassess vitals, mental status, glucose, and dehydration signs q15 min en route",
+        "Monitor for AMS, headache, ICP signs — stop fluids and elevate head if cerebral edema suspected",
+        "Structured ED handoff: pertinent history, glucose 480, DKA, fluids given, deceptive presentation"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Treated as panic attack; acidosis worsening",
+      "description": "Crew accepted the dispatch label and the surface presentation. They coached slow breathing or had the patient breathe into a paper bag to 'rebreathe CO2.' No finger-stick glucose was checked. Coaching/rebreathing has the opposite of the intended effect: it raises the patient's PaCO2, which removes her compensatory hyperventilation, drops her arterial pH further, and worsens the metabolic acidosis. Over a few minutes she becomes more lethargic, her speech slows, her respirations become slightly more shallow (no longer fully compensating), she vomits once, and her mental status deteriorates from GCS 15 to GCS 12 (E3 V4 M5). This is the wrong-turn branch — the teaching point is that anchoring on a dispatch label without doing the assessment causes harm.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 124,
+        "bpSys": 102,
+        "bpDia": 64,
+        "respRate": 22,
+        "spo2": 96,
+        "etco2": 32,
+        "temp": 37.2,
+        "obstruction": 0,
+        "custMeasure1": 488,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Stop CO2 rebreathing immediately; reassess airway, breathing, mental status",
+        "Check finger-stick glucose NOW; treat the underlying cause, not the breathing pattern",
+        "Recognize DKA: T1DM + missed insulin + polyuria + Kussmaul + glucose 488 + fruity breath",
+        "Manage airway: position, suction available, supplemental O2 to keep SpO2 ≥ 94%",
+        "Establish IV; start NS 1280 mL bolus (64 kg × 20 mL/kg) at 1000 mL/hr",
+        "Screen for shock (BP, HR, cap refill, lactate if available) — treat per Shock Guideline if criteria met"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Primary survey (ABC); note Kussmaul pattern, clear lungs, normal SpO2 — NOT primary respiratory failure",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Targeted history: onset, prior episodes, diabetes, insulin compliance, sick days, urinary frequency, thirst",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check finger-stick blood glucose — THIS is the discriminator (will read 480 mg/dL)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Assess breath odor (acetone/fruity = DKA); auscultate lungs (clear → not bronchospasm)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Secondary survey: dry mucous membranes, sunken eyes, abdominal exam, skin turgor",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply SpO2 + waveform capnography; document baseline (low EtCO2 ≈ 22 confirms compensation)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Supplemental O2 only if SpO2 < 94% (here 99% on RA — no O2 needed)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access (18g AC if able); place on cardiac monitor",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Normal saline 1280 mL bolus IV (64 kg × 20 mL/kg) at 1000 mL/hr; reassess",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Obtain 12-lead EKG — screen for hyperkalemia (peaked T) and ACS",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Evaluate for concomitant sepsis/infection (temperature, infusion-site exam, recent illness)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess vitals, mental status, and recheck glucose every 15 min en route",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Do NOT give bicarbonate empirically; do NOT push insulin prehospital",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to closest appropriate ED with continued NS, monitor, and reassessment",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess vitals, mental status, glucose, and dehydration signs q15 min en route",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Monitor for AMS, headache, ICP signs — stop fluids and elevate head if cerebral edema suspected",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Structured ED handoff: pertinent history, glucose 480, DKA, fluids given, deceptive presentation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Stop CO2 rebreathing immediately; reassess airway, breathing, mental status",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check finger-stick glucose NOW; treat the underlying cause, not the breathing pattern",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize DKA: T1DM + missed insulin + polyuria + Kussmaul + glucose 488 + fruity breath",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Manage airway: position, suction available, supplemental O2 to keep SpO2 ≥ 94%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV; start NS 1280 mL bolus (64 kg × 20 mL/kg) at 1000 mL/hr",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Screen for shock (BP, HR, cap refill, lactate if available) — treat per Shock Guideline if criteria met",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

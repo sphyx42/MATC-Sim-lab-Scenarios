@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Respiratory Failure Requiring Advanced Airway — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Respiratory Failure Requiring Advanced Airway</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Eleanor Pruitt</strong></span><span class="patient-chip">58 years female</span><span class="patient-chip">154 lbs (70 kg)</span><span class="patient-chip">5'5"</span><span class="patient-chip">CC: Severe difficulty breathing, becoming unresponsive</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Medic 7, respond priority 1 to 2284 Hickory Lane for the 58-year-old female with severe trouble breathing, now going unresponsive. Husband on a callback. PD not required. ETA fire engine 4 minutes.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Single-story ranch home, kitchen. Patient slumped in a wooden kitchen chair, head listing forward. Husband at the front door waving you in. Oxygen concentrator humming in the corner with green tubing running to a nasal cannula on the patient's face.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Wednesday, 14:22, indoor temperature ~74°F.</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. Oxygen concentrator running — note for transition to portable O2. Narrow hallway between kitchen and front door; consider stair chair or stretcher access plan early.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Husband (60s), tearful but coherent. Confirms COPD history, two prior intubations, home O2, recent prednisone burst, and that 'she was tripoding at the table this morning but now she won't even look at me.' He brings out a bag of her medications and a folder with discharge paperwork from her last ICU stay.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Patient slumped forward in kitchen chair, head listing — NO LONGER tripoding</li><li>Dusky perioral cyanosis, fingertips visibly blue</li><li>Shallow, irregular respiratory pattern — agonal-appearing at moments</li><li>Audible coarse rhonchi without a stethoscope</li><li>Home nasal cannula displaced and dangling off one ear</li><li>Pill bottles and a nebulizer cup with residual albuterol/ipratropium on the kitchen table</li><li>Empty prednisone bottle in the trash</li><li>Pursed-lip pattern is gone — patient too obtunded to maintain it</li><li>Oxygen concentrator running 4 LPM, green tubing visible</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">58-year-old female with severe (GOLD stage IV) COPD, on 4 L home nasal cannula 24/7, who has been progressively decompensating for the last 8 hours. Husband reports she had an upper-respiratory illness this week with productive yellow-green sputum. She used her albuterol/ipratropium nebulizer every 2 hours overnight with minimal relief and finished her last prednisone burst three days ago. This morning she became too short of breath to walk to the bathroom; by midday she was tripoding at the kitchen table speaking only 2-3 word phrases. Over the last hour she has stopped speaking, stopped responding to her husband by name, and her color has turned dusky. He called 911 when she 'looked like she was sleeping but breathing funny.' She has been intubated twice before (2022, 2024) for COPD exacerbation, both times in the ED.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">Penicillin — rash</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Home O2 4 L/min via nasal cannula 24/7, Tiotropium (Spiriva) 1 inhalation daily, Fluticasone/salmeterol (Advair) 250/50 BID, Albuterol/ipratropium nebulizer Q4H PRN, Prednisone 40 mg PO daily — finished a 5-day burst 3 days ago, Furosemide 40 mg PO daily, Lisinopril 10 mg PO daily, Metformin 1000 mg PO BID, Aspirin 81 mg PO daily</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Severe COPD, GOLD stage IV — on 4 L home O2 24/7, Two prior intubations for COPD exacerbation (2022 ICU, 2024 ICU), 60 pack-year smoking history, quit 2 years ago, Pulmonary hypertension, Heart failure with preserved ejection fraction (HFpEF), Hypertension, Type 2 diabetes, Chronic kidney disease stage 3</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Sips of water this morning around 0700; nothing solid in 24 hours.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">URI this week with productive sputum. Progressive worsening over 8 hours despite frequent home nebs. Stopped speaking 1 hour ago, then became unresponsive to verbal stimuli. Husband called 911.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">On arrival you find a 58-year-old female with severe COPD slumped forward in a kitchen chair, GCS 8 (E2 V2 M4) and falling. RR 38 and shallow, SpO2 78% on her home 4 L nasal cannula, EtCO2 78 mmHg, dusky perioral cyanosis. Husband reports 8-hour progressive decompensation despite home nebs and a recent prednisone burst, with two prior intubations for the same problem. This is respiratory failure with loss of protective reflexes — BVM and advanced airway preparation are both indicated NOW.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">118</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">152/92</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">78%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">38</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">78</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">99.7°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">168</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg sel-p">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To pain</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Incomprehensible sounds</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Withdraws from pain</span><span class="gcs-score">4</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">8</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Self-maintained for the moment but tenuous — gag reflex sluggish, pooled oral secretions, occasional snoring respiration.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 38, shallow with irregular rate. Markedly diminished air movement bilaterally with coarse rhonchi and faint expiratory wheeze. Accessory muscle use is fatigued and weak — she is no longer tripoding because she does not have the strength.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse weak, ~118. Skin warm, peripherally cool. Mottled fingertips, perioral cyanosis.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Dusky with perioral and peripheral cyanosis · Warm centrally, cool extremities · Diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm, sluggish.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Withdraws to painful sternal rub but does not localize. No purposeful movement.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"No verbal response to name or sternal rub; occasional weak moan."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>GCS 8 and trending down — loss of protective airway reflexes imminent</li><li>Was tripoding hours ago per husband; now slumped — exhaustion is the dominant finding</li><li>Cyanosis on room air room — even on home 4 L NC, SpO2 is 78%</li><li>EtCO2 78 — severe hypercarbia, narcosis is the cause of the depressed mental status</li><li>Two prior intubations for the same problem — high-risk-for-failure airway history</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Primary survey; recognize RESPIRATORY FAILURE (not just distress)</div></div>
+        <div class="action-excerpt">Inclusion Criteria: Patients with signs of severe respiratory distress/respiratory failure; Patients with evidence of hypoxemia or hypoventilation with medical or traumatic etiology.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Open airway with jaw thrust; head elevated 30 degrees; suction secretions</div></div>
+        <div class="action-excerpt">Open and maintain patent airway. If needed, Provide head tilt/chin lift, or jaw thrust if concern for potential spinal injury. Suction airway: for significantly contaminated airways, consider utilizing a suction assisted laryngeal airway decontamination (SALAD) technique. Whenever possible, the patient's head should be elevated up to 30 degrees.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Insert NPA (gag still present); have OPA ready as gag fades</div></div>
+        <div class="action-excerpt">Oropharyngeal airways (OPA) or nasopharyngeal airways (NPA) can be placed if needed to maintain a patent airway and make BVM ventilation more effective. OPA are used for patients without gag reflex. NPA are used for patients with gag reflex.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Two-person, two-thumbs-up BVM with PEEP valve at 5 cmH2O</div></div>
+        <div class="action-excerpt">Use bag-valve-mask (BVM) ventilation in the setting of respiratory failure or arrest. Two-person, two-thumbs-up BVM ventilation is preferred. PEEP should be used with BVM. 5 cmH2O is generally an appropriate initial PEEP setting. Increase PEEP in stepwise fashion (2-3 cmH2O at a time) as necessary.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Inline waveform EtCO2 on BVM circuit; SpO2; cardiac monitor</div></div>
+        <div class="action-excerpt">Continuous wave-form capnography monitoring should be placed in line. Continuous waveform capnography: Should be used for patients with invasive airways for initial verification of correct airway placement; continuous evidence of correct tube placement; to adjust ventilatory rate.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Establish 2 large-bore IVs; anticipate RSI meds and post-tube sedation</div></div>
+        <div class="action-excerpt">IV Access and Fluids – IV access should be placed when IV medication administration is indicated, or when there are clinical concerns of dehydration so that IV fluids can be administered.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Ventilate 10-12/min, 6-8 mL/kg IBW (~400 mL); just enough to see chest rise</div></div>
+        <div class="action-excerpt">Tidal volume: Ventilate with just enough volume to see chest rise, approximately 6-8 mL/kg ideal body weight. Over-inflation (e.g., excessive tidal volume) and overventilation (e.g., excessive minute ventilation) are both undesirable and potentially harmful. Rate: Adult: 10-12 breaths/minute.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">BVM optimized</div>
+        <div class="phase-trigger">Trigger: Two to three minutes of optimized BVM with PEEP have raised SpO2 from 78% to 92% and dropped EtCO2 from 78 to 64. Patient remains GCS 8 with absent gag and a tenuous airway. Crew has time and preoxygenation, but the patient cannot transport on BVM alone — an advanced airway decision is required.</div>
+        <div class="phase-desc">After 2-3 minutes of optimized two-person BVM with a PEEP valve at 5 cmH2O and head elevated, the patient's SpO2 has climbed from 78% to 92%, EtCO2 has come down from 78 to 64, and color is improving. However, she still requires positive-pressure ventilation to maintain those numbers — her own respiratory drive is inadequate and her mental status remains GCS 8 with absent protective reflexes. This is the decision point: the crew now has a preoxygenated, BVM-dependent patient who cannot be left on BVM for transport. SGA versus RSI versus continued BVM-to-ED is the choice.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">110</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">148/88</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">92%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">12</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">64</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">99.7°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">168</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg sel-p">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To pain</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Incomprehensible sounds</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Withdraws from pain</span><span class="gcs-score">4</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">8</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Maintained by NPA + jaw thrust + BVM. Pooled secretions suctioned. Gag reflex now absent.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Receiving BVM at 10-12/min, 6-8 mL/kg, PEEP 5 cmH2O. Chest rise visible and bilaterally equal. Some resistance to bag-squeeze (expected in COPD).</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR 110, BP 148/88. Radial pulse stronger. Skin less mottled, perioral cyanosis fading.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Improved — pink centrally, slight peripheral mottling · Warm · Diaphoretic, drying</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Withdraws to pain; no purposeful movement.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"No verbal response."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>BVM is WORKING — SpO2 92%, EtCO2 trending down</li><li>But: patient cannot transport on BVM alone (mental status, distance, fatigue)</li><li>Gag is now absent — both SGA and ETT are anatomically feasible</li><li>Preoxygenated for the procedure — first-pass success window is open</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess: BVM is effective; SpO2 92%, EtCO2 64 and falling</div></div>
+        <div class="action-excerpt">Ongoing assessment is critical when an airway device is in place. Acute worsening of respiratory status or evidence of hypoxemia can be secondary to displacement or obstruction of the airway device, pneumothorax, or equipment failure.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Articulate SGA vs RSI decision; both are protocol-correct here</div></div>
+        <div class="action-excerpt">Supraglottic airways (SGA): Consider the use of an appropriately sized SGA if BVM (with OPA/NPA) alone is not effective in maintaining oxygenation and/or ventilation. Endotracheal intubation: When less-invasive methods (two-person BVM, SGA placement) are ineffective or inappropriate, consider endotracheal intubation to maintain oxygenation and/or ventilation. Other indications may include potential airway obstruction, severe inhalation burns, multiple traumatic injuries, altered mental status with loss of normal protective airway reflexes.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continue preoxygenation 2+ minutes; consider apneic O2 via NC at 15 LPM</div></div>
+        <div class="action-excerpt">Patient should be pre-oxygenated with high flow oxygen, and positive pressure ventilation for a minimum of two minutes prior to the procedure. In some circumstances, sedation may be required for adequate pre-oxygenation. In addition to preoxygenation, apneic oxygenation (high-flow oxygen by nasal cannula) may prolong the period before hypoxia during an intubation attempt.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Run the 7 P's checklist: Prep, Preox, Pretreat, Paralyze+induce, Position, Place, Postintubation</div></div>
+        <div class="action-excerpt">Checklist use and use of protocolized interventions to optimize the patient physically and physiologically have been shown to both improve success rates of orotracheal intubation as well as decrease peri-intubation complications. Preparation should also include a promptly available plan for alternate airway placement if ETI unsuccessful.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Stage a same-size SGA at bedside as rescue airway</div></div>
+        <div class="action-excerpt">Endotracheal intubation: In the setting of two failed intubation attempts, place a supraglottic airway, or resume bag-mask ventilations. If an endotracheal tube becomes dislodged, SGA should be strongly considered.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Select 7.5 mm cuffed ETT (adult female); bougie ready; VL preferred</div></div>
+        <div class="action-excerpt">For adults, the largest tube size possible should be placed in the patient to limit difficulty with mechanical ventilation and high airway pressures. Absent significant airway swelling or underlying anatomic abnormalities, initial tube size (internal diameter in millimeters) for adult females should be 7.5, adult males 8.0. A bougie may be a helpful adjunct to successful airway placement, especially when video laryngoscopy is unavailable and the glottic opening is difficult to visualize with direct laryngoscopy. For experienced EMS clinicians, video laryngoscopy may enhance intubation success rates and should be used when available.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">RSI prep complete</div>
+        <div class="phase-trigger">Trigger: RSI chosen as the airway plan. 7 P's checklist complete: prep, preox, pretreat considered, paralyze+induce drawn up, position confirmed, place plan rehearsed, post-intubation sedation drawn and labeled. Two experienced providers at the head. Backup SGA staged. Ready to push induction agent.</div>
+        <div class="phase-desc">Crew has chosen RSI. SpO2 is 95% on optimized BVM with PEEP. Two IVs running, monitor on, suction running, video laryngoscope ready, 7.5 mm cuffed ETT and bougie at the head, SGA staged at bedside, post-intubation sedation drawn up. Ketamine 140 mg IV (70 kg x 2 mg/kg) and rocuronium 84 mg IV (70 kg x 1.2 mg/kg) are about to be pushed. The crew is prepared, preoxygenated, and positioned.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">108</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">144/86</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">95%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">12</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">58</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">99.7°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">168</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg sel-p">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To pain</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Incomprehensible sounds</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Withdraws from pain</span><span class="gcs-score">4</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">8</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Maintained by NPA + BVM with PEEP. Suction running. Apneic-O2 NC at 15 LPM under the BVM mask.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">BVM at 10-12/min, PEEP 5 cmH2O. Chest rise bilateral and equal. SpO2 95%, EtCO2 58 and trending.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR 108, BP 144/86. Strong radial.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pink centrally, mottling resolved · Warm · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Withdraws to pain.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"No verbal response."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Pre-induction SpO2 95% — preoxygenation goal achieved</li><li>Two IVs flowing; second IV labeled for push meds</li><li>VL, bougie, 7.5 ETT, syringe for cuff at head of bed</li><li>SGA out of package on the side rail as failed-attempt rescue</li><li>Post-intubation sedation drawn (fentanyl, midazolam, ketamine drip)</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Ketamine 140 mg IV push (70 kg x 2 mg/kg) for induction</div></div>
+        <div class="action-excerpt">Administer induction sedative agent: Etomidate IV push, 0.2-0.3 mg/kg OR Ketamine IV push, 1-2 mg/kg OR Midazolam IV push, 0.05-0.10 mg/kg.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Rocuronium 84 mg IV push (70 kg x 1.2 mg/kg); allow 60 sec for full paralysis</div></div>
+        <div class="action-excerpt">Administer paralytic agent: Succinylcholine IV push, 1-2 mg/kg OR Rocuronium IV push, 1 mg/kg OR Vecuronium IV push, 0.1 mg/kg. Allow time for complete paralysis.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Attempt #1 with VL + bougie; limit to 15 sec OR SpO2 &lt;90%</div></div>
+        <div class="action-excerpt">Attempt intubation, limiting attempts to 15 seconds, or a desaturation below 90%, whichever occurs first. In the setting of two failed intubation attempts, place a supraglottic airway, or resume bag-mask ventilations.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Inflate cuff to seal (~20 cmH2O); note depth at lip; manually secure tube</div></div>
+        <div class="action-excerpt">Inflate endotracheal tube cuff with minimum air to seal airway. An ETT cuff manometer can be used to measure and adjust the ETT cuff pressure to the recommended 20 cmH2O pressure. Secure tube manually. Once proper position is confirmed, secure the tube with tape, twill, or commercial device. Note measurement of tube at incisors or gum line and assess frequently for tube movement/displacement using continuous waveform capnography and visual inspection.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Tube placed and confirmed</div>
+        <div class="phase-trigger">Trigger: First-pass intubation successful. Sustained square-wave EtCO2, bilateral chest rise, equal breath sounds, absent epigastric sounds, SpO2 recovering. Patient is paralyzed and unresponsive. Tube is at 21 cm at the lip with cuff inflated to seal.</div>
+        <div class="phase-desc">First-pass success. 7.5 mm cuffed ETT at 21 cm at the lip. Waveform EtCO2 shows a square, sustained capnograph (now 54 and trending toward 45). Bilateral chest rise. Equal breath sounds. No epigastric sounds. SpO2 is climbing from 90 (low during attempt) to 96%. The patient is paralyzed and unresponsive. The single most important next action is post-intubation sedation BEFORE paralytic wears off — and BEFORE the tube is taped.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Rhythm</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">96</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">138/82</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">96%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">12</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">54</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">99.7°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">168</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">7.5 mm cuffed ETT at 21 cm at the lip, cuff inflated to seal, manually held in place.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">BVM through the ETT at 10-12/min. Square waveform EtCO2 visible. Bilateral chest rise, equal breath sounds, no epigastric sounds.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR 96, BP 138/82. Strong central and peripheral pulses.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pink · Warm · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid — paralyzed.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Unable to speak — intubated and paralyzed."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Three-method confirmation: waveform EtCO2 (gold standard), chest rise, breath sounds</li><li>SpO2 recovering from desat-during-attempt (90%) up to 96%</li><li>Paralytic still on board — patient cannot move, blink, or react</li><li>POST-INTUBATION SEDATION is the next critical step</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Confirm placement: waveform EtCO2 (gold standard) + bilateral breath sounds + chest rise + no epigastric sounds</div></div>
+        <div class="action-excerpt">Confirm placement of advanced airway (endotracheal tube, SGA) with waveform capnography (most reliable), absent gastric sounds, and bilateral breath sounds. Waveform capnography should be placed prior to the first breath through an invasive airway to confirm placement. Color change on EtCO2 is less accurate than clinical assessment, and wave-form capnography is superior. Misting observed in the tube is not a reliable method of confirmation.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Note depth at lip (21 cm female); secure with commercial device + C-collar to limit movement</div></div>
+        <div class="action-excerpt">Note measurement of tube at incisors or gum line and assess frequently for tube movement/displacement using continuous waveform capnography and visual inspection. Cervical collar and/or cervical immobilization device may help reduce neck movement and risk of tube displacement.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Fentanyl 100 mcg IV (70 kg x ~1.5 mcg/kg; range 1-2 mcg/kg)</div></div>
+        <div class="action-excerpt">Consider sedation with sedative and/or opioid medications if agitated: Fentanyl 1-2 mcg/kg And Midazolam 0.02 mg/kg OR Ketamine IV push, 0.5-1 mg/kg.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Midazolam 1.4 mg IV (70 kg x 0.02 mg/kg) for sedation — or ketamine 35 mg IV (70 kg x 0.5 mg/kg)</div></div>
+        <div class="action-excerpt">Consider sedation with sedative and/or opioid medications if agitated: Fentanyl 1-2 mcg/kg And Midazolam 0.02 mg/kg OR Ketamine IV push, 0.5-1 mg/kg. Intubated patients should be provided appropriate sedation with sedative or opioid medications, and sedation titrated to an appropriate target level using RASS score or similar scale.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Place OG/NG tube for gastric decompression</div></div>
+        <div class="action-excerpt">Gastric decompression can improve oxygenation and ventilation, so it should be strongly considered in any patient with an advanced airway and positive pressure ventilation.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Ventilate 10-12/min, ~6-8 mL/kg IBW, PEEP 5; titrate to EtCO2 35-45</div></div>
+        <div class="action-excerpt">Manual ventilation (see above for rate and tidal volume guidance). In patients without primary pulmonary pathology (i.e., acute respiratory distress syndrome (ARDS), COPD), maintain EtCO2 of no less than 35 and up to 40 mmHg. Patients with specific disease processes such as acute acid-base disorders... or acute respiratory failure due to primary pulmonary pathology... will have different EtCO2 parameters due to their underlying disease.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continuous EtCO2 + SpO2 during movement; reassess after each move</div></div>
+        <div class="action-excerpt">Continuously monitor correct airway placement with waveform capnography during treatment and transport, paying particular attention to reassessing after each patient movement.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Sedated; transporting</div>
+        <div class="phase-trigger">Trigger: Post-intubation management complete: confirmed placement, secured tube, gastric decompression, post-intubation sedation administered and being maintained, ventilation titrated to a COPD-appropriate EtCO2 target. Patient hemodynamically stable. Transport underway with continuous waveform EtCO2 monitoring.</div>
+        <div class="phase-desc">Patient is intubated, sedated, and being transported to the closest appropriate facility. EtCO2 is 46 with a normal square waveform, SpO2 99%, HR 88, BP 132/78. Sedation is being titrated to a RASS goal of -3 to -4 with re-dose midazolam or a ketamine drip. The crew reassessed tube depth after each move from kitchen-chair to stretcher to ambulance. Receiving facility notified. This is the protocol-correct end state.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Rhythm</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">88</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">132/78</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">99%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">46</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">99.7°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">168</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">ETT 7.5 mm at 21 cm at the lip, cuff sealed, secured with commercial device + C-collar.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Mechanically/BVM ventilated at 10/min, ~480 mL TV, PEEP 5. Square waveform EtCO2 46 mmHg. Bilateral chest rise.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR 88, BP 132/78. Strong central and peripheral pulses.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pink · Warm · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Sedated — RASS -4. No spontaneous movement.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Intubated and sedated."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Confirmed three-method placement after each patient move</li><li>Sedation titrated to RASS -3 to -4; no bucking, no tachycardia spike</li><li>OG tube draining a small amount of bagged-air gastric content</li><li>Receiving ED notified — patient identifiers, history, vitals, meds given, expected ETA</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Re-dose sedation BEFORE wear-off (midaz q15-30 min or ketamine bolus 35 mg / drip)</div></div>
+        <div class="action-excerpt">Intubated patients should be provided appropriate sedation with sedative or opioid medications, and sedation titrated to an appropriate target level using RASS score or similar scale.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Three-point reassess (EtCO2, breath sounds, depth at lip) after every move</div></div>
+        <div class="action-excerpt">Continuously monitor correct airway placement with waveform capnography during treatment and transport, paying particular attention to reassessing after each patient movement.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Transport to closest appropriate ED; pre-arrival report</div></div>
+        <div class="action-excerpt">Transport to the closest appropriate hospital for airway stabilization when respiratory failure cannot be successfully managed in the prehospital setting.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">RSI without pre-O2</div>
+        <div class="phase-trigger">Trigger: Crew elected to push RSI medications without first optimizing BVM ventilation for the protocol-mandated minimum two minutes. Pre-induction SpO2 was 78%. With no preoxygenation reserve and now paralyzed, the patient desaturates catastrophically within the first attempt. Crew must abort and rescue.</div>
+        <div class="phase-desc">Crew skipped BVM optimization. Pre-induction SpO2 is still 78%. Ketamine and rocuronium have been pushed. Within 45 seconds of paralysis, SpO2 collapses from 78% to 70%, then 64% as the crew attempts laryngoscopy. The patient was never preoxygenated, so safe-apnea time is essentially zero. The teaching beat: this is exactly how peri-intubation hypoxic arrest happens, and the protocol's two-minute preoxygenation requirement exists to prevent it.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">138</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">162/96</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">70%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">0</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">82</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">99.7°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">168</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Open during attempt; jaw paralyzed; secretions in posterior pharynx.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic — paralyzed, no preoxygenation reserve.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR climbing from 118 to 138 (sympathetic response to hypoxia), BP rising to 162/96.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Cyanotic — perioral, fingertips, lips visibly blue · Cool peripheries · Diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm, sluggish.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid — paralyzed.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Unresponsive, paralyzed."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>SpO2 collapsing through 70% within 45 seconds of paralysis onset</li><li>Bradycardia is coming next if hypoxia continues — pre-arrest physiology</li><li>Failed-attempt rescue plan IS the protocol — BVM rescue, then SGA</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">ABORT attempt: SpO2 &lt;90% triggers stop; resume BVM ventilation</div></div>
+        <div class="action-excerpt">Attempt intubation, limiting attempts to 15 seconds, or a desaturation below 90%, whichever occurs first. In the setting of two failed intubation attempts, place a supraglottic airway, or resume bag-mask ventilations.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Two-person BVM with PEEP; re-preoxygenate to SpO2 &gt;90% before any second attempt</div></div>
+        <div class="action-excerpt">Use bag-valve-mask (BVM) ventilation in the setting of respiratory failure or arrest. Two-person, two-thumbs-up BVM ventilation is preferred. PEEP should be used with BVM. Significant attention should be paid to adequate preoxygenation to avoid peri-intubation hypoxia and hypoxic cardiac arrest.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">If second attempt fails or BVM cannot reoxygenate: place SGA (staged at bedside)</div></div>
+        <div class="action-excerpt">In the setting of two failed intubation attempts, place a supraglottic airway, or resume bag-mask ventilations. If an endotracheal tube becomes dislodged, SGA should be strongly considered.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Debrief: preoxygenation is mandatory; this is how peri-intubation arrests start</div></div>
+        <div class="action-excerpt">Patient should be pre-oxygenated with high flow oxygen, and positive pressure ventilation for a minimum of two minutes prior to the procedure. Meticulous attention should be paid to avoiding hypoxia and hypotension during intubation attempts to limit patient morbidity and mortality.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Bucking tube; no sedation</div>
+        <div class="phase-trigger">Trigger: Approximately 15-20 minutes after the rocuronium push, with no post-intubation fentanyl, midazolam, or ketamine given, the patient regains motor function while remaining intubated. She bucks the tube, becomes acutely hypertensive and tachycardic, and is at imminent risk of self-extubation. Crew must rescue with sedation now and recognize the omission.</div>
+        <div class="phase-desc">Tube is in and confirmed, but no post-intubation sedation was administered. Approximately 18 minutes after the rocuronium push, neuromuscular blockade is wearing off in this stressed, acidotic patient. The patient is now bucking the tube — coughing against it, hypertensive (BP 188/108), tachycardic (HR 132). She is at high risk for self-extubation, intracranial pressure spike (if any TBI co-exists), and a sympathetic storm. The teaching beat: paralysis without sedation is patient-experienced terror, and post-intubation sedation must be given proactively, not reactively.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">132</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">188/108</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">94%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">28</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">99.7°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">168</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg sel-p">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">9</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">ETT in place but patient is biting and coughing against it. Tape strained.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Patient overbreathing the BVM, asynchronous with bagged breaths. Coughing against the tube.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR 132, BP 188/108. Strong, pounding peripheral pulses. Diaphoretic.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Flushed, pink · Warm · Diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 4 mm, brisk.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Localizes to ETT — reaching for the tube with both hands.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Cannot speak — intubated, but moaning audibly against the tube."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Hypertension + tachycardia = sympathetic storm from awareness while intubated</li><li>Risk: self-extubation, ICP spike if any TBI, myocardial ischemia in elderly</li><li>Secondary problem: bucking breaks ETT seal and may dislodge the tube</li><li>Etiology: paralytic wore off, no sedation on board</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Fentanyl 100 mcg IV NOW (70 kg x ~1.5 mcg/kg)</div></div>
+        <div class="action-excerpt">Consider sedation with sedative and/or opioid medications if agitated: Fentanyl 1-2 mcg/kg And Midazolam 0.02 mg/kg OR Ketamine IV push, 0.5-1 mg/kg.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Midazolam 1.4 mg IV (70 kg x 0.02 mg/kg) OR ketamine 35-70 mg IV (0.5-1 mg/kg)</div></div>
+        <div class="action-excerpt">Consider sedation with sedative and/or opioid medications if agitated: Fentanyl 1-2 mcg/kg And Midazolam 0.02 mg/kg OR Ketamine IV push, 0.5-1 mg/kg. Intubated patients should be provided appropriate sedation with sedative or opioid medications, and sedation titrated to an appropriate target level using RASS score or similar scale.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">If still bucking after sedation: rocuronium 70 mg IV (70 kg x 1 mg/kg) for maintenance paralysis</div></div>
+        <div class="action-excerpt">Consider continued paralysis only if necessary, along with adequate sedation. Sedation and analgesia are preferred over long term paralysis. Rocuronium 1 mg/kg IV push.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Re-confirm tube depth + waveform EtCO2 + breath sounds after settling</div></div>
+        <div class="action-excerpt">Continuously monitor correct airway placement with waveform capnography during treatment and transport, paying particular attention to reassessing after each patient movement.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Debrief: post-intubation sedation is REQUIRED, not optional</div></div>
+        <div class="action-excerpt">Intubated patients should be provided appropriate sedation with sedative or opioid medications, and sedation titrated to an appropriate target level using RASS score or similar scale.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

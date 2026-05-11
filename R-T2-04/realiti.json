@@ -1,0 +1,274 @@
+{
+  "scenarioId": "R-T2-04",
+  "scenarioName": "Aspiration Event in Altered Patient",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1500,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "58-year-old male found by his spouse in bed at approximately 0540 'snoring loudly' and unable to be roused. She reports he went to bed around 2300 the prior evening after 'two or three beers' and his usual hydrocodone for chronic back pain. She last spoke with him around 2330; he was groggy but conversational. This morning she found him supine with vomit on the pillow and on his shirt, breathing 'wet and gurgly.' No witnessed seizure activity. No recent fevers, no chest pain reported. No new medications. Spouse denies any recent suicidal statements but notes he has been 'drinking more lately' since being placed on disability for his back. Last known well: ~2330 prior night (approximately 6 hours ago). No known stroke risk symptoms previously, no slurred speech or facial droop noted before bed.",
+    "discussion": "",
+    "course": "Initial Contact: Crew arrives to find a 58-year-old male supine in bed, GCS 8 (E2 V2 M4) — opens eyes to pain, moans incomprehensibly, localizes to pain. Vomit on pillow and shirt. Audible coarse gurgling rhonchi across the room, worse on the left side. Respirations 16 and shallow. SpO2 84% on room air. HR 112, BP 138/86. Skin warm, pink, with mild diaphoresis. Pupils 3 mm bilaterally and sluggishly reactive. Glucose 88. Gag reflex absent on jaw-thrust testing. Crew is on a bed at the patient's left side with full BLS kit, suction unit (rigid Yankauer + flexible French catheters), BVM with PEEP valve, O2 cylinder, monitor/defib, King airway and intubation kit available, and the IV/med bag. → Airway stabilized, gag absent: After aggressive suction with the rigid Yankauer, lateral recovery positioning, OPA placement, and two-person BVM with PEEP 5, the airway is now visibly clear, the gurgling has stopped, and SpO2 has climbed from 84% to 91%. EtCO2 has normalized to 38 mmHg with a square waveform. HR has come down to 104 as hypoxia improves. BP is 134/82. However, the patient remains GCS 8 with NO return of gag reflex, NO purposeful response beyond localization, and is fully dependent on the BVM for adequate ventilation. The fundamental problem — an unprotected airway in a patient with ongoing aspiration risk — remains unsolved. This is the definitive-airway decision point."
+  },
+  "patientInformation": {
+    "patientName": "Gregory Halloran",
+    "patientCondition": "Unresponsive with vomiting and noisy breathing",
+    "patientAge": 58,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 178,
+    "patientWeight": 95,
+    "patientPhotoId": 70,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 58-year-old male supine in bed, GCS 8 (E2 V2 M4) — opens eyes to pain, moans incomprehensibly, localizes to pain. Vomit on pillow and shirt. Audible coarse gurgling rhonchi across the room, worse on the left side. Respirations 16 and shallow. SpO2 84% on room air. HR 112, BP 138/86. Skin warm, pink, with mild diaphoresis. Pupils 3 mm bilaterally and sluggishly reactive. Glucose 88. Gag reflex absent on jaw-thrust testing. Crew is on a bed at the patient's left side with full BLS kit, suction unit (rigid Yankauer + flexible French catheters), BVM with PEEP valve, O2 cylinder, monitor/defib, King airway and intubation kit available, and the IV/med bag.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 112,
+        "bpSys": 138,
+        "bpDia": 86,
+        "respRate": 16,
+        "spo2": 84,
+        "etco2": 48,
+        "temp": 36.9,
+        "obstruction": 50,
+        "custMeasure1": 88,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Rapid primary survey (ABC); recognize compromised airway with active aspiration",
+        "Aggressive oropharyngeal suction with rigid Yankauer (consider SALAD technique)",
+        "Lateral recovery position to drain ongoing emesis and reduce further aspiration",
+        "Insert OPA (gag absent); maintain manual airway with jaw-thrust",
+        "Two-person BVM, 10/min, PEEP valve at 5 cmH2O, head elevated 30°",
+        "Work AMS differential (AEIOU-TIPS); check glucose, pupils, breath odor",
+        "Verify glucose 88 mg/dL — rules out hypoglycemia (no D10 indicated)",
+        "Stroke screen (face/arm/speech, last known well 2330 prior night)",
+        "IV access, full monitor, waveform EtCO2, 12-lead",
+        "Naloxone 0.4 mg IV (titrate to respiratory effort, may repeat up to 2 mg)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Airway stabilized, gag absent",
+      "description": "After aggressive suction with the rigid Yankauer, lateral recovery positioning, OPA placement, and two-person BVM with PEEP 5, the airway is now visibly clear, the gurgling has stopped, and SpO2 has climbed from 84% to 91%. EtCO2 has normalized to 38 mmHg with a square waveform. HR has come down to 104 as hypoxia improves. BP is 134/82. However, the patient remains GCS 8 with NO return of gag reflex, NO purposeful response beyond localization, and is fully dependent on the BVM for adequate ventilation. The fundamental problem — an unprotected airway in a patient with ongoing aspiration risk — remains unsolved. This is the definitive-airway decision point.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 104,
+        "bpSys": 134,
+        "bpDia": 82,
+        "respRate": 10,
+        "spo2": 91,
+        "etco2": 38,
+        "temp": 36.9,
+        "obstruction": 25,
+        "custMeasure1": 88,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize unprotected airway despite stable vitals; gag absent, GCS 8",
+        "Continue BVM with PEEP to pre-oxygenate prior to advanced airway",
+        "Place King supraglottic airway (gag absent, no RSI capability needed)",
+        "Confirm placement: waveform EtCO2 + bilateral breath sounds + absent gastric sounds",
+        "Secure airway; continuous waveform capnography; reassess after each move",
+        "Gastric decompression (OG tube) — strongly consider with advanced airway + PPV",
+        "Transport to closest appropriate hospital; early ED notification (airway, aspiration)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "NRB on vomiting patient",
+      "description": "Crew chose to apply a high-flow non-rebreather mask to a supine, unresponsive, vomiting patient without first suctioning the airway or repositioning. Within 3-4 minutes the patient has aspirated additional emesis around and underneath the mask. SpO2 remains 84% and is now trending down. Mask is fogged with vomit. The mask is acting as a barrier — it is delivering oxygen the patient cannot use and is preventing the crew from seeing or accessing the airway. HR has climbed to 124 with the worsening hypoxia. EtCO2 has risen as ventilation worsens. This is the recognize-and-recover branch — the crew needs to abandon the NRB strategy, suction, reposition, and convert to BVM with PEEP.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 124,
+        "bpSys": 142,
+        "bpDia": 88,
+        "respRate": 14,
+        "spo2": 84,
+        "etco2": 55,
+        "temp": 36.9,
+        "obstruction": 65,
+        "custMeasure1": 88,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize NRB ineffective; remove mask, return to airway-first sequence",
+        "Aggressive Yankauer suction immediately, sweep oropharynx",
+        "Reposition lateral; convert to two-person BVM with PEEP 5"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Rapid primary survey (ABC); recognize compromised airway with active aspiration",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Aggressive oropharyngeal suction with rigid Yankauer (consider SALAD technique)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Lateral recovery position to drain ongoing emesis and reduce further aspiration",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Insert OPA (gag absent); maintain manual airway with jaw-thrust",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Two-person BVM, 10/min, PEEP valve at 5 cmH2O, head elevated 30°",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Work AMS differential (AEIOU-TIPS); check glucose, pupils, breath odor",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Verify glucose 88 mg/dL — rules out hypoglycemia (no D10 indicated)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Stroke screen (face/arm/speech, last known well 2330 prior night)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "IV access, full monitor, waveform EtCO2, 12-lead",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Naloxone 0.4 mg IV (titrate to respiratory effort, may repeat up to 2 mg)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize unprotected airway despite stable vitals; gag absent, GCS 8",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue BVM with PEEP to pre-oxygenate prior to advanced airway",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place King supraglottic airway (gag absent, no RSI capability needed)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Confirm placement: waveform EtCO2 + bilateral breath sounds + absent gastric sounds",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Secure airway; continuous waveform capnography; reassess after each move",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Gastric decompression (OG tube) — strongly consider with advanced airway + PPV",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to closest appropriate hospital; early ED notification (airway, aspiration)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize NRB ineffective; remove mask, return to airway-first sequence",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Aggressive Yankauer suction immediately, sweep oropharynx",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reposition lateral; convert to two-person BVM with PEEP 5",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

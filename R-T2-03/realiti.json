@@ -1,0 +1,363 @@
+{
+  "scenarioId": "R-T2-03",
+  "scenarioName": "Anaphylaxis with Airway Compromise",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1500,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "32-year-old female, known severe bee allergy with one prior anaphylactic episode requiring ED epinephrine 3 years ago. Carries an EpiPen but left it at home today. While gardening in her backyard approximately 8 minutes ago, she was stung on the left forearm by a wasp. Within 2-3 minutes she developed widespread hives, lip swelling, and an itchy throat. Symptoms have progressed rapidly: voice now muffled and 'tight,' audible high-pitched inspiratory stridor, expiratory wheeze, nausea and one episode of vomiting on the lawn. Patient is anxious, leaning forward in the tripod position, refusing to lie flat. Husband called 911 immediately. No fever, no chest pain, no prior cardiac history. Last episode triggered by yellow jacket sting.",
+    "discussion": "",
+    "course": "Initial Contact: Crew arrives to find a 32-year-old female seated on a garden bench, leaning forward in tripod position, audibly stridorous and wheezing. Widespread hives across face, neck, and chest, with obvious lip swelling. Voice is muffled and 'thick.' Patient is anxious, fully oriented, but speaking only in 2-3 word phrases. Husband reports a wasp sting 8 minutes ago, known severe bee allergy, EpiPen at home. Skin is flushed and warm but radial pulse is weak and rapid. SpO2 91% on room air, BP 86/52, HR 132, RR 28. This is a rapidly evolving multi-system anaphylaxis (skin + respiratory + GI + circulatory) — IM epinephrine is the time-critical first move, not IV access. → First IM Epi given: IM epinephrine 0.3 mg was given to the anterolateral thigh within 2 minutes of patient contact. Over the next 3-5 minutes, the patient improves: stridor audibly softens, voice less muffled, SpO2 climbs from 91% to 96% on high-flow O2, BP rises from 86/52 to 102/64 with 1 L NS bolus. Wheeze persists but air movement improves with nebulized albuterol and nebulized epi. Patient is more able to speak in short sentences. IV access x2 has been obtained. Now is the time to layer in secondary therapies: diphenhydramine, corticosteroids, and continued monitoring — and to remain vigilant for a biphasic reaction. → Biphasic reaction: Approximately 12 minutes after the first IM epinephrine dose, en route to the ED, the patient deteriorates again. Stridor returns and intensifies, voice becomes more muffled, expiratory wheeze worsens, SpO2 drops from 96% to 92%, BP falls from 102/64 to 88/56, HR climbs back to 128. This is a classic biphasic anaphylactic reaction — a return of symptoms hours (or, here, minutes) after initial improvement, often with similar or worse severity. Crew must give a SECOND IM epi 0.3 mg, continue fluid resuscitation, and consider an epinephrine infusion if symptoms remain refractory. Reassess airway plan — if obstruction climbs back toward 60+ with worsening voice and stridor, the window for intubation is narrowing and surgical airway preparation should be confirmed."
+  },
+  "patientInformation": {
+    "patientName": "Maya Ellis",
+    "patientCondition": "Difficulty breathing after bee sting",
+    "patientAge": 32,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 2,
+    "patientHeight": 168,
+    "patientWeight": 68,
+    "patientPhotoId": 39,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 32-year-old female seated on a garden bench, leaning forward in tripod position, audibly stridorous and wheezing. Widespread hives across face, neck, and chest, with obvious lip swelling. Voice is muffled and 'thick.' Patient is anxious, fully oriented, but speaking only in 2-3 word phrases. Husband reports a wasp sting 8 minutes ago, known severe bee allergy, EpiPen at home. Skin is flushed and warm but radial pulse is weak and rapid. SpO2 91% on room air, BP 86/52, HR 132, RR 28. This is a rapidly evolving multi-system anaphylaxis (skin + respiratory + GI + circulatory) — IM epinephrine is the time-critical first move, not IV access.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 132,
+        "bpSys": 86,
+        "bpDia": 52,
+        "respRate": 28,
+        "spo2": 91,
+        "etco2": 32,
+        "temp": 37.1,
+        "obstruction": 60,
+        "custMeasure1": 108,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize multi-system anaphylaxis (skin + airway + GI + hypotension)",
+        "Epinephrine 0.3 mg IM (1 mg/mL) anterolateral thigh IMMEDIATELY",
+        "Allow tripod/upright position — do NOT force supine with airway swelling",
+        "High-flow O2 via NRB 15 LPM; titrate to SpO2 94-98%",
+        "Prep difficult airway plan: BVM + PEEP, SGA, ETT — anticipate edema worsens",
+        "Establish two large-bore IVs (18g) AFTER first IM epi — not before",
+        "NS bolus 1 L IV wide open (68 kg × 20 mL/kg = 1360 mL — give 1 L now)",
+        "Cardiac monitor, 12-lead EKG, capnography",
+        "Nebulized epinephrine 1 mg/mL, 5 mL via nebulizer for stridor",
+        "Albuterol 5 mg nebulized for lower-airway wheeze"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "First IM Epi given",
+      "description": "IM epinephrine 0.3 mg was given to the anterolateral thigh within 2 minutes of patient contact. Over the next 3-5 minutes, the patient improves: stridor audibly softens, voice less muffled, SpO2 climbs from 91% to 96% on high-flow O2, BP rises from 86/52 to 102/64 with 1 L NS bolus. Wheeze persists but air movement improves with nebulized albuterol and nebulized epi. Patient is more able to speak in short sentences. IV access x2 has been obtained. Now is the time to layer in secondary therapies: diphenhydramine, corticosteroids, and continued monitoring — and to remain vigilant for a biphasic reaction.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 108,
+        "bpSys": 102,
+        "bpDia": 64,
+        "respRate": 22,
+        "spo2": 96,
+        "etco2": 35,
+        "temp": 37.1,
+        "obstruction": 35,
+        "custMeasure1": 108,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Diphenhydramine 50 mg IV (68 kg × 1 mg/kg = 68 mg → cap at 50 mg max)",
+        "Methylprednisolone 125 mg IV (or Dexamethasone 10 mg IV)",
+        "Famotidine 20 mg IV (68 kg × 0.5 mg/kg = 34 mg → cap at 20 mg max)",
+        "Reassess perfusion, BP, lung sounds, airway every 5 min",
+        "Begin transport to nearest appropriate ED; advance notification"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Biphasic reaction",
+      "description": "Approximately 12 minutes after the first IM epinephrine dose, en route to the ED, the patient deteriorates again. Stridor returns and intensifies, voice becomes more muffled, expiratory wheeze worsens, SpO2 drops from 96% to 92%, BP falls from 102/64 to 88/56, HR climbs back to 128. This is a classic biphasic anaphylactic reaction — a return of symptoms hours (or, here, minutes) after initial improvement, often with similar or worse severity. Crew must give a SECOND IM epi 0.3 mg, continue fluid resuscitation, and consider an epinephrine infusion if symptoms remain refractory. Reassess airway plan — if obstruction climbs back toward 60+ with worsening voice and stridor, the window for intubation is narrowing and surgical airway preparation should be confirmed.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 128,
+        "bpSys": 88,
+        "bpDia": 56,
+        "respRate": 26,
+        "spo2": 92,
+        "etco2": 33,
+        "temp": 37.1,
+        "obstruction": 55,
+        "custMeasure1": 108,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Repeat Epinephrine 0.3 mg IM (1 mg/mL) anterolateral thigh — SECOND dose",
+        "Repeat NS bolus 1 L IV (cumulative target up to 30 mL/kg if needed)",
+        "Repeat nebulized epinephrine 5 mL (1 mg/mL) for returning stridor",
+        "Prep epi infusion (0.05-0.3 mcg/kg/min) if refractory after 2nd IM epi + 60 mL/kg fluids",
+        "Reassess airway plan — confirm SGA, smaller ETT (6.0), surgical kit at bedside",
+        "Updated advance notification — biphasic, second epi given, possible difficult airway"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "IV first, Epi delayed",
+      "description": "Crew prioritized establishing IV access before giving IM epinephrine, planning to administer epi IV instead of IM. Two venipuncture attempts on a hypotensive, vasoconstricted, anxious patient take 3-4 minutes. During that delay, the airway edema progresses unchecked: stridor becomes louder and now biphasic with both inspiratory and expiratory components, voice becomes nearly inaudible, lip and tongue swelling worsen visibly, SpO2 drops from 91% to 85%, and the patient transitions from anxious-talking to gasping and silent. This is the classic anaphylaxis trap — treating it like septic or hypovolemic shock (line first, then drugs) instead of like the time-critical mast cell event it is. The fix is RESCUE IM epi NOW, then manage a much-more-difficult airway. This branch teaches that IM epi precedes everything else, including IV access.",
+      "monitorType": 0,
+      "trendTime": 35,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 140,
+        "bpSys": 74,
+        "bpDia": 46,
+        "respRate": 34,
+        "spo2": 85,
+        "etco2": 28,
+        "temp": 37.1,
+        "obstruction": 85,
+        "custMeasure1": 108,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize the error — IM epi must precede IV access in anaphylaxis",
+        "RESCUE Epinephrine 0.3 mg IM (1 mg/mL) anterolateral thigh — immediately",
+        "Place humeral IO — peripheral IV is failing in shock; need access for fluids",
+        "Nebulized epinephrine 5 mL (1 mg/mL) for now-severe stridor",
+        "Two-person BVM with PEEP, NPA + OPA, prep smaller ETT (6.0) AND surgical airway",
+        "NS 1 L IO wide open, repeat to 30 mL/kg (2 L); reassess MAP target 65",
+        "Rapid transport, advance notification — likely difficult airway, refractory anaphylaxis"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Recognize multi-system anaphylaxis (skin + airway + GI + hypotension)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 0.3 mg IM (1 mg/mL) anterolateral thigh IMMEDIATELY",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Allow tripod/upright position — do NOT force supine with airway swelling",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "High-flow O2 via NRB 15 LPM; titrate to SpO2 94-98%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Prep difficult airway plan: BVM + PEEP, SGA, ETT — anticipate edema worsens",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish two large-bore IVs (18g) AFTER first IM epi — not before",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "NS bolus 1 L IV wide open (68 kg × 20 mL/kg = 1360 mL — give 1 L now)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Cardiac monitor, 12-lead EKG, capnography",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Nebulized epinephrine 1 mg/mL, 5 mL via nebulizer for stridor",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Albuterol 5 mg nebulized for lower-airway wheeze",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Diphenhydramine 50 mg IV (68 kg × 1 mg/kg = 68 mg → cap at 50 mg max)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Methylprednisolone 125 mg IV (or Dexamethasone 10 mg IV)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Famotidine 20 mg IV (68 kg × 0.5 mg/kg = 34 mg → cap at 20 mg max)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess perfusion, BP, lung sounds, airway every 5 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Begin transport to nearest appropriate ED; advance notification",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Repeat Epinephrine 0.3 mg IM (1 mg/mL) anterolateral thigh — SECOND dose",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Repeat NS bolus 1 L IV (cumulative target up to 30 mL/kg if needed)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Repeat nebulized epinephrine 5 mL (1 mg/mL) for returning stridor",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Prep epi infusion (0.05-0.3 mcg/kg/min) if refractory after 2nd IM epi + 60 mL/kg fluids",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess airway plan — confirm SGA, smaller ETT (6.0), surgical kit at bedside",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Updated advance notification — biphasic, second epi given, possible difficult airway",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize the error — IM epi must precede IV access in anaphylaxis",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "RESCUE Epinephrine 0.3 mg IM (1 mg/mL) anterolateral thigh — immediately",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place humeral IO — peripheral IV is failing in shock; need access for fluids",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Nebulized epinephrine 5 mL (1 mg/mL) for now-severe stridor",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Two-person BVM with PEEP, NPA + OPA, prep smaller ETT (6.0) AND surgical airway",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "NS 1 L IO wide open, repeat to 30 mL/kg (2 L); reassess MAP target 65",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Rapid transport, advance notification — likely difficult airway, refractory anaphylaxis",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

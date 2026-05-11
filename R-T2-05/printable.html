@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acute Asthma Progressing to Quiet Chest — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Acute Asthma Progressing to Quiet Chest</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Devon Marsh</strong></span><span class="patient-chip">34 years female</span><span class="patient-chip">143 lbs (65 kg)</span><span class="patient-chip">5'6"</span><span class="patient-chip">CC: Severe shortness of breath, can't catch her breath</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Medic 12, respond priority 1 to 4418 Ashland Ave, apartment 2B, for the 34-year-old female with an asthma attack, can't breathe. PD not required. RP is the boyfriend on a callback line.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Second-floor walk-up apartment, living room. Patient seated upright on the edge of the couch, tripoding over the coffee table. Boyfriend at the door waving you up. Lights on, narrow stairwell, no elevator.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Tuesday, 21:47, ambient indoor temp ~72°F.</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. No pets restrained, no smoking observed. Stairwell is the egress concern for carry-out; consider stair chair early.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Boyfriend, 30s, calm but anxious — confirms severe asthma history, prior ICU admission 18 months ago with intubation, and that she has been out of her controller and steroid taper for about a week. He shows you 4 empty albuterol inhalers in the trash and one borrowed inhaler on the coffee table.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Patient tripoded on edge of couch, leaning forward on outstretched arms</li><li>Audible expiratory wheeze from across the room</li><li>Visible suprasternal and intercostal retractions, accessory neck muscle use</li><li>Pursed-lip breathing, nasal flaring</li><li>Speaking in 3-word phrases — 'Can't... catch... breath'</li><li>Lips dusky, fingertips pale</li><li>Borrowed albuterol inhaler and four empty canisters on coffee table</li><li>Empty Symbicort and montelukast bottles on kitchen counter</li><li>Prescription bag from pharmacy unopened — 'PRIOR AUTH NEEDED' sticker visible</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">34-year-old female with longstanding severe persistent asthma began wheezing 6 hours ago after a viral URI over the last 3 days. She has been using a friend's albuterol inhaler 'every 20 minutes for the last 2 hours' with no relief. She ran out of her controller meds (Symbicort, montelukast) and oral prednisone taper about 1 week ago — could not afford the refill. She was last admitted to the ICU 18 months ago for a near-fatal exacerbation requiring intubation. Tonight she became unable to lie down, then unable to walk to the bathroom, then unable to complete sentences. Her boyfriend called 911 when she stopped responding to him in full words.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">Sulfa drugs — rash, NSAIDs — wheezing</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Symbicort (budesonide/formoterol) 160/4.5 — 2 puffs BID (OUT for ~1 week), Montelukast 10 mg PO daily (OUT for ~1 week), Albuterol HFA PRN — borrowed friend's inhaler tonight, Prednisone taper finished ~10 days ago</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Severe persistent asthma — ICU admission with intubation 18 months ago (high-risk marker), Multiple ED visits in past year for asthma (4 in last 12 months), Eczema, Allergic rhinitis, Anxiety</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Half a glass of water around 1800; nothing solid since lunch.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Viral URI for 3 days. Wheezing began 6 hours ago. Worsened despite repeated borrowed albuterol. Boyfriend called 911 when she could no longer speak in full sentences and started turning blue around the lips.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">On arrival you find a 34-year-old female tripoded on the couch in obvious severe respiratory distress. She is awake, anxious, speaking only 3-word phrases. Audible expiratory wheeze without a stethoscope. Retractions and accessory muscle use are obvious. Boyfriend reports severe asthma with prior ICU admission and intubation 18 months ago and that she has been off her controllers and steroids for about a week. This patient carries every high-risk-asthma marker in the MATC respiratory distress guideline.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">132</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">138/84</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">88%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">32</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">40</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">99°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">118</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">14</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-maintained. No stridor, no foreign body, no angioedema.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 32 with prolonged expiratory phase. Loud expiratory wheeze throughout all lung fields, audible without a stethoscope. Marked accessory muscle use — sternocleidomastoid, intercostal, subcostal retractions. Tripoding.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse rapid and weak, ~130. Skin warm and diaphoretic, peripheral pallor.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pale with perioral dusky tinge · Warm · Diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 4 mm</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all 4 extremities purposefully; gripping coffee table edge.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"'Can't... catch... breath... please... help.'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Tripoding, leaning forward on extended arms</li><li>Speaking in 3-word phrases — diagnostic of severe exacerbation</li><li>Nasal flaring, pursed-lip breathing</li><li>Patient appears frightened — apprehension is a sign of distress per protocol</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Scene survey + primary survey; identify SEVERE asthma exacerbation</div></div>
+        <div class="action-excerpt">Signs of distress include: Apprehension, anxiety, combativeness; Hypoxia (less than 90% oxygen saturation); Intercostal/subcostal/supraclavicular retractions, accessory muscle use; Grunting, stridor, inability to speak full sentences; Nasal flaring; Cyanosis.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Flag HIGH-RISK asthma history (prior ICU/intubation, med non-compliance, repeat ED)</div></div>
+        <div class="action-excerpt">Factors that have been shown to be associated with increased mortality from asthma include: Severe asthma as evidenced by at least one of the following: Prior near-fatal asthma (e.g., ICU admission or intubation/mechanical ventilation); Prior admissions for asthma or repeated ED visits, particularly if in the last year; Heavy use of beta-agonist medications, or requiring three or more classes of asthma medication. Together with one or more behavioral or psychosocial contributors: Medication noncompliance...</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Leave patient tripoded; do NOT force supine</div></div>
+        <div class="action-excerpt">Patient positioning can significantly impact respiratory mechanics. Patients with severe bronchospasm should be left in the position of comfort (perhaps tripod) whenever possible. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Place SpO2 and waveform EtCO2; cardiac monitor</div></div>
+        <div class="action-excerpt">Pulse oximetry and EtCO2 should be routinely used as adjuncts to other forms of monitoring in patients with respiratory complaints. A 'shark fin' on waveform capnography suggests significant bronchospasm and obstructive physiology.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Albuterol 5 mg + Ipratropium 0.5 mg nebulized (DuoNeb) NOW</div></div>
+        <div class="action-excerpt">Inhaled Medications: While albuterol 2.5 mg nebulized is usually sufficient for mild wheezing without clinical distress, albuterol 5 mg nebulized (or 6 puffs metered dose inhaler) should be administered to all patients in respiratory distress with signs of bronchospasm (e.g., known asthmatics, quiet wheezers). Repeat at this dose with unlimited frequency for ongoing respiratory distress. Ipratropium 0.5 mg nebulized should be given up to 3 doses in conjunction with albuterol.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Establish IV access early (anticipating mag/steroids/epi)</div></div>
+        <div class="action-excerpt">IV Access and Fluids – IV access should be placed when IV medication administration is indicated, or when there are clinical concerns of dehydration so that IV fluids can be administered.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Dexamethasone 16 mg IV (65 kg × 0.6 mg/kg = 39 mg → cap at 16 mg max)</div></div>
+        <div class="action-excerpt">IV steroid options for critically ill patients include: Dexamethasone (0.6 mg/kg, maximum dose of 16 mg) IV/IM, or Methylprednisolone (2 mg/kg, maximum dose 125 mg) IV/IM.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Quiet chest recognized</div>
+        <div class="phase-trigger">Trigger: Five minutes after DuoNeb initiation, expiratory wheeze is diminishing while EtCO2 climbs (40 → 52), speech regresses from 3-word to 1-word phrases, and mottling appears. Crew correctly interprets the quieting chest as impending respiratory failure rather than improvement, and escalates to IM epinephrine, IV magnesium, and prepares positive-pressure ventilation.</div>
+        <div class="phase-desc">Approximately 5 minutes into the call. The audible wheeze is noticeably DIMINISHING — but the patient is not better. She is more fatigued, slumped slightly forward, eyes half-closed, speaking only in 1-word phrases. EtCO2 has climbed from 40 to 52 mmHg with a flattening shark-fin. Lips and nail beds are mottled. SpO2 has drifted from 88 to 85%. The crew correctly recognizes that a quieting chest in a severe asthmatic is loss of air movement, NOT bronchodilator response. Per MATC: 'In the setting of severe bronchoconstriction, wheezing may not be heard.' This is impending respiratory failure and triggers immediate escalation.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">142</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">128/78</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">85%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">36</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">52</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">99°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">118</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">13</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Still patent and self-maintained but tone decreasing; patient slumping forward.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 36, very shallow. Audible wheeze noticeably DIMINISHED — quiet chest. Severely reduced air entry bilaterally. Accessory muscle use now sustained and exhausted-appearing. EtCO2 climbing — shark-fin morphology flattening as air movement drops.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse weak, ~140. Mottling at lips, fingertips, and now spreading to forearms.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Mottled, perioral cyanosis · Cool peripherally, warm core · Drenched diaphoresis</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 4 mm</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Reduced — gripping coffee table is loosening; head bobbing.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"'Tired...' (eyes drifting closed between words)"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>1-word phrases ONLY</li><li>Mottling progressing centrally — ominous sign</li><li>Head bobbing with each breath — agonal pattern in adult asthmatic</li><li>Quiet chest WITH worsening fatigue and rising EtCO2 = impending arrest</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize quiet chest = impending respiratory failure (NOT improvement)</div></div>
+        <div class="action-excerpt">Severe respiratory distress may manifest with hypoxia, altered mentation, diaphoresis, or inability to speak more than 2-3 words. In the setting of severe bronchoconstriction, wheezing may not be heard. Patients with known asthma with severe dyspnea should be empirically treated, even if wheezing is absent. Normal EtCO2 (35-45 mmHg) with tachypnea and respiratory distress is an indicator of impending respiratory failure.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Epinephrine 0.3 mg IM, 1 mg/mL (65 kg × 0.01 mg/kg = 0.65 mg → cap at 0.3 mg max); may repeat q5-15 min</div></div>
+        <div class="action-excerpt">Epinephrine (0.01 mg/kg of 1 mg/mL solution IM, maximum dose of 0.3 mg) should only be administered for impending respiratory failure as adjunctive therapy when there are no clinical signs of improvement with the above treatments.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Magnesium sulfate 2 g IV over 10-15 min (65 kg × 40 mg/kg = 2600 mg → cap at 2 g max)</div></div>
+        <div class="action-excerpt">Magnesium sulfate (40 mg/kg IV, maximum dose of 2 g) over 10-15 minutes should be administered for severe bronchoconstriction and concern for impending respiratory failure. Consider decreased dose of 1 g IV for geriatric patients.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Continue back-to-back albuterol 5 mg nebs (unlimited frequency)</div></div>
+        <div class="action-excerpt">Repeat at this dose with unlimited frequency for ongoing respiratory distress.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Prep NIV/CPAP or 2-person BVM with neb in-line; PEEP 5 cmH2O</div></div>
+        <div class="action-excerpt">Non-invasive ventilation (NIV) should be administered for severe respiratory distress via BVM, continuous positive airway pressure (CPAP) or bi-level positive airway pressure (BiPAP). If indicated, bronchodilators should be administered in line with NIV. Two-person, two-thumbs-up BVM ventilation is preferred. PEEP should be used with BVM. 5 cmH2O is generally an appropriate initial PEEP setting.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Pre-brief RSI plan (least-invasive first); avoid intubation if PPV/meds work</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Invasive airways do not improve bronchospasm. The airway should be managed in the least invasive way possible. Supraglottic devices and endotracheal intubation should be considered only if BVM ventilation fails. Positive pressure ventilation in the setting of bronchoconstriction, either via a supraglottic airway or intubation, increases the risk of air trapping which can lead to pneumothorax and cardiovascular collapse. These interventions should be reserved for situations of respiratory failure.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Wheeze returns — air moving</div>
+        <div class="phase-trigger">Trigger: Two to three minutes after IM epinephrine, magnesium sulfate load with PPV support, and continued back-to-back albuterol. Wheeze returns as air movement resumes, oxygenation and ventilation improve, mental status brightens. Crew completes packaging with NIV in-line nebulizer and ongoing reassessment en route.</div>
+        <div class="phase-desc">About 2-3 minutes after IM epi and the start of the magnesium load with PPV support, audible expiratory wheeze RETURNS. Counterintuitively this is the good news: air is moving again. SpO2 climbs to 93%, EtCO2 trends back down to 44 mmHg, the shark-fin re-establishes a normal-ish morphology, and the patient brightens — eyes open, speaking 3-4 word phrases, accessory muscle use easing. Crew packages for transport on continued NIV/in-line neb, with RSI gear still drawn up and visible as the contingency.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">118</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">124/72</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">93%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">26</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">44</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.8°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">118</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, tone restored.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 26 with audible expiratory wheeze returning — air is now moving. Accessory muscle use easing. EtCO2 shark-fin re-establishing with a more normal slope. Patient tolerates CPAP/BVM-with-neb mask.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse stronger, ~118. Mottling resolving; pink returning to lips and fingertips.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pink returning centrally, peripheral pallor improving · Warm · Still diaphoretic but easing</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 4 mm</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all 4 extremities purposefully; grip stronger.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"'Feeling... a little... better... thank you.'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Audible wheeze returned — paradoxically reassuring</li><li>Patient speaking 3-4 word phrases — 'Better... thank you'</li><li>Continued NIV with in-line nebulizer</li><li>RSI gear remains drawn up as contingency, not deployed</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Interpret return of wheeze as IMPROVEMENT (air now moving)</div></div>
+        <div class="action-excerpt">Pertinent Assessment Findings: In the setting of severe bronchoconstriction, wheezing may not be heard. Patients with known asthma with severe dyspnea should be empirically treated, even if wheezing is absent.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continue back-to-back albuterol 5 mg in-line on NIV/BVM</div></div>
+        <div class="action-excerpt">Nebulized medications may be administered through a CPAP or BiPAP mask. A specialized T-connector with a spring valve assembly is required to allow maintenance of positive airway pressure. Repeat at this dose with unlimited frequency for ongoing respiratory distress.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Reassess RR/SpO2/EtCO2/mental status; document trend</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Document key aspects of the exam at baseline and after each intervention: Respiratory rate; Oxygen saturation; EtCO2/waveform shape; Use of accessory muscles; Breath sounds and quality; Mental status; Response to interventions.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Do NOT break NIV seal until ED stretcher — atelectasis risk</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Once initiated and patient is tolerating mask, DO NOT discontinue CPAP/BiPAP until patient is on the emergency department stretcher and hospital CPAP/BiPAP is immediately available for patient to be switched over, or physician is at bedside and requesting CPAP/BiPAP be discontinued. Breaking the mask seal causes a significant decrease in airway pressures and may lead to abrupt decompensation due to atelectasis and alveolar collapse.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Transport priority 1; continuous monitor; pre-alert ED for severe asthma</div></div>
+        <div class="action-excerpt">Transport to the closest appropriate hospital for airway stabilization when respiratory failure cannot be successfully managed in the prehospital setting.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Quiet chest misread</div>
+        <div class="phase-trigger">Trigger: After initial DuoNeb the crew interprets diminishing wheeze as therapeutic response and continues nebulizer only — no IM epinephrine, no IV magnesium, no PPV prep. Over the next 4-5 minutes the patient slides into near-respiratory-arrest: GCS drops, RR collapses to 6 with agonal pauses, SpO2 falls to 70s, EtCO2 spikes above 70. The miss must now be recognized and corrected under much worse conditions.</div>
+        <div class="phase-desc">JUDGMENT-ERROR BRANCH. Five minutes into the call the crew sees the wheeze diminishing and interprets it as response to DuoNeb. They continue nebulizer only and defer IM epinephrine, IV magnesium, and PPV preparation. They do not pick up that EtCO2 is climbing through 50, speech has dropped to 1-word, and mottling is appearing. The patient is, in fact, drifting toward respiratory arrest. Approximately 4-5 minutes after this misread, the patient slumps, eyes close, RR drops to 6 with agonal pauses, SpO2 falls to 70s, EtCO2 spikes past 70. Recovery now requires recognition of the miss and rapid escalation under far worse conditions — BVM with PEEP, IM epi NOW, mag, and almost certainly RSI.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">150</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">92/58</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">74%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">6</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">72</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">118</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg sel-p">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Incomprehensible sounds</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Withdraws from pain</span><span class="gcs-score">4</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">7</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Tone lost, requires jaw thrust to maintain. Snoring respirations.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 6 with agonal pauses up to 10 seconds. No audible wheeze (no air moving). Minimal chest rise even with attempted spontaneous breath. EtCO2 capnograph blunted and elevated.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial absent, carotid weak at ~150 and irregular. Central mottling extending to chest. Skin cold peripherally.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Cyanotic centrally, mottled to mid-chest · Cool peripherally, core warm · Cold sweat</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Sluggish, 5 mm</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Withdraws only to noxious; no purposeful movement.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"(unable to speak; occasional groan to sternal rub)"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Agonal respiratory pattern — near-arrest</li><li>No audible breath sounds bilaterally — true silent chest</li><li>Central cyanosis</li><li>This is the consequence of misreading the quieting chest</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize the miss: quiet chest was failure, not response — RESCUE NOW</div></div>
+        <div class="action-excerpt">Pertinent Assessment Findings: In the setting of severe bronchoconstriction, wheezing may not be heard. Patients with known asthma with severe dyspnea should be empirically treated, even if wheezing is absent. Patient Care Goals: Recognize impending respiratory failure; Promptly identify and intervene for patients who require escalation of therapy.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Two-person BVM with PEEP 5 cmH2O, in-line albuterol</div></div>
+        <div class="action-excerpt">Use bag-valve-mask (BVM) ventilation in the setting of respiratory failure or arrest. Whenever possible, the patient's head should be elevated up to 30 degrees. Two-person, two-thumbs-up BVM ventilation is preferred. PEEP should be used with BVM. 5 cmH2O is generally an appropriate initial PEEP setting. If indicated, bronchodilators should be administered in line with NIV.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Epinephrine 0.3 mg IM, 1 mg/mL (65 kg × 0.01 mg/kg = 0.65 mg → cap at 0.3 mg max) IMMEDIATELY</div></div>
+        <div class="action-excerpt">Epinephrine (0.01 mg/kg of 1 mg/mL solution IM, maximum dose of 0.3 mg) should only be administered for impending respiratory failure as adjunctive therapy when there are no clinical signs of improvement with the above treatments.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Magnesium sulfate 2 g IV over 10-15 min (65 kg × 40 mg/kg = 2600 mg → cap at 2 g max)</div></div>
+        <div class="action-excerpt">Magnesium sulfate (40 mg/kg IV, maximum dose of 2 g) over 10-15 minutes should be administered for severe bronchoconstriction and concern for impending respiratory failure.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">RSI: ketamine 1-2 mg/kg + rocuronium 1 mg/kg if BVM cannot ventilate</div></div>
+        <div class="action-excerpt">When less-invasive methods (two-person BVM, SGA placement) are ineffective or inappropriate, consider endotracheal intubation to maintain oxygenation and/or ventilation. Administer induction sedative agent: Etomidate IV push, 0.2-0.3 mg/kg OR Ketamine IV push, 1-2 mg/kg OR Midazolam IV push, 0.05-0.10 mg/kg. Administer paralytic agent: Succinylcholine IV push, 1-2 mg/kg OR Rocuronium IV push, 1 mg/kg OR Vecuronium IV push, 0.1 mg/kg.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Anticipate cardiac arrest; pads on, defib ready</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Positive pressure ventilation in the setting of bronchoconstriction, either via a supraglottic airway or intubation, increases the risk of air trapping which can lead to pneumothorax and cardiovascular collapse.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,526 @@
+{
+  "meta": {
+    "scenarioId": "R-T1-03",
+    "id": "R-T1-03",
+    "name": "Upper Airway Obstruction, Partial — Evolving Allergic Airway Edema",
+    "version": 1,
+    "difficulty": "beginner",
+    "category": "Respiratory",
+    "protocols": [
+      "medical-anaphylaxis-allergic-reaction",
+      "resp-airway-management",
+      "resp-respiratory-distress"
+    ],
+    "totalTimeSeconds": 900,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "respiratory",
+      "upper-airway",
+      "stridor",
+      "allergic-reaction",
+      "anaphylaxis",
+      "angioedema",
+      "IM-epinephrine",
+      "assessment",
+      "auscultation",
+      "voice-quality",
+      "tier-1",
+      "beginner"
+    ]
+  },
+  "patient": {
+    "name": "Priya Anand",
+    "age": 28,
+    "ageUnit": "years",
+    "sex": "female",
+    "weight": 64,
+    "weightLbs": 141,
+    "height": 165,
+    "chiefComplaint": "Trouble breathing and trouble swallowing about 25 minutes after dinner; throat feels tight and 'thick.'",
+    "history": {
+      "hpi": "28-year-old healthy female ate dinner at a new restaurant tonight with friends. She ordered a Thai noodle dish she had not had before. About 20–25 minutes after eating she developed an itchy sensation on her chest and neck, a 'thick' tongue, and a feeling that her throat was closing. She noticed her voice changing and a high-pitched whistling sound when she breathed in. She did not choke on any food, did not aspirate, never coughed up anything, and has been able to keep her own airway clear. She is talking — but her voice is muffled and 'wet' sounding. She denies wheezing, chest pain, dizziness, fainting, abdominal cramping, vomiting, or diarrhea, though she reports mild nausea. She has a history of mild shellfish allergy treated with oral diphenhydramine in the past (never IM epi, never ED, never intubated). She does not own an EpiPen. Friends called 911 when her voice changed and they heard her breathing from across the table.",
+      "pastMedical": [
+        "Mild shellfish allergy (hives only, no prior respiratory involvement)",
+        "Seasonal allergic rhinitis",
+        "Otherwise healthy"
+      ],
+      "medications": [
+        "Cetirizine 10 mg PO daily (seasonal)",
+        "Combined oral contraceptive pill"
+      ],
+      "allergies": [
+        "Shellfish (prior reaction: hives, treated with Benadryl)",
+        "NKDA medications"
+      ],
+      "lastOralIntake": "Thai noodle dish with peanut sauce ~25 minutes ago at restaurant; one glass of white wine.",
+      "events": "Dinner at new restaurant → ~20–25 min later: itching on chest/neck, 'thick' tongue, throat tightness, voice change, audible inspiratory whistling → friends called 911 → patient sitting forward at the table when EMS arrives."
+    }
+  },
+  "scene": {
+    "dispatch": "Dispatch: 28-year-old female, trouble breathing and trouble swallowing, conscious and alert. Sit-down restaurant.",
+    "location": "Sit-down restaurant dining room, table near the window. Patient seated upright on a chair, leaning slightly forward, hands resting on the table edge. Friends have cleared dishes and pulled chairs back to give EMS access. Manager is holding the front door for the cot.",
+    "time": "Saturday evening, 19:40, indoor temperature comfortable",
+    "safety": "Scene safe. No ongoing exposure (food is no longer in front of her). No combative bystanders. Path to the ambulance is clear.",
+    "bystanders": "Three friends at the table. The friend who called 911 reports: 'She ate the noodles, then about 20 minutes later she started scratching her chest, said her tongue felt thick, and her voice changed — that's when we called.' Friends do not know the exact ingredients; restaurant manager is bringing the menu.",
+    "visualCues": [
+      "Young adult female seated upright at the table, leaning slightly forward, hands on the table",
+      "Audible inspiratory stridor — high-pitched whistle on every breath in, can be heard from several feet away",
+      "Speaking in short, muffled phrases — 'hot potato' voice, sounds like she has something in her mouth",
+      "Visible raised red blotchy hives across the upper chest and front of the neck",
+      "Lips and tongue appear slightly swollen; mild facial flushing",
+      "No drooling, no cyanosis, no accessory muscle use yet",
+      "Plate of half-eaten Thai noodles still on the table; takeout menu nearby"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives at the restaurant to find a 28-year-old female seated upright at a table, leaning slightly forward, with audible inspiratory stridor heard from across the room. She is alert, oriented, and speaking — but her voice is muffled (hot-potato quality), and she has visible urticaria on her upper chest and neck plus mild lip and tongue swelling. She is maintaining her own airway and self-positioning for comfort. This is the assessment window: the student needs to recognize that stridor + muffled voice + recent food exposure + hives points strongly at an evolving allergic upper-airway reaction — NOT a choking foreign body and NOT simple anxiety. The teaching point is that a structured airway assessment (listen for stridor type, check voice quality, inspect oropharynx, ask about exposure, look for hives) drives the differential and unlocks the protocol-directed treatment in the next phase.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Maintaining own airway. Audible inspiratory stridor, high-pitched. No drooling. No foreign body visible in oropharynx; uvula slightly swollen and red. Tongue mildly swollen at the lateral edges. No tripoding yet but leaning slightly forward by choice.",
+        "breathing": "Spontaneous, slightly increased rate. Lungs CLEAR bilaterally on auscultation — NO wheezing, NO crackles. Stridor is heard loudest over the anterior neck/trachea on inspiration. Mild work of breathing; no significant accessory muscle use yet.",
+        "circulation": "Radial pulse strong, rapid, regular. Skin warm and slightly flushed. Capillary refill <2 sec. No diaphoresis.",
+        "skin": { "color": "flushed with raised urticarial wheals on chest and neck", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL, 4 mm bilaterally",
+        "motorFunction": "Moves all extremities normally, follows commands",
+        "otherFindings": [
+          "Urticaria across upper chest, neck, and bilateral forearms",
+          "Lips mildly swollen; tongue slightly swollen at lateral borders",
+          "Posterior pharynx mildly erythematous; uvula appears slightly enlarged",
+          "No drooling, no trismus, no fever",
+          "Patient anxious but cooperative; able to nod and give one-word answers",
+          "No abdominal pain, no vomiting, no diarrhea"
+        ],
+        "patientSpeech": "Short, muffled, hot-potato phrases: 'Throat... tight.' 'Can't... swallow right.' 'Started... after dinner.' Patient frequently swallows and clears throat between phrases."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 112,
+        "bpSys": 118,
+        "bpDia": 76,
+        "respRate": 22,
+        "spo2": 94,
+        "etco2": 38,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 50,
+        "glucose": 102,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "scene-bsi-general-impression",
+          "shortAction": "Scene safety, BSI, form general impression (alert, leaning forward, audible stridor)",
+          "protocolExcerpt": "Physical Examination – Assess for: Abnormal respiratory pattern, rate and/or effort; Use of accessory muscles; Ability to speak words/sentences; Quality of air exchange, including depth of respiration and equality of breath sounds; Abnormal breath sounds (e.g., wheezing, rhonchi, rales, or stridor); Skin color (cyanosis or pallor), presence of diaphoresis; Mental status, including anxiety; Airway obstruction with foreign body or swelling (e.g., angioedema, posterior pharyngeal and laryngeal infections).",
+          "priority": "critical",
+          "rationale": "Sets the frame: this is a respiratory/airway call, not trauma. Visible stridor + forward lean tells you immediately to start at the airway.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "primary-survey-airway",
+          "shortAction": "Primary survey: assess airway — listen for stridor type (inspiratory vs expiratory)",
+          "protocolExcerpt": "Assessment: Evaluate for patent airway and presence of oropharyngeal edema. Auscultate for wheezing and assess level of respiratory effort. Assess for adequacy of perfusion. Assess for presence of signs and symptoms of anaphylaxis.",
+          "priority": "critical",
+          "rationale": "Inspiratory stridor localizes the obstruction to the upper airway (extrathoracic). Distinguishes this clearly from bronchospasm.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "voice-and-oropharynx",
+          "shortAction": "Check voice quality (muffled vs hoarse) and inspect oropharynx for swelling",
+          "protocolExcerpt": "Physical Examination – Assess for: Airway obstruction with foreign body or swelling (e.g., angioedema, posterior pharyngeal and laryngeal infections).",
+          "priority": "critical",
+          "rationale": "Hot-potato/muffled voice = supraglottic edema. Hoarse voice = vocal cord/laryngeal edema. Either is dangerous and points to airway-involved allergic reaction.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "skin-and-hives",
+          "shortAction": "Expose chest/neck/arms — identify urticaria, lip and tongue swelling",
+          "protocolExcerpt": "Signs and Symptoms: Itching or urticaria; Coughing, wheezing, or respiratory distress; Chest tightness or throat constriction; Hypotension or shock; Persistent gastrointestinal symptoms (nausea, vomiting, and diarrhea); Altered mental status (AMS).",
+          "priority": "critical",
+          "rationale": "Hives + airway involvement after a likely allergen = two-system anaphylaxis criterion met (skin + respiratory).",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "exposure-history",
+          "shortAction": "Targeted SAMPLE: new food, new med, sting, prior reactions, EpiPen on hand",
+          "protocolExcerpt": "History of Present Illness: Onset and location; Insect sting or bite; Food allergy/exposure; New clothing, soap, detergent; Past history of reactions; Medication history.",
+          "priority": "critical",
+          "rationale": "Locks in the trigger and the diagnosis: novel food exposure 20–25 min ago with prior shellfish allergy history.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "vitals-with-spo2-etco2",
+          "shortAction": "Full vitals with continuous SpO2 and waveform capnography",
+          "protocolExcerpt": "Patients with significant respiratory distress should have continuous pulse oximetry and waveform capnography monitoring for both assessment and for guiding therapy. Pulse oximetry is indicated to assess oxygenation.",
+          "priority": "important",
+          "rationale": "Baseline numbers — SpO2 94% on RA, EtCO2 38, HR 112, BP 118/76 — anchor reassessment after epinephrine.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "position-of-comfort",
+          "shortAction": "Let patient self-position upright — do NOT force supine",
+          "protocolExcerpt": "Patient positioning can significantly impact respiratory mechanics. Patients with severe bronchospasm should be left in the position of comfort (perhaps tripod) whenever possible. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics. This can both improve the ability to ventilate and limit aspiration.",
+          "priority": "critical",
+          "rationale": "Upper-airway-edema patients protect their own airway by sitting up. Laying them flat can precipitate complete obstruction.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "supplemental-o2",
+          "shortAction": "Supplemental O2 titrated to SpO2 94–98% (NC or NRB, patient choice)",
+          "protocolExcerpt": "Administer oxygen if needed for air hunger or respiratory distress and titrate to a target SPO2 of 94–98%. Depending on patient presentation, this may be accomplished with nasal cannula, nonrebreather, BVM, NIV.",
+          "priority": "important",
+          "rationale": "SpO2 is 94% — at the lower edge of target. NC is appropriate; avoid mask claustrophobia that worsens her work of breathing.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "recognize-anaphylaxis-criteria",
+          "shortAction": "Recognize anaphylaxis criteria met (skin + respiratory after likely allergen)",
+          "protocolExcerpt": "Anaphylaxis – More severe and is characterized by an acute onset involving: Two or more of the following occurring rapidly after exposure to a likely allergen: Skin and/or mucosal involvement (urticaria, itchy, swollen tongue/lips); Respiratory compromise (dyspnea, wheezing, stridor, hypoxemia); Persistent gastrointestinal symptoms (vomiting, abdominal pain, diarrhea); Hypotension or associated symptoms (syncope, hypotonia, chest tightness, incontinence).",
+          "priority": "critical",
+          "rationale": "This is the diagnostic moment. Two systems (skin + respiratory/airway) after a likely allergen = anaphylaxis. Treatment is IM epinephrine NOW, not after deterioration.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "im-epi-given",
+          "if": "Anaphylaxis recognized, IM Epi given",
+          "condition": "Crew completes airway-focused assessment, identifies muffled voice + inspiratory stridor + hives + recent novel food exposure, recognizes two-system anaphylaxis criteria met, and administers IM epinephrine 1 mg/mL 0.3 mg into the anterolateral thigh within 5 minutes of patient contact.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "primary-survey-airway",
+            "voice-and-oropharynx",
+            "skin-and-hives",
+            "exposure-history",
+            "recognize-anaphylaxis-criteria"
+          ]
+        },
+        {
+          "targetPhaseId": "back-blows-wrong-turn",
+          "if": "Treated as foreign body — back blows / abdominal thrusts",
+          "condition": "Crew anchors on 'stridor = choking foreign body' despite the patient being awake, talking, and giving a clear history of NO aspiration. Crew attempts back blows and/or abdominal thrusts on an awake patient with no foreign body present.",
+          "conditionType": "action_taken"
+        },
+        {
+          "targetPhaseId": "stridor-dismissed",
+          "if": "Stridor dismissed as anxiety, IM Epi delayed",
+          "condition": "Crew notes that the patient is talking and sitting up calmly, attributes the stridor and voice changes to 'panic attack' or 'globus,' and elects to monitor and transport without administering IM epinephrine. More than 8 minutes pass from patient contact without IM epi.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": [
+            "recognize-anaphylaxis-criteria"
+          ],
+          "timeoutSeconds": 480
+        }
+      ]
+    },
+    {
+      "id": "im-epi-given",
+      "name": "IM Epi given",
+      "description": "Crew has identified anaphylaxis and administered IM epinephrine 0.3 mg (1 mg/mL) in the anterolateral thigh. Within 2–3 minutes the patient reports her throat feels 'less tight,' the inspiratory stridor softens noticeably, voice clears slightly, and the hives begin to fade. Heart rate is briefly higher (epinephrine effect) but blood pressure holds. Crew now establishes IV access, considers adjunct steroids and antihistamine per protocol, monitors for the need for a repeat IM epi dose at 5–15 minutes, and prepares to transport. This is the stabilization phase — students should be reassessing airway sounds and voice continuously and should be ready to escalate (repeat IM epi, prep advanced airway) if symptoms recur.",
+      "triggerCondition": "After IM epinephrine 0.3 mg in the anterolateral thigh, the patient's stridor softens within 2–3 minutes, voice clears partially, and hives start to fade. Vitals trend toward improvement (HR transiently up from epi, BP stable, SpO2 climbs). Crew now moves to adjunct therapy, IV access, and transport.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent. Stridor noticeably quieter — now only audible at the bedside, not across the room. Tongue swelling unchanged but not worsening. No drooling.",
+        "breathing": "Spontaneous, easier work of breathing. Lungs remain clear bilaterally. Patient no longer leaning as far forward.",
+        "circulation": "Pulse rapid (epi effect) but regular and strong. Skin warm, flushing decreasing. Capillary refill <2 sec.",
+        "skin": { "color": "fading urticaria — wheals lighter and less raised", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL, 4 mm bilaterally",
+        "motorFunction": "Moves all extremities normally, following commands",
+        "otherFindings": [
+          "Patient reports throat 'less tight' and that she 'can swallow a little easier'",
+          "Voice clearer but still mildly muffled — full recovery expected over minutes",
+          "Mild tachycardia (expected from IM epinephrine)",
+          "No new chest pain, no headache, no tremor beyond mild expected post-epi feel",
+          "Hives on chest and neck visibly flatter and less red"
+        ],
+        "patientSpeech": "Speaking in fuller phrases now: 'My throat feels better.' 'Heart's pounding though.' 'Thank you.'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 124,
+        "bpSys": 124,
+        "bpDia": 78,
+        "respRate": 20,
+        "spo2": 97,
+        "etco2": 37,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 25,
+        "glucose": 102,
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "im-epi-dose",
+          "shortAction": "Epinephrine 0.3 mg IM in anterolateral thigh (1 mg/mL, adult ≥25 kg)",
+          "protocolExcerpt": "Epinephrine administration is the primary treatment for anaphylaxis. If signs of anaphylaxis, administer epinephrine 1 mg/mL at the following dose and route: Adult (25 kg or more) 0.3 mg IM in the anterolateral thigh; Pediatric (less than 25 kg) 0.15 mg in the anterolateral thigh; Epinephrine 1 mg/mL may be administered from a vial or via auto-injector, if available.",
+          "priority": "critical",
+          "rationale": "Patient is 64 kg adult meeting two-system anaphylaxis criteria. Fixed adult dose 0.3 mg IM in the anterolateral thigh. Time to epinephrine is THE outcome measure.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "reassess-airway-after-epi",
+          "shortAction": "Reassess airway/voice/stridor at 2–3 min — confirm improvement or repeat IM epi",
+          "protocolExcerpt": "If signs of anaphylaxis and hypoperfusion persist following the first dose of epinephrine, additional IM epinephrine can be repeated q5–15 minutes at above noted doses.",
+          "priority": "critical",
+          "rationale": "IM epi is not 'set and forget.' Stridor should soften within 2–3 minutes; if it does not, a repeat IM dose is on the table at 5–15 minutes.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "iv-access",
+          "shortAction": "Establish IV access (preferably large bore) for adjunct meds and fluids",
+          "protocolExcerpt": "For signs of hypoperfusion, also administer 20 mL/kg isotonic fluid (normal saline or lactated Ringer's) rapidly (over 15 minutes) via IV or IO, and repeat as needed for ongoing hypoperfusion.",
+          "priority": "important",
+          "rationale": "BP is currently stable but anaphylaxis can decompensate rapidly. IV access supports adjunct steroid/antihistamine and a fluid bolus if perfusion fails.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "diphenhydramine",
+          "shortAction": "Diphenhydramine 50 mg IV (64 kg × 1 mg/kg = 64 mg → cap at 50 mg max)",
+          "protocolExcerpt": "For urticaria or pruritus, administer a diphenhydramine 1 mg/kg, up to maximum dose of 50 mg IM, IV, or PO. The IV route is preferred for the patient in severe symptoms.",
+          "priority": "important",
+          "rationale": "Patient has clear urticaria and itching; IV diphenhydramine addresses the cutaneous component and is supplemental to epi.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "steroid",
+          "shortAction": "Methylprednisolone 125 mg IV (or Dexamethasone 10 mg IV)",
+          "protocolExcerpt": "Consider Methylprednisolone IV push or IM, 80-125 mg OR Dexamethasone IV push, IM, or PO, 8-16 mg (pediatric 0.5 mg/kg to max of 16 mg).",
+          "priority": "supplemental",
+          "rationale": "Steroids do not treat the acute event but are protocol-recommended adjuncts; benefit on biphasic reaction is debated but commonly given.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "prep-advanced-airway",
+          "shortAction": "Prepare advanced airway equipment in case of progression to complete obstruction",
+          "protocolExcerpt": "Endotracheal intubation — When less-invasive methods (two-person BVM, SGA placement) are ineffective or inappropriate, consider endotracheal intubation to maintain oxygenation and/or ventilation. Other indications may include potential airway obstruction, severe inhalation burns, multiple traumatic injuries, altered mental status with loss of normal protective airway reflexes.",
+          "priority": "important",
+          "rationale": "Airway can recur or worsen. Equipment ready (smaller-than-usual ETT, bougie, SGA, surgical kit) is the right Tier-1 mindset even if not used.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "transport-with-reassessment",
+          "shortAction": "Transport priority, continuous monitoring, reassess every 5 minutes",
+          "protocolExcerpt": "Transport as soon as possible, and perform ongoing assessment as indicated. Cardiac monitoring is not required, but should be considered for those with known heart problems or who received multiple doses of epinephrine.",
+          "priority": "important",
+          "rationale": "Anaphylaxis has a known biphasic risk window. Continuous monitoring, ED hand-off, and clear documentation of epi timing/dose are required.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "back-blows-wrong-turn",
+      "name": "Back blows attempted on awake patient",
+      "description": "Crew anchored on 'stridor must be a choking foreign body.' Despite the patient being awake, alert, talking, and giving a clear history of NO aspiration (she did not choke, never coughed, food went down fine), the crew positions her forward and delivers back blows; one provider readies for abdominal thrusts. The patient — already anxious from the sensation of a closing throat — panics. Her crying and gasping increase her work of breathing, the soft-tissue edema worsens, the inspiratory stridor becomes louder and now occurs on every breath, and the obstruction trends toward complete. This is the recovery beat: a thoughtful crew recognizes the maneuver is wrong, STOPS, returns the patient to her position of comfort, reassesses, and gives IM epinephrine. Failure to recover here puts her at imminent risk of complete airway closure.",
+      "triggerCondition": "Crew misidentified stridor as a choking foreign body and attempted back blows / abdominal thrusts on an awake patient with no history of aspiration. The intervention worsens the patient's distress, increases soft-tissue edema, and pushes the partial obstruction toward complete.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 4, "motor": 6 },
+        "airway": "Patent but worsening. Inspiratory stridor LOUDER, now also a faint expiratory component. Tongue and lip swelling more pronounced. Mild drooling beginning. Posterior pharynx more swollen and erythematous.",
+        "breathing": "Tachypneic, frightened. Mild accessory muscle use now visible (sternocleidomastoid). Lungs still clear distally but air movement into the chest is diminished compared to baseline.",
+        "circulation": "Pulse rapid, regular, strong. Skin flushed and now slightly moist from anxiety. Capillary refill <2 sec.",
+        "skin": { "color": "more flushed, urticaria more prominent", "temperature": "warm", "moisture": "lightly diaphoretic from anxiety" },
+        "pupils": "PERRL, 4 mm",
+        "motorFunction": "Moves all extremities, but pulling at her own collar and reaching for her throat",
+        "otherFindings": [
+          "Patient crying, mouthing 'don't' and shaking her head — frightened by the maneuver",
+          "Hives spreading further down the chest and onto the abdomen",
+          "Faint drool at the corner of the mouth",
+          "Voice now harder to understand — strained and wet"
+        ],
+        "patientSpeech": "Strained, broken phrases between gasps: 'No... don't...' 'Can't... breathe... right.'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 134,
+        "bpSys": 122,
+        "bpDia": 80,
+        "respRate": 28,
+        "spo2": 90,
+        "etco2": 34,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 75,
+        "glucose": 102,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "stop-back-blows",
+          "shortAction": "STOP back blows / abdominal thrusts on this awake, talking patient",
+          "protocolExcerpt": "Patient positioning can significantly impact respiratory mechanics. Patients with severe bronchospasm should be left in the position of comfort (perhaps tripod) whenever possible.",
+          "priority": "critical",
+          "rationale": "An awake, phonating patient with NO history of aspiration is not a foreign-body call. Back blows and abdominal thrusts are contraindicated, worsen anxiety, and accelerate edema.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "reassess-recognize-allergic",
+          "shortAction": "Reassess: stridor + hives + recent food = allergic, not foreign body",
+          "protocolExcerpt": "Anaphylaxis – Two or more of the following occurring rapidly after exposure to a likely allergen: Skin and/or mucosal involvement (urticaria, itchy, swollen tongue/lips); Respiratory compromise (dyspnea, wheezing, stridor, hypoxemia).",
+          "priority": "critical",
+          "rationale": "Recovery requires explicitly naming the correct diagnosis and re-aligning treatment with the anaphylaxis protocol.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "rescue-im-epi",
+          "shortAction": "Epinephrine 0.3 mg IM anterolateral thigh NOW (rescue dose, 1 mg/mL)",
+          "protocolExcerpt": "Epinephrine administration is the primary treatment for anaphylaxis. If signs of anaphylaxis, administer epinephrine 1 mg/mL at the following dose and route: Adult (25 kg or more) 0.3 mg IM in the anterolateral thigh.",
+          "priority": "critical",
+          "rationale": "Even after a wrong turn, the right next move is IM epinephrine. Time-to-epi is the outcome metric.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "rescue-position",
+          "shortAction": "Return patient to upright position of comfort, calm and reassure",
+          "protocolExcerpt": "Patient positioning can significantly impact respiratory mechanics. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics. This can both improve the ability to ventilate and limit aspiration.",
+          "priority": "critical",
+          "rationale": "Anxiety drives stridor worse. Restoring her self-chosen upright posture and verbal reassurance are part of the airway intervention.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "rescue-prep-advanced-airway",
+          "shortAction": "Prepare advanced airway / SGA / surgical kit — obstruction progressing",
+          "protocolExcerpt": "Endotracheal intubation — Other indications may include potential airway obstruction, severe inhalation burns, multiple traumatic injuries, altered mental status with loss of normal protective airway reflexes. When patients cannot be oxygenated/ventilated effectively using the above interventions, or when conventional airway approaches are impossible, surgical airway management is a reasonable option if the clinician has competency in the procedure.",
+          "priority": "important",
+          "rationale": "Obstruction is now ~75%. If epi does not reverse rapidly, definitive airway is next. Equipment must be at the head of the bed.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "stridor-dismissed",
+      "name": "Stridor dismissed, IM Epi delayed",
+      "description": "Crew attributed the inspiratory stridor and voice change to 'anxiety' or a 'panic attack' because the patient is talking and sitting upright. They elect to monitor, place a nasal cannula, encourage slow breathing, and begin transport WITHOUT administering IM epinephrine. Over the next 8–10 minutes, the underlying allergic process continues unchecked: airway edema progresses, the inspiratory stridor becomes biphasic, drooling appears, voice becomes nearly unintelligible, and SpO2 begins to fall. The patient is now visibly tiring. This is the consequence beat — students see what 'delayed epi' looks like clinically. Recovery still hinges on IM epinephrine, but the airway is now actively threatening to close, and advanced-airway preparation must run in parallel.",
+      "triggerCondition": "Crew misread the stridor and voice changes as anxiety/panic and delayed IM epinephrine. After ~8 minutes the underlying allergic airway edema has progressed unchecked — stridor is now biphasic, drooling has begun, voice is nearly unintelligible, and SpO2 is trending down.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 4, "motor": 6 },
+        "airway": "Patent but actively narrowing. Inspiratory stridor now LOUD; faint expiratory component as well. Tongue clearly swollen, posterior pharynx markedly erythematous and swollen. New mild drooling.",
+        "breathing": "Tachypneic with accessory muscle use (sternocleidomastoid and suprasternal retractions). Air movement at the mouth is reduced. Lung fields still clear distally — the problem is upstream.",
+        "circulation": "Pulse rapid, regular, strong. Skin flushed and now diaphoretic.",
+        "skin": { "color": "flushed with widespread urticaria over chest, neck, abdomen, and arms", "temperature": "warm", "moisture": "diaphoretic" },
+        "pupils": "PERRL, 4 mm",
+        "motorFunction": "Moves all extremities; fidgeting, repeatedly touching her throat",
+        "otherFindings": [
+          "Patient frightened, mouthing words rather than speaking, repeatedly pointing at her throat",
+          "Visible drool at the corner of the mouth",
+          "Urticaria now widespread; lips visibly more swollen than at first contact",
+          "Tiring — accessory muscle use is new since the initial assessment"
+        ],
+        "patientSpeech": "Whispered, single-word phrases: 'Help.' 'Throat.' 'Can't.' Patient prefers to gesture rather than speak."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 138,
+        "bpSys": 116,
+        "bpDia": 76,
+        "respRate": 30,
+        "spo2": 88,
+        "etco2": 32,
+        "temp": 37.1,
+        "tempF": 98.8,
+        "obstruction": 85,
+        "glucose": 102,
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "delayed-recognize-anaphylaxis",
+          "shortAction": "Re-recognize anaphylaxis (skin + airway progression after likely allergen)",
+          "protocolExcerpt": "Anaphylaxis – Two or more of the following occurring rapidly after exposure to a likely allergen: Skin and/or mucosal involvement (urticaria, itchy, swollen tongue/lips); Respiratory compromise (dyspnea, wheezing, stridor, hypoxemia).",
+          "priority": "critical",
+          "rationale": "Closing the loop on the missed diagnosis — anxiety does not cause biphasic stridor, drooling, hives, lip swelling, and falling SpO2.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "delayed-im-epi",
+          "shortAction": "Epinephrine 0.3 mg IM anterolateral thigh IMMEDIATELY (1 mg/mL)",
+          "protocolExcerpt": "Epinephrine administration is the primary treatment for anaphylaxis. If signs of anaphylaxis, administer epinephrine 1 mg/mL at the following dose and route: Adult (25 kg or more) 0.3 mg IM in the anterolateral thigh.",
+          "priority": "critical",
+          "rationale": "Delayed but still the right answer. Every minute without epi is a minute closer to complete obstruction and hypoxic arrest.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "delayed-neb-epi",
+          "shortAction": "Nebulized Epinephrine 5 mL of 1 mg/mL for ongoing stridor",
+          "protocolExcerpt": "If stridor is present, consider administering epinephrine 1 mg/mL, 5 mL nebulized.",
+          "priority": "important",
+          "rationale": "Protocol-named adjunct specifically for stridor when upper-airway edema is the driver.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "delayed-prep-advanced-airway",
+          "shortAction": "Prep advanced airway (smaller ETT, bougie, SGA, surgical kit)",
+          "protocolExcerpt": "When patients cannot be oxygenated/ventilated effectively using the above interventions, or when conventional airway approaches are impossible, surgical airway management is a reasonable option if the clinician has competency in the procedure and risk of death for not escalating airway management seems to outweigh the risk of a procedural complication.",
+          "priority": "critical",
+          "rationale": "Obstruction is ~85% and the patient is tiring. Definitive airway equipment must be ready and a surgical airway plan named.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "delayed-repeat-im-epi-window",
+          "shortAction": "Repeat IM epi 0.3 mg at 5–15 min if no improvement",
+          "protocolExcerpt": "If signs of anaphylaxis and hypoperfusion persist following the first dose of epinephrine, additional IM epinephrine can be repeated q5–15 minutes at above noted doses.",
+          "priority": "important",
+          "rationale": "Single IM dose may be insufficient in a progressed presentation; the protocol allows repeat dosing in the 5–15 min window.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "delayed-emergent-transport",
+          "shortAction": "Emergent transport, notify receiving facility of difficult airway",
+          "protocolExcerpt": "Transport to the closest appropriate hospital for airway stabilization when respiratory failure cannot be successfully managed in the prehospital setting.",
+          "priority": "critical",
+          "rationale": "Receiving ED needs advance warning so an experienced airway team is at the door — possibly with anesthesia/ENT for awake fiberoptic or surgical airway backup.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

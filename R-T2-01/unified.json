@@ -1,0 +1,557 @@
+{
+  "meta": {
+    "scenarioId": "R-T2-01",
+    "id": "R-T2-01",
+    "name": "Severe Asthma, Failing First-Line Treatment",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Respiratory",
+    "protocols": [
+      "resp-respiratory-distress",
+      "resp-airway-management",
+      "medical-anaphylaxis-allergic-reaction"
+    ],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "respiratory",
+      "asthma",
+      "bronchospasm",
+      "severe",
+      "near-fatal",
+      "continuous-neb",
+      "IM-epinephrine",
+      "magnesium",
+      "dexamethasone",
+      "CPAP",
+      "BVM",
+      "RSI",
+      "silent-chest",
+      "impending-respiratory-failure",
+      "tier-2",
+      "advanced",
+      "decision-dense"
+    ]
+  },
+  "patient": {
+    "name": "Alyssa Mendoza",
+    "age": 28,
+    "ageUnit": "years",
+    "sex": "female",
+    "weight": 68,
+    "weightLbs": 150,
+    "height": 165,
+    "chiefComplaint": "Severe shortness of breath, can only speak in 1-2 word phrases. Out of inhaler. Known asthmatic with prior intubation.",
+    "history": {
+      "hpi": "28-year-old female with longstanding severe asthma since childhood, on chronic inhaled corticosteroid plus albuterol PRN with frequent oral prednisone tapers. She was intubated and ICU-admitted for asthma exacerbation approximately 2 years ago. Symptoms began roughly 6 hours before EMS arrival with progressive dyspnea, chest tightness, and audible wheezing after she ran out of her rescue albuterol inhaler two days ago and was unable to refill it. She used a roommate's old MDI several times this afternoon with minimal effect. Over the last 90 minutes she has become unable to speak more than 1-2 words at a time, is now tripoding in her apartment doorway, and her roommate called 911 when she said 'I can't … breathe.' She denies fever, chest pain, hemoptysis, leg swelling, recent travel, or known sick contacts. No new medication exposures, no food triggers, no insect stings. Today's trigger is most consistent with poorly controlled severe asthma compounded by absence of her rescue inhaler.",
+      "pastMedical": [
+        "Severe asthma since childhood",
+        "Prior intubation and ICU admission for asthma (~2 years ago) — HIGH-RISK MARKER for near-fatal asthma",
+        "Multiple prior ED visits and short oral prednisone tapers in the last 12 months",
+        "Eczema",
+        "Seasonal allergic rhinitis"
+      ],
+      "medications": [
+        "Albuterol HFA 90 mcg, 2 puffs PRN (OUT — ran out 2 days ago, used roommate's MDI today with poor effect)",
+        "Fluticasone (Flovent) 110 mcg, 2 puffs BID",
+        "Prednisone 40 mg PO daily — currently on day 3 of a short taper for a flare earlier this week",
+        "Cetirizine 10 mg PO daily"
+      ],
+      "allergies": [
+        "NKDA"
+      ],
+      "lastOralIntake": "Sips of water in the last hour; last solid food ~6 hours ago",
+      "events": "Out of rescue inhaler for 2 days → progressive wheeze and chest tightness over ~6 hours → ineffective puffs from roommate's old MDI → unable to speak more than 1-2 words → tripoding in doorway → roommate called 911."
+    }
+  },
+  "scene": {
+    "dispatch": "Dispatch: 28-year-old female, trouble breathing, says she can't catch her breath. Apartment, second floor, conscious.",
+    "location": "Second-floor apartment, near the front door. Patient is sitting upright on the floor leaning forward against the door frame, hands on knees, in obvious severe distress. Stairwell access is tight; cot will need to stage at the bottom of the stairs.",
+    "time": "Wednesday, 18:20, cool spring evening",
+    "safety": "Scene safe. Roommate is calm, met crew at the building entrance, and is willing to assist with history.",
+    "bystanders": "Roommate present — reports patient is a 'lifelong severe asthmatic,' was intubated about 2 years ago, has been out of her rescue inhaler for 2 days, and has been wheezing audibly all afternoon. Roommate hands the crew an empty albuterol MDI and a Flovent inhaler.",
+    "visualCues": [
+      "Young adult female tripoding in apartment doorway, hands braced on knees, leaning forward",
+      "Speaking in 1-2 word phrases only — 'can't … breathe' / 'help'",
+      "Audible wheezing across the room on expiration; prolonged expiratory phase",
+      "Marked accessory muscle use — sternocleidomastoid, scalenes, suprasternal retractions",
+      "Diaphoretic, anxious facial expression; eyes wide; not yet drowsy",
+      "Empty albuterol MDI and a Flovent inhaler on the entry table",
+      "Pulse oximeter on her finger from a home device reads 86%",
+      "No urticaria, no facial/tongue swelling, no stridor — this is bronchospasm, not anaphylaxis"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives to a 28-year-old known severe asthmatic in significant respiratory distress. She is tripoding, speaking in 1-2 word phrases, diaphoretic, with marked accessory muscle use and diffuse expiratory wheezing. SpO2 86% on room air, RR 36, HR 132, BP 146/92. The history — prior intubation, out of rescue inhaler, hours of progressive symptoms — flags her as a near-fatal asthma risk. The teaching point of this Tier 2 scenario is that this patient will not respond to DuoNeb alone: the student must recognize severity, initiate first-line bronchodilator immediately, and be ready to escalate (IM epi, IV magnesium, steroids, and ultimately PPV / RSI prep) when first-line therapy fails.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 4,
+          "motor": 6
+        },
+        "airway": "Patent — speaking in 1-2 word phrases, no stridor, no drooling, no tongue/lip swelling",
+        "breathing": "RR 36, severe distress, tripoding, marked accessory muscle use (SCM, scalenes, suprasternal retractions), prolonged expiratory phase, diffuse audible expiratory wheezing without auscultation",
+        "circulation": "Strong rapid radial pulse; warm dry-to-diaphoretic extremities; cap refill < 2 sec",
+        "skin": {
+          "color": "pink with circumoral pallor",
+          "temperature": "warm",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal at 4 mm, briskly reactive",
+        "motorFunction": "Symmetric, intact, follows commands",
+        "otherFindings": [
+          "Bilateral diffuse expiratory wheezing in all fields; air entry diminished globally but present",
+          "Prolonged expiratory phase",
+          "Speaks only 1-2 word phrases, audibly air-hungry between words",
+          "Marked accessory muscle use — SCM, scalenes, suprasternal retractions; no intercostal retractions yet",
+          "Capnography: shark-fin waveform consistent with severe bronchospasm",
+          "No urticaria, no facial/tongue swelling, no stridor — not anaphylaxis"
+        ],
+        "patientSpeech": "Can't … breathe."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 132,
+        "bpSys": 146,
+        "bpDia": 92,
+        "respRate": 36,
+        "spo2": 86,
+        "etco2": 32,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 70,
+        "glucose": 108,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-severe",
+          "shortAction": "Recognize severe bronchospasm with impending respiratory failure (1-2 word speech, SpO2 86%, tripoding, prior intubation)",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Pertinent Assessment Findings 1; Notes/Educational Pearls Key Considerations 2 — prior near-fatal asthma is a major mortality risk marker; severe distress manifests with hypoxia, accessory use, and inability to speak more than 2-3 words.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Pertinent Assessment Findings: Severe respiratory distress may manifest with hypoxia, altered mentation, diaphoresis, or inability to speak more than 2–3 words. Key Considerations — Factors that have been shown to be associated with increased mortality from asthma include: Severe asthma as evidenced by at least one of the following: Prior near-fatal asthma (e.g., ICU admission or intubation/mechanical ventilation); Prior admissions for asthma or repeated ED visits, particularly if in the last year; Heavy use of beta-agonist medications, or requiring three or more classes of asthma medication."
+        },
+        {
+          "id": "position-of-comfort",
+          "shortAction": "Leave patient in position of comfort (tripod); do NOT force supine",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Treatment 3d — severe bronchospasm patients should be left in the position of comfort.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Patient positioning can significantly impact respiratory mechanics. Patients with severe bronchospasm should be left in the position of comfort (perhaps tripod) whenever possible. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics. This can both improve the ability to ventilate and limit aspiration."
+        },
+        {
+          "id": "high-flow-o2",
+          "shortAction": "Apply high-flow O2 — escalate from NC to NRB to target SpO2 94-98%",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Treatment 1a — escalate O2 to target 94-98%.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Give supplemental oxygen for dyspnea to a target of 94–98% saturation. Escalate from a nasal cannula as needed to reach this goal."
+        },
+        {
+          "id": "monitoring-baseline",
+          "shortAction": "Continuous SpO2 + waveform EtCO2 + cardiac monitor; 12-lead if able",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Monitoring 2a — pulse ox and EtCO2 routinely; MATC Airway Management Monitoring 1 — significant distress gets continuous SpO2 and waveform capnography.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Monitoring: Pulse oximetry and EtCO2 should be routinely used as adjuncts to other forms of monitoring in patients with respiratory complaints."
+        },
+        {
+          "id": "duoneb-first-line",
+          "shortAction": "Albuterol 5 mg + Ipratropium 0.5 mg nebulized (DuoNeb), O2-driven; start now while preparing escalation",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Treatment 4a — albuterol 5 mg neb for all patients in distress with bronchospasm; ipratropium 0.5 mg up to 3 doses with albuterol.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Inhaled Medications: While albuterol 2.5 mg nebulized is usually sufficient for mild wheezing without clinical distress, albuterol 5 mg nebulized (or 6 puffs metered dose inhaler) should be administered to all patients in respiratory distress with signs of bronchospasm (e.g., known asthmatics, quiet wheezers). Repeat at this dose with unlimited frequency for ongoing respiratory distress. Ipratropium 0.5 mg nebulized should be given up to 3 doses in conjunction with albuterol."
+        },
+        {
+          "id": "iv-access-early",
+          "shortAction": "Establish IV access early — IV mag and IV steroids are coming",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Treatment 3 — IV access when IV medication is indicated.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "IV Access and Fluids – IV access should be placed when IV medication administration is indicated, or when there are clinical concerns of dehydration so that IV fluids can be administered."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "duoneb-minimal-response",
+          "if": "DuoNeb started, minimal response",
+          "condition": "Crew initiates DuoNeb promptly, applies high-flow O2, places monitoring and IV access. After the first nebulizer cycle, the patient shows only minimal improvement — SpO2 climbs from 86% to 88%, RR remains 34, still in 1-2 word speech, accessory muscle use unchanged, wheezing diffuse. This is the cue that first-line therapy is failing and escalation is required.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["duoneb-first-line", "high-flow-o2", "monitoring-baseline", "iv-access-early"]
+        },
+        {
+          "targetPhaseId": "no-escalation-silent-chest",
+          "if": "DuoNeb only, no escalation — 'they always need a few rounds'",
+          "condition": "Crew gives DuoNeb and decides to wait it out — anchoring on the belief that asthmatics 'always need a few rounds' before they turn the corner. No IM epinephrine, no IV magnesium, no steroids, no escalation of airway. Patient continues to deteriorate over the next several minutes toward silent chest and impending respiratory arrest.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["recognize-severe"]
+        }
+      ]
+    },
+    {
+      "id": "duoneb-minimal-response",
+      "name": "DuoNeb given, minimal response",
+      "description": "First DuoNeb is in. After ~5-7 minutes the patient is no better: SpO2 has climbed only 2 points (86 → 88), RR is still 34, she is still in 1-2 word speech, still tripoding, accessory muscles still working hard, diffuse wheeze unchanged, capnography still shark-fin. This is the protocol's trigger for escalation — IM epinephrine for impending respiratory failure, IV magnesium for severe bronchoconstriction, IV/IM steroids, and continuous albuterol while preparing for non-invasive ventilation. The student needs to make a deliberate, ordered call to escalate now, not wait for another neb.",
+      "triggerCondition": "First-line therapy (DuoNeb + O2 + IV access) has failed to produce meaningful improvement after approximately 5-7 minutes. The patient remains in severe distress with SpO2 88%, RR 34, 1-2 word speech, marked accessory muscle use, diffuse wheezing, and shark-fin capnography — clinical picture of severe bronchospasm with impending respiratory failure per MATC Respiratory Distress 4c-4d.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 4,
+          "motor": 6
+        },
+        "airway": "Patent, no stridor, no swelling; neb mask in place",
+        "breathing": "RR 34, ongoing severe distress, tripoding, marked accessory muscle use, prolonged expiratory phase, diffuse expiratory wheezing on neb mask",
+        "circulation": "Rapid regular radial pulse; warm diaphoretic extremities",
+        "skin": {
+          "color": "pink with persistent circumoral pallor",
+          "temperature": "warm",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Symmetric, intact, follows commands but appears tired",
+        "otherFindings": [
+          "Bilateral diffuse expiratory wheezing largely unchanged from baseline",
+          "Air entry remains diminished",
+          "Capnography still shark-fin; EtCO2 33-34 — climbing toward normal in a tachypneic patient is an early warning sign",
+          "Mild fine tremor of hands (expected albuterol effect)",
+          "Patient appears frightened — anxious affect",
+          "Still 1-2 word phrases, not improving"
+        ],
+        "patientSpeech": "Not … working."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 138,
+        "bpSys": 150,
+        "bpDia": 94,
+        "respRate": 34,
+        "spo2": 88,
+        "etco2": 34,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 65,
+        "glucose": 110,
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "im-epinephrine",
+          "shortAction": "Epinephrine 0.3 mg IM (1 mg/mL) lateral thigh (68 kg × 0.01 mg/kg = 0.68 mg → cap at 0.3 mg max); may repeat q5-15 min",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Treatment 4d — IM epinephrine for impending respiratory failure as adjunct when first-line therapy is not improving. Cross-reference MATC Anaphylaxis 2a — same 0.3 mg IM dose for adult.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Epinephrine (0.01 mg/kg of 1 mg/mL solution IM, maximum dose of 0.3 mg) should only be administered for impending respiratory failure as adjunctive therapy when there are no clinical signs of improvement with the above treatments."
+        },
+        {
+          "id": "iv-magnesium",
+          "shortAction": "Magnesium sulfate 2 g IV over 10-15 min (68 kg × 40 mg/kg = 2720 mg → cap at 2 g max)",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Treatment 4c — IV mag for severe bronchoconstriction with concern for impending respiratory failure. Watch for transient hypotension (usually responds to fluid bolus).",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Magnesium sulfate (40 mg/kg IV, maximum dose of 2 g) over 10–15 minutes should be administered for severe bronchoconstriction and concern for impending respiratory failure. Consider decreased dose of 1 g IV for geriatric patients."
+        },
+        {
+          "id": "iv-dexamethasone",
+          "shortAction": "Dexamethasone 16 mg IV (68 kg × 0.6 mg/kg = 40.8 mg → cap at 16 mg max); single dose",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Treatment 4b — IV steroid for critically ill patients; dexamethasone 0.6 mg/kg IV max 16 mg.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Steroids should be administered in the prehospital setting. IV steroid options for critically ill patients include: Dexamethasone (0.6 mg/kg, maximum dose of 16 mg) IV/IM, or Methylprednisolone (2 mg/kg, maximum dose 125 mg) IV/IM."
+        },
+        {
+          "id": "continuous-albuterol",
+          "shortAction": "Continuous albuterol 5 mg nebulized — repeat back-to-back, unlimited frequency",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Treatment 4a — albuterol 5 mg neb may be repeated at this dose with unlimited frequency for ongoing respiratory distress.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Albuterol 5 mg nebulized (or 6 puffs metered dose inhaler) should be administered to all patients in respiratory distress with signs of bronchospasm (e.g., known asthmatics, quiet wheezers). Repeat at this dose with unlimited frequency for ongoing respiratory distress."
+        },
+        {
+          "id": "prepare-niv-bvm",
+          "shortAction": "Prepare CPAP or two-person BVM with PEEP 5 cmH2O; nebulizer can run in-line with NIV",
+          "priority": "important",
+          "rationale": "MATC Respiratory Distress Treatment 1c-1d — NIV for severe respiratory distress; bronchodilators may be given in-line. MATC Airway Management Treatment 4b — initial PEEP 5 cmH2O.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Non-invasive ventilation (NIV) should be administered for severe respiratory distress via BVM, continuous positive airway pressure (CPAP) or bi-level positive airway pressure (BiPAP). If indicated, bronchodilators should be administered in line with NIV."
+        },
+        {
+          "id": "monitor-fatigue",
+          "shortAction": "Watch for fatigue signs: rising EtCO2, drowsiness, paradoxical chest = impending failure",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Patient Safety Considerations 1 — normal EtCO2 with tachypnea and distress signals impending respiratory failure. Drowsiness and paradoxical motion are pre-arrest signs.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Patient Safety Considerations: Normal EtCO2 (35–45 mmHg) with tachypnea and respiratory distress is an indicator of impending respiratory failure."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "post-epi-mag-improving",
+          "if": "IM Epi + IV Mag + steroids given, patient improving",
+          "condition": "Crew escalates appropriately — IM epinephrine 0.3 mg, IV magnesium 2 g over 10-15 min, IV dexamethasone 16 mg, continuous albuterol, and NIV setup. Over the next 5-10 minutes the patient turns the corner. Wheezing becomes more pronounced (paradoxically — air is now moving), SpO2 climbs to 92%, RR drops to 26, she begins to speak in short sentences, accessory muscle use lessens. This is a successful rescue.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["im-epinephrine", "iv-magnesium", "iv-dexamethasone", "continuous-albuterol"]
+        },
+        {
+          "targetPhaseId": "no-escalation-silent-chest",
+          "if": "Escalation delayed — staying with DuoNeb only",
+          "condition": "Crew does not escalate beyond the first DuoNeb. No IM epinephrine, no IV magnesium, no IV steroid, no NIV prep. Anchoring bias ('she just needs another neb') keeps them on the same therapy that has already failed. Patient deteriorates toward silent chest and impending respiratory arrest.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["im-epinephrine", "iv-magnesium"]
+        }
+      ]
+    },
+    {
+      "id": "post-epi-mag-improving",
+      "name": "Post Epi + Mag, improving",
+      "description": "Roughly 5-10 minutes after IM epinephrine and the start of the IV magnesium drip, the patient is turning the corner. Wheezing is now MORE pronounced bilaterally — a good sign in this context because it means air is actually moving through previously near-silent airways. SpO2 has climbed to 92% on high-flow O2 with continuous albuterol, RR is down to 26, she is speaking in 4-6 word sentences, accessory muscle use is decreasing, capnography is starting to lose its shark-fin shape. The student must understand that increased wheezing here is good news, continue therapy in transit, repeat IM epi q5-15 min as needed, and not back off treatment because she looks better. Reassessment confirms response.",
+      "triggerCondition": "Crew completed the full first-tier escalation: IM epinephrine 0.3 mg, IV magnesium 2 g over 10-15 min, IV dexamethasone 16 mg, continuous nebulized albuterol with O2, and prepared NIV/BVM. After approximately 5-10 minutes the patient is responding — air movement returning, SpO2 rising, RR decreasing, speech improving.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent, speaking in short sentences",
+        "breathing": "RR 26, distress decreasing, less accessory muscle use, expiratory phase still prolonged but improving; continuous neb in place",
+        "circulation": "Strong regular pulse, warm dry-to-slightly-moist extremities; cap refill < 2 sec",
+        "skin": {
+          "color": "pink, no longer circumorally pale",
+          "temperature": "warm",
+          "moisture": "lightly diaphoretic, decreasing"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Symmetric, intact, follows commands more easily",
+        "otherFindings": [
+          "Bilateral wheezing MORE pronounced now — air is moving through previously near-silent airways (paradoxical improvement)",
+          "Capnography shape losing its shark-fin appearance; EtCO2 35",
+          "Speaking in 4-6 word sentences",
+          "Mild ongoing tremor (cumulative albuterol effect)",
+          "Reports she 'feels like she can take a breath now'",
+          "Heart rate decreasing as work of breathing eases"
+        ],
+        "patientSpeech": "I think it's starting to work … I can breathe a little."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 124,
+        "bpSys": 138,
+        "bpDia": 86,
+        "respRate": 26,
+        "spo2": 92,
+        "etco2": 35,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 45,
+        "glucose": 110,
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "reassess-improvement",
+          "shortAction": "Reassess: lung sounds (wheeze now louder = air moving), SpO2, RR, speech, EtCO2 waveform",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Pertinent Assessment Findings 2 — in severe bronchoconstriction, wheezing may not be heard; return of pronounced wheeze with rising SpO2 indicates improved air movement, not worsening.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Pertinent Assessment Findings: In the setting of severe bronchoconstriction, wheezing may not be heard. Patients with known asthma with severe dyspnea should be empirically treated, even if wheezing is absent."
+        },
+        {
+          "id": "continue-albuterol-transit",
+          "shortAction": "Continue albuterol 5 mg nebulized back-to-back during transport (unlimited frequency)",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Treatment 4a — repeat albuterol unlimited frequency for ongoing distress; do not stop because patient looks better.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Albuterol 5 mg nebulized (or 6 puffs metered dose inhaler) should be administered to all patients in respiratory distress with signs of bronchospasm (e.g., known asthmatics, quiet wheezers). Repeat at this dose with unlimited frequency for ongoing respiratory distress."
+        },
+        {
+          "id": "repeat-im-epi-if-needed",
+          "shortAction": "Repeat IM epinephrine 0.3 mg q5-15 min if signs of impending failure recur",
+          "priority": "important",
+          "rationale": "MATC Anaphylaxis 6 — IM epi can be repeated q5-15 min for persistent severe symptoms; same dosing referenced for severe bronchospasm escalation.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction",
+          "protocolExcerpt": "If signs of anaphylaxis and hypoperfusion persist following the first dose of epinephrine, additional IM epinephrine can be repeated q5–15 minutes at above noted doses."
+        },
+        {
+          "id": "finish-mag-drip",
+          "shortAction": "Complete the IV magnesium 2 g over 10-15 min infusion; watch BP for transient hypotension (fluid bolus if needed)",
+          "priority": "important",
+          "rationale": "MATC Respiratory Distress Educational Pearls 2 — mag may cause hypotension responsive to fluid bolus.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Notes/Educational Pearls: Magnesium sulfate may cause hypotension that will usually respond to a fluid bolus."
+        },
+        {
+          "id": "transport-decision",
+          "shortAction": "Transport priority to ED; notify receiving facility of near-fatal asthma, prior intubation hx, meds given",
+          "priority": "important",
+          "rationale": "MATC Airway Management Treatment 12 — transport to closest appropriate hospital when respiratory failure cannot be fully managed prehospital; near-fatal asthma flag for receiving team.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Transport to the closest appropriate hospital for airway stabilization when respiratory failure cannot be successfully managed in the prehospital setting."
+        },
+        {
+          "id": "document-everything",
+          "shortAction": "Document RR, SpO2, EtCO2/waveform, accessory use, breath sounds, mental status — before and after each intervention",
+          "priority": "important",
+          "rationale": "MATC Respiratory Distress Key Documentation Elements — document at baseline and after each intervention.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Key Documentation Elements: Document key aspects of the exam at baseline and after each intervention: Respiratory rate; Oxygen saturation; EtCO2/waveform shape; Use of accessory muscles; Breath sounds and quality; Mental status; Response to interventions."
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "no-escalation-silent-chest",
+      "name": "No escalation, silent chest",
+      "description": "BRANCH — crew anchored on 'just another neb.' DuoNeb is still running. Patient has been deteriorating for the last 5-10 minutes. She is now drowsy, head bobbing, no longer tripoding because she does not have the energy. Her wheezing has DIMINISHED — but this is NOT improvement. This is silent chest: she is moving so little air that there is nothing to wheeze. EtCO2 has climbed from 32 to 58 mmHg — CO2 retention from fatigue and ventilatory failure. SpO2 is 82% on high-flow O2. She is on the verge of respiratory arrest. The student must recognize this immediately, abandon the 'wait it out' plan, and run the full rescue: IM epinephrine NOW, IV magnesium, IV steroid, two-person BVM with PEEP and continuous albuterol in-line, and prepare for RSI. This is the salvageable window before it becomes a cardiac arrest from hypoxia.",
+      "triggerCondition": "Crew did not escalate beyond first-line DuoNeb. Anchoring ('asthmatics always need a few rounds') delayed recognition of treatment failure. The patient now demonstrates the classic deterioration pattern: drowsiness, head bobbing, diminished wheezing (silent chest from poor air movement, NOT improvement), rising EtCO2 (32 → 58 mmHg) indicating CO2 retention and impending respiratory failure, and falling SpO2 despite high-flow O2.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": {
+          "eye": 3,
+          "verbal": 3,
+          "motor": 5
+        },
+        "airway": "Patent but tenuous — secretions pooling, no protective swallow check yet",
+        "breathing": "RR has slowed from 36 to 22 — NOT a good sign in an exhausting asthmatic; shallow breaths, paradoxical chest-abdomen motion appearing, accessory muscle use less effective as she tires",
+        "circulation": "Tachycardic, weakening radial pulse; cap refill 3 sec; cool diaphoretic skin",
+        "skin": {
+          "color": "dusky with central cyanosis at lips and fingertips",
+          "temperature": "cool",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal at 5 mm, sluggish",
+        "motorFunction": "Withdraws to sternal rub; not following commands consistently; head bobbing with each inspiration",
+        "otherFindings": [
+          "SILENT CHEST — wheezing has DIMINISHED on auscultation, but this is NOT improvement: she is moving almost no air",
+          "Air entry markedly diminished bilaterally",
+          "Paradoxical chest-abdomen motion (pre-arrest sign)",
+          "EtCO2 climbed from 32 → 58 mmHg — CO2 retention from ventilatory failure",
+          "Capnography waveform shape: flattening, ill-defined",
+          "Patient drowsy, head bobbing, no longer fighting to sit up",
+          "This is a near-arrest. The salvageable window is small."
+        ],
+        "patientSpeech": "(no longer speaking)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 142,
+        "bpSys": 102,
+        "bpDia": 64,
+        "respRate": 22,
+        "spo2": 82,
+        "etco2": 58,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 90,
+        "glucose": 110,
+        "trendTimeSeconds": 55,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "rescue-recognize-failure",
+          "shortAction": "Recognize silent chest + rising EtCO2 + drowsiness = impending respiratory arrest — initiate rescue NOW",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Patient Safety Considerations 1 — rising EtCO2 with tachypnea/distress means impending respiratory failure. Silent chest is the classic preterminal asthma finding.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Patient Safety Considerations: Normal EtCO2 (35–45 mmHg) with tachypnea and respiratory distress is an indicator of impending respiratory failure. Pertinent Assessment Findings: In the setting of severe bronchoconstriction, wheezing may not be heard. Patients with known asthma with severe dyspnea should be empirically treated, even if wheezing is absent."
+        },
+        {
+          "id": "rescue-bvm-peep",
+          "shortAction": "Two-person BVM with PEEP 5 cmH2O, slow rate 8-10/min, continuous neb in-line; gentle ventilation to avoid air trapping",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Treatment 4 — two-person BVM with PEEP; MATC Respiratory Distress Patient Safety 4 — PPV in bronchoconstriction risks air trapping and pneumothorax — ventilate slowly.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Use bag-valve-mask (BVM) ventilation in the setting of respiratory failure or arrest. Whenever possible, the patient's head should be elevated up to 30 degrees. Two-person, two-thumbs-up BVM ventilation is preferred. PEEP should be used with BVM. 5 cmH2O is generally an appropriate initial PEEP setting. Rate: Adult: 10–12 breaths/minute."
+        },
+        {
+          "id": "rescue-im-epi",
+          "shortAction": "Epinephrine 0.3 mg IM (1 mg/mL) lateral thigh NOW (68 kg × 0.01 mg/kg = 0.68 → cap 0.3 mg); repeat q5-15 min",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Treatment 4d — IM epi for impending respiratory failure when first-line failing.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Epinephrine (0.01 mg/kg of 1 mg/mL solution IM, maximum dose of 0.3 mg) should only be administered for impending respiratory failure as adjunctive therapy when there are no clinical signs of improvement with the above treatments."
+        },
+        {
+          "id": "rescue-iv-mag",
+          "shortAction": "Magnesium sulfate 2 g IV over 10-15 min (68 kg × 40 mg/kg = 2720 → cap 2 g)",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Treatment 4c — IV mag for severe bronchoconstriction with impending failure.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Magnesium sulfate (40 mg/kg IV, maximum dose of 2 g) over 10–15 minutes should be administered for severe bronchoconstriction and concern for impending respiratory failure."
+        },
+        {
+          "id": "rescue-iv-steroid",
+          "shortAction": "Dexamethasone 16 mg IV (68 kg × 0.6 mg/kg = 40.8 → cap 16 mg); single dose",
+          "priority": "important",
+          "rationale": "MATC Respiratory Distress Treatment 4b — IV steroid for critically ill.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "IV steroid options for critically ill patients include: Dexamethasone (0.6 mg/kg, maximum dose of 16 mg) IV/IM, or Methylprednisolone (2 mg/kg, maximum dose 125 mg) IV/IM."
+        },
+        {
+          "id": "rescue-prepare-rsi",
+          "shortAction": "Prepare for RSI: pre-O2 with BVM/PEEP, ketamine 1-2 mg/kg + rocuronium 1 mg/kg drawn up; largest tube; bougie ready",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Treatment 8 — RSI when protective airway reflexes intact but invasive airway needed; ketamine is bronchodilator-friendly induction agent for asthmatic.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Rapid/Delayed Sequence Intubation: Used in circumstances when protective airway reflexes are intact, and the patient requires the placement of an endotracheal tube. Patient should be pre-oxygenated with high flow oxygen, and positive pressure ventilation for a minimum of two minutes prior to the procedure. Administer induction sedative agent: Etomidate IV push, 0.2-0.3 mg/kg OR Ketamine IV push, 1-2 mg/kg OR Midazolam IV push, 0.05-0.10 mg/kg. Administer paralytic agent: Succinylcholine IV push, 1-2 mg/kg OR Rocuronium IV push, 1 mg/kg OR Vecuronium IV push, 0.1 mg/kg."
+        },
+        {
+          "id": "rescue-airway-caution",
+          "shortAction": "Anticipate post-tube hypotension and air trapping — ventilate slowly, low rate, allow full exhalation",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Patient Safety Considerations 3-4 — invasive airways do not improve bronchospasm and PPV risks air trapping/pneumothorax/cardiovascular collapse; reserve invasive airway for true failure.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Patient Safety Considerations: Invasive airways do not improve bronchospasm. The airway should be managed in the least invasive way possible. Supraglottic devices and endotracheal intubation should be considered only if BVM ventilation fails. Positive pressure ventilation in the setting of bronchoconstriction, either via a supraglottic airway or intubation, increases the risk of air trapping which can lead to pneumothorax and cardiovascular collapse. These interventions should be reserved for situations of respiratory failure."
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

@@ -1,0 +1,448 @@
+{
+  "meta": {
+    "id": "R-T2-02",
+    "name": "COPD with Respiratory Acidosis",
+    "version": 1,
+    "difficulty": "intermediate",
+    "category": "Respiratory",
+    "protocols": [
+      "resp-respiratory-distress",
+      "resp-airway-management",
+      "medical-shock"
+    ],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": ["respiratory", "copd", "cpap", "bipap", "niv", "co2-retainer", "hypercapnia", "shark-fin", "tier-2", "decision-dense"]
+  },
+  "patient": {
+    "name": "Walter Brennan",
+    "age": 72,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 78,
+    "weightLbs": 172,
+    "height": 175,
+    "chiefComplaint": "Worsening shortness of breath, can't catch my breath",
+    "history": {
+      "hpi": "72-year-old male with severe COPD (GOLD stage IV per pulmonologist notes on fridge), on continuous home oxygen 2 L/min nasal cannula for the past 3 years. Reports a head cold/upper respiratory infection for the past 4 days with productive cough of yellow-green sputum. Dyspnea has been worsening over the last 48 hours despite using his albuterol inhaler 'every couple hours.' Today he can no longer walk to the bathroom without stopping to rest. Wife called 911 when he seemed 'sleepier than usual' and was leaning forward over the kitchen table to breathe. Patient is a 50-pack-year smoker, quit 8 years ago. Two prior hospital admissions for COPD exacerbation in the past 12 months — neither required intubation. Baseline SpO2 on his home pulse oximeter runs 88-92% on his 2 L. Recently finished a 5-day prednisone taper from his PCP one week ago. Denies chest pain, denies leg swelling, denies orthopnea (sleeps with one pillow at baseline).",
+      "pastMedical": [
+        "Severe COPD (GOLD IV) — pulmonology-managed",
+        "Home oxygen 2 L/min nasal cannula continuous, 3 years",
+        "50-pack-year smoking history, quit 8 years ago",
+        "Hypertension",
+        "Two COPD exacerbation admissions in last 12 months (neither intubated)"
+      ],
+      "medications": [
+        "Tiotropium (Spiriva) 18 mcg inhaled daily",
+        "Albuterol MDI 90 mcg, 2 puffs q4h PRN",
+        "Fluticasone/salmeterol (Advair) 250/50 BID",
+        "Prednisone 40 mg PO daily — recently finished 5-day taper one week ago",
+        "Lisinopril 10 mg PO daily",
+        "Aspirin 81 mg PO daily"
+      ],
+      "allergies": ["NKDA"],
+      "lastOralIntake": "Half a piece of toast and sips of tea about 3 hours ago — 'too short of breath to eat.'",
+      "events": "Wife reports 4 days of head cold with productive cough. Dyspnea worsening x48h despite albuterol MDI every 2-3 hours. This morning patient unable to walk to the bathroom without resting. Wife noticed him 'sleepier' and leaning forward over the table to breathe, then called 911."
+    }
+  },
+  "scene": {
+    "dispatch": "72-year-old male, trouble breathing, home oxygen patient. Conscious. Single-family residence.",
+    "location": "Modest single-story home, living room. Patient seated at the kitchen table, leaning forward on his elbows in classic tripod position. Long green oxygen tubing snaking back to a stationary O2 concentrator humming in the corner.",
+    "time": "Thursday, 9:14 AM",
+    "safety": "Scene safe. Wife greeted crew at door. House is clean. No smoking materials visible. Two cats in another room.",
+    "bystanders": "Wife (Eleanor, ~70) is calm and well-informed — has medication list and recent pulmonology discharge paperwork ready. Reports husband's home pulse oximeter has been reading 89-91% for the past day, down from his usual 90-92%.",
+    "visualCues": [
+      "Patient seated upright in tripod position, leaning on elbows",
+      "Pursed-lip breathing, audible wheezing",
+      "Long nasal cannula tubing connected to home concentrator (set to 2 L/min)",
+      "Albuterol MDI on the table within reach",
+      "Pulmonology discharge summary and medication bottles laid out on the table",
+      "Patient speaks in 2-3 word sentences with prolonged exhalation",
+      "No JVD visible, no peripheral edema, no pillow stack on couch",
+      "Productive cough during initial conversation — yellow-green sputum in tissue"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 72-year-old male in obvious moderate-to-severe respiratory distress, seated in tripod position at the kitchen table. He is on his home O2 at 2 L/min via nasal cannula. He speaks in 2-3 word phrases with audible wheezing and prolonged expiratory phase. He is alert but mildly drowsy (GCS 14 — eye-opening to voice rather than spontaneous, otherwise normal). Skin is warm, dusky-pink, mildly diaphoretic. Monitor reveals sinus tachycardia at 108, BP 142/86, RR 28, SpO2 91% on his home 2 L NC, and an EtCO2 of 62 mmHg with a clear shark-fin waveform — this is the diagnostic finding. He is hypercarbic and ventilating poorly, but his SpO2 of 91% IS his baseline. The temptation is to crank up the oxygen because '91% looks low' — but his real problem is CO2 retention/ventilatory failure, not hypoxia. He needs ventilatory support (NIV/CPAP) with bronchodilators in-line, not more O2.",
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 3, "verbal": 5, "motor": 6 },
+        "airway": "Patent, self-maintained, speaking in 2-3 word phrases",
+        "breathing": "Tachypneic at 28 with prolonged expiratory phase, audible wheezing, accessory muscle use (intercostal/supraclavicular retractions), pursed-lip breathing, mildly diminished air movement with diffuse expiratory wheezes throughout all lung fields",
+        "circulation": "Radial pulse rapid and regular at ~108, cap refill <3s, skin warm and dusky-pink, mildly diaphoretic. No JVD. No peripheral edema. No rales (rules out pulmonary edema).",
+        "skin": { "color": "dusky pink", "temperature": "warm", "moisture": "mildly diaphoretic" },
+        "pupils": "PERRL 3mm bilaterally",
+        "motorFunction": "Moves all extremities, follows commands but slow to respond, mildly drowsy",
+        "otherFindings": [
+          "Tripod position, leaning forward on elbows",
+          "Pursed-lip breathing technique",
+          "Long home O2 tubing at 2 L/min nasal cannula",
+          "Albuterol MDI on the table, used 'about an hour ago' per patient",
+          "Productive cough with yellow-green sputum",
+          "EtCO2 waveform shows clear shark-fin morphology (obstructive)",
+          "No JVD, no peripheral edema, no rales — argues against CHF/pulmonary edema"
+        ],
+        "patientSpeech": "'Can't... catch... my breath... worse... today... cold... last week...'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 108,
+        "bpSys": 142,
+        "bpDia": 86,
+        "respRate": 28,
+        "spo2": 91,
+        "etco2": 62,
+        "temp": 37.4,
+        "tempF": 99.3,
+        "obstruction": 50,
+        "glucose": 118,
+        "trendTimeSeconds": 0,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": true, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "primary-survey",
+          "shortAction": "Primary survey; recognize severe respiratory distress with impending failure",
+          "protocolExcerpt": "Signs of distress include: Apprehension, anxiety, combativeness; Hypoxia (less than 90% oxygen saturation); Intercostal/subcostal/supraclavicular retractions, accessory muscle use; Grunting, stridor, inability to speak full sentences; Nasal flaring; Cyanosis.",
+          "priority": "critical",
+          "rationale": "Tripod posture, pursed-lip breathing, 2-3 word sentences, accessory muscle use — classic signs of severe respiratory distress with impending failure. Drives the entire pathway.",
+          "protocolReference": "MATC: Respiratory Distress"
+        },
+        {
+          "id": "history-baseline",
+          "shortAction": "Targeted SAMPLE; identify COPD, home O2, baseline SpO2 88-92%, recent URI",
+          "protocolExcerpt": "History: Onset of symptoms; Concurrent symptoms (e.g., fever, cough, rhinorrhea, tongue/lip swelling, rash, labored breathing, foreign body aspiration); Usual triggers of symptoms (e.g., cigarette smoke, change in weather, upper respiratory infections, exercise); Sick contacts; Treatments prior to EMS: Oxygen, inhaler, nebulizer, other treatments, chronic or recent steroids; Hospitalizations: Number of emergency department visits in the past year, number of hospital admissions in the past year, number of ICU admissions (ever), previously intubated (ever).",
+          "priority": "critical",
+          "rationale": "His baseline SpO2 of 88-92% is the single most important piece of history — without it crews will mistake 91% for hypoxia and over-oxygenate. Also identifies him as a CO2 retainer at risk.",
+          "protocolReference": "MATC: Respiratory Distress"
+        },
+        {
+          "id": "capnography-recognition",
+          "shortAction": "Place waveform EtCO2; recognize EtCO2 62 + shark-fin = bronchospasm + hypoventilation",
+          "protocolExcerpt": "A 'shark fin' on waveform capnography suggests significant bronchospasm and obstructive physiology. Etiology of respiratory distress: Bronchospastic etiology (e.g., asthma, COPD) is suggested by: Wheezing on auscultation; 'Shark fin' waveform capnograph or prolonged expiratory phase; History of asthma/COPD.",
+          "priority": "critical",
+          "rationale": "Capnography is the diagnostic finding here — shark fin confirms bronchospasm; EtCO2 62 confirms hypoventilation/CO2 retention. This is THE field that tells you NIV is needed, not more O2.",
+          "protocolReference": "MATC: Respiratory Distress"
+        },
+        {
+          "id": "permissive-hypoxia-target",
+          "shortAction": "Target SpO2 88-92% (his baseline) — DO NOT over-oxygenate this CO2 retainer",
+          "protocolExcerpt": "Oxygen is a drug with an appropriate dose range and undesirable effects from both too much and too little supplementation. Effective oxygenation meets the oxygen saturation (SpO2) target set for that specific patient in the context of their acute and chronic medical condition(s). Permissive hypoxia (SPO2 ≥ 90%) may be appropriate in patients with COPD or other complex respiratory pathology.",
+          "priority": "critical",
+          "rationale": "The single most important judgment call in this scenario. His SpO2 of 91% is fine — driving it to 99% on a NRB will blunt his hypoxic respiratory drive, worsen V/Q mismatch, and accelerate hypercapnic narcosis. The protocol explicitly permits SpO2 >= 90% in COPD.",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "niv-cpap",
+          "shortAction": "Initiate CPAP for severe respiratory distress / impending failure; coach patient",
+          "protocolExcerpt": "Non-invasive ventilation (NIV) should be considered early for severe respiratory distress or impending respiratory failure. NIV options include continuous positive airway pressure (CPAP), bilevel positive airway pressure (BiPAP), bilevel nasal CPAP, and high flow oxygen by nasal cannula (HFNC). The key to successful use of NIV in a patient who has not used it before is coaching and explanation of the process and reassurance of the patient.",
+          "priority": "critical",
+          "rationale": "NIV is the definitive ventilatory support for this patient. PEEP keeps small airways open during exhalation (counters dynamic hyperinflation), reduces work of breathing, and washes out CO2. Coaching is essential for first-time NIV — anxiety on the mask is usually hypoxia/hypercapnia and resolves with effective support.",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "duoneb-inline",
+          "shortAction": "Albuterol 5 mg + Ipratropium 0.5 mg nebulized IN-LINE with NIV",
+          "protocolExcerpt": "If indicated, bronchodilators should be administered in line with NIV. While albuterol 2.5 mg nebulized is usually sufficient for mild wheezing without clinical distress, albuterol 5 mg nebulized (or 6 puffs metered dose inhaler) should be administered to all patients in respiratory distress with signs of bronchospasm (e.g., known asthmatics, quiet wheezers). Repeat at this dose with unlimited frequency for ongoing respiratory distress. Ipratropium 0.5 mg nebulized should be given up to 3 doses in conjunction with albuterol.",
+          "priority": "critical",
+          "rationale": "Bronchodilators treat the underlying bronchospasm causing the obstructive physiology. Must be delivered IN-LINE with the NIV circuit (T-connector with spring valve) so positive pressure is not lost. Pulling NIV mask off to give a neb is a common error.",
+          "protocolReference": "MATC: Respiratory Distress"
+        },
+        {
+          "id": "iv-access",
+          "shortAction": "Establish IV access for steroid administration and ongoing care",
+          "protocolExcerpt": "IV Access and Fluids – IV access should be placed when IV medication administration is indicated, or when there are clinical concerns of dehydration so that IV fluids can be administered.",
+          "priority": "important",
+          "rationale": "Needed for IV steroid; also opens the door for fluid/pressors if NIV-induced hypotension develops.",
+          "protocolReference": "MATC: Respiratory Distress"
+        },
+        {
+          "id": "iv-steroid",
+          "shortAction": "Dexamethasone 16 mg IV (78 kg × 0.6 mg/kg = 46.8 mg → cap at 16 mg max)",
+          "protocolExcerpt": "Steroids should be administered in the prehospital setting. IV steroid options for critically ill patients include: Dexamethasone (0.6 mg/kg, maximum dose of 16 mg) IV/IM, or Methylprednisolone (2 mg/kg, maximum dose 125 mg) IV/IM.",
+          "priority": "critical",
+          "rationale": "Steroids do not act in the prehospital window but starting them early shortens ED-to-effect time. Dexamethasone preferred (single dose equivalent to several days of other steroids).",
+          "protocolReference": "MATC: Respiratory Distress"
+        },
+        {
+          "id": "cardiac-monitor-12-lead",
+          "shortAction": "Continuous cardiac monitor and 12-lead EKG",
+          "protocolExcerpt": "Continuous cardiac monitoring may be indicated in patients with respiratory distress associated with suspected acute or decompensated congestive heart failure (CHF) or dysrhythmia. 12-lead EKG may be indicated to assess for dysrhythmia or ischemia, particularly in patients with risk factors for coronary artery disease and/or presentation consistent with CHF.",
+          "priority": "important",
+          "rationale": "Rules out occult ischemia driving the tachycardia/dyspnea (this patient has HTN and prior smoking — CAD risk factors). Also distinguishes COPD from acute CHF.",
+          "protocolReference": "MATC: Respiratory Distress"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "niv-working",
+          "if": "CPAP started with DuoNeb in-line",
+          "condition": "Crew correctly recognizes hypercapnic respiratory failure on EtCO2 + shark fin, leaves O2 at baseline target (88-92%), initiates CPAP with albuterol/ipratropium nebulized in-line, and starts IV dexamethasone.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["niv-cpap", "duoneb-inline", "permissive-hypoxia-target"]
+        },
+        {
+          "targetPhaseId": "over-oxygenated",
+          "if": "Crew cranks O2 to 15 L NRB chasing SpO2",
+          "condition": "Crew misreads SpO2 of 91% as primary hypoxia and applies a non-rebreather at 15 L/min without recognizing the patient is a CO2 retainer with baseline SpO2 of 88-92%. Hypoxic respiratory drive is blunted, V/Q mismatch worsens, hypercapnia accelerates.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["permissive-hypoxia-target", "capnography-recognition"]
+        },
+        {
+          "targetPhaseId": "cpap-without-duoneb",
+          "if": "CPAP started without bronchodilators in-line",
+          "condition": "Crew places CPAP correctly but does not put DuoNeb in-line — bronchospasm is not treated. Positive pressure fights an obstructed airway, CPAP discomfort increases, EtCO2 fails to improve despite ventilatory support.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["duoneb-inline"]
+        }
+      ],
+      "isDefault": true
+    },
+    {
+      "id": "niv-working",
+      "name": "CPAP + DuoNeb working",
+      "description": "Approximately 5-7 minutes after initiating CPAP with albuterol/ipratropium nebulized in-line, the patient is responding. EtCO2 has trended down from 62 → 58 → 50 mmHg as ventilation improves. Respiratory rate has slowed from 28 → 22. SpO2 sits at a comfortable 93% (within his acceptable range; crew titrated FiO2 modestly rather than aggressively). GCS has improved from 14 to 15 — he is more conversational and brighter. However, the CPAP mask is uncomfortable. He is anxious on the mask, repeatedly tries to pull it off, and is borderline non-compliant. The crew must coach him, maintain the mask seal, and recognize that anxiety on NIV is almost always inadequate ventilatory support or insufficient explanation — NOT a sedation indication per protocol.",
+      "triggerCondition": "After CPAP initiation with bronchodilators delivered in-line, the patient's EtCO2 trends down from 62 to 50 mmHg over 5-7 minutes, respiratory rate slows to 22, mental status improves to GCS 15. CPAP discomfort and anxiety on the mask now threaten compliance and the seal.",
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, on CPAP mask, speaking in 4-5 word phrases between breaths",
+        "breathing": "Improved — RR 22, prolonged expiratory phase less pronounced, scattered expiratory wheezes (less than before), better air movement",
+        "circulation": "HR 102, regular, BP 138/82, cap refill <2s, skin warm and pink, less diaphoretic",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL 3mm bilaterally",
+        "motorFunction": "Moves all extremities, follows commands promptly, more alert",
+        "otherFindings": [
+          "CPAP mask in place with continuous seal",
+          "DuoNeb running in-line via T-connector with spring valve",
+          "EtCO2 waveform shark-fin morphology resolving toward more rectangular shape",
+          "Patient repeatedly reaches for mask — anxiety on NIV",
+          "Wife at bedside coaching alongside crew"
+        ],
+        "patientSpeech": "'This thing... is so tight... can I... take it off... for a minute?'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 102,
+        "bpSys": 138,
+        "bpDia": 82,
+        "respRate": 22,
+        "spo2": 93,
+        "etco2": 50,
+        "temp": 37.4,
+        "tempF": 99.3,
+        "obstruction": 30,
+        "glucose": 118,
+        "trendTimeSeconds": 40,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": true, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "maintain-seal",
+          "shortAction": "Maintain mask seal; do NOT break CPAP circuit during transport",
+          "protocolExcerpt": "Once initiated and patient is tolerating mask, DO NOT discontinue CPAP/BiPAP until patient is on the emergency department stretcher and hospital CPAP/BiPAP is immediately available for patient to be switched over, or physician is at bedside and requesting CPAP/BiPAP be discontinued. Breaking the mask seal causes a significant decrease in airway pressures and may lead to abrupt decompensation due to atelectasis and alveolar collapse.",
+          "priority": "critical",
+          "rationale": "Pulling the mask off — even briefly — collapses recruited alveoli and the patient will slide backwards. Coach the patient through it.",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "coach-not-sedate",
+          "shortAction": "Coach patient through NIV anxiety; treat with ventilatory support, not sedation",
+          "protocolExcerpt": "Routine use of sedation is not recommended for treatment of anxiety in patients on NIV. Anxiety should be presumed due to hypoxia or inadequate minute ventilation and treated primarily with ventilatory support.",
+          "priority": "critical",
+          "rationale": "Protocol explicitly warns against sedating anxiety on NIV. The anxiety usually IS the inadequate ventilation; supporting it better is the fix.",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "trend-etco2",
+          "shortAction": "Document EtCO2 trend (62→58→50) and SpO2 staying in 88-93% target",
+          "protocolExcerpt": "NIV goals of therapy will vary based on patient presentation and history. More support than is needed to relieve symptoms or 'normal' is not necessarily better in these patients. Goals of care may include: Decreased air hunger; SPO2 of ≥ 94%. Chronic COPD patients tolerate hypoxia better, and an SPO2 of 90% may relieve their symptoms and be adequate; Normalization of respiratory rate (decreased tachypnea); Normalization of EtCO2. This means a downward trend in a patient with increased EtCO2.",
+          "priority": "important",
+          "rationale": "Downward EtCO2 trend confirms NIV is working. SpO2 holding 93% is desired — not chasing higher numbers in this patient.",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "repeat-duoneb",
+          "shortAction": "Continue albuterol 5 mg nebulized in-line; unlimited frequency while in distress",
+          "protocolExcerpt": "Repeat at this dose with unlimited frequency for ongoing respiratory distress.",
+          "priority": "important",
+          "rationale": "Bronchospasm is still partially present — continue albuterol throughout transport.",
+          "protocolReference": "MATC: Respiratory Distress"
+        },
+        {
+          "id": "transport-decision",
+          "shortAction": "Transport on CPAP; advance notification to receiving ED",
+          "protocolExcerpt": "Transport to the closest appropriate hospital for airway stabilization when respiratory failure cannot be successfully managed in the prehospital setting.",
+          "priority": "critical",
+          "rationale": "ED needs to be ready to take over NIV without a seal break. Advance notice ensures CPAP/BiPAP is at bedside on arrival.",
+          "protocolReference": "MATC: Airway Management"
+        }
+      ],
+      "transitions": [],
+      "isDefault": true
+    },
+    {
+      "id": "over-oxygenated",
+      "name": "Over-oxygenated, narcotizing",
+      "description": "Crew misread the 91% SpO2 as primary hypoxia and slapped a non-rebreather at 15 L/min onto the patient. SpO2 quickly climbs to 99% — looks great on the screen. But the patient's hypoxic respiratory drive (which had been compensating for chronically high CO2) is now blunted. Over the next 4-6 minutes ventilation deteriorates: RR drops from 28 to 16 (looks reassuring but is actually hypoventilation), EtCO2 climbs from 62 → 72 → 80. The patient becomes progressively drowsier — GCS slides from 14 to 11 to 9. This is classic hypercapnic narcosis (CO2 narcosis), and the crew was misled by an SpO2 number that 'looked normal.' Recovery requires recognizing the trap: drop the FiO2 back toward baseline, initiate NIV urgently (ventilatory support, not more O2), and prepare for BVM/intubation if NIV fails.",
+      "triggerCondition": "Crew applied 15 L/min via non-rebreather chasing an SpO2 of 91%, not recognizing the patient as a CO2 retainer with a baseline SpO2 of 88-92%. SpO2 normalized to 99% — but hypoxic respiratory drive was blunted, ventilation deteriorated, EtCO2 climbed and mental status declined into hypercapnic narcosis.",
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 2, "verbal": 3, "motor": 4 },
+        "airway": "Patent but increasingly at risk; drowsy, decreased protective reflexes anticipated",
+        "breathing": "RR 16 (DROPPED — false reassurance), shallow, decreased accessory muscle use as patient tires, persistent expiratory wheezing, diminished air entry",
+        "circulation": "HR 116, BP 148/90, cap refill <3s, skin warm, mildly diaphoretic",
+        "skin": { "color": "dusky pink (mask-flushed)", "temperature": "warm", "moisture": "mildly diaphoretic" },
+        "pupils": "PERRL 3mm bilaterally, slow to respond",
+        "motorFunction": "Withdraws to pain, follows simple commands only with repetition",
+        "otherFindings": [
+          "Non-rebreather at 15 L/min in place — SpO2 99%",
+          "EtCO2 climbing: 62 → 72 → 80 mmHg",
+          "Shark-fin waveform persists",
+          "Patient noticeably drowsier, eyes closing between sentences",
+          "Wife: 'He's not really answering me anymore...'",
+          "No improvement in work of breathing — the slowing RR is not real improvement"
+        ],
+        "patientSpeech": "Mumbled, unintelligible responses; no longer making sentences"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 116,
+        "bpSys": 148,
+        "bpDia": 90,
+        "respRate": 16,
+        "spo2": 99,
+        "etco2": 80,
+        "temp": 37.4,
+        "tempF": 99.3,
+        "obstruction": 50,
+        "glucose": 118,
+        "trendTimeSeconds": 50,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": true, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-narcosis",
+          "shortAction": "Recognize hypercapnic narcosis: SpO2 looks great but EtCO2 80 + GCS dropping",
+          "protocolExcerpt": "Normal EtCO2 (35–45 mmHg) with tachypnea and respiratory distress is an indicator of impending respiratory failure. Oxygen is a drug with an appropriate dose range and undesirable effects from both too much and too little supplementation. Permissive hypoxia (SPO2 ≥ 90%) may be appropriate in patients with COPD or other complex respiratory pathology.",
+          "priority": "critical",
+          "rationale": "The teaching point: the falling RR and the high SpO2 are a TRAP. The patient is not improving — he is failing. Recognize the pattern: rising EtCO2 + falling GCS + falling RR + high SpO2 on aggressive O2 = CO2 narcosis.",
+          "protocolReference": "MATC: Respiratory Distress"
+        },
+        {
+          "id": "drop-fio2",
+          "shortAction": "Wean O2 back toward baseline target (88-92%); remove NRB",
+          "protocolExcerpt": "Administer oxygen if needed for air hunger or respiratory distress and titrate to a target SPO2 of 94–98%. Permissive hypoxia (SPO2 ≥ 90%) may be appropriate in patients with COPD or other complex respiratory pathology.",
+          "priority": "critical",
+          "rationale": "Reverses the iatrogenic suppression of hypoxic drive. Returns him toward his baseline target.",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "rescue-niv",
+          "shortAction": "Initiate CPAP/BiPAP urgently; bronchodilator in-line",
+          "protocolExcerpt": "Non-invasive ventilation (NIV) should be considered early for severe respiratory distress or impending respiratory failure. If indicated, bronchodilators should be administered in line with NIV.",
+          "priority": "critical",
+          "rationale": "Ventilation is failing. NIV is the rescue — provides PEEP and assisted breaths, allows CO2 washout, may avert intubation.",
+          "protocolReference": "MATC: Respiratory Distress"
+        },
+        {
+          "id": "bvm-readiness",
+          "shortAction": "If GCS continues to fall / NIV intolerant: BVM with PEEP at adult rate 10-12/min",
+          "protocolExcerpt": "Use bag-valve-mask (BVM) ventilation in the setting of respiratory failure or arrest. PEEP should be used with BVM. 5 cmH2O is generally an appropriate initial PEEP setting. Rate: Adult: 10–12 breaths/minute. If patient deteriorates on CPAP/BiPAP (e.g., worsened mental status, increasing EtCO2, vomiting), remove CPAP/BiPAP and escalate airway management options as above.",
+          "priority": "critical",
+          "rationale": "If mental status drops below threshold to maintain NIV, BVM with PEEP is the next step. Watch EtCO2 closely — do not flash-drop a chronically hypercarbic patient's CO2 to 'normal' (causes alkalemia and arrhythmia).",
+          "protocolReference": "MATC: Airway Management"
+        }
+      ],
+      "transitions": [],
+      "isDefault": false
+    },
+    {
+      "id": "cpap-without-duoneb",
+      "name": "CPAP without DuoNeb",
+      "description": "Crew correctly recognized the need for NIV and started CPAP — but did NOT put albuterol/ipratropium in-line. Positive pressure is now fighting an obstructed airway. The patient experiences worsening discomfort on the mask (the bronchospasm makes exhalation against PEEP harder), repeatedly tries to pull the mask off, and the EtCO2 trend is poor: 62 → 60 → 60 (essentially flat, not improving). The shark-fin waveform persists. Without bronchodilator the underlying obstructive physiology is unchanged, and CPAP alone is insufficient to fix it. Recovery: place a nebulizer in-line via T-connector with spring valve, coach the patient, maintain seal.",
+      "triggerCondition": "CPAP was initiated correctly but bronchodilator was not delivered in-line. The bronchospasm is untreated, the patient fights the positive pressure during expiration, mask compliance is poor, and EtCO2 plateaus rather than trending down.",
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 3, "verbal": 5, "motor": 6 },
+        "airway": "Patent, on CPAP mask but actively fighting it",
+        "breathing": "RR 28, prolonged expiratory phase unchanged, persistent diffuse wheezing, working hard against the PEEP",
+        "circulation": "HR 110, BP 144/88, cap refill <3s, skin warm, diaphoretic",
+        "skin": { "color": "dusky pink", "temperature": "warm", "moisture": "diaphoretic" },
+        "pupils": "PERRL 3mm bilaterally",
+        "motorFunction": "Moves all extremities, follows commands, frustrated with mask",
+        "otherFindings": [
+          "CPAP mask in place but patient repeatedly pulls at it",
+          "NO nebulizer in-line — DuoNeb sitting unused on the bench",
+          "Shark-fin EtCO2 waveform unchanged",
+          "EtCO2 plateaued at 60-62 — no downward trend",
+          "Patient: 'It's pushing... too hard... can't... breathe out...'"
+        ],
+        "patientSpeech": "'Pushing too hard... let me... let me off this...'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 110,
+        "bpSys": 144,
+        "bpDia": 88,
+        "respRate": 28,
+        "spo2": 92,
+        "etco2": 60,
+        "temp": 37.4,
+        "tempF": 99.3,
+        "obstruction": 50,
+        "glucose": 118,
+        "trendTimeSeconds": 40,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": true, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-untreated-bronchospasm",
+          "shortAction": "Recognize NIV alone insufficient — bronchospasm untreated, shark fin persists",
+          "protocolExcerpt": "Etiology of respiratory distress: Bronchospastic etiology (e.g., asthma, COPD) is suggested by: Wheezing on auscultation; 'Shark fin' waveform capnograph or prolonged expiratory phase; History of asthma/COPD.",
+          "priority": "critical",
+          "rationale": "EtCO2 plateau and persistent shark fin tell you positive pressure alone is not enough — the small airways are still obstructed and need bronchodilator.",
+          "protocolReference": "MATC: Respiratory Distress"
+        },
+        {
+          "id": "add-inline-neb",
+          "shortAction": "Add albuterol 5 mg + ipratropium 0.5 mg nebulized IN-LINE via T-connector",
+          "protocolExcerpt": "If indicated, bronchodilators should be administered in line with NIV. Nebulized medications may be administered through a CPAP or BiPAP mask. A specialized T-connector with a spring valve assembly is required to allow maintenance of positive airway pressure.",
+          "priority": "critical",
+          "rationale": "Correctly placing DuoNeb in-line via T-connector both treats the bronchospasm AND preserves CPAP pressure. Crucial: do not break the seal to give a regular neb.",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "coach-maintain-seal",
+          "shortAction": "Coach patient, do NOT break the mask seal to attempt a separate neb",
+          "protocolExcerpt": "Once initiated and patient is tolerating mask, DO NOT discontinue CPAP/BiPAP until patient is on the emergency department stretcher and hospital CPAP/BiPAP is immediately available for patient to be switched over, or physician is at bedside and requesting CPAP/BiPAP be discontinued. Breaking the mask seal causes a significant decrease in airway pressures and may lead to abrupt decompensation due to atelectasis and alveolar collapse.",
+          "priority": "critical",
+          "rationale": "Tempting wrong move: 'I'll just take the mask off for a few minutes to give the neb.' That collapses alveoli and undoes everything.",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "iv-steroid-branch",
+          "shortAction": "Dexamethasone 16 mg IV (78 kg × 0.6 mg/kg = 46.8 mg → cap at 16 mg max)",
+          "protocolExcerpt": "IV steroid options for critically ill patients include: Dexamethasone (0.6 mg/kg, maximum dose of 16 mg) IV/IM, or Methylprednisolone (2 mg/kg, maximum dose 125 mg) IV/IM.",
+          "priority": "important",
+          "rationale": "If not yet given, give now.",
+          "protocolReference": "MATC: Respiratory Distress"
+        }
+      ],
+      "transitions": [],
+      "isDefault": false
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

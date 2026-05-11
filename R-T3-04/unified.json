@@ -1,0 +1,744 @@
+{
+  "meta": {
+    "id": "R-T3-04",
+    "name": "Submersion/Drowning with Hypothermic Cardiac Arrest",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Respiratory / Resuscitation / Environmental",
+    "protocols": [
+      "env-drowning",
+      "env-hypothermia-cold-exposure",
+      "resus-cardiac-arrest",
+      "resp-airway-management",
+      "resus-post-rosc"
+    ],
+    "totalTimeSeconds": 2400,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "drowning",
+      "submersion",
+      "hypothermia",
+      "severe-hypothermia",
+      "VFib",
+      "cardiac-arrest",
+      "ACLS-modified",
+      "not-dead-until-warm-and-dead",
+      "rewarming",
+      "ABC-not-CAB",
+      "60-second-pulse-check",
+      "tier-3",
+      "high-acuity"
+    ]
+  },
+  "patient": {
+    "name": "Tyler Brennan",
+    "age": 34,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 84,
+    "weightLbs": 185,
+    "height": 180,
+    "chiefComplaint": "Apneic, pulseless adult male just pulled from a frozen lake after falling through the ice approximately 15 minutes ago; submerged at least 10 minutes; cold-water immersion with suspected hypothermic cardiac arrest.",
+    "history": {
+      "hpi": "34-year-old previously healthy male was ice fishing alone on the southern edge of a frozen lake (water temperature estimated 35–38°F / 1.7–3.3°C — well below 43°F threshold). According to two ice-fishing companions ~150 yards away who heard him yell, he fell through thin ice approximately 15 minutes before EMS contact. The companions describe him going under after a brief struggle; estimated submersion time is at least 10 minutes, with the last 5 minutes underwater unwitnessed. They reached him with a rope and ice picks, pulled him onto the ice, then dragged him on a sled to the shore where bystanders started chest compressions without ventilations approximately 2 minutes before EMS arrival. The patient was last seen normal/alert/talking pre-fall. No reported head strike or diving mechanism — he reportedly stepped through thin ice. No known seizure activity, no alcohol on the breath of the companions but it cannot be ruled out for the patient at this time. Pulled fully wet and clothed (insulated bibs, boots, parka — all saturated). Outside ambient air ~15°F / -9°C with wind. On EMS contact: apneic, no shivering, pulseless after a deliberate 60-second carotid check, rectal core temperature 28.0°C / 82.4°F (severe hypothermia), initial monitored rhythm Ventricular Fibrillation (coarse).",
+      "pastMedical": [
+        "No known significant past medical history per companions",
+        "Reportedly healthy; works construction; no chronic medications known",
+        "No known cardiac, respiratory, or seizure history reported",
+        "Unknown alcohol intake at scene"
+      ],
+      "medications": [
+        "None reported by companions"
+      ],
+      "allergies": [
+        "NKDA per companions (no medical alert jewelry)"
+      ],
+      "lastOralIntake": "Unknown — companions report a thermos of coffee on the ice shanty; last meal unknown.",
+      "events": "Ice fishing on frozen lake; reportedly stepped onto thin ice ~150 yards from shore; fell through and was submerged in cold water (estimated 35–38°F). Total time from fall to EMS contact ≈ 15 minutes; submersion (airway underwater) ≈ 10 minutes, last 5 minutes unwitnessed underwater. Pulled out by two companions using a rope and ice picks; dragged on a sled to shore. Bystanders began chest compressions (no ventilations) ~2 minutes prior to EMS arrival. EMS arrived to find an apneic, pulseless, profoundly cold and wet patient with bystander CPR in progress."
+    }
+  },
+  "scene": {
+    "dispatch": "Dispatch: 34-year-old male, person pulled from the water at the south boat launch, CPR in progress, possible drowning. Fire and a second ALS unit responding.",
+    "location": "South-side public boat launch of a frozen lake, accessed off a county park road. Patient is on the shore, on top of a plastic ice-fishing sled at the edge of a snowy gravel beach. Two ice-fishing companions are with him; one is doing chest compressions over wet, insulated coveralls. The actual hole in the ice is approximately 150 yards out from shore (visible).",
+    "time": "Saturday, 11:40 a.m., late January; bright but bitterly cold (~15°F / -9°C) with steady wind off the lake.",
+    "safety": "Scene generally safe on shore — do NOT step onto the ice. Cold-weather exposure risk for crew. Wet patient on a wet sled in wind = ongoing heat loss; getting him into a warmed cabin is part of safety. Bystander CPR is rough/uncoordinated — gentle handling is paramount.",
+    "bystanders": "Two ice-fishing companions (Mark and Greg) on scene. Mark is performing rapid, deep chest compressions but is rough — bouncing on/off and moving the torso significantly with each compression. Greg is on the phone with 911 dispatch and can give the timeline: fall through ice ~15 minutes ago, underwater ~10 minutes, last 5 minutes underwater unwitnessed. If the crew specifically asks, Greg estimates water temp at 'maybe upper 30s' (below the 43°F threshold).",
+    "visualCues": [
+      "Patient supine on a plastic sled at the edge of the boat launch, fully clothed in saturated insulated bibs/parka/boots — clothing visibly icy and wet, ice crystals on the hood",
+      "Skin under the parka collar is mottled, pale, and waxy; lips and fingertips are deep blue",
+      "Bystander performing CPR with poor technique — bouncing on the chest, jostling the entire torso between compressions; patient's head and limbs flopping with each compression",
+      "Approximately 150 yards offshore: a black jagged hole in the ice with a rope and ice-fishing gear scattered around it (the entry/exit point)",
+      "Ambient air visibly cold — exhaled breath from crew and bystanders is white and dense; wind blowing snow across the gravel",
+      "No obvious head trauma, no obvious dive mechanism, no foreign body in airway visible",
+      "No medical alert jewelry; no medication bottles in scattered fishing gear",
+      "Patient is not shivering — completely flaccid"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives at the boat launch to find a 34-year-old male flat on a plastic sled on the snowy shore, pulled from a frozen lake ~5 minutes ago after a 10-minute submersion. He is apneic, profoundly cold, wet, and not shivering. A panicked companion is doing aggressive, bouncing chest compressions that are visibly jostling the torso. The critical first move is to STOP the rough bystander CPR, perform a deliberate 60-second pulse check (because hypothermia slows circulation), and reframe this case as hypothermic arrest — not standard cardiac arrest. Airway-first (ABC, not CAB) because this is also a drowning. Core temperature, gentle handling, and getting the patient into a warmed cabin are co-equal priorities with ACLS.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 1
+        },
+        "airway": "Apneic; small amount of frothy fluid at the lips; no foreign body visible; no obvious facial trauma; jaw is stiff and difficult to open without firm jaw thrust (cold-induced rigidity, not rigor)",
+        "breathing": "No spontaneous respirations. No chest rise. No audible breath sounds. Cold-water aspiration suspected — lungs may be wet on later ventilation.",
+        "circulation": "No palpable carotid pulse on a deliberate 60-second check (hypothermia mandates extended pulse check). Skin is profoundly cold, mottled, waxy, and not shivering. Cap refill > 5 seconds, peripheries unobtainable.",
+        "skin": {
+          "color": "mottled / cyanotic with waxy pallor",
+          "temperature": "profoundly cold to touch through gloves",
+          "moisture": "soaking wet"
+        },
+        "pupils": "Mid-position (4 mm), sluggishly reactive bilaterally (may appear fixed in profound hypothermia — DO NOT use as a sign of death)",
+        "motorFunction": "Flaccid; no shivering; no response to painful stimulus",
+        "otherFindings": [
+          "Rectal/epitympanic core temperature, when obtained: 28.0°C / 82.4°F — moderate-to-severe hypothermia, top of the severe range",
+          "Bystander performing fast, deep, bouncing compressions; torso visibly jostled — exactly the kind of rough handling that can convert a cold heart into VF",
+          "Companions: fall through ice ~15 min ago, submerged ~10 min, last 5 min underwater unwitnessed, water temp estimated 35–38°F",
+          "No signs of obvious fatal injury (no decapitation, no ice in airway, chest compressible)",
+          "No medical alert jewelry, no obvious tongue bite, no head/neck trauma"
+        ],
+        "patientSpeech": "(unresponsive, apneic)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Ventricular Fibrillation (Coarse)",
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 12,
+        "temp": 28.0,
+        "tempF": 82.4,
+        "obstruction": 30,
+        "glucose": 96,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "scene-safety-stay-off-ice",
+          "shortAction": "Scene safety — stay off the ice; work from shore; protect crew from cold exposure",
+          "priority": "critical",
+          "rationale": "MATC Drowning Treatment #1 — practice safest water rescue technique possible given scene; do not put rescuers into the water/ice. MATC Hypothermia Treatment #1 — patient and rescuer safety.",
+          "protocolReference": "MATC: Drowning",
+          "protocolExcerpt": "Ensure scene safety for patient and rescuers. Remove patient from water as soon as possible. Practice the safest water rescue technique possible, given circumstances on scene. Evacuate to land or a watercraft as soon as possible."
+        },
+        {
+          "id": "gentle-handling-stop-rough-cpr",
+          "shortAction": "STOP rough bystander CPR; gentle horizontal handling — rough movement can trigger VF",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia Treatment 4e — handle gently to avoid converting a perfusing rhythm into VF; the cold heart is exquisitely irritable. Bystander's bouncing compressions are exactly the rough handling the protocol warns against.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "Moderate or severe hypothermia — Handle the patient gently. Attempt to keep the patient in the horizontal position, especially limiting motion of the extremities to avoid increasing return of cold blood to the heart. Once in a warm environment, clothing should be cut off (rather than removed by manipulating the extremities). Move the patient only when necessary, such as to remove the patient from the elements."
+        },
+        {
+          "id": "abc-not-cab-airway-first",
+          "shortAction": "ABC sequence (not CAB) — airway first, then 5 rescue breaths, THEN compressions",
+          "priority": "critical",
+          "rationale": "MATC Drowning Assessment #2 — drowning arrests use ABC, not CAB, because hypoxia is the cause. MATC Drowning Treatment 3a — 5 rescue breaths first, then 30 compressions to 2 breaths.",
+          "protocolReference": "MATC: Drowning",
+          "protocolExcerpt": "Primary survey should include aggressive airway management and restoration of adequate oxygenation and ventilation. Unlike the CAB strategy used in standard cardiac arrest, patients suffering cardiac arrest from drowning require an ABCs (Airway, Breathing, Circulation) approach with prompt airway management and supplemental breathing. Initiate 5 rescue breaths followed by 30 chest compressions. After the initial 5 breaths, use ratio of 30 compressions to 2 breaths."
+        },
+        {
+          "id": "sixty-second-pulse-check",
+          "shortAction": "Deliberate 60-second carotid pulse check (hypothermia slows circulation)",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia Assessment 1b — the cold patient may need a 60-second pulse check; this is the difference between starting CPR on a slow but perfusing rhythm (and inducing VF) versus correctly identifying arrest.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "Patient assessment should begin with attention to the primary survey, looking for evidence of circulatory collapse and ensuring effective respirations. The rescuer may need to evaluate the hypothermic patient for a pulse for longer than the normothermic patient (up to 60 seconds). Perform ABCs (Airway, Breathing, Circulation), pulse checks for patients suffering hypothermia should be performed for 60 seconds."
+        },
+        {
+          "id": "core-temp-measurement",
+          "shortAction": "Obtain core temperature (rectal or epitympanic) — categorize hypothermia severity",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia Assessment #3 — core temperature drives clinical category and decisions about defib, drug intervals, and termination. Tympanic/rectal in the warmed ambulance preferred; epitympanic in the field acceptable.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "If possible and reliable, EMS clinicians should perform core body temperature measurements and categorize patients into one of the three follow levels of hypothermia: Mild: 32.1–35°C/89.8–95°F; Moderate: 28.1–32°C/82.5–89.7°F; Severe: 24–28°C/75.2–82.4°F; Profound: less than 24°C (75.2°F). Rectal temperatures may also be used, with caution to avoid worsening the hypothermia by undressing the patient (e.g., done in a warm environment such as a heated ambulance). If neither esophageal nor rectal thermometers are available, an epitympanic field thermometer with an isolating ear cap may be used."
+        },
+        {
+          "id": "high-quality-compressions",
+          "shortAction": "High-quality CPR — 100–120/min, 2–2.4 inch depth, full recoil, minimal interruption",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia cardiac arrest #3 — effective chest compressions are mainstay of severe-hypothermic arrest, same rate as normothermic. MATC Cardiac Arrest Key Considerations #1 — effective compression parameters.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "Considerations in cardiac arrest: The mainstay of therapy in severe hypothermia and cardiac arrest should be effective chest compressions and attempts at rewarming. Chest compressions should be provided at the same rate as in normothermic patients."
+        },
+        {
+          "id": "apply-monitor-pads",
+          "shortAction": "Apply defibrillator pads; reveal rhythm — coarse VFib",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia Treatment 4f — apply cardiac monitor/AED. MATC Cardiac Arrest #1 — rhythm analysis as soon as possible. Rhythm here is shockable VFib.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "Apply cardiac monitor or AED if available."
+        },
+        {
+          "id": "one-defib-attempt-cold-core",
+          "shortAction": "Defibrillate VFib ONCE at 200 J biphasic (Zoll); if core <30°C, withhold further shocks until rewarmed",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia cardiac arrest #4 — at core <30°C, defib often ineffective; reasonable to give one shock, then no further shocks until core >30°C. Patient is 28°C — give one, then warm. Zoll biphasic ladder per Cardiac Arrest #2a.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "The temperature at which defibrillation should first be attempted in the severely hypothermic cardiac arrest victim and the number of defibrillation attempts is unclear. Per the American Heart Association (AHA), if the patient has a shockable rhythm (VF/VT), defibrillation should be attempted. The state of Alaska's 2014 guidance advises that defibrillation should be attempted once, followed by 2 minutes of chest compressions, then rhythm and pulse checks. If defibrillation is unsuccessful and the patient's core temperature is less than 30°C (86°F), do not make further attempts at defibrillation until the core temperature has increased to greater than 30°C (86°F). Continue CPR and attempt to rewarm the patient."
+        },
+        {
+          "id": "advanced-airway-with-caution",
+          "shortAction": "Advanced airway (SGA or ET); ventilate at HALF normothermic rate (5 bpm) to avoid hypocarbia",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia cardiac arrest 5a/b — hypocarbia from hyperventilation lowers the VF threshold in the cold patient. If advanced airway, half the rate. Drowning + apnea makes airway high-priority here.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "Manage airway as needed. Care must be taken not to hyperventilate the patient as hypocarbia may reduce the threshold for ventricular fibrillation in the cold patient. In the absence of advanced airways, ventilate the patient at the same rate as a normothermic patient. If the patient has an advanced airway, ventilate at half the rate recommended for a normothermic patient to prevent hyperventilation. If EtCO2 is available, ventilate to maintain normal EtCO2 levels."
+        },
+        {
+          "id": "cut-clothes-not-pull",
+          "shortAction": "Cut wet clothing off (don't pull) once in warmed cabin; dry skin; vapor barrier",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia Treatment 4c/e — remove from environment, cut off clothing rather than manipulating extremities, insulate, vapor barrier. Pulling clothes flexes cold extremities and returns cold blood to the heart.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "Prevent further heat loss by removing the patient from the environment and removing wet clothes and drying skin, insulate from the ground, shelter the patient from wind and wet conditions, and insulate the patient with dry clothing or a hypothermia wrap/blanket. Cover the patient with a vapor barrier and, if available, move the patient to a warm environment. Once in a warm environment, clothing should be cut off (rather than removed by manipulating the extremities)."
+        },
+        {
+          "id": "active-rewarming",
+          "shortAction": "Active rewarming — heat packs (with barrier) to torso, warm cabin >24°C, forced-air blanket if available",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia Treatment 4d — initiate field rewarming: heat packs/blankets to anterior chest/thorax with barrier to prevent burns. MATC Hypothermia 4j — warm patient compartment to at least 24°C. Concurrent with resuscitation.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "Initiate field-rewarming methods such as placement of large heat packs or heat blankets (chemical or electric if feasible) to the anterior chest or wrapped around the patient's thorax if large enough. Chemical or electrical heat sources should never be applied directly to the skin. Use a barrier between the skin and heat source to prevent burns. Forced air warming blankets (e.g., Bair Hugger®) can be an effective field rewarming method if available. Warm the patient compartment of the ambulance to at least 24°C (75.2°F) during transport."
+        },
+        {
+          "id": "io-access-warmed-fluids",
+          "shortAction": "IO access (humeral); warmed isotonic crystalloid bolus to 42°C, 500 mL initial",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia Treatment 4g — establish IV/IO and warmed isotonic crystalloid bolus. IV fluids ideally warmed to 42°C. Cold peripheries make IV difficult; IO humeral preferred per pit-crew approach.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "Establish IV and provide warmed isotonic crystalloid bolus. Repeat as necessary. IV fluids, if administered, should be warmed, ideally to 42°C (107.6°F). Bolus therapy is preferable to continuous drip."
+        },
+        {
+          "id": "withhold-or-extend-meds",
+          "shortAction": "Withhold ACLS drugs until core >30°C (Wilderness/Alaska); if AHA-guided, double intervals",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia cardiac arrest #6 — Wilderness Medical Society and Alaska 2014: withhold meds until core >30°C. 2010 AHA: vasopressors per standard ACLS. Above 30°C, double the intervals until 35°C. Either is acceptable; both are PROTOCOL — not standard ACLS spacing.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "There is little evidence to guide use of medications in severe hypothermia with cardiac arrest, however 2010 AHA updates recommend use of vasopressors according to standard ACLS protocols while the 2014 Alaska guidelines and the Wilderness Medical Society advise medications should be withheld until the patient's core temperature is greater than 30°C (86°F). Above 30°C (86°F), intervals between medication provision should be doubled until the patient reaches 35°C (95°F), at which time, normal medication intervals may be adopted."
+        },
+        {
+          "id": "transport-ecmo-capable",
+          "shortAction": "Transport to ECMO/cardiopulmonary bypass-capable facility; early notification",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia Treatment 4i — hypothermic cardiac arrest patients benefit from transport to a center capable of extracorporeal circulation (ECMO) or cardiopulmonary bypass when feasible.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "Transport as soon as possible to a hospital capable of resuscitation. If cardiac arrest develops consider transport to a center capable of extracorporeal circulation (ECMO) or cardiopulmonary bypass (if feasible)."
+        },
+        {
+          "id": "continue-cpr-not-dead-until-warm",
+          "shortAction": "Continue resuscitation through transport — 'not dead until warm and dead'",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia cardiac arrest #8 — severely hypothermic arrest patients may benefit from prolonged resuscitation; survival with intact neuro function has been observed even after prolonged downtime. Patient is NOT dead until rewarming has been attempted.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "Patients with severe hypothermia and arrest may benefit from resuscitation even after prolonged downtime, and survival with intact neurologic function has been observed even after prolonged resuscitation. Patients should not be considered deceased until rewarming has been attempted."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "gentle-resus-rewarming",
+          "if": "Gentle takeover, 60-sec check, ABC + one shock, rewarming started",
+          "condition": "Crew immediately stops rough bystander CPR, performs deliberate 60-second pulse check (confirms arrest), opens airway and gives 5 rescue breaths before resuming compressions (ABC for drowning), applies pads and delivers ONE 200 J shock for coarse VFib, then withholds further shocks pending rewarming because core temp is 28°C. They cut wet clothing in the warmed cabin, dry and insulate, start heat packs with barrier to torso, warm cabin >24°C, place IO with warmed isotonic fluids, and either withhold meds (pending core >30°C) or commit to doubled ACLS intervals. Advanced airway placed with ventilation at HALF normothermic rate. Crew begins transport to ECMO-capable receiving facility.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "gentle-handling-stop-rough-cpr",
+            "sixty-second-pulse-check",
+            "abc-not-cab-airway-first",
+            "one-defib-attempt-cold-core",
+            "active-rewarming",
+            "cut-clothes-not-pull",
+            "core-temp-measurement",
+            "transport-ecmo-capable"
+          ]
+        },
+        {
+          "targetPhaseId": "rough-handling-vf-storm",
+          "if": "Rough handling continued — VF storm, refractory",
+          "condition": "Crew failed to stop the bystander's bouncing chest compressions, then performed their own rough transfer — picked the patient up by the extremities to move him from the sled to the stretcher, jostled the torso during transfer to the warmed cabin, and continued aggressive movement throughout. The cold-irritable myocardium converts repeatedly back into coarse VFib after each shock attempt; defibrillation is ineffective at this core temperature; the patient enters a refractory VF storm with no realistic path to ROSC without ECMO.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": [
+            "gentle-handling-stop-rough-cpr",
+            "cut-clothes-not-pull"
+          ]
+        },
+        {
+          "targetPhaseId": "standard-acls-premature-termination",
+          "if": "Standard ACLS spacing, no rewarming, terminated early",
+          "condition": "Crew ran a textbook normothermic ACLS algorithm — stacked shocks every 2 minutes, epinephrine every 3–5 minutes (standard intervals, not doubled), no core temperature obtained, no aggressive rewarming, wet clothing left in place. After ~20 minutes with no ROSC and a rhythm degrading from VF to fine VF to apparent asystole, the medic called medical control for termination of resuscitation, citing 'asystole, 20 minutes, no ROSC.' Patient remains profoundly hypothermic — not actually dead per hypothermia protocol, which requires rewarming before death determination.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": [
+            "core-temp-measurement",
+            "active-rewarming",
+            "withhold-or-extend-meds",
+            "continue-cpr-not-dead-until-warm",
+            "cut-clothes-not-pull"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "gentle-resus-rewarming",
+      "name": "Gentle resus + rewarming",
+      "description": "Crew has taken over gently from the bystander, performed the deliberate 60-second pulse check, given 5 rescue breaths and started compressions in the ABC sequence, applied pads and delivered ONE 200 J biphasic shock for the coarse VFib. Recognizing core temp 28°C, they have withheld further defibrillation attempts pending rewarming. Patient is now in the warmed cabin (>24°C), clothing cut off (not pulled), dried, vapor-barriered, heat packs (with cloth barrier) on the anterior chest and axillae, forced-air warming blanket running. Advanced airway is placed with EtCO2 monitoring and ventilation at HALF the normothermic rate (5–6 bpm) to avoid hypocarbia-induced VF threshold drop. Humeral IO is in with warmed isotonic crystalloid running. Rhythm has now devolved to fine VF/asystole — expected at this core temp. Drugs are withheld (or doubled-interval per local medical direction). Crew is en route to an ECMO-capable center. The clinical work continues — gentle handling, rewarming, compressions, ventilation, transport — all the way to the hospital.",
+      "triggerCondition": "Crew stopped the bystander's rough CPR, performed a deliberate 60-second pulse check confirming arrest, used ABC sequence with 5 rescue breaths first, delivered one 200 J shock for VFib, then committed to no further shocks until rewarmed. Core temp 28°C obtained. Wet clothes cut off in warmed cabin, vapor barrier and active rewarming initiated. Advanced airway with halved ventilation rate. Humeral IO with warmed fluids. Drugs withheld pending core >30°C (or per medical direction, doubled intervals). Transport to ECMO-capable facility under way.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 1
+        },
+        "airway": "Advanced airway (i-gel or ET) in place, secured; EtCO2 waveform present; minimal secretions",
+        "breathing": "Ventilated at 5–6 bpm via BVM through advanced airway; chest rise symmetric; lungs reveal coarse rhonchi (aspirated cold water); EtCO2 14–18 mmHg with good compressions",
+        "circulation": "No spontaneous pulse; ongoing CPR with mechanical or rotated manual compressors; skin still profoundly cold but trunk slightly less mottled than on arrival; cap refill unobtainable peripherally",
+        "skin": {
+          "color": "mottled trunk, deep cyanotic peripheries",
+          "temperature": "very cold, beginning to feel less icy on the trunk after 10 minutes of active rewarming",
+          "moisture": "dried (clothes cut off, dried with towels, then covered)"
+        },
+        "pupils": "Fixed, mid-position 4 mm bilaterally — DO NOT use as a sign of death in hypothermia",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "Core temperature: 28.4°C / 83.1°F after ~10 minutes of active rewarming (very slowly climbing)",
+          "One 200 J biphasic shock delivered for coarse VFib; rhythm now fine VFib/asystole at low core temp — further shocks withheld",
+          "Heat packs (with cloth barrier) on anterior chest and bilateral axillae; forced-air warming blanket on; cabin temp 26°C",
+          "Advanced airway in place; ventilation rate 5–6 bpm (half normothermic); EtCO2 displayed and trending up with good compressions",
+          "Humeral IO; 500 mL warmed (42°C) NS infused, second bag running",
+          "Receiving facility (ECMO-capable) notified; rendezvous unit en route",
+          "Crew working gently — no rough movement, patient remains horizontal"
+        ],
+        "patientSpeech": "(unresponsive, advanced airway in place)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Ventricular Fibrillation (Fine)",
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 6,
+        "spo2": 0,
+        "etco2": 16,
+        "temp": 28.4,
+        "tempF": 83.1,
+        "obstruction": 20,
+        "glucose": 96,
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "continue-cpr-warming-en-route",
+          "shortAction": "Continue high-quality CPR and active rewarming all the way to the hospital",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia cardiac arrest #3 + #8 — compressions and rewarming are mainstay; patient may have intact neuro outcome even with prolonged downtime. Resuscitation continues until rewarmed.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "The mainstay of therapy in severe hypothermia and cardiac arrest should be effective chest compressions and attempts at rewarming. Patients with severe hypothermia and arrest may benefit from resuscitation even after prolonged downtime, and survival with intact neurologic function has been observed even after prolonged resuscitation. Patients should not be considered deceased until rewarming has been attempted."
+        },
+        {
+          "id": "no-further-shocks-until-30C",
+          "shortAction": "Hold defibrillation attempts until core temperature exceeds 30°C",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia cardiac arrest #4 — at core <30°C, further defib attempts are unlikely to succeed; resume defib once temp >30°C or has risen 1–2°C from baseline (Wilderness Medical Society).",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "If defibrillation is unsuccessful and the patient's core temperature is less than 30°C (86°F), do not make further attempts at defibrillation until the core temperature has increased to greater than 30°C (86°F). Continue CPR and attempt to rewarm the patient. An alternate strategy, per the Wilderness Medical Society, suggests that if the patient's core temperature is below 30°C (86°F), attempt defibrillation once, then wait until the patient has been rewarmed at least 1–2°C or to 30°C (86°F) before attempting additional shocks."
+        },
+        {
+          "id": "ventilate-half-rate-monitor-etco2",
+          "shortAction": "Ventilate at 5–6 bpm (half rate) through advanced airway; monitor EtCO2 (target 35–45)",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia cardiac arrest #5 — half rate to prevent hypocarbia (which lowers VF threshold in cold patient). EtCO2 targeted normal range.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "If the patient has an advanced airway, ventilate at half the rate recommended for a normothermic patient to prevent hyperventilation. If EtCO2 is available, ventilate to maintain normal EtCO2 levels."
+        },
+        {
+          "id": "epi-after-30C-doubled-interval",
+          "shortAction": "Epinephrine 1 mg IV/IO ONLY when core >30°C; double intervals to 6–10 min until 35°C",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia cardiac arrest #6 — withhold meds until core >30°C (Wilderness/Alaska); above 30°C, double intervals until 35°C, then normal ACLS spacing. Fixed-dose 1 mg per Cardiac Arrest #5.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "There is little evidence to guide use of medications in severe hypothermia with cardiac arrest, however 2010 AHA updates recommend use of vasopressors according to standard ACLS protocols while the 2014 Alaska guidelines and the Wilderness Medical Society advise medications should be withheld until the patient's core temperature is greater than 30°C (86°F). Above 30°C (86°F), intervals between medication provision should be doubled until the patient reaches 35°C (95°F), at which time, normal medication intervals may be adopted."
+        },
+        {
+          "id": "monitor-rhythm-trend",
+          "shortAction": "Reassess rhythm/pulse every 2 minutes; pulse check minimum 60 sec each time",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia Assessment 1b — 60-second pulse check applies at every reassessment, not just the first. A faint pulse in a cold patient may not be palpable in a short check.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "Pulse checks for patients suffering hypothermia should be performed for 60 seconds. Perform ABCs (Airway, Breathing, Circulation), pulse checks for patients suffering hypothermia should be performed for 60 seconds, and obtain core temperature, if possible, for patients exhibiting signs or symptoms of moderate/severe hypothermia."
+        },
+        {
+          "id": "additional-warmed-fluids",
+          "shortAction": "Warmed (42°C) isotonic crystalloid bolus 500 mL, repeat — maintain volume during rewarming",
+          "priority": "important",
+          "rationale": "MATC Hypothermia 4g — warmed isotonic bolus, repeat as necessary. Rewarming-related vasodilation drops preload; volume support is needed.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "Establish IV and provide warmed isotonic crystalloid bolus. Repeat as necessary. IV fluids, if administered, should be warmed, ideally to 42°C (107.6°F). Bolus therapy is preferable to continuous drip."
+        },
+        {
+          "id": "hospital-ecmo-handoff",
+          "shortAction": "Early notification — ECMO/CPB team ready on arrival; communicate core temp and downtime",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia 4i — patients in hypothermic arrest may benefit from extracorporeal rewarming. Receiving team needs core temp, submersion/downtime, water temp for ECPR decision.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "Transport as soon as possible to a hospital capable of resuscitation. If cardiac arrest develops consider transport to a center capable of extracorporeal circulation (ECMO) or cardiopulmonary bypass (if feasible)."
+        },
+        {
+          "id": "document-utstein",
+          "shortAction": "Document submersion time, water temp, downtime, core temp, all interventions",
+          "priority": "important",
+          "rationale": "MATC Drowning Key Documentation — submersion time, water temp, mechanism, plus core temp from Hypothermia documentation. Drives in-hospital ECPR/termination decisions.",
+          "protocolReference": "MATC: Drowning",
+          "protocolExcerpt": "Key Documentation Elements: Mechanism of injury or history suggesting cervical spine injury; Submersion time; Water temperature; Activities leading to drowning; Consider a standardized data collection metrics such as the Utstein drowning data reporting elements."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "rewarmed-rosc",
+          "if": "Core >30°C reached, ROSC after second shock",
+          "condition": "After ~25 minutes of continuous compressions, ventilation at halved rate, active rewarming with heat packs and forced-air blanket, and 1 L warmed isotonic crystalloid, the core temperature has risen to 30.2°C. A second defibrillation attempt at 200 J converts the fine VF to an organized but slow rhythm; a deliberate 60-second pulse check confirms ROSC with a weak central pulse. Post-ROSC care begins concurrent with continued rewarming, en route to the ECMO-capable facility.",
+          "conditionType": "vital_threshold",
+          "triggerActionIds": [
+            "continue-cpr-warming-en-route",
+            "no-further-shocks-until-30C",
+            "additional-warmed-fluids",
+            "monitor-rhythm-trend"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "rewarmed-rosc",
+      "name": "Rewarmed — ROSC",
+      "description": "After approximately 25 minutes of relentless protocol-driven hypothermic resuscitation — gentle handling, ABC airway-first, halved ventilation rate, one shock at the start and then no further shocks until rewarmed, continuous compressions, active rewarming (heat packs, vapor barrier, forced-air blanket, warmed cabin), and warmed IO fluids — the patient's core temperature has climbed past 30°C. A second 200 J shock terminates the fine VF and produces a slow but organized rhythm. A deliberate 60-second pulse check confirms a weak central pulse. The patient is now in a fragile post-arrest state with a core temp of 30.2°C, profound bradycardia, hypotension, deep coma, and is exquisitely vulnerable to re-arrest. Post-ROSC care begins now — but the rewarming work is far from over, and the crew continues all the way to the ECMO-capable receiving facility.",
+      "triggerCondition": "Core temperature reached >30°C through continuous active rewarming during ongoing CPR. A second 200 J biphasic shock at that point converted fine VF to an organized rhythm. Deliberate 60-second pulse check confirmed weak central pulse. ROSC achieved after ~25 minutes of resuscitation, en route to the ECMO-capable facility.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 1
+        },
+        "airway": "Advanced airway in place, secured, EtCO2 waveform present and improved with ROSC",
+        "breathing": "Ventilated at 8–10 bpm now (still slightly below normothermic 10 bpm because core is only 30.2°C); chest rise symmetric; rhonchi from aspirated water improving",
+        "circulation": "Weak but palpable carotid pulse on deliberate 60-second check; very narrow pulse pressure; cap refill 5+ seconds; peripheries still cold but trunk warming",
+        "skin": {
+          "color": "pale with mottled trunk, peripheries still cyanotic",
+          "temperature": "trunk warming (heat packs + forced air), peripheries still very cold",
+          "moisture": "dry"
+        },
+        "pupils": "Mid-position 4 mm, now sluggishly reactive bilaterally (improving from fixed)",
+        "motorFunction": "Flaccid; GCS 3",
+        "otherFindings": [
+          "Core temperature: 30.2°C / 86.4°F — moderate hypothermia (out of severe range)",
+          "Second 200 J shock converted fine VF to organized rhythm (sinus bradycardia)",
+          "Weak but palpable central pulse on 60-sec check — ROSC confirmed",
+          "Profound hypotension and bradycardia expected at this core temp; rewarming continues",
+          "EtCO2 now 30–34 mmHg (rising with ROSC and improving perfusion)",
+          "12-lead acquired post-ROSC — bradycardia, J-waves (Osborn waves) consistent with hypothermia, no STEMI pattern",
+          "Forced-air rewarming continues; cabin 26°C; second liter of warmed fluid running",
+          "Receiving ECMO team prepped on arrival"
+        ],
+        "patientSpeech": "(unresponsive, intubated)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Bradycardia",
+        "ecgWaveform": 9,
+        "hr": 44,
+        "bpSys": 78,
+        "bpDia": 50,
+        "respRate": 9,
+        "spo2": 90,
+        "etco2": 32,
+        "temp": 30.2,
+        "tempF": 86.4,
+        "obstruction": 15,
+        "glucose": 102,
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "post-rosc-airway-vent",
+          "shortAction": "Maintain advanced airway; ventilate 8–10 bpm; target EtCO2 35–45 mmHg; SpO2 94–98%",
+          "priority": "critical",
+          "rationale": "MATC Post-ROSC #4/5 — do not hyperoxygenate; do not hyperventilate; maintain ventilation rate 8–10 bpm targeting EtCO2 35–45. Patient is still mildly under-rewarmed so stay at the low end of the normothermic range to avoid hypocarbia.",
+          "protocolReference": "MATC: Adult Post-ROSC Care",
+          "protocolExcerpt": "Administer oxygen as appropriate with a target of achieving 94–98% saturation. Do not hyperoxygenate. Do not hyperventilate. Maintain a ventilation rate of 8–10 breaths per minute, targeting an EtCO2 of 35–45 mmHg."
+        },
+        {
+          "id": "continue-rewarming",
+          "shortAction": "Continue active rewarming; cabin >24°C; vapor barrier; trunk heat packs with barrier",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia 4d/j — continue rewarming through transport; patient remains in moderate hypothermia (30.2°C) and is at high risk of re-arrest if cooled.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "Initiate field-rewarming methods such as placement of large heat packs or heat blankets (chemical or electric if feasible) to the anterior chest or wrapped around the patient's thorax if large enough. Warm the patient compartment of the ambulance to at least 24°C (75.2°F) during transport."
+        },
+        {
+          "id": "support-bp-fluids",
+          "shortAction": "Warmed isotonic crystalloid bolus (SBP 78 < 90); reassess after each 500 mL",
+          "priority": "critical",
+          "rationale": "MATC Post-ROSC #6 — for hypotension (SBP <90), see Shock Guideline. Volume first, as rewarming vasodilation continues to drop preload. Fluids stay warmed.",
+          "protocolReference": "MATC: Adult Post-ROSC Care",
+          "protocolExcerpt": "For hypotension (SBP less than 90 mmHg or MAP less than 65 in adults) see Shock Guideline."
+        },
+        {
+          "id": "twelve-lead-post-rosc",
+          "shortAction": "Acquire post-ROSC 12-lead — look for STEMI vs hypothermic J waves",
+          "priority": "critical",
+          "rationale": "MATC Post-ROSC #7 — serial 12-leads to identify STEMI or reversible cause. In hypothermia, J (Osborn) waves are expected and should not be misread as STEMI.",
+          "protocolReference": "MATC: Adult Post-ROSC Care",
+          "protocolExcerpt": "Perform serial 12-lead EKGs to assess for evidence of reversible cause of arrest such as STEMI or electrolyte derangement (e.g., hyperkalemia). Post-cardiac arrest patients with evidence or interpretation consistent with ST elevation myocardial infarction (STEMI/acute MI) should be transported preferably to a facility capable of emergent cardiac catheterization."
+        },
+        {
+          "id": "check-glucose-post-rosc",
+          "shortAction": "Check blood glucose — treat hypoglycemia per protocol if present",
+          "priority": "important",
+          "rationale": "MATC Post-ROSC #9 — check BGL; treat hypoglycemia per protocol.",
+          "protocolReference": "MATC: Adult Post-ROSC Care",
+          "protocolExcerpt": "Check blood glucose. If hypoglycemic, treat per Hypoglycemia Guideline. If hyperglycemic, notify hospital on arrival."
+        },
+        {
+          "id": "monitor-for-rearrest",
+          "shortAction": "Continuous cardiac, EtCO2, and SpO2 monitoring; pads remain in place; ready to redefib if temp >30°C",
+          "priority": "critical",
+          "rationale": "MATC Post-ROSC #3 — monitor for recurrence using cardiac monitor, EtCO2, perfusion signs. Re-arrest risk is high in early post-ROSC, especially in a cold patient. With core now >30°C, defib is back on the table for refib.",
+          "protocolReference": "MATC: Adult Post-ROSC Care",
+          "protocolExcerpt": "Monitor closely for recurrence of cardiac arrest using clinical and adjunctive criteria such as cardiac monitoring, EtCO2 monitoring, and physical signs of perfusion."
+        },
+        {
+          "id": "destination-ecmo-capable",
+          "shortAction": "Transport to ECMO/CPB-capable receiving facility; ongoing notification updates",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia 4i — extracorporeal rewarming may still be indicated post-ROSC for ongoing severe hypothermia and risk of re-arrest. Receiving team should be ready.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "Transport as soon as possible to a hospital capable of resuscitation. If cardiac arrest develops consider transport to a center capable of extracorporeal circulation (ECMO) or cardiopulmonary bypass (if feasible)."
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "rough-handling-vf-storm",
+      "name": "Rough handling — VF storm",
+      "description": "BRANCH (judgment error): The crew failed to stop the bystander's bouncing chest compressions, then compounded the problem by transferring the patient roughly — lifting by the extremities, jostling the torso onto the stretcher, and continuing aggressive movement through loading. The already-cold, irritable myocardium responded to the mechanical irritation with refractory ventricular fibrillation. Each shock attempt at this core temperature (28°C) is unable to convert; the rhythm immediately reverts to coarse, then fine VF. With no active rewarming committed to, the patient enters a futile VF storm. The teaching beat: in profound hypothermia, gentle handling isn't a courtesy — it's an antiarrhythmic intervention. Rough motion of cold extremities returns cold acidotic blood to the heart and triggers fibrillation.",
+      "triggerCondition": "Crew did not stop the bystander's bouncing chest compressions and performed their own rough patient transfer (lifting by extremities, jostling torso) without prioritizing horizontal gentle handling. The cold-irritable myocardium converted repeatedly back into VFib after each shock; at core temp 28°C, defibrillation was unable to maintain conversion. The patient progresses through coarse VF → fine VF with no path to ROSC absent ECMO.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 1
+        },
+        "airway": "Apneic; advanced airway eventually placed but compressions remain rough; airway suction needed for cold-water aspirate",
+        "breathing": "No spontaneous respirations; bagged at 5 bpm via advanced airway",
+        "circulation": "No pulse; refractory VF despite multiple shocks; skin profoundly cold, mottled",
+        "skin": {
+          "color": "deep mottled cyanosis",
+          "temperature": "profoundly cold — minimal active rewarming was implemented before loading",
+          "moisture": "still partially wet"
+        },
+        "pupils": "Mid-position, fixed at 4 mm bilaterally (DO NOT use as a death sign in hypothermia)",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "Core temperature still 28.0°C — minimal rewarming because the team focused on shock-stack rather than warming",
+          "Rhythm has cycled VF → brief organized → VF → fine VF repeatedly with each rough movement",
+          "Multiple shocks delivered with no sustained conversion (predictable at this core temp)",
+          "Bystander/crew rough handling — patient was lifted by ankles and wrists during sled-to-stretcher transfer",
+          "Wet clothing not yet fully removed; vapor barrier not placed"
+        ],
+        "patientSpeech": "(unresponsive)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Ventricular Fibrillation (Fine)",
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 5,
+        "spo2": 0,
+        "etco2": 10,
+        "temp": 28.1,
+        "tempF": 82.6,
+        "obstruction": 30,
+        "glucose": 96,
+        "trendTimeSeconds": 25,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recovery-stop-rough-movement",
+          "shortAction": "RECOVERY: stop all rough handling immediately; horizontal, gentle from here forward",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia 4e — patient must be kept horizontal with limited extremity motion. Returning to gentle handling is the only path back to a survivable trajectory.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "Handle the patient gently. Attempt to keep the patient in the horizontal position, especially limiting motion of the extremities to avoid increasing return of cold blood to the heart. Move the patient only when necessary, such as to remove the patient from the elements."
+        },
+        {
+          "id": "recovery-hold-shocks",
+          "shortAction": "RECOVERY: stop stacking shocks; hold defib until core >30°C",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia cardiac arrest #4 — at core <30°C, do not make further attempts at defibrillation until core >30°C. Stacked shocks at this temp do nothing.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "If defibrillation is unsuccessful and the patient's core temperature is less than 30°C (86°F), do not make further attempts at defibrillation until the core temperature has increased to greater than 30°C (86°F). Continue CPR and attempt to rewarm the patient."
+        },
+        {
+          "id": "recovery-aggressive-rewarming",
+          "shortAction": "RECOVERY: cut wet clothes, vapor barrier, heat packs with barrier, cabin >24°C, warmed fluids",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia 4c/d/j — rewarming is the central intervention that was deprioritized; restart it now and commit to it through transport.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "Prevent further heat loss by removing the patient from the environment and removing wet clothes and drying skin, insulate from the ground, shelter the patient from wind and wet conditions, and insulate the patient with dry clothing or a hypothermia wrap/blanket. Cover the patient with a vapor barrier. Initiate field-rewarming methods such as placement of large heat packs or heat blankets to the anterior chest. Warm the patient compartment of the ambulance to at least 24°C (75.2°F) during transport."
+        },
+        {
+          "id": "recovery-keep-going-ecmo",
+          "shortAction": "Continue resuscitation — 'not dead until warm and dead'; transport to ECMO-capable facility",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia cardiac arrest #8 — survival possible even with prolonged downtime; do not terminate based on time alone in a cold patient.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "Patients with severe hypothermia and arrest may benefit from resuscitation even after prolonged downtime, and survival with intact neurologic function has been observed even after prolonged resuscitation. Patients should not be considered deceased until rewarming has been attempted. Transport as soon as possible to a hospital capable of resuscitation. If cardiac arrest develops consider transport to a center capable of extracorporeal circulation (ECMO) or cardiopulmonary bypass (if feasible)."
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "standard-acls-premature-termination",
+      "name": "Standard ACLS — terminated early",
+      "description": "BRANCH (judgment error): The crew ran textbook normothermic ACLS — stacked shocks every 2 minutes, epinephrine 1 mg every 3–5 minutes at standard intervals, no doubled spacing for the cold patient, no core temperature obtained, no aggressive rewarming, wet clothing left in place. After approximately 20 minutes with the rhythm degrading from VF to fine VF to apparent asystole, the medic called medical control for termination of resuscitation, citing 'asystole 20 minutes, no ROSC.' This is the most dangerous failure mode in hypothermic arrest: the patient is not actually dead. Hypothermia protocol explicitly states a patient cannot be declared dead until rewarming has been attempted, AND apparent asystole at low core temp may simply be a profoundly slow rhythm that the monitor cannot resolve. The teaching beat: 'not dead until warm and dead' is a literal protocol rule, not a slogan.",
+      "triggerCondition": "Crew ran normothermic ACLS spacing (epi q3–5 min, stacked shocks q2 min), did not measure core temperature, did not commit to active rewarming (wet clothes remained, no heat packs, ambient cabin), and called medical control for termination after ~20 minutes citing 'asystole' — without recognizing that asystole at low core temp in a submersion victim is not a death determination.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 1
+        },
+        "airway": "Advanced airway in place; ventilated at normothermic rate (10 bpm) — hypocarbic, which lowered VF threshold further",
+        "breathing": "Ventilated 10 bpm; chest rise symmetric; lungs with rhonchi",
+        "circulation": "No pulse on standard short pulse checks (60-second check not performed); skin still profoundly cold, mottled, wet clothing still in place",
+        "skin": {
+          "color": "deep mottled cyanosis",
+          "temperature": "still profoundly cold — no rewarming initiated",
+          "moisture": "wet — clothes never removed"
+        },
+        "pupils": "Mid-position, fixed (which crew misread as a death indicator — false in hypothermia)",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "No core temperature measured at any point during the 20 minutes",
+          "5 standard 200 J shocks delivered at 2-minute intervals — all unsuccessful (predictable at core <30°C)",
+          "Epinephrine 1 mg given 4 times at 3–5 min intervals (standard, not doubled) — accumulated, ineffective in cold patient",
+          "Wet clothing never fully removed; no vapor barrier; no heat packs; ambient cabin temp",
+          "Final rhythm: apparent asystole — which in hypothermia may be a profoundly slow rhythm below the monitor's resolution",
+          "Medical control called for termination — termination granted on incomplete data (no temperature)"
+        ],
+        "patientSpeech": "(unresponsive)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Asystole",
+        "ecgWaveform": 3,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 6,
+        "temp": 27.6,
+        "tempF": 81.7,
+        "obstruction": 30,
+        "glucose": 96,
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recovery-measure-core-temp",
+          "shortAction": "RECOVERY: obtain core temperature immediately; reframe as hypothermic arrest, not standard arrest",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia Assessment #3 — core temperature drives every decision; without it, you cannot apply the protocol. MATC Hypothermia cardiac arrest #8 — patient cannot be declared deceased until rewarming has been attempted.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "If possible and reliable, EMS clinicians should perform core body temperature measurements and categorize patients into one of the three follow levels of hypothermia. Patients should not be considered deceased until rewarming has been attempted."
+        },
+        {
+          "id": "recovery-restart-rewarming-cpr",
+          "shortAction": "RECOVERY: do NOT terminate; restart aggressive rewarming + continue CPR",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia cardiac arrest #8 — prolonged downtime can still produce good neurologic outcomes if the patient is hypothermic. Apparent asystole at low core temp is not a termination criterion.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "Patients with severe hypothermia and arrest may benefit from resuscitation even after prolonged downtime, and survival with intact neurologic function has been observed even after prolonged resuscitation. Patients should not be considered deceased until rewarming has been attempted."
+        },
+        {
+          "id": "recovery-double-med-intervals",
+          "shortAction": "RECOVERY: stop standard-spaced epi; either withhold or double intervals until core >30°C → 35°C",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia cardiac arrest #6 — meds withheld until core >30°C, then doubled intervals until 35°C. Standard intervals at low core lead to drug accumulation without efficacy.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "There is little evidence to guide use of medications in severe hypothermia with cardiac arrest, however 2010 AHA updates recommend use of vasopressors according to standard ACLS protocols while the 2014 Alaska guidelines and the Wilderness Medical Society advise medications should be withheld until the patient's core temperature is greater than 30°C (86°F). Above 30°C (86°F), intervals between medication provision should be doubled until the patient reaches 35°C (95°F)."
+        },
+        {
+          "id": "recovery-halve-ventilation",
+          "shortAction": "RECOVERY: halve ventilation rate (5 bpm via advanced airway); avoid hypocarbia-induced VF",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia cardiac arrest #5 — half rate for advanced airway; hyperventilation lowers VF threshold in the cold patient.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "If the patient has an advanced airway, ventilate at half the rate recommended for a normothermic patient to prevent hyperventilation. If EtCO2 is available, ventilate to maintain normal EtCO2 levels."
+        },
+        {
+          "id": "recovery-ecmo-transport",
+          "shortAction": "RECOVERY: transport to ECMO-capable facility; document Utstein elements; warm aggressively",
+          "priority": "critical",
+          "rationale": "MATC Hypothermia 4i — extracorporeal rewarming is the definitive intervention. MATC Drowning Key Documentation — submersion time, water temp, core temp must be communicated.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure",
+          "protocolExcerpt": "Transport as soon as possible to a hospital capable of resuscitation. If cardiac arrest develops consider transport to a center capable of extracorporeal circulation (ECMO) or cardiopulmonary bypass (if feasible)."
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

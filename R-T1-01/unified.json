@@ -1,0 +1,561 @@
+{
+  "meta": {
+    "scenarioId": "R-T1-01",
+    "id": "R-T1-01",
+    "name": "Asthma Exacerbation, Moderate — Adult Responds to DuoNeb",
+    "version": 1,
+    "difficulty": "beginner",
+    "category": "Respiratory",
+    "protocols": [
+      "resp-respiratory-distress",
+      "resp-airway-management"
+    ],
+    "totalTimeSeconds": 900,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "respiratory",
+      "asthma",
+      "bronchospasm",
+      "DuoNeb",
+      "albuterol",
+      "ipratropium",
+      "dexamethasone",
+      "assessment",
+      "auscultation",
+      "tier-1",
+      "beginner"
+    ]
+  },
+  "patient": {
+    "name": "Marcus Holloway",
+    "age": 47,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 84,
+    "weightLbs": 185,
+    "height": 178,
+    "chiefComplaint": "Shortness of breath with audible wheezing for ~90 minutes, not relieved by home rescue inhaler. Known asthmatic.",
+    "history": {
+      "hpi": "47-year-old male with longstanding asthma since childhood developed progressive shortness of breath and wheezing this morning after working outside in the yard (heavy pollen, freshly cut grass). Symptoms started as mild chest tightness about two hours before EMS arrival. He used his albuterol HFA rescue inhaler twice (2 puffs each, ~45 minutes apart) with only brief partial relief. He came inside, sat down, and called his wife at work when he found himself winded just walking to the kitchen. He denies chest pain, fever, recent illness, leg swelling, hemoptysis, or sick contacts. He reports a similar exacerbation 8 months ago that resolved with an ED nebulizer treatment and a course of oral steroids. Last hospital admission for asthma was over 5 years ago; never intubated; never ICU.",
+      "pastMedical": [
+        "Asthma since childhood (well-controlled on inhaled corticosteroid)",
+        "Seasonal allergic rhinitis",
+        "Hypertension"
+      ],
+      "medications": [
+        "Albuterol HFA 90 mcg, 2 puffs PRN (used 4 puffs total in the last 90 minutes)",
+        "Fluticasone/salmeterol (Advair) 250/50 DPI, 1 puff BID",
+        "Lisinopril 20 mg PO daily",
+        "Cetirizine 10 mg PO daily"
+      ],
+      "allergies": [
+        "NKDA"
+      ],
+      "lastOralIntake": "Coffee and toast ~3 hours ago",
+      "events": "Worked in yard this morning (high pollen, cut grass) → onset of chest tightness and wheezing → home albuterol with only partial relief → progressive dyspnea → wife came home and called 911."
+    }
+  },
+  "scene": {
+    "dispatch": "Dispatch: 47-year-old male, difficulty breathing, conscious and talking. Single-family residence.",
+    "location": "Single-family home, living room. Patient seated on couch leaning forward with hands on knees. Lighting is good; clear path to door and to the cot.",
+    "time": "Saturday, 10:45, warm spring morning",
+    "safety": "Scene safe. No pets in the room. Wife is calm and helpful.",
+    "bystanders": "Wife present, gives clear history. She brought down his Advair and the albuterol MDI; reports he used the rescue inhaler twice and 'it's never not worked before.'",
+    "visualCues": [
+      "Adult male seated upright on couch, leaning forward, hands on knees (tripod-ish)",
+      "Speaking in short phrases — 3-5 words at a time, pausing to breathe",
+      "Faint audible wheezing across the room on expiration",
+      "Mild use of accessory neck muscles; no nasal flaring; no cyanosis",
+      "Albuterol MDI and Advair inhaler on the coffee table",
+      "Yard tools and grass clippings visible through open back door"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a 47-year-old known asthmatic seated upright on the couch in mild-to-moderate distress. He speaks in short 3-5 word phrases, has audible expiratory wheezing, mild accessory muscle use, and is anxious but cooperative. Skin is warm, pink, slightly moist; no cyanosis. This is the assessment window: the student needs to put hands on the patient and a stethoscope on the chest BEFORE reaching for the nebulizer. Auscultation, work-of-breathing assessment, speech assessment, and SpO2/EtCO2 baseline come first. The teaching point of this Tier 1 scenario is that a proper respiratory assessment guides treatment and lets the crew measure a response.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent — speaking, no stridor, no drooling",
+        "breathing": "RR 26, mild-to-moderate distress with mild accessory neck muscle use, prolonged expiratory phase, audible expiratory wheezing",
+        "circulation": "Strong regular radial pulse; warm extremities; cap refill < 2 sec",
+        "skin": {
+          "color": "pink",
+          "temperature": "warm",
+          "moisture": "slightly diaphoretic"
+        },
+        "pupils": "Equal at 4 mm, briskly reactive",
+        "motorFunction": "Symmetric, intact, follows commands",
+        "otherFindings": [
+          "Bilateral diffuse expiratory wheezing in all lung fields (anterior and posterior, upper and lower); air entry diminished but present",
+          "Prolonged expiratory phase on auscultation",
+          "Speaks in short 3-5 word phrases between breaths",
+          "Mild scalene/SCM use; no intercostal retractions; no paradoxical breathing",
+          "Capnography (when applied): shark-fin waveform pattern, EtCO2 ~34 mmHg",
+          "No urticaria, no facial/tongue swelling, no fever — argues against anaphylaxis or pneumonia as primary"
+        ],
+        "patientSpeech": "Used my inhaler twice … didn't really help … been like this … couple hours."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 108,
+        "bpSys": 144,
+        "bpDia": 88,
+        "respRate": 26,
+        "spo2": 92,
+        "etco2": 34,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 40,
+        "glucose": 112,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "primary-survey",
+          "shortAction": "Primary survey (ABC); identify moderate respiratory distress with bronchospasm",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Care Goals + Pertinent Assessment — recognize bronchospastic etiology (wheezing, prolonged expiration, asthma history) and judge severity before treating.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Patient Care Goals: Assure adequate oxygenation and ventilation. Recognize impending respiratory failure. Promptly identify and intervene for patients who require escalation of therapy. Deliver appropriate therapy by differentiating likely cause of respiratory distress."
+        },
+        {
+          "id": "history-sample",
+          "shortAction": "Targeted history: onset, triggers, prior inhaler use, prior intubation/ICU, allergies",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Assessment 1 — directed history (onset, triggers, prior treatments, hospitalization/intubation history) drives risk stratification and disposition.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "History: Onset of symptoms. Concurrent symptoms (e.g., fever, cough, rhinorrhea, tongue/lip swelling, rash, labored breathing, foreign body aspiration). Usual triggers of symptoms (e.g., cigarette smoke, change in weather, upper respiratory infections, exercise). Treatments prior to EMS: Oxygen, inhaler, nebulizer, other treatments, chronic or recent steroids. Hospitalizations: Number of emergency department visits in the past year, number of hospital admissions in the past year, number of ICU admissions (ever), previously intubated (ever)."
+        },
+        {
+          "id": "auscultate-before",
+          "shortAction": "Auscultate all lung fields (anterior + posterior, upper/middle/lower) BEFORE treatment",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Assessment 2b/c — baseline air entry and breath sounds in multiple fields are the reference for measuring response to bronchodilator; also rules out unilateral findings (foreign body, pneumothorax).",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Exam: Air entry (normal vs. diminished, prolonged expiratory phase). Breath sounds (wheezes, crackles, rales, rhonchi, diminished, clear). Key Documentation Elements: Document key aspects of the exam at baseline and after each intervention: Respiratory rate; Oxygen saturation; EtCO2/waveform shape; Use of accessory muscles; Breath sounds and quality; Mental status; Response to interventions."
+        },
+        {
+          "id": "assess-work-of-breathing",
+          "shortAction": "Assess work of breathing: speech, accessory muscle use, retractions, mental status",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Assessment 2f — work-of-breathing signs (speech, accessory muscle use, retractions, mentation) are the key severity markers in bronchospasm.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Signs of distress include: Apprehension, anxiety, combativeness. Hypoxia (less than 90% oxygen saturation). Intercostal/subcostal/supraclavicular retractions, accessory muscle use. Grunting, stridor, inability to speak full sentences. Nasal flaring. Cyanosis."
+        },
+        {
+          "id": "monitor-spo2-etco2",
+          "shortAction": "Apply continuous SpO2 and waveform capnography; document baseline",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Monitoring 2a + Pertinent Assessment — SpO2 and capnography are routine in respiratory complaints; shark-fin waveform confirms bronchospasm.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Monitoring: Pulse oximetry and EtCO2 should be routinely used as adjuncts to other forms of monitoring in patients with respiratory complaints. Pertinent Assessment Findings: A 'shark fin' on waveform capnography suggests significant bronchospasm and obstructive physiology."
+        },
+        {
+          "id": "supplemental-oxygen",
+          "shortAction": "Supplemental O2 (nasal cannula → NRB) titrated to SpO2 94–98%",
+          "priority": "important",
+          "rationale": "MATC Respiratory Distress Treatment 1a — supplemental O2 titrated to 94–98%; escalate from NC as needed.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Airway: Give supplemental oxygen for dyspnea to a target of 94–98% saturation. Escalate from a nasal cannula as needed to reach this goal."
+        },
+        {
+          "id": "position-of-comfort",
+          "shortAction": "Allow position of comfort (upright/tripod); do not force supine",
+          "priority": "important",
+          "rationale": "MATC Airway Management 3d — position of comfort improves respiratory mechanics in bronchospasm.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Patient positioning can significantly impact respiratory mechanics. Patients with severe bronchospasm should be left in the position of comfort (perhaps tripod) whenever possible. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics. This can both improve the ability to ventilate and limit aspiration."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "duoneb-after-assessment",
+          "if": "Auscultated and assessed before treatment",
+          "condition": "Crew completes a proper respiratory assessment (lung sounds in multiple fields, work of breathing, speech, SpO2/EtCO2 baseline) and THEN initiates DuoNeb. They have a documented baseline against which to measure response.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["auscultate-before", "assess-work-of-breathing", "monitor-spo2-etco2"]
+        },
+        {
+          "targetPhaseId": "neb-without-auscultation",
+          "if": "Neb given without auscultation first",
+          "condition": "Crew reaches reflexively for the nebulizer based on the patient's report and audible wheezing, without auscultating in multiple lung fields first. Treatment may still work, but the crew has no baseline to measure response against and risks missing a unilateral finding (foreign body, pneumothorax) that would change the plan.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["auscultate-before"]
+        }
+      ]
+    },
+    {
+      "id": "duoneb-after-assessment",
+      "name": "DuoNeb after proper assessment",
+      "description": "Baseline assessment is documented: bilateral diffuse expiratory wheezing, prolonged expiratory phase, RR 26, SpO2 92% on room air, mild accessory muscle use, speaking in short phrases. Crew initiates DuoNeb (albuterol 5 mg + ipratropium 0.5 mg nebulized) with O2 driving the neb, gives oral dexamethasone, and begins setting up IV. The teaching point is that this is the right textbook moderate-asthma treatment AND that the next critical step is to reassess after treatment — not just hand the patient off improved-looking.",
+      "triggerCondition": "Crew completed a proper respiratory assessment with auscultation in multiple lung fields, baseline work-of-breathing, speech, and SpO2/EtCO2 documented, and is now initiating bronchodilator with a measurable baseline.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "RR 24-26, ongoing mild accessory muscle use, prolonged expiratory phase, neb mask in place delivering DuoNeb",
+        "circulation": "Strong regular pulse; warm pink extremities",
+        "skin": {
+          "color": "pink",
+          "temperature": "warm",
+          "moisture": "slightly moist"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Symmetric, intact",
+        "otherFindings": [
+          "Bilateral wheezing on neb mask; air entry similar to baseline",
+          "Patient holds mask without prompting; mild tremor of hands appearing (expected albuterol side effect)",
+          "Capnography still shark-fin; EtCO2 mid-30s",
+          "Calmer affect; understands plan"
+        ],
+        "patientSpeech": "Tastes funny … but feels … a little easier already."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 116,
+        "bpSys": 146,
+        "bpDia": 86,
+        "respRate": 24,
+        "spo2": 95,
+        "etco2": 35,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 35,
+        "glucose": 112,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "duoneb",
+          "shortAction": "Albuterol 5 mg + Ipratropium 0.5 mg nebulized (DuoNeb), O2-driven; albuterol may repeat unlimited frequency, ipratropium up to 3 doses",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress 4a — albuterol 5 mg neb for any patient in distress with bronchospasm signs; ipratropium 0.5 mg up to 3 doses with albuterol.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Inhaled Medications: While albuterol 2.5 mg nebulized is usually sufficient for mild wheezing without clinical distress, albuterol 5 mg nebulized (or 6 puffs metered dose inhaler) should be administered to all patients in respiratory distress with signs of bronchospasm (e.g., known asthmatics, quiet wheezers). Repeat at this dose with unlimited frequency for ongoing respiratory distress. Ipratropium 0.5 mg nebulized should be given up to 3 doses in conjunction with albuterol."
+        },
+        {
+          "id": "dexamethasone",
+          "shortAction": "Dexamethasone 10 mg PO (84 kg × 0.6 mg/kg = 50.4 mg → cap at 16 mg max); single dose",
+          "priority": "important",
+          "rationale": "MATC Respiratory Distress 4b — dexamethasone 0.6 mg/kg PO max 16 mg, single-dose effective per Note 3. (Note: dose is capped at the 16 mg protocol maximum since the patient is large enough that the per-kg calc exceeds the cap — the student should write 16 mg, not 50.4 mg. A practical 10 mg single PO dose is also commonly stocked.)",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Steroids should be administered in the prehospital setting. PO steroid options for patients not critical enough to require IV placement include: Dexamethasone (0.6 mg/kg, maximum dose of 16 mg) PO solution or IV solution given PO, or Prednisolone/prednisone (1 mg/kg, maximum dose 60 mg) PO. Notes/Educational Pearls: Single dose dexamethasone has been found equally effective as several days dosing of other steroids, so dexamethasone is preferred over other po steroids."
+        },
+        {
+          "id": "iv-access",
+          "shortAction": "Establish IV access (saline lock or KVO) for med readiness if escalation needed",
+          "priority": "important",
+          "rationale": "MATC Respiratory Distress Treatment 3 — IV access should be placed when IV medication may be indicated (mag, IV steroid) or for hydration.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "IV Access and Fluids – IV access should be placed when IV medication administration is indicated, or when there are clinical concerns of dehydration so that IV fluids can be administered."
+        },
+        {
+          "id": "continuous-monitoring",
+          "shortAction": "Continuous SpO2, EtCO2, ECG monitoring during nebulizer (albuterol → tachycardia/tremor)",
+          "priority": "important",
+          "rationale": "MATC Respiratory Distress Monitoring 2a/2b — continuous SpO2/EtCO2; cardiac monitoring as adjunct; albuterol-induced tachycardia/tremor is expected and not a reason to stop.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Pulse oximetry and EtCO2 should be routinely used as adjuncts to other forms of monitoring in patients with respiratory complaints. Continuous cardiac monitoring may be indicated in patients with respiratory distress associated with suspected acute or decompensated congestive heart failure (CHF) or dysrhythmia."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "reassessed-after-neb",
+          "if": "Reassessed after neb (lung sounds + vitals)",
+          "condition": "Crew reassesses after the first nebulizer — repeats auscultation in the same fields used at baseline, rechecks RR, SpO2, EtCO2 waveform, and speech. Findings: improved bilateral air entry, less prolonged expiratory phase, lighter wheezing, SpO2 95%, EtCO2 waveform less shark-fin, patient speaking in full sentences. This is the right answer.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["duoneb"]
+        },
+        {
+          "targetPhaseId": "no-reassessment-deterioration",
+          "if": "Did not reassess after neb",
+          "condition": "Crew started the nebulizer and moved to packaging/loading without repeating auscultation, speech check, or vital reassessment. They miss that the patient's response is actually inadequate — wheezing tighter on the left, accessory muscle use increasing, SpO2 dropping — meaning the patient is progressing toward severe exacerbation and needs escalation (continuous neb, mag, possibly IM epi) rather than routine transport.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["duoneb"]
+        }
+      ]
+    },
+    {
+      "id": "reassessed-after-neb",
+      "name": "Reassessed after neb; improved",
+      "description": "Post-DuoNeb reassessment is documented: bilateral air entry has improved, wheezing is now mild and only on end-expiration, prolonged expiratory phase has largely resolved, RR is down to 18, SpO2 is 97% on the nebulizer flow, EtCO2 waveform has normalized, and the patient is speaking in full sentences. Mild albuterol tremor and modestly increased HR are expected. Crew transports on continuous albuterol-as-needed, with documented response, and gives a clean bedside handoff with the full timeline.",
+      "triggerCondition": "Crew repeated auscultation, work-of-breathing, speech, and vital sign assessment after the first DuoNeb and documented clear clinical improvement — meeting the protocol's expectation of reassessment after each intervention.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "RR 18, minimal accessory muscle use, expiratory phase near normal, light end-expiratory wheeze only",
+        "circulation": "Strong regular pulse; warm pink extremities",
+        "skin": {
+          "color": "pink",
+          "temperature": "warm",
+          "moisture": "dry"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Intact",
+        "otherFindings": [
+          "Speaking in full sentences with appropriate breaks",
+          "Mild fine tremor of hands (expected albuterol side effect)",
+          "Capnography waveform normal shape, EtCO2 36",
+          "Reports symptoms 'much better, like 80%'"
+        ],
+        "patientSpeech": "That helped a lot. I still feel a little tight, but I can talk now."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 110,
+        "bpSys": 138,
+        "bpDia": 82,
+        "respRate": 18,
+        "spo2": 97,
+        "etco2": 36,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 15,
+        "glucose": 112,
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "reassess-after-treatment",
+          "shortAction": "Reassess lung sounds, RR, SpO2, EtCO2, speech, work of breathing AFTER neb; compare to baseline",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Key Documentation + Performance Measures — reassessment after each intervention is the protocol expectation; allows measurement of response and decision-making.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Document key aspects of the exam at baseline and after each intervention: Respiratory rate; Oxygen saturation; EtCO2/waveform shape; Use of accessory muscles; Breath sounds and quality; Mental status; Response to interventions. Performance Measures: Time to improved SPO2 and/or decreased respiratory rate. Normalizing change in vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) temperature, O2 saturation, and capnography values with treatment."
+        },
+        {
+          "id": "continue-neb-prn",
+          "shortAction": "Continue/repeat albuterol 5 mg neb PRN en route; ipratropium up to 3 total doses if ongoing wheeze",
+          "priority": "important",
+          "rationale": "MATC Respiratory Distress 4a — albuterol may be repeated unlimited frequency for ongoing distress.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Repeat at this dose with unlimited frequency for ongoing respiratory distress. Ipratropium 0.5 mg nebulized should be given up to 3 doses in conjunction with albuterol."
+        },
+        {
+          "id": "transport-handoff",
+          "shortAction": "Transport to ED; bedside handoff with timeline + before/after lung sounds and vitals",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Performance Measures — documentation of bronchodilator time and treatment response; clean handoff supports continuity of care.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Performance Measures: Time to bronchodilator administration in patients with wheezing. Percentage of asthma/COPD patients receiving steroids and bronchodilators. Time to improved SPO2 and/or decreased respiratory rate."
+        }
+      ]
+    },
+    {
+      "id": "neb-without-auscultation",
+      "name": "Neb given without auscultation",
+      "description": "Crew skipped a proper baseline assessment and went straight to the nebulizer based on audible wheezing and the patient's history. The DuoNeb does help — the patient feels somewhat better — but no one ever auscultated. There was a left-sided localized decrease in air entry that they did not detect, and no baseline lung-sound documentation to compare against. They also don't know if EtCO2 waveform has changed. This is a 'lucky outcome' branch: the patient is improving for the right protocol reason, but the crew's documentation and decision-making are missing the pieces the protocol explicitly requires.",
+      "triggerCondition": "Crew initiated nebulizer treatment without auscultating lung fields or documenting baseline breath sounds/work-of-breathing, skipping the protocol's exam expectations.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "RR 22, mild accessory muscle use, neb mask in place",
+        "circulation": "Strong regular pulse",
+        "skin": {
+          "color": "pink",
+          "temperature": "warm",
+          "moisture": "moist"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Intact",
+        "otherFindings": [
+          "No documented baseline lung sounds",
+          "Patient subjectively reports feeling somewhat better on neb",
+          "Mild left-sided decreased air entry — NOT noticed by crew",
+          "No baseline EtCO2 waveform to compare against current shape"
+        ],
+        "patientSpeech": "I think it's helping a little … hard to say."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 114,
+        "bpSys": 142,
+        "bpDia": 84,
+        "respRate": 22,
+        "spo2": 94,
+        "etco2": 35,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 30,
+        "glucose": 112,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recover-auscultate",
+          "shortAction": "Stop, auscultate all lung fields now; document findings; note any unilateral asymmetry",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Assessment 2b/2c + Documentation — baseline breath sounds and air entry must be documented; unilateral findings change diagnostic possibilities (foreign body, pneumothorax).",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Exam: Air entry (normal vs. diminished, prolonged expiratory phase). Breath sounds (wheezes, crackles, rales, rhonchi, diminished, clear). Key Documentation Elements: Document key aspects of the exam at baseline and after each intervention: Respiratory rate; Oxygen saturation; EtCO2/waveform shape; Use of accessory muscles; Breath sounds and quality; Mental status; Response to interventions."
+        },
+        {
+          "id": "recover-monitor",
+          "shortAction": "Apply continuous SpO2 + waveform capnography if not already; document waveform shape",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Monitoring 2a — SpO2 + EtCO2 are routine adjuncts; waveform helps distinguish bronchospasm.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Monitoring: Pulse oximetry and EtCO2 should be routinely used as adjuncts to other forms of monitoring in patients with respiratory complaints. Pertinent Assessment Findings: A 'shark fin' on waveform capnography suggests significant bronchospasm and obstructive physiology."
+        },
+        {
+          "id": "recover-document-response",
+          "shortAction": "Document treatment response (RR, SpO2, EtCO2, lung sounds, speech) against best available baseline",
+          "priority": "important",
+          "rationale": "MATC Respiratory Distress Documentation/Performance Measures — response to treatment must be documented; without a baseline, document going forward and acknowledge the gap.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Document key aspects of the exam at baseline and after each intervention: Respiratory rate; Oxygen saturation; EtCO2/waveform shape; Use of accessory muscles; Breath sounds and quality; Mental status; Response to interventions."
+        }
+      ]
+    },
+    {
+      "id": "no-reassessment-deterioration",
+      "name": "No reassessment; deterioration missed",
+      "description": "Crew started the DuoNeb and immediately moved to packaging the patient for transport without reassessing. They miss that the patient is in fact NOT responding adequately: wheezing is tighter, accessory muscle use is up, RR has climbed, and SpO2 is trending down. This is moderate-to-severe asthma progressing toward severe exacerbation that needs escalation per protocol (continuous neb, IV mag, consider IM epi for impending failure) — and the crew is about to walk a deteriorating patient down the front steps without knowing it. The teaching point: reassessment after each intervention is the trigger for escalation.",
+      "triggerCondition": "Crew did not repeat auscultation, work-of-breathing, or vital sign assessment after the first nebulizer and missed clear clinical deterioration — protocol requires reassessment after each intervention.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 4,
+          "motor": 6
+        },
+        "airway": "Patent but patient working harder",
+        "breathing": "RR 32, increasing accessory muscle use (now scalene + intercostal), prolonged expiratory phase worsening, audible wheeze louder, now speaking 1-2 words at a time",
+        "circulation": "Strong rapid pulse; warm",
+        "skin": {
+          "color": "pink with mild perioral pallor",
+          "temperature": "warm",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Intact but anxious",
+        "otherFindings": [
+          "Wheezing now tighter; air entry diminishing — beginning of 'quiet chest'",
+          "Capnography: shark-fin more pronounced; EtCO2 climbing toward normal-high",
+          "Patient visibly more anxious, less interactive",
+          "SpO2 dropping despite NRB"
+        ],
+        "patientSpeech": "Can't … catch it … help …"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 128,
+        "bpSys": 150,
+        "bpDia": 90,
+        "respRate": 32,
+        "spo2": 89,
+        "etco2": 42,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 65,
+        "glucose": 112,
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-deterioration",
+          "shortAction": "Recognize deterioration: rising RR, falling SpO2, normal-rising EtCO2 with distress = impending failure",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress Safety #1 + Care Goals — normal/rising EtCO2 with tachypnea and distress is an indicator of impending respiratory failure.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Patient Safety Considerations: Normal EtCO2 (35–45 mmHg) with tachypnea and respiratory distress is an indicator of impending respiratory failure. Patient Care Goals: Recognize impending respiratory failure. Promptly identify and intervene for patients who require escalation of therapy."
+        },
+        {
+          "id": "continuous-neb",
+          "shortAction": "Continuous albuterol 5 mg nebulized (unlimited frequency); ipratropium up to 3 doses",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress 4a — albuterol may be repeated unlimited frequency for ongoing distress.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Albuterol 5 mg nebulized (or 6 puffs metered dose inhaler) should be administered to all patients in respiratory distress with signs of bronchospasm (e.g., known asthmatics, quiet wheezers). Repeat at this dose with unlimited frequency for ongoing respiratory distress. Ipratropium 0.5 mg nebulized should be given up to 3 doses in conjunction with albuterol."
+        },
+        {
+          "id": "magnesium-iv",
+          "shortAction": "Magnesium sulfate 2 g IV (84 kg × 40 mg/kg = 3360 mg → cap at 2 g max) over 10–15 min",
+          "priority": "critical",
+          "rationale": "MATC Respiratory Distress 4c — magnesium 40 mg/kg IV max 2 g over 10–15 min for severe bronchoconstriction / impending failure.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Magnesium sulfate (40 mg/kg IV, maximum dose of 2 g) over 10–15 minutes should be administered for severe bronchoconstriction and concern for impending respiratory failure. Consider decreased dose of 1 g IV for geriatric patients."
+        },
+        {
+          "id": "consider-im-epi",
+          "shortAction": "Consider Epinephrine 0.3 mg IM (84 kg × 0.01 mg/kg = 0.84 mg → cap at 0.3 mg max) if no improvement",
+          "priority": "important",
+          "rationale": "MATC Respiratory Distress 4d — IM epi 0.01 mg/kg of 1 mg/mL, max 0.3 mg, for impending respiratory failure as adjunct when no improvement with above.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)",
+          "protocolExcerpt": "Epinephrine (0.01 mg/kg of 1 mg/mL solution IM, maximum dose of 0.3 mg) should only be administered for impending respiratory failure as adjunctive therapy when there are no clinical signs of improvement with the above treatments."
+        }
+      ]
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

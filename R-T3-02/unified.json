@@ -1,0 +1,733 @@
+{
+  "meta": {
+    "id": "R-T3-02",
+    "name": "Failed First Airway Attempt — Septic Pneumonia with Predicted Difficult Airway",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Respiratory",
+    "protocols": [
+      "resp-airway-management",
+      "resp-respiratory-distress",
+      "medical-shock"
+    ],
+    "totalTimeSeconds": 1800,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "airway management",
+      "RSI",
+      "failed airway",
+      "difficult airway",
+      "bougie",
+      "supraglottic airway",
+      "surgical airway",
+      "CICO",
+      "DOPE",
+      "esophageal intubation",
+      "sepsis",
+      "pneumonia",
+      "tier-3",
+      "leadership"
+    ]
+  },
+  "patient": {
+    "name": "Roland Pakulski",
+    "age": 64,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 95,
+    "weightLbs": 209,
+    "height": 175,
+    "chiefComplaint": "Severe respiratory failure from septic pneumonia. Patient is hypoxic, hypercapnic, and obtunded on BVM/PEEP, requiring an advanced airway. Multiple anatomic predictors of a difficult airway (short thick neck, Mallampati 4, full beard, recessed jaw).",
+    "history": {
+      "hpi": "64-year-old male with 6 days of progressive cough, fever to 102.4°F, and worsening dyspnea, ultimately becoming altered overnight. Wife called 911 when she could not rouse him this morning. He was diagnosed with right lower lobe pneumonia at urgent care 3 days ago and prescribed azithromycin, which he has been taking. He has not eaten or had fluids in roughly 18 hours. History of COPD (former 40 pack-year smoker, quit 2019), Type 2 diabetes, hypertension, and obstructive sleep apnea on home CPAP at night. He is large-framed with a short, thick neck, a full beard, a receding jaw, and snores heavily — all anatomic markers consistent with a difficult mask seal AND a difficult laryngoscopic view. On EMS arrival he is obtunded (GCS 7), tachypneic with shallow agonal-appearing respirations, SpO2 84% on a tight-seal two-person BVM with PEEP valve at 5 cmH2O and 15 L/min O2, EtCO2 62 with a shark-fin overlay, BP 88/52, HR 128 sinus tach, febrile, and mottled — septic shock from pneumonia with impending respiratory arrest.",
+      "pastMedical": [
+        "Severe community-acquired pneumonia (RLL) — diagnosed 3 days ago at urgent care",
+        "COPD (former 40 pack-year smoker, quit 2019)",
+        "Type 2 diabetes mellitus, insulin-dependent",
+        "Hypertension",
+        "Obstructive sleep apnea on home CPAP",
+        "BMI 31 (obese)",
+        "History of difficult IV access per wife (multiple sticks on prior admissions)"
+      ],
+      "medications": [
+        "Azithromycin 500 mg PO daily (day 3 of 5)",
+        "Insulin glargine 30 units SQ qHS",
+        "Insulin lispro sliding scale with meals",
+        "Lisinopril 20 mg PO daily",
+        "Metformin 1000 mg PO BID",
+        "Tiotropium (Spiriva) inhaled daily",
+        "Albuterol HFA MDI PRN"
+      ],
+      "allergies": [
+        "Penicillin — rash"
+      ],
+      "lastOralIntake": "Sips of water and a few crackers ~18 hours ago; nothing since",
+      "events": "Wife reports he has been coughing and feverish for 6 days, taking azithromycin, but became confused last night and was 'breathing weird and just not waking up' this morning. She found him slumped in the recliner and called 911."
+    }
+  },
+  "scene": {
+    "dispatch": "Dispatch: 64-year-old male, unresponsive, abnormal breathing, possible respiratory failure. ALS requested. Single-family home.",
+    "location": "Single-story single-family home. Patient slumped in a reclining chair in the living room, head tilted back, jaw lax. CPAP machine and oxygen concentrator visible on the side table. Adequate space to lower patient to the floor.",
+    "time": "Tuesday, 06:18, early morning. Daylight breaking.",
+    "safety": "Scene safe. No pets, no smoke, no fall hazards. Wife cooperative and able to assist with history.",
+    "bystanders": "Wife at bedside, holding pill bottles and the urgent care discharge paperwork from 3 days ago. She confirms PMH and last oral intake.",
+    "visualCues": [
+      "Obese male slumped in recliner, full beard, head tilted back, mouth open",
+      "Snoring respirations until BVM is applied, then poor chest rise with each squeeze",
+      "Empty water glass and cracker plate on the side table; tissue box and bottles of azithromycin and insulin nearby",
+      "CPAP machine on side table with the mask sitting unused on top",
+      "Mottled knees and a faint petechial rash visible on the chest",
+      "Wedding ring on a swollen left ring finger"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives to a 64-year-old man in late septic shock from pneumonia with frank respiratory failure: GCS 7, RR 30 and shallow, SpO2 84% on a two-person BVM with a 5 cmH2O PEEP valve and 15 L/min O2, EtCO2 62 with a shark-fin overlay, BP 88/52, HR 128 sinus tach, mottled and febrile. He needs an advanced airway — but he carries every classic difficult-airway predictor: BMI 31, short thick neck, Mallampati 4, a full beard (poor mask seal), and a receding jaw. The teaching beat for Tier 3 is that Plan B and Plan C must exist BEFORE Plan A is started: identify the difficult airway, optimize BVM/PEEP and pre-oxygenation, set a hard attempt limit (2 attempts then SGA), have a bougie and an SGA prepped and accessible, and verbalize the CICO bail-out before the first attempt. The default arc is: pre-intubation optimization → first laryngoscopy attempt fails (cannot visualize cords) → restore oxygenation between attempts → second attempt succeeds with bougie/video/positioning adjustments. Two judgment-error branches: (1) tube fixation — repeated attempts without restoring oxygenation, sats crash to 70 then 60, peri-arrest; recovery requires stopping, oxygenating, placing an SGA. (2) Missed esophageal intubation — first attempt feels right, but EtCO2 is flat, no chest rise, gastric sounds; if the student misses confirmation and continues to ventilate, vomiting + further desat → pull, oxygenate, reinsert.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": {
+          "eye": 1,
+          "verbal": 2,
+          "motor": 4
+        },
+        "airway": "Partially obstructed by soft tissue and lax tongue; snoring respirations until OPA and BVM applied; full beard interfering with mask seal; short thick neck; receding jaw; Mallampati 4 on inspection with tongue depressor; predicted difficult bag AND difficult laryngoscopy",
+        "breathing": "RR 30, shallow and ineffective, paradoxical abdominal motion, accessory muscle use; coarse rhonchi and rales in right lower lobe; diminished air entry on the left; two-person BVM with PEEP 5 cmH2O at 15 L/min produces poor chest rise even with optimal seal",
+        "circulation": "Central pulses palpable but weak, peripheral pulses thready, capillary refill 5 seconds, mottled knees",
+        "skin": {
+          "color": "pale and mottled; central cyanosis at lips",
+          "temperature": "warm trunk, cool extremities",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal at 4 mm, sluggish bilaterally",
+        "motorFunction": "Withdraws to sternal rub only; no purposeful movement",
+        "otherFindings": [
+          "Predicted difficult airway: BMI 31, short thick neck, Mallampati 4, full beard, receding jaw, OSA on CPAP",
+          "Capnography shark-fin overlay on a hypercapnic baseline of 62 mmHg",
+          "Septic shock physiology: warm trunk, cool periphery, mottling, lactate likely high",
+          "Wife confirms 6-day pneumonia course with azithromycin",
+          "No DNR / advance directive present"
+        ],
+        "patientSpeech": "No verbal response — only groans to painful stimulus."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 128,
+        "bpSys": 88,
+        "bpDia": 52,
+        "respRate": 30,
+        "spo2": 84,
+        "etco2": 62,
+        "temp": 38.9,
+        "tempF": 102.0,
+        "obstruction": 50,
+        "glucose": 168,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "primary-survey",
+          "shortAction": "Rapid primary survey; recognize respiratory failure with predicted difficult airway",
+          "protocolExcerpt": "Physical Examination — Assess for: Abnormal respiratory pattern, rate and/or effort; Use of accessory muscles; Skin color (cyanosis or pallor), presence of diaphoresis; Mental status, including anxiety; Signs of a difficult airway (short jaw or limited jaw thrust or mobility, small thyromental space, upper airway obstruction, large tongue, obesity, large tonsils, large neck, craniofacial abnormalities, excessive facial hair, tracheostomy scar or evidence of other neck/facial surgery, trismus).",
+          "priority": "critical",
+          "rationale": "Identifying the difficult airway BEFORE the first attempt is the single most important step in this scenario. It dictates plan, personnel, and equipment.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "optimize-bvm-peep",
+          "shortAction": "Two-person, two-thumbs-up BVM with PEEP 5 cmH2O, head elevated 30 degrees, OPA in place",
+          "protocolExcerpt": "Use bag-valve-mask (BVM) ventilation in the setting of respiratory failure or arrest. Whenever possible, the patient's head should be elevated up to 30 degrees. Two-person, two-thumbs-up BVM ventilation is preferred. PEEP should be used with BVM — 5 cmH2O is generally an appropriate initial PEEP setting. Oropharyngeal airways (OPA) or nasopharyngeal airways (NPA) can be placed if needed to maintain a patent airway and make BVM ventilation more effective.",
+          "priority": "critical",
+          "rationale": "With a poor mask seal from the beard, two-person technique and an OPA are required just to get adequate pre-oxygenation. Head-up positioning improves FRC.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "preox-apneic-ox",
+          "shortAction": "Pre-oxygenate ≥2 min with BVM/PEEP; place high-flow NC at 15 L/min for apneic oxygenation",
+          "protocolExcerpt": "Patient should be pre-oxygenated with high flow oxygen, and positive pressure ventilation for a minimum of two minutes prior to the procedure. In some circumstances, sedation may be required for adequate pre-oxygenation. In addition to preoxygenation, apneic oxygenation (high-flow oxygen by nasal cannula) may prolong the period before hypoxia during an intubation attempt.",
+          "priority": "critical",
+          "rationale": "In a desaturated, septic patient with poor reserve, apneic oxygenation buys the seconds that decide whether attempt 1 fails safely or crashes the patient.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "prep-plan-b-c",
+          "shortAction": "Prep Plan B (bougie + SGA) and Plan C (surgical airway) at the head BEFORE first attempt",
+          "protocolExcerpt": "Checklist use and use of protocolized interventions to optimize the patient physically and physiologically have been shown to both improve success rates of orotracheal intubation as well as decrease peri-intubation complications. Preparation should also include a promptly available plan for alternate airway placement if ETI unsuccessful. A bougie may be a helpful adjunct to successful airway placement, especially when video laryngoscopy is unavailable and the glottic opening is difficult to visualize with direct laryngoscopy.",
+          "priority": "critical",
+          "rationale": "The Tier 3 teaching beat: Plans B and C exist BEFORE Plan A is started. Verbalize the bail-out plan and the attempt limit aloud as a team.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "fluid-resus",
+          "shortAction": "IV/IO access x2; isotonic crystalloid 500 mL bolus pressure-infused (target MAP 65)",
+          "protocolExcerpt": "Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle. Adult — Physiologic target: MAP goal 65 mmHg. Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops.",
+          "priority": "critical",
+          "rationale": "Septic hypotension worsens peri-intubation hemodynamic collapse. Fluids should be running BEFORE induction.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "rsi-induction-paralytic",
+          "shortAction": "Induction: Ketamine 190 mg IV (95 kg × 2 mg/kg); Paralytic: Rocuronium 95 mg IV (95 kg × 1 mg/kg)",
+          "protocolExcerpt": "Administer induction sedative agent: Ketamine IV push, 1-2 mg/kg. Administer paralytic agent: Rocuronium IV push, 1 mg/kg. Allow time for complete paralysis. Attempt intubation, limiting attempts to 15 seconds, or a desaturation below 90%, whichever occurs first.",
+          "priority": "critical",
+          "rationale": "Ketamine is hemodynamically friendly in septic shock; rocuronium provides a longer, predictable paralysis window — appropriate when you expect the airway may be difficult.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "attempt-limit-rule",
+          "shortAction": "Declare attempt limit aloud: max 15 sec or SpO2 <90% per attempt; max 2 attempts before SGA",
+          "protocolExcerpt": "Attempt intubation, limiting attempts to 15 seconds, or a desaturation below 90%, whichever occurs first. In the setting of two failed intubation attempts, place a supraglottic airway, or resume bag-mask ventilations.",
+          "priority": "critical",
+          "rationale": "The hard limit is the safety net. If it isn't spoken aloud, the operator will chase the tube.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "first-attempt-failed",
+          "if": "Pre-O2 done, first attempt cannot visualize cords",
+          "condition": "Crew completed pre-oxygenation and optimization, then attempted direct laryngoscopy. The operator cannot bring the cords into view despite BURP and best effort. Attempt is aborted at 15 seconds or at SpO2 <90% per protocol. The tube has NOT been placed.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["rsi-induction-paralytic", "attempt-limit-rule"]
+        },
+        {
+          "targetPhaseId": "tube-fixation",
+          "if": "No attempt limit set; operator chases the tube",
+          "condition": "Crew skipped or did not enforce the attempt limit. After the first failure the operator immediately tries again, then again, without restoring oxygenation between attempts. SpO2 crashes through 80 to 70 to 60, HR begins to drop, peri-arrest physiology.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["attempt-limit-rule", "prep-plan-b-c"]
+        },
+        {
+          "targetPhaseId": "esophageal-missed",
+          "if": "Tube placed, confirmation step skipped",
+          "condition": "On the first attempt the operator passes a tube and feels confident, but does not confirm with waveform capnography or a 5-point auscultation. The tube is in the esophagus. Crew begins ventilating the stomach.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["attempt-limit-rule"]
+        }
+      ]
+    },
+    {
+      "id": "first-attempt-failed",
+      "name": "First attempt failed",
+      "description": "Per protocol the crew aborted the first laryngoscopy attempt: cords could not be visualized despite optimal positioning and a BURP maneuver, and SpO2 dropped from 92% (post-pre-ox) to 88% during the look. The tube was NEVER placed. This is the central Tier 3 teaching moment: failed first attempt is normal, NOT a crisis — what happens next decides the patient. The patient is paralyzed and apneic. The required next move is to resume two-person BVM with PEEP, restore SpO2 above 95% if achievable, and CHANGE SOMETHING before attempt 2 (operator, blade, video laryngoscope, bougie, ear-to-sternal-notch positioning, ramping). The team should explicitly verbalize the change (\"second attempt with the bougie, video blade, ramped\") so the room hears it.",
+      "triggerCondition": "Direct laryngoscopy attempt 1 was aborted at 15 seconds / SpO2 88% with cords never visualized. Tube was NOT placed. Patient is paralyzed and apneic. Plan B (bougie, video, SGA) is at the head; team must restore oxygenation before attempt 2.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 1
+        },
+        "airway": "Open with OPA in place; paralyzed (rocuronium); no spontaneous respirations",
+        "breathing": "Apneic from paralysis; BVM with PEEP 5 producing fair chest rise with two-person seal — beard still degrading seal",
+        "circulation": "HR 130s, BP holding at 90/55 with fluids running; mottled extremities",
+        "skin": {
+          "color": "pale and mottled, lips cyanotic but improving with BVM",
+          "temperature": "warm trunk, cool extremities",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal at 4 mm, sluggish",
+        "motorFunction": "Flaccid (paralyzed)",
+        "otherFindings": [
+          "Cords could not be brought into view on attempt 1 despite BURP",
+          "Apneic-oxygenation nasal cannula at 15 L/min still in place",
+          "Bougie on the bed; video laryngoscope on the floor next to head",
+          "Team needs to CHANGE SOMETHING before attempt 2"
+        ],
+        "patientSpeech": "Patient apneic and paralyzed."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 132,
+        "bpSys": 92,
+        "bpDia": 56,
+        "respRate": 0,
+        "spo2": 88,
+        "etco2": 0,
+        "temp": 38.9,
+        "tempF": 102.0,
+        "obstruction": 50,
+        "glucose": 168,
+        "trendTimeSeconds": 25,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "stop-and-bvm",
+          "shortAction": "Stop. Resume two-person BVM with PEEP; restore SpO2 ≥95% before attempt 2",
+          "protocolExcerpt": "Meticulous attention should be paid to avoiding hypoxia and hypotension during intubation attempts to limit patient morbidity and mortality. In the setting of two failed intubation attempts, place a supraglottic airway, or resume bag-mask ventilations.",
+          "priority": "critical",
+          "rationale": "Oxygenation between attempts is the difference between an attempt and a code. This must happen before any second look.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "change-something",
+          "shortAction": "Change something for attempt 2: bougie + video laryngoscope, ramp the patient, swap operator",
+          "protocolExcerpt": "A bougie may be a helpful adjunct to successful airway placement, especially when video laryngoscopy is unavailable and the glottic opening is difficult to visualize with direct laryngoscopy. For experienced EMS clinicians, video laryngoscopy may enhance intubation success rates and should be used when available. Re-visualization with video laryngoscopy, when available, may assist in confirming placement when unclear due to capnography failure or conflicting information.",
+          "priority": "critical",
+          "rationale": "Repeating the same attempt with no change is the definition of insanity in airway management. Each attempt should be the BEST attempt — change blade/operator/position/adjunct.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "verbalize-plan",
+          "shortAction": "Verbalize Plan B aloud: 'Attempt 2 with bougie + video. If fails, SGA. Then surgical.'",
+          "protocolExcerpt": "Preparation should also include a promptly available plan for alternate airway placement if ETI unsuccessful.",
+          "priority": "important",
+          "rationale": "Saying the plan out loud locks the team into the algorithm and prevents tube fixation.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "reassess-vitals",
+          "shortAction": "Reassess SpO2/EtCO2/HR/BP; ensure no peri-intubation hypotension before second look",
+          "protocolExcerpt": "Occurrence of peri-intubation hypoxia (less than 90% SPO2), bradycardia (per age), hypotension (SBP less than 90mmHg or lowest age-appropriate SBP) or cardiac arrest. The peri-intubation period encompasses the time from sedative administration to up to 10 minutes post any invasive airway attempt.",
+          "priority": "important",
+          "rationale": "Hypotension during the window dramatically raises mortality; catching it now (and pushing fluids/pressors) before attempt 2 is critical.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "second-attempt-success",
+          "if": "BVM restores SpO2; bougie + video second attempt",
+          "condition": "Crew resumed two-person BVM with PEEP, restored SpO2 to 95–98%, changed strategy (bougie loaded, video laryngoscope, patient ramped), and performed a second laryngoscopy. Bougie passed easily through cords (hold-up sign positive), ETT railroaded over, waveform capnography confirms placement.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["stop-and-bvm", "change-something"]
+        },
+        {
+          "targetPhaseId": "sga-rescue",
+          "if": "Second attempt also fails; pivot to SGA",
+          "condition": "Crew performed a thoughtful second attempt with bougie and video and still could not place the tube. Per protocol they STOP at two attempts and place a supraglottic airway (King LT or i-gel). Ventilation is achieved through the SGA with waveform capnography in line.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["stop-and-bvm", "change-something"]
+        },
+        {
+          "targetPhaseId": "tube-fixation",
+          "if": "Crew skips BVM, immediately tries again",
+          "condition": "Operator does not restore oxygenation between attempts. Re-attempts within seconds while patient is still desaturated. SpO2 crashes through 80, 70, 60. Bradycardia develops.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["stop-and-bvm"]
+        }
+      ]
+    },
+    {
+      "id": "second-attempt-success",
+      "name": "Second attempt successful (bougie)",
+      "description": "Between attempts the crew restored SpO2 to 96% on two-person BVM with PEEP 5 and apneic-oxygenation NC. They ramped the patient, swapped to the video laryngoscope and a loaded bougie, and the most experienced operator took attempt 2. Cormack-Lehane grade 3 view on video; the bougie was directed anteriorly under the epiglottis with positive tracheal hold-up signs; the ETT was railroaded into position at 23 cm at the teeth. Waveform capnography shows a square waveform with EtCO2 of 48 mmHg and trending toward 40s, equal bilateral breath sounds, no epigastric sounds, good chest rise. Tube is secured. Post-intubation sedation/analgesia is initiated; gastric decompression with an OG tube is strongly considered. Lung-protective volume settings are dialed in. The team debriefs aloud while transport begins.",
+      "triggerCondition": "Crew restored oxygenation between attempts, changed strategy (bougie + video + ramp + operator swap), and successfully placed an ETT on the second laryngoscopy. Waveform capnography and bilateral breath sounds confirm tracheal placement.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 1
+        },
+        "airway": "Secured 8.0 ETT at 23 cm at teeth; cuff inflated to seal; tube taped",
+        "breathing": "Manual or mechanical ventilation; equal bilateral breath sounds; good chest rise; rales persistent in RLL but air entry restored",
+        "circulation": "HR 118, BP 102/64 on continued fluids; warmer extremities",
+        "skin": {
+          "color": "improving — pink lips, less mottling",
+          "temperature": "warm, less cool periphery",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal at 4 mm, sluggish",
+        "motorFunction": "Flaccid (paralyzed)",
+        "otherFindings": [
+          "Square waveform capnograph, EtCO2 trending 48 → 42 mmHg",
+          "Tube secured with commercial holder; depth marked",
+          "Continuous EtCO2 in line; tube re-confirmed after every patient move",
+          "OG tube placed for gastric decompression",
+          "Lung-protective tidal volume ~480 mL (6–8 mL/kg ideal body weight)"
+        ],
+        "patientSpeech": "Patient sedated, paralyzed, intubated."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 118,
+        "bpSys": 102,
+        "bpDia": 64,
+        "respRate": 12,
+        "spo2": 96,
+        "etco2": 42,
+        "temp": 38.9,
+        "tempF": 102.0,
+        "obstruction": 30,
+        "glucose": 168,
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "confirm-placement",
+          "shortAction": "Confirm ETT: waveform capnography + bilateral breath sounds + absent gastric sounds",
+          "protocolExcerpt": "Confirm placement of advanced airway (endotracheal tube, SGA) with waveform capnography (most reliable), absent gastric sounds, and bilateral breath sounds. Continuously monitor correct airway placement with waveform capnography during treatment and transport, paying particular attention to reassessing after each patient movement.",
+          "priority": "critical",
+          "rationale": "Single-step confirmation (just looking at the tube, or just listening) is how esophageal intubations get missed. Three-point confirmation, every time.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "secure-tube",
+          "shortAction": "Inflate cuff to ~20 cmH2O; note depth at incisors; secure with commercial holder or tape",
+          "protocolExcerpt": "Inflate endotracheal tube cuff with minimum air to seal airway. An ETT cuff manometer can be used to measure and adjust the ETT cuff pressure to the recommended 20 cmH2O pressure. Secure tube manually. Once proper position is confirmed, secure the tube with tape, twill, or commercial device. Note measurement of tube at incisors or gum line and assess frequently for tube movement/displacement using continuous waveform capnography and visual inspection.",
+          "priority": "critical",
+          "rationale": "Displaced tube is one of the top causes of preventable airway-related cardiac arrest in EMS.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "post-intubation-sedation",
+          "shortAction": "Post-intubation analgesia: Fentanyl 95 mcg IV (95 kg × 1 mcg/kg); sedation: Midazolam 1.9 mg IV (95 kg × 0.02 mg/kg)",
+          "protocolExcerpt": "Intubated patients should be provided appropriate sedation with sedative or opioid medications, and sedation titrated to an appropriate target level using RASS score or similar scale. Consider sedation with sedative and/or opioid medications if agitated — Fentanyl 1-2 mcg/kg And Midazolam 0.02 mg/kg OR Ketamine IV push, 0.5-1 mg/kg.",
+          "priority": "important",
+          "rationale": "Once paralysis wears off, an awake-paralyzed patient is catastrophic. Sedation/analgesia must be running.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "lung-protective-vent",
+          "shortAction": "Vent at 10–12/min, ~480 mL TV (6–8 mL/kg IBW); titrate to EtCO2 35–40",
+          "protocolExcerpt": "Tidal volume — Ventilate with just enough volume to see chest rise, approximately 6–8 mL/kg ideal body weight. Over-inflation (e.g., excessive tidal volume) and overventilation (e.g., excessive minute ventilation) are both undesirable and potentially harmful. Rate — Adult: 10–12 breaths/minute. In patients without primary pulmonary pathology, maintain EtCO2 of no less than 35 and up to 40 mmHg.",
+          "priority": "important",
+          "rationale": "Overventilation drops preload and worsens shock; under-ventilation worsens acidosis. Targets matter.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "gastric-decompression",
+          "shortAction": "Place OG tube for gastric decompression",
+          "protocolExcerpt": "Gastric decompression can improve oxygenation and ventilation, so it should be strongly considered in any patient with an advanced airway and positive pressure ventilation.",
+          "priority": "supplemental",
+          "rationale": "Especially important after BVM ventilation in an obese septic patient — stomach is full of air, and that limits diaphragmatic excursion.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "transport-decision",
+          "shortAction": "Transport to closest appropriate ED for airway stabilization; pre-alert ED",
+          "protocolExcerpt": "Transport to the closest appropriate hospital for airway stabilization when respiratory failure cannot be successfully managed in the prehospital setting.",
+          "priority": "important",
+          "rationale": "Closes the loop. The receiving facility needs to be ready for an intubated septic patient with a difficult airway noted.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "sga-rescue",
+      "name": "SGA placed (rescue)",
+      "description": "After two thoughtful failed intubation attempts the crew followed the protocol stop rule and placed a supraglottic airway (i-gel or King LT). Ventilation is achieved through the SGA with waveform capnography in line. EtCO2 climbs onto the screen with a normal square waveform, chest rises bilaterally, and SpO2 climbs from 90% back to 96%. This is a clinical win — not a failure. The team transports an oxygenating and ventilating patient with a clear plan and clear documentation of the attempts, complications, and confirmation method. This is the default \"good\" outcome when the airway truly is difficult and a tube is not achievable; surgical airway is NOT indicated because oxygenation/ventilation IS being achieved.",
+      "triggerCondition": "Two thoughtful intubation attempts both failed (cords not visualized, or unable to pass tube). Crew honored the 2-attempt limit and placed a supraglottic airway. SGA is ventilating effectively (waveform capnography, bilateral chest rise, SpO2 climbing).",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 1
+        },
+        "airway": "Supraglottic airway in place; cuff inflated; effective ventilation",
+        "breathing": "Manual ventilation through SGA; equal bilateral chest rise; rales persistent in RLL but air entry restored",
+        "circulation": "HR 120, BP 98/60 on continued fluids; mottling improving",
+        "skin": {
+          "color": "pink lips, less mottling",
+          "temperature": "warm trunk, less cool periphery",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal at 4 mm, sluggish",
+        "motorFunction": "Flaccid (paralyzed)",
+        "otherFindings": [
+          "Square waveform capnograph through SGA, EtCO2 44 mmHg",
+          "Two prior failed laryngoscopy attempts documented (operator, blade, view, complications)",
+          "Documented difficult-airway findings transmitted to receiving facility",
+          "Sedation/analgesia running"
+        ],
+        "patientSpeech": "Patient sedated, paralyzed, oxygenating through SGA."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 120,
+        "bpSys": 98,
+        "bpDia": 60,
+        "respRate": 12,
+        "spo2": 96,
+        "etco2": 44,
+        "temp": 38.9,
+        "tempF": 102.0,
+        "obstruction": 30,
+        "glucose": 168,
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "honor-stop-rule",
+          "shortAction": "Honor 2-attempt stop rule; SGA placed and ventilating",
+          "protocolExcerpt": "In the setting of two failed intubation attempts, place a supraglottic airway, or resume bag-mask ventilations. Consider the use of an appropriately sized SGA if BVM (with OPA/NPA) alone is not effective in maintaining oxygenation and/or ventilation.",
+          "priority": "critical",
+          "rationale": "Following the stop rule when an attempt is not going well is the safest decision — and the hardest. Recognize it as a win.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "confirm-sga",
+          "shortAction": "Confirm SGA: waveform capnography + bilateral chest rise + SpO2 climbing",
+          "protocolExcerpt": "Confirm placement of advanced airway (endotracheal tube, SGA) with waveform capnography (most reliable), absent gastric sounds, and bilateral breath sounds. Waveform capnography should be placed prior to the first breath through an invasive airway to confirm placement.",
+          "priority": "critical",
+          "rationale": "Same confirmation rules apply to SGAs.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "no-surgical-yet",
+          "shortAction": "Surgical airway NOT indicated — patient is oxygenating/ventilating via SGA",
+          "protocolExcerpt": "When patients cannot be oxygenated/ventilated effectively using the above interventions, or when conventional airway approaches are impossible, surgical airway management is a reasonable option if the clinician has competency in the procedure and risk of death for not escalating airway management seems to outweigh the risk of a procedural complication.",
+          "priority": "important",
+          "rationale": "Surgical airway is the LAST resort. If the SGA is ventilating, do not cric.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "transport-sga",
+          "shortAction": "Transport with SGA in place; pre-alert ED for difficult airway and confirmed sepsis",
+          "protocolExcerpt": "Transport to the closest appropriate hospital for airway stabilization when respiratory failure cannot be successfully managed in the prehospital setting.",
+          "priority": "important",
+          "rationale": "Receiving facility should be ready for a fiberoptic exchange or operative airway.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "tube-fixation",
+      "name": "Tube fixation — CICO",
+      "description": "Crew got tunnel vision on the tube. After the first failed attempt they did not stop, did not restore oxygenation, did not change anything — they kept looking. Attempt 2, 3, and 4 all failed. SpO2 crashed from 88 to 78 to 70 to 60. Heart rate slowed from 130 into the 50s. EtCO2 climbed past 70. This is now a cannot-intubate-cannot-oxygenate (CICO) emergency with peri-arrest physiology. The recovery teaching beat: STOP. Recognize CICO. Step away from the tube. Put hands back on a two-person BVM with PEEP and place an SGA immediately. If the SGA also fails to ventilate, surgical cricothyrotomy is the indicated next step per protocol. The longer recovery requires removing the operator from the head, declaring the failed airway aloud, and assigning a different team member to place the SGA.",
+      "triggerCondition": "Operator made 3+ laryngoscopy attempts without restoring oxygenation between them. SpO2 has crashed below 70%, HR is dropping into the 50s, EtCO2 climbing past 70. Cannot-intubate-cannot-oxygenate (CICO) physiology with peri-arrest hemodynamics.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 1
+        },
+        "airway": "Open with OPA; paralyzed; no tube placed; mouth/oropharynx now traumatized and bleeding slightly from repeated attempts",
+        "breathing": "Apneic; BVM with poor seal and poor chest rise due to facial hair and now blood-tinged oropharynx; SGA not yet placed",
+        "circulation": "HR 52 and falling (peri-arrest bradycardia from hypoxia); BP 78/40; central cyanosis",
+        "skin": {
+          "color": "frankly cyanotic — lips, ears, fingernails dusky to blue",
+          "temperature": "cool",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal at 5 mm, sluggish",
+        "motorFunction": "Flaccid (paralyzed)",
+        "otherFindings": [
+          "Four failed laryngoscopy attempts; blood in oropharynx; SpO2 crashing",
+          "Bradycardia from profound hypoxia — heading toward hypoxic arrest",
+          "Cannot oxygenate effectively with BVM due to disrupted oropharynx and beard seal",
+          "CICO physiology — surgical airway threshold approaching"
+        ],
+        "patientSpeech": "Patient apneic, paralyzed, near-arrest."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Bradycardia",
+        "ecgWaveform": 9,
+        "hr": 52,
+        "bpSys": 78,
+        "bpDia": 40,
+        "respRate": 0,
+        "spo2": 62,
+        "etco2": 72,
+        "temp": 38.9,
+        "tempF": 102.0,
+        "obstruction": 60,
+        "glucose": 168,
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "declare-failed-airway",
+          "shortAction": "STOP. Declare failed airway aloud. Hands off the tube. Resume two-person BVM",
+          "protocolExcerpt": "In the setting of two failed intubation attempts, place a supraglottic airway, or resume bag-mask ventilations. Meticulous attention should be paid to avoiding hypoxia and hypotension during intubation attempts to limit patient morbidity and mortality.",
+          "priority": "critical",
+          "rationale": "The recovery move is to stop trying to intubate. Verbalizing 'failed airway' breaks the operator's tunnel vision and gives the team permission to take over.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "place-sga-now",
+          "shortAction": "Place SGA immediately (i-gel/King LT); confirm with waveform capnography",
+          "protocolExcerpt": "Consider the use of an appropriately sized SGA if BVM (with OPA/NPA) alone is not effective in maintaining oxygenation and/or ventilation. In the setting of two failed intubation attempts, place a supraglottic airway, or resume bag-mask ventilations. Waveform capnography should be placed prior to the first breath through an invasive airway to confirm placement.",
+          "priority": "critical",
+          "rationale": "An SGA is faster, surer, and less skill-degraded than another laryngoscopy. Place it now.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "prepare-surgical-airway",
+          "shortAction": "If SGA fails to ventilate: prepare surgical cricothyrotomy (clinician competency required)",
+          "protocolExcerpt": "When patients cannot be oxygenated/ventilated effectively using the above interventions, or when conventional airway approaches are impossible, surgical airway management is a reasonable option if the clinician has competency in the procedure and risk of death for not escalating airway management seems to outweigh the risk of a procedural complication.",
+          "priority": "critical",
+          "rationale": "True CICO is the indication for a surgical airway. Recognize it, and don't wait until arrest.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "anticipate-arrest",
+          "shortAction": "Anticipate hypoxic arrest; pads on, push-dose epi prepared, fluids wide open",
+          "protocolExcerpt": "Vasopressors (shock unresponsive to IV fluids) titrated to physiologic targets. Epinephrine, 0.05–0.3 mcg/kg/minute. Alternative to a drip, push dose epinephrine may be administered: Prepare 10 mcg/mL by diluting 1 mL of epinephrine 0.1 mg/mL (1:10,000) in 9 mL of normal saline; Administer 0.01 mg/kg (0.1 mL/kg) up to a maximum single dose of 10 mcg (1 mL) q 3–5 minutes titrated to maintain goal MAP.",
+          "priority": "important",
+          "rationale": "The patient is one breath from arrest. Pre-positioning epi and pads turns an arrest into a brief event rather than a code.",
+          "protocolReference": "MATC: Shock"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "sga-rescue",
+          "if": "Failed airway declared; SGA placed and ventilating",
+          "condition": "Crew recognized CICO, stopped attempts, placed an SGA, and confirmed ventilation. Patient stabilizes onto the SGA-rescue endpoint with SpO2 recovering.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["declare-failed-airway", "place-sga-now"]
+        }
+      ]
+    },
+    {
+      "id": "esophageal-missed",
+      "name": "Esophageal intubation missed",
+      "description": "First attempt looked clean from the operator's chair — the operator thought they saw the tube go through the cords and called it. But the tube is in the esophagus. There is no waveform on capnography (flat line, not a square), no chest rise, gurgling gastric sounds on epigastric auscultation. The crew did not perform three-point confirmation and is now ventilating the stomach. Within a minute the abdomen distends, the patient vomits around the tube, SpO2 plummets from 88 to 70, and EtCO2 stays flat. The teaching beat is the single-most-tested airway concept in EMS: waveform capnography confirms placement, every time, on every airway. Recovery requires recognizing the missed esophageal tube IMMEDIATELY, pulling it, suctioning aggressively (SALAD technique), oxygenating with BVM, and reattempting with capnography in line from breath one. If the airway is now soiled and unmanageable, escalate to SGA.",
+      "triggerCondition": "First attempt placed a tube in the esophagus. Crew skipped three-point confirmation (no waveform capnography, no auscultation), called the tube good, and is ventilating the stomach. No square waveform, no chest rise, hollow gastric gurgling on epigastric listen. Patient is decompensating and at risk of aspirating.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 1
+        },
+        "airway": "ETT in the esophagus, not the trachea. BVM ventilating stomach. Vomiting around the tube imminent / occurring.",
+        "breathing": "No spontaneous respirations (paralyzed); no chest rise with BVM through the misplaced tube; abdomen distending",
+        "circulation": "HR 138, BP 84/50, mottling worsening",
+        "skin": {
+          "color": "increasingly cyanotic",
+          "temperature": "cool",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal at 5 mm, sluggish",
+        "motorFunction": "Flaccid (paralyzed)",
+        "otherFindings": [
+          "FLAT waveform capnography — no square wave, no climbing EtCO2",
+          "Gurgling/hollow gastric sounds heard over the stomach on epigastric auscultation",
+          "Abdomen visibly distending with each squeeze of the BVM",
+          "Gastric contents at the corner of the mouth — aspiration risk imminent",
+          "SpO2 climbing DOWN, not up, despite 'ventilations'"
+        ],
+        "patientSpeech": "Patient apneic, paralyzed, decompensating."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 138,
+        "bpSys": 84,
+        "bpDia": 50,
+        "respRate": 0,
+        "spo2": 70,
+        "etco2": 0,
+        "temp": 38.9,
+        "tempF": 102.0,
+        "obstruction": 70,
+        "glucose": 168,
+        "trendTimeSeconds": 25,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-esophageal",
+          "shortAction": "Recognize esophageal intubation: flat capnograph + no chest rise + gastric sounds = pull",
+          "protocolExcerpt": "Confirm placement of advanced airway (endotracheal tube, SGA) with waveform capnography (most reliable), absent gastric sounds, and bilateral breath sounds. Waveform capnography should be placed prior to the first breath through an invasive airway to confirm placement. Color change on EtCO2 is less accurate than clinical assessment, and wave-form capnography is superior.",
+          "priority": "critical",
+          "rationale": "Three-point confirmation, every time. If even one element fails, the tube comes out.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "pull-the-tube",
+          "shortAction": "Pull the tube; suction aggressively (SALAD); resume two-person BVM with PEEP",
+          "protocolExcerpt": "Suction airway: for significantly contaminated airways, consider utilizing a suction assisted laryngeal airway decontamination (SALAD) technique. If an endotracheal tube becomes dislodged, SGA should be strongly considered.",
+          "priority": "critical",
+          "rationale": "A misplaced tube is worse than no tube. Pull it. Suction. Oxygenate. Then think about the next attempt.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "capnography-from-breath-one",
+          "shortAction": "Capnography in line BEFORE any future first breath through an airway device",
+          "protocolExcerpt": "Waveform capnography should be placed prior to the first breath through an invasive airway to confirm placement.",
+          "priority": "critical",
+          "rationale": "Capnography is on the first breath, not after a couple of squeezes 'just to see.' Every time, no exceptions.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "consider-sga-now",
+          "shortAction": "Consider SGA now (airway soiled, anatomy difficult, reinsertion risky)",
+          "protocolExcerpt": "If an endotracheal tube becomes dislodged, SGA should be strongly considered. Consider the use of an appropriately sized SGA if BVM (with OPA/NPA) alone is not effective in maintaining oxygenation and/or ventilation.",
+          "priority": "important",
+          "rationale": "Once the oropharynx is soiled with vomit and you've already had a misplacement, the SGA is often the safer next move than another laryngoscopy.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "second-attempt-success",
+          "if": "Tube pulled, BVM, capnography ready, second attempt with bougie",
+          "condition": "Crew recognized the esophageal placement, pulled the tube, suctioned, re-oxygenated with BVM/PEEP, then performed a thoughtful second attempt with bougie and waveform capnography in line from breath one — and succeeded.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["recognize-esophageal", "pull-the-tube", "capnography-from-breath-one"]
+        },
+        {
+          "targetPhaseId": "sga-rescue",
+          "if": "Tube pulled; airway soiled; SGA placed",
+          "condition": "Crew recognized the esophageal placement, pulled the tube, suctioned, re-oxygenated, and elected to place an SGA rather than re-attempt laryngoscopy through a soiled oropharynx. SGA ventilating with waveform capnography.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["recognize-esophageal", "pull-the-tube", "consider-sga-now"]
+        }
+      ]
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

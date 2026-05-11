@@ -1,0 +1,786 @@
+{
+  "meta": {
+    "id": "R-T3-01",
+    "name": "Respiratory Failure Requiring Advanced Airway",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Respiratory",
+    "protocols": [
+      "resp-airway-management",
+      "resp-respiratory-distress"
+    ],
+    "totalTimeSeconds": 1800,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "respiratory",
+      "airway",
+      "rsi",
+      "advanced-airway",
+      "copd",
+      "respiratory-failure",
+      "bvm-optimization",
+      "intubation",
+      "supraglottic-airway",
+      "post-intubation-sedation",
+      "tier-3",
+      "high-acuity"
+    ]
+  },
+  "patient": {
+    "name": "Eleanor Pruitt",
+    "age": 58,
+    "ageUnit": "years",
+    "sex": "female",
+    "weight": 70,
+    "weightLbs": 154,
+    "height": 165,
+    "chiefComplaint": "Severe difficulty breathing, becoming unresponsive",
+    "history": {
+      "hpi": "58-year-old female with severe (GOLD stage IV) COPD, on 4 L home nasal cannula 24/7, who has been progressively decompensating for the last 8 hours. Husband reports she had an upper-respiratory illness this week with productive yellow-green sputum. She used her albuterol/ipratropium nebulizer every 2 hours overnight with minimal relief and finished her last prednisone burst three days ago. This morning she became too short of breath to walk to the bathroom; by midday she was tripoding at the kitchen table speaking only 2-3 word phrases. Over the last hour she has stopped speaking, stopped responding to her husband by name, and her color has turned dusky. He called 911 when she 'looked like she was sleeping but breathing funny.' She has been intubated twice before (2022, 2024) for COPD exacerbation, both times in the ED.",
+      "pastMedical": [
+        "Severe COPD, GOLD stage IV — on 4 L home O2 24/7",
+        "Two prior intubations for COPD exacerbation (2022 ICU, 2024 ICU)",
+        "60 pack-year smoking history, quit 2 years ago",
+        "Pulmonary hypertension",
+        "Heart failure with preserved ejection fraction (HFpEF)",
+        "Hypertension",
+        "Type 2 diabetes",
+        "Chronic kidney disease stage 3"
+      ],
+      "medications": [
+        "Home O2 4 L/min via nasal cannula 24/7",
+        "Tiotropium (Spiriva) 1 inhalation daily",
+        "Fluticasone/salmeterol (Advair) 250/50 BID",
+        "Albuterol/ipratropium nebulizer Q4H PRN",
+        "Prednisone 40 mg PO daily — finished a 5-day burst 3 days ago",
+        "Furosemide 40 mg PO daily",
+        "Lisinopril 10 mg PO daily",
+        "Metformin 1000 mg PO BID",
+        "Aspirin 81 mg PO daily"
+      ],
+      "allergies": [
+        "Penicillin — rash"
+      ],
+      "lastOralIntake": "Sips of water this morning around 0700; nothing solid in 24 hours.",
+      "events": "URI this week with productive sputum. Progressive worsening over 8 hours despite frequent home nebs. Stopped speaking 1 hour ago, then became unresponsive to verbal stimuli. Husband called 911."
+    }
+  },
+  "scene": {
+    "dispatch": "Medic 7, respond priority 1 to 2284 Hickory Lane for the 58-year-old female with severe trouble breathing, now going unresponsive. Husband on a callback. PD not required. ETA fire engine 4 minutes.",
+    "location": "Single-story ranch home, kitchen. Patient slumped in a wooden kitchen chair, head listing forward. Husband at the front door waving you in. Oxygen concentrator humming in the corner with green tubing running to a nasal cannula on the patient's face.",
+    "time": "Wednesday, 14:22, indoor temperature ~74°F.",
+    "safety": "Scene safe. Oxygen concentrator running — note for transition to portable O2. Narrow hallway between kitchen and front door; consider stair chair or stretcher access plan early.",
+    "bystanders": "Husband (60s), tearful but coherent. Confirms COPD history, two prior intubations, home O2, recent prednisone burst, and that 'she was tripoding at the table this morning but now she won't even look at me.' He brings out a bag of her medications and a folder with discharge paperwork from her last ICU stay.",
+    "visualCues": [
+      "Patient slumped forward in kitchen chair, head listing — NO LONGER tripoding",
+      "Dusky perioral cyanosis, fingertips visibly blue",
+      "Shallow, irregular respiratory pattern — agonal-appearing at moments",
+      "Audible coarse rhonchi without a stethoscope",
+      "Home nasal cannula displaced and dangling off one ear",
+      "Pill bottles and a nebulizer cup with residual albuterol/ipratropium on the kitchen table",
+      "Empty prednisone bottle in the trash",
+      "Pursed-lip pattern is gone — patient too obtunded to maintain it",
+      "Oxygen concentrator running 4 LPM, green tubing visible"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "On arrival you find a 58-year-old female with severe COPD slumped forward in a kitchen chair, GCS 8 (E2 V2 M4) and falling. RR 38 and shallow, SpO2 78% on her home 4 L nasal cannula, EtCO2 78 mmHg, dusky perioral cyanosis. Husband reports 8-hour progressive decompensation despite home nebs and a recent prednisone burst, with two prior intubations for the same problem. This is respiratory failure with loss of protective reflexes — BVM and advanced airway preparation are both indicated NOW.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 2, "verbal": 2, "motor": 4 },
+        "airway": "Self-maintained for the moment but tenuous — gag reflex sluggish, pooled oral secretions, occasional snoring respiration.",
+        "breathing": "RR 38, shallow with irregular rate. Markedly diminished air movement bilaterally with coarse rhonchi and faint expiratory wheeze. Accessory muscle use is fatigued and weak — she is no longer tripoding because she does not have the strength.",
+        "circulation": "Radial pulse weak, ~118. Skin warm, peripherally cool. Mottled fingertips, perioral cyanosis.",
+        "skin": { "color": "Dusky with perioral and peripheral cyanosis", "temperature": "Warm centrally, cool extremities", "moisture": "Diaphoretic" },
+        "pupils": "PERRL 3 mm, sluggish.",
+        "motorFunction": "Withdraws to painful sternal rub but does not localize. No purposeful movement.",
+        "otherFindings": [
+          "GCS 8 and trending down — loss of protective airway reflexes imminent",
+          "Was tripoding hours ago per husband; now slumped — exhaustion is the dominant finding",
+          "Cyanosis on room air room — even on home 4 L NC, SpO2 is 78%",
+          "EtCO2 78 — severe hypercarbia, narcosis is the cause of the depressed mental status",
+          "Two prior intubations for the same problem — high-risk-for-failure airway history"
+        ],
+        "patientSpeech": "No verbal response to name or sternal rub; occasional weak moan."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 118,
+        "bpSys": 152,
+        "bpDia": 92,
+        "respRate": 38,
+        "spo2": 78,
+        "etco2": 78,
+        "temp": 37.6,
+        "tempF": 99.7,
+        "obstruction": 50,
+        "glucose": 168,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "primary-survey-recognize-failure",
+          "shortAction": "Primary survey; recognize RESPIRATORY FAILURE (not just distress)",
+          "protocolExcerpt": "Inclusion Criteria: Patients with signs of severe respiratory distress/respiratory failure; Patients with evidence of hypoxemia or hypoventilation with medical or traumatic etiology.",
+          "priority": "critical",
+          "rationale": "GCS 8 + SpO2 78% on home O2 + EtCO2 78 + fatigued accessory muscle use is respiratory failure with CO2 narcosis. Distinguishing failure from distress drives the entire downstream decision tree.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "position-airway",
+          "shortAction": "Open airway with jaw thrust; head elevated 30 degrees; suction secretions",
+          "protocolExcerpt": "Open and maintain patent airway. If needed, Provide head tilt/chin lift, or jaw thrust if concern for potential spinal injury. Suction airway: for significantly contaminated airways, consider utilizing a suction assisted laryngeal airway decontamination (SALAD) technique. Whenever possible, the patient's head should be elevated up to 30 degrees.",
+          "priority": "critical",
+          "rationale": "Optimize airway BEFORE escalating. Head-elevated positioning improves respiratory mechanics and reduces aspiration risk during BVM.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "place-opa-npa",
+          "shortAction": "Insert NPA (gag still present); have OPA ready as gag fades",
+          "protocolExcerpt": "Oropharyngeal airways (OPA) or nasopharyngeal airways (NPA) can be placed if needed to maintain a patent airway and make BVM ventilation more effective. OPA are used for patients without gag reflex. NPA are used for patients with gag reflex.",
+          "priority": "critical",
+          "rationale": "Gag is sluggish but present — NPA now, OPA when gag is gone. Either way, BVM without an adjunct will not be effective on this patient.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "bvm-two-person-peep",
+          "shortAction": "Two-person, two-thumbs-up BVM with PEEP valve at 5 cmH2O",
+          "protocolExcerpt": "Use bag-valve-mask (BVM) ventilation in the setting of respiratory failure or arrest. Two-person, two-thumbs-up BVM ventilation is preferred. PEEP should be used with BVM. 5 cmH2O is generally an appropriate initial PEEP setting. Increase PEEP in stepwise fashion (2-3 cmH2O at a time) as necessary.",
+          "priority": "critical",
+          "rationale": "Two-person BVM with a PEEP valve is the standard for respiratory failure — and is the FIRST step before any decision about advanced airway. Most respiratory failure can be temporized here.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "etco2-waveform-inline",
+          "shortAction": "Inline waveform EtCO2 on BVM circuit; SpO2; cardiac monitor",
+          "protocolExcerpt": "Continuous wave-form capnography monitoring should be placed in line. Continuous waveform capnography: Should be used for patients with invasive airways for initial verification of correct airway placement; continuous evidence of correct tube placement; to adjust ventilatory rate.",
+          "priority": "critical",
+          "rationale": "Waveform EtCO2 is the trend tool that will tell you whether BVM optimization is working. Place it BEFORE deciding to escalate to an advanced airway.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "iv-access-early",
+          "shortAction": "Establish 2 large-bore IVs; anticipate RSI meds and post-tube sedation",
+          "protocolExcerpt": "IV Access and Fluids – IV access should be placed when IV medication administration is indicated, or when there are clinical concerns of dehydration so that IV fluids can be administered.",
+          "priority": "critical",
+          "rationale": "If this patient needs RSI, induction + paralytic + post-intubation sedation all run IV. Two IVs gives you backup if one infiltrates during a chaotic intubation.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "ventilation-rate-tidal-volume",
+          "shortAction": "Ventilate 10-12/min, 6-8 mL/kg IBW (~400 mL); just enough to see chest rise",
+          "protocolExcerpt": "Tidal volume: Ventilate with just enough volume to see chest rise, approximately 6-8 mL/kg ideal body weight. Over-inflation (e.g., excessive tidal volume) and overventilation (e.g., excessive minute ventilation) are both undesirable and potentially harmful. Rate: Adult: 10-12 breaths/minute.",
+          "priority": "critical",
+          "rationale": "Slow, small breaths with a long expiratory time are critical in COPD to avoid breath-stacking, auto-PEEP, and barotrauma. Over-bagging is the most common provider-induced harm in this presentation.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "bvm-optimized",
+          "if": "BVM optimized; SpO2 climbs to 92%+",
+          "condition": "Crew runs the full BVM optimization sequence — head elevated, NPA placed, two-person two-thumbs-up technique, PEEP 5 cmH2O, slow 10-12/min ventilations of 6-8 mL/kg with adequate expiratory time, inline waveform EtCO2 attached. Over 2-3 minutes SpO2 climbs from 78 to 92-94%, EtCO2 begins trending down toward 60, color improves. Crew now faces the genuine SGA-vs-RSI decision from a position of preoxygenation.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["position-airway", "place-opa-npa", "bvm-two-person-peep", "etco2-waveform-inline", "ventilation-rate-tidal-volume"]
+        },
+        {
+          "targetPhaseId": "rushed-rsi-no-preox",
+          "if": "Crew skips BVM optimization; jumps to RSI",
+          "condition": "Crew sees GCS 8 and SpO2 78%, declares 'she needs a tube,' and goes straight to drawing up induction and paralytic agents without first running a two-person BVM with PEEP for at least 2-3 minutes of preoxygenation. Pre-induction SpO2 is still 78%. Crew pushes ketamine and rocuronium; desaturation during the attempt is severe and rapid.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["bvm-two-person-peep", "etco2-waveform-inline"]
+        }
+      ]
+    },
+    {
+      "id": "bvm-optimized",
+      "name": "BVM optimized",
+      "description": "After 2-3 minutes of optimized two-person BVM with a PEEP valve at 5 cmH2O and head elevated, the patient's SpO2 has climbed from 78% to 92%, EtCO2 has come down from 78 to 64, and color is improving. However, she still requires positive-pressure ventilation to maintain those numbers — her own respiratory drive is inadequate and her mental status remains GCS 8 with absent protective reflexes. This is the decision point: the crew now has a preoxygenated, BVM-dependent patient who cannot be left on BVM for transport. SGA versus RSI versus continued BVM-to-ED is the choice.",
+      "triggerCondition": "Two to three minutes of optimized BVM with PEEP have raised SpO2 from 78% to 92% and dropped EtCO2 from 78 to 64. Patient remains GCS 8 with absent gag and a tenuous airway. Crew has time and preoxygenation, but the patient cannot transport on BVM alone — an advanced airway decision is required.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 2, "verbal": 2, "motor": 4 },
+        "airway": "Maintained by NPA + jaw thrust + BVM. Pooled secretions suctioned. Gag reflex now absent.",
+        "breathing": "Receiving BVM at 10-12/min, 6-8 mL/kg, PEEP 5 cmH2O. Chest rise visible and bilaterally equal. Some resistance to bag-squeeze (expected in COPD).",
+        "circulation": "HR 110, BP 148/88. Radial pulse stronger. Skin less mottled, perioral cyanosis fading.",
+        "skin": { "color": "Improved — pink centrally, slight peripheral mottling", "temperature": "Warm", "moisture": "Diaphoretic, drying" },
+        "pupils": "PERRL 3 mm.",
+        "motorFunction": "Withdraws to pain; no purposeful movement.",
+        "otherFindings": [
+          "BVM is WORKING — SpO2 92%, EtCO2 trending down",
+          "But: patient cannot transport on BVM alone (mental status, distance, fatigue)",
+          "Gag is now absent — both SGA and ETT are anatomically feasible",
+          "Preoxygenated for the procedure — first-pass success window is open"
+        ],
+        "patientSpeech": "No verbal response."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 110,
+        "bpSys": 148,
+        "bpDia": 88,
+        "respRate": 12,
+        "spo2": 92,
+        "etco2": 64,
+        "temp": 37.6,
+        "tempF": 99.7,
+        "obstruction": 50,
+        "glucose": 168,
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "reassess-bvm-effective",
+          "shortAction": "Reassess: BVM is effective; SpO2 92%, EtCO2 64 and falling",
+          "protocolExcerpt": "Ongoing assessment is critical when an airway device is in place. Acute worsening of respiratory status or evidence of hypoxemia can be secondary to displacement or obstruction of the airway device, pneumothorax, or equipment failure.",
+          "priority": "critical",
+          "rationale": "Reassessment confirms BVM optimization worked. This is a teaching beat: many respiratory failures can be temporized before intubation. The crew now has time to make a deliberate advanced-airway decision instead of a rushed one.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "decision-sga-vs-rsi",
+          "shortAction": "Articulate SGA vs RSI decision; both are protocol-correct here",
+          "protocolExcerpt": "Supraglottic airways (SGA): Consider the use of an appropriately sized SGA if BVM (with OPA/NPA) alone is not effective in maintaining oxygenation and/or ventilation. Endotracheal intubation: When less-invasive methods (two-person BVM, SGA placement) are ineffective or inappropriate, consider endotracheal intubation to maintain oxygenation and/or ventilation. Other indications may include potential airway obstruction, severe inhalation burns, multiple traumatic injuries, altered mental status with loss of normal protective airway reflexes.",
+          "priority": "critical",
+          "rationale": "Crew must verbalize the choice. SGA is faster, requires no paralytic, and is appropriate when ETT skill/equipment is limited. RSI is appropriate with two experienced providers, full equipment, and a plan for post-intubation sedation. There is no single 'right' answer — there are two protocol-correct paths.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "preox-2min-min",
+          "shortAction": "Continue preoxygenation 2+ minutes; consider apneic O2 via NC at 15 LPM",
+          "protocolExcerpt": "Patient should be pre-oxygenated with high flow oxygen, and positive pressure ventilation for a minimum of two minutes prior to the procedure. In some circumstances, sedation may be required for adequate pre-oxygenation. In addition to preoxygenation, apneic oxygenation (high-flow oxygen by nasal cannula) may prolong the period before hypoxia during an intubation attempt.",
+          "priority": "critical",
+          "rationale": "Two-minute minimum preox is protocol. Apneic NC O2 at 15 LPM under the BVM mask extends safe-apnea time during the attempt.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "7ps-prep",
+          "shortAction": "Run the 7 P's checklist: Prep, Preox, Pretreat, Paralyze+induce, Position, Place, Postintubation",
+          "protocolExcerpt": "Checklist use and use of protocolized interventions to optimize the patient physically and physiologically have been shown to both improve success rates of orotracheal intubation as well as decrease peri-intubation complications. Preparation should also include a promptly available plan for alternate airway placement if ETI unsuccessful.",
+          "priority": "critical",
+          "rationale": "The 7 P's force you to lay out equipment, suction, backup airway (SGA), monitor, and rescue plan before any drug is pushed. Skipping this is how peri-intubation arrests happen.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "prep-backup-sga",
+          "shortAction": "Stage a same-size SGA at bedside as rescue airway",
+          "protocolExcerpt": "Endotracheal intubation: In the setting of two failed intubation attempts, place a supraglottic airway, or resume bag-mask ventilations. If an endotracheal tube becomes dislodged, SGA should be strongly considered.",
+          "priority": "critical",
+          "rationale": "The plan for the failed-attempt scenario must be physically staged before the first attempt. SGA out of its package and ready, not on the truck.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "tube-size-7-5-female",
+          "shortAction": "Select 7.5 mm cuffed ETT (adult female); bougie ready; VL preferred",
+          "protocolExcerpt": "For adults, the largest tube size possible should be placed in the patient to limit difficulty with mechanical ventilation and high airway pressures. Absent significant airway swelling or underlying anatomic abnormalities, initial tube size (internal diameter in millimeters) for adult females should be 7.5, adult males 8.0. A bougie may be a helpful adjunct to successful airway placement, especially when video laryngoscopy is unavailable and the glottic opening is difficult to visualize with direct laryngoscopy. For experienced EMS clinicians, video laryngoscopy may enhance intubation success rates and should be used when available.",
+          "priority": "important",
+          "rationale": "7.5 is the protocol-stated adult-female size. Bougie + VL are first-pass success multipliers.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "rsi-prep-complete",
+          "if": "RSI route chosen; 7 P's complete; backup SGA staged",
+          "condition": "Crew elects RSI with two experienced providers present. 7 P's checklist completed: preox 2+ minutes, suction on and tested, monitor on with EtCO2 inline, two IVs flowing, SGA staged, induction (ketamine) and paralytic (rocuronium) drawn up at calculated doses, post-intubation sedation drawn up in advance, video laryngoscope and bougie at the head. Crew is ready to push induction.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["preox-2min-min", "7ps-prep", "prep-backup-sga", "tube-size-7-5-female"]
+        }
+      ]
+    },
+    {
+      "id": "rsi-prep-complete",
+      "name": "RSI prep complete",
+      "description": "Crew has chosen RSI. SpO2 is 95% on optimized BVM with PEEP. Two IVs running, monitor on, suction running, video laryngoscope ready, 7.5 mm cuffed ETT and bougie at the head, SGA staged at bedside, post-intubation sedation drawn up. Ketamine 140 mg IV (70 kg x 2 mg/kg) and rocuronium 84 mg IV (70 kg x 1.2 mg/kg) are about to be pushed. The crew is prepared, preoxygenated, and positioned.",
+      "triggerCondition": "RSI chosen as the airway plan. 7 P's checklist complete: prep, preox, pretreat considered, paralyze+induce drawn up, position confirmed, place plan rehearsed, post-intubation sedation drawn and labeled. Two experienced providers at the head. Backup SGA staged. Ready to push induction agent.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 2, "verbal": 2, "motor": 4 },
+        "airway": "Maintained by NPA + BVM with PEEP. Suction running. Apneic-O2 NC at 15 LPM under the BVM mask.",
+        "breathing": "BVM at 10-12/min, PEEP 5 cmH2O. Chest rise bilateral and equal. SpO2 95%, EtCO2 58 and trending.",
+        "circulation": "HR 108, BP 144/86. Strong radial.",
+        "skin": { "color": "Pink centrally, mottling resolved", "temperature": "Warm", "moisture": "Dry" },
+        "pupils": "PERRL 3 mm.",
+        "motorFunction": "Withdraws to pain.",
+        "otherFindings": [
+          "Pre-induction SpO2 95% — preoxygenation goal achieved",
+          "Two IVs flowing; second IV labeled for push meds",
+          "VL, bougie, 7.5 ETT, syringe for cuff at head of bed",
+          "SGA out of package on the side rail as failed-attempt rescue",
+          "Post-intubation sedation drawn (fentanyl, midazolam, ketamine drip)"
+        ],
+        "patientSpeech": "No verbal response."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 108,
+        "bpSys": 144,
+        "bpDia": 86,
+        "respRate": 12,
+        "spo2": 95,
+        "etco2": 58,
+        "temp": 37.6,
+        "tempF": 99.7,
+        "obstruction": 50,
+        "glucose": 168,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "ketamine-induction",
+          "shortAction": "Ketamine 140 mg IV push (70 kg x 2 mg/kg) for induction",
+          "protocolExcerpt": "Administer induction sedative agent: Etomidate IV push, 0.2-0.3 mg/kg OR Ketamine IV push, 1-2 mg/kg OR Midazolam IV push, 0.05-0.10 mg/kg.",
+          "priority": "critical",
+          "rationale": "Ketamine is preferred for bronchospastic patients because it preserves respiratory drive (helpful for delayed-sequence approaches), maintains hemodynamics, and bronchodilates. 2 mg/kg = full induction dose.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "rocuronium-paralytic",
+          "shortAction": "Rocuronium 84 mg IV push (70 kg x 1.2 mg/kg); allow 60 sec for full paralysis",
+          "protocolExcerpt": "Administer paralytic agent: Succinylcholine IV push, 1-2 mg/kg OR Rocuronium IV push, 1 mg/kg OR Vecuronium IV push, 0.1 mg/kg. Allow time for complete paralysis.",
+          "priority": "critical",
+          "rationale": "1.2 mg/kg dose is the standard high-dose roc for RSI (gives faster onset, ~60 sec). Sux is an alternative but roc avoids the hyperkalemia, fasciculation, and atypical-cholinesterase risks. Wait the full minute before laryngoscopy.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "first-attempt-limited",
+          "shortAction": "Attempt #1 with VL + bougie; limit to 15 sec OR SpO2 <90%",
+          "protocolExcerpt": "Attempt intubation, limiting attempts to 15 seconds, or a desaturation below 90%, whichever occurs first. In the setting of two failed intubation attempts, place a supraglottic airway, or resume bag-mask ventilations.",
+          "priority": "critical",
+          "rationale": "Hard time limit and hard SpO2 limit prevent the 'just one more look' that causes peri-intubation hypoxic arrest. Two failed attempts = SGA, not a third attempt.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "cuff-inflate-secure",
+          "shortAction": "Inflate cuff to seal (~20 cmH2O); note depth at lip; manually secure tube",
+          "protocolExcerpt": "Inflate endotracheal tube cuff with minimum air to seal airway. An ETT cuff manometer can be used to measure and adjust the ETT cuff pressure to the recommended 20 cmH2O pressure. Secure tube manually. Once proper position is confirmed, secure the tube with tape, twill, or commercial device. Note measurement of tube at incisors or gum line and assess frequently for tube movement/displacement using continuous waveform capnography and visual inspection.",
+          "priority": "critical",
+          "rationale": "Cuff pressure too high causes mucosal injury; too low allows aspiration. 20 cmH2O is the protocol target. Manual security until tube is confirmed.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "tube-placed-confirmed",
+          "if": "Tube placed in 1-2 attempts; waveform EtCO2 present",
+          "condition": "On the first attempt (VL + bougie, well-preoxygenated, full paralysis), the crew obtains a clear cords-and-bougie view, advances the 7.5 mm ETT to ~21 cm at the lip, inflates the cuff, and sees a sustained square waveform EtCO2 on the monitor with bilateral chest rise and equal breath sounds. Tube is in.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["ketamine-induction", "rocuronium-paralytic", "first-attempt-limited", "cuff-inflate-secure"]
+        }
+      ]
+    },
+    {
+      "id": "tube-placed-confirmed",
+      "name": "Tube placed and confirmed",
+      "description": "First-pass success. 7.5 mm cuffed ETT at 21 cm at the lip. Waveform EtCO2 shows a square, sustained capnograph (now 54 and trending toward 45). Bilateral chest rise. Equal breath sounds. No epigastric sounds. SpO2 is climbing from 90 (low during attempt) to 96%. The patient is paralyzed and unresponsive. The single most important next action is post-intubation sedation BEFORE paralytic wears off — and BEFORE the tube is taped.",
+      "triggerCondition": "First-pass intubation successful. Sustained square-wave EtCO2, bilateral chest rise, equal breath sounds, absent epigastric sounds, SpO2 recovering. Patient is paralyzed and unresponsive. Tube is at 21 cm at the lip with cuff inflated to seal.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "7.5 mm cuffed ETT at 21 cm at the lip, cuff inflated to seal, manually held in place.",
+        "breathing": "BVM through the ETT at 10-12/min. Square waveform EtCO2 visible. Bilateral chest rise, equal breath sounds, no epigastric sounds.",
+        "circulation": "HR 96, BP 138/82. Strong central and peripheral pulses.",
+        "skin": { "color": "Pink", "temperature": "Warm", "moisture": "Dry" },
+        "pupils": "PERRL 3 mm.",
+        "motorFunction": "Flaccid — paralyzed.",
+        "otherFindings": [
+          "Three-method confirmation: waveform EtCO2 (gold standard), chest rise, breath sounds",
+          "SpO2 recovering from desat-during-attempt (90%) up to 96%",
+          "Paralytic still on board — patient cannot move, blink, or react",
+          "POST-INTUBATION SEDATION is the next critical step"
+        ],
+        "patientSpeech": "Unable to speak — intubated and paralyzed."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 96,
+        "bpSys": 138,
+        "bpDia": 82,
+        "respRate": 12,
+        "spo2": 96,
+        "etco2": 54,
+        "temp": 37.6,
+        "tempF": 99.7,
+        "obstruction": 30,
+        "glucose": 168,
+        "trendTimeSeconds": 25,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "confirm-waveform-etco2",
+          "shortAction": "Confirm placement: waveform EtCO2 (gold standard) + bilateral breath sounds + chest rise + no epigastric sounds",
+          "protocolExcerpt": "Confirm placement of advanced airway (endotracheal tube, SGA) with waveform capnography (most reliable), absent gastric sounds, and bilateral breath sounds. Waveform capnography should be placed prior to the first breath through an invasive airway to confirm placement. Color change on EtCO2 is less accurate than clinical assessment, and wave-form capnography is superior. Misting observed in the tube is not a reliable method of confirmation.",
+          "priority": "critical",
+          "rationale": "Waveform EtCO2 is the gold standard — and the protocol explicitly says color-change and tube-misting are NOT reliable. Three-point confirmation is the documented standard.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "note-depth-secure-tube",
+          "shortAction": "Note depth at lip (21 cm female); secure with commercial device + C-collar to limit movement",
+          "protocolExcerpt": "Note measurement of tube at incisors or gum line and assess frequently for tube movement/displacement using continuous waveform capnography and visual inspection. Cervical collar and/or cervical immobilization device may help reduce neck movement and risk of tube displacement.",
+          "priority": "critical",
+          "rationale": "Depth at the lip is the QA marker for tube migration. C-collar is the underused tool that prevents the tube from being dislodged when the patient is moved to the stretcher.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "post-intub-sedation-fentanyl",
+          "shortAction": "Fentanyl 100 mcg IV (70 kg x ~1.5 mcg/kg; range 1-2 mcg/kg)",
+          "protocolExcerpt": "Consider sedation with sedative and/or opioid medications if agitated: Fentanyl 1-2 mcg/kg And Midazolam 0.02 mg/kg OR Ketamine IV push, 0.5-1 mg/kg.",
+          "priority": "critical",
+          "rationale": "Paralytic without sedation is the single most preventable post-intubation injury. Fentanyl is the analgesic half of the pair — the tube hurts.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "post-intub-sedation-midaz",
+          "shortAction": "Midazolam 1.4 mg IV (70 kg x 0.02 mg/kg) for sedation — or ketamine 35 mg IV (70 kg x 0.5 mg/kg)",
+          "protocolExcerpt": "Consider sedation with sedative and/or opioid medications if agitated: Fentanyl 1-2 mcg/kg And Midazolam 0.02 mg/kg OR Ketamine IV push, 0.5-1 mg/kg. Intubated patients should be provided appropriate sedation with sedative or opioid medications, and sedation titrated to an appropriate target level using RASS score or similar scale.",
+          "priority": "critical",
+          "rationale": "Sedative half of the pair. Either midazolam or low-dose ketamine is acceptable. Titrate to RASS goal. Re-dose during transport — do not wait for the patient to buck the tube.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "gastric-decompression",
+          "shortAction": "Place OG/NG tube for gastric decompression",
+          "protocolExcerpt": "Gastric decompression can improve oxygenation and ventilation, so it should be strongly considered in any patient with an advanced airway and positive pressure ventilation.",
+          "priority": "important",
+          "rationale": "BVM before intubation insufflates the stomach. Decompressing it improves diaphragm excursion and lowers aspiration risk.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "vent-rate-tv-post",
+          "shortAction": "Ventilate 10-12/min, ~6-8 mL/kg IBW, PEEP 5; titrate to EtCO2 35-45",
+          "protocolExcerpt": "Manual ventilation (see above for rate and tidal volume guidance). In patients without primary pulmonary pathology (i.e., acute respiratory distress syndrome (ARDS), COPD), maintain EtCO2 of no less than 35 and up to 40 mmHg. Patients with specific disease processes such as acute acid-base disorders... or acute respiratory failure due to primary pulmonary pathology... will have different EtCO2 parameters due to their underlying disease.",
+          "priority": "critical",
+          "rationale": "Permissive hypercapnia is appropriate in COPD — gradual EtCO2 reduction, not aggressive normalization. Aggressive bagging causes auto-PEEP and hemodynamic collapse.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "transport-monitor-continuous",
+          "shortAction": "Continuous EtCO2 + SpO2 during movement; reassess after each move",
+          "protocolExcerpt": "Continuously monitor correct airway placement with waveform capnography during treatment and transport, paying particular attention to reassessing after each patient movement.",
+          "priority": "critical",
+          "rationale": "Tube displacement during the move from kitchen-chair-to-stretcher-to-truck is the #1 cause of unrecognized esophageal intubation. Waveform EtCO2 is your alarm.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "sedated-transport",
+          "if": "Post-intubation sedation given; tube secured; transported",
+          "condition": "Crew administers fentanyl + midazolam (or ketamine) for post-intubation sedation BEFORE the paralytic wears off. Tube secured with commercial device and C-collar. Gastric decompression placed. Patient remains hemodynamically stable, EtCO2 trending down toward 45, SpO2 96-98%, sedated to a RASS goal. Transport to the closest appropriate facility.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["post-intub-sedation-fentanyl", "post-intub-sedation-midaz", "note-depth-secure-tube", "transport-monitor-continuous"]
+        },
+        {
+          "targetPhaseId": "bucking-no-sedation",
+          "if": "No post-intubation sedation given",
+          "condition": "Crew secures the tube and prepares to transport but does not give fentanyl/midazolam/ketamine for post-intubation sedation. As rocuronium begins to wear off (15-30 min, faster with stress and acidosis), the patient begins to buck the tube, becomes hypertensive and tachycardic, and risks self-extubation or a catastrophic agitation spike. Crew must recognize and rescue.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["post-intub-sedation-fentanyl", "post-intub-sedation-midaz"]
+        }
+      ]
+    },
+    {
+      "id": "sedated-transport",
+      "name": "Sedated; transporting",
+      "description": "Patient is intubated, sedated, and being transported to the closest appropriate facility. EtCO2 is 46 with a normal square waveform, SpO2 99%, HR 88, BP 132/78. Sedation is being titrated to a RASS goal of -3 to -4 with re-dose midazolam or a ketamine drip. The crew reassessed tube depth after each move from kitchen-chair to stretcher to ambulance. Receiving facility notified. This is the protocol-correct end state.",
+      "triggerCondition": "Post-intubation management complete: confirmed placement, secured tube, gastric decompression, post-intubation sedation administered and being maintained, ventilation titrated to a COPD-appropriate EtCO2 target. Patient hemodynamically stable. Transport underway with continuous waveform EtCO2 monitoring.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "ETT 7.5 mm at 21 cm at the lip, cuff sealed, secured with commercial device + C-collar.",
+        "breathing": "Mechanically/BVM ventilated at 10/min, ~480 mL TV, PEEP 5. Square waveform EtCO2 46 mmHg. Bilateral chest rise.",
+        "circulation": "HR 88, BP 132/78. Strong central and peripheral pulses.",
+        "skin": { "color": "Pink", "temperature": "Warm", "moisture": "Dry" },
+        "pupils": "PERRL 3 mm.",
+        "motorFunction": "Sedated — RASS -4. No spontaneous movement.",
+        "otherFindings": [
+          "Confirmed three-method placement after each patient move",
+          "Sedation titrated to RASS -3 to -4; no bucking, no tachycardia spike",
+          "OG tube draining a small amount of bagged-air gastric content",
+          "Receiving ED notified — patient identifiers, history, vitals, meds given, expected ETA"
+        ],
+        "patientSpeech": "Intubated and sedated."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 88,
+        "bpSys": 132,
+        "bpDia": 78,
+        "respRate": 10,
+        "spo2": 99,
+        "etco2": 46,
+        "temp": 37.6,
+        "tempF": 99.7,
+        "obstruction": 30,
+        "glucose": 168,
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "redose-sedation",
+          "shortAction": "Re-dose sedation BEFORE wear-off (midaz q15-30 min or ketamine bolus 35 mg / drip)",
+          "protocolExcerpt": "Intubated patients should be provided appropriate sedation with sedative or opioid medications, and sedation titrated to an appropriate target level using RASS score or similar scale.",
+          "priority": "critical",
+          "rationale": "RASS-driven re-dosing prevents the bucking branch. Anticipate, don't react.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "reassess-after-move",
+          "shortAction": "Three-point reassess (EtCO2, breath sounds, depth at lip) after every move",
+          "protocolExcerpt": "Continuously monitor correct airway placement with waveform capnography during treatment and transport, paying particular attention to reassessing after each patient movement.",
+          "priority": "critical",
+          "rationale": "Tube migration during transfers is the most common late complication. Document at each move.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "transport-closest-appropriate",
+          "shortAction": "Transport to closest appropriate ED; pre-arrival report",
+          "protocolExcerpt": "Transport to the closest appropriate hospital for airway stabilization when respiratory failure cannot be successfully managed in the prehospital setting.",
+          "priority": "critical",
+          "rationale": "Closest-appropriate is protocol language — a tube in place that you can't sustain still goes to the nearest ED. Pre-arrival report lets the team set up the vent and ICU bed.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "rushed-rsi-no-preox",
+      "name": "RSI without pre-O2",
+      "description": "Crew skipped BVM optimization. Pre-induction SpO2 is still 78%. Ketamine and rocuronium have been pushed. Within 45 seconds of paralysis, SpO2 collapses from 78% to 70%, then 64% as the crew attempts laryngoscopy. The patient was never preoxygenated, so safe-apnea time is essentially zero. The teaching beat: this is exactly how peri-intubation hypoxic arrest happens, and the protocol's two-minute preoxygenation requirement exists to prevent it.",
+      "triggerCondition": "Crew elected to push RSI medications without first optimizing BVM ventilation for the protocol-mandated minimum two minutes. Pre-induction SpO2 was 78%. With no preoxygenation reserve and now paralyzed, the patient desaturates catastrophically within the first attempt. Crew must abort and rescue.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "Open during attempt; jaw paralyzed; secretions in posterior pharynx.",
+        "breathing": "Apneic — paralyzed, no preoxygenation reserve.",
+        "circulation": "HR climbing from 118 to 138 (sympathetic response to hypoxia), BP rising to 162/96.",
+        "skin": { "color": "Cyanotic — perioral, fingertips, lips visibly blue", "temperature": "Cool peripheries", "moisture": "Diaphoretic" },
+        "pupils": "PERRL 3 mm, sluggish.",
+        "motorFunction": "Flaccid — paralyzed.",
+        "otherFindings": [
+          "SpO2 collapsing through 70% within 45 seconds of paralysis onset",
+          "Bradycardia is coming next if hypoxia continues — pre-arrest physiology",
+          "Failed-attempt rescue plan IS the protocol — BVM rescue, then SGA"
+        ],
+        "patientSpeech": "Unresponsive, paralyzed."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 138,
+        "bpSys": 162,
+        "bpDia": 96,
+        "respRate": 0,
+        "spo2": 70,
+        "etco2": 82,
+        "temp": 37.6,
+        "tempF": 99.7,
+        "obstruction": 50,
+        "glucose": 168,
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "abort-attempt-spo2",
+          "shortAction": "ABORT attempt: SpO2 <90% triggers stop; resume BVM ventilation",
+          "protocolExcerpt": "Attempt intubation, limiting attempts to 15 seconds, or a desaturation below 90%, whichever occurs first. In the setting of two failed intubation attempts, place a supraglottic airway, or resume bag-mask ventilations.",
+          "priority": "critical",
+          "rationale": "The protocol stop-rule is not negotiable. Pulling out and bagging back up is faster than 'one more look' that ends in arrest.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "rescue-bvm",
+          "shortAction": "Two-person BVM with PEEP; re-preoxygenate to SpO2 >90% before any second attempt",
+          "protocolExcerpt": "Use bag-valve-mask (BVM) ventilation in the setting of respiratory failure or arrest. Two-person, two-thumbs-up BVM ventilation is preferred. PEEP should be used with BVM. Significant attention should be paid to adequate preoxygenation to avoid peri-intubation hypoxia and hypoxic cardiac arrest.",
+          "priority": "critical",
+          "rationale": "Optimized BVM is the rescue. You skipped it the first time; do not skip it the second time.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "rescue-sga",
+          "shortAction": "If second attempt fails or BVM cannot reoxygenate: place SGA (staged at bedside)",
+          "protocolExcerpt": "In the setting of two failed intubation attempts, place a supraglottic airway, or resume bag-mask ventilations. If an endotracheal tube becomes dislodged, SGA should be strongly considered.",
+          "priority": "critical",
+          "rationale": "Two failed attempts = SGA. This is why you stage one at the bedside before the first attempt.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "recognize-teaching-beat",
+          "shortAction": "Debrief: preoxygenation is mandatory; this is how peri-intubation arrests start",
+          "protocolExcerpt": "Patient should be pre-oxygenated with high flow oxygen, and positive pressure ventilation for a minimum of two minutes prior to the procedure. Meticulous attention should be paid to avoiding hypoxia and hypotension during intubation attempts to limit patient morbidity and mortality.",
+          "priority": "important",
+          "rationale": "The teaching point of this branch. The two-minute preox rule is not a suggestion — it is the reason this branch exists.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "tube-placed-confirmed",
+          "if": "BVM re-preoxygenates; SGA or second attempt successful",
+          "condition": "Crew aborts the first attempt, runs optimized two-person BVM with PEEP for 2-3 minutes, re-preoxygenates the patient to SpO2 >90%, and either succeeds on a second intubation attempt OR places the staged SGA. Either path lands at confirmed-and-secured airway, where post-intubation sedation is still required.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["abort-attempt-spo2", "rescue-bvm", "rescue-sga"]
+        }
+      ]
+    },
+    {
+      "id": "bucking-no-sedation",
+      "name": "Bucking tube; no sedation",
+      "description": "Tube is in and confirmed, but no post-intubation sedation was administered. Approximately 18 minutes after the rocuronium push, neuromuscular blockade is wearing off in this stressed, acidotic patient. The patient is now bucking the tube — coughing against it, hypertensive (BP 188/108), tachycardic (HR 132). She is at high risk for self-extubation, intracranial pressure spike (if any TBI co-exists), and a sympathetic storm. The teaching beat: paralysis without sedation is patient-experienced terror, and post-intubation sedation must be given proactively, not reactively.",
+      "triggerCondition": "Approximately 15-20 minutes after the rocuronium push, with no post-intubation fentanyl, midazolam, or ketamine given, the patient regains motor function while remaining intubated. She bucks the tube, becomes acutely hypertensive and tachycardic, and is at imminent risk of self-extubation. Crew must rescue with sedation now and recognize the omission.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 3, "verbal": 1, "motor": 5 },
+        "airway": "ETT in place but patient is biting and coughing against it. Tape strained.",
+        "breathing": "Patient overbreathing the BVM, asynchronous with bagged breaths. Coughing against the tube.",
+        "circulation": "HR 132, BP 188/108. Strong, pounding peripheral pulses. Diaphoretic.",
+        "skin": { "color": "Flushed, pink", "temperature": "Warm", "moisture": "Diaphoretic" },
+        "pupils": "PERRL 4 mm, brisk.",
+        "motorFunction": "Localizes to ETT — reaching for the tube with both hands.",
+        "otherFindings": [
+          "Hypertension + tachycardia = sympathetic storm from awareness while intubated",
+          "Risk: self-extubation, ICP spike if any TBI, myocardial ischemia in elderly",
+          "Secondary problem: bucking breaks ETT seal and may dislodge the tube",
+          "Etiology: paralytic wore off, no sedation on board"
+        ],
+        "patientSpeech": "Cannot speak — intubated, but moaning audibly against the tube."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 132,
+        "bpSys": 188,
+        "bpDia": 108,
+        "respRate": 28,
+        "spo2": 94,
+        "etco2": 38,
+        "temp": 37.6,
+        "tempF": 99.7,
+        "obstruction": 40,
+        "glucose": 168,
+        "trendTimeSeconds": 35,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "rescue-sedation-fentanyl",
+          "shortAction": "Fentanyl 100 mcg IV NOW (70 kg x ~1.5 mcg/kg)",
+          "protocolExcerpt": "Consider sedation with sedative and/or opioid medications if agitated: Fentanyl 1-2 mcg/kg And Midazolam 0.02 mg/kg OR Ketamine IV push, 0.5-1 mg/kg.",
+          "priority": "critical",
+          "rationale": "Analgesia first half. The tube hurts and the patient is awake — give the opioid as part of the pair.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "rescue-sedation-midaz-or-ket",
+          "shortAction": "Midazolam 1.4 mg IV (70 kg x 0.02 mg/kg) OR ketamine 35-70 mg IV (0.5-1 mg/kg)",
+          "protocolExcerpt": "Consider sedation with sedative and/or opioid medications if agitated: Fentanyl 1-2 mcg/kg And Midazolam 0.02 mg/kg OR Ketamine IV push, 0.5-1 mg/kg. Intubated patients should be provided appropriate sedation with sedative or opioid medications, and sedation titrated to an appropriate target level using RASS score or similar scale.",
+          "priority": "critical",
+          "rationale": "Sedative half of the pair. Ketamine 0.5-1 mg/kg is a strong choice when hypotension is a concern; midazolam is the standard.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "consider-repeat-paralytic",
+          "shortAction": "If still bucking after sedation: rocuronium 70 mg IV (70 kg x 1 mg/kg) for maintenance paralysis",
+          "protocolExcerpt": "Consider continued paralysis only if necessary, along with adequate sedation. Sedation and analgesia are preferred over long term paralysis. Rocuronium 1 mg/kg IV push.",
+          "priority": "important",
+          "rationale": "Paralysis ONLY if sedation alone fails. The protocol explicitly prefers sedation over long-term paralysis. Never paralyze without adequate sedation already on board.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "reconfirm-tube-after-buck",
+          "shortAction": "Re-confirm tube depth + waveform EtCO2 + breath sounds after settling",
+          "protocolExcerpt": "Continuously monitor correct airway placement with waveform capnography during treatment and transport, paying particular attention to reassessing after each patient movement.",
+          "priority": "critical",
+          "rationale": "Bucking moves the tube. Re-check depth at lip and waveform after the patient settles to confirm the tube has not migrated.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "recognize-teaching-beat-2",
+          "shortAction": "Debrief: post-intubation sedation is REQUIRED, not optional",
+          "protocolExcerpt": "Intubated patients should be provided appropriate sedation with sedative or opioid medications, and sedation titrated to an appropriate target level using RASS score or similar scale.",
+          "priority": "important",
+          "rationale": "Tubed and paralyzed without sedation = awareness during paralysis. The protocol mandates sedation in the same paragraph that introduces post-intubation management.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "sedated-transport",
+          "if": "Sedation given; patient settles; tube reconfirmed",
+          "condition": "Crew administers fentanyl + midazolam (or ketamine), re-confirms tube depth and waveform EtCO2, and the patient settles to a RASS goal. Heart rate and blood pressure normalize. Transport continues to the closest appropriate ED with continuous capnography.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["rescue-sedation-fentanyl", "rescue-sedation-midaz-or-ket", "reconfirm-tube-after-buck"]
+        }
+      ]
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

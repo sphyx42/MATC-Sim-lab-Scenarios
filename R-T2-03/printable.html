@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anaphylaxis with Airway Compromise — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Anaphylaxis with Airway Compromise</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Maya Ellis</strong></span><span class="patient-chip">32 years female</span><span class="patient-chip">150 lbs (68 kg)</span><span class="patient-chip">5'6"</span><span class="patient-chip">CC: Difficulty breathing after bee sting</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">32-year-old female, allergic reaction, can't breathe. Residential backyard.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Suburban single-family home, side gate open into backyard. Patient seated on a wooden bench beside a flowerbed, leaning forward on her knees. Garden tools scattered on the grass.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Saturday, 2:18 PM, warm sunny afternoon</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Wasp nest visible under the eaves approximately 15 feet from patient — relocate patient away from the nest before extended care. Otherwise scene safe.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Husband (Tom) on scene, frantic, met EMS at curb. Reports onset 8 min ago, known severe bee allergy, EpiPen is upstairs at home. No prior similar episode this season.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Patient leaning forward, tripod position, audible inspiratory stridor heard from across the yard</li><li>Widespread urticaria on neck, chest, and arms; lips visibly swollen</li><li>Single wasp sting site on left forearm with surrounding wheal</li><li>Vomitus on the grass next to patient</li><li>Patient using accessory muscles, voice muffled and strained</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">32-year-old female, known severe bee allergy with one prior anaphylactic episode requiring ED epinephrine 3 years ago. Carries an EpiPen but left it at home today. While gardening in her backyard approximately 8 minutes ago, she was stung on the left forearm by a wasp. Within 2-3 minutes she developed widespread hives, lip swelling, and an itchy throat. Symptoms have progressed rapidly: voice now muffled and 'tight,' audible high-pitched inspiratory stridor, expiratory wheeze, nausea and one episode of vomiting on the lawn. Patient is anxious, leaning forward in the tripod position, refusing to lie flat. Husband called 911 immediately. No fever, no chest pain, no prior cardiac history. Last episode triggered by yellow jacket sting.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">Bee/wasp venom (anaphylaxis), NKDA otherwise</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Loratadine 10 mg PO daily, EpiPen 0.3 mg (prescribed, not on person today)</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Anaphylaxis to bee/wasp stings (one prior episode), Seasonal allergies</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Toast and coffee approximately 90 minutes ago</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Gardening in backyard, stung on left forearm by a wasp ~8 minutes prior to EMS arrival. Rapid onset of hives, swelling, and breathing difficulty. EpiPen at home, husband unable to retrieve in time.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">Crew arrives to find a 32-year-old female seated on a garden bench, leaning forward in tripod position, audibly stridorous and wheezing. Widespread hives across face, neck, and chest, with obvious lip swelling. Voice is muffled and 'thick.' Patient is anxious, fully oriented, but speaking only in 2-3 word phrases. Husband reports a wasp sting 8 minutes ago, known severe bee allergy, EpiPen at home. Skin is flushed and warm but radial pulse is weak and rapid. SpO2 91% on room air, BP 86/52, HR 132, RR 28. This is a rapidly evolving multi-system anaphylaxis (skin + respiratory + GI + circulatory) — IM epinephrine is the time-critical first move, not IV access.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">132</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">86/52</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">91%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">28</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">32</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.8°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">108</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent but threatened — audible inspiratory stridor, muffled 'hot potato' voice, visible lip and perioral swelling, tongue appears mildly enlarged</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Labored, accessory muscle use, RR 28, audible expiratory wheeze bilaterally, decreased air movement at bases</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Weak, rapid radial pulse ~132; cap refill 3 seconds; flushed warm skin (distributive shock pattern)</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">flushed with diffuse urticaria · warm · diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 4mm bilaterally</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities, no focal deficits, gripping bench for support</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"'Can't... breathe... throat...'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Widespread urticaria/wheals over face, neck, chest, arms</li><li>Lip and perioral angioedema</li><li>Single wasp sting on left forearm with wheal</li><li>Patient refuses supine — sits leaning forward for breathing comfort</li><li>Vomitus on the grass</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize multi-system anaphylaxis (skin + airway + GI + hypotension)</div></div>
+        <div class="action-excerpt">Anaphylaxis – More severe and is characterized by an acute onset involving: The skin (urticaria) and/or mucosa with either respiratory compromise or decreased BP or signs of end-organ dysfunction OR Hypotension for that patient after exposure to a known allergen OR Two or more of the following occurring rapidly after exposure to a likely allergen: Skin and/or mucosal involvement; Respiratory compromise (dyspnea, wheezing, stridor, hypoxemia); Persistent gastrointestinal symptoms (vomiting, abdominal pain, diarrhea); Hypotension or associated symptoms.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Epinephrine 0.3 mg IM (1 mg/mL) anterolateral thigh IMMEDIATELY</div></div>
+        <div class="action-excerpt">Epinephrine administration is the primary treatment for anaphylaxis. If signs of anaphylaxis, administer epinephrine 1 mg/mL at the following dose and route: Adult (25 kg or more) 0.3 mg IM in the anterolateral thigh.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Allow tripod/upright position — do NOT force supine with airway swelling</div></div>
+        <div class="action-excerpt">Patient positioning can significantly impact respiratory mechanics. Patients with severe bronchospasm should be left in the position of comfort (perhaps tripod) whenever possible. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">High-flow O2 via NRB 15 LPM; titrate to SpO2 94-98%</div></div>
+        <div class="action-excerpt">Administer oxygen if needed for air hunger or respiratory distress and titrate to a target SPO2 of 94–98%. Depending on patient presentation, this may be accomplished with nasal cannula, nonrebreather, BVM, NIV.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Prep difficult airway plan: BVM + PEEP, SGA, ETT — anticipate edema worsens</div></div>
+        <div class="action-excerpt">Signs of a difficult airway (short jaw or limited jaw thrust or mobility, small thyromental space, upper airway obstruction, large tongue, obesity, large tonsils, large neck, craniofacial abnormalities, excessive facial hair, tracheostomy scar or evidence of other neck/facial surgery, trismus). When less-invasive methods (two-person BVM, SGA placement) are ineffective or inappropriate, consider endotracheal intubation to maintain oxygenation and/or ventilation.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Establish two large-bore IVs (18g) AFTER first IM epi — not before</div></div>
+        <div class="action-excerpt">Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">NS bolus 1 L IV wide open (68 kg × 20 mL/kg = 1360 mL — give 1 L now)</div></div>
+        <div class="action-excerpt">For signs of hypoperfusion, also administer 20 mL/kg isotonic fluid (normal saline or lactated Ringer's) rapidly (over 15 minutes) via IV or IO, and repeat as needed for ongoing hypoperfusion.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Cardiac monitor, 12-lead EKG, capnography</div></div>
+        <div class="action-excerpt">Cardiac monitoring is not required, but should be considered for those with known heart problems or who received multiple doses of epinephrine. Patients with significant respiratory distress should have continuous pulse oximetry and waveform capnography monitoring for both assessment and for guiding therapy.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Nebulized epinephrine 1 mg/mL, 5 mL via nebulizer for stridor</div></div>
+        <div class="action-excerpt">If stridor is present, consider administering epinephrine 1 mg/mL, 5 mL nebulized.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Albuterol 5 mg nebulized for lower-airway wheeze</div></div>
+        <div class="action-excerpt">If respiratory distress with wheezing is present, consider administering Albuterol 2.5–5 mg nebulized AND/OR Epinephrine 1 mg/mL, 5 mL nebulized.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">First IM Epi given</div>
+        <div class="phase-trigger">Trigger: IM epinephrine 0.3 mg administered promptly. Catecholamine response reverses bronchospasm and vasodilation: stridor softens, BP rises, SpO2 improves. Airway window holds.</div>
+        <div class="phase-desc">IM epinephrine 0.3 mg was given to the anterolateral thigh within 2 minutes of patient contact. Over the next 3-5 minutes, the patient improves: stridor audibly softens, voice less muffled, SpO2 climbs from 91% to 96% on high-flow O2, BP rises from 86/52 to 102/64 with 1 L NS bolus. Wheeze persists but air movement improves with nebulized albuterol and nebulized epi. Patient is more able to speak in short sentences. IV access x2 has been obtained. Now is the time to layer in secondary therapies: diphenhydramine, corticosteroids, and continued monitoring — and to remain vigilant for a biphasic reaction.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">108</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">102/64</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">96%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">22</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">35</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.8°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">108</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Stridor softer but still audible at rest; lip swelling unchanged; voice less muffled</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 22, accessory muscle use reducing, expiratory wheeze still present but air movement improved</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse stronger ~108, cap refill 2 sec, skin still flushed but warmer/drier</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">flushed, urticaria persisting · warm · drying</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 4mm</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities, more relaxed posture</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"'Better... but still tight... in my throat.'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Urticaria still widespread but no new wheal formation</li><li>Lip swelling stable</li><li>Patient now sitting upright more comfortably</li><li>Two 18g IVs established (left AC, right forearm)</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Diphenhydramine 50 mg IV (68 kg × 1 mg/kg = 68 mg → cap at 50 mg max)</div></div>
+        <div class="action-excerpt">For urticaria or pruritus, administer a diphenhydramine 1 mg/kg, up to maximum dose of 50 mg IM, IV, or PO). The IV route is preferred for the patient in severe symptoms.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Methylprednisolone 125 mg IV (or Dexamethasone 10 mg IV)</div></div>
+        <div class="action-excerpt">Consider Methylprednisolone IV push or IM, 80-125 mg OR Dexamethasone IV push, IM, or PO, 8-16 mg (pediatric 0.5 mg/kg to max of 16 mg).</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">Famotidine 20 mg IV (68 kg × 0.5 mg/kg = 34 mg → cap at 20 mg max)</div></div>
+        <div class="action-excerpt">As a supplement to diphenhydramine given for urticaria, famotidine, cimetidine) can be given IV in conjunction with diphenhydramine. Famotidine 0.5mg/kg to a max dose of 20mg.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess perfusion, BP, lung sounds, airway every 5 min</div></div>
+        <div class="action-excerpt">Transport as soon as possible, and perform ongoing assessment as indicated. Cardiac monitoring is not required, but should be considered for those with known heart problems or who received multiple doses of epinephrine.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Begin transport to nearest appropriate ED; advance notification</div></div>
+        <div class="action-excerpt">Transport as soon as possible, and perform ongoing assessment as indicated.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Biphasic reaction</div>
+        <div class="phase-trigger">Trigger: Biphasic anaphylactic reaction — return of symptoms ~12 minutes after initial improvement despite continued bronchodilators and steroids. Mechanism: ongoing mast cell mediator release outlasting the first epi dose.</div>
+        <div class="phase-desc">Approximately 12 minutes after the first IM epinephrine dose, en route to the ED, the patient deteriorates again. Stridor returns and intensifies, voice becomes more muffled, expiratory wheeze worsens, SpO2 drops from 96% to 92%, BP falls from 102/64 to 88/56, HR climbs back to 128. This is a classic biphasic anaphylactic reaction — a return of symptoms hours (or, here, minutes) after initial improvement, often with similar or worse severity. Crew must give a SECOND IM epi 0.3 mg, continue fluid resuscitation, and consider an epinephrine infusion if symptoms remain refractory. Reassess airway plan — if obstruction climbs back toward 60+ with worsening voice and stridor, the window for intubation is narrowing and surgical airway preparation should be confirmed.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">128</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">88/56</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">92%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">26</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">33</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.8°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">108</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Stridor returning, voice more muffled, lip and perioral swelling worse</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 26, accessory muscle use returning, wheeze worse with poor air movement</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulse 128 weak, cap refill 3 sec, skin flushing intensifying</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">flushed with new urticaria wheals · warm · newly diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 4mm</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Anxious, gripping rails, moves all extremities</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"'It's... coming back... worse...'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>New wheal formation on chest and abdomen</li><li>Voice noticeably more muffled than 5 minutes ago</li><li>Patient reports 'it's coming back'</li><li>Capnograph waveform showing return of shark-fin morphology</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Repeat Epinephrine 0.3 mg IM (1 mg/mL) anterolateral thigh — SECOND dose</div></div>
+        <div class="action-excerpt">If signs of anaphylaxis and hypoperfusion persist following the first dose of epinephrine, additional IM epinephrine can be repeated q5–15 minutes at above noted doses.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Repeat NS bolus 1 L IV (cumulative target up to 30 mL/kg if needed)</div></div>
+        <div class="action-excerpt">Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Repeat nebulized epinephrine 5 mL (1 mg/mL) for returning stridor</div></div>
+        <div class="action-excerpt">If stridor is present, consider administering epinephrine 1 mg/mL, 5 mL nebulized.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Prep epi infusion (0.05-0.3 mcg/kg/min) if refractory after 2nd IM epi + 60 mL/kg fluids</div></div>
+        <div class="action-excerpt">Consider an epinephrine IV drip (0.5 mcg/kg/minute) when cardiovascular collapse (hypotension with altered mental status, pallor, diaphoresis and/or delayed capillary refill) is present despite repeated IM doses of epinephrine in conjunction with at least 60 mL/kg isotonic fluid boluses.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess airway plan — confirm SGA, smaller ETT (6.0), surgical kit at bedside</div></div>
+        <div class="action-excerpt">Optimize patient for first-pass success with pre-procedure resuscitation, preoxygenation, positioning, sedatives and paralytics as indicated by patient presentation. When patients cannot be oxygenated/ventilated effectively using the above interventions, or when conventional airway approaches are impossible, surgical airway management is a reasonable option if the clinician has competency in the procedure.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Updated advance notification — biphasic, second epi given, possible difficult airway</div></div>
+        <div class="action-excerpt">Transport as soon as possible, and perform ongoing assessment as indicated.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">IV first, Epi delayed</div>
+        <div class="phase-trigger">Trigger: IV access attempted before IM epinephrine. 3-4 minute delay in time-to-epinephrine. Airway edema progresses; obstruction climbs from 60 toward 85+. Patient transitions from talking to silent.</div>
+        <div class="phase-desc">Crew prioritized establishing IV access before giving IM epinephrine, planning to administer epi IV instead of IM. Two venipuncture attempts on a hypotensive, vasoconstricted, anxious patient take 3-4 minutes. During that delay, the airway edema progresses unchecked: stridor becomes louder and now biphasic with both inspiratory and expiratory components, voice becomes nearly inaudible, lip and tongue swelling worsen visibly, SpO2 drops from 91% to 85%, and the patient transitions from anxious-talking to gasping and silent. This is the classic anaphylaxis trap — treating it like septic or hypovolemic shock (line first, then drugs) instead of like the time-critical mast cell event it is. The fix is RESCUE IM epi NOW, then manage a much-more-difficult airway. This branch teaches that IM epi precedes everything else, including IV access.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">140</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">74/46</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">85%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">34</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">28</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.8°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">108</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Inappropriate words</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">12</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Severely compromised — biphasic stridor (both inspiratory and expiratory), markedly swollen lips and tongue protruding slightly, voice nearly inaudible, drooling</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 34 shallow, severe accessory muscle use, tracheal tugging, audible wheeze with very poor air movement</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Weak thready radial pulse ~140, cap refill 4 sec, mottling at extremities</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">flushed centrally, mottled peripherally, lips cyanotic · cool peripherally · profusely diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 4mm but patient less responsive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Reduced spontaneous movement, no longer reaching for crew</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"(Unable to speak — gasping)"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Patient now silent — was talking 4 minutes ago</li><li>Visible tracheal tugging and suprasternal retractions</li><li>Two unsuccessful IV attempts with hematomas at AC sites</li><li>Patient slumping forward, GCS dropping</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize the error — IM epi must precede IV access in anaphylaxis</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Time to epinephrine delivery; Concentration of epinephrine in relation to route; Weight-based dosing of medications.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">RESCUE Epinephrine 0.3 mg IM (1 mg/mL) anterolateral thigh — immediately</div></div>
+        <div class="action-excerpt">Epinephrine administration is the primary treatment for anaphylaxis. If signs of anaphylaxis, administer epinephrine 1 mg/mL at the following dose and route: Adult (25 kg or more) 0.3 mg IM in the anterolateral thigh. Epinephrine 1 mg/mL may be administered from a vial or via auto-injector, if available.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Place humeral IO — peripheral IV is failing in shock; need access for fluids</div></div>
+        <div class="action-excerpt">Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Nebulized epinephrine 5 mL (1 mg/mL) for now-severe stridor</div></div>
+        <div class="action-excerpt">If stridor is present, consider administering epinephrine 1 mg/mL, 5 mL nebulized.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Two-person BVM with PEEP, NPA + OPA, prep smaller ETT (6.0) AND surgical airway</div></div>
+        <div class="action-excerpt">Two-person, two-thumbs-up BVM ventilation is preferred. PEEP should be used with BVM. 5 cmH2O is generally an appropriate initial PEEP setting. When patients cannot be oxygenated/ventilated effectively using the above interventions, or when conventional airway approaches are impossible, surgical airway management is a reasonable option if the clinician has competency in the procedure.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">NS 1 L IO wide open, repeat to 30 mL/kg (2 L); reassess MAP target 65</div></div>
+        <div class="action-excerpt">For signs of hypoperfusion, also administer 20 mL/kg isotonic fluid (normal saline or lactated Ringer's) rapidly (over 15 minutes) via IV or IO, and repeat as needed for ongoing hypoperfusion. Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Rapid transport, advance notification — likely difficult airway, refractory anaphylaxis</div></div>
+        <div class="action-excerpt">Transport to the closest appropriate hospital for airway stabilization when respiratory failure cannot be successfully managed in the prehospital setting.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

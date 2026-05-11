@@ -1,0 +1,402 @@
+{
+  "meta": {
+    "id": "R-T2-04",
+    "name": "Aspiration Event in Altered Patient",
+    "version": 1,
+    "difficulty": "intermediate",
+    "category": "Respiratory",
+    "protocols": [
+      "resp-airway-management",
+      "medical-altered-mental-status",
+      "resp-respiratory-distress",
+      "tox-opioid-poisoning-overdose"
+    ],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "respiratory",
+      "airway",
+      "aspiration",
+      "altered-mental-status",
+      "suction",
+      "bvm-peep",
+      "advanced-airway",
+      "tier-2",
+      "decision-dense"
+    ]
+  },
+  "patient": {
+    "name": "Gregory Halloran",
+    "age": 58,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 95,
+    "weightLbs": 209,
+    "height": 178,
+    "chiefComplaint": "Unresponsive with vomiting and noisy breathing",
+    "history": {
+      "hpi": "58-year-old male found by his spouse in bed at approximately 0540 'snoring loudly' and unable to be roused. She reports he went to bed around 2300 the prior evening after 'two or three beers' and his usual hydrocodone for chronic back pain. She last spoke with him around 2330; he was groggy but conversational. This morning she found him supine with vomit on the pillow and on his shirt, breathing 'wet and gurgly.' No witnessed seizure activity. No recent fevers, no chest pain reported. No new medications. Spouse denies any recent suicidal statements but notes he has been 'drinking more lately' since being placed on disability for his back. Last known well: ~2330 prior night (approximately 6 hours ago). No known stroke risk symptoms previously, no slurred speech or facial droop noted before bed.",
+      "pastMedical": [
+        "Hypertension",
+        "Chronic low back pain (failed lumbar fusion 2019)",
+        "Alcohol use disorder",
+        "Obstructive sleep apnea (uses CPAP intermittently, not last night)"
+      ],
+      "medications": [
+        "Hydrocodone/acetaminophen 10/325 mg PO every 4–6 hours PRN",
+        "Lisinopril 20 mg PO daily",
+        "Gabapentin 600 mg PO three times daily",
+        "Ibuprofen 600 mg PO as needed"
+      ],
+      "allergies": ["NKDA"],
+      "lastOralIntake": "Light dinner at ~1900 prior evening; 2–3 beers between 2000–2300; hydrocodone dose around 2300",
+      "events": "Spouse found patient in bed at ~0540 unable to be roused, with vomit on pillow and clothing and 'gurgly' breathing. Called 911. No witnessed fall, no seizure activity. Patient was alone in bed for approximately 6 hours."
+    }
+  },
+  "scene": {
+    "dispatch": "58-year-old male, not waking up. Wife on scene reports vomiting and noisy breathing. Private residence.",
+    "location": "Master bedroom of a single-story suburban home. Patient supine in queen bed, head of bed flat, propped slightly on pillows. Vomit visible on the pillow and on the front of the patient's t-shirt. CPAP machine on nightstand, mask hanging unused. Empty beer cans (3) on the floor and a prescription bottle of hydrocodone/acetaminophen on the nightstand.",
+    "time": "Sunday, 0552 — early morning",
+    "safety": "Scene safe. Adequate lighting once spouse turns on overhead. Adequate room to work on both sides of the bed. Bed at low working height — consider moving to floor or stretcher for advanced airway. Standard BSI; emesis present.",
+    "bystanders": "Spouse (Linda, 56) on scene, anxious but cooperative. She last saw him conversational at 2330; found him this way at 0540. She can report medication and alcohol history.",
+    "visualCues": [
+      "Vomit (partially digested food, light tan) on pillow and shirt front",
+      "Patient supine — NOT lateral; head of bed flat",
+      "Prescription bottle of hydrocodone/acetaminophen on nightstand, partially full",
+      "Empty beer cans on the bedroom floor",
+      "CPAP machine present but mask unused",
+      "Audible coarse gurgling with each breath from across the room",
+      "No bystander signs of struggle, no fall debris, no obvious trauma"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 58-year-old male supine in bed, GCS 8 (E2 V2 M4) — opens eyes to pain, moans incomprehensibly, localizes to pain. Vomit on pillow and shirt. Audible coarse gurgling rhonchi across the room, worse on the left side. Respirations 16 and shallow. SpO2 84% on room air. HR 112, BP 138/86. Skin warm, pink, with mild diaphoresis. Pupils 3 mm bilaterally and sluggishly reactive. Glucose 88. Gag reflex absent on jaw-thrust testing. Crew is on a bed at the patient's left side with full BLS kit, suction unit (rigid Yankauer + flexible French catheters), BVM with PEEP valve, O2 cylinder, monitor/defib, King airway and intubation kit available, and the IV/med bag.",
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 2, "verbal": 2, "motor": 4 },
+        "airway": "NOT patent — coarse gurgling audible from across the room; vomitus visible at the lips and pooled at the posterior pharynx; gag reflex absent on jaw-thrust",
+        "breathing": "Spontaneous but shallow at 16/min; coarse rhonchi bilaterally L>R, worst in the left lower lobe; no obvious cyanosis yet",
+        "circulation": "Strong radial pulse at 112, regular; cap refill <2s; skin warm and pink with mild diaphoresis",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "mildly diaphoretic" },
+        "pupils": "3 mm bilaterally, sluggishly reactive (not pinpoint, not blown)",
+        "motorFunction": "Localizes to painful stimulus, no posturing, no focal weakness on noxious stimulus comparison",
+        "otherFindings": [
+          "Vomit on pillow and shirt — tan, particulate, no frank blood",
+          "Mild odor of alcohol on breath",
+          "No tongue laceration, no incontinence noted",
+          "No JVD, no obvious trauma",
+          "Spouse states 'he went to bed around 11 — I found him like this at 5:40'"
+        ],
+        "patientSpeech": "Moans, no comprehensible words"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 112,
+        "bpSys": 138,
+        "bpDia": 86,
+        "respRate": 16,
+        "spo2": 84,
+        "etco2": 48,
+        "temp": 36.9,
+        "tempF": 98.4,
+        "obstruction": 50,
+        "glucose": 88,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "primary-survey",
+          "shortAction": "Rapid primary survey (ABC); recognize compromised airway with active aspiration",
+          "protocolExcerpt": "Implement emergent interventions and monitoring. Physical Examination – Assess for: Abnormal respiratory pattern, rate and/or effort; Quality of air exchange, including depth of respiration and equality of breath sounds; Abnormal breath sounds (e.g., wheezing, rhonchi, rales, or stridor); Skin color (cyanosis or pallor), presence of diaphoresis; Mental status, including anxiety; Airway obstruction with foreign body or swelling.",
+          "priority": "critical",
+          "rationale": "Frames every downstream decision: airway is the leading problem, not breathing or circulation. Vomit + gurgling + SpO2 84% + GCS 8 = aspiration with airway compromise. Anchors the crew to airway-first thinking.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "aggressive-suction",
+          "shortAction": "Aggressive oropharyngeal suction with rigid Yankauer (consider SALAD technique)",
+          "protocolExcerpt": "Suction airway: for significantly contaminated airways, consider utilizing a suction assisted laryngeal airway decontamination (SALAD) technique. Suctioning to limit aspiration is a priority, since it is associated with development of hospital acquired pneumonia and related increases in ICU stay and mortality.",
+          "priority": "critical",
+          "rationale": "This is THE first procedural step. You cannot oxygenate, ventilate, or place any adjunct through a soiled airway. SALAD framing primes the crew to keep suction in the airway during BVM/intubation if needed.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "lateral-recovery",
+          "shortAction": "Lateral recovery position to drain ongoing emesis and reduce further aspiration",
+          "protocolExcerpt": "Patient positioning can significantly impact respiratory mechanics. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics. This can both improve the ability to ventilate and limit aspiration.",
+          "priority": "critical",
+          "rationale": "Until a definitive airway is in place, gravity is the second-best tool after suction. Keeping the patient supine is the most common avoidable error in this presentation.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "opa-vs-npa",
+          "shortAction": "Insert OPA (gag absent); maintain manual airway with jaw-thrust",
+          "protocolExcerpt": "Oropharyngeal airways (OPA) or nasopharyngeal airways (NPA) can be placed if needed to maintain a patent airway and make BVM ventilation more effective. OPA are used for patients without gag reflex. NPA are used for patients with gag reflex.",
+          "priority": "critical",
+          "rationale": "Gag is absent per assessment — OPA is the protocol-correct choice. Forces the student to verify gag before choosing the adjunct.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "bvm-peep",
+          "shortAction": "Two-person BVM, 10/min, PEEP valve at 5 cmH2O, head elevated 30°",
+          "protocolExcerpt": "Use bag-valve-mask (BVM) ventilation in the setting of respiratory failure or arrest. Whenever possible, the patient's head should be elevated up to 30 degrees. Two-person, two-thumbs-up BVM ventilation is preferred. PEEP should be used with BVM. 5 cmH2O is generally an appropriate initial PEEP setting. Rate Adult: 10–12 breaths/minute.",
+          "priority": "critical",
+          "rationale": "Shallow at 16 with SpO2 84% IS respiratory failure. PEEP recruits the partially collapsed aspirated lung. Critical distinction from 'just slap on a non-rebreather.'",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "ams-differential",
+          "shortAction": "Work AMS differential (AEIOU-TIPS); check glucose, pupils, breath odor",
+          "protocolExcerpt": "Consider the following differential using the mnemonic AEIOU-TIPS: A – Alcohol, Abuse, Atypical migraine; E – Epilepsy, Electrolytes; I – Insulin (hypoglycemia); O – Oxygen, Overdose; U – Uremia; T – Trauma, Tumor; I – Infection; P – Psych, Poisoning; S – Seizure, Subarachnoid hemorrhage, Sepsis.",
+          "priority": "critical",
+          "rationale": "Working the differential simultaneously with airway management is the Tier 2 judgment piece. Hydrocodone + alcohol + sleep apnea is one story; stroke/seizure/sepsis cannot be ignored.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "glucose-check",
+          "shortAction": "Verify glucose 88 mg/dL — rules out hypoglycemia (no D10 indicated)",
+          "protocolExcerpt": "Blood glucose level. Hypoglycemia considered and treated appropriately — Blood glucose level obtained.",
+          "priority": "critical",
+          "rationale": "Glucose 88 is normal — hypoglycemia is OFF the differential. Documenting this is what makes the rest of the workup defensible.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "stroke-assessment",
+          "shortAction": "Stroke screen (face/arm/speech, last known well 2330 prior night)",
+          "protocolExcerpt": "Stroke assessment tool including focal neurologic findings.",
+          "priority": "important",
+          "rationale": "Last-known-well is ~6 hours ago — outside thrombolytic window even if stroke. But the assessment still drives destination/notification. Demonstrates differential discipline.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "iv-monitor-etco2",
+          "shortAction": "IV access, full monitor, waveform EtCO2, 12-lead",
+          "protocolExcerpt": "Patients with significant respiratory distress should have continuous pulse oximetry and waveform capnography monitoring for both assessment and for guiding therapy. EKG or cardiac monitor: arrhythmia limiting perfusion.",
+          "priority": "important",
+          "rationale": "Sinus tach at 112 is consistent with hypoxia/aspiration; EtCO2 waveform will track response to PEEP and ventilation. Capnography is the early-warning system if the airway deteriorates.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "naloxone-trial",
+          "shortAction": "Naloxone 0.4 mg IV (titrate to respiratory effort, may repeat up to 2 mg)",
+          "protocolExcerpt": "Adults: The typical initial adult dose ranges between Naloxone 0.4–2 mg IV, IM, up to a dose of 4 mg IN or 5 mg ETT. The administration of the initial dose or subsequent doses can be incrementally titrated until respiratory depression is reversed. Critical resuscitation (opening and/or maintaining the airway, provision of oxygen, ensuring adequate circulation) should be performed prior to naloxone administration.",
+          "priority": "important",
+          "rationale": "Hydrocodone + EtOH + miosis (3 mm sluggish) + respiratory depression makes a reasonable opioid trial. Low-dose titration avoids vomiting-on-arousal and protects the just-cleared airway. Naloxone is therapeutic, NOT diagnostic.",
+          "protocolReference": "MATC: Opioid Poisoning/Overdose"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "airway-stabilized",
+          "if": "Suction + lateral + BVM with PEEP performed",
+          "condition": "Crew performs aggressive Yankauer suction, repositions to lateral recovery, places OPA (gag absent), and initiates two-person BVM at 10/min with PEEP 5. Within 2-3 minutes SpO2 climbs from 84% to 91%, EtCO2 normalizes, but patient remains GCS 8 with no return of protective airway reflexes.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["aggressive-suction", "lateral-recovery", "opa-vs-npa", "bvm-peep"]
+        },
+        {
+          "targetPhaseId": "nrb-mistake",
+          "if": "NRB applied without suction or repositioning",
+          "condition": "Crew applies high-flow oxygen via non-rebreather mask to a supine, vomiting, unresponsive patient without first suctioning, repositioning, or establishing a basic airway. Aspiration continues, SpO2 stays at 84%, and patient deteriorates over 3-4 minutes.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["aggressive-suction", "lateral-recovery", "bvm-peep"]
+        }
+      ]
+    },
+    {
+      "id": "airway-stabilized",
+      "name": "Airway stabilized, gag absent",
+      "description": "After aggressive suction with the rigid Yankauer, lateral recovery positioning, OPA placement, and two-person BVM with PEEP 5, the airway is now visibly clear, the gurgling has stopped, and SpO2 has climbed from 84% to 91%. EtCO2 has normalized to 38 mmHg with a square waveform. HR has come down to 104 as hypoxia improves. BP is 134/82. However, the patient remains GCS 8 with NO return of gag reflex, NO purposeful response beyond localization, and is fully dependent on the BVM for adequate ventilation. The fundamental problem — an unprotected airway in a patient with ongoing aspiration risk — remains unsolved. This is the definitive-airway decision point.",
+      "triggerCondition": "After suctioning, lateral positioning, OPA, and two-person BVM with PEEP, SpO2 rises from 84% to 91% and EtCO2 normalizes — but the patient still cannot protect his own airway. Gag is absent, GCS remains 8, and aspiration risk continues with every transport movement. Protocol favors definitive airway placement when protective reflexes are absent and aspiration risk is ongoing.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 2, "verbal": 2, "motor": 4 },
+        "airway": "Patent with OPA + manual jaw-thrust; no gurgling; gag reflex still absent",
+        "breathing": "BVM-assisted at 10/min with PEEP 5; chest rise equal and adequate; rhonchi persist L>R but no fresh emesis",
+        "circulation": "Radial pulse 104, regular; cap refill <2s; skin warm and pink",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "mildly diaphoretic" },
+        "pupils": "3 mm bilaterally, sluggishly reactive",
+        "motorFunction": "Localizes to pain, no posturing, no focal deficit",
+        "otherFindings": [
+          "Pulse oximetry now 91% on BVM with PEEP",
+          "EtCO2 38 mmHg with normal square waveform",
+          "No gag reflex on suction stimulation — confirmed twice",
+          "Patient does not tolerate OPA removal — slumps and obstructs",
+          "Spouse remains at bedside, watching"
+        ],
+        "patientSpeech": "Moans only; no words"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 104,
+        "bpSys": 134,
+        "bpDia": 82,
+        "respRate": 10,
+        "spo2": 91,
+        "etco2": 38,
+        "temp": 36.9,
+        "tempF": 98.4,
+        "obstruction": 25,
+        "glucose": 88,
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-unprotected-airway",
+          "shortAction": "Recognize unprotected airway despite stable vitals; gag absent, GCS 8",
+          "protocolExcerpt": "Endotracheal intubation: When less-invasive methods (two-person BVM, SGA placement) are ineffective or inappropriate, consider endotracheal intubation to maintain oxygenation and/or ventilation. Other indications may include potential airway obstruction, severe inhalation burns, multiple traumatic injuries, altered mental status with loss of normal protective airway reflexes.",
+          "priority": "critical",
+          "rationale": "The trap here is anchoring on the SpO2 improvement and calling it 'fixed.' The protocol is explicit: AMS with loss of protective reflexes is an indication for advanced airway.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "preoxygenate-prior-to-airway",
+          "shortAction": "Continue BVM with PEEP to pre-oxygenate prior to advanced airway",
+          "protocolExcerpt": "Patient should be pre-oxygenated with high flow oxygen, and positive pressure ventilation for a minimum of two minutes prior to the procedure. Meticulous attention should be paid to avoiding hypoxia and hypotension during intubation attempts to limit patient morbidity and mortality.",
+          "priority": "critical",
+          "rationale": "Pre-oxygenation buys time. Going straight from BVM to laryngoscopy with SpO2 91% is a recipe for peri-intubation desaturation. Two minutes minimum.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "place-king-airway",
+          "shortAction": "Place King supraglottic airway (gag absent, no RSI capability needed)",
+          "protocolExcerpt": "Supraglottic airways (SGA): Consider the use of an appropriately sized SGA if BVM (with OPA/NPA) alone is not effective in maintaining oxygenation and/or ventilation. Endotracheal intubation should only be used if less invasive methods do not meet patient care goals.",
+          "priority": "critical",
+          "rationale": "King airway is justified — gag absent, ongoing aspiration risk, and the crew is non-RSI. SGA is the least-invasive definitive option and matches protocol guidance. If the crew is RSI-trained, ETT is also appropriate per protocol.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "confirm-placement-etco2",
+          "shortAction": "Confirm placement: waveform EtCO2 + bilateral breath sounds + absent gastric sounds",
+          "protocolExcerpt": "Confirm placement of advanced airway (endotracheal tube, SGA) with waveform capnography (most reliable), absent gastric sounds, and bilateral breath sounds. Waveform capnography should be placed prior to the first breath through an invasive airway to confirm placement.",
+          "priority": "critical",
+          "rationale": "Capnography is the single most reliable confirmation. This is the documentation step that prevents undetected misplaced airways during transport.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "secure-tube-cap-monitor",
+          "shortAction": "Secure airway; continuous waveform capnography; reassess after each move",
+          "protocolExcerpt": "Secure tube manually. Once proper position is confirmed, secure the tube with tape, twill, or commercial device. Continuously monitor correct airway placement with waveform capnography during treatment and transport, paying particular attention to reassessing after each patient movement.",
+          "priority": "critical",
+          "rationale": "Tubes get dislodged moving from bed to floor to stretcher. The standard is re-confirmation with every patient movement.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "gastric-decompression",
+          "shortAction": "Gastric decompression (OG tube) — strongly consider with advanced airway + PPV",
+          "protocolExcerpt": "Gastric decompression can improve oxygenation and ventilation, so it should be strongly considered in any patient with an advanced airway and positive pressure ventilation.",
+          "priority": "important",
+          "rationale": "Stomach is already loaded from the aspiration event. PPV pushes more air in. OG/NG decompression reduces aspiration risk and improves chest compliance.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "transport-notify",
+          "shortAction": "Transport to closest appropriate hospital; early ED notification (airway, aspiration)",
+          "protocolExcerpt": "Transport to the closest appropriate hospital for airway stabilization when respiratory failure cannot be successfully managed in the prehospital setting.",
+          "priority": "important",
+          "rationale": "Early notification gets respiratory therapy, suction, ventilator, and an airway-capable team waiting at the door. Aspiration pneumonia trajectory starts now.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "nrb-mistake",
+      "name": "NRB on vomiting patient",
+      "description": "Crew chose to apply a high-flow non-rebreather mask to a supine, unresponsive, vomiting patient without first suctioning the airway or repositioning. Within 3-4 minutes the patient has aspirated additional emesis around and underneath the mask. SpO2 remains 84% and is now trending down. Mask is fogged with vomit. The mask is acting as a barrier — it is delivering oxygen the patient cannot use and is preventing the crew from seeing or accessing the airway. HR has climbed to 124 with the worsening hypoxia. EtCO2 has risen as ventilation worsens. This is the recognize-and-recover branch — the crew needs to abandon the NRB strategy, suction, reposition, and convert to BVM with PEEP.",
+      "triggerCondition": "Crew applied a non-rebreather mask without first addressing the contaminated, unprotected airway. Oxygen delivery via NRB cannot reach the alveoli when the upper airway is filled with vomitus and the patient is supine with no protective reflexes. Continued aspiration is occurring underneath the mask.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 2, "verbal": 2, "motor": 4 },
+        "airway": "STILL contaminated — vomitus visible inside the NRB mask, gurgling audible underneath",
+        "breathing": "Shallow at 14/min, persistent coarse rhonchi bilaterally L>R, now with louder gurgling",
+        "circulation": "Radial pulse 124, regular; skin now mildly mottled and more diaphoretic",
+        "skin": { "color": "pale", "temperature": "warm", "moisture": "diaphoretic" },
+        "pupils": "3 mm bilaterally, sluggishly reactive",
+        "motorFunction": "Withdraws weakly to pain",
+        "otherFindings": [
+          "NRB mask fogged with emesis on the inside",
+          "Patient remains supine — never repositioned",
+          "SpO2 has not improved despite 15 L/min O2 via NRB",
+          "EtCO2 climbing toward 55 — ventilation failing",
+          "Spouse now visibly distressed — 'is he getting worse?'"
+        ],
+        "patientSpeech": "No vocalization; only weak moan to deep painful stimulus"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 124,
+        "bpSys": 142,
+        "bpDia": 88,
+        "respRate": 14,
+        "spo2": 84,
+        "etco2": 55,
+        "temp": 36.9,
+        "tempF": 98.4,
+        "obstruction": 65,
+        "glucose": 88,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-failed-strategy",
+          "shortAction": "Recognize NRB ineffective; remove mask, return to airway-first sequence",
+          "protocolExcerpt": "If patient deteriorates on CPAP/BiPAP (e.g., worsened mental status, increasing EtCO2, vomiting), remove CPAP/BiPAP and escalate airway management options as above. Suctioning to limit aspiration is a priority, since it is associated with development of hospital acquired pneumonia and related increases in ICU stay and mortality.",
+          "priority": "critical",
+          "rationale": "The fix is recognition. Oxygen via mask cannot bypass a soiled, obstructed upper airway. The protocol is explicit that oxygen delivery and airway patency are separate problems — solve patency first.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "recover-suction",
+          "shortAction": "Aggressive Yankauer suction immediately, sweep oropharynx",
+          "protocolExcerpt": "Suction airway: for significantly contaminated airways, consider utilizing a suction assisted laryngeal airway decontamination (SALAD) technique.",
+          "priority": "critical",
+          "rationale": "Recovery step one. Clear the airway before anything else.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "recover-lateral-bvm",
+          "shortAction": "Reposition lateral; convert to two-person BVM with PEEP 5",
+          "protocolExcerpt": "Patient positioning can significantly impact respiratory mechanics. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics. This can both improve the ability to ventilate and limit aspiration. Use bag-valve-mask (BVM) ventilation in the setting of respiratory failure or arrest. PEEP should be used with BVM. 5 cmH2O is generally an appropriate initial PEEP setting.",
+          "priority": "critical",
+          "rationale": "Once cleared, the patient needs positive pressure with PEEP to recruit aspirated lung, plus gravity to keep further emesis OUT of the airway.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}
