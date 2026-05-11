@@ -1,0 +1,672 @@
+{
+  "meta": {
+    "id": "C-T2-06",
+    "name": "Second-Degree Type II Progressing to Third-Degree Block",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Cardiac",
+    "protocols": [
+      "cv-bradycardia",
+      "resp-airway-management"
+    ],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "bradycardia",
+      "mobitz-ii",
+      "complete-heart-block",
+      "transcutaneous-pacing",
+      "high-grade-av-block",
+      "atropine-ineffective",
+      "electrical-mechanical-capture",
+      "sedation-for-pacing",
+      "tier-2",
+      "decision-dense"
+    ]
+  },
+  "patient": {
+    "name": "Margaret Holloway",
+    "age": 78,
+    "ageUnit": "years",
+    "sex": "female",
+    "weight": 64,
+    "weightLbs": 141,
+    "height": 163,
+    "chiefComplaint": "Feeling really faint and weak all morning; nearly passed out walking to the bathroom.",
+    "history": {
+      "hpi": "78-year-old female who woke around 06:30 feeling 'just weak all over' and lightheaded. She made it to the kitchen for coffee but felt close to fainting when she stood up from the table, so she sat back down and called her daughter, who is now at the bedside. Symptoms have been present for roughly 90 minutes by the time EMS arrives, gradually worsening rather than coming in waves. She denies frank syncope but says 'if I'd been standing up another second I'd have gone down.' She has had no chest pain, no shortness of breath at rest, no palpitations she can name, no nausea, no headache, no neck or back pain. She did notice her heart 'feels like it's beating really slow and heavy.' No focal weakness, slurred speech, or facial droop. She has a history of hypertension and was told a year ago she has 'early kidney trouble' — diagnosed with stage 2-3 CKD on a routine check. She takes amlodipine 10 mg daily for her blood pressure and has been on it for 3 years. She took her morning dose at the usual time today (06:45) per her daughter. She has never had a cardiac diagnosis, never had a pacemaker, never had a stress test, no prior arrhythmias documented. No new medications in the last month. No recent illnesses, no fevers, no vomiting or diarrhea.",
+      "pastMedical": [
+        "Hypertension — diagnosed approximately 10 years ago, well controlled on amlodipine",
+        "Chronic kidney disease stage 2-3 — diagnosed approximately 1 year ago on routine labs",
+        "Osteoarthritis — knees and hands, mild",
+        "No prior cardiac diagnosis: no MI, no CAD, no CHF, no documented arrhythmia, no pacemaker",
+        "No diabetes, no stroke, no COPD",
+        "Lives independently with daughter visiting daily; ambulatory without assistive device at baseline",
+        "Last seen by her primary care physician 3 months ago — routine visit, no new concerns"
+      ],
+      "medications": [
+        "Amlodipine 10 mg PO daily (last dose 06:45 today)",
+        "Acetaminophen 500 mg PO as needed for arthritis pain (last dose ~24 hours ago)",
+        "Multivitamin daily",
+        "No beta-blockers, no digoxin, no antiarrhythmics, no anticoagulants"
+      ],
+      "allergies": [
+        "NKDA"
+      ],
+      "lastOralIntake": "Half a cup of coffee and a few sips of water around 06:50; nothing solid this morning. Light dinner last night around 18:30.",
+      "events": "Woke feeling weak and lightheaded around 06:30. Made coffee, almost fainted standing up. Daughter arrived shortly after and called 911 when her mother described how 'slow and heavy' her heartbeat felt and how close she had come to passing out. No fall, no trauma, no loss of consciousness witnessed."
+    }
+  },
+  "scene": {
+    "dispatch": "Dispatch: 78-year-old female, weakness and near-syncope, conscious and breathing, at her residence. Daughter on scene.",
+    "location": "Single-story brick home in a quiet residential neighborhood. Patient seated at her kitchen table in a clean, organized home. Mid-morning, well-lit. No environmental hazards. Living room is two short steps off the kitchen.",
+    "time": "Tuesday, 08:15, late spring morning, cool and clear",
+    "safety": "Scene safe. Daughter (Karen, 52) met EMS at the door and led them to the kitchen. Patient is alert and cooperative. House is uncluttered; clear path for stretcher to the front door.",
+    "bystanders": "Daughter Karen present and reliable historian. She brought a list of mom's medications and her primary care doctor's name. She reports mom has 'never been like this' — usually walks the dog every morning, no recent illness. She is anxious but composed.",
+    "visualCues": [
+      "Patient seated upright in kitchen chair, pale, talking in short complete sentences",
+      "Half-empty coffee mug and a small medication organizer with this morning's slot already empty on the table",
+      "Bottle of amlodipine 10 mg visible on the counter — last refill date 2 weeks ago",
+      "No oxygen tubing, no glucometer, no inhalers — no chronic disease equipment in the home",
+      "Patient says 'I just feel awful — my heart feels so slow' when crew walks in",
+      "Skin cool and slightly pale; no diaphoresis at this moment",
+      "Daughter holds mom's hand throughout assessment"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a 78-year-old female sitting at her kitchen table, alert and oriented but pale and lightheaded. Daughter has a clear history and a med list. On the monitor she is in Mobitz II second-degree AV block at a rate of 44 with a marginal blood pressure of 102/60 — she is symptomatic (lightheaded, near-syncope, weak) but still mentating well and not yet hemodynamically collapsed. This is the high-risk rhythm the bradycardia protocol warns about — it does NOT respond reliably to atropine and is one infrahisian conduction failure away from complete heart block. The teaching beat in this opening phase is that crews must recognize Mobitz II + symptoms = high-risk bradycardia, get pacing pads on early, prepare to pace, and resist the reflex to push atropine. Per the protocol's escalation language, this is a 'least invasive manner possible, escalating as needed' situation — set up the pacer, treat reversible causes, but anticipate that drugs likely will not fix this rhythm.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent, self-maintained, speaking in short complete sentences",
+        "breathing": "Unlabored at rest; lungs clear bilaterally; RR 16. No accessory muscle use.",
+        "circulation": "Weak but regular radial pulse at 44; skin cool and slightly pale; cap refill 2-3 seconds; no JVD; no peripheral edema",
+        "skin": {
+          "color": "pale",
+          "temperature": "cool",
+          "moisture": "dry"
+        },
+        "pupils": "Equal at 3 mm, briskly reactive",
+        "motorFunction": "Moves all extremities equally; no focal weakness; no facial droop; speech clear",
+        "otherFindings": [
+          "Alert and oriented to person, place, time, and event; A&Ox4",
+          "Reports persistent lightheadedness and 'almost passing out' when she tried to stand at 07:00",
+          "No chest pain, no shortness of breath at rest, no headache",
+          "No syncope witnessed; near-syncope only",
+          "No focal neurologic deficits — pupils equal, face symmetric, grip strength equal, speech clear, no slurring",
+          "Pulse palpably slow and slightly irregular",
+          "Skin cool and pale but not diaphoretic at this baseline",
+          "Daughter confirms patient took her amlodipine at 06:45 — usual time, usual dose, no overdose"
+        ],
+        "patientSpeech": "I just feel so weak and slow. My heart feels heavy. I almost passed out getting up from this chair earlier."
+      },
+      "monitorState": {
+        "ecgRhythm": "Second Degree AV Block Type II",
+        "ecgWaveform": 103,
+        "hr": 44,
+        "bpSys": 102,
+        "bpDia": 60,
+        "respRate": 16,
+        "spo2": 96,
+        "etco2": 36,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 104,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "primary-survey-airway",
+          "shortAction": "Primary survey ABC; manage airway as necessary; A&Ox4, patent airway",
+          "priority": "critical",
+          "rationale": "MATC Bradycardia Adult Management step 1 — manage airway as necessary. Establishes airway is intact before escalation.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Adult Management: Manage airway as necessary."
+        },
+        {
+          "id": "oxygen-target",
+          "shortAction": "Oxygen titrated to SpO2 94-98% (NC 2-4 LPM acceptable at SpO2 96)",
+          "priority": "important",
+          "rationale": "MATC Bradycardia Adult Management step 2 — target SpO2 94-98%. Patient already at 96% so titration is fine.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Adult Management: Administer oxygen as appropriate with a target of achieving 94-98% saturation."
+        },
+        {
+          "id": "monitor-and-12-lead",
+          "shortAction": "Cardiac monitor + 12-lead EKG; identify Mobitz II",
+          "priority": "critical",
+          "rationale": "MATC Bradycardia Adult Management step 3 — initiate monitoring and perform 12-lead EKG. Identifying Mobitz II vs Mobitz I changes downstream decisions (Mobitz II is high-risk, infrahisian, often atropine-unresponsive).",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Adult Management: Initiate monitoring and perform 12-lead EKG."
+        },
+        {
+          "id": "iv-access",
+          "shortAction": "Establish IV access (18g antecubital preferred)",
+          "priority": "critical",
+          "rationale": "MATC Bradycardia Adult Management step 4 — establish IV access. Required for any drug therapy and for fluid support if pacing causes vasovagal response.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Adult Management: Establish IV access."
+        },
+        {
+          "id": "glucose-check",
+          "shortAction": "Check blood glucose; rule out hypoglycemia as reversible cause (104 mg/dL — normal)",
+          "priority": "important",
+          "rationale": "MATC Bradycardia Adult Management step 5 — check blood glucose and treat hypoglycemia per the Hypoglycemia Guideline. Reversible-cause sweep.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Adult Management: Check blood glucose and treat hypoglycemia per the Hypoglycemia Guideline and Hyperglycemia Guideline."
+        },
+        {
+          "id": "recognize-high-risk-rhythm",
+          "shortAction": "Recognize Mobitz II + symptoms = high-risk; atropine often ineffective; prep pacer",
+          "priority": "critical",
+          "rationale": "MATC Bradycardia Notes/Educational Pearls #6 — third-degree heart block (and by extension high-grade type II block) may not respond to atropine; proceed quickly to chronotropic agents or pacing. Anchoring this judgment up front prevents the atropine misstep.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Key Considerations: Bradycardia should be managed via the least invasive manner possible, escalating care as needed. Third-degree heart block or the denervated heart (as in cardiac transplant) may not respond to atropine and in these cases, proceed quickly to chronotropic agents (such as epinephrine or dopamine) or transcutaneous pacing. In cases of impending hemodynamic collapse, proceed directly to transcutaneous pacing."
+        },
+        {
+          "id": "apply-pacing-pads",
+          "shortAction": "Apply transcutaneous pacing pads anterior-posterior; do not pace yet",
+          "priority": "critical",
+          "rationale": "MATC Bradycardia Adult Management step 6 last bullet — transcutaneous pacing as escalation option. Applying pads now (anticipatory) lets the crew pace within seconds when (not if) the rhythm degrades.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Adult Management: Consider the following additional therapies if bradycardia and symptoms or hemodynamic instability continue: Transcutaneous Pacing - If pacing is performed, consider sedation or pain control."
+        },
+        {
+          "id": "prep-sedation",
+          "shortAction": "Draw up sedation in advance: midazolam 5 mg or fentanyl 50 mcg for pacing comfort",
+          "priority": "important",
+          "rationale": "MATC Bradycardia Patient Safety Considerations and Adult Management step 6 — if pacing is performed, consider sedation or pain control. Drawing it up before pacing is needed avoids the gap where the patient gets shocked awake.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Patient Safety Considerations: If pacing is performed, consider sedation or pain control."
+        },
+        {
+          "id": "consider-culprit-medications",
+          "shortAction": "Review meds for AV-nodal blockers; amlodipine (CCB) noted, no overdose",
+          "priority": "important",
+          "rationale": "MATC Bradycardia Notes/Educational Pearls #3 — consider culprit medications including beta-blockers, calcium channel blockers, sodium channel blockers/anti-depressants, digoxin, and clonidine. Amlodipine is therapeutic dose, not OD.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Key Considerations: Consider potential culprit medications including beta-blockers, calcium channel blockers, sodium channel blockers/anti-depressants, digoxin, and clonidine. If medication overdose is considered, refer to appropriate guideline in the Toxins and Environmental Section."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "rhythm-progresses-chb",
+          "if": "Pads applied, rhythm degrades to CHB",
+          "condition": "Crew correctly applied pacing pads, established IV access, identified Mobitz II as high-risk, and prepared sedation. Approximately 4 minutes into care the conduction system fails entirely and the rhythm degrades to complete heart block with a junctional escape at ~30 bpm; BP drops to 78/42 and patient becomes acutely AMS. Crew is now positioned to pace immediately.",
+          "conditionType": "time_elapsed",
+          "triggerActionIds": ["apply-pacing-pads", "prep-sedation", "recognize-high-risk-rhythm"],
+          "timeoutSeconds": 240
+        },
+        {
+          "targetPhaseId": "atropine-misstep",
+          "if": "Atropine pushed for Mobitz II",
+          "condition": "Crew anchors on 'symptomatic bradycardia = atropine first' and pushes atropine 1 mg IV before applying pacing pads or recognizing this is a high-grade infrahisian block. Per protocol pearls, atropine is usually ineffective for Mobitz II / third-degree block. The heart rate does not improve. While the crew waits to redose atropine and reassess, the rhythm degrades to complete heart block with the crew unprepared — no pads on, no sedation drawn.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["recognize-high-risk-rhythm", "apply-pacing-pads"]
+        }
+      ]
+    },
+    {
+      "id": "rhythm-progresses-chb",
+      "name": "Rhythm progressed to CHB",
+      "description": "Approximately 4 minutes after the crew gets pads on the patient, the conduction system fails entirely. The monitor now shows complete heart block — wide-complex junctional escape at a rate of about 30, with completely dissociated P waves marching through the strip independently of the QRS complexes. Blood pressure drops to 78/42. The patient was A&Ox4 thirty seconds ago and is now drowsy and only intermittently answering questions (A&Ox2 to person and place; confused on time and event). Skin is now cool, pale, and diaphoretic. This is the high-grade block in 'impending hemodynamic collapse' that the protocol pearls explicitly tell you to skip drug therapy and proceed directly to transcutaneous pacing. The crew should pace now: rate ~80, start at low mA and increase until BOTH electrical (pacer spike followed by wide QRS on every beat) AND mechanical capture (palpable femoral or carotid pulse synchronized with each pacer spike) are confirmed. Sedation can be administered concurrent with pacing — this patient is just conscious enough to feel it and become agitated when capture is achieved.",
+      "triggerCondition": "Approximately 4 minutes into the call, the conduction system fails completely. Mobitz II degrades to complete heart block with a junctional escape rhythm at ~30 bpm. BP drops from 102/60 to 78/42. Mental status drops from A&Ox4 to A&Ox2 (drowsy, intermittently responsive). Skin becomes cool, pale, and now diaphoretic. The patient is now in impending hemodynamic collapse — the protocol explicitly directs proceeding directly to transcutaneous pacing in this setting.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": {
+          "eye": 3,
+          "verbal": 4,
+          "motor": 6
+        },
+        "airway": "Patent but reduced tone; drooling slightly; still self-maintaining",
+        "breathing": "RR 18, slightly shallow, lungs clear",
+        "circulation": "Weak slow regular pulse at 30; cool, pale, now diaphoretic; cap refill 4 seconds; no peripheral pulses palpable at radial",
+        "skin": {
+          "color": "pale",
+          "temperature": "cool",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal at 3 mm, sluggishly reactive",
+        "motorFunction": "Symmetric but generally weak; obeys simple commands slowly",
+        "otherFindings": [
+          "Mental status drop in real time — A&Ox4 → A&Ox2 (person and place only)",
+          "Junctional escape rhythm wide complex on monitor",
+          "P waves visible and marching independently of QRS (AV dissociation)",
+          "BP measured 78/42; carotid pulse weak but present at the rate of the QRS",
+          "Patient mumbling, brief eye contact only, no longer answering questions clearly",
+          "Daughter visibly upset — 'what's happening to her?'"
+        ],
+        "patientSpeech": "(slurred, drowsy) ...feel really sick... heavy..."
+      },
+      "monitorState": {
+        "ecgRhythm": "Third Degree Heart Block",
+        "ecgWaveform": 100,
+        "hr": 30,
+        "bpSys": 78,
+        "bpDia": 42,
+        "respRate": 18,
+        "spo2": 92,
+        "etco2": 34,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 104,
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-chb-collapse",
+          "shortAction": "Recognize CHB with impending hemodynamic collapse; proceed directly to pacing",
+          "priority": "critical",
+          "rationale": "MATC Bradycardia Notes/Educational Pearls #6 — in cases of impending hemodynamic collapse, proceed directly to transcutaneous pacing. Atropine here is contraindicated by clinical logic — high-grade block does not respond, and time spent waiting on it is time the patient does not have.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Key Considerations: Third-degree heart block or the denervated heart (as in cardiac transplant) may not respond to atropine and in these cases, proceed quickly to chronotropic agents (such as epinephrine or dopamine) or transcutaneous pacing. In cases of impending hemodynamic collapse, proceed directly to transcutaneous pacing."
+        },
+        {
+          "id": "begin-pacing-rate-80",
+          "shortAction": "Begin transcutaneous pacing at rate 80 bpm",
+          "priority": "critical",
+          "rationale": "MATC Bradycardia Adult Management step 6 final bullet — transcutaneous pacing. Standard initial pacing rate is 60-80 bpm; 80 is appropriate for a hemodynamically unstable patient who needs perfusion now.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Adult Management: Consider the following additional therapies if bradycardia and symptoms or hemodynamic instability continue: Transcutaneous Pacing - If pacing is performed, consider sedation or pain control."
+        },
+        {
+          "id": "titrate-ma-to-capture",
+          "shortAction": "Increase output (mA) until pacer spike followed by wide QRS on every beat (electrical capture)",
+          "priority": "critical",
+          "rationale": "Standard TCP technique implied by MATC Key Documentation — pacing time, rate, joules, capture, and response rate must be documented. Capture (electrical AND mechanical) is what the documentation entry refers to.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Key Documentation Elements: Pacing: Time started or stopped, rate, joules, capture, and response rate."
+        },
+        {
+          "id": "confirm-mechanical-capture",
+          "shortAction": "Palpate femoral/carotid pulse synchronized with pacer spikes — confirm MECHANICAL capture",
+          "priority": "critical",
+          "rationale": "MATC Bradycardia Performance Measures — correct application and use of cardiac pacing. Electrical capture without mechanical capture is the most dangerous failure mode of TCP — the monitor looks right but the patient does not perfuse.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Performance Measures: Correct application and use of cardiac pacing. Key Documentation Elements: Pacing: Time started or stopped, rate, joules, capture, and response rate."
+        },
+        {
+          "id": "sedate-for-pacing",
+          "shortAction": "Midazolam 6.4 mg IV titrated (64 kg x 0.1 mg/kg = 6.4 mg; cap at 4 mg per dose, may repeat) for pacing discomfort",
+          "priority": "critical",
+          "rationale": "MATC Bradycardia Patient Safety Considerations and Adult Management — if pacing is performed, consider sedation or pain control. Midazolam dose drawn from RSI section of Airway Management (0.05-0.10 mg/kg IV push) is a reasonable analog. Cap per single-dose convention.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Rapid/Delayed Sequence Intubation - Administer induction sedative agent: Midazolam IV push, 0.05-0.10 mg/kg."
+        },
+        {
+          "id": "reassess-perfusion-postcapture",
+          "shortAction": "Reassess BP, mental status, color after capture; expect SBP rise and AMS improvement",
+          "priority": "critical",
+          "rationale": "MATC Bradycardia Performance Measures and Patient Care Goals #1 — maintain adequate perfusion; document response rate. Capture only matters if perfusion follows.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Patient Care Goals: Maintain adequate perfusion. Key Documentation Elements: Pacing: Time started or stopped, rate, joules, capture, and response rate."
+        },
+        {
+          "id": "epinephrine-backup-plan",
+          "shortAction": "If pacing fails, push-dose epi 10-20 mcg q 2 min titrated to MAP > 65",
+          "priority": "important",
+          "rationale": "MATC Bradycardia Adult Management step 6 — vasopressor medications option 2: epinephrine push dose 10-20 mcg every 2 minutes titrated to MAP > 65. Backup plan if pacing fails to capture or if patient is too unstable to wait.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Adult Management: Vasopressor medications (in order of preference): Epinephrine IV drip 0.02-0.2 mcg/kg/min titrated to a MAP greater than 65 mmHg OR Epinephrine by push dose (dilute boluses): for example, prepare 10 mcg/mL by adding 1 mL of 0.1 mg/mL epinephrine to 9 mL of normal saline, then administer 10-20 mcg boluses (1-2 mL) q 2 minutes titrated MAP greater than 65 mmHg."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "captured-and-perfusing",
+          "if": "Electrical + mechanical capture confirmed",
+          "condition": "Crew started pacing at rate 80, increased mA stepwise until pacer spike was followed by wide QRS on every beat (electrical capture, typically 70-90 mA), then confirmed mechanical capture by palpating femoral pulse synchronized with each pacer spike. Sedation given. BP recovers to 96/58, patient mental status improves to A&Ox3 within ~1 minute.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["begin-pacing-rate-80", "titrate-ma-to-capture", "confirm-mechanical-capture", "sedate-for-pacing"]
+        },
+        {
+          "targetPhaseId": "false-capture-no-perfusion",
+          "if": "Electrical capture only, no mechanical check",
+          "condition": "Crew started pacing, saw pacer spike + wide QRS on the monitor, and assumed they had capture. They did NOT palpate a femoral or carotid pulse synchronized with the pacer spikes. The patient remains hypotensive and AMS because the pacer is firing electrically but the threshold is not high enough to produce a mechanical contraction — false capture. Crew is fooled by the monitor and stops escalating mA.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["confirm-mechanical-capture"]
+        }
+      ]
+    },
+    {
+      "id": "captured-and-perfusing",
+      "name": "Capture confirmed, transport",
+      "description": "Pacer is set at rate 80 with output approximately 80 mA. Every pacer spike is followed by a wide-complex QRS (electrical capture) and a palpable femoral pulse (mechanical capture). Within about a minute of capture, BP recovers to 96/58 and the patient's mental status improves from A&Ox2 to A&Ox3 — she is responding to questions again and her color is returning. Sedation has been administered and the patient tolerates the pacing without agitation. The crew now transports emergent to a cardiac center capable of transvenous pacing and definitive pacemaker placement, with continuous monitoring of pacer function, mental status, BP, and skin signs. Documentation per protocol: pacing start time, rate, mA, capture confirmation (both electrical and mechanical), sedation administered, response.",
+      "triggerCondition": "Crew successfully initiated transcutaneous pacing, titrated output to electrical capture, AND confirmed mechanical capture by synchronized femoral pulse. Sedation was administered. BP and mental status have improved. Patient is now perfusing on the pacer.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 4,
+          "motor": 6
+        },
+        "airway": "Patent, self-maintained",
+        "breathing": "RR 16, unlabored, lungs clear",
+        "circulation": "Strong synchronized femoral and carotid pulses with pacer; cap refill <2 seconds; warm extremities",
+        "skin": {
+          "color": "pink",
+          "temperature": "warm",
+          "moisture": "dry"
+        },
+        "pupils": "Equal at 3 mm, briskly reactive",
+        "motorFunction": "Moves all extremities; symmetric; no focal deficit",
+        "otherFindings": [
+          "A&Ox3 (person, place, time) - event still hazy because of low-perfusion period",
+          "Reports the pacing feels 'like a thumping in my chest but I can handle it' after sedation",
+          "Every pacer spike followed by wide QRS on monitor",
+          "Femoral pulse synchronized with each spike — confirmed at the start, after each move, and en route",
+          "BP recovered from 78/42 to 96/58 within ~60 seconds of capture",
+          "Daughter visibly relieved, thanking the crew"
+        ],
+        "patientSpeech": "(more lucid) I feel better — that thump is strange but I can feel my head clearing."
+      },
+      "monitorState": {
+        "ecgRhythm": "Pacemaker Rhythm",
+        "ecgWaveform": 9,
+        "hr": 80,
+        "bpSys": 96,
+        "bpDia": 58,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 36,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 104,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "ongoing-capture-checks",
+          "shortAction": "Reconfirm electrical + mechanical capture after every patient movement",
+          "priority": "critical",
+          "rationale": "MATC Bradycardia Performance Measures — correct application and use of cardiac pacing. Pad displacement is the most common cause of pacing failure mid-transport.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Performance Measures: Correct application and use of cardiac pacing."
+        },
+        {
+          "id": "ongoing-sedation",
+          "shortAction": "Titrate sedation to RASS goal; redose midazolam 2 mg IV as needed for tolerance",
+          "priority": "important",
+          "rationale": "MATC Bradycardia Patient Safety Considerations — if pacing is performed, consider sedation or pain control. Performance Measures — use of sedation or pain management with cardiac pacing.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Patient Safety Considerations: If pacing is performed, consider sedation or pain control. Performance Measures: Use of sedation or pain management with cardiac pacing."
+        },
+        {
+          "id": "transport-cardiac-center",
+          "shortAction": "Transport emergent to cardiac-capable receiving facility for transvenous pacing",
+          "priority": "critical",
+          "rationale": "MATC Bradycardia Patient Care Goals — treat underlying cause (second/third-degree AV block). Definitive care is transvenous pacing and/or permanent pacemaker placement, which requires a cardiac center.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Patient Care Goals: Maintain adequate perfusion. Treat underlying cause: Hypoxia, Shock, Second- or third-degree atrioventricular (AV) block, Toxin exposure (beta-blocker, calcium channel blocker, organophosphates, digoxin), Electrolyte disorder, Hypoglycemia, Increased intracranial pressure (ICP), Other."
+        },
+        {
+          "id": "early-notify-receiving",
+          "shortAction": "Early ED notification: complete heart block, paced and capturing, ETA",
+          "priority": "important",
+          "rationale": "Early notification allows the receiving facility to prepare cardiology, transvenous pacing equipment, and a critical-care bed.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Key Documentation Elements: Cardiac rhythm/rate. Time, dose, and response of medications given. Pacing: Time started or stopped, rate, joules, capture, and response rate. Patient weight. History of event supporting treatment of underlying causes."
+        },
+        {
+          "id": "pacing-documentation",
+          "shortAction": "Document pacing start time, rate, mA, capture (electrical + mechanical), sedation, response",
+          "priority": "critical",
+          "rationale": "MATC Bradycardia Key Documentation Elements explicitly list time started or stopped, rate, joules, capture, and response rate; time/dose/response of medications; patient weight.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Key Documentation Elements: Cardiac rhythm/rate. Time, dose, and response of medications given. Pacing: Time started or stopped, rate, joules, capture, and response rate. Patient weight."
+        }
+      ]
+    },
+    {
+      "id": "atropine-misstep",
+      "name": "Atropine pushed for Mobitz II",
+      "description": "Crew anchored on the cookbook reflex 'symptomatic bradycardia, push atropine' and pushed atropine 1 mg IV before ever applying pacing pads. The protocol pearls explicitly warn that high-grade AV block does not respond reliably to atropine — and it does not. Heart rate stays at 44 for 90 seconds, then the conduction system fails and the rhythm degrades to complete heart block at a rate of 30 with junctional escape — and now the crew is caught flat-footed, with no pads on, no sedation drawn, an unstable patient deteriorating in front of them, and an ineffective drug already on board. They must rapidly recover: apply pads, set the pacer at 80, titrate to electrical AND mechanical capture, sedate, and transport. The teaching beat is that the wrong drug delayed the right intervention by 90 critical seconds, and that the protocol's pearls about atropine ineffectiveness in high-grade block are not academic — they describe THIS patient.",
+      "triggerCondition": "Crew pushed atropine 1 mg IV for symptomatic Mobitz II without first applying pacing pads. Per MATC Notes/Educational Pearls #6, atropine is often ineffective in high-grade infrahisian block. HR remains 44 for ~90 seconds after atropine, then the rhythm degrades to complete heart block at 30 with BP 76/40 and acute AMS — and the crew now has to set up pacing from scratch on a critically hypoperfusing patient.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": {
+          "eye": 2,
+          "verbal": 3,
+          "motor": 5
+        },
+        "airway": "Patent but reduced tone, snoring respiration developing",
+        "circulation": "Weak slow regular pulse at 30; cool, pale, diaphoretic; radial pulse not palpable",
+        "skin": {
+          "color": "pale",
+          "temperature": "cool",
+          "moisture": "diaphoretic"
+        },
+        "breathing": "RR 14, shallow, lungs clear",
+        "pupils": "Equal at 3 mm, sluggishly reactive",
+        "motorFunction": "Withdraws to pain; no spontaneous purposeful movement",
+        "otherFindings": [
+          "Atropine 1 mg IV given approximately 90 seconds ago — no rate response",
+          "Rhythm degraded from Mobitz II at 44 → complete heart block at 30",
+          "BP collapsed from 102/60 → 76/40",
+          "Mental status collapsed from A&Ox4 → responds to pain only",
+          "No pacing pads applied yet — pads are still in the bag",
+          "Sedation not drawn up",
+          "Daughter shouting 'help her, please' — scene tension rising"
+        ],
+        "patientSpeech": "(unresponsive to verbal stimulation; moans to pain)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Third Degree Heart Block",
+        "ecgWaveform": 100,
+        "hr": 30,
+        "bpSys": 76,
+        "bpDia": 40,
+        "respRate": 14,
+        "spo2": 90,
+        "etco2": 32,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 104,
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-atropine-failure",
+          "shortAction": "Recognize atropine ineffective for high-grade block; STOP redosing, go straight to pacing",
+          "priority": "critical",
+          "rationale": "MATC Bradycardia Notes/Educational Pearls #6 — third-degree heart block may not respond to atropine; proceed quickly to chronotropic agents or transcutaneous pacing. The protocol explicitly forecasts this failure.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Key Considerations: Third-degree heart block or the denervated heart (as in cardiac transplant) may not respond to atropine and in these cases, proceed quickly to chronotropic agents (such as epinephrine or dopamine) or transcutaneous pacing. In cases of impending hemodynamic collapse, proceed directly to transcutaneous pacing."
+        },
+        {
+          "id": "rescue-apply-pads",
+          "shortAction": "Apply pacing pads NOW (anterior-posterior); set pacer to rate 80",
+          "priority": "critical",
+          "rationale": "MATC Bradycardia Adult Management step 6 — transcutaneous pacing. Pads must be on before pacing can be initiated; in impending collapse, this is the immediate next move.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Adult Management: Consider the following additional therapies if bradycardia and symptoms or hemodynamic instability continue: Transcutaneous Pacing - If pacing is performed, consider sedation or pain control."
+        },
+        {
+          "id": "rescue-titrate-capture",
+          "shortAction": "Titrate output up until pacer spike + wide QRS on every beat (electrical capture)",
+          "priority": "critical",
+          "rationale": "MATC Bradycardia Performance Measures — correct application and use of cardiac pacing; Key Documentation - capture and response rate.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Performance Measures: Correct application and use of cardiac pacing. Key Documentation Elements: Pacing: Time started or stopped, rate, joules, capture, and response rate."
+        },
+        {
+          "id": "rescue-mechanical-capture",
+          "shortAction": "Palpate femoral pulse synchronized with pacer spikes — mechanical capture",
+          "priority": "critical",
+          "rationale": "Electrical capture without mechanical capture provides no perfusion. Performance Measures explicitly calls out correct application AND use of pacing.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Performance Measures: Correct application and use of cardiac pacing."
+        },
+        {
+          "id": "rescue-push-dose-epi-bridge",
+          "shortAction": "Push-dose epi 10-20 mcg IV q 2 min while titrating pacer to bridge perfusion gap",
+          "priority": "important",
+          "rationale": "MATC Bradycardia Adult Management step 6 — vasopressor option (push-dose epi 10-20 mcg q 2 min titrated to MAP > 65). Bridges hemodynamics while capture is being achieved.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Adult Management: Epinephrine by push dose (dilute boluses): for example, prepare 10 mcg/mL by adding 1 mL of 0.1 mg/mL epinephrine to 9 mL of normal saline, then administer 10-20 mcg boluses (1-2 mL) q 2 minutes titrated MAP greater than 65 mmHg."
+        },
+        {
+          "id": "rescue-sedation",
+          "shortAction": "Midazolam 4 mg IV (64 kg x 0.1 mg/kg = 6.4 mg → cap at 4 mg max per dose) after capture",
+          "priority": "important",
+          "rationale": "MATC Bradycardia Patient Safety Considerations — if pacing is performed, consider sedation or pain control. With AMS this severe, lower dose is reasonable to avoid respiratory depression.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Rapid/Delayed Sequence Intubation - Administer induction sedative agent: Midazolam IV push, 0.05-0.10 mg/kg."
+        },
+        {
+          "id": "debrief-atropine-misstep",
+          "shortAction": "Debrief: high-grade block + symptoms = pace first, not atropine first",
+          "priority": "supplemental",
+          "rationale": "MATC Bradycardia Notes/Educational Pearls #6 — least invasive manner possible, escalating as needed. For high-grade block the least invasive EFFECTIVE intervention is pacing, not atropine.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Key Considerations: Bradycardia should be managed via the least invasive manner possible, escalating care as needed. Third-degree heart block or the denervated heart (as in cardiac transplant) may not respond to atropine and in these cases, proceed quickly to chronotropic agents (such as epinephrine or dopamine) or transcutaneous pacing."
+        }
+      ]
+    },
+    {
+      "id": "false-capture-no-perfusion",
+      "name": "Electrical capture, no perfusion check",
+      "description": "Crew saw a pacer spike followed by a wide QRS complex on every beat, called 'we have capture!' and stopped escalating output. What they did not do was palpate a femoral or carotid pulse synchronized with each pacer spike. The reality: at the output they stopped at, the pacer is producing an electrical artifact on the monitor that LOOKS like a captured QRS but is below the threshold for mechanical ventricular contraction — classic false capture. The patient's actual cardiac output is unchanged from the pre-pacing complete heart block state. BP remains 76/40, mental status is unchanged (A&Ox2 → still drowsy, intermittently responsive), and skin remains cool and diaphoretic. The monitor is lying to them and they have to learn to mistrust it. The recovery: palpate the femoral pulse RIGHT NOW, find it is NOT synchronized with the pacer spikes, increase mA stepwise until a real synchronized femoral pulse appears, then reconfirm BP and mental status improve.",
+      "triggerCondition": "Crew started pacing, observed pacer spikes followed by wide QRS on the monitor, declared 'electrical capture' and stopped titrating output. They did not palpate a synchronized femoral or carotid pulse. Despite the monitor showing 'capture,' the patient remains hypotensive (BP 76/40) and AMS — because the apparent QRS on the monitor is an artifact at sub-threshold output, not true myocardial depolarization. This is false electrical capture: the most dangerous pacing failure mode because the monitor reassures the crew while the patient continues to die.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": {
+          "eye": 3,
+          "verbal": 3,
+          "motor": 5
+        },
+        "airway": "Patent but reduced tone",
+        "breathing": "RR 16, shallow, lungs clear",
+        "circulation": "Weak slow pulse; cool, pale, diaphoretic; femoral pulse NOT synchronized with pacer spikes when actually palpated",
+        "skin": {
+          "color": "pale",
+          "temperature": "cool",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal at 3 mm, sluggish",
+        "motorFunction": "Symmetric weakness",
+        "otherFindings": [
+          "Monitor shows pacer spike + wide QRS every beat — LOOKS like capture",
+          "BP unchanged at 76/40 despite 'capture'",
+          "Mental status unchanged — still A&Ox2 and intermittently responsive",
+          "Femoral pulse, when palpated, runs at rate ~30 (the underlying CHB escape) — NOT synchronized with the pacer at 80",
+          "Skin signs unchanged — cool, pale, diaphoretic",
+          "End-tidal CO2 has not improved with 'capture' — additional clue perfusion is inadequate"
+        ],
+        "patientSpeech": "(slurred, drowsy) ...feel bad..."
+      },
+      "monitorState": {
+        "ecgRhythm": "Pacemaker Failure to Capture",
+        "ecgWaveform": 9,
+        "hr": 30,
+        "bpSys": 76,
+        "bpDia": 40,
+        "respRate": 16,
+        "spo2": 91,
+        "etco2": 32,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 104,
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "palpate-pulse-now",
+          "shortAction": "Palpate femoral pulse NOW; compare rate to pacer setting; recognize false capture",
+          "priority": "critical",
+          "rationale": "MATC Bradycardia Performance Measures — correct application AND use of cardiac pacing. False electrical capture is the most dangerous failure mode of TCP and is detected only by mechanical confirmation.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Performance Measures: Correct application and use of cardiac pacing. Key Documentation Elements: Pacing: Time started or stopped, rate, joules, capture, and response rate."
+        },
+        {
+          "id": "increase-ma-now",
+          "shortAction": "Increase pacer output (mA) stepwise until femoral pulse synchronizes with spikes",
+          "priority": "critical",
+          "rationale": "MATC Bradycardia Performance Measures and Key Documentation — correct application of pacing and documentation of capture and response. Threshold for mechanical capture is higher than for electrical artifact.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Performance Measures: Correct application and use of cardiac pacing. Key Documentation Elements: Pacing: Time started or stopped, rate, joules, capture, and response rate."
+        },
+        {
+          "id": "reassess-vitals-perfusion",
+          "shortAction": "Reassess BP, mental status, EtCO2, skin signs after true capture",
+          "priority": "critical",
+          "rationale": "MATC Bradycardia Patient Care Goals #1 — maintain adequate perfusion. Vitals are the truth; the monitor's QRS is suggestive only.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Patient Care Goals: Maintain adequate perfusion."
+        },
+        {
+          "id": "push-dose-epi-bridge",
+          "shortAction": "Push-dose epi 10-20 mcg IV q 2 min while reestablishing real capture",
+          "priority": "important",
+          "rationale": "MATC Bradycardia Adult Management step 6 — push-dose epi 10-20 mcg q 2 min titrated to MAP > 65. Bridge therapy while capture is being achieved.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Adult Management: Epinephrine by push dose (dilute boluses): for example, prepare 10 mcg/mL by adding 1 mL of 0.1 mg/mL epinephrine to 9 mL of normal saline, then administer 10-20 mcg boluses (1-2 mL) q 2 minutes titrated MAP greater than 65 mmHg."
+        },
+        {
+          "id": "debrief-monitor-vs-patient",
+          "shortAction": "Debrief: treat the patient, not the monitor — electrical capture is not enough",
+          "priority": "supplemental",
+          "rationale": "Performance Measures — correct application and use of pacing includes verifying perfusion follows capture. The monitor can show captured-appearing QRS at output well below mechanical threshold.",
+          "protocolReference": "MATC: Bradycardia",
+          "protocolExcerpt": "Performance Measures: Correct application and use of cardiac pacing."
+        }
+      ]
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

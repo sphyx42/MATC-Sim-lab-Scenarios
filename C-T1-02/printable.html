@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New-Onset Atrial Fibrillation with Adequate Rate — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">New-Onset Atrial Fibrillation with Adequate Rate</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Howard Bellamy</strong></span><span class="patient-chip">68 years male</span><span class="patient-chip">190 lbs (86 kg)</span><span class="patient-chip">5'10"</span><span class="patient-chip">CC: Palpitations and lightheadedness</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">68-year-old male, palpitations and 'feeling weird,' alert, at a private residence. BLS responding with ALS.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Living room of a single-story suburban home; patient seated upright in a recliner with a glass of water on the side table.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Tuesday evening, approximately 1930 hours.</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene is safe. Well-lit room, no pets, no hazards. Adequate space to work and egress to the front door.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Patient's wife is present, calm, organized. She has the patient's medication bottles ready and reports the timeline clearly.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Patient seated, mildly anxious but conversational</li><li>Skin is warm and dry; color is normal</li><li>No respiratory distress at rest</li><li>No visible signs of trauma or recent illness</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">68-year-old male was watching TV after dinner when he suddenly felt his heart 'fluttering' in his chest about 90 minutes ago. He stood up to get a glass of water and felt lightheaded enough to sit back down. Symptoms have not resolved. He denies chest pain or pressure, denies shortness of breath at rest, denies syncope. He says he 'feels weird' and his wife pushed him to call 911. No similar episodes in the past. No recent illness, fever, caffeine binge, energy drinks, or new medications.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">NKDA</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Lisinopril 20 mg PO daily, Atorvastatin 40 mg PO daily, Aspirin 81 mg PO daily (self-started)</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Hypertension, Hyperlipidemia, Mild osteoarthritis</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Light dinner (chicken, rice, vegetables) approximately 2 hours ago; one glass of water since</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Sudden onset of palpitations approximately 90 minutes ago while resting; lightheaded with positional change; persistent fluttering sensation prompted wife to call 911.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">Crew arrives to find a 68-year-old male seated in a recliner. He greets the crew, oriented, says his heart has been 'fluttering' for about an hour and a half. He looks slightly anxious but in no acute distress. Pulse is rapid and irregular at the radial; he is warm, pink, and dry. The story so far is 'palpitations and lightheaded with standing' — the diagnosis is not on the table until a 12-lead is acquired.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Atrial Fibrillation</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">122</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">132/84</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">97%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">16</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">108</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, speaking in full sentences without accessory muscle use.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Unlabored at rest; equal lung sounds bilaterally, clear to auscultation.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse rapid and irregular; skin warm, pink, and dry; cap refill &lt;2 seconds.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pink · Warm · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm bilaterally.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities equally, full strength, no focal deficits.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"&quot;My heart's been doing this fluttery thing for about an hour. When I stood up to get water I got pretty dizzy, so I sat back down. I don't have any chest pain, just feels weird.&quot;"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Mildly anxious but cooperative</li><li>Denies chest pain, denies dyspnea at rest</li><li>Reports lightheadedness with positional change only</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Primary survey; airway patent, breathing unlabored, perfusion adequate</div></div>
+        <div class="action-excerpt">Adult Management: Manage airway as necessary. Administer oxygen as appropriate with a target of achieving 94–98% saturation.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Apply cardiac monitor; note rate and irregularity</div></div>
+        <div class="action-excerpt">Adult Management: Initiate monitoring and perform 12-lead EKG.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Targeted SAMPLE history; identify onset, palpitations, near-syncope</div></div>
+        <div class="action-excerpt">History of Present Illness: Conditions leading to the event: after transition from recumbent/sitting to standing… Patient complaints before or after the event including prodromal symptoms.</div>
+        <div class="action-ref">↳ MATC: Adult and Pediatric Syncope and Near Syncope</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Check blood glucose to rule out hypoglycemia as a tachycardia driver</div></div>
+        <div class="action-excerpt">Adult Management: Check blood glucose and treat hypoglycemia per the Hypoglycemia Guideline.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">12-lead obtained</div>
+        <div class="phase-trigger">Trigger: Crew acquired a 12-lead within 10 minutes of patient contact and correctly identified atrial fibrillation with rapid ventricular response in a hemodynamically compensated patient.</div>
+        <div class="phase-desc">A 12-lead EKG is acquired and shows an irregularly irregular narrow-complex rhythm with absent P waves and fibrillatory baseline — atrial fibrillation with a ventricular rate around 120. There is no ST elevation, no significant ST depression, no T-wave inversions concerning for ischemia. The patient remains alert, SBP holds at 130s, and lightheadedness only occurs with movement. The clinical question is no longer 'what is it' but 'is this patient stable?' — and by every protocol criterion, he is.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Atrial Fibrillation</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">118</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">130/82</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">97%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">16</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">108</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, speaking in full sentences.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Unlabored, equal bilateral breath sounds.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse remains rapid and irregular; skin warm, pink, and dry.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pink · Warm · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm bilaterally.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities equally, full strength.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"&quot;Still feels like it's flopping around in there, but I'm okay sitting like this.&quot;"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>12-lead: irregularly irregular narrow-complex rhythm, no discernible P waves, no STEMI criteria, no ischemic changes</li><li>Patient remains conversational and oriented</li><li>Reports lightheadedness only with positional change</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Acquire and interpret 12-lead within 10 minutes of contact</div></div>
+        <div class="action-excerpt">The 12-lead EKG is the primary diagnostic tool that identifies a STEMI; it is imperative that EMS clinicians routinely acquire a 12-lead EKG within 10 minutes for all patients exhibiting signs and symptoms of ACS.</div>
+        <div class="action-ref">↳ MATC: Chest Pain / ACS / STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize compensated state: SBP &gt;110, alert, no chest pain — no field rate control indicated</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: A-FIB rarely requires cardioversion in the field. As it is difficult to ascertain the onset of this rhythm, the risk of stroke needs to be considered prior to cardioversion. Consider the following additional therapies if tachycardia with signs and symptoms or hemodynamic instability continues.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Establish IV access (saline lock or TKO); no fluid bolus indicated</div></div>
+        <div class="action-excerpt">Adult Management: Establish IV access.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">Apply O2 only if SpO2 &lt;94%; titrate to 94–98%</div></div>
+        <div class="action-excerpt">Adult Management: Administer oxygen as appropriate with a target of achieving 94–98% saturation.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Reassess and trend vitals every 5 minutes</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Cardiac monitor. 12-lead EKG. Monitor for and treat arrhythmias (if present, refer to appropriate guideline).</div>
+        <div class="action-ref">↳ MATC: Adult and Pediatric Syncope and Near Syncope</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Treated as stable; transported</div>
+        <div class="phase-trigger">Trigger: Crew recognized the patient as compensated, deferred field rate control, established IV access, and initiated transport with early notification.</div>
+        <div class="phase-desc">Crew transports the patient in a position of comfort to the receiving emergency department for definitive evaluation and rate control. Patient remains alert, hemodynamically stable, and asymptomatic at rest throughout transport. Receiving facility is notified with a clean handoff: new-onset A-fib with RVR, compensated, 12-lead transmitted, no STEMI, no field intervention beyond monitoring and IV access.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Atrial Fibrillation</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">114</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">134/80</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">98%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">16</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">37</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">108</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, speaking comfortably.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Unlabored, equal lung sounds, clear.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulse remains rapid and irregular but consistent in character; skin warm, pink, dry.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pink · Warm · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm bilaterally.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities equally.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"&quot;Feels a little better lying down. Still doing that thing in my chest, but I'm not dizzy right now.&quot;"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Patient calmer once monitored and transported</li><li>Continues to deny chest pain and dyspnea</li><li>Lightheadedness has resolved while supine on the cot</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Early notification to receiving facility with rhythm and 12-lead</div></div>
+        <div class="action-excerpt">Early notification to receiving facility of any changes in patient condition or serial EKGs.</div>
+        <div class="action-ref">↳ MATC: Chest Pain / ACS / STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Continuous cardiac monitoring; serial 12-leads if symptoms change</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Perform serial 12-lead EKGs (especially if clinical changes are noted). Consider placing defibrillator pads on high-risk patients.</div>
+        <div class="action-ref">↳ MATC: Chest Pain / ACS / STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">Document rhythm, onset time, vitals trend, and decision NOT to rate-control</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Initial rhythm and all rhythm changes. Time, dose, and response to medications given… Patient weight. History of event supporting treatment of underlying causes.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">No 12-lead; misread as sinus tach</div>
+        <div class="phase-trigger">Trigger: Crew did not acquire a 12-lead EKG, relied on lead II only, missed the irregularly irregular rhythm, and did not identify atrial fibrillation in the field.</div>
+        <div class="phase-desc">Crew applies the monitor in lead II only, sees a rapid narrow-complex rhythm, and labels it sinus tachycardia. The irregularity is missed on a single lead, and no 12-lead is acquired. Crew assumes a benign 'anxious patient with elevated HR' and provides no targeted handoff. The receiving facility identifies atrial fibrillation on triage EKG — a quality-improvement debrief follows because the rhythm onset window for rate/rhythm-control decisions was undocumented.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Atrial Fibrillation</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">120</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">130/82</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">97%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">16</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">108</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Unlabored.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulse rapid; the irregularity is subtle on a single lead and was not noted.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pink · Warm · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm bilaterally.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Intact.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"&quot;They told me it was just my nerves.&quot;"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Rhythm strip lead II only — no 12-lead in chart</li><li>Crew handoff: 'sinus tach, anxious'</li><li>Triage EKG at hospital identifies AF with RVR</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize gap: acquire 12-lead now and reassess rhythm interpretation</div></div>
+        <div class="action-excerpt">The 12-lead EKG is the primary diagnostic tool that identifies a STEMI; it is imperative that EMS clinicians routinely acquire a 12-lead EKG within 10 minutes for all patients exhibiting signs and symptoms of ACS.</div>
+        <div class="action-ref">↳ MATC: Chest Pain / ACS / STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Reassess history for palpitation onset, prodrome, and cardiac risk factors</div></div>
+        <div class="action-excerpt">Pertinent History: Review the patient's past medical history including a history of: Cardiovascular disease… Dysrhythmias including prior electrophysiology studies/pacemaker and/or implantable cardioverter defibrillator (ICD). History of syncope.</div>
+        <div class="action-ref">↳ MATC: Adult and Pediatric Syncope and Near Syncope</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Diltiazem requested without indication</div>
+        <div class="phase-trigger">Trigger: Crew recognized the rhythm as A-fib but escalated to pharmacologic rate control despite the patient being hemodynamically compensated (SBP &gt;110, alert, no chest pain). Diltiazem was administered or requested.</div>
+        <div class="phase-desc">Crew identifies atrial fibrillation but treats the patient as unstable, contacting medical control to request diltiazem despite a SBP of 130, alert mental status, and no chest pain. If diltiazem is administered, the patient becomes hypotensive (SBP drops to ~88) and more symptomatic with worsening lightheadedness — an iatrogenic complication of treating the monitor instead of the patient. Protocol reserves rate-control medications for patients with signs/symptoms or hemodynamic instability that continue despite initial supportive care.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Atrial Fibrillation</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">96</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">88/56</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">96%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">20</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">108</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Unlabored at first; mildly increased respiratory rate after the drop in BP.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Skin becomes cool and slightly diaphoretic after diltiazem administration; radial pulse weakens.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pale · Cool · Diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm bilaterally.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Intact, but patient now reports lightheadedness even at rest.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"&quot;That medicine made it worse — I feel really lightheaded now.&quot;"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Iatrogenic hypotension following AV-nodal blockade in a previously compensated patient</li><li>Patient now meets criteria for hemodynamic instability that he did NOT meet on arrival</li><li>Need to support BP and reassess against protocol decision tree</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize iatrogenic hypotension; support BP and stop further AV-nodal agents</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Only use one antidysrhythmic at a time. Patients who receive beta-blockers (e.g., metoprolol) with calcium channel blockers (e.g., diltiazem) are at increased risk for hypotension and bradycardia.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess against stability criteria: BP, mental status, perfusion, chest pain</div></div>
+        <div class="action-excerpt">Consider the following additional therapies if tachycardia with signs and symptoms or hemodynamic instability continues.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Notify receiving facility of medication administered and adverse response</div></div>
+        <div class="action-excerpt">Early notification to receiving facility of any changes in patient condition or serial EKGs.</div>
+        <div class="action-ref">↳ MATC: Chest Pain / ACS / STEMI</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

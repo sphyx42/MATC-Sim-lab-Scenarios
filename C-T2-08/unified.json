@@ -1,0 +1,490 @@
+{
+  "meta": {
+    "id": "C-T2-08",
+    "name": "Cocaine-Associated Chest Pain",
+    "version": 1,
+    "difficulty": "intermediate",
+    "category": "Cardiac",
+    "protocols": [
+      "cv-chest-pain-acs-stemi",
+      "tox-stimulant-poisoning-overdose",
+      "medical-agitated-violent-behavioral"
+    ],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": ["cardiac", "toxicology", "sympathomimetic", "cocaine", "chest-pain", "tier-2", "decision-dense"]
+  },
+  "patient": {
+    "name": "Devon Harris",
+    "age": 26,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 82,
+    "weightLbs": 181,
+    "height": 180,
+    "chiefComplaint": "Chest pain, can't sit still",
+    "history": {
+      "hpi": "26-year-old male at a friend's apartment after a late night out. Sudden onset substernal chest pressure approximately 45 minutes ago, 8/10, with associated palpitations, diaphoresis, and a feeling of impending doom. Restless, pacing, unable to find a comfortable position. Denies trauma, denies prior episodes. On focused questioning, admits to cocaine use approximately 2 hours ago at a party — initially denied any substance use when first asked openly.",
+      "pastMedical": [],
+      "medications": [],
+      "allergies": ["NKDA"],
+      "lastOralIntake": "Alcohol and snacks at the party 3-4 hours ago; nothing solid since",
+      "events": "Friend called 911 after the patient began complaining of chest pain and 'wouldn't sit down.' Friend reports the patient has been 'partying' all night."
+    }
+  },
+  "scene": {
+    "dispatch": "26-year-old male, chest pain, friend states patient 'isn't feeling right.' Apartment complex, lobby unlocked, friend will meet at the door.",
+    "location": "Second-floor apartment unit in a small complex. Living room, lights on, music low. Patient pacing between the couch and kitchen.",
+    "time": "Saturday, 0345",
+    "safety": "Scene secured by first-arriving crew. No weapons reported. One friend present and cooperative. Watch for additional people, drug paraphernalia, and patient agitation escalation.",
+    "bystanders": "One friend (early 20s, sober-appearing) reports patient was 'fine until about an hour ago' and 'started grabbing his chest and sweating.' Friend appears nervous when asked about substances and initially deflects.",
+    "visualCues": [
+      "Patient pacing, diaphoretic, holding sternum",
+      "Empty beer bottles on coffee table",
+      "A rolled-up dollar bill and white residue on a glass surface in plain view",
+      "No obvious trauma, no spilled pills, no syringes"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial",
+      "name": "Initial Contact",
+      "description": "On arrival, 26-year-old male is pacing the living room, diaphoretic, clutching his sternum. He is alert and answering questions but agitated, anxious, and visibly restless. Vitals on first set: HR 132 sinus tach, BP 184/108, RR 22, SpO2 97% RA. Pupils dilated. Patient initially denies substance use; rolled dollar bill and white residue are visible on the coffee table.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, speaking in full sentences",
+        "breathing": "Tachypneic, lungs clear bilaterally, no accessory muscle use",
+        "circulation": "Strong, rapid radials; warm, diaphoretic skin; cap refill <2 sec",
+        "skin": { "color": "flushed", "temperature": "warm", "moisture": "diaphoretic" },
+        "pupils": "Dilated (6 mm) bilaterally, equal and reactive",
+        "motorFunction": "Moves all extremities, will not sit still",
+        "otherFindings": [
+          "Visibly anxious, repeatedly asks 'am I dying?'",
+          "Tremulous fine motor movements",
+          "Denies substance use on initial questioning",
+          "Drug paraphernalia visible on coffee table"
+        ],
+        "patientSpeech": "My chest is pounding, I can't catch my breath. Just make it stop, man."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 132,
+        "bpSys": 184,
+        "bpDia": 108,
+        "respRate": 22,
+        "spo2": 97,
+        "etco2": 36,
+        "temp": 37.6,
+        "tempF": 99.7,
+        "obstruction": 0,
+        "glucose": 118,
+        "customMeasures": [],
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "scene-safety",
+          "shortAction": "Scene size-up; note paraphernalia and assess agitation risk",
+          "protocolExcerpt": "Patient Safety Considerations: Assessment for potential weapons or additional drugs is very important since these items can pose a threat not just to the patient but also to the EMS crew.",
+          "priority": "critical",
+          "rationale": "Visible paraphernalia and agitation level shape both safety posture and the differential.",
+          "protocolReference": "MATC: Stimulant Poisoning/Overdose"
+        },
+        {
+          "id": "primary-survey",
+          "shortAction": "Primary survey (ABCDs); recognize sympathomimetic toxidrome",
+          "protocolExcerpt": "Begin with the ABCDs: Airway is patent; Breathing is oxygenating; Circulation is perfusing; Disability/neuro/mental status; Treat any compromise of these parameters; Ask about chest pain and difficulty breathing.",
+          "priority": "critical",
+          "rationale": "Tachycardia, hypertension, mydriasis, diaphoresis, and agitation form the classic sympathomimetic toxidrome.",
+          "protocolReference": "MATC: Stimulant Poisoning/Overdose"
+        },
+        {
+          "id": "targeted-sample",
+          "shortAction": "Targeted SAMPLE; ask directly about cocaine/stimulant use",
+          "protocolExcerpt": "Pertinent Assessment Findings: History is as important as the physical examination.",
+          "priority": "critical",
+          "rationale": "Substance use is rarely volunteered. Direct, non-judgmental questioning unlocks the correct treatment pathway and excludes BB use.",
+          "protocolReference": "MATC: Stimulant Poisoning/Overdose"
+        },
+        {
+          "id": "monitor-12-lead",
+          "shortAction": "Apply monitor; acquire 12-lead EKG within 10 minutes",
+          "protocolExcerpt": "The 12-lead EKG is the primary diagnostic tool that identifies a STEMI; it is imperative that EMS clinicians routinely acquire a 12-lead EKG within 10 minutes for all patients exhibiting signs and symptoms of ACS.",
+          "priority": "critical",
+          "rationale": "Cocaine can produce STEMI from spasm and can also cause Na+-channel-mediated QRS widening; 12-lead is non-negotiable.",
+          "protocolReference": "MATC: Chest Pain/ACS/STEMI"
+        },
+        {
+          "id": "glucose-temp",
+          "shortAction": "Check blood glucose and temperature",
+          "protocolExcerpt": "Vital signs including temperature for hyperthermia. Check blood glucose level.",
+          "priority": "important",
+          "rationale": "Hypoglycemia mimics agitation; hyperthermia is a leading cause of stimulant deaths.",
+          "protocolReference": "MATC: Stimulant Poisoning/Overdose"
+        },
+        {
+          "id": "aspirin",
+          "shortAction": "Aspirin 324 mg PO chewed (4 × 81 mg non-enteric-coated)",
+          "protocolExcerpt": "Administer aspirin; chewable, non-enteric-coated aspirin preferred (162–325 mg).",
+          "priority": "critical",
+          "rationale": "ASA is appropriate in cocaine-associated chest pain — addresses platelet aggregation contribution to coronary thrombosis from spasm.",
+          "protocolReference": "MATC: Chest Pain/ACS/STEMI"
+        },
+        {
+          "id": "iv-access",
+          "shortAction": "Establish IV access (18g antecubital preferred)",
+          "protocolExcerpt": "Establish IV access. IV access for any fluids and meds.",
+          "priority": "critical",
+          "rationale": "Required for benzodiazepine and fluid administration.",
+          "protocolReference": "MATC: Chest Pain/ACS/STEMI"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "benzo-given",
+          "if": "Cocaine hx identified, midazolam given",
+          "condition": "Crew elicits cocaine use, recognizes the sympathomimetic etiology, administers IV midazolam to blunt central sympathetic surge, and gives ASA. Beta-blockers are explicitly avoided.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["targeted-sample", "aspirin"]
+        },
+        {
+          "targetPhaseId": "bb-given",
+          "if": "Metoprolol given for tachycardia",
+          "condition": "Crew anchors on 'tachycardic ACS' and administers a beta-blocker (e.g., metoprolol) without recognizing or asking about cocaine use, producing unopposed alpha-adrenergic vasoconstriction.",
+          "conditionType": "action_taken"
+        },
+        {
+          "targetPhaseId": "no-substance-hx",
+          "if": "Substance use never asked",
+          "condition": "Crew treats as pure ACS without ever asking about substance use. Gives ASA + NTG, sees transient BP/pain improvement, but underlying sympathomimetic surge remains untreated.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["targeted-sample"]
+        }
+      ]
+    },
+    {
+      "id": "benzo-given",
+      "name": "Midazolam given",
+      "description": "Crew obtained the cocaine history, gave ASA, established IV, and administered IV midazolam as the protocol-correct anxiolytic for sympathomimetic chest pain. Approximately 5 minutes after the dose, HR is trending down, BP is improving, and the patient reports chest pain reducing from 8/10 to 4/10. NTG given cautiously per BP. Patient calmer, less restless.",
+      "triggerCondition": "Crew identified cocaine use on directed history, gave 324 mg ASA chewed, established IV, administered midazolam 5 mg IV for the central sympathomimetic surge, and is now reassessing 5 minutes post-dose with the patient demonstrating expected central-anxiolysis effect — reduced HR, BP, and chest pain.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, speaking comfortably",
+        "breathing": "RR slowing, lungs clear, no distress",
+        "circulation": "Radial pulse stronger, still slightly diaphoretic but cooling, cap refill <2 sec",
+        "skin": { "color": "normal", "temperature": "warm", "moisture": "slightly diaphoretic" },
+        "pupils": "Still dilated (5-6 mm), equal and reactive",
+        "motorFunction": "Sitting on the stretcher, no longer pacing",
+        "otherFindings": [
+          "Patient reports CP improved from 8/10 to 4/10",
+          "Less anxious, cooperating with assessment",
+          "Sedation level appropriate — drowsy but easily arousable"
+        ],
+        "patientSpeech": "Yeah, that's better. Still hurts a little, but I can breathe again."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 108,
+        "bpSys": 152,
+        "bpDia": 92,
+        "respRate": 18,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 37.4,
+        "tempF": 99.3,
+        "obstruction": 0,
+        "glucose": 118,
+        "customMeasures": [],
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "reassess-post-benzo",
+          "shortAction": "Reassess vitals, CP, sedation; monitor for hypoventilation",
+          "protocolExcerpt": "All patients who have received pharmacologic management medications must be monitored closely for the development of hypoventilation and oversedation. Utilize capnography if available.",
+          "priority": "critical",
+          "rationale": "Benzo overshoot can cause respiratory depression; EtCO2 monitoring catches it early.",
+          "protocolReference": "MATC: Agitated or Violent Patient/Behavioral Emergency"
+        },
+        {
+          "id": "ntg-cautious",
+          "shortAction": "Nitroglycerin 0.4 mg SL (SBP 152, no PDE5 inhibitor); may repeat q3–5 min",
+          "protocolExcerpt": "Nitroglycerin 0.4 mg sublingual (SL), can repeat q (quaque, every) 3–5 minutes if SBP greater than 100 mmHg. The use of nitrates should be avoided in any patient who has used a phosphodiesterase inhibitor within the past 48 hours.",
+          "priority": "important",
+          "rationale": "Vasospasm — not fixed thrombus — drives the ischemia. NTG directly addresses coronary spasm. SBP supports it; no PDE5 inhibitor exposure.",
+          "protocolReference": "MATC: Chest Pain/ACS/STEMI"
+        },
+        {
+          "id": "second-benzo-prn",
+          "shortAction": "Second midazolam 5 mg IV PRN if agitation or CP persists",
+          "protocolExcerpt": "Midazolam — Adults: 5 mg IV; 3–5 minute onset of action.",
+          "priority": "important",
+          "rationale": "If sympathomimetic surge rebounds, repeat dosing is appropriate; titrate to effect with airway monitoring.",
+          "protocolReference": "MATC: Agitated or Violent Patient/Behavioral Emergency"
+        },
+        {
+          "id": "transport-decision",
+          "shortAction": "Transport to STEMI-capable facility; early notification",
+          "protocolExcerpt": "Transport and destination decisions should be based on local resources and system of care. Early notification to receiving facility of any changes in patient condition or serial EKGs.",
+          "priority": "critical",
+          "rationale": "Cocaine MI patients need ED workup including serial troponin and definitive imaging even when prehospital treatment works.",
+          "protocolReference": "MATC: Chest Pain/ACS/STEMI"
+        },
+        {
+          "id": "serial-12-lead",
+          "shortAction": "Perform serial 12-lead EKG en route",
+          "protocolExcerpt": "Performance of serial EKGs is encouraged for symptomatic patients with EKGs initially non-diagnostic for STEMI.",
+          "priority": "important",
+          "rationale": "Cocaine spasm can evolve into frank STEMI; serial tracing catches it.",
+          "protocolReference": "MATC: Chest Pain/ACS/STEMI"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "transport-stable",
+          "if": "Reassessed, transported to STEMI center",
+          "condition": "Sustained improvement after midazolam + cautious NTG; crew reassesses, considers second benzo dose if needed, and transports to a STEMI-capable facility with early notification.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["transport-decision", "reassess-post-benzo"]
+        }
+      ]
+    },
+    {
+      "id": "transport-stable",
+      "name": "Transport — improving",
+      "description": "Transport in progress to STEMI-capable facility. Patient stable, mildly drowsy from midazolam, CP now 2/10, vitals trending toward normal. Crew has provided early notification and is performing serial 12-leads. Capnography continuous.",
+      "triggerCondition": "Crew completed the protocol-correct sequence (recognize cocaine etiology, ASA, IV midazolam, cautious NTG, reassess) and is now transporting to a STEMI-capable facility with continuous monitoring and early notification.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, comfortable",
+        "breathing": "RR 16, lungs clear, no distress",
+        "circulation": "Pulses strong, skin warm/dry, cap refill <2 sec",
+        "skin": { "color": "normal", "temperature": "warm", "moisture": "dry" },
+        "pupils": "Mildly dilated (4-5 mm), equal and reactive",
+        "motorFunction": "Resting on stretcher",
+        "otherFindings": [
+          "CP 2/10",
+          "Drowsy but easily arousable; appropriate sedation depth",
+          "No new ECG changes on serial 12-lead"
+        ],
+        "patientSpeech": "I'm tired. Thanks for not freaking out on me."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 102,
+        "bpSys": 138,
+        "bpDia": 84,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 40,
+        "temp": 37.2,
+        "tempF": 99.0,
+        "obstruction": 0,
+        "glucose": 118,
+        "customMeasures": [],
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "handoff",
+          "shortAction": "Verbal handoff: cocaine etiology, ASA + midazolam + NTG given",
+          "protocolExcerpt": "Key Documentation Elements: The time of symptom onset; The time of patient contact by EMS to the time of 12-lead EKG acquisition; The time aspirin (ASA) administered, or reason why not given; The time of STEMI notification.",
+          "priority": "critical",
+          "rationale": "The receiving team must know cocaine was the driver and that benzo — not BB — was used, so they continue the correct ED pathway.",
+          "protocolReference": "MATC: Chest Pain/ACS/STEMI"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "bb-given",
+      "name": "Beta-blocker given — crisis",
+      "description": "Crew anchored on 'tachycardia + chest pain = give a beta-blocker,' administered IV metoprolol without recognizing the cocaine etiology. Within minutes the BP climbs to 220/130, chest pain worsens to 10/10, and focal ST changes appear in the inferolateral leads — classic unopposed alpha-adrenergic vasoconstriction from blocking beta-mediated vasodilation in the presence of sympathomimetic.",
+      "triggerCondition": "Crew administered a beta-blocker (e.g., metoprolol 5 mg IV) for the tachycardia without either eliciting the cocaine history or recognizing the sympathomimetic toxidrome. Unopposed alpha vasoconstriction now driving a hypertensive crisis and worsening coronary spasm.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent",
+        "breathing": "RR 28, lungs clear",
+        "circulation": "Bounding peripheral pulses, profusely diaphoretic, cap refill <2 sec",
+        "skin": { "color": "pale, flushed face", "temperature": "warm", "moisture": "profusely diaphoretic" },
+        "pupils": "Dilated, equal, reactive",
+        "motorFunction": "Writhing, can't stay still",
+        "otherFindings": [
+          "CP escalated to 10/10",
+          "Patient now panicked, vomiting once",
+          "New 1-2 mm ST depression inferolateral; consider evolving STEMI",
+          "Headache, sense of doom"
+        ],
+        "patientSpeech": "It's worse! Oh god, it's so much worse, do something!"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 138,
+        "bpSys": 220,
+        "bpDia": 130,
+        "respRate": 28,
+        "spo2": 96,
+        "etco2": 32,
+        "temp": 37.8,
+        "tempF": 100.0,
+        "obstruction": 0,
+        "glucose": 118,
+        "customMeasures": [],
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-error",
+          "shortAction": "Recognize unopposed alpha crisis; STOP further beta-blockade",
+          "protocolExcerpt": "Pertinent Assessment Findings: A complete medication list should be obtained from each patient. It is especially important for the treating physician and healthcare providers to be informed if the patient is taking beta-blockers, calcium channel blockers, clonidine, digoxin, blood thinners (anticoagulants), and medications for the treatment of erectile dysfunction or pulmonary hypertension.",
+          "priority": "critical",
+          "rationale": "First step in rescue is recognizing the iatrogenic deterioration.",
+          "protocolReference": "MATC: Chest Pain/ACS/STEMI"
+        },
+        {
+          "id": "rescue-benzo",
+          "shortAction": "Midazolam 5 mg IV NOW; may repeat in 3-5 min",
+          "protocolExcerpt": "Midazolam — Adults: 5 mg IV; 3–5 minute onset of action.",
+          "priority": "critical",
+          "rationale": "Centrally acting benzodiazepine blunts sympathetic outflow and reduces unopposed alpha drive — the protocol-supported first-line agent.",
+          "protocolReference": "MATC: Agitated or Violent Patient/Behavioral Emergency"
+        },
+        {
+          "id": "rescue-ntg",
+          "shortAction": "Nitroglycerin 0.4 mg SL; consider repeated dosing q3 min for spasm",
+          "protocolExcerpt": "Key Considerations: If patient has signs and symptoms of ACS, consider giving nitroglycerin sublingual (SL) q (quaque, every) 3–5 minutes if SBP greater than 100 mmHg and until pain resolves (if range not desired, use q 3 minutes). Vasospasm is often the problem in this case as opposed to a fixed coronary artery lesion.",
+          "priority": "critical",
+          "rationale": "NTG directly relaxes coronary vasospasm; aggressive NTG is appropriate here given the very high BP.",
+          "protocolReference": "MATC: Stimulant Poisoning/Overdose"
+        },
+        {
+          "id": "early-notify-stemi",
+          "shortAction": "Emergency STEMI alert + medical control consult (phentolamine)",
+          "protocolExcerpt": "Advance notification should be provided to the receiving hospital for patients identified as having a STEMI. Early notification to receiving facility of any changes in patient condition or serial EKGs.",
+          "priority": "critical",
+          "rationale": "Medical control may direct phentolamine (alpha-blocker) for refractory unopposed-alpha hypertension; ED needs to be ready.",
+          "protocolReference": "MATC: Chest Pain/ACS/STEMI"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "no-substance-hx",
+      "name": "Substance hx missed",
+      "description": "Crew worked the case as straight ACS — gave ASA, started NTG, established IV. NTG produced transient BP drop and brief CP improvement, but within minutes the BP and HR rebound and the patient remains agitated, diaphoretic, and complaining of chest pain. The underlying sympathomimetic surge was never addressed.",
+      "triggerCondition": "Crew never asked about substance use, missed the visual cues (paraphernalia, mydriasis, pacing). Treated the presentation as classic ACS with ASA and NTG. NTG transiently helped, but without benzodiazepine the central sympathetic drive continues, BP and chest pain rebound, and the patient becomes increasingly tachycardic and agitated.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent",
+        "breathing": "RR 24, lungs clear",
+        "circulation": "Strong, fast radials; warm diaphoretic skin",
+        "skin": { "color": "flushed", "temperature": "warm", "moisture": "diaphoretic" },
+        "pupils": "Dilated, equal, reactive",
+        "motorFunction": "Restless, repeatedly sits up off the stretcher",
+        "otherFindings": [
+          "CP transiently improved to 5/10 after NTG, now rebounding to 7-8/10",
+          "Patient agitated, repeating 'I think I'm dying'",
+          "Crew now puzzled by lack of sustained improvement"
+        ],
+        "patientSpeech": "It came back, the pain came back. The spray helped for like a minute."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 128,
+        "bpSys": 178,
+        "bpDia": 104,
+        "respRate": 24,
+        "spo2": 97,
+        "etco2": 34,
+        "temp": 37.6,
+        "tempF": 99.7,
+        "obstruction": 0,
+        "glucose": 118,
+        "customMeasures": [],
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "re-ask-substance",
+          "shortAction": "Re-ask substance use directly; reassess scene for paraphernalia",
+          "protocolExcerpt": "Pertinent Assessment Findings: History is as important as the physical examination.",
+          "priority": "critical",
+          "rationale": "Failure to elicit substance use is the central error; revisiting the history reframes the entire treatment plan.",
+          "protocolReference": "MATC: Stimulant Poisoning/Overdose"
+        },
+        {
+          "id": "delayed-benzo",
+          "shortAction": "Midazolam 5 mg IV once cocaine etiology recognized",
+          "protocolExcerpt": "Consider medications to reduce agitation and other significant sympathomimetic findings, preferably benzodiazepines, for the safety of the patients and clinicians. Midazolam — Adults: 5 mg IV; 3–5 minute onset of action.",
+          "priority": "critical",
+          "rationale": "Once recognized, the benzodiazepine is the protocol-correct addition that the NTG alone cannot replace.",
+          "protocolReference": "MATC: Stimulant Poisoning/Overdose"
+        },
+        {
+          "id": "early-notify-delayed",
+          "shortAction": "Early notification with updated etiology and treatment",
+          "protocolExcerpt": "Early notification to receiving facility of any changes in patient condition or serial EKGs.",
+          "priority": "important",
+          "rationale": "Receiving facility needs to know the diagnosis evolved; pre-arrival ED resources differ for stimulant vs classic ACS.",
+          "protocolReference": "MATC: Chest Pain/ACS/STEMI"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

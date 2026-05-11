@@ -1,0 +1,321 @@
+{
+  "scenarioId": "C-T2-03",
+  "scenarioName": "Acute Pulmonary Edema Requiring Aggressive Management",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1500,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "74-year-old female with known heart failure with reduced ejection fraction (HFrEF, last echo EF 28%), longstanding hypertension, and prior hospitalizations for CHF exacerbation, who has been progressively short of breath since dinner last night. She slept in her recliner instead of in bed because she 'couldn't breathe lying down' — three pillows have not been enough for the past two nights. Her daughter, who is staying with her, noticed worsening leg swelling over the past three days and a wet cough that 'sounds different than usual.' Approximately 90 minutes prior to the 911 call, the patient became acutely worse — drenching diaphoresis, severe dyspnea, and pink froth on her lips. Daughter admits the patient ran out of her furosemide (Lasix) prescription four days ago and has not taken it for the past two days; she also missed her lisinopril and carvedilol doses for the same reason because they are filled together. Patient is anxious, scared, and air-hungry. She denies chest pain spontaneously but admits to 'pressure' when specifically asked. No fever, no recent illness, no leg pain or unilateral swelling, no recent travel. Has not used any phosphodiesterase-5 inhibitors (sildenafil, tadalafil, vardenafil) — she takes no medications for that indication.",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives to find a 74-year-old female in florid acute pulmonary edema — sitting bolt upright at the edge of her recliner, drenched in sweat, with frothy pink sputum on her lips and the front of her nightgown. She is using every accessory muscle, gasping at RR 38, dusky-lipped, profoundly hypoxic (SpO2 78%) and severely hypertensive (192/108). Bibasilar wet crackles extend to the mid-lung fields with frank coarse rhonchi superimposed. She is anxious, air-hungry, and can only manage 1–2 word phrases. The clinical picture screams cardiogenic pulmonary edema from CHF exacerbation in a patient who has missed her diuretic and afterload-reducing meds for two days. The student's job is to recognize this immediately and layer the appropriate interventions — maintain upright positioning, apply CPAP, begin high-dose SL nitroglycerin per the SBP-banded protocol, and establish IV access while CPAP is running. Sequencing too rigidly costs the patient. This is a true competing-priorities phase. → CPAP + NTG running: About 5 minutes after patient contact, the layered interventions are taking hold. CPAP is on with a good mask seal at 7.5 cmH2O, the first SL nitroglycerin 0.8 mg has been on board for ~4 minutes, the second dose is about due, and an 18 g IV is established in the right AC. The patient's BP has come down from 192/108 to 142/86. SpO2 is climbing toward 91% on CPAP. RR is slowing to 28. EtCO2 has risen from 28 toward 34 as ventilation normalizes. Frothy sputum is starting to clear from the mask. She is still upright, still using accessory muscles, but is now managing short sentences. This is where re-titration matters: the SBP has dropped out of the ≥160 band and now sits in the <160 / >100 band, so the next NTG dose drops to 0.4 mg, not 0.8 mg. Holding NTG entirely is also reasonable as long as BP remains in this range and the patient is improving. The student must explicitly recognize the band change and adjust."
+  },
+  "patientInformation": {
+    "patientName": "Eleanor Kowalski",
+    "patientCondition": "Severe shortness of breath that began about 90 minutes ago and has rapidly worsened. Patient is now sitting bolt upright at the edge of her recliner, unable to lie back, gasping for air with frothy pink-tinged sputum on her lips and the front of her nightgown.",
+    "patientAge": 74,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 2,
+    "patientHeight": 163,
+    "patientWeight": 82,
+    "patientPhotoId": 89,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a 74-year-old female in florid acute pulmonary edema — sitting bolt upright at the edge of her recliner, drenched in sweat, with frothy pink sputum on her lips and the front of her nightgown. She is using every accessory muscle, gasping at RR 38, dusky-lipped, profoundly hypoxic (SpO2 78%) and severely hypertensive (192/108). Bibasilar wet crackles extend to the mid-lung fields with frank coarse rhonchi superimposed. She is anxious, air-hungry, and can only manage 1–2 word phrases. The clinical picture screams cardiogenic pulmonary edema from CHF exacerbation in a patient who has missed her diuretic and afterload-reducing meds for two days. The student's job is to recognize this immediately and layer the appropriate interventions — maintain upright positioning, apply CPAP, begin high-dose SL nitroglycerin per the SBP-banded protocol, and establish IV access while CPAP is running. Sequencing too rigidly costs the patient. This is a true competing-priorities phase.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 38,
+        "hr": 128,
+        "bpSys": 192,
+        "bpDia": 108,
+        "respRate": 38,
+        "spo2": 78,
+        "etco2": 28,
+        "temp": 36.6,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Rapid primary survey; recognize florid cardiogenic pulmonary edema",
+        "Maintain upright/tripod position; do NOT lay supine",
+        "Apply CPAP early — preceeds or runs alongside other Rx",
+        "Cardiac monitor + SpO2 + waveform EtCO2 + 12-lead EKG",
+        "Screen for PDE5 inhibitor use within 48 h before nitrates",
+        "Nitroglycerin 0.8 mg SL (SBP 192 ≥ 160 band); repeat q5min if SBP >100",
+        "Establish IV access (do not delay CPAP/NTG for IV)",
+        "Continuous reassessment — BP before each repeat NTG dose"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "CPAP + NTG running",
+      "description": "About 5 minutes after patient contact, the layered interventions are taking hold. CPAP is on with a good mask seal at 7.5 cmH2O, the first SL nitroglycerin 0.8 mg has been on board for ~4 minutes, the second dose is about due, and an 18 g IV is established in the right AC. The patient's BP has come down from 192/108 to 142/86. SpO2 is climbing toward 91% on CPAP. RR is slowing to 28. EtCO2 has risen from 28 toward 34 as ventilation normalizes. Frothy sputum is starting to clear from the mask. She is still upright, still using accessory muscles, but is now managing short sentences. This is where re-titration matters: the SBP has dropped out of the ≥160 band and now sits in the <160 / >100 band, so the next NTG dose drops to 0.4 mg, not 0.8 mg. Holding NTG entirely is also reasonable as long as BP remains in this range and the patient is improving. The student must explicitly recognize the band change and adjust.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 38,
+        "hr": 108,
+        "bpSys": 142,
+        "bpDia": 86,
+        "respRate": 28,
+        "spo2": 91,
+        "etco2": 34,
+        "temp": 36.7,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recheck BP before next NTG dose; recognize band change",
+        "Nitroglycerin 0.4 mg SL (SBP 142 in <160 / >100 band); repeat q5min while SBP >100",
+        "Maintain CPAP seal; do NOT interrupt until ED takeover",
+        "Interpret 12-lead; rule out STEMI as exacerbation trigger",
+        "Trend EtCO2 — rising from 28 toward 34 is normalization, not failure",
+        "Transport upright with CPAP running; early notification to ED"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "CPAP delayed",
+      "description": "Crew sequences too rigidly — works through the IV, the 12-lead, and a methodical SAMPLE history before applying CPAP. By the time CPAP finally goes on the patient (~8–10 minutes after contact), the patient has continued to drown. SpO2 has fallen from 78 to 68%, RR has climbed from 38 to 44 and is now becoming agitated and shallow, the patient is becoming confused — calling her daughter by the wrong name — and is no longer protecting her airway as well. EtCO2 is climbing from 28 toward 48 as hypoventilation overtakes hyperventilation. The window for CPAP is closing fast. Now the right answer escalates: BVM with PEEP (start at 5 cmH2O, titrate up) using a two-person, two-thumbs-up technique to drive oxygenation while preparing for advanced airway management. CPAP alone may no longer be tolerated by a patient with declining mental status.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 38,
+        "hr": 134,
+        "bpSys": 178,
+        "bpDia": 102,
+        "respRate": 44,
+        "spo2": 68,
+        "etco2": 48,
+        "temp": 36.5,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize impending respiratory failure (AMS + rising EtCO2)",
+        "Two-person BVM with PEEP 5 cmH2O; titrate up by 2–3 cmH2O",
+        "Suction frothy sputum before/between BVM cycles",
+        "Prepare for advanced airway / RSI if PPV fails to improve oxygenation"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "NTG without BP recheck",
+      "description": "Crew correctly identifies pulmonary edema and starts SL nitroglycerin aggressively at 0.8 mg, but stacks repeat doses every 2–3 minutes without rechecking BP between them. By the third dose, the cumulative venous and arterial vasodilation has dropped SBP from 192 to 82. The patient is now hypotensive AND still wet — lungs are still full of fluid but perfusion has collapsed. Skin is now pale and clammy in a new way, mentation is fading, and the patient is suddenly cold and gray. CPAP at this point is removing what little preload remains by raising intrathoracic pressure further. The right response is to stop NTG, lay the patient back to ~30 degrees (NOT flat — she will drown), give a careful 250 mL fluid bolus, and prepare a norepinephrine drip while reassessing whether CPAP can be continued at a lower pressure or needs to be paused.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 38,
+        "hr": 138,
+        "bpSys": 82,
+        "bpDia": 48,
+        "respRate": 30,
+        "spo2": 86,
+        "etco2": 32,
+        "temp": 36.4,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Stop nitroglycerin immediately (SBP 82 — below threshold)",
+        "IV NS 250 mL bolus; reassess BP and lungs after",
+        "Prepare norepinephrine 0.02–2 mcg/kg/min if BP does not respond to bolus",
+        "Reassess CPAP — pause or lower pressure if hypotension worsens"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Rapid primary survey; recognize florid cardiogenic pulmonary edema",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Maintain upright/tripod position; do NOT lay supine",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply CPAP early — preceeds or runs alongside other Rx",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Cardiac monitor + SpO2 + waveform EtCO2 + 12-lead EKG",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Screen for PDE5 inhibitor use within 48 h before nitrates",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Nitroglycerin 0.8 mg SL (SBP 192 ≥ 160 band); repeat q5min if SBP >100",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access (do not delay CPAP/NTG for IV)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous reassessment — BP before each repeat NTG dose",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recheck BP before next NTG dose; recognize band change",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Nitroglycerin 0.4 mg SL (SBP 142 in <160 / >100 band); repeat q5min while SBP >100",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Maintain CPAP seal; do NOT interrupt until ED takeover",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Interpret 12-lead; rule out STEMI as exacerbation trigger",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Trend EtCO2 — rising from 28 toward 34 is normalization, not failure",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport upright with CPAP running; early notification to ED",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize impending respiratory failure (AMS + rising EtCO2)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Two-person BVM with PEEP 5 cmH2O; titrate up by 2–3 cmH2O",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Suction frothy sputum before/between BVM cycles",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Prepare for advanced airway / RSI if PPV fails to improve oxygenation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Stop nitroglycerin immediately (SBP 82 — below threshold)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "IV NS 250 mL bolus; reassess BP and lungs after",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Prepare norepinephrine 0.02–2 mcg/kg/min if BP does not respond to bolus",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess CPAP — pause or lower pressure if hypotension worsens",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

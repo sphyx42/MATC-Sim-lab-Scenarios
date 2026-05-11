@@ -1,0 +1,686 @@
+{
+  "meta": {
+    "id": "C-T2-07",
+    "name": "Post-ROSC Management",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Cardiac",
+    "protocols": [
+      "resus-post-rosc",
+      "cv-chest-pain-acs-stemi",
+      "resp-airway-management",
+      "medical-shock"
+    ],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": ["post-rosc", "stemi", "shock", "airway", "ttm", "tier-2"]
+  },
+  "patient": {
+    "name": "Daniel Marek",
+    "age": 62,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 90,
+    "weightLbs": 198,
+    "height": 178,
+    "chiefComplaint": "Post-cardiac arrest, ROSC achieved on scene",
+    "history": {
+      "hpi": "62-year-old male collapsed at home approximately 14 minutes prior to EMS arrival. Wife reports he clutched his chest, said 'something's not right,' and went down. She started compressions immediately and called 911. First-arriving fire/BLS crew found him in VF on the monitor, defibrillated twice (200 J biphasic), performed roughly 6 minutes of CPR, and achieved ROSC approximately 3 minutes before paramedic arrival. King LT-D was placed during the code. He remains unresponsive with no spontaneous movement.",
+      "pastMedical": [
+        "Hypertension (on lisinopril)",
+        "Hyperlipidemia (on atorvastatin)",
+        "Former smoker - quit 4 years ago, 40 pack-year history",
+        "No prior MI or stents per wife"
+      ],
+      "medications": [
+        "Lisinopril 20 mg PO daily",
+        "Atorvastatin 40 mg PO daily",
+        "ASA 81 mg PO daily"
+      ],
+      "allergies": ["NKDA"],
+      "lastOralIntake": "Coffee and toast at approximately 0700 this morning (4 hours prior).",
+      "events": "Witnessed collapse at kitchen table after complaining of chest pressure. Bystander CPR within 1 minute. Fire arrived in 6 minutes, found VF, shocked x2 with ROSC after second shock. King LT-D placed during arrest. ETCO2 abruptly rose from 18 to 38 mmHg confirming ROSC."
+    }
+  },
+  "scene": {
+    "dispatch": "Medic 12, respond Code 3 to 4418 Cherrywood Lane for a 62-year-old male in cardiac arrest. Bystander CPR in progress. Engine 7 on scene, advising ROSC.",
+    "location": "Single-family residence, kitchen floor. Patient supine on tile, King LT-D in place, BVM with O2 attached, defibrillator pads on chest connected to fire's monitor.",
+    "time": "Tuesday, 1118 hrs. Cool overcast morning, ambient room temp ~70°F.",
+    "safety": "Scene secure. No hazards. Wife and adult daughter present, distraught but cooperative.",
+    "bystanders": "Wife (witness): patient grabbed his chest, said 'something's not right,' then collapsed. Engine 7 lieutenant gives handoff: witnessed VF arrest, two 200 J shocks, ~6 minutes CPR, ROSC 3 minutes ago, King LT-D placed during code, no meds given, ETCO2 climbed from 18 to 38 confirming ROSC.",
+    "visualCues": [
+      "King LT-D airway secured at the teeth, taped to face",
+      "Lucas mechanical CPR device set aside on floor next to patient",
+      "Defib pads anterior-lateral, cable still connected to fire monitor",
+      "ETCO2 line in place on King, capnograph showing waveform",
+      "Patient diaphoretic, skin pale and cool to touch",
+      "No spontaneous movement; no eye opening; no gag with King in place"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial",
+      "name": "Initial Contact",
+      "description": "You arrive 14 minutes after dispatch to find a witnessed VF arrest now 3 minutes post-ROSC. BLS handoff: shocked x2 at 200 J, ~6 minutes of CPR, King LT-D placed during code, ETCO2 jumped 18 to 38 confirming ROSC. Patient remains comatose with King in place. Organized sinus rhythm on the monitor at 96, but BP is 88/54 and the patient is cool and clammy. Multiple competing priorities — airway confirmation, post-arrest 12-lead, hemodynamic support, temperature management, and re-arrest prevention all need to layer in correctly.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 2 },
+        "airway": "King LT-D in place, secured at teeth. No gag. Good chest rise with BVM ventilations.",
+        "breathing": "Apneic; ventilated via King with BVM at ~10/min by fire crew. Bilateral breath sounds equal, no gastric sounds.",
+        "circulation": "Carotid pulse palpable, regular at 96. Radial pulses weak. Skin cool, pale, diaphoretic. Cap refill 3-4 seconds.",
+        "skin": { "color": "pale", "temperature": "cool", "moisture": "diaphoretic" },
+        "pupils": "4 mm bilaterally, sluggish reaction to light",
+        "motorFunction": "No spontaneous movement. No withdrawal to nail-bed pressure on extremities. Extensor posturing not elicited.",
+        "otherFindings": [
+          "No spontaneous respirations between BVM breaths",
+          "No cough, no gag with King in place",
+          "Wife reports complaint of chest pressure immediately before collapse",
+          "Defib pads remain in place, ready for re-shock if needed",
+          "Lucas device on floor — available if re-arrest"
+        ],
+        "patientSpeech": "None — comatose, intubated-state semantics."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 96,
+        "bpSys": 88,
+        "bpDia": 54,
+        "respRate": 10,
+        "spo2": 96,
+        "etco2": 32,
+        "temp": 35.8,
+        "tempF": 96.4,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "a1-handoff",
+          "shortAction": "Take BLS handoff; identify arrest cause and confirm ROSC",
+          "protocolExcerpt": "Assessment, Treatment, and Interventions: Perform general patient assessment attempting to identify cause of cardiac arrest.",
+          "priority": "critical",
+          "rationale": "Sets the entire post-ROSC priority list — known arrest cause changes destination and meds.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "a1-airway-confirm",
+          "shortAction": "Confirm King placement: waveform ETCO2, equal breath sounds, chest rise",
+          "protocolExcerpt": "Post-intubation management: Confirm placement of advanced airway (endotracheal tube, SGA) with waveform capnography (most reliable), absent gastric sounds, and bilateral breath sounds.",
+          "priority": "critical",
+          "rationale": "King was placed mid-code by fire — confirm it is still positioned and ventilating before anything else.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "a1-vent-rate",
+          "shortAction": "BVM via King at 10/min; target ETCO2 35-45; avoid hyperventilation",
+          "protocolExcerpt": "Do not hyperventilate. Maintain a ventilation rate of 8-10 breaths per minute, targeting an EtCO2 of 35-45 mmHg.",
+          "priority": "critical",
+          "rationale": "Hyperventilation is a top cause of post-ROSC hypotension and re-arrest.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "a1-spo2-target",
+          "shortAction": "Titrate FiO2 to SpO2 94-98%; do NOT hyperoxygenate",
+          "protocolExcerpt": "Administer oxygen as appropriate with a target of achieving 94-98% saturation. Do not hyperoxygenate.",
+          "priority": "important",
+          "rationale": "Hyperoxia worsens reperfusion injury post-arrest.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "a1-monitor",
+          "shortAction": "Cardiac monitor, leave pads on, prep for re-arrest",
+          "protocolExcerpt": "Monitor closely for recurrence of cardiac arrest using clinical and adjunctive criteria such as cardiac monitoring, EtCO2 monitoring, and physical signs of perfusion.",
+          "priority": "critical",
+          "rationale": "Significant percentage of post-ROSC patients re-arrest; defib pads must remain on.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "a1-ecg-12lead",
+          "shortAction": "Acquire post-arrest 12-lead EKG within 10 minutes to look for STEMI",
+          "protocolExcerpt": "Perform serial 12-lead EKGs to assess for evidence of reversible cause of arrest such as STEMI or electrolyte derangement (e.g., hyperkalemia).",
+          "priority": "critical",
+          "rationale": "Anterior STEMI is the proximate cause here. Missing this skips cath alert and delays reperfusion.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "a1-iv-access",
+          "shortAction": "Establish IV access (2nd line if first not working) or IO",
+          "protocolExcerpt": "Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle.",
+          "priority": "critical",
+          "rationale": "Needed for fluids, pressors, and possible re-arrest meds.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "a1-fluid-bolus",
+          "shortAction": "NS 500 mL bolus pressure-infused; target MAP >= 65 (SBP > 90)",
+          "protocolExcerpt": "Adult: Physiologic target: MAP goal 65 mmHg. Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops.",
+          "priority": "critical",
+          "rationale": "Post-arrest myocardial stunning + hypotension — fluid before pressors per shock protocol.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "a1-glucose",
+          "shortAction": "Check blood glucose; treat if <60 mg/dL",
+          "protocolExcerpt": "Check blood glucose. If hypoglycemic, treat per Hypoglycemia Guideline.",
+          "priority": "important",
+          "rationale": "Hypoglycemia is a reversible H/T that should be excluded post-arrest.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "a1-temp-avoid-hyper",
+          "shortAction": "Do NOT actively warm; avoid temp > 37.5°C / 99.5°F",
+          "protocolExcerpt": "Patient Safety Considerations: Avoid hyperthermia (temperature greater than 37.5° C or 99.5° F) by avoiding excessive environmental heat exposure, warm blankets, etc. Beyond interventions to prevent hyperthermia or fever, prehospital initiation of therapeutic hypothermia (targeted temperature management) is not routinely recommended.",
+          "priority": "important",
+          "rationale": "Common error — instinct is to pile on warm blankets; protocol explicitly says avoid hyperthermia, not actively rewarm.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "bolus-and-12lead",
+          "if": "Bolus given, 12-lead acquired",
+          "condition": "Crew confirms King with waveform ETCO2, hangs NS 500 mL pressure bolus, and acquires post-arrest 12-lead within 5-7 minutes of patient contact while maintaining 10/min ventilations.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["a1-fluid-bolus", "a1-ecg-12lead", "a1-vent-rate"]
+        },
+        {
+          "targetPhaseId": "no-12lead-branch",
+          "if": "12-lead skipped or delayed",
+          "condition": "Crew focuses on packaging and transport without obtaining a post-arrest 12-lead EKG, missing the STEMI finding and bypassing the cath-capable destination decision.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["a1-ecg-12lead"]
+        },
+        {
+          "targetPhaseId": "active-warming-branch",
+          "if": "Active warming applied",
+          "condition": "Crew stacks warm blankets, turns up cabin heat above ambient, or applies a forced-air warmer despite a post-ROSC core temp already trending toward normothermia. Violates 'avoid hyperthermia' guidance.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["a1-temp-avoid-hyper"]
+        }
+      ]
+    },
+    {
+      "id": "bolus-and-12lead",
+      "name": "Bolus given, 12-lead acquired",
+      "description": "Five to seven minutes into the post-ROSC sequence. NS 500 mL bolus is in. BP responds: now 102/62. Post-arrest 12-lead prints — clear anterior ST-elevation (V1-V4, ~3-4 mm) with reciprocal inferior changes. Patient remains comatose, King tolerated, no gag. ETCO2 holding 36, SpO2 97%. Now the priorities pivot: STEMI alert, destination = cath-capable center, continued hemodynamic support, prep for possible re-arrest, and watch for waking against the King.",
+      "triggerCondition": "After confirming King placement, starting an NS pressure bolus, and acquiring a post-arrest 12-lead, the BP responds (88/54 -> 102/62) and the EKG reveals an anterior STEMI as the cause of arrest. Crew must now activate the STEMI system and choose the right destination.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 2 },
+        "airway": "King LT-D patent, secure. Waveform capnography continuous, square shoulder.",
+        "breathing": "Apneic, ventilated via King at 10/min. Equal chest rise. No gastric sounds.",
+        "circulation": "Carotid strong, regular at 92. Radials now palpable. Skin still cool but less mottled.",
+        "skin": { "color": "pale", "temperature": "cool", "moisture": "diaphoretic" },
+        "pupils": "4 mm, sluggish but reactive bilaterally",
+        "motorFunction": "Still no spontaneous movement; no withdrawal to pain.",
+        "otherFindings": [
+          "12-lead: NSR ~92 with anterior STEMI - 3-4 mm STE in V2-V4, reciprocal ST depression II/III/aVF",
+          "BP improved post-bolus: 102/62",
+          "ETCO2 stable 36; SpO2 97%",
+          "No re-arrest events",
+          "Wife confirms no PDE5 inhibitor use (relevant for receiving facility, not field NTG given comatose hypotensive)"
+        ],
+        "patientSpeech": "None."
+      },
+      "monitorState": {
+        "ecgRhythm": "STEMI Anterior",
+        "ecgWaveform": 23,
+        "hr": 92,
+        "bpSys": 102,
+        "bpDia": 62,
+        "respRate": 10,
+        "spo2": 97,
+        "etco2": 36,
+        "temp": 35.9,
+        "tempF": 96.6,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 35,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "a2-stemi-alert",
+          "shortAction": "Activate STEMI alert; advance notification to cath-capable receiving hospital",
+          "protocolExcerpt": "Post-cardiac arrest patients with evidence or interpretation consistent with ST elevation myocardial infarction (STEMI/acute MI) should be transported preferably to a facility capable of emergent cardiac catheterization or, as a secondary option, to a STEMI receiving facility based upon local resources and system of care.",
+          "priority": "critical",
+          "rationale": "Anterior STEMI as arrest cause - cath is the definitive therapy. Time-critical destination decision.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "a2-12lead-transmit",
+          "shortAction": "Transmit / hand-carry 12-lead to receiving facility",
+          "protocolExcerpt": "All EKGs should be made available to treating personnel at the receiving hospital, whether hand delivered as hard copy or transmitted from the field.",
+          "priority": "important",
+          "rationale": "Cath lab activation often depends on physician review of the field EKG.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/ST-segment Elevation Myocardial Infarction (STEMI)"
+        },
+        {
+          "id": "a2-aspirin",
+          "shortAction": "ASA 324 mg PR (per receiving order) or hold given King + comatose; document",
+          "protocolExcerpt": "Administer aspirin; chewable, non-enteric-coated aspirin preferred (162-325 mg).",
+          "priority": "supplemental",
+          "rationale": "Patient cannot swallow with King in place; document the reason ASA was not given PO and confirm with med control.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/ST-segment Elevation Myocardial Infarction (STEMI)"
+        },
+        {
+          "id": "a2-hold-ntg",
+          "shortAction": "Hold nitroglycerin - hypotensive, comatose, post-arrest",
+          "protocolExcerpt": "Care should always be taken when giving nitroglycerin when the patient's blood pressure is marginal. If used in this setting, the clinician should weigh the risk and benefit of nitrate administration over the administration of an opiate analgesic and be ready to respond to hypotension with fluid bolus or pressor.",
+          "priority": "critical",
+          "rationale": "Anti-anchoring point: STEMI on the screen does not mean give NTG when post-arrest, hypotensive, comatose.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/ST-segment Elevation Myocardial Infarction (STEMI)"
+        },
+        {
+          "id": "a2-second-bolus",
+          "shortAction": "Continue fluids if MAP < 65; prep push-dose epi if BP drops again",
+          "protocolExcerpt": "Adult: Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops.",
+          "priority": "critical",
+          "rationale": "Patient is post-arrest with stunned myocardium - hemodynamic lability is the rule.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "a2-prep-pde",
+          "shortAction": "Prep push-dose epi: 1 mL of 1:10,000 in 9 mL NS = 10 mcg/mL; ready 10-20 mcg q3-5 min PRN",
+          "protocolExcerpt": "Vasopressors (shock unresponsive to IV fluids) titrated to physiologic targets. Epinephrine, 0.05-0.3 mcg/kg/minute. Alternative to a drip, push dose epinephrine may be administered: Prepare 10 mcg/mL by diluting 1 mL of epinephrine 0.1 mg/mL (1:10,000) in 9 mL of normal saline. Administer 0.01 mg/kg (0.1 mL/kg) up to a maximum single dose of 10 mcg (1 mL) q 3-5 minutes titrated to maintain goal MAP.",
+          "priority": "important",
+          "rationale": "Have pressor drawn up and labeled before you need it - re-arrest risk is high.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "a2-prep-norepi",
+          "shortAction": "If norepi available, prep drip 0.05-0.5 mcg/kg/min (90 kg = 4.5-45 mcg/min); start low for refractory hypotension",
+          "protocolExcerpt": "Vasopressors (shock unresponsive to IV fluids) titrated to physiologic targets. Cardiogenic, hypovolemic, obstructive shock and distributive shock: Norepinephrine 0.05-0.5 mcg/kg/minute. Preference in both neurogenic and infectious (sepsis) causes of distributive shock.",
+          "priority": "supplemental",
+          "rationale": "Cardiogenic post-ROSC shock - norepi titrated infusion is appropriate if push-dose epi is insufficient.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "a2-temp-passive",
+          "shortAction": "Passive temp management; do NOT actively rewarm; goal: avoid hyperthermia",
+          "protocolExcerpt": "Patient Safety Considerations: Avoid hyperthermia (temperature greater than 37.5° C or 99.5° F) by avoiding excessive environmental heat exposure, warm blankets, etc. Beyond interventions to prevent hyperthermia or fever, prehospital initiation of therapeutic hypothermia (targeted temperature management) is not routinely recommended.",
+          "priority": "important",
+          "rationale": "Receiving facility may initiate TTM; in the field, just don't overheat him.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "a2-rearrest-prep",
+          "shortAction": "Leave pads on; Lucas device staged; continuous ETCO2/SpO2 monitoring",
+          "protocolExcerpt": "The condition of post-resuscitation patients fluctuates rapidly and continuously requiring close monitoring. A significant percentage of post-ROSC patients will re-arrest. Maintain mechanical CPR device in place in preparation for re-arrest.",
+          "priority": "critical",
+          "rationale": "Anterior STEMI is the highest-re-arrest substrate. Equipment must be one-step away.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "a2-transport",
+          "shortAction": "Load and go; minimize scene time; transport to cath-capable PCI center",
+          "protocolExcerpt": "Acute coronary syndrome may present with atypical pain, vague or only generalized complaints. Ischemic burden time is a risk for morbidity and mortality, EMS can help decrease first medical contact to intervention time/reflow by efficient scripting/training of safely minimizing scene time.",
+          "priority": "critical",
+          "rationale": "Time to PCI is the outcome driver.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/ST-segment Elevation Myocardial Infarction (STEMI)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "transport-with-stemi-alert",
+          "if": "STEMI alert + appropriate destination",
+          "condition": "Crew activates STEMI alert, selects cath-capable receiving facility, and initiates transport with continuous monitoring, hemodynamic support, and pads on.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["a2-stemi-alert", "a2-transport", "a2-rearrest-prep"]
+        },
+        {
+          "targetPhaseId": "waking-against-king",
+          "if": "Patient begins waking with King in place",
+          "condition": "En route, patient regains some brainstem reflexes - gag returns, jaw clenches on King, BP climbs to 148/92, HR rises to 118. Patient is gagging/bucking against the supraglottic airway and must be managed (sedate or carefully convert/remove airway).",
+          "conditionType": "vital_threshold",
+          "triggerActionIds": ["a2-rearrest-prep"]
+        }
+      ]
+    },
+    {
+      "id": "transport-with-stemi-alert",
+      "name": "STEMI alert and transport",
+      "description": "Patient is packaged, loaded, and en route to the cath-capable receiving facility. STEMI alert has been called in. 12-lead transmitted. NS continuing TKO with another 250 mL available if pressure drops. Patient remains comatose with King in place. The default-path beats here are sustained monitoring, hand-off readiness, and being prepared for re-arrest or waking en route.",
+      "triggerCondition": "Default path - STEMI alert activated, destination is cath-capable receiving hospital, transport underway. Default-path terminal node unless patient deteriorates (-> re-arrest) or wakes against the King (-> sedation/airway management branch).",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 2 },
+        "airway": "King LT-D patent. Continuous waveform capnography square.",
+        "breathing": "Ventilated at 10/min via King. SpO2 holding 96-97%. ETCO2 36-40.",
+        "circulation": "BP 106/64, HR 88 NSR with persistent anterior ST elevation. Carotids strong, radials palpable.",
+        "skin": { "color": "pale", "temperature": "cool", "moisture": "less diaphoretic" },
+        "pupils": "4 mm, sluggish, equal",
+        "motorFunction": "Still GCS 4. No spontaneous movement.",
+        "otherFindings": [
+          "STEMI alert acknowledged by ED charge nurse and interventional cardiology",
+          "Estimated 9 minutes to ED",
+          "Wife and daughter following in private vehicle (informed of destination)",
+          "Pads remain on, Lucas device staged in patient compartment",
+          "12-lead printed and transmitted; copy to receiving"
+        ],
+        "patientSpeech": "None - comatose."
+      },
+      "monitorState": {
+        "ecgRhythm": "STEMI Anterior",
+        "ecgWaveform": 23,
+        "hr": 88,
+        "bpSys": 106,
+        "bpDia": 64,
+        "respRate": 10,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.0,
+        "tempF": 96.8,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "a3-monitor-q5",
+          "shortAction": "Vitals + neuro reassessment every 5 minutes en route",
+          "protocolExcerpt": "Key Documentation Elements: Immediate post-arrest rhythms, vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) and oxygen saturation.",
+          "priority": "critical",
+          "rationale": "Post-ROSC patients fluctuate rapidly.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "a3-serial-12lead",
+          "shortAction": "Serial 12-leads en route if clinical change",
+          "protocolExcerpt": "Performance of serial EKGs is encouraged for symptomatic patients with EKGs initially non-diagnostic for STEMI. A moderate number of adult post-ROSC patients may have transient ST-elevation on EKG. Consider performing serial EKGs.",
+          "priority": "important",
+          "rationale": "Confirms STEMI persistence and detects new rhythm changes.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "a3-etco2-target",
+          "shortAction": "Maintain ETCO2 35-45; recheck minute volume after every patient move",
+          "protocolExcerpt": "Hyperventilation is a significant cause of hypotension and recurrence of cardiac arrest in the post resuscitation phase and must be avoided. Similarly, hypoventilation (suggested by an EtCO2 greater than 40-45) contributes to worsening acidosis and may precipitate re-arrest.",
+          "priority": "critical",
+          "rationale": "Single most preventable cause of re-arrest in post-ROSC transport.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "a3-king-recheck",
+          "shortAction": "Recheck waveform capnography after each patient move",
+          "protocolExcerpt": "Continuously monitor correct airway placement with waveform capnography during treatment and transport, paying particular attention to reassessing after each patient movement.",
+          "priority": "critical",
+          "rationale": "King displacement is the silent killer in post-ROSC transport.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "a3-handoff",
+          "shortAction": "Concise ED/cath lab handoff: arrest cause, ROSC time, vitals trend, 12-lead, interventions",
+          "protocolExcerpt": "Key Documentation Elements: Immediate post-arrest rhythms, vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) and oxygen saturation. Post-ROSC 12-lead EKG.",
+          "priority": "critical",
+          "rationale": "Cath team needs the time-of-arrest, time-of-ROSC, downtime, and 12-lead in <60 seconds.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "waking-against-king",
+      "name": "Patient waking against King",
+      "description": "Mid-transport evolution - patient's brainstem is recovering faster than higher cortical function. Gag has returned, jaw is clenching on the King, BP has climbed to 148/92, HR up to 118 NSR with persistent anterior STEMI. He is bucking the airway and at risk of self-extubation or aspiration. Crew must sedate, analgese, and decide whether to keep King in place vs. carefully remove if he can protect his airway.",
+      "triggerCondition": "Six to nine minutes into transport, patient regains gag reflex and begins to clench/buck against the King. HR and BP climb. Without sedation he will either self-extubate or aspirate. This is a Tier-2 'what now?' moment requiring titrated sedation and a clear airway plan.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 4 },
+        "airway": "King in place. Gag returning. Jaw clenching against airway. Audible against-airway sounds.",
+        "breathing": "Now over-breathing the BVM rate; resp 22, irregular, fighting positive pressure.",
+        "circulation": "BP 148/92, HR 118 NSR with anterior STEMI. Skin warmer, less pale.",
+        "skin": { "color": "pale-pink", "temperature": "cool", "moisture": "dry" },
+        "pupils": "4 mm, reactive briskly",
+        "motorFunction": "Withdraws to nail-bed pressure. No purposeful movement. No commands followed.",
+        "otherFindings": [
+          "Hypertension and tachycardia worsening myocardial oxygen demand on a fresh STEMI",
+          "Risk of aspiration if he vomits against the King",
+          "Risk of self-extubation",
+          "If he can adequately protect his airway, careful King removal with suction ready may be option"
+        ],
+        "patientSpeech": "Groaning, no intelligible words."
+      },
+      "monitorState": {
+        "ecgRhythm": "STEMI Anterior",
+        "ecgWaveform": 23,
+        "hr": 118,
+        "bpSys": 148,
+        "bpDia": 92,
+        "respRate": 22,
+        "spo2": 98,
+        "etco2": 30,
+        "temp": 36.2,
+        "tempF": 97.2,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "a4-sedate-midaz",
+          "shortAction": "Midazolam 1.8 mg IV (90 kg x 0.02 mg/kg; titrate, max 5 mg total)",
+          "protocolExcerpt": "Consider sedation with sedative and/or opioid medications if agitated: Fentanyl 1-2 mcg/kg And Midazolam 0.02 mg/kg OR Ketamine IV push, 0.5-1 mg/kg.",
+          "priority": "critical",
+          "rationale": "Sedate to keep him from self-extubating and to drop HR/BP on a fresh STEMI.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "a4-fentanyl",
+          "shortAction": "Fentanyl 90 mcg IV (90 kg x 1 mcg/kg; range 1-2 mcg/kg)",
+          "protocolExcerpt": "Consider sedation with sedative and/or opioid medications if agitated: Fentanyl 1-2 mcg/kg And Midazolam 0.02 mg/kg.",
+          "priority": "important",
+          "rationale": "Analgesia + sedation synergy; reduce sympathetic drive on a STEMI heart.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "a4-ketamine-alt",
+          "shortAction": "Alternative: Ketamine 45-90 mg IV (90 kg x 0.5-1 mg/kg)",
+          "protocolExcerpt": "Consider sedation with sedative and/or opioid medications if agitated: Ketamine IV push, 0.5-1 mg/kg.",
+          "priority": "supplemental",
+          "rationale": "If hemodynamically labile and concern for benzo hypotension, ketamine is a reasonable alternative.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "a4-suction-ready",
+          "shortAction": "Yankauer ready; SALAD setup if vomits against King",
+          "protocolExcerpt": "Suction airway: for significantly contaminated airways, consider utilizing a suction assisted laryngeal airway decontamination (SALAD) technique.",
+          "priority": "critical",
+          "rationale": "Patient with returning gag and an SGA is a high aspiration risk.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "a4-reassess-airway",
+          "shortAction": "Reassess after sedation; consider careful King removal only if pt can protect airway",
+          "protocolExcerpt": "Once a successful SGA placement or intubation has been performed, obstruction or displacement of the tube can have further negative effects on patient outcome.",
+          "priority": "important",
+          "rationale": "If sedation is effective and pt tolerates King, leave it. Only remove if he is awake, protecting, and you have suction + ETT ready.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "a4-stemi-continue",
+          "shortAction": "Continue STEMI alert / transport; do not delay for airway choreography",
+          "protocolExcerpt": "Acute coronary syndrome may present with atypical pain, vague or only generalized complaints. Ischemic burden time is a risk for morbidity and mortality, EMS can help decrease first medical contact to intervention time/reflow by efficient scripting/training of safely minimizing scene time.",
+          "priority": "critical",
+          "rationale": "Cath remains the goal - don't pull over for airway theater unless lost.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/ST-segment Elevation Myocardial Infarction (STEMI)"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "no-12lead-branch",
+      "name": "12-lead skipped, cath delayed",
+      "description": "Crew packaged and transported without acquiring a post-arrest 12-lead. STEMI alert was not called. On arrival at the closest community ED (non-PCI), the ED team obtains the EKG and identifies an anterior STEMI - now requiring inter-facility transfer to a PCI center. Time-to-balloon now extended by 60-90+ minutes. The teaching point is that a 30-second EKG in the field would have routed this patient directly to the cath lab.",
+      "triggerCondition": "Crew skipped the post-arrest 12-lead in the field. Without the EKG, STEMI was not recognized, no cath alert was called, and the patient was taken to the nearest hospital rather than a cath-capable PCI center. Reperfusion is now delayed by an inter-facility transfer.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 2 },
+        "airway": "King in place.",
+        "breathing": "BVM ventilations 10/min via King.",
+        "circulation": "BP 98/58 (some response to bolus but still soft), HR 94 NSR with anterior STEMI on the unread monitor.",
+        "skin": { "color": "pale", "temperature": "cool", "moisture": "diaphoretic" },
+        "pupils": "4 mm sluggish",
+        "motorFunction": "No spontaneous movement.",
+        "otherFindings": [
+          "ED 12-lead at arrival: anterior STEMI (V1-V4)",
+          "ED activates cath lab and arranges inter-facility transfer",
+          "Estimated 60-90+ minutes added to time-to-balloon",
+          "QI / debrief lesson: 12-lead is a critical, non-optional step in post-ROSC care"
+        ],
+        "patientSpeech": "None."
+      },
+      "monitorState": {
+        "ecgRhythm": "STEMI Anterior",
+        "ecgWaveform": 23,
+        "hr": 94,
+        "bpSys": 98,
+        "bpDia": 58,
+        "respRate": 10,
+        "spo2": 96,
+        "etco2": 34,
+        "temp": 35.8,
+        "tempF": 96.4,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "a5-debrief-12lead",
+          "shortAction": "Debrief: post-arrest 12-lead is mandatory; STEMI is a top reversible arrest cause",
+          "protocolExcerpt": "Perform serial 12-lead EKGs to assess for evidence of reversible cause of arrest such as STEMI or electrolyte derangement (e.g., hyperkalemia).",
+          "priority": "critical",
+          "rationale": "The single most consequential miss in post-ROSC care.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "a5-destination-rule",
+          "shortAction": "Debrief: post-ROSC + STEMI -> cath-capable hospital, not closest hospital",
+          "protocolExcerpt": "Post-cardiac arrest patients with evidence or interpretation consistent with ST elevation myocardial infarction (STEMI/acute MI) should be transported preferably to a facility capable of emergent cardiac catheterization or, as a secondary option, to a STEMI receiving facility based upon local resources and system of care.",
+          "priority": "critical",
+          "rationale": "Destination is part of treatment in post-ROSC STEMI.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "active-warming-branch",
+      "name": "Active warming applied",
+      "description": "Crew stacked warm blankets, turned the cabin heat to 80F, and applied a forced-air warmer because the patient felt cool. Core temperature climbs from 35.8C to 37.8C (100.0F) en route. Hyperthermia worsens neurologic outcomes post-arrest and is explicitly contraindicated by protocol. Receiving facility now has to actively cool him before they can even consider TTM.",
+      "triggerCondition": "Crew anchored on 'warm the cold patient' and stacked active warming (warm blankets, cabin heat, forced-air) despite protocol guidance to AVOID hyperthermia in the post-ROSC patient. Core temp drives above 37.5C / 99.5F.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 2 },
+        "airway": "King in place.",
+        "breathing": "BVM ventilations 10/min.",
+        "circulation": "BP 104/62, HR now 108 NSR (climbing with warming/metabolic demand) with anterior STEMI.",
+        "skin": { "color": "pink-flushed", "temperature": "warm", "moisture": "diaphoretic" },
+        "pupils": "4 mm, sluggish",
+        "motorFunction": "No spontaneous movement.",
+        "otherFindings": [
+          "Core temp 37.8C / 100.0F - now hyperthermic post-arrest",
+          "HR creep from rewarming and metabolic demand",
+          "Receiving facility now has to ACTIVELY cool before TTM",
+          "Worsened neurologic prognosis associated with hyperthermia post-ROSC"
+        ],
+        "patientSpeech": "None."
+      },
+      "monitorState": {
+        "ecgRhythm": "STEMI Anterior",
+        "ecgWaveform": 23,
+        "hr": 108,
+        "bpSys": 104,
+        "bpDia": 62,
+        "respRate": 10,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 37.8,
+        "tempF": 100.0,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "a6-stop-warming",
+          "shortAction": "Stop active warming; remove extra blankets; drop cabin heat to ambient",
+          "protocolExcerpt": "Patient Safety Considerations: Avoid hyperthermia (temperature greater than 37.5° C or 99.5° F) by avoiding excessive environmental heat exposure, warm blankets, etc.",
+          "priority": "critical",
+          "rationale": "First step is undoing the iatrogenic hyperthermia.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "a6-debrief-ttm",
+          "shortAction": "Debrief: prehospital TTM is NOT routine; goal is avoid hyperthermia, not rewarm",
+          "protocolExcerpt": "Beyond interventions to prevent hyperthermia or fever, prehospital initiation of therapeutic hypothermia (targeted temperature management) is not routinely recommended.",
+          "priority": "critical",
+          "rationale": "Core teaching point of the branch.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

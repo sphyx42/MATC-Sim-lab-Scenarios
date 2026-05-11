@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PEA Arrest with Reversible Cause — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">PEA Arrest with Reversible Cause</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Frank Delgado</strong></span><span class="patient-chip">62 years male</span><span class="patient-chip">190 lbs (86 kg)</span><span class="patient-chip">5'10"</span><span class="patient-chip">CC: Unresponsive, pulseless — found collapsed in living room</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Medic 14, respond priority 1 for a 62-year-old male, unresponsive, not breathing. Wife on scene. Single-family residence.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Single-story home, patient supine on living room floor (moved by wife from couch). Adequate lighting. No signs of trauma or environmental hazard.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Wednesday afternoon, 1538 hours. Sunny, mild weather. ~5 min response time.</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. Wife present, distraught but cooperative. One adult son arriving. No pets, no weapons, no environmental hazards.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Wife (Maria, 58yo) found patient. She is anxious but oriented and able to give history. No CPR performed.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Mature left forearm AV fistula with audible thrill on auscultation, visible scarring</li><li>Stack of dialysis center paperwork on the kitchen counter, including 'Missed Appointment' notice dated this week</li><li>Voicemail playing on speakerphone from kitchen — 'Frank, this is Riverbend Dialysis, you missed your Monday session, please call us back'</li><li>Pill organizer on coffee table — Monday and Wednesday slots still full</li><li>Patient appears mildly puffy/edematous; no obvious trauma</li><li>Glucometer and insulin pen on side table</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">62yo male with end-stage renal disease on hemodialysis MWF at outpatient center. Per wife, he 'didn't feel like going' to dialysis Monday — complained of being tired and weak. She left for work Wednesday morning at 0700 leaving him on the couch; came home at 1530 and found him slumped over, unresponsive, no breathing. Estimated downtime up to 90 minutes if he collapsed shortly after she left. No bystander CPR. Wife states he has missed dialysis sessions before and 'gets puffy and feels bad' but never like this.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">NKDA</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Sevelamer (Renvela) 800 mg PO with meals, Lisinopril 10 mg PO daily, Insulin glargine 30 units SQ at bedtime, Calcium acetate 667 mg PO with meals, Aspirin 81 mg PO daily</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">End-stage renal disease on hemodialysis (Mon/Wed/Fri schedule, left forearm AV fistula), Type 2 diabetes mellitus, Hypertension, Coronary artery disease, no prior MI, Hyperkalemia — prior ED visits for elevated K+</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Per wife, ate a small breakfast (eggs, orange juice) around 0630 Wednesday; no food or water observed since.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Wife left for work at 0700. Came home at 1530 and found patient unresponsive on couch, no breathing, no obvious trauma. Called 911 immediately. No CPR performed prior to EMS arrival. Wife states 'He was supposed to go to dialysis Monday but he wouldn't get up — said he was too tired.'</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">Crew arrives to find 62yo male supine on living room floor. Apneic, no palpable pulse. Wife stands by, stating he was supposed to go to dialysis Monday but didn't feel up to it. Body is warm. No obvious trauma. Pulse check confirms pulselessness — patient is in cardiac arrest.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Pulseless Electrical Activity (PEA)</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">38</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">0</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">12</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">97.5°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">142</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, no obstruction; no gag reflex</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic. No chest rise. No breath sounds.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">No palpable carotid or femoral pulse. Skin warm. Mature AV fistula left forearm with thrill.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale-mottled · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Mid-position, sluggishly reactive bilaterally</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid, no spontaneous movement</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"None — unresponsive"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Visible left forearm AV fistula (catchable on focused exam) — confirms dialysis dependence</li><li>Mild peripheral edema, no JVD assessable in supine</li><li>Voicemail from dialysis center audible from kitchen</li><li>Dialysis missed-appointment paperwork on counter</li><li>No trauma signs; no needle marks; no medication bottles open</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Confirm scene safety; BSI/PPE; rapid scene survey</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Performing manual chest compressions in a moving vehicle may pose a clinician safety concern... Ideally, patients should be resuscitated as close to the scene as operationally possible.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Confirm pulselessness/apnea within 10 sec; call cardiac arrest</div></div>
+        <div class="action-excerpt">Assessment: In cases of cardiac arrest, assessments should be focused and limited to obtaining enough information to reveal the patient is pulseless. Once pulselessness is discovered, treatment should be initiated immediately, and any further history must be obtained by bystanders while treatment is ongoing.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Get focused history from wife: missed dialysis, last seen, downtime</div></div>
+        <div class="action-excerpt">Assessment: Once pulselessness is discovered, treatment should be initiated immediately, and any further history must be obtained by bystanders while treatment is ongoing.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Identify left forearm AV fistula on focused exam</div></div>
+        <div class="action-excerpt">Consider reversible causes of cardiac arrest which include the following: The dialysis patient/known hyperkalemic patient – Additions to care include the following: Calcium gluconate 10% 1 g IV bolus over 2 minutes... OR Calcium chloride 10% 1 g IV bolus over 2 minutes... Sodium bicarbonate 1 mEq/kg IV.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Compressions + epi</div>
+        <div class="phase-trigger">Trigger: Crew confirmed pulselessness, initiated CPR, applied monitor showing organized broad-complex electrical activity at rate ~40 with no palpable pulse — classic PEA. ALS arrest algorithm activated.</div>
+        <div class="phase-desc">High-quality CPR in progress. Pads applied — rhythm confirmed as PEA (broad-complex, rate ~40, no pulse). IV/IO access obtained. First dose of epinephrine 1 mg IV/IO given during initial compression cycle. EtCO2 reading available via BVM/advanced airway. Wife reports missed Monday dialysis; AV fistula visible on left forearm.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Pulseless Electrical Activity (PEA)</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">40</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">16</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">97.3°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">142</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">BVM ventilation in progress with OPA; or advanced airway placed without interrupting compressions</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic. Ventilated 1 breath every 10 compressions or 10/min if advanced airway</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulseless. Compressions in progress at 100-120/min, depth 5-6 cm, full recoil. IO or IV access established.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale-mottled · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Mid-position, minimally reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"None"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Broad-complex PEA on monitor — wide QRS, peaked T-waves visible between compression artifacts</li><li>Wife confirms: missed Monday dialysis; usually MWF; 'he was too tired to go'</li><li>AV fistula left forearm with palpable thrill</li><li>EtCO2 reflects compression quality (~15-18 mmHg)</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">High-quality CPR: 100-120/min, depth 5-6 cm, full recoil</div></div>
+        <div class="action-excerpt">Key Considerations: Effective chest compressions are defined as: A rate of greater than 100 and less than 120 compressions/minute; Depth of at least 2 inches (5 cm) and less than 2.4 inches (6 cm) for adults and children... Allow for complete chest recoil (avoid leaning); Minimize interruptions in compressions.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Establish IO (proximal humerus) or IV access without interrupting compressions</div></div>
+        <div class="action-excerpt">Treatment and Interventions: If feasible, IV or IO access should be obtained. Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Epinephrine 1 mg IV/IO (1:10,000) during first/second compression cycle; repeat q3-5 min</div></div>
+        <div class="action-excerpt">Treatment and Interventions: If feasible, IV or IO access should be obtained. Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">BVM at 10/min with OPA or place supraglottic airway without pausing compressions</div></div>
+        <div class="action-excerpt">Treatment and Interventions: The airway management strategy should not interrupt compressions... BVM ventilation at 10 breaths per minute (1 breath every 10 compressions), applied during the upstroke between compressions, without interrupting the compressions... Either a supraglottic airway or an endotracheal tube may be placed without interruption of compressions; Ventilations are provided at 10 breaths/minute for adults.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Attach quantitative EtCO2; target &gt;10 mmHg to confirm compression quality</div></div>
+        <div class="action-excerpt">Key Considerations: Quantitative end-tidal capnography (EtCO2) should be used to monitor effectiveness of chest compressions. If EtCO2 less than 10 mmHg during the initial phases of resuscitation, attempt to improve chest compression quality.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize hyperkalemia: dialysis pt + missed session + wide-complex PEA + peaked T-waves</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Consider reversible causes of cardiac arrest which include the following: The dialysis patient/known hyperkalemic patient – Additions to care include the following: Calcium gluconate 10% 1 g IV bolus over 2 minutes (for pediatrics, the dose is 100 mg/kg which is 1 mL/kg), can repeat the dose if no response OR Calcium chloride 10% 1 g IV bolus over 2 minutes... Sodium bicarbonate 1 mEq/kg IV.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Hyperkalemia recognized</div>
+        <div class="phase-trigger">Trigger: Crew connected the scene clues and clinical picture (ESRD on dialysis, missed Monday session, AV fistula, broad-complex PEA at rate ~40 with peaked T-waves) and committed to treating presumptive hyperkalemia. Calcium and bicarb prepared simultaneously.</div>
+        <div class="phase-desc">Crew has identified presumed hyperkalemia as the cause of PEA arrest. Compressions continue uninterrupted. Team leader orders the hyperkalemia bundle: calcium chloride 10% 1 g slow IV/IO, sodium bicarbonate 1 mEq/kg IV/IO, and nebulized albuterol 5 mg in-line with BVM/advanced airway. Epi continues q3-5 min.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Pulseless Electrical Activity (PEA)</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">42</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">18</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">97.3°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">142</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Supraglottic airway or BVM with OPA; ventilations at 10/min</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic, mechanically ventilated. Albuterol nebulizer in-line.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulseless. Compressions ongoing. IO/IV with patent line. Second IV started for med push if available.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale-mottled · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Mid-position, minimally reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"None"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Wide-complex PEA persists during compression pause checks</li><li>Peaked T-waves visible on monitor strip</li><li>EtCO2 17-19 mmHg with good compressions</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Calcium chloride 10% 1 g slow IV/IO over 2 min (membrane stabilization)</div></div>
+        <div class="action-excerpt">Treatment and Interventions: The dialysis patient/known hyperkalemic patient – Additions to care include the following: Calcium gluconate 10% 1 g IV bolus over 2 minutes (for pediatrics, the dose is 100 mg/kg which is 1 mL/kg), can repeat the dose if no response OR Calcium chloride 10% 1 g IV bolus over 2 minutes (for pediatrics, the dose is 20 mg/kg which is 0.2 mL/kg).</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Sodium bicarbonate 86 mEq IV/IO (86 kg × 1 mEq/kg) — shifts K+ intracellularly</div></div>
+        <div class="action-excerpt">Treatment and Interventions: The dialysis patient/known hyperkalemic patient – Additions to care include the following: Sodium bicarbonate 1 mEq/kg IV.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Albuterol 5 mg nebulized in-line with BVM/advanced airway</div></div>
+        <div class="action-excerpt">Suspected bronchospasm, asthma, COPD: Inhaled Medications — While albuterol 2.5 mg nebulized is usually sufficient for mild wheezing without clinical distress, albuterol 5 mg nebulized (or 6 puffs metered dose inhaler) should be administered to all patients in respiratory distress with signs of bronchospasm (e.g., known asthmatics, quiet wheezers). Repeat at this dose with unlimited frequency for ongoing respiratory distress.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Epinephrine 1 mg IV/IO q3-5 min throughout arrest</div></div>
+        <div class="action-excerpt">Treatment and Interventions: If feasible, IV or IO access should be obtained. Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess rhythm and pulse after bundle; watch for QRS narrowing and ROSC</div></div>
+        <div class="action-excerpt">Treatment and Interventions: If at any time during this period of resuscitation the patient regains return of spontaneous circulation, treat per Adult Post-ROSC Care Guideline.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">ROSC</div>
+        <div class="phase-trigger">Trigger: Hyperkalemia bundle (calcium chloride + sodium bicarbonate + nebulized albuterol) reversed the membrane instability. Next pulse check reveals organized narrow-complex rhythm with palpable pulse. ROSC time noted.</div>
+        <div class="phase-desc">ROSC achieved after hyperkalemia bundle. QRS narrowed to sinus rhythm at HR 88. Palpable carotid pulse. BP 92/60. EtCO2 surged to 32. Patient remains unresponsive (GCS 4) and apneic — requires continued ventilatory support and post-ROSC care. Transport to facility capable of emergent dialysis.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Rhythm</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">88</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">92/60</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">94%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">32</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">97.5°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">138</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Extension (decerebrate)</span><span class="gcs-score">2</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">4</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Advanced airway maintained (supraglottic or ETT); confirm with EtCO2 and bilateral breath sounds</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic — assisted ventilation 8-10/min targeting EtCO2 35-45</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Palpable carotid pulse. BP 92/60. Capillary refill 3 sec. Cool/clammy extremities; warm trunk.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale · cool · clammy</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">4 mm, sluggish bilaterally</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Withdraws to deep painful stimulus on sternal rub</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"None — comatose, GCS 4"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Post-ROSC sinus rhythm at 88; T-waves still mildly peaked but narrowing</li><li>Repeat 12-lead recommended to assess for STEMI/electrolyte changes</li><li>Continued at-risk for re-arrest — mechanical CPR device in place if used</li><li>Notify receiving facility: dialysis capable preferred</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Secure airway; ventilate 8-10/min, EtCO2 35-45 mmHg, avoid hyperventilation</div></div>
+        <div class="action-excerpt">Assessment, Treatment, and Interventions: Do not hyperventilate. Maintain a ventilation rate of 8–10 breaths per minute, targeting an EtCO2 of 35–45 mmHg.</div>
+        <div class="action-ref">↳ MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Titrate O2 to SpO2 94-98%; avoid hyperoxia</div></div>
+        <div class="action-excerpt">Assessment, Treatment, and Interventions: Administer oxygen as appropriate with a target of achieving 94–98% saturation. Do not hyperoxygenate.</div>
+        <div class="action-ref">↳ MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Obtain 12-lead EKG; look for residual hyperkalemia, STEMI</div></div>
+        <div class="action-excerpt">Assessment, Treatment, and Interventions: Perform serial 12-lead EKGs to assess for evidence of reversible cause of arrest such as STEMI or electrolyte derangement (e.g., hyperkalemia).</div>
+        <div class="action-ref">↳ MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">BP 92/60 — fluid bolus 250-500 mL, prep norepinephrine if MAP &lt;65</div></div>
+        <div class="action-excerpt">Assessment, Treatment, and Interventions: For hypotension (SBP less than 90 mmHg or MAP less than 65 in adults) see Shock Guideline.</div>
+        <div class="action-ref">↳ MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Transport to facility capable of emergent dialysis; early notification</div></div>
+        <div class="action-excerpt">Notes/Educational Pearls: Current research has demonstrated that care of patients with ROSC at specialized centers is associated with both decreased mortality and improved neurologic outcomes.</div>
+        <div class="action-ref">↳ MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continuous monitoring; mechanical CPR device in place for re-arrest</div></div>
+        <div class="action-excerpt">Notes/Educational Pearls: The condition of post-resuscitation patients fluctuates rapidly and continuously requiring close monitoring. A significant percentage of post-ROSC patients will re-arrest. Maintain mechanical CPR device in place in preparation for re-arrest.</div>
+        <div class="action-ref">↳ MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Scene clues missed</div>
+        <div class="phase-trigger">Trigger: Crew committed to compressions and pads without assigning anyone to gather history from the wife or survey the immediate scene. The AV fistula remained covered by the sleeve of the patient's flannel shirt. The voicemail from the dialysis center played in the background, unheard.</div>
+        <div class="phase-desc">Crew dove straight into ACLS mechanics without delegating scene survey or history. Wife sidelined, AV fistula not identified on focused exam, dialysis paperwork on counter never noticed. Crew treats this as 'unknown PEA arrest' — runs algorithm without ever suspecting hyperkalemia.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Pulseless Electrical Activity (PEA)</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">40</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">14</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">97.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">142</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">BVM or SGA, unchanged</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic, ventilated 10/min</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulseless. Compressions ongoing. IV/IO placed.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale-mottled · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Mid-position, dull</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"None"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Wife is being asked perfunctory questions but not focused dialysis history</li><li>AV fistula is present but not yet identified by the crew</li><li>Wide-complex PEA at ~40 with peaked T-waves on the monitor — clue is on screen if anyone reads the strip</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Stop. Delegate history-gather; reassess scene; expose arms for fistula check</div></div>
+        <div class="action-excerpt">Assessment: Once pulselessness is discovered, treatment should be initiated immediately, and any further history must be obtained by bystanders while treatment is ongoing.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Read the rhythm strip: wide complex + peaked T-waves = think K+</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Consider reversible causes of cardiac arrest which include the following: The dialysis patient/known hyperkalemic patient – Additions to care include the following: Calcium gluconate 10% 1 g IV bolus over 2 minutes...</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Vanilla ACLS — no ROSC</div>
+        <div class="phase-trigger">Trigger: Reversible cause (hyperkalemia from missed dialysis) was never identified or treated. ACLS algorithm executed correctly on the surface but the H&amp;T framework was never applied. The patient cannot be resuscitated without K+-specific therapy.</div>
+        <div class="phase-desc">Crew has run textbook PEA algorithm for 20+ minutes: high-quality CPR, four+ rounds of epinephrine, airway secured, EtCO2 monitored. No hyperkalemia therapy ever given. Rhythm remains wide-complex PEA at ~30-40. EtCO2 trending down to 12. Pupils fixed. Wife asks if there is anything more that can be done.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Pulseless Electrical Activity (PEA)</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">32</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">11</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">96.8°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">138</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Advanced airway in place; EtCO2 monitored</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic; ventilated 10/min</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulseless throughout. Compressions ongoing. Four+ epi doses given.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">mottled-cyanotic · cooling · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Fixed, mid-position to dilated</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid; no response to pain</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"None"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Wide-complex PEA persists at HR 30-40</li><li>EtCO2 dropped from 18 → 12 over 20 min — poor prognostic indicator</li><li>20+ minutes of resuscitation with no ROSC and no reversible cause addressed</li><li>Wife visibly distressed; second crew member supporting her</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Consider termination: &gt;20 min CPR, wide PEA &lt;60, EtCO2 &lt;20, no ROSC</div></div>
+        <div class="action-excerpt">Patient Management: Non-traumatic arrest — Resuscitation may be terminated in asystole and slow wide complex PEA if there is: No return of spontaneous circulation after 20 minutes in the absence of hypothermia AND The EtCO2 is less than 20 mmHg.</div>
+        <div class="action-ref">↳ MATC: Termination of Resuscitative Efforts</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">If still on scene: late hyperkalemia bundle — calcium, bicarb, albuterol</div></div>
+        <div class="action-excerpt">Treatment and Interventions: The dialysis patient/known hyperkalemic patient – Additions to care include the following: Calcium gluconate 10% 1 g IV bolus over 2 minutes... OR Calcium chloride 10% 1 g IV bolus over 2 minutes... Sodium bicarbonate 1 mEq/kg IV.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Contact medical direction before terminating</div></div>
+        <div class="action-excerpt">Patient Management: Non-traumatic arrest — Consider contacting medical direction before termination of resuscitative efforts.</div>
+        <div class="action-ref">↳ MATC: Termination of Resuscitative Efforts</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Brief wife on situation; offer chaplain/family support resources</div></div>
+        <div class="action-excerpt">Patient Care Goals: When cardiac arrest resuscitation becomes futile, the patient's family should become the focus of the EMS clinicians. Families need to be informed of what is being done and that transporting all cardiac arrest patients to the hospital is not supported by evidence.</div>
+        <div class="action-ref">↳ MATC: Termination of Resuscitative Efforts</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

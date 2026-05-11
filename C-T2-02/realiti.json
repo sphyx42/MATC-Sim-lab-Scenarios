@@ -1,0 +1,354 @@
+{
+  "scenarioId": "C-T2-02",
+  "scenarioName": "SVT Not Responding to Vagal Maneuvers",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1500,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 100,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "32-year-old male software developer who suddenly developed a 'fluttering' sensation in his chest while sitting at his desk approximately 35 minutes ago. Symptoms started abruptly with no precipitating activity, no chest trauma, no recent illness. Patient reports the rate 'just took off' out of nowhere. Also describes mild central chest tightness, lightheadedness, and shortness of breath. No syncope. No prior cardiac history. Drank one large coffee earlier this morning. No recreational drug use reported, no energy drinks, no stimulant supplements. Has had 'a couple of similar shorter episodes' in the past year that self-resolved within minutes, never sought care. Becomes progressively more anxious as scenario unfolds, fearing 'something is really wrong with my heart.'",
+    "discussion": "",
+    "course": "Initial Contact: Crew arrives to find a 32-year-old male seated at his desk, alert and conversational, mildly diaphoretic, holding one hand to his chest. He reports a sudden 'racing heart' that started about 35 minutes ago while working. He is mildly short of breath but talking in full sentences. Skin warm and pink. Radial pulse is rapid and regular, too fast to count by palpation. Initial monitor placement reveals a narrow-complex tachycardia at ~190 with no discernible P waves — supraventricular tachycardia. He is hemodynamically stable: BP 112/72, A&Ox3, SpO2 99% on room air. → Vagal failed, anxiety rising: Vagal maneuvers have failed. Patient remains in regular narrow-complex tachycardia at HR ~190. Hemodynamics are still preserved — BP 110/70, alert, oriented, SpO2 99%. However, the patient is becoming visibly more anxious: increased restlessness on the stretcher, voice getting louder, complaining more intensely about chest tightness and 'feeling like I'm going to pass out.' This is the key decision point — the crew must recognize that anxiety symptoms (subjective distress, hyperventilation, restlessness) are NOT the same as hemodynamic instability (hypotension, altered mentation, ischemic chest pain with EKG changes, signs of shock). The clinically correct path is to hold the line and proceed with adenosine. → Converted to sinus: Brief asystolic pause on the monitor (3–5 seconds) followed by spontaneous return to sinus rhythm at ~105 bpm. Patient describes a brief 'doom' or 'flushing' sensation that resolves within seconds. Chest tightness eases. BP rises to 124/78. SpO2 holds at 99%. Patient is dramatically calmer once he realizes he's better. Continue reassessment en route to the ED — recurrence is possible, so monitor continuously and have a second dose of adenosine and pads ready."
+  },
+  "patientInformation": {
+    "patientName": "Daniel Avery",
+    "patientCondition": "Palpitations and racing heart",
+    "patientAge": 32,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 180,
+    "patientWeight": 82,
+    "patientPhotoId": 39,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 32-year-old male seated at his desk, alert and conversational, mildly diaphoretic, holding one hand to his chest. He reports a sudden 'racing heart' that started about 35 minutes ago while working. He is mildly short of breath but talking in full sentences. Skin warm and pink. Radial pulse is rapid and regular, too fast to count by palpation. Initial monitor placement reveals a narrow-complex tachycardia at ~190 with no discernible P waves — supraventricular tachycardia. He is hemodynamically stable: BP 112/72, A&Ox3, SpO2 99% on room air.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 4,
+        "hr": 190,
+        "bpSys": 112,
+        "bpDia": 72,
+        "respRate": 22,
+        "spo2": 99,
+        "etco2": 36,
+        "temp": 37,
+        "obstruction": 0,
+        "custMeasure1": 96,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Primary survey, ABCs; confirm patient stable, alert, perfusing",
+        "Apply SpO2; titrate O2 only if <94% (currently 99%, no O2 indicated)",
+        "Place on monitor; obtain 12-lead EKG; identify regular narrow-complex tachycardia (SVT)",
+        "Establish IV access — prefer AC or proximal site for adenosine push",
+        "Check blood glucose to rule out hypoglycemia as driver",
+        "Targeted history for underlying cause (caffeine, stimulants, thyroid, prior episodes)",
+        "Perform vagal maneuvers (Valsalva, then modified Valsalva with supine leg elevation)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Vagal failed, anxiety rising",
+      "description": "Vagal maneuvers have failed. Patient remains in regular narrow-complex tachycardia at HR ~190. Hemodynamics are still preserved — BP 110/70, alert, oriented, SpO2 99%. However, the patient is becoming visibly more anxious: increased restlessness on the stretcher, voice getting louder, complaining more intensely about chest tightness and 'feeling like I'm going to pass out.' This is the key decision point — the crew must recognize that anxiety symptoms (subjective distress, hyperventilation, restlessness) are NOT the same as hemodynamic instability (hypotension, altered mentation, ischemic chest pain with EKG changes, signs of shock). The clinically correct path is to hold the line and proceed with adenosine.",
+      "monitorType": 0,
+      "trendTime": 35,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 4,
+        "hr": 192,
+        "bpSys": 110,
+        "bpDia": 70,
+        "respRate": 26,
+        "spo2": 99,
+        "etco2": 32,
+        "temp": 37,
+        "obstruction": 0,
+        "custMeasure1": 96,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Reassess stability: BP, mentation, perfusion — distinguish anxiety from true instability",
+        "Verbal reassurance, calm coaching, slow breathing — keep patient cooperative",
+        "Prepare adenosine 6 mg IV with 10 mL NS flush via stopcock; warn pt of brief 'doom' sensation",
+        "Adenosine 6 mg rapid IVP, immediate 10 mL NS flush, elevate arm",
+        "Capture continuous rhythm strip across the push — document conversion or persistence"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Converted to sinus",
+      "description": "Brief asystolic pause on the monitor (3–5 seconds) followed by spontaneous return to sinus rhythm at ~105 bpm. Patient describes a brief 'doom' or 'flushing' sensation that resolves within seconds. Chest tightness eases. BP rises to 124/78. SpO2 holds at 99%. Patient is dramatically calmer once he realizes he's better. Continue reassessment en route to the ED — recurrence is possible, so monitor continuously and have a second dose of adenosine and pads ready.",
+      "monitorType": 0,
+      "trendTime": 25,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 105,
+        "bpSys": 124,
+        "bpDia": 78,
+        "respRate": 18,
+        "spo2": 99,
+        "etco2": 38,
+        "temp": 37,
+        "obstruction": 0,
+        "custMeasure1": 96,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Repeat 12-lead post-conversion; document baseline rhythm and intervals",
+        "Continuous cardiac monitor, ready for recurrence; second-dose adenosine (12 mg) drawn up",
+        "Transport to appropriate ED; advance notification with rhythm strips",
+        "Document rhythm pre/post, time and dose of adenosine, response to interventions"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Adenosine without proper flush",
+      "description": "Adenosine 6 mg was pushed but the saline flush was slow, the stopcock wasn't preloaded, or the arm wasn't elevated. The drug was metabolized in the peripheral veins before reaching the AV node. No conversion. Rhythm remains regular narrow-complex at ~192. Patient experienced no 'flush' sensation — a tell that the dose didn't make it centrally. The trap is concluding 'refractory SVT' and escalating prematurely. The correct response is to recognize the technique failure, regroup with a proper setup, and give 12 mg with rapid flush and elevation.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 4,
+        "hr": 192,
+        "bpSys": 108,
+        "bpDia": 70,
+        "respRate": 26,
+        "spo2": 99,
+        "etco2": 32,
+        "temp": 37,
+        "obstruction": 0,
+        "custMeasure1": 96,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize technique failure (no flush sensation, no rhythm pause) — not true refractory SVT",
+        "Set up three-way stopcock at proximal IV; preload 10 mL saline flush",
+        "Adenosine 12 mg rapid IVP, immediate 10 mL flush, elevate arm"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Cardioverted while stable",
+      "description": "Crew interpreted patient's escalating anxiety and verbal distress as hemodynamic instability and proceeded to synchronized cardioversion despite preserved BP (110/70), preserved mentation (A&Ox3), and preserved perfusion. This is a protocol deviation — the patient did not meet criteria for unstable narrow-complex tachycardia. Cardioversion was applied without procedural sedation (or with rushed sedation). Patient experienced a painful shock and is now traumatized, agitated, and tearful. The shock may briefly convert the rhythm, but the iatrogenic harm — pain, psychological trauma, breach of trust — was avoidable. This is a teaching branch about confusing subjective distress with objective instability.",
+      "monitorType": 0,
+      "trendTime": 15,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 115,
+        "bpSys": 130,
+        "bpDia": 85,
+        "respRate": 30,
+        "spo2": 99,
+        "etco2": 30,
+        "temp": 37,
+        "obstruction": 0,
+        "custMeasure1": 96,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize protocol deviation — pt was stable; cardioversion not indicated",
+        "Reassess rhythm, perfusion, mental status, and trauma response post-shock",
+        "Reestablish rapport, calm reassurance, acknowledge distress; document event accurately"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Primary survey, ABCs; confirm patient stable, alert, perfusing",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply SpO2; titrate O2 only if <94% (currently 99%, no O2 indicated)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place on monitor; obtain 12-lead EKG; identify regular narrow-complex tachycardia (SVT)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access — prefer AC or proximal site for adenosine push",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check blood glucose to rule out hypoglycemia as driver",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Targeted history for underlying cause (caffeine, stimulants, thyroid, prior episodes)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Perform vagal maneuvers (Valsalva, then modified Valsalva with supine leg elevation)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess stability: BP, mentation, perfusion — distinguish anxiety from true instability",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Verbal reassurance, calm coaching, slow breathing — keep patient cooperative",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Prepare adenosine 6 mg IV with 10 mL NS flush via stopcock; warn pt of brief 'doom' sensation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Adenosine 6 mg rapid IVP, immediate 10 mL NS flush, elevate arm",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Capture continuous rhythm strip across the push — document conversion or persistence",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Repeat 12-lead post-conversion; document baseline rhythm and intervals",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous cardiac monitor, ready for recurrence; second-dose adenosine (12 mg) drawn up",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to appropriate ED; advance notification with rhythm strips",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document rhythm pre/post, time and dose of adenosine, response to interventions",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize technique failure (no flush sensation, no rhythm pause) — not true refractory SVT",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Set up three-way stopcock at proximal IV; preload 10 mL saline flush",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Adenosine 12 mg rapid IVP, immediate 10 mL flush, elevate arm",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize protocol deviation — pt was stable; cardioversion not indicated",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess rhythm, perfusion, mental status, and trauma response post-shock",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reestablish rapport, calm reassurance, acknowledge distress; document event accurately",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hypertensive Crisis without End-Organ Symptoms — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Hypertensive Crisis without End-Organ Symptoms</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Howard Ellison</strong></span><span class="patient-chip">62 years male</span><span class="patient-chip">201 lbs (91 kg)</span><span class="patient-chip">5'10"</span><span class="patient-chip">CC: Headache for 3 hours; 'pressure behind my eyes'</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">62-year-old male, headache, not feeling well. Conscious and breathing. Single-family residence.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Suburban single-family home, patient seated upright in a kitchen chair at the breakfast bar. Quiet, well-lit, comfortable temperature.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Saturday, 14:20 — warm spring afternoon</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene secured. Spouse present and cooperative. No pets, no weapons, no environmental hazards.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Wife is anxious; she took his blood pressure on their home cuff and got 215/124. She wants him taken to the hospital 'right now.' She tells you he 'ran out of his pills last week' and has been too busy to refill them.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Empty pill bottles for lisinopril and amlodipine on the counter</li><li>Home automatic BP cuff still wrapped around the patient's left arm</li><li>Patient looks his stated age, well-groomed, in no obvious distress</li><li>Bottle of ibuprofen on the counter, cap off</li><li>Patient is talking in full sentences and tracks you with his eyes as you enter</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">62-year-old male with a 3-hour history of generalized, dull, throbbing headache rated 6/10. Patient was working in the garage when he noticed pressure behind his eyes and a mild headache that has not improved with two ibuprofen. He denies vision changes, weakness, numbness, slurred speech, chest pain, shortness of breath, nausea, or vomiting. He has not had a headache like this in months. No recent trauma. He admits he 'ran out' of his lisinopril and amlodipine about a week ago and has not refilled them.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">NKDA</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Lisinopril 40 mg PO daily (last taken ~7 days ago), Amlodipine 10 mg PO daily (last taken ~7 days ago), Atorvastatin 40 mg PO nightly, Aspirin 81 mg PO daily</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Hypertension (10+ years), Hyperlipidemia, Type 2 diabetes (diet-controlled), Obesity</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Coffee and a bagel ~2 hours ago; took 400 mg ibuprofen 90 minutes ago for the headache</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Patient was cleaning out the garage on a warm afternoon when he developed a gradual dull headache. After two ibuprofen failed to relieve it, his wife checked his home BP cuff, got a reading of 215/124, panicked, and called 911.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">You arrive to find Mr. Ellison sitting calmly at his kitchen counter. He is alert, oriented, and able to give a clear history. His wife is more upset than he is and waves a home BP printout in your face that reads 215/124. The patient himself describes a dull, generalized headache that started gradually 3 hours ago, rated 6/10. He denies any focal weakness, numbness, vision changes, slurred speech, chest pain, or shortness of breath. He admits he stopped taking his BP meds 'about a week ago' because he ran out and was too busy to refill them.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Rhythm</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">88</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">218/126</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">97%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">16</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.4°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">118</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-maintained, speaking in full sentences</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Unlabored, equal bilateral chest rise, clear bilateral breath sounds</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong, regular radial pulses bilaterally; warm, dry skin</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 4 mm bilaterally, no deficits</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all four extremities equally with normal strength</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"I just have a headache. My wife is the one who panicked — I think I just need my medications back."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>No facial droop on initial visual inspection</li><li>Speech clear and goal-directed</li><li>Patient describes headache as 'pressure behind my eyes,' generalized, dull, throbbing, 6/10</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">BSI, scene size-up, form general impression</div></div>
+        <div class="action-excerpt">Environment: Survey for pills, paraphernalia, substance use, medication patches, medical devices, ambient temperature, social indicators of neglect, carbon monoxide exposures, multiple casualties with same complaint.</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Primary survey: airway, breathing, circulation, mentation</div></div>
+        <div class="action-excerpt">Airway: Make sure airway remains patent; reposition patient as needed. Breathing: Look for respiratory depression; check SPO2, EtCO2, and CO detector readings. Circulation: Look for signs of poor perfusion. Glasgow Coma Score and/or AVPU.</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Repeat BP manually on BOTH arms; confirm reading</div></div>
+        <div class="action-excerpt">Documentation of patient vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) with pulse oximetry.</div>
+        <div class="action-ref">↳ MATC: Pain Management</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Document headache severity using NRS (0–10)</div></div>
+        <div class="action-excerpt">Greater than 12 years old: Self-report scale — Numeric Rating Scale (NRS). Pain severity scores should be recorded before and after analgesic medication administration and upon arrival at destination.</div>
+        <div class="action-ref">↳ MATC: Pain Management</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Systematic assessment performed</div>
+        <div class="phase-trigger">Trigger: Crew has resisted the urge to act on the home-cuff number alone and is now driving the call with a structured exam.</div>
+        <div class="phase-desc">Crew has performed a complete primary survey and confirmed the dramatic BP on a manual cuff (right arm 218/126, left arm 216/124 — no significant side difference). Skin is warm, pink, and dry. Patient remains calm and conversational. Stage is now set for the detailed neurologic exam and history that will distinguish hypertensive URGENCY from hypertensive EMERGENCY.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Rhythm</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">86</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">216/124</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">97%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">16</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.4°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">118</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Unlabored 16/min, lungs clear bilaterally</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong, regular pulses; warm, dry, pink skin; no peripheral edema; no carotid bruit</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 4 mm bilaterally, equal and reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">5/5 grip strength bilaterally, no pronator drift</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"I feel fine, honestly. Just this headache. I don't know why she called you."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Manual BP confirmed: right 218/126, left 216/124</li><li>No bruits, no JVD</li><li>Patient oriented x4 (person, place, time, event)</li><li>No chest pain, no SOB, no nausea/vomiting, no blurred vision</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Perform Cincinnati Stroke Scale (face, arms, speech)</div></div>
+        <div class="action-excerpt">Use a validated prehospital stroke scale that may include, but is not limited to: Facial smile/grimace – ask patient to smile; Arm drift – close eyes and hold out arms for count of 10 seconds; Speech – ask patient to say &quot;You can't teach an old dog new tricks&quot;.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Assess vision, neglect, aphasia (LVO severity screen)</div></div>
+        <div class="action-excerpt">Use a validated prehospital stroke severity scale that may include, but is not limited to: Vision changes; Sensory neglect; Aphasia.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Pupils, motor strength, and sensory exam x4 extremities</div></div>
+        <div class="action-excerpt">Pertinent Assessment Findings: Focal neurologic changes. Pupils. Look for treatable causes of altered mental status (AMS): Glasgow Coma Score and/or AVPU; Pupils; Stroke assessment tool including focal neurologic findings.</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Detailed SAMPLE: missed meds, cocaine/meth, OTC stimulants</div></div>
+        <div class="action-excerpt">A complete medication list should be obtained from each patient. It is especially important for the treating physician and healthcare providers to be informed if the patient is taking beta-blockers, calcium channel blockers, clonidine, digoxin, blood thinners (anticoagulants), and medications for the treatment of erectile dysfunction or pulmonary hypertension. Substance use in the home (e.g., tobacco, marijuana, cocaine, amphetamines, PCP, alcohol).</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/ST-segment Elevation Myocardial Infarction (STEMI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Check blood glucose (rule out hypoglycemic stroke mimic)</div></div>
+        <div class="action-excerpt">Check blood glucose level (BGL) — Treat only if glucose less than 60 mg/dL.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Acquire 12-lead EKG to screen for ACS/LVH</div></div>
+        <div class="action-excerpt">Acquire 12-lead EKG, if possible.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Hypertensive urgency confirmed</div>
+        <div class="phase-trigger">Trigger: Complete neuro exam, stroke scale, pupil/motor/sensory check, BGL, 12-lead, and SAMPLE history all returned negative for end-organ involvement. This is hypertensive urgency, not emergency.</div>
+        <div class="phase-desc">Systematic assessment is complete and reassuring: stroke scale negative, no focal deficits, pupils equal and reactive, mental status fully intact, 12-lead shows sinus rhythm with mild LVH but no acute changes, and BGL is 118 mg/dL. The clinical picture is hypertensive URGENCY — severely elevated BP with no end-organ damage — driven by a one-week medication holiday. Goal now is calm transport, NOT aggressive prehospital BP reduction.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Rhythm</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">82</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">212/122</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">98%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">14</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.4°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">118</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Unlabored, lungs clear</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong regular pulses; skin warm, dry, pink</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 4 mm bilaterally</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">5/5 strength all extremities; no drift; sensation intact</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"The headache's a little better. Honestly I think I just need to take my pills again."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Cincinnati Stroke Scale: negative on all three elements</li><li>12-lead: NSR, no acute ST/T changes, mild LVH</li><li>BGL 118 mg/dL</li><li>Headache improved slightly with quiet environment, now 4/10</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Do NOT lower BP prehospital; avoid NTG without indication</div></div>
+        <div class="action-excerpt">Do not treat hypertension.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Calm, quiet environment; position of comfort; dim lights</div></div>
+        <div class="action-excerpt">Non-pharmacologic pain management options include: Placement of the patient in a position of comfort; Verbal reassurance to control anxiety.</div>
+        <div class="action-ref">↳ MATC: Pain Management</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">Establish IV access (saline lock)</div></div>
+        <div class="action-excerpt">Establish IV access.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/ST-segment Elevation Myocardial Infarction (STEMI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Serial vitals and serial neuro exams every 5 minutes</div></div>
+        <div class="action-excerpt">Observe for signs of clinical deterioration: dysrhythmias, chest pain, shortness of breath, decreased level of consciousness/syncope, or other signs of shock/hypotension. Perform serial 12-lead EKGs (especially if clinical changes are noted).</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/ST-segment Elevation Myocardial Infarction (STEMI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Transport non-emergent for evaluation and med restart</div></div>
+        <div class="action-excerpt">Transport in position of comfort and reassess as indicated.</div>
+        <div class="action-ref">↳ MATC: Pain Management</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">Notify receiving ED with full assessment findings</div></div>
+        <div class="action-excerpt">Early notification to receiving facility of any changes in patient condition or serial EKGs.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/ST-segment Elevation Myocardial Infarction (STEMI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">NTG given without indication</div>
+        <div class="phase-trigger">Trigger: Crew administered nitroglycerin 0.4 mg SL (or pursued other aggressive prehospital BP reduction) in response to the BP reading alone, without a neuro exam, ACS findings, or pulmonary edema. Chronic HTN means autoregulation is shifted right; abrupt BP reduction drops cerebral perfusion below the lower limit.</div>
+        <div class="phase-desc">Crew sees 218/126 and thinks 'hypertensive emergency.' Without completing a neuro exam, without an indication of ACS or pulmonary edema, they administer nitroglycerin 0.4 mg SL to try to bring the pressure down. Five minutes later, BP has dropped abruptly to 142/78 — a 76-point systolic drop. The patient, whose cerebral autoregulation has been chronically reset upward by years of untreated hypertension, can no longer perfuse his watershed zones. He becomes pale, lightheaded, and develops new slurred speech and a subtle right-sided drift — an iatrogenic watershed stroke. The crew has converted urgency into an emergency they caused.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">104</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">142/78</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">96%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">18</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">116</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">14</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent but speech now slurred</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Unlabored, lungs clear</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulses now weaker, skin pale and cool</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale · cool · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL but patient complains vision is 'gray around the edges'</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Subtle right-sided pronator drift; right grip 3/5, left 5/5</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"I... I don't... my head feels weird. Why is the room spinning?"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>New facial droop on right</li><li>New slurred speech (NEW Cincinnati positive)</li><li>Patient confused about what just happened</li><li>BP crashed from 218/126 to 142/78 in under 5 minutes</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize iatrogenic hypoperfusion stroke from rapid BP drop</div></div>
+        <div class="action-excerpt">Do not treat hypertension.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Stroke alert, last-known-well = onset of new deficit</div></div>
+        <div class="action-excerpt">Determine &quot;last known well&quot; time. Early hospital notification per local stroke plan that should include any suspected large vessel occlusion (LVO) stroke.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Elevate head of stretcher 15–30 degrees; neutral neck alignment</div></div>
+        <div class="action-excerpt">Prevent aspiration – elevate head of stretcher 15–30 degrees if systolic BP greater than 100 mmHg. Maintain head and neck in neutral alignment, without flexing the neck.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Neuro exam skipped</div>
+        <div class="phase-trigger">Trigger: Crew skipped the Cincinnati Stroke Scale, pupil exam, motor/sensory exam, and detailed mental status assessment. They anchored on 'headache + missed meds = urgency' without doing the work to rule out emergency.</div>
+        <div class="phase-desc">Crew obtains vitals, notes the elevated BP, and treats this as 'just a headache from missing his meds.' They never perform a stroke scale, never check pupils, never assess motor or sensory function. They package the patient and head to the hospital BLS-style. On arrival, the ED catches a subtle left facial droop and mild expressive aphasia that the crew missed — this was a true hypertensive EMERGENCY with an evolving stroke, undertriaged and untreated. Last-known-well window is now eaten up by an unhurried response.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Rhythm</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">90</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">220/128</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">97%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">16</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.4°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">118</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">14</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Unlabored</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong pulses, warm dry skin</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL — but never documented by crew</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Subtle left facial droop and mild expressive aphasia present from arrival, missed by crew</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"My... my head still hurts. Can I... can I get some water?"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>ED triage nurse identifies left facial droop and word-finding difficulty within 60 seconds</li><li>Last-known-well window now compressed</li><li>CT confirms an evolving ischemic stroke with hemorrhagic conversion risk</li><li>Crew documentation reads 'neuro grossly intact' — but no scale was actually performed</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize missed stroke; activate stroke alert immediately</div></div>
+        <div class="action-excerpt">Use a validated prehospital stroke scale that may include, but is not limited to: Facial smile/grimace – ask patient to smile; Arm drift – close eyes and hold out arms for count of 10 seconds; Speech – ask patient to say &quot;You can't teach an old dog new tricks&quot;. Early hospital notification per local stroke plan that should include any suspected large vessel occlusion (LVO) stroke.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Evaluate for stroke mimics (BGL, seizure, sepsis, migraine)</div></div>
+        <div class="action-excerpt">Evaluate for the presence of stroke mimics including: Hypoglycemia; Seizure; Sepsis; Migraine; Intoxication.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

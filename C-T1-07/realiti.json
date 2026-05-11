@@ -1,0 +1,403 @@
+{
+  "scenarioId": "C-T1-07",
+  "scenarioName": "Chest Pain with Non-Cardiac Cause",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1200,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "32-year-old male woke this morning with a sharp, localized pain in the left anterior chest just lateral to the sternum. He noticed it first when he sat up in bed. The pain is constant at a low background level (3/10) but spikes to 7/10 with deep inspiration, coughing, twisting his torso, or pressing on the area. He has no associated shortness of breath at baseline, no diaphoresis, no nausea, no radiation to the jaw or arm, no exertional component — in fact the pain is exactly the same whether he is sitting still or walking around. He finished a week-long head cold three days ago with a lingering dry cough that he says has been 'making my chest hurt every time I cough.' He recalls helping a friend move furniture five days ago and 'really yanked on a couch' getting it up the stairs. He has no personal or family history of heart disease, no diabetes, no hypertension, no smoking history. He felt anxious enough about the pain that he asked his roommate to call EMS — he had a coworker with 'a heart attack at 38' last year and is worried this could be the same thing.",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives to find a healthy-appearing 32-year-old male, alert and conversational, sitting on his couch and clearly worried about whether his chest pain is cardiac. He is breathing comfortably at rest and his skin is warm, pink, and dry. The dispatch was generic 'chest pain' — the entire teaching point of this scenario is whether the crew performs a thorough enough assessment (full OPQRST, palpation of the chest wall, complete SAMPLE, 12-lead) to recognize that this pain is reproducible, pleuritic, and clearly non-cardiac — and therefore that they should NOT default into the full ACS bundle of aspirin and nitroglycerin. → Non-cardiac recognized: Thorough assessment has identified a sharp, pleuritic, reproducible-on-palpation chest pain in a young patient with no cardiac risk factors, a clean 12-lead, normal lung sounds, recent URI with persistent dry cough, and a history of heavy lifting 5 days ago. The clinical picture is most consistent with costochondritis (with possible mild post-viral pleurisy contribution) — clearly low likelihood of ACS. Per the ACS protocol, the crew defers aspirin and nitrates and instead manages this patient under the Pain Management Guideline. They explain the working impression honestly to the patient, offer non-pharmacologic and non-opioid options for pain, and transport non-emergent for ED evaluation to confirm. → Transport and handoff: Patient is transported non-emergent to the closest appropriate ED. He remains comfortable, with stable vitals and unchanged pain pattern. Crew delivers a clear handoff that documents the reproducible pleuritic pain, the clean 12-lead, the recent URI, the lifting history, and the explicit decision to defer aspirin and nitrates per the protocol's non-cardiac caveat. The handoff helps the ED triage this patient appropriately rather than into the chest-pain rule-out pathway."
+  },
+  "patientInformation": {
+    "patientName": "Devin Marquez",
+    "patientCondition": "Sharp left-sided chest pain that started this morning, worse with deep breathing and movement; recovering from a head cold this past week.",
+    "patientAge": 32,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 180,
+    "patientWeight": 80,
+    "patientPhotoId": 39,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a healthy-appearing 32-year-old male, alert and conversational, sitting on his couch and clearly worried about whether his chest pain is cardiac. He is breathing comfortably at rest and his skin is warm, pink, and dry. The dispatch was generic 'chest pain' — the entire teaching point of this scenario is whether the crew performs a thorough enough assessment (full OPQRST, palpation of the chest wall, complete SAMPLE, 12-lead) to recognize that this pain is reproducible, pleuritic, and clearly non-cardiac — and therefore that they should NOT default into the full ACS bundle of aspirin and nitroglycerin.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 84,
+        "bpSys": 124,
+        "bpDia": 78,
+        "respRate": 16,
+        "spo2": 99,
+        "etco2": 38,
+        "temp": 37,
+        "obstruction": 0,
+        "custMeasure1": 96,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Scene safety; primary survey; recognize complaint requires evaluation for ACS vs alternative",
+        "Full OPQRST: sharp pain, pleuritic and reproducible, no exertional or radiating component",
+        "Palpate the chest wall and costochondral junctions; reproduce the pain",
+        "Full SAMPLE: recent URI with dry cough, lifted furniture 5 days ago, no cardiac risk factors",
+        "Place on cardiac monitor; SpO2; continuous rhythm monitoring",
+        "Acquire 12-lead EKG within 10 minutes of patient contact",
+        "Auscultate lung sounds; assess for pleural rub, wheeze, decreased breath sounds"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Non-cardiac recognized",
+      "description": "Thorough assessment has identified a sharp, pleuritic, reproducible-on-palpation chest pain in a young patient with no cardiac risk factors, a clean 12-lead, normal lung sounds, recent URI with persistent dry cough, and a history of heavy lifting 5 days ago. The clinical picture is most consistent with costochondritis (with possible mild post-viral pleurisy contribution) — clearly low likelihood of ACS. Per the ACS protocol, the crew defers aspirin and nitrates and instead manages this patient under the Pain Management Guideline. They explain the working impression honestly to the patient, offer non-pharmacologic and non-opioid options for pain, and transport non-emergent for ED evaluation to confirm.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 78,
+        "bpSys": 122,
+        "bpDia": 76,
+        "respRate": 16,
+        "spo2": 99,
+        "etco2": 38,
+        "temp": 37,
+        "obstruction": 0,
+        "custMeasure1": 96,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Defer aspirin and nitrates — likely non-cardiac, low likelihood of ACS",
+        "Obtain numeric pain score (NRS) before and after any intervention",
+        "Position of comfort; verbal reassurance; ice pack to area as patient prefers",
+        "Offer acetaminophen 1 g PO (80 kg × 15 mg/kg = 1200 mg → cap at 1 g max) for mild pain",
+        "No supplemental O2 (SpO2 99%, not dyspneic, no CHF signs)",
+        "Explain working impression; transport non-emergent for ED evaluation to confirm",
+        "Continue cardiac monitor and reassess en route; repeat 12-lead if symptoms change"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Transport and handoff",
+      "description": "Patient is transported non-emergent to the closest appropriate ED. He remains comfortable, with stable vitals and unchanged pain pattern. Crew delivers a clear handoff that documents the reproducible pleuritic pain, the clean 12-lead, the recent URI, the lifting history, and the explicit decision to defer aspirin and nitrates per the protocol's non-cardiac caveat. The handoff helps the ED triage this patient appropriately rather than into the chest-pain rule-out pathway.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 76,
+        "bpSys": 120,
+        "bpDia": 74,
+        "respRate": 16,
+        "spo2": 99,
+        "etco2": 38,
+        "temp": 37,
+        "obstruction": 0,
+        "custMeasure1": 96,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Notify ED; bedside handoff with 12-lead, OPQRST, palpation finding, no-ASA/no-NTG rationale",
+        "Continue cardiac monitor; reassess pain score and vitals every 5 minutes",
+        "Document OPQRST, palpation reproducing pain, clean 12-lead, rationale for deferring ASA/NTG"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "NTG given without screening",
+      "description": "Crew anchored on the word 'chest pain' from dispatch and walked into the apartment running the full ACS bundle in their heads. They put the patient on the monitor, gave chewable aspirin 324 mg, and pushed sublingual NTG 0.4 mg — all before they ever did an OPQRST, palpated the chest wall, or really looked at the 12-lead (which is clean). Within 3 minutes the patient becomes lightheaded and pale, BP drops to 84/52, HR climbs to 104. He says 'I feel really weird now, way worse than before.' Crew must now recognize they treated a non-cardiac pain with a vasodilator, lay the patient supine, bolus IV fluids, and reassess. On reassessment they finally palpate the chest wall and reproduce the pain — the true diagnosis was sitting there the whole time.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 104,
+        "bpSys": 84,
+        "bpDia": 52,
+        "respRate": 20,
+        "spo2": 97,
+        "etco2": 35,
+        "temp": 37,
+        "obstruction": 0,
+        "custMeasure1": 96,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Stop further NTG; supine + legs elevated; recognize NTG-induced hypotension",
+        "Rapid 250–500 mL NS bolus IV; reassess; titrate to SBP > 90",
+        "Complete deferred assessment: OPQRST, palpate chest wall, reproduce the pain",
+        "Hold all further NTG; do not redose despite original chest pain still present",
+        "Early notify receiving ED of NTG-induced hypotension and revised working impression",
+        "Debrief lesson: complete assessment BEFORE the ACS bundle, not after"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Tunnel vision on ACS",
+      "description": "Crew completes the standard ACS bundle — monitor, 12-lead, aspirin 324 mg, IV access — but never palpates the chest wall, never specifically asks about recent URI or heavy lifting, and never clarifies whether the pain is pleuritic or reproducible. The 12-lead is clean and the patient's vitals stay normal, but the crew never actually rules in or rules out a non-cardiac etiology. They transport as 'rule-out ACS' and hand off a vague 'young guy with chest pain, clean 12-lead, aspirin on board' report. The patient leaves the encounter with an unnecessary aspirin dose, an unnecessary IV, an undiagnosed musculoskeletal/pleuritic pain, and no real reassurance — and the ED begins a chest-pain rule-out pathway that the EMS assessment could have headed off. The 'patient harm' here is subtle: not a hypotensive event, but an incomplete assessment and a misleading handoff.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 86,
+        "bpSys": 122,
+        "bpDia": 76,
+        "respRate": 16,
+        "spo2": 99,
+        "etco2": 38,
+        "temp": 37,
+        "obstruction": 0,
+        "custMeasure1": 96,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize ACS bundle without full assessment is incomplete; finish OPQRST + palpation now",
+        "Palpate chest wall now; reproduce the pain; document the finding",
+        "Ask about recent URI, dry cough, heavy lifting, twisting injuries; document",
+        "Answer patient's question; verbal reassurance about non-cardiac findings",
+        "Give ED an accurate handoff with palpation finding and revised working impression",
+        "Debrief lesson: bundle follows assessment, not the other way around"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Scene safety; primary survey; recognize complaint requires evaluation for ACS vs alternative",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Full OPQRST: sharp pain, pleuritic and reproducible, no exertional or radiating component",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Palpate the chest wall and costochondral junctions; reproduce the pain",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Full SAMPLE: recent URI with dry cough, lifted furniture 5 days ago, no cardiac risk factors",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place on cardiac monitor; SpO2; continuous rhythm monitoring",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Acquire 12-lead EKG within 10 minutes of patient contact",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Auscultate lung sounds; assess for pleural rub, wheeze, decreased breath sounds",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Defer aspirin and nitrates — likely non-cardiac, low likelihood of ACS",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Obtain numeric pain score (NRS) before and after any intervention",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Position of comfort; verbal reassurance; ice pack to area as patient prefers",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Offer acetaminophen 1 g PO (80 kg × 15 mg/kg = 1200 mg → cap at 1 g max) for mild pain",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "No supplemental O2 (SpO2 99%, not dyspneic, no CHF signs)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Explain working impression; transport non-emergent for ED evaluation to confirm",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue cardiac monitor and reassess en route; repeat 12-lead if symptoms change",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Notify ED; bedside handoff with 12-lead, OPQRST, palpation finding, no-ASA/no-NTG rationale",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue cardiac monitor; reassess pain score and vitals every 5 minutes",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document OPQRST, palpation reproducing pain, clean 12-lead, rationale for deferring ASA/NTG",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Stop further NTG; supine + legs elevated; recognize NTG-induced hypotension",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Rapid 250–500 mL NS bolus IV; reassess; titrate to SBP > 90",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Complete deferred assessment: OPQRST, palpate chest wall, reproduce the pain",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Hold all further NTG; do not redose despite original chest pain still present",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Early notify receiving ED of NTG-induced hypotension and revised working impression",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Debrief lesson: complete assessment BEFORE the ACS bundle, not after",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize ACS bundle without full assessment is incomplete; finish OPQRST + palpation now",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Palpate chest wall now; reproduce the pain; document the finding",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Ask about recent URI, dry cough, heavy lifting, twisting injuries; document",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Answer patient's question; verbal reassurance about non-cardiac findings",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Give ED an accurate handoff with palpation finding and revised working impression",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Debrief lesson: bundle follows assessment, not the other way around",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

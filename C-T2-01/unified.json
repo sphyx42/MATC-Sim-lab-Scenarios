@@ -1,0 +1,676 @@
+{
+  "meta": {
+    "id": "C-T2-01",
+    "name": "STEMI with Complicating History — Anaphylactic ASA Allergy",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Cardiac",
+    "protocols": [
+      "cv-chest-pain-acs-stemi",
+      "medical-pain-management",
+      "medical-anaphylaxis-allergic-reaction"
+    ],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "STEMI",
+      "anterior",
+      "ACS",
+      "ASA allergy",
+      "anaphylaxis",
+      "pain management",
+      "fentanyl",
+      "PDE5-negative",
+      "tier-2",
+      "judgment",
+      "decision-dense"
+    ]
+  },
+  "patient": {
+    "name": "Daniel Whitaker",
+    "age": 58,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 92,
+    "weightLbs": 203,
+    "height": 180,
+    "chiefComplaint": "Crushing, heavy substernal chest pressure that woke him from sleep approximately 40 minutes ago, now 9/10, radiating to the left jaw and arm, associated with diaphoresis and nausea.",
+    "history": {
+      "hpi": "58-year-old male was awakened from sleep at approximately 04:30 by a crushing, heavy pressure in the center of his chest — 'like an elephant sitting on me.' Pain is currently 9/10, started at the substernum, now radiates to the left jaw and down the left arm. Associated with marked diaphoresis, mild dyspnea, nausea without vomiting, and a 'sense of doom.' Pain has not waxed/waned — it has been steady and severe for about 40 minutes. He denies tearing/ripping pain, denies pain with deep breath, denies recent trauma, denies leg pain/swelling, denies recent illness. He has never had pain like this before. He took no medications at home — specifically he has NOT taken aspirin (and will state this emphatically when asked: 'I can't take aspirin, it almost killed me') because of a documented anaphylactic reaction 2 years ago. The reaction (per his wife, present) involved diffuse hives, lip and tongue swelling, throat tightness, and wheezing — managed in the ED with epinephrine, methylprednisolone, and diphenhydramine; an allergist subsequently confirmed an IgE-mediated aspirin/NSAID hypersensitivity and gave him an EpiPen. He denies any phosphodiesterase-5 inhibitor use (no sildenafil, tadalafil, vardenafil) — confirmed by his wife. No recent surgery, no anticoagulants, no recent bleeding. Wife called 911 when his color became 'gray.'",
+      "pastMedical": [
+        "Hypertension — diagnosed 6 years ago, generally well controlled",
+        "Hyperlipidemia",
+        "Type 2 diabetes mellitus — diet- and metformin-controlled",
+        "Documented anaphylactic reaction to aspirin 2 years ago (urticaria, angioedema, wheezing) — confirmed IgE-mediated NSAID hypersensitivity by allergist; carries EpiPen",
+        "Former smoker, quit 4 years ago after a 25 pack-year history",
+        "Family history: father MI at 60, brother CABG at 55"
+      ],
+      "medications": [
+        "Lisinopril 20 mg PO daily",
+        "Metoprolol succinate 50 mg PO daily",
+        "Atorvastatin 40 mg PO at bedtime",
+        "Metformin 1000 mg PO twice daily",
+        "EpiPen 0.3 mg auto-injector (carried for documented ASA/NSAID anaphylaxis)"
+      ],
+      "allergies": [
+        "Aspirin — anaphylaxis (urticaria, angioedema, wheezing) 2 years ago; allergist-confirmed IgE-mediated NSAID hypersensitivity; cross-reactivity with ibuprofen and ketorolac assumed",
+        "No other known drug allergies"
+      ],
+      "lastOralIntake": "Late dinner approximately 9 hours ago — grilled chicken, rice, salad; one glass of water before bed. No medications taken since pain onset.",
+      "events": "Patient awoke from sleep at approximately 04:30 with crushing substernal chest pressure radiating to left jaw and arm, severe diaphoresis, nausea, and dyspnea. Pain has been steady and severe for ~40 minutes. Wife dialed 911 when his color became gray and he became too weak to stand up to use the bathroom."
+    }
+  },
+  "scene": {
+    "dispatch": "Dispatch: 58-year-old male, chest pain with shortness of breath, conscious and breathing, on the bedroom floor of a single-family residence. Wife on scene and on the line.",
+    "location": "Quiet suburban single-family home; patient on the carpeted floor next to the bed in the master bedroom, propped against the bedframe by his wife. Bedside lamp on, lights dim.",
+    "time": "Wednesday, 05:15, pre-dawn",
+    "safety": "Scene safe. Quiet home, no pets in the room. Adequate space and lighting to work. Front door propped open by wife for EMS.",
+    "bystanders": "Wife (Linda Whitaker) is present, calm but worried. She knows the full medical history including the prior ASA anaphylaxis episode and emphatically states 'do NOT give him aspirin, he almost died last time' — if the crew specifically asks about allergies, she immediately produces an allergist note and his EpiPen from the nightstand. The patient himself, between waves of pain, will also volunteer the allergy when asked. The complicating history WILL surface — but only if the crew performs a thorough SAMPLE with explicit allergy questioning BEFORE giving aspirin.",
+    "visualCues": [
+      "Patient on bedroom floor, propped semi-Fowler against bedframe, eyes closed, grimacing",
+      "Skin pale, gray, frankly diaphoretic — pillow and sheet visibly damp",
+      "Patient clutching center of chest with closed fist (Levine sign)",
+      "Bedside table: glasses, water glass, EpiPen auto-injector visible (wife produces it when asked about allergies)",
+      "Wife seated next to him, holding a folder labeled 'Medical Records' — contains the allergist's documentation",
+      "No medication bottles open at bedside; pill organizer on dresser, all morning slots full (no meds taken yet today)"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives in the master bedroom to find a 58-year-old male on the floor, alert but in severe distress, gray and diaphoretic, clutching his chest with the classic Levine fist. He describes a crushing substernal pressure radiating to the left jaw and arm that woke him 40 minutes ago — textbook ACS presentation. The wife is calm and articulate and is the key to the complicating history: she will produce the documented ASA anaphylaxis records the moment the crew asks specifically about allergies. The expected critical move is a 12-lead within 10 minutes that will reveal an anterior STEMI, paired with a thorough SAMPLE that BLOCKS the reflexive aspirin administration.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent, self-maintained, speaking in short sentences interrupted by pain",
+        "breathing": "Mildly tachypneic, lungs clear, no accessory muscle use, no audible wheeze",
+        "circulation": "Strong but slightly rapid regular radial pulse; skin gray, cool, frankly diaphoretic; cap refill 2–3 seconds",
+        "skin": {
+          "color": "gray",
+          "temperature": "cool",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal at 3 mm, briskly reactive",
+        "motorFunction": "Moves all extremities; weak from pain but symmetric",
+        "otherFindings": [
+          "Levine sign — clenched fist over center of chest",
+          "Pain rated 9/10, crushing, substernal, radiating to left jaw and left arm",
+          "No JVD, no peripheral edema, lungs clear (no rales)",
+          "No reproducible chest wall tenderness on palpation",
+          "Wife present, calm, holds a folder of medical records",
+          "EpiPen visible on nightstand — wife will produce documented ASA anaphylaxis records when asked about allergies"
+        ],
+        "patientSpeech": "It's like an elephant on my chest … woke me up … please … and don't give me aspirin, it almost killed me last time …"
+      },
+      "monitorState": {
+        "ecgRhythm": "STEMI Anterior",
+        "ecgWaveform": 23,
+        "hr": 102,
+        "bpSys": 156,
+        "bpDia": 94,
+        "respRate": 22,
+        "spo2": 95,
+        "etco2": 36,
+        "temp": 36.7,
+        "tempF": 98.1,
+        "obstruction": 0,
+        "glucose": 168,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "scene-primary-survey",
+          "shortAction": "Scene safety; primary survey; recognize high-likelihood ACS (Levine sign, diaphoresis, radiation)",
+          "priority": "critical",
+          "rationale": "MATC ACS Patient Care Goals — identify STEMI quickly; classic inclusion criteria present (crushing substernal pressure, diaphoresis, jaw/arm radiation, dyspnea).",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Patient Care Goals: Identify ST-elevation myocardial infarction (STEMI) quickly. Determine the time of symptom onset. Inclusion Criteria: Chest pain or discomfort in other areas of the body (e.g., arm, jaw, epigastrium) of suspected cardiac origin, shortness of breath, associated or unexplained sweating, nausea, vomiting, or dizziness."
+        },
+        {
+          "id": "full-opqrst",
+          "shortAction": "Full OPQRST: onset 04:30 (40 min), crushing quality, jaw/arm radiation, 9/10, no prior episodes",
+          "priority": "critical",
+          "rationale": "MATC ACS Key Documentation — time of symptom onset is required; OPQRST establishes high pre-test probability and time-of-onset for STEMI activation.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Key Documentation Elements: The time of symptom onset; The time of patient contact by EMS to the time of 12-lead EKG acquisition; The time aspirin (ASA) administered, or reason why not given."
+        },
+        {
+          "id": "sample-with-allergy-screen",
+          "shortAction": "Full SAMPLE — explicitly verify allergies and PDE5 use BEFORE any medication",
+          "priority": "critical",
+          "rationale": "MATC Pain Management Patient Safety #1 — drug allergies must be identified prior to medication administration. MATC ACS Pertinent Assessment Findings — complete medication list required. Patient/wife will disclose documented anaphylactic ASA allergy when asked.",
+          "protocolReference": "MATC: Pain Management",
+          "protocolExcerpt": "Patient Safety Considerations: All patients should have drug allergies identified prior to administration of pain medication. Avoid non-steroidal anti-inflammatory medications such as ibuprofen and ketorolac in patients with NSAID allergy, aspirin-sensitive asthma, renal insufficiency, pregnancy, or known peptic ulcer disease."
+        },
+        {
+          "id": "cardiac-monitor-pads",
+          "shortAction": "Cardiac monitor; SpO2; place defibrillator pads (high-risk STEMI)",
+          "priority": "critical",
+          "rationale": "MATC ACS step 2 — assess rhythm immediately; Patient Safety #3 — defib pads on high-risk patients. Anterior STEMI is high arrest risk.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Assess the patient's cardiac rhythm and immediately address pulseless rhythms, symptomatic tachycardia, or symptomatic bradycardia. Patient Safety Considerations: Consider placing defibrillator pads on high-risk patients."
+        },
+        {
+          "id": "twelve-lead",
+          "shortAction": "Acquire 12-lead within 10 min of contact; recognize anterior STEMI (V1–V4 ST elevation)",
+          "priority": "critical",
+          "rationale": "MATC ACS step 4 — 12-lead within 10 minutes is the primary diagnostic tool. Anterior STEMI = proximal LAD lesion, high-mortality.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "The 12-lead EKG is the primary diagnostic tool that identifies a STEMI; it is imperative that EMS clinicians routinely acquire a 12-lead EKG within 10 minutes for all patients exhibiting signs and symptoms of ACS. Advance notification should be provided to the receiving hospital for patients identified as having a STEMI."
+        },
+        {
+          "id": "withhold-aspirin",
+          "shortAction": "WITHHOLD aspirin — documented anaphylactic ASA allergy; document reason",
+          "priority": "critical",
+          "rationale": "MATC ACS step 5 calls for ASA, but MATC Pain Management Patient Safety #1 requires identifying allergies before administration. Anaphylactic-grade ASA allergy is an absolute contraindication. Key Documentation requires reason ASA not given.",
+          "protocolReference": "MATC: Pain Management",
+          "protocolExcerpt": "Patient Safety Considerations: All patients should have drug allergies identified prior to administration of pain medication. Avoid non-steroidal anti-inflammatory medications such as ibuprofen and ketorolac in patients with NSAID allergy, aspirin-sensitive asthma, renal insufficiency, pregnancy, or known peptic ulcer disease."
+        },
+        {
+          "id": "stemi-notification",
+          "shortAction": "Activate STEMI system — early advance notification to cath-capable receiving facility",
+          "priority": "critical",
+          "rationale": "MATC ACS step 4 / Patient Care Goals — activate STEMI system of care; advance notification for identified STEMI.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Patient Care Goals: Activate hospital-based STEMI system of care. Advance notification should be provided to the receiving hospital for patients identified as having a STEMI."
+        },
+        {
+          "id": "iv-access",
+          "shortAction": "Establish IV access (2 sites preferred, 18-gauge); saline lock or maintenance",
+          "priority": "critical",
+          "rationale": "MATC ACS step 6 — IV access required for NTG, opioid, or fluid resuscitation if NTG drops BP.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Establish IV access."
+        },
+        {
+          "id": "oxygen-titrated",
+          "shortAction": "Titrate O2 to SpO2 94–98% (currently 95%, low-flow NC 2 L/min appropriate)",
+          "priority": "important",
+          "rationale": "MATC ACS step 3 — O2 only if dyspneic, hypoxemic, or signs of heart failure; target 94–98%. Patient is dyspneic with SpO2 95%, so low-flow O2 is reasonable.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "If the patient is dyspneic, hypoxemic, or has obvious signs of heart failure, EMS clinicians should administer oxygen as appropriate with a target of achieving 94–98% saturation."
+        },
+        {
+          "id": "ntg-pde5-check-then-give",
+          "shortAction": "Verify no PDE5 use; give NTG 0.4 mg SL (SBP 156, well above 100)",
+          "priority": "critical",
+          "rationale": "MATC ACS step 7 — NTG 0.4 mg SL, repeat q3–5 min if SBP > 100; avoid if PDE5 within 48 hours. Patient/wife confirm no PDE5 use.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Nitroglycerin 0.4 mg sublingual (SL), can repeat q (quaque, every) 3–5 minutes if SBP greater than 100 mmHg. The use of nitrates should be avoided in any patient who has used a phosphodiesterase inhibitor within the past 48 hours."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "asa-withheld-ntg-given",
+          "if": "Allergy verified, ASA withheld, NTG given",
+          "condition": "Crew performed thorough SAMPLE with explicit allergy questioning; documented anaphylactic ASA allergy surfaced; aspirin withheld with documented rationale; PDE5 use ruled out; NTG 0.4 mg SL given with SBP 156; STEMI activation and IV access in place.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["sample-with-allergy-screen", "withhold-aspirin", "ntg-pde5-check-then-give", "stemi-notification", "twelve-lead"]
+        },
+        {
+          "targetPhaseId": "asa-given-anaphylaxis",
+          "if": "ASA given without allergy screen",
+          "condition": "Crew anchored on the standard 'STEMI bundle' — recognized anterior STEMI on 12-lead and reflexively administered chewable aspirin 324 mg without specifically asking about allergies. Patient develops anaphylaxis within 5–8 minutes — urticaria, lip/tongue swelling, wheezing, and hypotension — superimposed on the active STEMI.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["sample-with-allergy-screen", "withhold-aspirin"]
+        }
+      ]
+    },
+    {
+      "id": "asa-withheld-ntg-given",
+      "name": "Allergy verified, ASA withheld, NTG given",
+      "description": "Crew correctly elicited the anaphylactic ASA allergy on focused SAMPLE, withheld aspirin (documenting the reason), confirmed no PDE5 use, and gave NTG 0.4 mg SL with the patient's SBP at 156. Initially the patient reports the pain easing from 9/10 to 7/10 — appears to be responding. Crew has the patient on the monitor with pads, IV is established, STEMI alert is in to the cath-capable receiving facility, and they are loading for transport. The default path now hits its mid-scenario evolution: even with the right call, the patient does not stay 'easy.'",
+      "triggerCondition": "Crew obtained a thorough SAMPLE that surfaced the documented anaphylactic ASA allergy, withheld aspirin with documented rationale, ruled out PDE5 use, gave NTG 0.4 mg SL with adequate SBP, activated the STEMI system, and established IV access.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "RR 20, lungs clear, no accessory muscle use",
+        "circulation": "Strong regular radial pulse; skin still cool and diaphoretic but slightly improved color; cap refill 2 seconds",
+        "skin": {
+          "color": "pale",
+          "temperature": "cool",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Symmetric, slightly stronger than at contact",
+        "otherFindings": [
+          "Patient reports pain easing from 9/10 to 7/10 after first NTG",
+          "12-lead unchanged — anterior STEMI (ST elevation V1–V4)",
+          "ASA withheld; reason documented (anaphylactic allergy, allergist-confirmed)",
+          "STEMI alert called to cath-capable receiving facility",
+          "Two IVs established (18 g antecubital, 20 g forearm)"
+        ],
+        "patientSpeech": "The pressure is a little better … still hurts, but not as bad … thank you for not giving me the aspirin …"
+      },
+      "monitorState": {
+        "ecgRhythm": "STEMI Anterior",
+        "ecgWaveform": 23,
+        "hr": 96,
+        "bpSys": 138,
+        "bpDia": 84,
+        "respRate": 20,
+        "spo2": 97,
+        "etco2": 36,
+        "temp": 36.7,
+        "tempF": 98.1,
+        "obstruction": 0,
+        "glucose": 168,
+        "trendTimeSeconds": 35,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "load-and-transport",
+          "shortAction": "Load patient; rapid transport to cath-capable facility; minimize scene time",
+          "priority": "critical",
+          "rationale": "MATC ACS Key Considerations — ischemic burden time drives morbidity/mortality; minimize scene time, efficient transport.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Key Considerations: Ischemic burden time is a risk for morbidity and mortality, EMS can help decrease first medical contact to intervention time/reflow by efficient scripting/training of safely minimizing scene time."
+        },
+        {
+          "id": "repeat-ntg-with-bp-check",
+          "shortAction": "Repeat NTG 0.4 mg SL q3–5 min if SBP > 100; reassess BP and pain between doses",
+          "priority": "critical",
+          "rationale": "MATC ACS step 7 — NTG can be repeated q3–5 min if SBP > 100; clinician must monitor hemodynamics and be ready for hypotension.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Nitroglycerin 0.4 mg sublingual (SL), can repeat q (quaque, every) 3–5 minutes if SBP greater than 100 mmHg. Care should always be taken when giving nitroglycerin when the patient's blood pressure is marginal."
+        },
+        {
+          "id": "serial-twelve-lead",
+          "shortAction": "Serial 12-leads en route — watch for lateral/inferior extension or rhythm change",
+          "priority": "important",
+          "rationale": "MATC ACS Patient Safety #2 — perform serial 12-leads, especially with clinical changes. Anterior STEMI can extend to lateral (anterolateral MI).",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Patient Safety Considerations: Perform serial 12-lead EKGs (especially if clinical changes are noted). Performance of serial EKGs is encouraged for symptomatic patients with EKGs initially non-diagnostic for STEMI."
+        },
+        {
+          "id": "monitor-for-deterioration",
+          "shortAction": "Monitor for dysrhythmia, hypotension, CHF signs; defib pads in place",
+          "priority": "critical",
+          "rationale": "MATC ACS Patient Safety #1 — observe for deterioration: dysrhythmia, chest pain, dyspnea, hypotension, AMS. Anterior STEMI is high-risk for VT/VF.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Patient Safety Considerations: Observe for signs of clinical deterioration: dysrhythmias, chest pain, shortness of breath, decreased level of consciousness/syncope, or other signs of shock/hypotension. Consider placing defibrillator pads on high-risk patients."
+        },
+        {
+          "id": "document-asa-rationale",
+          "shortAction": "Document reason ASA withheld: anaphylactic allergy, allergist-confirmed; communicate to ED",
+          "priority": "critical",
+          "rationale": "MATC ACS Key Documentation — ASA time given OR reason why not given is a required element.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Key Documentation Elements: The time of symptom onset; The time of patient contact by EMS to the time of 12-lead EKG acquisition; The time aspirin (ASA) administered, or reason why not given; The time of STEMI notification."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "pain-rebound-with-lateral-extension",
+          "if": "Pain rebounds and lateral leads evolve en route",
+          "condition": "Approximately 6–8 minutes after the second NTG dose, the patient reports the pain climbing back to 8/10. Repeat 12-lead now shows new ST elevation in I and aVL with reciprocal depression in III and aVF — anterolateral extension. BP drifts down to 102/64 with HR climbing to 112. Crew must now re-evaluate the NTG-versus-opioid balance, recognize that further NTG risks hypotension and that aspirin is still off the table.",
+          "conditionType": "time_elapsed",
+          "triggerActionIds": ["repeat-ntg-with-bp-check", "serial-twelve-lead", "monitor-for-deterioration"]
+        }
+      ]
+    },
+    {
+      "id": "pain-rebound-with-lateral-extension",
+      "name": "Pain rebounds; lateral extension on serial 12-lead",
+      "description": "Mid-transport, the patient's pain rebounds from 7/10 to 8/10. The serial 12-lead now shows new ST elevation in I and aVL with reciprocal depression in III and aVF — anterolateral extension confirming a proximal LAD lesion. BP has drifted from 138/84 down to 102/64; HR is climbing reflexively to 112. The crew is now squeezed between two competing protocol-grounded actions: standard ACS says repeat NTG for ongoing ischemic pain, but step 7 cautions that NTG with 'marginal' BP requires weighing the risk versus opioid analgesia, with fluid bolus or pressor ready. The correct move is to STOP additional NTG, treat pain with weight-based fentanyl (preferred over morphine in UA/NSTEMI/STEMI per step 9), prep a fluid bolus, and update the receiving facility on the evolution.",
+      "triggerCondition": "Approximately 6–8 minutes after the second NTG dose, pain climbs back to 8/10 and the serial 12-lead shows new ST elevation in I and aVL with reciprocal changes in III and aVF — anterolateral extension. BP drifts to 102/64 with reflex tachycardia to 112, putting NTG into 'marginal BP' territory.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "RR 22, lungs clear",
+        "circulation": "Regular radial pulse, slightly weaker than at first NTG dose; skin pale and diaphoretic; cap refill 2–3 seconds",
+        "skin": {
+          "color": "pale",
+          "temperature": "cool",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal, reactive",
+        "motorFunction": "Symmetric, weak from pain",
+        "otherFindings": [
+          "Pain back to 8/10, crushing, with new component of left lateral chest",
+          "Serial 12-lead: new ST elevation I and aVL, reciprocal depression III, aVF — anterolateral extension",
+          "BP drifting (138/84 → 102/64) with reflex tachycardia to 112",
+          "Patient still strongly states 'no aspirin' — wife confirms again",
+          "STEMI alert already in to cath-capable facility; update needed on evolution"
+        ],
+        "patientSpeech": "It's coming back stronger … I feel weak, my arms feel heavy …"
+      },
+      "monitorState": {
+        "ecgRhythm": "STEMI Anterior",
+        "ecgWaveform": 23,
+        "hr": 112,
+        "bpSys": 102,
+        "bpDia": 64,
+        "respRate": 22,
+        "spo2": 96,
+        "etco2": 34,
+        "temp": 36.7,
+        "tempF": 98.1,
+        "obstruction": 0,
+        "glucose": 168,
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "stop-additional-ntg",
+          "shortAction": "Stop additional NTG — SBP now marginal (102); risk now outweighs benefit",
+          "priority": "critical",
+          "rationale": "MATC ACS step 7 explicitly cautions against NTG when BP is 'marginal' and directs the clinician to weigh risk versus opiate and to be ready for hypotension. SBP 102 with downward trend is the marginal scenario.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Care should always be taken when giving nitroglycerin when the patient's blood pressure is marginal. If used in this setting, the clinician should weigh the risk and benefit of nitrate administration over the administration of an opiate analgesic and be ready to respond to hypotension with fluid bolus or pressor."
+        },
+        {
+          "id": "fentanyl-pain-mgmt",
+          "shortAction": "Fentanyl 92 mcg IV (92 kg × 1 mcg/kg = 92 mcg; max initial 100 mcg) — preferred opioid in ACS",
+          "priority": "critical",
+          "rationale": "MATC ACS step 9 — opioids acceptable if pain unresponsive to nitrates; morphine cautioned in UA/NSTEMI. MATC Pain Management — fentanyl 1 mcg/kg IV, max initial 100 mcg. Fentanyl preferred over morphine here due to mortality association.",
+          "protocolReference": "MATC: Pain Management",
+          "protocolExcerpt": "For Moderate to Severe pain, analgesics include: Fentanyl: 1 mcg/kg IN, IM, IV or IO (maximum initial dose of 100 mcg). Use of non-invasive capnography is an earlier predictor of hypoventilation than pulse oximetry if opioid medications are administered. If indicated based on pain assessment, and vital signs allow, repeat pain medication administration (excluding acetaminophen and nonsteroidal anti-inflammatory medicines) after 5 minutes of the previous dose."
+        },
+        {
+          "id": "etco2-on-opioid",
+          "shortAction": "Apply EtCO2/capnography prior to fentanyl; monitor for hypoventilation",
+          "priority": "important",
+          "rationale": "MATC Pain Management — capnography is an earlier predictor of hypoventilation than pulse ox when opioids are given.",
+          "protocolReference": "MATC: Pain Management",
+          "protocolExcerpt": "Use of non-invasive capnography is an earlier predictor of hypoventilation than pulse oximetry if opioid medications are administered."
+        },
+        {
+          "id": "prep-fluid-bolus",
+          "shortAction": "Prepare 250–500 mL NS bolus, ready to infuse if SBP falls below 90",
+          "priority": "important",
+          "rationale": "MATC ACS step 7 — be ready to respond to NTG-induced hypotension with fluid bolus or pressor. Patient already at 102 SBP with downward drift.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Care should always be taken when giving nitroglycerin when the patient's blood pressure is marginal. If used in this setting, the clinician should weigh the risk and benefit of nitrate administration over the administration of an opiate analgesic and be ready to respond to hypotension with fluid bolus or pressor."
+        },
+        {
+          "id": "still-no-asa",
+          "shortAction": "Maintain ASA withhold; document anaphylactic allergy in hand-off",
+          "priority": "critical",
+          "rationale": "Allergy contraindication does not change with clinical deterioration; reinforce in handoff so ED does not reflexively administer.",
+          "protocolReference": "MATC: Pain Management",
+          "protocolExcerpt": "Patient Safety Considerations: All patients should have drug allergies identified prior to administration of pain medication. Avoid non-steroidal anti-inflammatory medications such as ibuprofen and ketorolac in patients with NSAID allergy, aspirin-sensitive asthma, renal insufficiency, pregnancy, or known peptic ulcer disease."
+        },
+        {
+          "id": "update-receiving-facility",
+          "shortAction": "Update receiving facility: anterolateral extension, BP marginal, ASA withheld for allergy",
+          "priority": "critical",
+          "rationale": "MATC ACS step 11 — early notification of any change in patient condition or serial EKGs. Anterolateral extension and ASA-withhold rationale are both load-bearing handoff data.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Early notification to receiving facility of any changes in patient condition or serial EKGs."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "stabilized-on-fentanyl",
+          "if": "Fentanyl given, NTG held, transport continues",
+          "condition": "Crew correctly stopped further NTG, gave weight-based fentanyl with capnography monitoring, prepared a fluid bolus, and updated the receiving facility on the anterolateral extension and ongoing ASA withhold. Pain decreases to 4/10 and BP stabilizes around 108/68 without requiring the bolus.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["stop-additional-ntg", "fentanyl-pain-mgmt", "update-receiving-facility"]
+        }
+      ]
+    },
+    {
+      "id": "stabilized-on-fentanyl",
+      "name": "Stabilized on fentanyl; cath-lab arrival",
+      "description": "Pain decreases from 8/10 to 4/10 after weight-based fentanyl. BP stabilizes around 108/68 without requiring the bolus. EtCO2 remains in the mid-30s with no signs of respiratory depression. Serial 12-leads continue to show anterolateral STEMI without further evolution. Crew arrives at the cath-capable facility, gives a clean handoff that includes onset time, contact-to-EKG time, ASA withhold rationale (allergist-confirmed anaphylactic ASA hypersensitivity, allergy documentation handed over with patient), NTG doses given, fentanyl dose given, and the 12-lead evolution. Patient is wheeled directly to the cath lab.",
+      "triggerCondition": "After the crew stopped further NTG and gave weight-based fentanyl, pain dropped from 8/10 to 4/10, BP stabilized in the high 100s, and the patient remained alert and protecting his airway. Transport to the cath-capable facility continued without further deterioration.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "RR 18, lungs clear",
+        "circulation": "Strong regular radial pulse; skin warming, drying; cap refill 2 seconds",
+        "skin": {
+          "color": "pale-pink",
+          "temperature": "cool",
+          "moisture": "drying"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Symmetric",
+        "otherFindings": [
+          "Pain reduced to 4/10 after fentanyl",
+          "EtCO2 mid-30s, no respiratory depression on capnography",
+          "12-lead unchanged from anterolateral pattern — no further evolution",
+          "Cath lab activated, ED notified of full timeline and allergy documentation"
+        ],
+        "patientSpeech": "Better. Tired. Thank you for listening about the aspirin."
+      },
+      "monitorState": {
+        "ecgRhythm": "STEMI Anterior",
+        "ecgWaveform": 23,
+        "hr": 92,
+        "bpSys": 108,
+        "bpDia": 68,
+        "respRate": 18,
+        "spo2": 97,
+        "etco2": 36,
+        "temp": 36.7,
+        "tempF": 98.1,
+        "obstruction": 0,
+        "glucose": 168,
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "handoff-with-allergy-emphasis",
+          "shortAction": "Bedside handoff: onset, contact-to-EKG, ASA-withhold rationale, NTG doses, fentanyl dose, 12-lead evolution",
+          "priority": "critical",
+          "rationale": "MATC ACS Key Documentation — onset, contact-to-EKG, ASA time or reason not given, STEMI notification time. Allergy documentation must follow patient.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Key Documentation Elements: The time of symptom onset; The time of patient contact by EMS to the time of 12-lead EKG acquisition; The time aspirin (ASA) administered, or reason why not given; The time of STEMI notification."
+        },
+        {
+          "id": "deliver-twelve-leads",
+          "shortAction": "Deliver all 12-leads (initial + serial) hard-copy or transmitted at bedside",
+          "priority": "important",
+          "rationale": "MATC ACS step 4 — all EKGs must be made available to treating personnel at the receiving hospital.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "All EKGs should be made available to treating personnel at the receiving hospital, whether hand delivered as hard copy or transmitted from the field."
+        },
+        {
+          "id": "post-fentanyl-vitals",
+          "shortAction": "Document post-fentanyl vitals, pain score, capnography reading",
+          "priority": "important",
+          "rationale": "MATC Pain Management Key Documentation — vitals, allergies, initial pain score, dose given, post-administration reassessment.",
+          "protocolReference": "MATC: Pain Management",
+          "protocolExcerpt": "Key Documentation Elements: Documentation of patient vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) with pulse oximetry; Acquisition of patient's allergies prior to administration of medication; Documentation of initial patient pain scale assessment; Documentation of medication administration with correct dose; Documentation of patient reassessment with repeat vital signs and patient pain scale assessment."
+        }
+      ]
+    },
+    {
+      "id": "asa-given-anaphylaxis",
+      "name": "ASA given without allergy screen — iatrogenic anaphylaxis",
+      "description": "Crew anchored on the standard 'STEMI = ASA + NTG' bundle. They recognized the anterior STEMI on 12-lead and reflexively gave aspirin 324 mg chewed without specifically asking the patient or wife about allergies. The wife — who had been waiting for them to ask — only realizes what was given when she sees the empty packet. Within 5–8 minutes the patient develops urticaria on his chest and arms, lip and tongue swelling, audible wheezing, and his BP crashes to 78/46. He now has BOTH an active anterior STEMI AND iatrogenic anaphylaxis. Crew must recognize anaphylaxis, give IM epinephrine (NOT IV bolus — that is the anaphylaxis route), prepare for a fluid bolus per the anaphylaxis algorithm, continue the STEMI workup (without further ASA obviously), and manage the airway. The judgment error here is not failed assessment — it is failed allergy verification before drug administration.",
+      "triggerCondition": "Crew gave aspirin 324 mg chewed without specifically asking about allergies before administration. Patient has a documented allergist-confirmed anaphylactic ASA/NSAID hypersensitivity; within 5–8 minutes he develops urticaria, angioedema, wheezing, and severe hypotension superimposed on the active anterior STEMI.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": {
+          "eye": 3,
+          "verbal": 4,
+          "motor": 6
+        },
+        "airway": "Threatened — visible lip and tongue swelling, voice now muffled and hoarse; no stridor yet",
+        "breathing": "RR 28, audible inspiratory and expiratory wheeze; accessory muscle use; SpO2 88%",
+        "circulation": "Weak rapid radial pulse; cap refill 4–5 seconds; mottled cool extremities",
+        "skin": {
+          "color": "ashen pale with red urticarial wheals on chest, arms, and neck",
+          "temperature": "cool",
+          "moisture": "frankly diaphoretic"
+        },
+        "pupils": "Equal at 4 mm, reactive",
+        "motorFunction": "Symmetric but weak; lethargic from hypoperfusion",
+        "otherFindings": [
+          "Urticaria spreading across chest and both upper extremities within 5–8 minutes of chewed ASA",
+          "Lip and tongue swelling visibly progressing; voice muffled",
+          "Audible wheezing on chest auscultation",
+          "Hypotension (78/46) — combined distributive (anaphylaxis) and cardiogenic (active anterior STEMI) shock",
+          "Wife distraught: 'I told you, I told you not to give him aspirin!'",
+          "EpiPen still on nightstand — wife produces it now"
+        ],
+        "patientSpeech": "Can't … breathe … throat … "
+      },
+      "monitorState": {
+        "ecgRhythm": "STEMI Anterior",
+        "ecgWaveform": 23,
+        "hr": 128,
+        "bpSys": 78,
+        "bpDia": 46,
+        "respRate": 28,
+        "spo2": 88,
+        "etco2": 30,
+        "temp": 36.7,
+        "tempF": 98.1,
+        "obstruction": 60,
+        "glucose": 168,
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-anaphylaxis",
+          "shortAction": "Recognize anaphylaxis — urticaria + airway compromise + hypotension after known allergen",
+          "priority": "critical",
+          "rationale": "MATC Anaphylaxis Assessment #4a — skin involvement plus respiratory compromise OR hypotension after known allergen exposure = anaphylaxis.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction",
+          "protocolExcerpt": "Anaphylaxis – More severe and is characterized by an acute onset involving: The skin (urticaria) and/or mucosa with either respiratory compromise or decreased BP or signs of end-organ dysfunction OR Hypotension for that patient after exposure to a known allergen."
+        },
+        {
+          "id": "im-epi",
+          "shortAction": "Epinephrine 0.3 mg IM (1 mg/mL) anterolateral thigh — repeat q5–15 min PRN",
+          "priority": "critical",
+          "rationale": "MATC Anaphylaxis step 2 — adult (≥25 kg) 0.3 mg IM 1 mg/mL anterolateral thigh; first-line therapy for anaphylaxis. Step 6 — may repeat q5–15 min if hypoperfusion persists.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction",
+          "protocolExcerpt": "Epinephrine administration is the primary treatment for anaphylaxis. If signs of anaphylaxis, administer epinephrine 1 mg/mL at the following dose and route: Adult (25 kg or more) 0.3 mg IM in the anterolateral thigh. If signs of anaphylaxis and hypoperfusion persist following the first dose of epinephrine, additional IM epinephrine can be repeated q5–15 minutes at above noted doses."
+        },
+        {
+          "id": "high-flow-o2-airway",
+          "shortAction": "High-flow O2 via NRB; prepare advanced airway equipment for evolving angioedema",
+          "priority": "critical",
+          "rationale": "MATC Anaphylaxis Assessment — patent airway and oropharyngeal edema evaluation; SpO2 88% with airway swelling demands aggressive oxygenation and airway readiness.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction",
+          "protocolExcerpt": "Assessment: Evaluate for patent airway and presence of oropharyngeal edema. Auscultate for wheezing and assess level of respiratory effort. Constant monitoring of the patient's airway and breathing is essential."
+        },
+        {
+          "id": "fluid-bolus-anaphylaxis",
+          "shortAction": "Normal saline 20 mL/kg = 1840 mL IV wide open (92 kg × 20 mL/kg); repeat as needed",
+          "priority": "critical",
+          "rationale": "MATC Anaphylaxis step 7 — for hypoperfusion, give 20 mL/kg isotonic fluid rapidly over 15 min via IV/IO; repeat as needed.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction",
+          "protocolExcerpt": "For signs of hypoperfusion, also administer 20 mL/kg isotonic fluid (normal saline or lactated Ringer's) rapidly (over 15 minutes) via IV or IO, and repeat as needed for ongoing hypoperfusion."
+        },
+        {
+          "id": "albuterol-neb",
+          "shortAction": "Albuterol 2.5 mg nebulized for wheezing",
+          "priority": "important",
+          "rationale": "MATC Anaphylaxis step 3 — for respiratory distress with wheezing, consider albuterol 2.5–5 mg nebulized.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction",
+          "protocolExcerpt": "If respiratory distress with wheezing is present, consider administering Albuterol 2.5–5 mg nebulized AND/OR Epinephrine 1 mg/mL, 5 mL nebulized."
+        },
+        {
+          "id": "diphenhydramine",
+          "shortAction": "Diphenhydramine 50 mg IV (92 kg × 1 mg/kg = 92 mg → cap at 50 mg max)",
+          "priority": "important",
+          "rationale": "MATC Anaphylaxis step 9 — diphenhydramine 1 mg/kg up to 50 mg IM/IV/PO; IV preferred for severe symptoms.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction",
+          "protocolExcerpt": "For urticaria or pruritus, administer a diphenhydramine 1 mg/kg, up to maximum dose of 50 mg IM, IV, or PO). The IV route is preferred for the patient in severe symptoms."
+        },
+        {
+          "id": "methylprednisolone",
+          "shortAction": "Methylprednisolone 125 mg IV (within 80–125 mg adult range)",
+          "priority": "supplemental",
+          "rationale": "MATC Anaphylaxis step 5 — consider methylprednisolone 80–125 mg IV push or IM (or dexamethasone alternative).",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction",
+          "protocolExcerpt": "Consider Methylprednisolone IV push or IM, 80-125 mg OR Dexamethasone IV push, IM, or PO, 8-16 mg (pediatric 0.5 mg/kg to max of 16 mg)."
+        },
+        {
+          "id": "continue-stemi-care-no-asa",
+          "shortAction": "Continue STEMI care (monitor, pads, transport to cath-capable) — NEVER repeat ASA",
+          "priority": "critical",
+          "rationale": "STEMI is still active and remains the underlying killer; the iatrogenic anaphylaxis is now superimposed. ASA is permanently off the table; STEMI activation and transport to cath-capable facility still apply.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Patient Care Goals: Activate hospital-based STEMI system of care. Advance notification should be provided to the receiving hospital for patients identified as having a STEMI. Patient Safety Considerations: Observe for signs of clinical deterioration: dysrhythmias, chest pain, shortness of breath, decreased level of consciousness/syncope, or other signs of shock/hypotension."
+        },
+        {
+          "id": "notify-receiving-dual-pathology",
+          "shortAction": "Update receiving facility: active anterior STEMI PLUS iatrogenic anaphylaxis from ASA",
+          "priority": "critical",
+          "rationale": "MATC ACS step 11 / Anaphylaxis Documentation — early notification of any change in patient condition; receiving team must be ready for dual-pathology management.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Early notification to receiving facility of any changes in patient condition or serial EKGs."
+        },
+        {
+          "id": "debrief-allergy-verification",
+          "shortAction": "Debrief lesson: verify allergies BEFORE every medication, even reflexive bundle drugs",
+          "priority": "supplemental",
+          "rationale": "MATC Pain Management Patient Safety #1 — drug allergies must be identified prior to medication administration. This applies even to the 'standard' STEMI ASA dose.",
+          "protocolReference": "MATC: Pain Management",
+          "protocolExcerpt": "Patient Safety Considerations: All patients should have drug allergies identified prior to administration of pain medication."
+        }
+      ]
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

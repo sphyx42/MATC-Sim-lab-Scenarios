@@ -1,0 +1,347 @@
+{
+  "scenarioId": "C-T1-03",
+  "scenarioName": "Hypertensive Crisis without End-Organ Symptoms",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1200,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "62-year-old male with a 3-hour history of generalized, dull, throbbing headache rated 6/10. Patient was working in the garage when he noticed pressure behind his eyes and a mild headache that has not improved with two ibuprofen. He denies vision changes, weakness, numbness, slurred speech, chest pain, shortness of breath, nausea, or vomiting. He has not had a headache like this in months. No recent trauma. He admits he 'ran out' of his lisinopril and amlodipine about a week ago and has not refilled them.",
+    "discussion": "",
+    "course": "Initial Contact: You arrive to find Mr. Ellison sitting calmly at his kitchen counter. He is alert, oriented, and able to give a clear history. His wife is more upset than he is and waves a home BP printout in your face that reads 215/124. The patient himself describes a dull, generalized headache that started gradually 3 hours ago, rated 6/10. He denies any focal weakness, numbness, vision changes, slurred speech, chest pain, or shortness of breath. He admits he stopped taking his BP meds 'about a week ago' because he ran out and was too busy to refill them. → Systematic assessment performed: Crew has performed a complete primary survey and confirmed the dramatic BP on a manual cuff (right arm 218/126, left arm 216/124 — no significant side difference). Skin is warm, pink, and dry. Patient remains calm and conversational. Stage is now set for the detailed neurologic exam and history that will distinguish hypertensive URGENCY from hypertensive EMERGENCY. → Hypertensive urgency confirmed: Systematic assessment is complete and reassuring: stroke scale negative, no focal deficits, pupils equal and reactive, mental status fully intact, 12-lead shows sinus rhythm with mild LVH but no acute changes, and BGL is 118 mg/dL. The clinical picture is hypertensive URGENCY — severely elevated BP with no end-organ damage — driven by a one-week medication holiday. Goal now is calm transport, NOT aggressive prehospital BP reduction."
+  },
+  "patientInformation": {
+    "patientName": "Howard Ellison",
+    "patientCondition": "Headache for 3 hours; 'pressure behind my eyes'",
+    "patientAge": 62,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 178,
+    "patientWeight": 91,
+    "patientPhotoId": 75,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "You arrive to find Mr. Ellison sitting calmly at his kitchen counter. He is alert, oriented, and able to give a clear history. His wife is more upset than he is and waves a home BP printout in your face that reads 215/124. The patient himself describes a dull, generalized headache that started gradually 3 hours ago, rated 6/10. He denies any focal weakness, numbness, vision changes, slurred speech, chest pain, or shortness of breath. He admits he stopped taking his BP meds 'about a week ago' because he ran out and was too busy to refill them.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 88,
+        "bpSys": 218,
+        "bpDia": 126,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.9,
+        "obstruction": 0,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "BSI, scene size-up, form general impression",
+        "Primary survey: airway, breathing, circulation, mentation",
+        "Repeat BP manually on BOTH arms; confirm reading",
+        "Document headache severity using NRS (0–10)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Systematic assessment performed",
+      "description": "Crew has performed a complete primary survey and confirmed the dramatic BP on a manual cuff (right arm 218/126, left arm 216/124 — no significant side difference). Skin is warm, pink, and dry. Patient remains calm and conversational. Stage is now set for the detailed neurologic exam and history that will distinguish hypertensive URGENCY from hypertensive EMERGENCY.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 86,
+        "bpSys": 216,
+        "bpDia": 124,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.9,
+        "obstruction": 0,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Perform Cincinnati Stroke Scale (face, arms, speech)",
+        "Assess vision, neglect, aphasia (LVO severity screen)",
+        "Pupils, motor strength, and sensory exam x4 extremities",
+        "Detailed SAMPLE: missed meds, cocaine/meth, OTC stimulants",
+        "Check blood glucose (rule out hypoglycemic stroke mimic)",
+        "Acquire 12-lead EKG to screen for ACS/LVH"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Hypertensive urgency confirmed",
+      "description": "Systematic assessment is complete and reassuring: stroke scale negative, no focal deficits, pupils equal and reactive, mental status fully intact, 12-lead shows sinus rhythm with mild LVH but no acute changes, and BGL is 118 mg/dL. The clinical picture is hypertensive URGENCY — severely elevated BP with no end-organ damage — driven by a one-week medication holiday. Goal now is calm transport, NOT aggressive prehospital BP reduction.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 82,
+        "bpSys": 212,
+        "bpDia": 122,
+        "respRate": 14,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 36.9,
+        "obstruction": 0,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Do NOT lower BP prehospital; avoid NTG without indication",
+        "Calm, quiet environment; position of comfort; dim lights",
+        "Establish IV access (saline lock)",
+        "Serial vitals and serial neuro exams every 5 minutes",
+        "Transport non-emergent for evaluation and med restart",
+        "Notify receiving ED with full assessment findings"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "NTG given without indication",
+      "description": "Crew sees 218/126 and thinks 'hypertensive emergency.' Without completing a neuro exam, without an indication of ACS or pulmonary edema, they administer nitroglycerin 0.4 mg SL to try to bring the pressure down. Five minutes later, BP has dropped abruptly to 142/78 — a 76-point systolic drop. The patient, whose cerebral autoregulation has been chronically reset upward by years of untreated hypertension, can no longer perfuse his watershed zones. He becomes pale, lightheaded, and develops new slurred speech and a subtle right-sided drift — an iatrogenic watershed stroke. The crew has converted urgency into an emergency they caused.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 104,
+        "bpSys": 142,
+        "bpDia": 78,
+        "respRate": 18,
+        "spo2": 96,
+        "etco2": 36,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 116,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize iatrogenic hypoperfusion stroke from rapid BP drop",
+        "Stroke alert, last-known-well = onset of new deficit",
+        "Elevate head of stretcher 15–30 degrees; neutral neck alignment"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Neuro exam skipped",
+      "description": "Crew obtains vitals, notes the elevated BP, and treats this as 'just a headache from missing his meds.' They never perform a stroke scale, never check pupils, never assess motor or sensory function. They package the patient and head to the hospital BLS-style. On arrival, the ED catches a subtle left facial droop and mild expressive aphasia that the crew missed — this was a true hypertensive EMERGENCY with an evolving stroke, undertriaged and untreated. Last-known-well window is now eaten up by an unhurried response.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 90,
+        "bpSys": 220,
+        "bpDia": 128,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.9,
+        "obstruction": 0,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize missed stroke; activate stroke alert immediately",
+        "Evaluate for stroke mimics (BGL, seizure, sepsis, migraine)"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "BSI, scene size-up, form general impression",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Primary survey: airway, breathing, circulation, mentation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Repeat BP manually on BOTH arms; confirm reading",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document headache severity using NRS (0–10)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Perform Cincinnati Stroke Scale (face, arms, speech)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Assess vision, neglect, aphasia (LVO severity screen)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Pupils, motor strength, and sensory exam x4 extremities",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Detailed SAMPLE: missed meds, cocaine/meth, OTC stimulants",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check blood glucose (rule out hypoglycemic stroke mimic)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Acquire 12-lead EKG to screen for ACS/LVH",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Do NOT lower BP prehospital; avoid NTG without indication",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Calm, quiet environment; position of comfort; dim lights",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access (saline lock)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Serial vitals and serial neuro exams every 5 minutes",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport non-emergent for evaluation and med restart",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Notify receiving ED with full assessment findings",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize iatrogenic hypoperfusion stroke from rapid BP drop",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Stroke alert, last-known-well = onset of new deficit",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Elevate head of stretcher 15–30 degrees; neutral neck alignment",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize missed stroke; activate stroke alert immediately",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Evaluate for stroke mimics (BGL, seizure, sepsis, migraine)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

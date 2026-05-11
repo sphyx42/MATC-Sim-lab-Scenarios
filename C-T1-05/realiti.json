@@ -1,0 +1,328 @@
+{
+  "scenarioId": "C-T1-05",
+  "scenarioName": "CHF Exacerbation, Early Presentation",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1200,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "Patient reports gradual worsening of dyspnea over the past 4-5 days. Initially only short of breath with exertion, now short of breath at rest. Sleeping in his recliner for the last 2 nights because lying flat makes him feel like he is suffocating (orthopnea). Wakes multiple times overnight gasping for air (PND). Reports his ankles and lower legs have become much more swollen than usual, and he is up about 7 pounds on his bathroom scale from a week ago. Admits he has not been taking his furosemide (Lasix) for the past 2 days because he ran out and has not refilled. No chest pain, no fever, no cough productive of yellow/green sputum, no leg pain or unilateral leg swelling.",
+    "discussion": "",
+    "course": "Initial Contact: Crew enters the living room to find a 72-year-old male seated bolt upright in a recliner, leaning slightly forward, working visibly to breathe but conversant in 3-4 word phrases. Skin is warm and slightly diaphoretic. No obvious chest pain, no acute trauma. He is anxious but cooperative. → CHF recognized: Crew has put the picture together: bibasilar crackles, +JVD, +2 pedal edema, orthopnea/PND, weight gain, missed Lasix. Patient still hypertensive at 156/94 with SpO2 92% on NRB. Working to set up CPAP and prepare SL NTG. Patient remains alert and able to follow coaching. → CPAP + NTG improving: After 5-7 minutes on CPAP with one dose of SL nitroglycerin, the patient is breathing easier, SpO2 has climbed to 96%, RR is down to 20, and lung sounds — while still showing crackles in the bases — are clearing in the mid fields. BP has come down to a more normal range. Patient remains alert and tolerating the mask. Transport ongoing."
+  },
+  "patientInformation": {
+    "patientName": "Walter Hensley",
+    "patientCondition": "Progressive shortness of breath over several days, worse tonight",
+    "patientAge": 72,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 178,
+    "patientWeight": 88,
+    "patientPhotoId": 87,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "Crew enters the living room to find a 72-year-old male seated bolt upright in a recliner, leaning slightly forward, working visibly to breathe but conversant in 3-4 word phrases. Skin is warm and slightly diaphoretic. No obvious chest pain, no acute trauma. He is anxious but cooperative.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 112,
+        "bpSys": 158,
+        "bpDia": 96,
+        "respRate": 28,
+        "spo2": 90,
+        "etco2": 33,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Scene safety, BSI, general impression",
+        "Primary survey (ABC); position of comfort upright",
+        "Apply O2 (NC or NRB) targeting SpO2 94-98%",
+        "Auscultate lungs in all fields — listen for crackles vs wheezes",
+        "Assess for JVD and peripheral/sacral edema",
+        "SAMPLE history — orthopnea, PND, weight gain, missed Lasix",
+        "Continuous SpO2 + waveform capnography",
+        "Cardiac monitor + 12-lead ECG",
+        "Establish IV access (medication route anticipated)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "CHF recognized",
+      "description": "Crew has put the picture together: bibasilar crackles, +JVD, +2 pedal edema, orthopnea/PND, weight gain, missed Lasix. Patient still hypertensive at 156/94 with SpO2 92% on NRB. Working to set up CPAP and prepare SL NTG. Patient remains alert and able to follow coaching.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 110,
+        "bpSys": 156,
+        "bpDia": 94,
+        "respRate": 26,
+        "spo2": 92,
+        "etco2": 34,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Screen for PDE-5 inhibitor use in past 48 hours before NTG",
+        "Apply CPAP for severe respiratory distress with pulmonary edema",
+        "Nitroglycerin 0.4 mg SL (SBP 156 → use 0.4 mg dose; repeat q5min while SBP >100)",
+        "Reassess BP before each repeat NTG; hold if SBP ≤ 100",
+        "Reassess RR, SpO2, lung sounds, work of breathing after each intervention",
+        "Transport in high-Fowler's; do not break CPAP seal en route"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "CPAP + NTG improving",
+      "description": "After 5-7 minutes on CPAP with one dose of SL nitroglycerin, the patient is breathing easier, SpO2 has climbed to 96%, RR is down to 20, and lung sounds — while still showing crackles in the bases — are clearing in the mid fields. BP has come down to a more normal range. Patient remains alert and tolerating the mask. Transport ongoing.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 96,
+        "bpSys": 138,
+        "bpDia": 82,
+        "respRate": 20,
+        "spo2": 96,
+        "etco2": 36,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Ongoing reassessment q5min; document trend",
+        "Maintain CPAP through ED handoff; don't break the seal",
+        "Consider repeat NTG 0.4 mg SL q5min if SBP >100 and symptoms persist",
+        "ED radio report — CHF exacerbation, on CPAP, NTG given, improving"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Treated as COPD",
+      "description": "Crew anchored on a perceived cardiac wheeze, skipped the JVD/edema exam and the orthopnea/PND/missed-Lasix history, and started an albuterol/ipratropium DuoNeb for presumed COPD/asthma exacerbation. The bronchodilator does nothing for the fluid in the alveoli — and the beta-agonist drives HR up and increases myocardial oxygen demand on an already failing heart. Patient is starting to look worse.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 128,
+        "bpSys": 164,
+        "bpDia": 100,
+        "respRate": 32,
+        "spo2": 86,
+        "etco2": 30,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize deterioration; reassess for CHF (crackles, JVD, edema)",
+        "Discontinue albuterol; switch to CPAP",
+        "Nitroglycerin 0.8 mg SL (SBP 164 → use 0.8 mg dose; repeat q5min while SBP >100)",
+        "Expedite transport; continuous reassessment en route"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Scene safety, BSI, general impression",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Primary survey (ABC); position of comfort upright",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply O2 (NC or NRB) targeting SpO2 94-98%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Auscultate lungs in all fields — listen for crackles vs wheezes",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Assess for JVD and peripheral/sacral edema",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "SAMPLE history — orthopnea, PND, weight gain, missed Lasix",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous SpO2 + waveform capnography",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Cardiac monitor + 12-lead ECG",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access (medication route anticipated)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Screen for PDE-5 inhibitor use in past 48 hours before NTG",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply CPAP for severe respiratory distress with pulmonary edema",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Nitroglycerin 0.4 mg SL (SBP 156 → use 0.4 mg dose; repeat q5min while SBP >100)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess BP before each repeat NTG; hold if SBP ≤ 100",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess RR, SpO2, lung sounds, work of breathing after each intervention",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport in high-Fowler's; do not break CPAP seal en route",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Ongoing reassessment q5min; document trend",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Maintain CPAP through ED handoff; don't break the seal",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Consider repeat NTG 0.4 mg SL q5min if SBP >100 and symptoms persist",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "ED radio report — CHF exacerbation, on CPAP, NTG given, improving",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize deterioration; reassess for CHF (crackles, JVD, edema)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Discontinue albuterol; switch to CPAP",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Nitroglycerin 0.8 mg SL (SBP 164 → use 0.8 mg dose; repeat q5min while SBP >100)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Expedite transport; continuous reassessment en route",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

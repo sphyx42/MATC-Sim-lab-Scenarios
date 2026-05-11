@@ -1,0 +1,326 @@
+{
+  "scenarioId": "C-T1-04",
+  "scenarioName": "Syncope with Cardiac Etiology",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 900,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "Patient is a 28-year-old male who was at a family cookout when he suddenly collapsed without warning. A cousin saw him drop mid-conversation — no chest pain, no lightheadedness, no nausea, no aura beforehand. He hit the grass; no head strike witnessed. He was 'out' for maybe 20-30 seconds, briefly stiff per family but no rhythmic shaking, and woke up on his own with mild confusion that cleared within a minute. He was not exerting himself. He denies palpitations now but says he has had two prior 'almost passed out' episodes in the last year, one while sleeping (woke up sweaty and disoriented). No drugs, no alcohol today. Family history: a paternal uncle died suddenly in his 30s — 'in his sleep,' no clear cause given.",
+    "discussion": "",
+    "course": "Initial Contact: Crew arrives to find a 28-year-old male sitting in a lawn chair, fully alert and conversational. Family states he collapsed suddenly without warning approximately 4 minutes ago. He denies pain or symptoms now. Vitals at first look are unremarkable — this can easily read as a benign 'he just passed out for a second' call. → Thorough assessment performed: Focused history and exam are complete. The crew now has clear yellow flags: (1) syncope without any prodrome, (2) not positional, not exertional but not clearly benign either, (3) a prior nocturnal near-syncope episode, and (4) a paternal uncle who died suddenly in his 30s. The cardiac monitor shows sinus rhythm but the crew has not yet shot a 12-lead. Vitals remain unremarkable. → 12-lead obtained — abnormal: 12-lead shows a Brugada Type 1 pattern: coved ST elevation in V1-V2 with an incomplete RBBB morphology. Patient remains awake and stable but the crew now recognizes this is NOT vasovagal — this is high-risk syncope with a substrate for sudden polymorphic VT / VF. The mindset for the rest of the call shifts: monitor continuously, IV in, pads near at hand, alert the receiving facility."
+  },
+  "patientInformation": {
+    "patientName": "Marcus Bell",
+    "patientCondition": "Witnessed brief loss of consciousness; alert on EMS arrival",
+    "patientAge": 28,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 180,
+    "patientWeight": 82,
+    "patientPhotoId": 34,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 28-year-old male sitting in a lawn chair, fully alert and conversational. Family states he collapsed suddenly without warning approximately 4 minutes ago. He denies pain or symptoms now. Vitals at first look are unremarkable — this can easily read as a benign 'he just passed out for a second' call.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 78,
+        "bpSys": 124,
+        "bpDia": 78,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 36,
+        "temp": 37,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Primary survey ABCs; confirm patient awake, protecting airway, perfusing",
+        "Focused syncope HPI: prodrome, position, exertion, palpitations",
+        "Ask about family history of sudden death or known dysrhythmia",
+        "Detailed neuro exam and head-to-toe for trauma from the fall",
+        "Apply 4-lead cardiac monitor; check blood glucose"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Thorough assessment performed",
+      "description": "Focused history and exam are complete. The crew now has clear yellow flags: (1) syncope without any prodrome, (2) not positional, not exertional but not clearly benign either, (3) a prior nocturnal near-syncope episode, and (4) a paternal uncle who died suddenly in his 30s. The cardiac monitor shows sinus rhythm but the crew has not yet shot a 12-lead. Vitals remain unremarkable.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 76,
+        "bpSys": 122,
+        "bpDia": 76,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 36,
+        "temp": 37,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Acquire 12-lead EKG within 10 minutes of patient contact",
+        "Read 12-lead for high-risk features (prolonged QT, Brugada, delta waves)",
+        "Establish IV access"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "12-lead obtained — abnormal",
+      "description": "12-lead shows a Brugada Type 1 pattern: coved ST elevation in V1-V2 with an incomplete RBBB morphology. Patient remains awake and stable but the crew now recognizes this is NOT vasovagal — this is high-risk syncope with a substrate for sudden polymorphic VT / VF. The mindset for the rest of the call shifts: monitor continuously, IV in, pads near at hand, alert the receiving facility.",
+      "monitorType": 0,
+      "trendTime": 25,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 35,
+        "hr": 78,
+        "bpSys": 124,
+        "bpDia": 78,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 36,
+        "temp": 37,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Maintain continuous cardiac monitoring throughout transport",
+        "Apply defibrillator pads; configure VT/VF alert",
+        "Repeat serial 12-leads en route and document all rhythm changes",
+        "Early notification to receiving facility — high-risk syncope, Brugada-pattern 12-lead",
+        "Document presenting rhythm, BP, pulse, BGL, symptoms before event, status on arrival"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Anchored on vasovagal",
+      "description": "Crew treats this as a benign vasovagal episode. They reason: young patient, alert and well-appearing now, vitals normal, 'probably just stood up too fast.' They skip the 12-lead, do not establish IV access, do not put the patient on the cardiac monitor for transport, and never ask the family history question that would have flipped the framing. Patient is loaded for transport sitting up on the gurney.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 35,
+        "hr": 80,
+        "bpSys": 124,
+        "bpDia": 78,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 36,
+        "temp": 37,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Course correct: acquire 12-lead now and place on continuous monitor"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Arrest en route",
+      "description": "Roughly 8 minutes into transport, patient suddenly slumps over on the gurney. No pulse. Crew now has to start CPR in a moving ambulance, with no pads pre-applied, no IV access, and no prior 12-lead documenting what they were looking at. The rhythm on a quick lead check is polymorphic — a torsades/polymorphic VT pattern — which has degenerated to pulselessness. This is the cost of the anchored framing.",
+      "monitorType": 0,
+      "trendTime": 15,
+      "jumpTime": 0,
+      "defibShock": true,
+      "defibDisarm": false,
+      "parameters": {
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 14,
+        "temp": 37,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Immediate high-quality chest compressions; pull over to resuscitate on scene if possible",
+        "Apply pads; defibrillate at 200 J (Zoll biphasic) for shockable rhythm",
+        "Establish IV/IO; Epinephrine 1 mg IV/IO during first or second cycle",
+        "Magnesium sulfate 2 g IV over 1-2 minutes for torsades / polymorphic VT"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Primary survey ABCs; confirm patient awake, protecting airway, perfusing",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Focused syncope HPI: prodrome, position, exertion, palpitations",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Ask about family history of sudden death or known dysrhythmia",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Detailed neuro exam and head-to-toe for trauma from the fall",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply 4-lead cardiac monitor; check blood glucose",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Acquire 12-lead EKG within 10 minutes of patient contact",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Read 12-lead for high-risk features (prolonged QT, Brugada, delta waves)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Maintain continuous cardiac monitoring throughout transport",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply defibrillator pads; configure VT/VF alert",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Repeat serial 12-leads en route and document all rhythm changes",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Early notification to receiving facility — high-risk syncope, Brugada-pattern 12-lead",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document presenting rhythm, BP, pulse, BGL, symptoms before event, status on arrival",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Course correct: acquire 12-lead now and place on continuous monitor",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Immediate high-quality chest compressions; pull over to resuscitate on scene if possible",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply pads; defibrillate at 200 J (Zoll biphasic) for shockable rhythm",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV/IO; Epinephrine 1 mg IV/IO during first or second cycle",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Magnesium sulfate 2 g IV over 1-2 minutes for torsades / polymorphic VT",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

@@ -1,0 +1,340 @@
+{
+  "scenarioId": "C-T2-08",
+  "scenarioName": "Cocaine-Associated Chest Pain",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1500,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "26-year-old male at a friend's apartment after a late night out. Sudden onset substernal chest pressure approximately 45 minutes ago, 8/10, with associated palpitations, diaphoresis, and a feeling of impending doom. Restless, pacing, unable to find a comfortable position. Denies trauma, denies prior episodes. On focused questioning, admits to cocaine use approximately 2 hours ago at a party — initially denied any substance use when first asked openly.",
+    "discussion": "",
+    "course": "Initial Contact: On arrival, 26-year-old male is pacing the living room, diaphoretic, clutching his sternum. He is alert and answering questions but agitated, anxious, and visibly restless. Vitals on first set: HR 132 sinus tach, BP 184/108, RR 22, SpO2 97% RA. Pupils dilated. Patient initially denies substance use; rolled dollar bill and white residue are visible on the coffee table. → Midazolam given: Crew obtained the cocaine history, gave ASA, established IV, and administered IV midazolam as the protocol-correct anxiolytic for sympathomimetic chest pain. Approximately 5 minutes after the dose, HR is trending down, BP is improving, and the patient reports chest pain reducing from 8/10 to 4/10. NTG given cautiously per BP. Patient calmer, less restless. → Transport — improving: Transport in progress to STEMI-capable facility. Patient stable, mildly drowsy from midazolam, CP now 2/10, vitals trending toward normal. Crew has provided early notification and is performing serial 12-leads. Capnography continuous."
+  },
+  "patientInformation": {
+    "patientName": "Devon Harris",
+    "patientCondition": "Chest pain, can't sit still",
+    "patientAge": 26,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 180,
+    "patientWeight": 82,
+    "patientPhotoId": 32,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "On arrival, 26-year-old male is pacing the living room, diaphoretic, clutching his sternum. He is alert and answering questions but agitated, anxious, and visibly restless. Vitals on first set: HR 132 sinus tach, BP 184/108, RR 22, SpO2 97% RA. Pupils dilated. Patient initially denies substance use; rolled dollar bill and white residue are visible on the coffee table.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 132,
+        "bpSys": 184,
+        "bpDia": 108,
+        "respRate": 22,
+        "spo2": 97,
+        "etco2": 36,
+        "temp": 37.6,
+        "obstruction": 0,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Scene size-up; note paraphernalia and assess agitation risk",
+        "Primary survey (ABCDs); recognize sympathomimetic toxidrome",
+        "Targeted SAMPLE; ask directly about cocaine/stimulant use",
+        "Apply monitor; acquire 12-lead EKG within 10 minutes",
+        "Check blood glucose and temperature",
+        "Aspirin 324 mg PO chewed (4 × 81 mg non-enteric-coated)",
+        "Establish IV access (18g antecubital preferred)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Midazolam given",
+      "description": "Crew obtained the cocaine history, gave ASA, established IV, and administered IV midazolam as the protocol-correct anxiolytic for sympathomimetic chest pain. Approximately 5 minutes after the dose, HR is trending down, BP is improving, and the patient reports chest pain reducing from 8/10 to 4/10. NTG given cautiously per BP. Patient calmer, less restless.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 108,
+        "bpSys": 152,
+        "bpDia": 92,
+        "respRate": 18,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 37.4,
+        "obstruction": 0,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Reassess vitals, CP, sedation; monitor for hypoventilation",
+        "Nitroglycerin 0.4 mg SL (SBP 152, no PDE5 inhibitor); may repeat q3–5 min",
+        "Second midazolam 5 mg IV PRN if agitation or CP persists",
+        "Transport to STEMI-capable facility; early notification",
+        "Perform serial 12-lead EKG en route"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Transport — improving",
+      "description": "Transport in progress to STEMI-capable facility. Patient stable, mildly drowsy from midazolam, CP now 2/10, vitals trending toward normal. Crew has provided early notification and is performing serial 12-leads. Capnography continuous.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 102,
+        "bpSys": 138,
+        "bpDia": 84,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 40,
+        "temp": 37.2,
+        "obstruction": 0,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Verbal handoff: cocaine etiology, ASA + midazolam + NTG given"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Beta-blocker given — crisis",
+      "description": "Crew anchored on 'tachycardia + chest pain = give a beta-blocker,' administered IV metoprolol without recognizing the cocaine etiology. Within minutes the BP climbs to 220/130, chest pain worsens to 10/10, and focal ST changes appear in the inferolateral leads — classic unopposed alpha-adrenergic vasoconstriction from blocking beta-mediated vasodilation in the presence of sympathomimetic.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 138,
+        "bpSys": 220,
+        "bpDia": 130,
+        "respRate": 28,
+        "spo2": 96,
+        "etco2": 32,
+        "temp": 37.8,
+        "obstruction": 0,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize unopposed alpha crisis; STOP further beta-blockade",
+        "Midazolam 5 mg IV NOW; may repeat in 3-5 min",
+        "Nitroglycerin 0.4 mg SL; consider repeated dosing q3 min for spasm",
+        "Emergency STEMI alert + medical control consult (phentolamine)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Substance hx missed",
+      "description": "Crew worked the case as straight ACS — gave ASA, started NTG, established IV. NTG produced transient BP drop and brief CP improvement, but within minutes the BP and HR rebound and the patient remains agitated, diaphoretic, and complaining of chest pain. The underlying sympathomimetic surge was never addressed.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 128,
+        "bpSys": 178,
+        "bpDia": 104,
+        "respRate": 24,
+        "spo2": 97,
+        "etco2": 34,
+        "temp": 37.6,
+        "obstruction": 0,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Re-ask substance use directly; reassess scene for paraphernalia",
+        "Midazolam 5 mg IV once cocaine etiology recognized",
+        "Early notification with updated etiology and treatment"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Scene size-up; note paraphernalia and assess agitation risk",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Primary survey (ABCDs); recognize sympathomimetic toxidrome",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Targeted SAMPLE; ask directly about cocaine/stimulant use",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply monitor; acquire 12-lead EKG within 10 minutes",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check blood glucose and temperature",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Aspirin 324 mg PO chewed (4 × 81 mg non-enteric-coated)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access (18g antecubital preferred)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess vitals, CP, sedation; monitor for hypoventilation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Nitroglycerin 0.4 mg SL (SBP 152, no PDE5 inhibitor); may repeat q3–5 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Second midazolam 5 mg IV PRN if agitation or CP persists",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to STEMI-capable facility; early notification",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Perform serial 12-lead EKG en route",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Verbal handoff: cocaine etiology, ASA + midazolam + NTG given",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize unopposed alpha crisis; STOP further beta-blockade",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Midazolam 5 mg IV NOW; may repeat in 3-5 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Nitroglycerin 0.4 mg SL; consider repeated dosing q3 min for spasm",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Emergency STEMI alert + medical control consult (phentolamine)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Re-ask substance use directly; reassess scene for paraphernalia",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Midazolam 5 mg IV once cocaine etiology recognized",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Early notification with updated etiology and treatment",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

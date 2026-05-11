@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stable Angina vs. ACS — Resolved Exertional Chest Pain — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Stable Angina vs. ACS — Resolved Exertional Chest Pain</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Robert Mendelson</strong></span><span class="patient-chip">64 years male</span><span class="patient-chip">194 lbs (88 kg)</span><span class="patient-chip">5'10"</span><span class="patient-chip">CC: Chest discomfort that started during a brisk walk approximately 25 minutes ago and resolved on its own after he sat down to rest. Currently denies pain at rest but feels 'worn out' and a little nauseated.</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Dispatch: 64-year-old male, chest discomfort, conscious and breathing, sitting on a retaining wall outside a residence in a quiet residential neighborhood. Bystander on scene.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Quiet residential street; patient seated on a low stone retaining wall at the edge of a driveway. Small dog on a leash beside him. Morning daylight, mild temperature, dry pavement.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Tuesday, 09:15, late-spring morning, clear and cool</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. Quiet residential street with minimal traffic. Dog is calm and leashed. Patient ambulatory with assistance.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">A neighbor (Mrs. Carlson) is present — she called 911 after seeing the patient pale and sweating on the wall. She does not know the patient's medical history beyond 'he walks his dog every morning.' She has not mentioned the tadalafil — the patient will only volunteer that medication if specifically asked about ED meds or 'anything else not on your pill list.'</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Patient seated upright on retaining wall, breathing normally now</li><li>Skin pale and slightly diaphoretic but no longer actively sweating</li><li>Small dog on leash beside him, panting calmly</li><li>Patient looks tired but not in obvious distress</li><li>No medication bottles or paraphernalia visible at scene</li><li>Patient downplays symptoms — 'I'm fine now, this happens sometimes'</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">64-year-old male was walking his dog up a hill in the neighborhood when he developed a 'heavy, squeezing' pressure in the center of his chest, rated 6/10 at peak. The discomfort radiated slightly into the left shoulder and was associated with mild diaphoresis and one episode of nausea without vomiting. He stopped walking, sat on a low retaining wall, and the discomfort gradually faded over about 5–7 minutes. He has had two similar but milder episodes over the past three weeks, all with exertion (mowing the lawn, climbing stairs), each resolving within minutes of rest — he attributed them to 'getting old.' He has not been formally diagnosed with angina. He denies tearing or ripping pain, denies radiation to the back, denies leg pain or swelling, denies recent illness or fever. He has a remote history of an exercise stress test 'a few years ago' that he was told was 'borderline'; he never followed up with cardiology. A neighbor walking by called 911 when she noticed him pale and sweating on the wall.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">NKDA</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Lisinopril 20 mg PO daily, Atorvastatin 40 mg PO at bedtime, Tadalafil 10 mg PO as needed (last dose ~18 hours ago), Aspirin 81 mg PO daily (took today's dose this morning)</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Hypertension — diagnosed 8 years ago, Hyperlipidemia, Erectile dysfunction — uses tadalafil 'as needed,' last dose approximately 18 hours ago, Borderline exercise stress test ~3 years ago, no formal follow-up, Former smoker, quit 6 years ago after a 30 pack-year history, Family history: father MI at age 67, sister with CAD</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Light breakfast — toast and coffee — approximately 3 hours ago</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Developed central chest pressure during an uphill walk, sat down to rest, symptoms resolved spontaneously over 5–7 minutes. Neighbor noticed him pale and sweaty and called 911. He says he 'didn't really want them to come' but agrees to be evaluated.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">EMS arrives to find a 64-year-old male seated on a low retaining wall, alert, conversational, and downplaying his symptoms. He reports that the chest discomfort has fully resolved. Skin is pale and slightly damp but he is no longer actively diaphoretic. He is reluctant to be evaluated but agrees. The fact that he is asymptomatic on arrival makes a careful, systematic assessment — full OPQRST, SAMPLE, 12-lead, and repeat vitals — the entire scenario.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Rhythm</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">78</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">148/88</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">97%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">18</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">112</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-maintained, speaking in full sentences</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Unlabored, equal lung sounds, no accessory muscle use, RR 18</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong regular radial pulse; skin pale and cool with residual moisture; cap refill &lt;2 seconds</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale · cool · slightly diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal at 3 mm, briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities equally; no focal weakness or pronator drift</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Honestly I feel okay now. It went away after I sat down. It happens sometimes when I push too hard. I really don't want to go to the hospital over nothing."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Patient downplays symptoms: 'I'm fine now, you didn't need to come'</li><li>No JVD, no peripheral edema, no calf tenderness</li><li>No reproducible chest wall tenderness on palpation</li><li>Mild residual diaphoresis at hairline and palms</li><li>Lung sounds clear, no rales or wheezes</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Scene safety; primary survey; recognize symptoms suspicious for cardiac origin</div></div>
+        <div class="action-excerpt">Patient Care Goals: Identify ST-elevation myocardial infarction (STEMI) quickly. Determine the time of symptom onset. Inclusion Criteria: Chest pain or discomfort in other areas of the body (e.g., arm, jaw, epigastrium) of suspected cardiac origin, shortness of breath, associated or unexplained sweating, nausea, vomiting, or dizziness.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Full OPQRST: onset (exertional), provocation/palliation (rest), quality, radiation, severity, time/prior episodes</div></div>
+        <div class="action-excerpt">Inclusion Criteria: Chest pain or discomfort in other areas of the body (e.g., arm, jaw, epigastrium) of suspected cardiac origin, shortness of breath, associated or unexplained sweating, nausea, vomiting, or dizziness. Atypical or unusual symptoms are more common in women, the elderly, and diabetic patients.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Full SAMPLE; specifically ask about ED meds / pulmonary hypertension meds (PDE5 inhibitors)</div></div>
+        <div class="action-excerpt">Pertinent Assessment Findings: A complete medication list should be obtained from each patient. It is especially important for the treating physician and healthcare providers to be informed if the patient is taking beta-blockers, calcium channel blockers, clonidine, digoxin, blood thinners (anticoagulants), and medications for the treatment of erectile dysfunction or pulmonary hypertension. The use of nitrates should be avoided in any patient who has used a phosphodiesterase inhibitor within the past 48 hours.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Place on cardiac monitor; SpO2; consider defibrillator pads on high-risk patient</div></div>
+        <div class="action-excerpt">Assess the patient's cardiac rhythm and immediately address pulseless rhythms, symptomatic tachycardia, or symptomatic bradycardia. Patient Safety Considerations: Consider placing defibrillator pads on high-risk patients.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Acquire 12-lead EKG within 10 minutes of patient contact</div></div>
+        <div class="action-excerpt">The 12-lead EKG is the primary diagnostic tool that identifies a STEMI; it is imperative that EMS clinicians routinely acquire a 12-lead EKG within 10 minutes for all patients exhibiting signs and symptoms of ACS.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Aspirin 324 mg PO chewed (4 × 81 mg chewable, non-enteric)</div></div>
+        <div class="action-excerpt">Administer aspirin; chewable, non-enteric-coated aspirin preferred (162–325 mg).</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Establish IV access (saline lock or maintenance)</div></div>
+        <div class="action-excerpt">Establish IV access.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Repeat full vitals; reassess for return of symptoms</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Observe for signs of clinical deterioration: dysrhythmias, chest pain, shortness of breath, decreased level of consciousness/syncope, or other signs of shock/hypotension.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Thorough assessment performed</div>
+        <div class="phase-trigger">Trigger: Crew obtained a complete OPQRST and SAMPLE (including PDE5 disclosure), acquired a 12-lead within 10 minutes that showed no acute ischemia, gave aspirin, established IV access, and reassessed vitals — confirming an asymptomatic patient with a likely stable angina history.</div>
+        <div class="phase-desc">Full OPQRST history reveals an exertional pattern resolving with rest, consistent with stable angina. SAMPLE elicits tadalafil use 18 hours ago — critical for ruling out nitrates. 12-lead shows sinus rhythm with no acute ST-T changes, no Q waves, no Wellens or deWinter patterns. Repeat vitals stable, patient remains asymptomatic. The clinical picture fits stable angina, but the new (or newly-frequent) exertional pattern still requires ED evaluation. Crew treats per ACS protocol minus nitrates, gives a clear explanation, and transports non-emergent.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Rhythm</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">74</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">142/84</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">98%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">16</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">112</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Unlabored, lungs clear, RR 16</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong regular pulse; skin warming and drying; cap refill &lt;2 seconds</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal, briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Intact and symmetric</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Okay, I see what you're saying. If you think I should get checked out, I'll go. I do take that pill sometimes, yeah."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Patient denies any return of chest discomfort</li><li>12-lead: sinus rhythm, no ST elevation, no ST depression, no T-wave inversions, no Q waves</li><li>Now disclosed tadalafil use ~18 hours ago when specifically asked about ED medications</li><li>Patient now agrees to transport for evaluation after explanation</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Withhold nitroglycerin — PDE5 inhibitor (tadalafil) within 48 hours</div></div>
+        <div class="action-excerpt">The use of nitrates should be avoided in any patient who has used a phosphodiesterase inhibitor within the past 48 hours. Examples include sildenafil (Viagra®, Revatio®), vardenafil (Levitra®, Staxyn®), tadalafil (Cialis®, Adcirca®) which are used for erectile dysfunction and pulmonary hypertension.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">No supplemental O2 needed (SpO2 97–98%, not dyspneic, no CHF signs)</div></div>
+        <div class="action-excerpt">If the patient is dyspneic, hypoxemic, or has obvious signs of heart failure, EMS clinicians should administer oxygen as appropriate with a target of achieving 94–98% saturation.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Repeat 12-lead en route or with any return of symptoms</div></div>
+        <div class="action-excerpt">Performance of serial EKGs is encouraged for symptomatic patients with EKGs initially non-diagnostic for STEMI. Patient Safety Considerations: Perform serial 12-lead EKGs (especially if clinical changes are noted).</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Transport non-emergent to appropriate ED; communicate exertional pattern and resolved symptoms</div></div>
+        <div class="action-excerpt">Transport and destination decisions should be based on local resources and system of care. Early notification to receiving facility of any changes in patient condition or serial EKGs.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Explain risk if patient declines; clarify exertional/crescendo pattern is unstable angina territory</div></div>
+        <div class="action-excerpt">Key Considerations: Acute coronary syndrome may present with atypical pain, vague or only generalized complaints. Ischemic burden time is a risk for morbidity and mortality, EMS can help decrease first medical contact to intervention time/reflow by efficient scripting/training of safely minimizing scene time.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Transport and reassessment</div>
+        <div class="phase-trigger">Trigger: Patient agreed to transport; crew is en route to ED with continued monitoring and a documented contact-to-EKG time well under 10 minutes.</div>
+        <div class="phase-desc">Patient is transported non-emergent to the closest appropriate ED. He remains asymptomatic with stable vitals. Crew gives a clear bedside handoff including the exertional pattern, the prior 'borderline' stress test, the tadalafil use, the resolved symptoms on arrival, and the clean field 12-lead. They emphasize that the new/crescendo exertional pattern over three weeks warrants serial troponins and inpatient workup — they are not 'just dropping off a worried-well patient.'</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Rhythm</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">72</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">138/82</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">98%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">16</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">112</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Unlabored, RR 16, lungs clear</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong regular pulse; warm and dry</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal, briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Intact</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"I feel fine now. I'm glad you got me to actually go in this time."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>No return of chest discomfort en route</li><li>Repeat 12-lead en route unchanged — sinus rhythm, no ischemic changes</li><li>Patient relaxed, conversing normally</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Early notification of ED; deliver EKG copy and full timeline at bedside</div></div>
+        <div class="action-excerpt">Early notification to receiving facility of any changes in patient condition or serial EKGs. Key Documentation Elements: The time of symptom onset; The time of patient contact by EMS to the time of 12-lead EKG acquisition; The time aspirin (ASA) administered, or reason why not given.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Continue cardiac monitor; watch for return of pain or dysrhythmia</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Observe for signs of clinical deterioration: dysrhythmias, chest pain, shortness of breath, decreased level of consciousness/syncope, or other signs of shock/hypotension.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Document onset time, contact-to-EKG, ASA time, PDE5 finding, refusal-of-NTG rationale</div></div>
+        <div class="action-excerpt">Key Documentation Elements: The time of symptom onset; The time of patient contact by EMS to the time of 12-lead EKG acquisition; The time aspirin (ASA) administered, or reason why not given; The time of STEMI notification.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">NTG given without PDE5 screen</div>
+        <div class="phase-trigger">Trigger: Crew gave nitroglycerin without specifically screening for phosphodiesterase-inhibitor use; the patient took tadalafil approximately 18 hours ago, well within the 48-hour contraindication window — producing profound vasodilatory hypotension.</div>
+        <div class="phase-desc">Crew anchored on 'chest pain = nitro' and gave sublingual NTG 0.4 mg even though the patient was asymptomatic on arrival and they never specifically asked about ED or pulmonary-hypertension medications. Within 3 minutes the patient becomes lightheaded and pale, BP drops to 76/44, and HR climbs reflexively to 108. Crew must now recognize the nitrate-PDE5 interaction, stop further nitrates, lay the patient supine, and bolus IV fluids. Patient — now feeling worse than he did on EMS arrival — discloses the tadalafil use only after being directly asked.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">108</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">76/44</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">95%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">22</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">34</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.1°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">112</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">14</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 22, slightly shallow, lungs clear</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Weak rapid radial pulse; cool clammy skin; cap refill 3–4 seconds</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">ashen pale · cool · diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal at 4 mm, reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Symmetric, mild weakness from lightheadedness</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Oh man, that pill made me feel worse … I feel kind of gray and dizzy …"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Severe symptomatic hypotension within 3 minutes of SL NTG</li><li>Patient reports lightheadedness, 'I feel like I might pass out'</li><li>Wife now recalls patient mentioning tadalafil last night when asked again</li><li>12-lead unchanged — still no acute ischemic changes</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Stop further NTG; supine + legs elevated; recognize NTG-PDE5 interaction</div></div>
+        <div class="action-excerpt">The use of nitrates should be avoided in any patient who has used a phosphodiesterase inhibitor within the past 48 hours. Care should always be taken when giving nitroglycerin when the patient's blood pressure is marginal. If used in this setting, the clinician should weigh the risk and benefit of nitrate administration over the administration of an opiate analgesic and be ready to respond to hypotension with fluid bolus or pressor.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Rapid 250–500 mL NS bolus IV, reassess; titrate to SBP &gt; 90</div></div>
+        <div class="action-excerpt">Care should always be taken when giving nitroglycerin when the patient's blood pressure is marginal. If used in this setting, the clinician should weigh the risk and benefit of nitrate administration over the administration of an opiate analgesic and be ready to respond to hypotension with fluid bolus or pressor.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Re-ask about ED / pulmonary HTN meds; document tadalafil use</div></div>
+        <div class="action-excerpt">Pertinent Assessment Findings: A complete medication list should be obtained from each patient. It is especially important for the treating physician and healthcare providers to be informed if the patient is taking beta-blockers, calcium channel blockers, clonidine, digoxin, blood thinners (anticoagulants), and medications for the treatment of erectile dysfunction or pulmonary hypertension.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Early notify receiving ED of NTG-induced hypotension and recovery</div></div>
+        <div class="action-excerpt">Early notification to receiving facility of any changes in patient condition or serial EKGs.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Anchored on benign cause</div>
+        <div class="phase-trigger">Trigger: Crew did not acquire a 12-lead, did not perform a complete OPQRST/SAMPLE, anchored on the patient's denial of current symptoms, and accepted a refusal of transport. A high-risk NSTEMI was missed on the first encounter and is now declared on the recall.</div>
+        <div class="phase-desc">Crew accepted the patient's 'I'm fine now' framing, skipped the 12-lead, did not press for a full OPQRST or expanded medication history, and did not address transport refusal. They left the scene with the patient signing a 'patient refusal.' Twenty minutes later the patient calls 911 again — this time with recurrent chest pressure that did NOT resolve with rest, now 8/10, with marked diaphoresis. On EMS return the 12-lead now shows clear deep symmetric T-wave inversions in V2–V4 (Wellens pattern) — a NSTEMI / high-grade proximal LAD lesion that was almost certainly developing during the first encounter. This phase exists to make the cost of an incomplete assessment legible: the diagnosis was missable on the first call only because the crew did not look.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ NSTEMI</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">96</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">152/92</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">96%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">22</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">112</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 22, mildly labored, lungs clear</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong regular pulse; cool, diaphoretic; cap refill 2–3 seconds</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale · cool · diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal, briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Intact</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"It came back, and worse. It's not going away this time. I'm sorry, I should have just gone."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Crew dispatched back to same address 20 minutes after clearance</li><li>Now-active 8/10 substernal pressure with diaphoresis, not relieved by rest</li><li>12-lead now shows symmetric deep T-wave inversions V2–V4 (Wellens pattern)</li><li>Patient acknowledges 'I should have just gone the first time'</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Acquire 12-lead immediately; recognize Wellens / NSTEMI pattern</div></div>
+        <div class="action-excerpt">The 12-lead EKG is the primary diagnostic tool that identifies a STEMI; it is imperative that EMS clinicians routinely acquire a 12-lead EKG within 10 minutes for all patients exhibiting signs and symptoms of ACS. Performance of serial EKGs is encouraged for symptomatic patients with EKGs initially non-diagnostic for STEMI.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Full ACS workup now: ASA 324 mg chewed, IV, monitor, defib pads, O2 if SpO2 &lt; 94%</div></div>
+        <div class="action-excerpt">Assess the patient's cardiac rhythm and immediately address pulseless rhythms, symptomatic tachycardia, or symptomatic bradycardia. If the patient is dyspneic, hypoxemic, or has obvious signs of heart failure, EMS clinicians should administer oxygen as appropriate with a target of achieving 94–98% saturation. Administer aspirin; chewable, non-enteric-coated aspirin preferred (162–325 mg). Establish IV access. Patient Safety Considerations: Consider placing defibrillator pads on high-risk patients.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Still withhold NTG — tadalafil within 48 hours; consider fentanyl 88 mcg IV (88 kg × 1 mcg/kg; max 100 mcg) if pain refractory</div></div>
+        <div class="action-excerpt">The use of nitrates should be avoided in any patient who has used a phosphodiesterase inhibitor within the past 48 hours. If the pain is unresponsive to nitrates, opiates are an acceptable alternative. Morphine should be used with caution in unstable angina (UA)/non-STEMI due to an association with increased mortality.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Fentanyl 88 mcg IV (88 kg × 1 mcg/kg = 88 mcg; max 100 mcg) — per Pain Management</div></div>
+        <div class="action-excerpt">For Moderate to Severe pain, analgesics include: Fentanyl: 1 mcg/kg IN, IM, IV or IO (maximum initial dose of 100 mcg). Use of non-invasive capnography is an earlier predictor of hypoventilation than pulse oximetry if opioid medications are administered.</div>
+        <div class="action-ref">↳ MATC: Pain Management</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Rapid transport to cath-capable facility; early ED notification with Wellens 12-lead</div></div>
+        <div class="action-excerpt">Key Considerations: Ischemic burden time is a risk for morbidity and mortality, EMS can help decrease first medical contact to intervention time/reflow by efficient scripting/training of safely minimizing scene time. Early notification to receiving facility of any changes in patient condition or serial EKGs.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">Debrief lesson: assess every chest discomfort fully even when 'resolved'</div></div>
+        <div class="action-excerpt">Key Considerations: Acute coronary syndrome may present with atypical pain, vague or only generalized complaints. Atypical or unusual symptoms are more common in women, the elderly, and diabetic patients.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

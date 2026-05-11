@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>V-Tach Deterioration to V-Fib Arrest — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">V-Tach Deterioration to V-Fib Arrest</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Walter Kosinski</strong></span><span class="patient-chip">68 years male</span><span class="patient-chip">190 lbs (86 kg)</span><span class="patient-chip">5'10"</span><span class="patient-chip">CC: Found unresponsive after complaining of palpitations and near-syncope</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">68-year-old male, possible cardiac, complaining of palpitations and now passed out per wife. Single-family residence, wife meeting at front door. CPR not in progress.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Single-family home, master bathroom upstairs. Patient supine on tile floor, partially wedged between toilet and tub. Tight working space — crew must extricate to the bedroom or hallway for resus.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Sunday, 1947 — clear, cool evening</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene secure. No hazards. Family pet (dog) confined to a back room. Wife distressed but cooperative. Floor is tile, somewhat slippery from a knocked-over glass of water near the patient.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Wife (mid-60s) present, frantic. Reports 'he just dropped.' Confirms history of heart attack, prior ventricular rhythm, on amiodarone but 'he forgets it.' No witnessed seizure activity, no prior trauma.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Patient supine, eyes closed, no spontaneous movement</li><li>Skin pale and mottled; no obvious external trauma</li><li>Pill bottles visible on bathroom counter — amiodarone, metoprolol, aspirin, atorvastatin, lisinopril</li><li>Spilled glass of water near patient's right hand</li><li>No vomit, no incontinence, no obvious bleeding</li><li>Wife clutching phone, repeating 'he was just complaining about his heart fluttering'</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">68-year-old male found unresponsive in the bathroom by his wife approximately 1-2 minutes prior to EMS arrival. Earlier in the evening he complained of fluttering in his chest and felt lightheaded after standing up from dinner. Walked to the bathroom, then she heard a thud and found him on the floor. Wife reports he has been 'forgetting his pills' over the last several weeks and has skipped doses of his amiodarone. Known history of CAD with prior anterior MI (stented 2019) and prior episodes of 'fast heart rhythm' for which he was started on oral amiodarone. No chest pain reported tonight before the collapse, no trauma witnessed.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">NKDA</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Amiodarone 200 mg PO daily (poorly compliant — wife reports missed doses), Metoprolol succinate 50 mg PO daily, Aspirin 81 mg PO daily, Atorvastatin 40 mg PO nightly, Lisinopril 20 mg PO daily</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">CAD with prior anterior MI (2019), PCI with drug-eluting stent to LAD (2019), Non-sustained ventricular tachycardia (2021), HTN, Hyperlipidemia, Type 2 diabetes (diet-controlled)</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Dinner approximately 90 minutes ago — pot roast, potatoes, one glass of red wine</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Felt palpitations after dinner, walked to bathroom, collapsed within ~30 seconds. Wife heard the fall, ran in, found him unresponsive on the floor and called 911. No bystander CPR initiated. EMS arrived ~6 minutes after the 911 call.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">On arrival, 68-year-old male supine on bathroom tile, unresponsive. Crew exposes the chest and applies the monitor/defibrillator pads in the FAST patch configuration. The monitor displays a wide-complex tachycardia at a rate of approximately 200 — regular, monomorphic, broad QRS. He has no spontaneous movement, no respiratory effort, and skin is pale and cool. This is the critical decision point: the rhythm LOOKS like it could be a perfusing VT, but pulse and apnea must drive the decision. A central pulse check (carotid, no more than 10 seconds) is non-negotiable.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Ventricular Tachycardia (Monomorphic)</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">200</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">0</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">97.9°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">142</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent but no spontaneous respirations; no gag</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic — no chest rise, no breath sounds. Occasional agonal gasp not adequate ventilation.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">NO PALPABLE CENTRAL PULSE on carotid check (this is the trap — students who skip the pulse check or assume perfusion from the monitor will miss this). Skin pale, cool, mottled extremities; cap refill &gt;4 sec.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale, mottled · cool · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Mid-position (~4-5 mm), sluggish, equal</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid, no movement</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"(unresponsive — no speech)"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Wife reports collapse witnessed within 1-2 minutes of EMS arrival — short downtime</li><li>Monitor shows wide-complex regular tachycardia rate ~200, QRS ~0.16 s, monomorphic</li><li>No respiratory effort, no spontaneous movement</li><li>No external trauma, no signs of obvious overdose</li><li>Pill bottles on counter consistent with reported PMH</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Rapid scene size-up; expose chest; recognize unresponsive + apneic</div></div>
+        <div class="action-excerpt">Assessment: The patient in cardiac arrest requires a prompt balance of treatment and assessment. In cases of cardiac arrest, assessments should be focused and limited to obtaining enough information to reveal the patient is pulseless.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Carotid pulse check ≤10 seconds — confirm PULSELESS</div></div>
+        <div class="action-excerpt">Assessment: Once pulselessness is discovered, treatment should be initiated immediately, and any further history must be obtained by bystanders while treatment is ongoing.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Verbalize: 'Pulseless VT — treat as cardiac arrest'</div></div>
+        <div class="action-excerpt">Patient Presentation — Inclusion Criteria: Patients with cardiac arrest. The most important therapies for patients suffering from cardiac arrest are prompt cardiac defibrillation for shockable rhythms and minimally interrupted effective chest compressions.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Begin high-quality CPR 100-120/min, depth ≥2 in, full recoil</div></div>
+        <div class="action-excerpt">Key Considerations: Effective chest compressions are defined as: A rate of greater than 100 and less than 120 compressions/minute; Depth of at least 2 inches (5 cm) and less than 2.4 inches (6 cm) for adults and children; Allow for complete chest recoil (avoid leaning); Minimize interruptions in compressions.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Defibrillate 200 J biphasic (Zoll max) — pulseless VT is shockable</div></div>
+        <div class="action-excerpt">Defibrillation dosing should follow manufacturer's recommendation in the case of biphasic defibrillators. If the manufacturer's recommendation is unknown, use highest setting possible. Zoll Adult – 120 J, 150 J, 200 J. The maximum setting on the defibrillator should be used for initial and subsequent defibrillation attempts.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Resume compressions immediately post-shock — no pulse/rhythm check ×2 min</div></div>
+        <div class="action-excerpt">Chest compressions should resume immediately after defibrillation attempts with no pauses for pulse checks for 2 minutes regardless of the rhythm displayed on the cardiac monitor.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">IO proximal humerus; Epinephrine 1 mg IV/IO during first or second compression round</div></div>
+        <div class="action-excerpt">If feasible, IV or IO access should be obtained. Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Passive O2 via NRB + OPA initially; BVM 10/min once advanced airway placed</div></div>
+        <div class="action-excerpt">Passive ventilation: High flow oxygen is applied via a non-rebreather mask with an oropharyngeal airway; Some oxygen will be entrained with each decompression of the chest; This may be applied for the first 3–4 compression cycles (6–8 minutes), after which one may consider BVM ventilation or placement of an advanced airway.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">First shock delivered</div>
+        <div class="phase-trigger">Trigger: Following the protocol-correct sequence: pulse check confirmed pulseless VT, 200 J defibrillation delivered, immediate compressions, IO access, epinephrine 1 mg, persistent pulseless VT after first shock, second 200 J shock, amiodarone 300 mg IV bolus given for shock-refractory pulseless VT. Now in the middle of cycle 2-3 of the ACLS algorithm.</div>
+        <div class="phase-desc">Crew correctly identified pulseless VT, delivered the first 200 J unsynchronized shock within ~1 minute of patient contact, and resumed compressions immediately. Two-minute cycle of CPR underway with passive O2 via NRB + OPA. IO established at the proximal humerus and first dose of epinephrine 1 mg IV/IO administered during this cycle. End of cycle 1: rhythm check shows persistent pulseless VT. Second 200 J shock delivered, compressions resumed. Amiodarone 300 mg IV/IO bolus given for shock-refractory pulseless VT. Capnography post-supraglottic-airway shows EtCO2 ~22 mmHg — compressions are adequate.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Ventricular Tachycardia (Monomorphic)</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">200</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">22</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">97.7°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">142</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Supraglottic airway placed without compression interruption; good chest rise</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">BVM via SGA at 10/min, asynchronous with compressions</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">CPR in progress; no spontaneous pulse between shocks</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale, mottled · cool · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Mid-position (~4 mm), sluggish, equal</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"(unresponsive)"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Two 200 J shocks delivered for persistent pulseless VT</li><li>Epinephrine 1 mg IO given during cycle 1</li><li>Amiodarone 300 mg IV/IO bolus given for shock-refractory pulseless VT</li><li>EtCO2 via SGA capnography: 22 mmHg — adequate compression quality</li><li>Compression fraction tracked; rescuer switch at 2 min</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Rhythm check at 2 min; second defibrillation 200 J for persistent pulseless VT</div></div>
+        <div class="action-excerpt">Continue the cycle of chest compressions for 2 minutes, followed by rhythm analysis and defibrillation of shockable rhythms. The maximum setting on the defibrillator should be used for initial and subsequent defibrillation attempts.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Amiodarone 300 mg IV/IO bolus after 2nd shock (shock-refractory VF/pulseless VT)</div></div>
+        <div class="action-excerpt">Consider use of antiarrhythmic for recurrent VF/Pulseless VT — Amiodarone 300mg, followed by 150mg 4-6 min later if still in refractory VF and pulseless VT.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Epinephrine 1 mg IV/IO every 3-5 minutes throughout arrest</div></div>
+        <div class="action-excerpt">Administer epinephrine (0.1 mg/kg, maximum dose 1 mg) IV/IO during the first or second round of compressions.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Place supraglottic airway without interrupting compressions; ventilate 10/min</div></div>
+        <div class="action-excerpt">Advanced airway placement: Either a supraglottic airway or an endotracheal tube may be placed without interruption of compressions; Ventilations are provided at 10 breaths/minute for adults.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continuous EtCO2 — target &gt;10 mmHg, watch for sudden rise (ROSC)</div></div>
+        <div class="action-excerpt">Quantitative end-tidal capnography (EtCO2) should be used to monitor effectiveness of chest compressions. If EtCO2 less than 10 mmHg during the initial phases of resuscitation, attempt to improve chest compression quality.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Consider reversible causes (H's &amp; T's) — focus on MI given history</div></div>
+        <div class="action-excerpt">Consider reversible causes of cardiac arrest which include the following: Hypothermia; The dialysis patient/known hyperkalemic patient; Tricyclic antidepressant overdose; Hypovolemia; If the patient is intubated at the time of arrest, assess for tension pneumothorax and misplaced ETT.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Third 200 J shock at next 2-min mark if persistent VF/pulseless VT</div></div>
+        <div class="action-excerpt">Continue the cycle of chest compressions for 2 minutes, followed by rhythm analysis and defibrillation of shockable rhythms.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">ROSC — post-arrest care</div>
+        <div class="phase-trigger">Trigger: Following three 200 J defibrillations, epinephrine 1 mg IV/IO ×2, and amiodarone 300 mg IV/IO bolus, the rhythm converted to sinus rhythm and a weak carotid pulse returned. EtCO2 spiked from 22 to 38 mmHg confirming ROSC. Patient remains comatose with shallow spontaneous respirations and post-arrest hypotension.</div>
+        <div class="phase-desc">Approximately 8 minutes into resus, the rhythm converts to a narrow-complex sinus rhythm after the third 200 J shock. Pulse check during the planned rhythm check confirms a weak but regular carotid pulse. EtCO2 has spiked from 22 to 38 mmHg. Blood pressure cycles at 88/56. Patient remains unresponsive (GCS 6 — withdraws to pain), with shallow spontaneous respirations supplemented by BVM at 10/min through the SGA. Crew now transitions to Post-ROSC care: avoid hyperventilation, avoid hyperoxygenation, identify cause, acquire 12-lead, prepare for re-arrest, transport to PCI-capable facility.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Rhythm</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">88</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">88/56</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">94%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">97.5°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">142</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg sel-p">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Withdraws from pain</span><span class="gcs-score">4</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">6</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">SGA in place, secured; suctioned ×1 for small amount of secretions</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous shallow respirations ~8/min; BVM-assisted ventilations through SGA at 10/min to target EtCO2 35-45 mmHg</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Carotid and weak radial pulse present; BP 88/56; skin slowly improving from mottled to pale</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale, less mottled · cool, warming · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Mid-position (~4 mm), sluggishly reactive, equal</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Withdraws weakly to deep sternal rub; no purposeful movement</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"(unresponsive, occasional groan to noxious stimulus)"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>ROSC achieved after 3 shocks + epi ×2 + amiodarone 300 mg</li><li>EtCO2 jumped from 22 to 38 mmHg — confirms ROSC</li><li>Patient remains comatose; secure airway maintained</li><li>12-lead acquired: sinus rhythm with old anterior Q waves and possible new ST changes — must r/o evolving STEMI</li><li>BP 88/56 — post-arrest myocardial stunning; consider fluid bolus per shock protocol</li><li>High risk of re-arrest — maintain pad placement, mechanical CPR device ready</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Maintain SGA; ventilate 10/min; target EtCO2 35-45; SpO2 94-98%</div></div>
+        <div class="action-excerpt">Do not hyperventilate. Maintain a ventilation rate of 8–10 breaths per minute, targeting an EtCO2 of 35–45 mmHg. Administer oxygen as appropriate with a target of achieving 94–98% saturation. Do not hyperoxygenate.</div>
+        <div class="action-ref">↳ MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Acquire 12-lead EKG immediately to identify STEMI as cause of arrest</div></div>
+        <div class="action-excerpt">Perform serial 12-lead EKGs to assess for evidence of reversible cause of arrest such as STEMI or electrolyte derangement (e.g., hyperkalemia). Post-cardiac arrest patients with evidence or interpretation consistent with ST elevation myocardial infarction (STEMI/acute MI) should be transported preferably to a facility capable of emergent cardiac catheterization.</div>
+        <div class="action-ref">↳ MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">NS 500 mL IV bolus for SBP 88; reassess; consider repeat per Shock Guideline</div></div>
+        <div class="action-excerpt">For hypotension (SBP less than 90 mmHg or MAP less than 65 in adults) see Shock Guideline.</div>
+        <div class="action-ref">↳ MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Pads stay on; monitor closely for re-arrest; mechanical CPR device staged</div></div>
+        <div class="action-excerpt">Monitor closely for recurrence of cardiac arrest using clinical and adjunctive criteria such as cardiac monitoring, EtCO2 monitoring, and physical signs of perfusion. Maintain mechanical CPR device in place in preparation for re-arrest.</div>
+        <div class="action-ref">↳ MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Recheck glucose (142); avoid hyperthermia — no warm blankets above 37.5°C</div></div>
+        <div class="action-excerpt">Check blood glucose. If hypoglycemic, treat per Hypoglycemia Guideline. Avoid hyperthermia (temperature greater than 37.5° C or 99.5° F) by avoiding excessive environmental heat exposure, warm blankets, etc.</div>
+        <div class="action-ref">↳ MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Transport to PCI-capable receiving facility; early notification</div></div>
+        <div class="action-excerpt">Post-cardiac arrest patients with evidence or interpretation consistent with ST elevation myocardial infarction (STEMI/acute MI) should be transported preferably to a facility capable of emergent cardiac catheterization or, as a secondary option, to a STEMI receiving facility based upon local resources and system of care. Consider transporting patients to an age-appropriate facility which offers specialized adult or pediatric post-resuscitation care.</div>
+        <div class="action-ref">↳ MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Shock-refractory — second amio</div>
+        <div class="phase-trigger">Trigger: After 3 defibrillations, epi ×2, and amiodarone 300 mg, the rhythm remains in coarse VFib. Crew administers the second amiodarone 150 mg dose 4-6 minutes after the first, considers lidocaine alternative, and continues high-quality ACLS.</div>
+        <div class="phase-desc">After 3 shocks, epi ×2, and amiodarone 300 mg, rhythm remains coarse VFib. Crew now in the 8-10 minute mark. Amiodarone 150 mg second dose given per protocol. Considering lidocaine as alternative if amiodarone unavailable or contraindicated. Reversible causes worked through — most likely recurrent ischemia. Compressions ongoing, mechanical CPR device applied for transport. Ongoing 200 J shocks q 2 min. Crew prepares for prolonged resus and PCI-capable destination if/when ROSC achieved; otherwise considers termination criteria.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Ventricular Fibrillation (Coarse)</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">0</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">19</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">97.5°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">142</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">SGA in place; no secretions</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">BVM via SGA 10/min; no spontaneous respirations</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">No spontaneous pulse; mechanical CPR device delivering compressions</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale, mottled · cool · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Dilated (~6 mm), non-reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"(unresponsive)"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Persistent coarse VFib after 3 shocks + epi ×2 + amio 300 mg</li><li>Amiodarone 150 mg IV/IO second dose given</li><li>EtCO2 holding at 18-20 mmHg — compression quality acceptable</li><li>Mechanical CPR device applied for transport</li><li>Crew considering lidocaine alternative and reversible causes</li><li>Considering termination criteria if rhythm remains shockable but unresponsive</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Amiodarone 150 mg IV/IO 4-6 min after first dose for persistent VF/pulseless VT</div></div>
+        <div class="action-excerpt">Amiodarone 300mg, followed by 150mg 4-6 min later if still in refractory VF and pulseless VT.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">Lidocaine 1-1.5 mg/kg IV (86 kg × 1 mg/kg = 86 mg; max 3 mg/kg) if amio unavailable</div></div>
+        <div class="action-excerpt">Lidocaine (1 mg/kg IV) may be considered as an alternative to amiodarone for VF/pulseless VT that is unresponsive to CPR, defibrillation, and vasopressor therapy. May be repeated at 5-minute intervals for a maximum dose of 3 mg/kg IV.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continue 200 J shock + 2 min CPR cycle; epi 1 mg q 3-5 min</div></div>
+        <div class="action-excerpt">Continue the cycle of chest compressions for 2 minutes, followed by rhythm analysis and defibrillation of shockable rhythms.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Apply mechanical CPR device for safe transport compressions</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Performing manual chest compressions in a moving vehicle may pose a clinician safety concern; manual chest compressions during patient movement are less effective in regard to hands on time, depth, recoil and rate.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">Consider termination criteria with medical control if persistently refractory</div></div>
+        <div class="action-excerpt">If resuscitation remains ineffective, consider termination of resuscitation.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">No pulse check — VFib arrest</div>
+        <div class="phase-trigger">Trigger: Crew anchored on the perfusing-VT pathway because the rhythm 'looked perfusing.' No carotid pulse check was performed. Crew prepared synchronized cardioversion or considered amiodarone INFUSION 150 mg over 10 min instead of immediate defibrillation. 60-90 seconds elapsed without compressions or defibrillation. Pulseless VT degenerated to coarse VFib. Resuscitation now begins from a worse starting point.</div>
+        <div class="phase-desc">Crew applied the monitor, saw the wide-complex tachycardia at 200, and anchored on the Tachycardia-with-a-Pulse pathway. Discussion focused on stable vs unstable wide-complex tachycardia; team reached for synchronized cardioversion setup or considered an amiodarone INFUSION at 150 mg over 10 minutes. NO CAROTID PULSE CHECK was performed. 60-90 seconds elapse without compressions and without defibrillation. The pulseless VT — unsupported by perfusion — degrades to coarse VFib. EtCO2 falls (no perfusion at all). Crew now recognizes arrest, but resuscitation begins from a worse baseline: longer no-flow time, longer time to first shock, and a less organized starting rhythm. The teaching beat: wide-complex tachycardia on the monitor REQUIRES a pulse check before deciding the pathway.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Ventricular Fibrillation (Coarse)</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">0</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">0</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">97.7°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">142</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, no respirations</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic — still no respiratory effort</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Confirmed pulseless on belated check; cap refill &gt;5 sec; skin profoundly mottled</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">cyanotic-mottled · cool · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Dilated (~6 mm), sluggish, equal</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"(unresponsive)"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Rhythm degraded from monomorphic pulseless VT to coarse VFib</li><li>60-90 seconds of no-flow time elapsed before recognition</li><li>Crew now realizes the wide-complex tach was never perfusing</li><li>Resus starts late — every downstream time-to-shock and time-to-drug metric worse</li><li>Pill bottles and prior cardiac hx still on the counter — clear evidence base</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize: pulse check missed; rhythm now VFib — start CPR NOW</div></div>
+        <div class="action-excerpt">Assessment: Once pulselessness is discovered, treatment should be initiated immediately, and any further history must be obtained by bystanders while treatment is ongoing.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Begin high-quality CPR 100-120/min immediately</div></div>
+        <div class="action-excerpt">Chest compressions are usually the most rapidly applied therapy for the patient in cardiac arrest and should be initiated as soon as the patient is noted to be pulseless.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Defibrillate 200 J as soon as defibrillator ready; resume compressions immediately</div></div>
+        <div class="action-excerpt">Defibrillation dosing should follow manufacturer's recommendation in the case of biphasic defibrillators. Zoll Adult – 120 J, 150 J, 200 J. Chest compressions should resume immediately after defibrillation attempts with no pauses for pulse checks for 2 minutes regardless of the rhythm displayed on the cardiac monitor.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Epi 1 mg IV/IO cycle 1-2; amiodarone 300 mg IV/IO after 2nd shock</div></div>
+        <div class="action-excerpt">Administer Epinephrine 1mg during the first or second round of compressions. Amiodarone 300mg, followed by 150mg 4-6 min later if still in refractory VF and pulseless VT.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">Debrief: every wide-complex tach in unresponsive patient gets a pulse check</div></div>
+        <div class="action-excerpt">Patient Presentation — Inclusion Criteria: Patients with cardiac arrest. Assessment: In cases of cardiac arrest, assessments should be focused and limited to obtaining enough information to reveal the patient is pulseless.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Sync mode selected — no shock</div>
+        <div class="phase-trigger">Trigger: Crew recognized the patient was 'unstable' but selected synchronized cardioversion instead of defibrillation for a pulseless rhythm. With monomorphic VT at rate ~200 and no perfusion, sync mode struggled to mark R waves; no shock was delivered or the shock was significantly delayed while compressions also lagged. The pulseless VT degenerated toward coarse VFib.</div>
+        <div class="phase-desc">Crew correctly identified the patient as 'unstable wide-complex tachycardia' but anchored on synchronized cardioversion. With sync mode engaged, the Zoll algorithm cannot reliably mark R waves at rate 200 with broad monomorphic QRS — particularly when the patient is pulseless and there is no synchronized arterial signal to validate. The defibrillator either fails to deliver a shock, or delivers one with significant delay. Compressions are also delayed because the team is troubleshooting the device. The rhythm degenerates from pulseless VT toward coarse VFib. Recovery requires recognizing the error, switching to defibrillation (unsynchronized), restoring compressions, and proceeding through the standard VF/pulseless VT algorithm from a delayed and worse baseline.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Ventricular Fibrillation (Coarse)</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">0</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">0</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">97.7°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">142</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, no respirations</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulseless on belated re-check; skin cool, mottled</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">mottled, cyanotic at fingertips · cool · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Dilated (~5-6 mm), sluggish, equal</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"(unresponsive)"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Defibrillator armed in SYNC mode — failed to deliver / significantly delayed shock</li><li>Compressions delayed while troubleshooting device</li><li>Crew has to consciously disable sync and confirm defibrillation mode</li><li>Rhythm degenerating from monomorphic VT to coarse VFib</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize error; disable SYNC mode on defibrillator</div></div>
+        <div class="action-excerpt">Patient Presentation — Inclusion Criteria: Patients with cardiac arrest. The most important therapies for patients suffering from cardiac arrest are prompt cardiac defibrillation for shockable rhythms and minimally interrupted effective chest compressions.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Resume high-quality CPR immediately while device re-arms</div></div>
+        <div class="action-excerpt">Chest compressions are usually the most rapidly applied therapy for the patient in cardiac arrest and should be initiated as soon as the patient is noted to be pulseless. All attempts should be made to prevent avoidable interruptions in chest compressions, such as pre-charging the defibrillator and hovering over the chest, rather than stepping away during defibrillations.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Defibrillate 200 J unsynchronized; resume compressions immediately</div></div>
+        <div class="action-excerpt">Defibrillation dosing should follow manufacturer's recommendation in the case of biphasic defibrillators. Zoll Adult – 120 J, 150 J, 200 J. Chest compressions should resume immediately after defibrillation attempts with no pauses for pulse checks for 2 minutes regardless of the rhythm displayed on the cardiac monitor.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Epi 1 mg IV/IO during first/second cycle; amio 300 mg IV/IO after 2nd shock</div></div>
+        <div class="action-excerpt">Administer Epinephrine 1mg during the first or second round of compressions. Amiodarone 300mg, followed by 150mg 4-6 min later if still in refractory VF and pulseless VT.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">Debrief: sync = perfusing patient; defib = pulseless. Pulse check first.</div></div>
+        <div class="action-excerpt">Regular Wide Complex Tachycardia – Unstable: Deliver a synchronized shock based on manufacturer's recommendation. Patient Presentation — Inclusion Criteria: Patients with cardiac arrest.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

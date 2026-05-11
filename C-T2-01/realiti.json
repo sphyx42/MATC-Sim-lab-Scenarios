@@ -1,0 +1,438 @@
+{
+  "scenarioId": "C-T2-01",
+  "scenarioName": "STEMI with Complicating History — Anaphylactic ASA Allergy",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1500,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "58-year-old male was awakened from sleep at approximately 04:30 by a crushing, heavy pressure in the center of his chest — 'like an elephant sitting on me.' Pain is currently 9/10, started at the substernum, now radiates to the left jaw and down the left arm. Associated with marked diaphoresis, mild dyspnea, nausea without vomiting, and a 'sense of doom.' Pain has not waxed/waned — it has been steady and severe for about 40 minutes. He denies tearing/ripping pain, denies pain with deep breath, denies recent trauma, denies leg pain/swelling, denies recent illness. He has never had pain like this before. He took no medications at home — specifically he has NOT taken aspirin (and will state this emphatically when asked: 'I can't take aspirin, it almost killed me') because of a documented anaphylactic reaction 2 years ago. The reaction (per his wife, present) involved diffuse hives, lip and tongue swelling, throat tightness, and wheezing — managed in the ED with epinephrine, methylprednisolone, and diphenhydramine; an allergist subsequently confirmed an IgE-mediated aspirin/NSAID hypersensitivity and gave him an EpiPen. He denies any phosphodiesterase-5 inhibitor use (no sildenafil, tadalafil, vardenafil) — confirmed by his wife. No recent surgery, no anticoagulants, no recent bleeding. Wife called 911 when his color became 'gray.'",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives in the master bedroom to find a 58-year-old male on the floor, alert but in severe distress, gray and diaphoretic, clutching his chest with the classic Levine fist. He describes a crushing substernal pressure radiating to the left jaw and arm that woke him 40 minutes ago — textbook ACS presentation. The wife is calm and articulate and is the key to the complicating history: she will produce the documented ASA anaphylaxis records the moment the crew asks specifically about allergies. The expected critical move is a 12-lead within 10 minutes that will reveal an anterior STEMI, paired with a thorough SAMPLE that BLOCKS the reflexive aspirin administration. → Allergy verified, ASA withheld, NTG given: Crew correctly elicited the anaphylactic ASA allergy on focused SAMPLE, withheld aspirin (documenting the reason), confirmed no PDE5 use, and gave NTG 0.4 mg SL with the patient's SBP at 156. Initially the patient reports the pain easing from 9/10 to 7/10 — appears to be responding. Crew has the patient on the monitor with pads, IV is established, STEMI alert is in to the cath-capable receiving facility, and they are loading for transport. The default path now hits its mid-scenario evolution: even with the right call, the patient does not stay 'easy.' → Pain rebounds; lateral extension on serial 12-lead: Mid-transport, the patient's pain rebounds from 7/10 to 8/10. The serial 12-lead now shows new ST elevation in I and aVL with reciprocal depression in III and aVF — anterolateral extension confirming a proximal LAD lesion. BP has drifted from 138/84 down to 102/64; HR is climbing reflexively to 112. The crew is now squeezed between two competing protocol-grounded actions: standard ACS says repeat NTG for ongoing ischemic pain, but step 7 cautions that NTG with 'marginal' BP requires weighing the risk versus opioid analgesia, with fluid bolus or pressor ready. The correct move is to STOP additional NTG, treat pain with weight-based fentanyl (preferred over morphine in UA/NSTEMI/STEMI per step 9), prep a fluid bolus, and update the receiving facility on the evolution. → Stabilized on fentanyl; cath-lab arrival: Pain decreases from 8/10 to 4/10 after weight-based fentanyl. BP stabilizes around 108/68 without requiring the bolus. EtCO2 remains in the mid-30s with no signs of respiratory depression. Serial 12-leads continue to show anterolateral STEMI without further evolution. Crew arrives at the cath-capable facility, gives a clean handoff that includes onset time, contact-to-EKG time, ASA withhold rationale (allergist-confirmed anaphylactic ASA hypersensitivity, allergy documentation handed over with patient), NTG doses given, fentanyl dose given, and the 12-lead evolution. Patient is wheeled directly to the cath lab."
+  },
+  "patientInformation": {
+    "patientName": "Daniel Whitaker",
+    "patientCondition": "Crushing, heavy substernal chest pressure that woke him from sleep approximately 40 minutes ago, now 9/10, radiating to the left jaw and arm, associated with diaphoresis and nausea.",
+    "patientAge": 58,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 180,
+    "patientWeight": 92,
+    "patientPhotoId": 70,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives in the master bedroom to find a 58-year-old male on the floor, alert but in severe distress, gray and diaphoretic, clutching his chest with the classic Levine fist. He describes a crushing substernal pressure radiating to the left jaw and arm that woke him 40 minutes ago — textbook ACS presentation. The wife is calm and articulate and is the key to the complicating history: she will produce the documented ASA anaphylaxis records the moment the crew asks specifically about allergies. The expected critical move is a 12-lead within 10 minutes that will reveal an anterior STEMI, paired with a thorough SAMPLE that BLOCKS the reflexive aspirin administration.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 23,
+        "hr": 102,
+        "bpSys": 156,
+        "bpDia": 94,
+        "respRate": 22,
+        "spo2": 95,
+        "etco2": 36,
+        "temp": 36.7,
+        "obstruction": 0,
+        "custMeasure1": 168,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Scene safety; primary survey; recognize high-likelihood ACS (Levine sign, diaphoresis, radiation)",
+        "Full OPQRST: onset 04:30 (40 min), crushing quality, jaw/arm radiation, 9/10, no prior episodes",
+        "Full SAMPLE — explicitly verify allergies and PDE5 use BEFORE any medication",
+        "Cardiac monitor; SpO2; place defibrillator pads (high-risk STEMI)",
+        "Acquire 12-lead within 10 min of contact; recognize anterior STEMI (V1–V4 ST elevation)",
+        "WITHHOLD aspirin — documented anaphylactic ASA allergy; document reason",
+        "Activate STEMI system — early advance notification to cath-capable receiving facility",
+        "Establish IV access (2 sites preferred, 18-gauge); saline lock or maintenance",
+        "Titrate O2 to SpO2 94–98% (currently 95%, low-flow NC 2 L/min appropriate)",
+        "Verify no PDE5 use; give NTG 0.4 mg SL (SBP 156, well above 100)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Allergy verified, ASA withheld, NTG given",
+      "description": "Crew correctly elicited the anaphylactic ASA allergy on focused SAMPLE, withheld aspirin (documenting the reason), confirmed no PDE5 use, and gave NTG 0.4 mg SL with the patient's SBP at 156. Initially the patient reports the pain easing from 9/10 to 7/10 — appears to be responding. Crew has the patient on the monitor with pads, IV is established, STEMI alert is in to the cath-capable receiving facility, and they are loading for transport. The default path now hits its mid-scenario evolution: even with the right call, the patient does not stay 'easy.'",
+      "monitorType": 0,
+      "trendTime": 35,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 23,
+        "hr": 96,
+        "bpSys": 138,
+        "bpDia": 84,
+        "respRate": 20,
+        "spo2": 97,
+        "etco2": 36,
+        "temp": 36.7,
+        "obstruction": 0,
+        "custMeasure1": 168,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Load patient; rapid transport to cath-capable facility; minimize scene time",
+        "Repeat NTG 0.4 mg SL q3–5 min if SBP > 100; reassess BP and pain between doses",
+        "Serial 12-leads en route — watch for lateral/inferior extension or rhythm change",
+        "Monitor for dysrhythmia, hypotension, CHF signs; defib pads in place",
+        "Document reason ASA withheld: anaphylactic allergy, allergist-confirmed; communicate to ED"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Pain rebounds; lateral extension on serial 12-lead",
+      "description": "Mid-transport, the patient's pain rebounds from 7/10 to 8/10. The serial 12-lead now shows new ST elevation in I and aVL with reciprocal depression in III and aVF — anterolateral extension confirming a proximal LAD lesion. BP has drifted from 138/84 down to 102/64; HR is climbing reflexively to 112. The crew is now squeezed between two competing protocol-grounded actions: standard ACS says repeat NTG for ongoing ischemic pain, but step 7 cautions that NTG with 'marginal' BP requires weighing the risk versus opioid analgesia, with fluid bolus or pressor ready. The correct move is to STOP additional NTG, treat pain with weight-based fentanyl (preferred over morphine in UA/NSTEMI/STEMI per step 9), prep a fluid bolus, and update the receiving facility on the evolution.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 23,
+        "hr": 112,
+        "bpSys": 102,
+        "bpDia": 64,
+        "respRate": 22,
+        "spo2": 96,
+        "etco2": 34,
+        "temp": 36.7,
+        "obstruction": 0,
+        "custMeasure1": 168,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Stop additional NTG — SBP now marginal (102); risk now outweighs benefit",
+        "Fentanyl 92 mcg IV (92 kg × 1 mcg/kg = 92 mcg; max initial 100 mcg) — preferred opioid in ACS",
+        "Apply EtCO2/capnography prior to fentanyl; monitor for hypoventilation",
+        "Prepare 250–500 mL NS bolus, ready to infuse if SBP falls below 90",
+        "Maintain ASA withhold; document anaphylactic allergy in hand-off",
+        "Update receiving facility: anterolateral extension, BP marginal, ASA withheld for allergy"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Stabilized on fentanyl; cath-lab arrival",
+      "description": "Pain decreases from 8/10 to 4/10 after weight-based fentanyl. BP stabilizes around 108/68 without requiring the bolus. EtCO2 remains in the mid-30s with no signs of respiratory depression. Serial 12-leads continue to show anterolateral STEMI without further evolution. Crew arrives at the cath-capable facility, gives a clean handoff that includes onset time, contact-to-EKG time, ASA withhold rationale (allergist-confirmed anaphylactic ASA hypersensitivity, allergy documentation handed over with patient), NTG doses given, fentanyl dose given, and the 12-lead evolution. Patient is wheeled directly to the cath lab.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 23,
+        "hr": 92,
+        "bpSys": 108,
+        "bpDia": 68,
+        "respRate": 18,
+        "spo2": 97,
+        "etco2": 36,
+        "temp": 36.7,
+        "obstruction": 0,
+        "custMeasure1": 168,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Bedside handoff: onset, contact-to-EKG, ASA-withhold rationale, NTG doses, fentanyl dose, 12-lead evolution",
+        "Deliver all 12-leads (initial + serial) hard-copy or transmitted at bedside",
+        "Document post-fentanyl vitals, pain score, capnography reading"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "ASA given without allergy screen — iatrogenic anaphylaxis",
+      "description": "Crew anchored on the standard 'STEMI = ASA + NTG' bundle. They recognized the anterior STEMI on 12-lead and reflexively gave aspirin 324 mg chewed without specifically asking the patient or wife about allergies. The wife — who had been waiting for them to ask — only realizes what was given when she sees the empty packet. Within 5–8 minutes the patient develops urticaria on his chest and arms, lip and tongue swelling, audible wheezing, and his BP crashes to 78/46. He now has BOTH an active anterior STEMI AND iatrogenic anaphylaxis. Crew must recognize anaphylaxis, give IM epinephrine (NOT IV bolus — that is the anaphylaxis route), prepare for a fluid bolus per the anaphylaxis algorithm, continue the STEMI workup (without further ASA obviously), and manage the airway. The judgment error here is not failed assessment — it is failed allergy verification before drug administration.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 23,
+        "hr": 128,
+        "bpSys": 78,
+        "bpDia": 46,
+        "respRate": 28,
+        "spo2": 88,
+        "etco2": 30,
+        "temp": 36.7,
+        "obstruction": 60,
+        "custMeasure1": 168,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize anaphylaxis — urticaria + airway compromise + hypotension after known allergen",
+        "Epinephrine 0.3 mg IM (1 mg/mL) anterolateral thigh — repeat q5–15 min PRN",
+        "High-flow O2 via NRB; prepare advanced airway equipment for evolving angioedema",
+        "Normal saline 20 mL/kg = 1840 mL IV wide open (92 kg × 20 mL/kg); repeat as needed",
+        "Albuterol 2.5 mg nebulized for wheezing",
+        "Diphenhydramine 50 mg IV (92 kg × 1 mg/kg = 92 mg → cap at 50 mg max)",
+        "Methylprednisolone 125 mg IV (within 80–125 mg adult range)",
+        "Continue STEMI care (monitor, pads, transport to cath-capable) — NEVER repeat ASA",
+        "Update receiving facility: active anterior STEMI PLUS iatrogenic anaphylaxis from ASA",
+        "Debrief lesson: verify allergies BEFORE every medication, even reflexive bundle drugs"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Scene safety; primary survey; recognize high-likelihood ACS (Levine sign, diaphoresis, radiation)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Full OPQRST: onset 04:30 (40 min), crushing quality, jaw/arm radiation, 9/10, no prior episodes",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Full SAMPLE — explicitly verify allergies and PDE5 use BEFORE any medication",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Cardiac monitor; SpO2; place defibrillator pads (high-risk STEMI)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Acquire 12-lead within 10 min of contact; recognize anterior STEMI (V1–V4 ST elevation)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "WITHHOLD aspirin — documented anaphylactic ASA allergy; document reason",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Activate STEMI system — early advance notification to cath-capable receiving facility",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access (2 sites preferred, 18-gauge); saline lock or maintenance",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Titrate O2 to SpO2 94–98% (currently 95%, low-flow NC 2 L/min appropriate)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Verify no PDE5 use; give NTG 0.4 mg SL (SBP 156, well above 100)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Load patient; rapid transport to cath-capable facility; minimize scene time",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Repeat NTG 0.4 mg SL q3–5 min if SBP > 100; reassess BP and pain between doses",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Serial 12-leads en route — watch for lateral/inferior extension or rhythm change",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Monitor for dysrhythmia, hypotension, CHF signs; defib pads in place",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document reason ASA withheld: anaphylactic allergy, allergist-confirmed; communicate to ED",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Stop additional NTG — SBP now marginal (102); risk now outweighs benefit",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Fentanyl 92 mcg IV (92 kg × 1 mcg/kg = 92 mcg; max initial 100 mcg) — preferred opioid in ACS",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply EtCO2/capnography prior to fentanyl; monitor for hypoventilation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Prepare 250–500 mL NS bolus, ready to infuse if SBP falls below 90",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Maintain ASA withhold; document anaphylactic allergy in hand-off",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Update receiving facility: anterolateral extension, BP marginal, ASA withheld for allergy",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Bedside handoff: onset, contact-to-EKG, ASA-withhold rationale, NTG doses, fentanyl dose, 12-lead evolution",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Deliver all 12-leads (initial + serial) hard-copy or transmitted at bedside",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document post-fentanyl vitals, pain score, capnography reading",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize anaphylaxis — urticaria + airway compromise + hypotension after known allergen",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 0.3 mg IM (1 mg/mL) anterolateral thigh — repeat q5–15 min PRN",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "High-flow O2 via NRB; prepare advanced airway equipment for evolving angioedema",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Normal saline 20 mL/kg = 1840 mL IV wide open (92 kg × 20 mL/kg); repeat as needed",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Albuterol 2.5 mg nebulized for wheezing",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Diphenhydramine 50 mg IV (92 kg × 1 mg/kg = 92 mg → cap at 50 mg max)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Methylprednisolone 125 mg IV (within 80–125 mg adult range)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue STEMI care (monitor, pads, transport to cath-capable) — NEVER repeat ASA",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Update receiving facility: active anterior STEMI PLUS iatrogenic anaphylaxis from ASA",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Debrief lesson: verify allergies BEFORE every medication, even reflexive bundle drugs",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

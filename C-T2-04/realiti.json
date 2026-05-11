@@ -1,0 +1,368 @@
+{
+  "scenarioId": "C-T2-04",
+  "scenarioName": "Unstable A-Fib with RVR",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1500,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 120,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "66-year-old male with history of paroxysmal atrial fibrillation and hypertension developed sudden onset of pounding heartbeat about 90 minutes ago while watching TV. Reports central, non-radiating chest pressure 5/10, mild shortness of breath, and increasing lightheadedness. He admits he ran out of metoprolol and has missed his last 2 doses. No prior episodes this severe; in the past, A-fib has self-converted within an hour. Apixaban taken this morning. Denies syncope, denies recent travel, denies illicit drug use, denies caffeine or energy drinks today.",
+    "discussion": "",
+    "course": "Initial Contact: Crew arrives to find a 66-year-old male seated in his recliner, pale and diaphoretic, gripping the armrest. He answers questions but is clearly uncomfortable and slow to respond. Wife reports he's been getting 'foggier' over the last 20 minutes. Initial impression: sick, tachycardic, possibly unstable. → Sedation given: Crew has IV access. Patient remains alert enough to feel a shock and is consented (briefly) for cardioversion. Low-dose midazolam is selected to minimize further BP drop given borderline shock state. Crew explains the plan and prepares pads in anterior-posterior position; defibrillator in synchronized mode at 120 J biphasic per dose-escalation strategy. → Sinus restored; airway watch: Cardioversion successful — patient converts to normal sinus at HR 92 with BP improving to 108/70. However, midazolam onset has deepened. Pt is drowsy, GCS 13 (E3V4M6), responds to voice but eyes close between prompts. Airway remains patent; SpO2 maintained on NC. Crew must now monitor airway, watch for re-entry into A-fib, and reassess pain/AMS resolution."
+  },
+  "patientInformation": {
+    "patientName": "Daniel Whitman",
+    "patientCondition": "Palpitations, chest pressure, lightheadedness",
+    "patientAge": 66,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 178,
+    "patientWeight": 82,
+    "patientPhotoId": 80,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 66-year-old male seated in his recliner, pale and diaphoretic, gripping the armrest. He answers questions but is clearly uncomfortable and slow to respond. Wife reports he's been getting 'foggier' over the last 20 minutes. Initial impression: sick, tachycardic, possibly unstable.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 38,
+        "hr": 168,
+        "bpSys": 84,
+        "bpDia": 56,
+        "respRate": 26,
+        "spo2": 95,
+        "etco2": 34,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 112,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Rapid primary survey; identify A-fib RVR with instability (HR 168, BP 84/56, AMS, CP)",
+        "Apply O2 via NC, titrate to SpO2 94-98%",
+        "Place on monitor; obtain 12-lead EKG to confirm A-fib (not flutter, SVT, or VT)",
+        "Establish large-bore IV access (18g antecubital preferred for cardioversion sedation)",
+        "Check blood glucose; rule out hypoglycemia as tachycardia driver",
+        "Classify as Irregular Narrow Complex Tachycardia — UNSTABLE (hypotension + AMS + CP)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Sedation given",
+      "description": "Crew has IV access. Patient remains alert enough to feel a shock and is consented (briefly) for cardioversion. Low-dose midazolam is selected to minimize further BP drop given borderline shock state. Crew explains the plan and prepares pads in anterior-posterior position; defibrillator in synchronized mode at 120 J biphasic per dose-escalation strategy.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 38,
+        "hr": 164,
+        "bpSys": 86,
+        "bpDia": 58,
+        "respRate": 22,
+        "spo2": 97,
+        "etco2": 36,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 112,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Midazolam 2 mg IV slow push (82 kg × 0.025 mg/kg ≈ 2 mg — low end of 0.05-0.10 mg/kg range due to hypotension)",
+        "Consider Fentanyl 75 mcg IV (82 kg × 1 mcg/kg = 82 mcg → ~75 mcg; max initial 100 mcg) for procedural pain",
+        "Verify sync mode active and R-wave markers present before charging",
+        "Synchronized cardioversion at 120 J biphasic (escalation: 70 → 120 → 150 → 170 J)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Sinus restored; airway watch",
+      "description": "Cardioversion successful — patient converts to normal sinus at HR 92 with BP improving to 108/70. However, midazolam onset has deepened. Pt is drowsy, GCS 13 (E3V4M6), responds to voice but eyes close between prompts. Airway remains patent; SpO2 maintained on NC. Crew must now monitor airway, watch for re-entry into A-fib, and reassess pain/AMS resolution.",
+      "monitorType": 0,
+      "trendTime": 25,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 92,
+        "bpSys": 108,
+        "bpDia": 70,
+        "respRate": 14,
+        "spo2": 96,
+        "etco2": 38,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 112,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Continuous airway monitoring; chin lift/jaw thrust PRN; suction ready",
+        "Maintain waveform capnography to detect hypoventilation before SpO2 drops",
+        "Reassess rhythm; obtain post-conversion 12-lead; watch for re-entry into A-fib",
+        "Reassess chest pain; if recurrent CP and BP allows, consider ASA 324 mg PO chewed",
+        "Transport to ED with continuous monitoring; notify of converted A-fib RVR + sedation given"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Misjudged stable; deterioration",
+      "description": "Crew anchored on the patient being conversant and pursued the STABLE irregular narrow-complex pathway — attempted vagal maneuvers and drew up diltiazem. Within minutes, BP drops to 72/40, patient becomes Verbal-only, and has a brief syncopal episode. Crew must now transition to emergent cardioversion under worse conditions — pads not yet placed, sedation not pre-loaded, deteriorating mental status.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 38,
+        "hr": 172,
+        "bpSys": 72,
+        "bpDia": 40,
+        "respRate": 30,
+        "spo2": 91,
+        "etco2": 30,
+        "temp": 36.7,
+        "obstruction": 0,
+        "custMeasure1": 110,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize patient is now profoundly unstable; abort stable-pathway; transition to emergent sync cardioversion",
+        "Place defib pads anterior-posterior; switch monitor to SYNC mode",
+        "Emergent synchronized cardioversion at 120 J biphasic — abbreviated sedation given LOC drop",
+        "NS 500 mL IV bolus to address diltiazem/vagal-induced hypotension while pads prepare",
+        "Debrief flag: instability criteria were present from minute one — recognize anchoring bias"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Cardioverted without sedation",
+      "description": "Crew recognized instability but skipped sedation and delivered synchronized cardioversion on a fully responsive patient. Shock delivered — pt screams, swings arm, dislodges lead, and is briefly agitated/combative. Conversion occurred but the experience was traumatic, lead artifact obscured the post-shock rhythm strip momentarily, and crew now must rebuild rapport and re-secure leads. Patient is awake but tearful and refusing further interventions.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 96,
+        "bpSys": 134,
+        "bpDia": 84,
+        "respRate": 28,
+        "spo2": 97,
+        "etco2": 30,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 112,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize protocol violation: responsive patient requires sedation/analgesia consideration",
+        "Rebuild rapport; verbal de-escalation; explain what happened and what's next",
+        "Offer late analgesia: Fentanyl 75 mcg IV (82 kg × 1 mcg/kg = 82 mcg → ~75 mcg; max initial 100 mcg) for post-shock pain",
+        "Document protocol deviation in PCR; brief receiving ED on rhythm history and missed sedation"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Rapid primary survey; identify A-fib RVR with instability (HR 168, BP 84/56, AMS, CP)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply O2 via NC, titrate to SpO2 94-98%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place on monitor; obtain 12-lead EKG to confirm A-fib (not flutter, SVT, or VT)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish large-bore IV access (18g antecubital preferred for cardioversion sedation)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check blood glucose; rule out hypoglycemia as tachycardia driver",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Classify as Irregular Narrow Complex Tachycardia — UNSTABLE (hypotension + AMS + CP)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Midazolam 2 mg IV slow push (82 kg × 0.025 mg/kg ≈ 2 mg — low end of 0.05-0.10 mg/kg range due to hypotension)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Consider Fentanyl 75 mcg IV (82 kg × 1 mcg/kg = 82 mcg → ~75 mcg; max initial 100 mcg) for procedural pain",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Verify sync mode active and R-wave markers present before charging",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Synchronized cardioversion at 120 J biphasic (escalation: 70 → 120 → 150 → 170 J)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous airway monitoring; chin lift/jaw thrust PRN; suction ready",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Maintain waveform capnography to detect hypoventilation before SpO2 drops",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess rhythm; obtain post-conversion 12-lead; watch for re-entry into A-fib",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess chest pain; if recurrent CP and BP allows, consider ASA 324 mg PO chewed",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to ED with continuous monitoring; notify of converted A-fib RVR + sedation given",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize patient is now profoundly unstable; abort stable-pathway; transition to emergent sync cardioversion",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place defib pads anterior-posterior; switch monitor to SYNC mode",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Emergent synchronized cardioversion at 120 J biphasic — abbreviated sedation given LOC drop",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "NS 500 mL IV bolus to address diltiazem/vagal-induced hypotension while pads prepare",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Debrief flag: instability criteria were present from minute one — recognize anchoring bias",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize protocol violation: responsive patient requires sedation/analgesia consideration",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Rebuild rapport; verbal de-escalation; explain what happened and what's next",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Offer late analgesia: Fentanyl 75 mcg IV (82 kg × 1 mcg/kg = 82 mcg → ~75 mcg; max initial 100 mcg) for post-shock pain",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document protocol deviation in PCR; brief receiving ED on rhythm history and missed sedation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

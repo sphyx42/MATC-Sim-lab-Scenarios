@@ -1,0 +1,478 @@
+{
+  "scenarioId": "C-T2-07",
+  "scenarioName": "Post-ROSC Management",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1500,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "62-year-old male collapsed at home approximately 14 minutes prior to EMS arrival. Wife reports he clutched his chest, said 'something's not right,' and went down. She started compressions immediately and called 911. First-arriving fire/BLS crew found him in VF on the monitor, defibrillated twice (200 J biphasic), performed roughly 6 minutes of CPR, and achieved ROSC approximately 3 minutes before paramedic arrival. King LT-D was placed during the code. He remains unresponsive with no spontaneous movement.",
+    "discussion": "",
+    "course": "Initial Contact: You arrive 14 minutes after dispatch to find a witnessed VF arrest now 3 minutes post-ROSC. BLS handoff: shocked x2 at 200 J, ~6 minutes of CPR, King LT-D placed during code, ETCO2 jumped 18 to 38 confirming ROSC. Patient remains comatose with King in place. Organized sinus rhythm on the monitor at 96, but BP is 88/54 and the patient is cool and clammy. Multiple competing priorities — airway confirmation, post-arrest 12-lead, hemodynamic support, temperature management, and re-arrest prevention all need to layer in correctly. → Bolus given, 12-lead acquired: Five to seven minutes into the post-ROSC sequence. NS 500 mL bolus is in. BP responds: now 102/62. Post-arrest 12-lead prints — clear anterior ST-elevation (V1-V4, ~3-4 mm) with reciprocal inferior changes. Patient remains comatose, King tolerated, no gag. ETCO2 holding 36, SpO2 97%. Now the priorities pivot: STEMI alert, destination = cath-capable center, continued hemodynamic support, prep for possible re-arrest, and watch for waking against the King. → STEMI alert and transport: Patient is packaged, loaded, and en route to the cath-capable receiving facility. STEMI alert has been called in. 12-lead transmitted. NS continuing TKO with another 250 mL available if pressure drops. Patient remains comatose with King in place. The default-path beats here are sustained monitoring, hand-off readiness, and being prepared for re-arrest or waking en route."
+  },
+  "patientInformation": {
+    "patientName": "Daniel Marek",
+    "patientCondition": "Post-cardiac arrest, ROSC achieved on scene",
+    "patientAge": 62,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 178,
+    "patientWeight": 90,
+    "patientPhotoId": 75,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "You arrive 14 minutes after dispatch to find a witnessed VF arrest now 3 minutes post-ROSC. BLS handoff: shocked x2 at 200 J, ~6 minutes of CPR, King LT-D placed during code, ETCO2 jumped 18 to 38 confirming ROSC. Patient remains comatose with King in place. Organized sinus rhythm on the monitor at 96, but BP is 88/54 and the patient is cool and clammy. Multiple competing priorities — airway confirmation, post-arrest 12-lead, hemodynamic support, temperature management, and re-arrest prevention all need to layer in correctly.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 96,
+        "bpSys": 88,
+        "bpDia": 54,
+        "respRate": 10,
+        "spo2": 96,
+        "etco2": 32,
+        "temp": 35.8,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Take BLS handoff; identify arrest cause and confirm ROSC",
+        "Confirm King placement: waveform ETCO2, equal breath sounds, chest rise",
+        "BVM via King at 10/min; target ETCO2 35-45; avoid hyperventilation",
+        "Titrate FiO2 to SpO2 94-98%; do NOT hyperoxygenate",
+        "Cardiac monitor, leave pads on, prep for re-arrest",
+        "Acquire post-arrest 12-lead EKG within 10 minutes to look for STEMI",
+        "Establish IV access (2nd line if first not working) or IO",
+        "NS 500 mL bolus pressure-infused; target MAP >= 65 (SBP > 90)",
+        "Check blood glucose; treat if <60 mg/dL",
+        "Do NOT actively warm; avoid temp > 37.5°C / 99.5°F"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Bolus given, 12-lead acquired",
+      "description": "Five to seven minutes into the post-ROSC sequence. NS 500 mL bolus is in. BP responds: now 102/62. Post-arrest 12-lead prints — clear anterior ST-elevation (V1-V4, ~3-4 mm) with reciprocal inferior changes. Patient remains comatose, King tolerated, no gag. ETCO2 holding 36, SpO2 97%. Now the priorities pivot: STEMI alert, destination = cath-capable center, continued hemodynamic support, prep for possible re-arrest, and watch for waking against the King.",
+      "monitorType": 0,
+      "trendTime": 35,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 23,
+        "hr": 92,
+        "bpSys": 102,
+        "bpDia": 62,
+        "respRate": 10,
+        "spo2": 97,
+        "etco2": 36,
+        "temp": 35.9,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Activate STEMI alert; advance notification to cath-capable receiving hospital",
+        "Transmit / hand-carry 12-lead to receiving facility",
+        "ASA 324 mg PR (per receiving order) or hold given King + comatose; document",
+        "Hold nitroglycerin - hypotensive, comatose, post-arrest",
+        "Continue fluids if MAP < 65; prep push-dose epi if BP drops again",
+        "Prep push-dose epi: 1 mL of 1:10,000 in 9 mL NS = 10 mcg/mL; ready 10-20 mcg q3-5 min PRN",
+        "If norepi available, prep drip 0.05-0.5 mcg/kg/min (90 kg = 4.5-45 mcg/min); start low for refractory hypotension",
+        "Passive temp management; do NOT actively rewarm; goal: avoid hyperthermia",
+        "Leave pads on; Lucas device staged; continuous ETCO2/SpO2 monitoring",
+        "Load and go; minimize scene time; transport to cath-capable PCI center"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "STEMI alert and transport",
+      "description": "Patient is packaged, loaded, and en route to the cath-capable receiving facility. STEMI alert has been called in. 12-lead transmitted. NS continuing TKO with another 250 mL available if pressure drops. Patient remains comatose with King in place. The default-path beats here are sustained monitoring, hand-off readiness, and being prepared for re-arrest or waking en route.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 23,
+        "hr": 88,
+        "bpSys": 106,
+        "bpDia": 64,
+        "respRate": 10,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Vitals + neuro reassessment every 5 minutes en route",
+        "Serial 12-leads en route if clinical change",
+        "Maintain ETCO2 35-45; recheck minute volume after every patient move",
+        "Recheck waveform capnography after each patient move",
+        "Concise ED/cath lab handoff: arrest cause, ROSC time, vitals trend, 12-lead, interventions"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Patient waking against King",
+      "description": "Mid-transport evolution - patient's brainstem is recovering faster than higher cortical function. Gag has returned, jaw is clenching on the King, BP has climbed to 148/92, HR up to 118 NSR with persistent anterior STEMI. He is bucking the airway and at risk of self-extubation or aspiration. Crew must sedate, analgese, and decide whether to keep King in place vs. carefully remove if he can protect his airway.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 23,
+        "hr": 118,
+        "bpSys": 148,
+        "bpDia": 92,
+        "respRate": 22,
+        "spo2": 98,
+        "etco2": 30,
+        "temp": 36.2,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Midazolam 1.8 mg IV (90 kg x 0.02 mg/kg; titrate, max 5 mg total)",
+        "Fentanyl 90 mcg IV (90 kg x 1 mcg/kg; range 1-2 mcg/kg)",
+        "Alternative: Ketamine 45-90 mg IV (90 kg x 0.5-1 mg/kg)",
+        "Yankauer ready; SALAD setup if vomits against King",
+        "Reassess after sedation; consider careful King removal only if pt can protect airway",
+        "Continue STEMI alert / transport; do not delay for airway choreography"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "12-lead skipped, cath delayed",
+      "description": "Crew packaged and transported without acquiring a post-arrest 12-lead. STEMI alert was not called. On arrival at the closest community ED (non-PCI), the ED team obtains the EKG and identifies an anterior STEMI - now requiring inter-facility transfer to a PCI center. Time-to-balloon now extended by 60-90+ minutes. The teaching point is that a 30-second EKG in the field would have routed this patient directly to the cath lab.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 23,
+        "hr": 94,
+        "bpSys": 98,
+        "bpDia": 58,
+        "respRate": 10,
+        "spo2": 96,
+        "etco2": 34,
+        "temp": 35.8,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Debrief: post-arrest 12-lead is mandatory; STEMI is a top reversible arrest cause",
+        "Debrief: post-ROSC + STEMI -> cath-capable hospital, not closest hospital"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Active warming applied",
+      "description": "Crew stacked warm blankets, turned the cabin heat to 80F, and applied a forced-air warmer because the patient felt cool. Core temperature climbs from 35.8C to 37.8C (100.0F) en route. Hyperthermia worsens neurologic outcomes post-arrest and is explicitly contraindicated by protocol. Receiving facility now has to actively cool him before they can even consider TTM.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 23,
+        "hr": 108,
+        "bpSys": 104,
+        "bpDia": 62,
+        "respRate": 10,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 37.8,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Stop active warming; remove extra blankets; drop cabin heat to ambient",
+        "Debrief: prehospital TTM is NOT routine; goal is avoid hyperthermia, not rewarm"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Take BLS handoff; identify arrest cause and confirm ROSC",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Confirm King placement: waveform ETCO2, equal breath sounds, chest rise",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "BVM via King at 10/min; target ETCO2 35-45; avoid hyperventilation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Titrate FiO2 to SpO2 94-98%; do NOT hyperoxygenate",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Cardiac monitor, leave pads on, prep for re-arrest",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Acquire post-arrest 12-lead EKG within 10 minutes to look for STEMI",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access (2nd line if first not working) or IO",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "NS 500 mL bolus pressure-infused; target MAP >= 65 (SBP > 90)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check blood glucose; treat if <60 mg/dL",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Do NOT actively warm; avoid temp > 37.5°C / 99.5°F",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Activate STEMI alert; advance notification to cath-capable receiving hospital",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transmit / hand-carry 12-lead to receiving facility",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "ASA 324 mg PR (per receiving order) or hold given King + comatose; document",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Hold nitroglycerin - hypotensive, comatose, post-arrest",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue fluids if MAP < 65; prep push-dose epi if BP drops again",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Prep push-dose epi: 1 mL of 1:10,000 in 9 mL NS = 10 mcg/mL; ready 10-20 mcg q3-5 min PRN",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "If norepi available, prep drip 0.05-0.5 mcg/kg/min (90 kg = 4.5-45 mcg/min); start low for refractory hypotension",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Passive temp management; do NOT actively rewarm; goal: avoid hyperthermia",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Leave pads on; Lucas device staged; continuous ETCO2/SpO2 monitoring",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Load and go; minimize scene time; transport to cath-capable PCI center",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Vitals + neuro reassessment every 5 minutes en route",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Serial 12-leads en route if clinical change",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Maintain ETCO2 35-45; recheck minute volume after every patient move",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recheck waveform capnography after each patient move",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Concise ED/cath lab handoff: arrest cause, ROSC time, vitals trend, 12-lead, interventions",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Midazolam 1.8 mg IV (90 kg x 0.02 mg/kg; titrate, max 5 mg total)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Fentanyl 90 mcg IV (90 kg x 1 mcg/kg; range 1-2 mcg/kg)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Alternative: Ketamine 45-90 mg IV (90 kg x 0.5-1 mg/kg)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Yankauer ready; SALAD setup if vomits against King",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess after sedation; consider careful King removal only if pt can protect airway",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue STEMI alert / transport; do not delay for airway choreography",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Debrief: post-arrest 12-lead is mandatory; STEMI is a top reversible arrest cause",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Debrief: post-ROSC + STEMI -> cath-capable hospital, not closest hospital",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Stop active warming; remove extra blankets; drop cabin heat to ambient",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Debrief: prehospital TTM is NOT routine; goal is avoid hyperthermia, not rewarm",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

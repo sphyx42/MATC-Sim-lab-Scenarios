@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>STEMI with Complicating History — Anaphylactic ASA Allergy — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">STEMI with Complicating History — Anaphylactic ASA Allergy</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Daniel Whitaker</strong></span><span class="patient-chip">58 years male</span><span class="patient-chip">203 lbs (92 kg)</span><span class="patient-chip">5'11"</span><span class="patient-chip">CC: Crushing, heavy substernal chest pressure that woke him from sleep approximately 40 minutes ago, now 9/10, radiating to the left jaw and arm, associated with diaphoresis and nausea.</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Dispatch: 58-year-old male, chest pain with shortness of breath, conscious and breathing, on the bedroom floor of a single-family residence. Wife on scene and on the line.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Quiet suburban single-family home; patient on the carpeted floor next to the bed in the master bedroom, propped against the bedframe by his wife. Bedside lamp on, lights dim.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Wednesday, 05:15, pre-dawn</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. Quiet home, no pets in the room. Adequate space and lighting to work. Front door propped open by wife for EMS.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Wife (Linda Whitaker) is present, calm but worried. She knows the full medical history including the prior ASA anaphylaxis episode and emphatically states 'do NOT give him aspirin, he almost died last time' — if the crew specifically asks about allergies, she immediately produces an allergist note and his EpiPen from the nightstand. The patient himself, between waves of pain, will also volunteer the allergy when asked. The complicating history WILL surface — but only if the crew performs a thorough SAMPLE with explicit allergy questioning BEFORE giving aspirin.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Patient on bedroom floor, propped semi-Fowler against bedframe, eyes closed, grimacing</li><li>Skin pale, gray, frankly diaphoretic — pillow and sheet visibly damp</li><li>Patient clutching center of chest with closed fist (Levine sign)</li><li>Bedside table: glasses, water glass, EpiPen auto-injector visible (wife produces it when asked about allergies)</li><li>Wife seated next to him, holding a folder labeled 'Medical Records' — contains the allergist's documentation</li><li>No medication bottles open at bedside; pill organizer on dresser, all morning slots full (no meds taken yet today)</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">58-year-old male was awakened from sleep at approximately 04:30 by a crushing, heavy pressure in the center of his chest — 'like an elephant sitting on me.' Pain is currently 9/10, started at the substernum, now radiates to the left jaw and down the left arm. Associated with marked diaphoresis, mild dyspnea, nausea without vomiting, and a 'sense of doom.' Pain has not waxed/waned — it has been steady and severe for about 40 minutes. He denies tearing/ripping pain, denies pain with deep breath, denies recent trauma, denies leg pain/swelling, denies recent illness. He has never had pain like this before. He took no medications at home — specifically he has NOT taken aspirin (and will state this emphatically when asked: 'I can't take aspirin, it almost killed me') because of a documented anaphylactic reaction 2 years ago. The reaction (per his wife, present) involved diffuse hives, lip and tongue swelling, throat tightness, and wheezing — managed in the ED with epinephrine, methylprednisolone, and diphenhydramine; an allergist subsequently confirmed an IgE-mediated aspirin/NSAID hypersensitivity and gave him an EpiPen. He denies any phosphodiesterase-5 inhibitor use (no sildenafil, tadalafil, vardenafil) — confirmed by his wife. No recent surgery, no anticoagulants, no recent bleeding. Wife called 911 when his color became 'gray.'</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">Aspirin — anaphylaxis (urticaria, angioedema, wheezing) 2 years ago; allergist-confirmed IgE-mediated NSAID hypersensitivity; cross-reactivity with ibuprofen and ketorolac assumed, No other known drug allergies</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Lisinopril 20 mg PO daily, Metoprolol succinate 50 mg PO daily, Atorvastatin 40 mg PO at bedtime, Metformin 1000 mg PO twice daily, EpiPen 0.3 mg auto-injector (carried for documented ASA/NSAID anaphylaxis)</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Hypertension — diagnosed 6 years ago, generally well controlled, Hyperlipidemia, Type 2 diabetes mellitus — diet- and metformin-controlled, Documented anaphylactic reaction to aspirin 2 years ago (urticaria, angioedema, wheezing) — confirmed IgE-mediated NSAID hypersensitivity by allergist; carries EpiPen, Former smoker, quit 4 years ago after a 25 pack-year history, Family history: father MI at 60, brother CABG at 55</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Late dinner approximately 9 hours ago — grilled chicken, rice, salad; one glass of water before bed. No medications taken since pain onset.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Patient awoke from sleep at approximately 04:30 with crushing substernal chest pressure radiating to left jaw and arm, severe diaphoresis, nausea, and dyspnea. Pain has been steady and severe for ~40 minutes. Wife dialed 911 when his color became gray and he became too weak to stand up to use the bathroom.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">EMS arrives in the master bedroom to find a 58-year-old male on the floor, alert but in severe distress, gray and diaphoretic, clutching his chest with the classic Levine fist. He describes a crushing substernal pressure radiating to the left jaw and arm that woke him 40 minutes ago — textbook ACS presentation. The wife is calm and articulate and is the key to the complicating history: she will produce the documented ASA anaphylaxis records the moment the crew asks specifically about allergies. The expected critical move is a 12-lead within 10 minutes that will reveal an anterior STEMI, paired with a thorough SAMPLE that BLOCKS the reflexive aspirin administration.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ STEMI Anterior</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">102</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">156/94</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">95%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">22</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.1°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">168</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-maintained, speaking in short sentences interrupted by pain</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Mildly tachypneic, lungs clear, no accessory muscle use, no audible wheeze</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong but slightly rapid regular radial pulse; skin gray, cool, frankly diaphoretic; cap refill 2–3 seconds</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">gray · cool · diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal at 3 mm, briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities; weak from pain but symmetric</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"It's like an elephant on my chest … woke me up … please … and don't give me aspirin, it almost killed me last time …"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Levine sign — clenched fist over center of chest</li><li>Pain rated 9/10, crushing, substernal, radiating to left jaw and left arm</li><li>No JVD, no peripheral edema, lungs clear (no rales)</li><li>No reproducible chest wall tenderness on palpation</li><li>Wife present, calm, holds a folder of medical records</li><li>EpiPen visible on nightstand — wife will produce documented ASA anaphylaxis records when asked about allergies</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Scene safety; primary survey; recognize high-likelihood ACS (Levine sign, diaphoresis, radiation)</div></div>
+        <div class="action-excerpt">Patient Care Goals: Identify ST-elevation myocardial infarction (STEMI) quickly. Determine the time of symptom onset. Inclusion Criteria: Chest pain or discomfort in other areas of the body (e.g., arm, jaw, epigastrium) of suspected cardiac origin, shortness of breath, associated or unexplained sweating, nausea, vomiting, or dizziness.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Full OPQRST: onset 04:30 (40 min), crushing quality, jaw/arm radiation, 9/10, no prior episodes</div></div>
+        <div class="action-excerpt">Key Documentation Elements: The time of symptom onset; The time of patient contact by EMS to the time of 12-lead EKG acquisition; The time aspirin (ASA) administered, or reason why not given.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Full SAMPLE — explicitly verify allergies and PDE5 use BEFORE any medication</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: All patients should have drug allergies identified prior to administration of pain medication. Avoid non-steroidal anti-inflammatory medications such as ibuprofen and ketorolac in patients with NSAID allergy, aspirin-sensitive asthma, renal insufficiency, pregnancy, or known peptic ulcer disease.</div>
+        <div class="action-ref">↳ MATC: Pain Management</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Cardiac monitor; SpO2; place defibrillator pads (high-risk STEMI)</div></div>
+        <div class="action-excerpt">Assess the patient's cardiac rhythm and immediately address pulseless rhythms, symptomatic tachycardia, or symptomatic bradycardia. Patient Safety Considerations: Consider placing defibrillator pads on high-risk patients.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Acquire 12-lead within 10 min of contact; recognize anterior STEMI (V1–V4 ST elevation)</div></div>
+        <div class="action-excerpt">The 12-lead EKG is the primary diagnostic tool that identifies a STEMI; it is imperative that EMS clinicians routinely acquire a 12-lead EKG within 10 minutes for all patients exhibiting signs and symptoms of ACS. Advance notification should be provided to the receiving hospital for patients identified as having a STEMI.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">WITHHOLD aspirin — documented anaphylactic ASA allergy; document reason</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: All patients should have drug allergies identified prior to administration of pain medication. Avoid non-steroidal anti-inflammatory medications such as ibuprofen and ketorolac in patients with NSAID allergy, aspirin-sensitive asthma, renal insufficiency, pregnancy, or known peptic ulcer disease.</div>
+        <div class="action-ref">↳ MATC: Pain Management</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Activate STEMI system — early advance notification to cath-capable receiving facility</div></div>
+        <div class="action-excerpt">Patient Care Goals: Activate hospital-based STEMI system of care. Advance notification should be provided to the receiving hospital for patients identified as having a STEMI.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Establish IV access (2 sites preferred, 18-gauge); saline lock or maintenance</div></div>
+        <div class="action-excerpt">Establish IV access.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Titrate O2 to SpO2 94–98% (currently 95%, low-flow NC 2 L/min appropriate)</div></div>
+        <div class="action-excerpt">If the patient is dyspneic, hypoxemic, or has obvious signs of heart failure, EMS clinicians should administer oxygen as appropriate with a target of achieving 94–98% saturation.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Verify no PDE5 use; give NTG 0.4 mg SL (SBP 156, well above 100)</div></div>
+        <div class="action-excerpt">Nitroglycerin 0.4 mg sublingual (SL), can repeat q (quaque, every) 3–5 minutes if SBP greater than 100 mmHg. The use of nitrates should be avoided in any patient who has used a phosphodiesterase inhibitor within the past 48 hours.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Allergy verified, ASA withheld, NTG given</div>
+        <div class="phase-trigger">Trigger: Crew obtained a thorough SAMPLE that surfaced the documented anaphylactic ASA allergy, withheld aspirin with documented rationale, ruled out PDE5 use, gave NTG 0.4 mg SL with adequate SBP, activated the STEMI system, and established IV access.</div>
+        <div class="phase-desc">Crew correctly elicited the anaphylactic ASA allergy on focused SAMPLE, withheld aspirin (documenting the reason), confirmed no PDE5 use, and gave NTG 0.4 mg SL with the patient's SBP at 156. Initially the patient reports the pain easing from 9/10 to 7/10 — appears to be responding. Crew has the patient on the monitor with pads, IV is established, STEMI alert is in to the cath-capable receiving facility, and they are loading for transport. The default path now hits its mid-scenario evolution: even with the right call, the patient does not stay 'easy.'</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ STEMI Anterior</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">96</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">138/84</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">97%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">20</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.1°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">168</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 20, lungs clear, no accessory muscle use</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong regular radial pulse; skin still cool and diaphoretic but slightly improved color; cap refill 2 seconds</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale · cool · diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal, briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Symmetric, slightly stronger than at contact</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"The pressure is a little better … still hurts, but not as bad … thank you for not giving me the aspirin …"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Patient reports pain easing from 9/10 to 7/10 after first NTG</li><li>12-lead unchanged — anterior STEMI (ST elevation V1–V4)</li><li>ASA withheld; reason documented (anaphylactic allergy, allergist-confirmed)</li><li>STEMI alert called to cath-capable receiving facility</li><li>Two IVs established (18 g antecubital, 20 g forearm)</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Load patient; rapid transport to cath-capable facility; minimize scene time</div></div>
+        <div class="action-excerpt">Key Considerations: Ischemic burden time is a risk for morbidity and mortality, EMS can help decrease first medical contact to intervention time/reflow by efficient scripting/training of safely minimizing scene time.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Repeat NTG 0.4 mg SL q3–5 min if SBP &gt; 100; reassess BP and pain between doses</div></div>
+        <div class="action-excerpt">Nitroglycerin 0.4 mg sublingual (SL), can repeat q (quaque, every) 3–5 minutes if SBP greater than 100 mmHg. Care should always be taken when giving nitroglycerin when the patient's blood pressure is marginal.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Serial 12-leads en route — watch for lateral/inferior extension or rhythm change</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Perform serial 12-lead EKGs (especially if clinical changes are noted). Performance of serial EKGs is encouraged for symptomatic patients with EKGs initially non-diagnostic for STEMI.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Monitor for dysrhythmia, hypotension, CHF signs; defib pads in place</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Observe for signs of clinical deterioration: dysrhythmias, chest pain, shortness of breath, decreased level of consciousness/syncope, or other signs of shock/hypotension. Consider placing defibrillator pads on high-risk patients.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Document reason ASA withheld: anaphylactic allergy, allergist-confirmed; communicate to ED</div></div>
+        <div class="action-excerpt">Key Documentation Elements: The time of symptom onset; The time of patient contact by EMS to the time of 12-lead EKG acquisition; The time aspirin (ASA) administered, or reason why not given; The time of STEMI notification.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Pain rebounds; lateral extension on serial 12-lead</div>
+        <div class="phase-trigger">Trigger: Approximately 6–8 minutes after the second NTG dose, pain climbs back to 8/10 and the serial 12-lead shows new ST elevation in I and aVL with reciprocal changes in III and aVF — anterolateral extension. BP drifts to 102/64 with reflex tachycardia to 112, putting NTG into 'marginal BP' territory.</div>
+        <div class="phase-desc">Mid-transport, the patient's pain rebounds from 7/10 to 8/10. The serial 12-lead now shows new ST elevation in I and aVL with reciprocal depression in III and aVF — anterolateral extension confirming a proximal LAD lesion. BP has drifted from 138/84 down to 102/64; HR is climbing reflexively to 112. The crew is now squeezed between two competing protocol-grounded actions: standard ACS says repeat NTG for ongoing ischemic pain, but step 7 cautions that NTG with 'marginal' BP requires weighing the risk versus opioid analgesia, with fluid bolus or pressor ready. The correct move is to STOP additional NTG, treat pain with weight-based fentanyl (preferred over morphine in UA/NSTEMI/STEMI per step 9), prep a fluid bolus, and update the receiving facility on the evolution.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ STEMI Anterior</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">112</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">102/64</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">96%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">22</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">34</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.1°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">168</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 22, lungs clear</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Regular radial pulse, slightly weaker than at first NTG dose; skin pale and diaphoretic; cap refill 2–3 seconds</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale · cool · diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal, reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Symmetric, weak from pain</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"It's coming back stronger … I feel weak, my arms feel heavy …"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Pain back to 8/10, crushing, with new component of left lateral chest</li><li>Serial 12-lead: new ST elevation I and aVL, reciprocal depression III, aVF — anterolateral extension</li><li>BP drifting (138/84 → 102/64) with reflex tachycardia to 112</li><li>Patient still strongly states 'no aspirin' — wife confirms again</li><li>STEMI alert already in to cath-capable facility; update needed on evolution</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Stop additional NTG — SBP now marginal (102); risk now outweighs benefit</div></div>
+        <div class="action-excerpt">Care should always be taken when giving nitroglycerin when the patient's blood pressure is marginal. If used in this setting, the clinician should weigh the risk and benefit of nitrate administration over the administration of an opiate analgesic and be ready to respond to hypotension with fluid bolus or pressor.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Fentanyl 92 mcg IV (92 kg × 1 mcg/kg = 92 mcg; max initial 100 mcg) — preferred opioid in ACS</div></div>
+        <div class="action-excerpt">For Moderate to Severe pain, analgesics include: Fentanyl: 1 mcg/kg IN, IM, IV or IO (maximum initial dose of 100 mcg). Use of non-invasive capnography is an earlier predictor of hypoventilation than pulse oximetry if opioid medications are administered. If indicated based on pain assessment, and vital signs allow, repeat pain medication administration (excluding acetaminophen and nonsteroidal anti-inflammatory medicines) after 5 minutes of the previous dose.</div>
+        <div class="action-ref">↳ MATC: Pain Management</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Apply EtCO2/capnography prior to fentanyl; monitor for hypoventilation</div></div>
+        <div class="action-excerpt">Use of non-invasive capnography is an earlier predictor of hypoventilation than pulse oximetry if opioid medications are administered.</div>
+        <div class="action-ref">↳ MATC: Pain Management</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Prepare 250–500 mL NS bolus, ready to infuse if SBP falls below 90</div></div>
+        <div class="action-excerpt">Care should always be taken when giving nitroglycerin when the patient's blood pressure is marginal. If used in this setting, the clinician should weigh the risk and benefit of nitrate administration over the administration of an opiate analgesic and be ready to respond to hypotension with fluid bolus or pressor.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Maintain ASA withhold; document anaphylactic allergy in hand-off</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: All patients should have drug allergies identified prior to administration of pain medication. Avoid non-steroidal anti-inflammatory medications such as ibuprofen and ketorolac in patients with NSAID allergy, aspirin-sensitive asthma, renal insufficiency, pregnancy, or known peptic ulcer disease.</div>
+        <div class="action-ref">↳ MATC: Pain Management</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Update receiving facility: anterolateral extension, BP marginal, ASA withheld for allergy</div></div>
+        <div class="action-excerpt">Early notification to receiving facility of any changes in patient condition or serial EKGs.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Stabilized on fentanyl; cath-lab arrival</div>
+        <div class="phase-trigger">Trigger: After the crew stopped further NTG and gave weight-based fentanyl, pain dropped from 8/10 to 4/10, BP stabilized in the high 100s, and the patient remained alert and protecting his airway. Transport to the cath-capable facility continued without further deterioration.</div>
+        <div class="phase-desc">Pain decreases from 8/10 to 4/10 after weight-based fentanyl. BP stabilizes around 108/68 without requiring the bolus. EtCO2 remains in the mid-30s with no signs of respiratory depression. Serial 12-leads continue to show anterolateral STEMI without further evolution. Crew arrives at the cath-capable facility, gives a clean handoff that includes onset time, contact-to-EKG time, ASA withhold rationale (allergist-confirmed anaphylactic ASA hypersensitivity, allergy documentation handed over with patient), NTG doses given, fentanyl dose given, and the 12-lead evolution. Patient is wheeled directly to the cath lab.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ STEMI Anterior</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">92</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">108/68</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">97%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">18</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.1°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">168</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 18, lungs clear</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong regular radial pulse; skin warming, drying; cap refill 2 seconds</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale-pink · cool · drying</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal, briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Symmetric</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Better. Tired. Thank you for listening about the aspirin."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Pain reduced to 4/10 after fentanyl</li><li>EtCO2 mid-30s, no respiratory depression on capnography</li><li>12-lead unchanged from anterolateral pattern — no further evolution</li><li>Cath lab activated, ED notified of full timeline and allergy documentation</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Bedside handoff: onset, contact-to-EKG, ASA-withhold rationale, NTG doses, fentanyl dose, 12-lead evolution</div></div>
+        <div class="action-excerpt">Key Documentation Elements: The time of symptom onset; The time of patient contact by EMS to the time of 12-lead EKG acquisition; The time aspirin (ASA) administered, or reason why not given; The time of STEMI notification.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Deliver all 12-leads (initial + serial) hard-copy or transmitted at bedside</div></div>
+        <div class="action-excerpt">All EKGs should be made available to treating personnel at the receiving hospital, whether hand delivered as hard copy or transmitted from the field.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Document post-fentanyl vitals, pain score, capnography reading</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Documentation of patient vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) with pulse oximetry; Acquisition of patient's allergies prior to administration of medication; Documentation of initial patient pain scale assessment; Documentation of medication administration with correct dose; Documentation of patient reassessment with repeat vital signs and patient pain scale assessment.</div>
+        <div class="action-ref">↳ MATC: Pain Management</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">ASA given without allergy screen — iatrogenic anaphylaxis</div>
+        <div class="phase-trigger">Trigger: Crew gave aspirin 324 mg chewed without specifically asking about allergies before administration. Patient has a documented allergist-confirmed anaphylactic ASA/NSAID hypersensitivity; within 5–8 minutes he develops urticaria, angioedema, wheezing, and severe hypotension superimposed on the active anterior STEMI.</div>
+        <div class="phase-desc">Crew anchored on the standard 'STEMI = ASA + NTG' bundle. They recognized the anterior STEMI on 12-lead and reflexively gave aspirin 324 mg chewed without specifically asking the patient or wife about allergies. The wife — who had been waiting for them to ask — only realizes what was given when she sees the empty packet. Within 5–8 minutes the patient develops urticaria on his chest and arms, lip and tongue swelling, audible wheezing, and his BP crashes to 78/46. He now has BOTH an active anterior STEMI AND iatrogenic anaphylaxis. Crew must recognize anaphylaxis, give IM epinephrine (NOT IV bolus — that is the anaphylaxis route), prepare for a fluid bolus per the anaphylaxis algorithm, continue the STEMI workup (without further ASA obviously), and manage the airway. The judgment error here is not failed assessment — it is failed allergy verification before drug administration.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ STEMI Anterior</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">128</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">78/46</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">88%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">28</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">30</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.1°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">168</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">13</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Threatened — visible lip and tongue swelling, voice now muffled and hoarse; no stridor yet</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 28, audible inspiratory and expiratory wheeze; accessory muscle use; SpO2 88%</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Weak rapid radial pulse; cap refill 4–5 seconds; mottled cool extremities</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">ashen pale with red urticarial wheals on chest, arms, and neck · cool · frankly diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal at 4 mm, reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Symmetric but weak; lethargic from hypoperfusion</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Can't … breathe … throat … "</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Urticaria spreading across chest and both upper extremities within 5–8 minutes of chewed ASA</li><li>Lip and tongue swelling visibly progressing; voice muffled</li><li>Audible wheezing on chest auscultation</li><li>Hypotension (78/46) — combined distributive (anaphylaxis) and cardiogenic (active anterior STEMI) shock</li><li>Wife distraught: 'I told you, I told you not to give him aspirin!'</li><li>EpiPen still on nightstand — wife produces it now</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize anaphylaxis — urticaria + airway compromise + hypotension after known allergen</div></div>
+        <div class="action-excerpt">Anaphylaxis – More severe and is characterized by an acute onset involving: The skin (urticaria) and/or mucosa with either respiratory compromise or decreased BP or signs of end-organ dysfunction OR Hypotension for that patient after exposure to a known allergen.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Epinephrine 0.3 mg IM (1 mg/mL) anterolateral thigh — repeat q5–15 min PRN</div></div>
+        <div class="action-excerpt">Epinephrine administration is the primary treatment for anaphylaxis. If signs of anaphylaxis, administer epinephrine 1 mg/mL at the following dose and route: Adult (25 kg or more) 0.3 mg IM in the anterolateral thigh. If signs of anaphylaxis and hypoperfusion persist following the first dose of epinephrine, additional IM epinephrine can be repeated q5–15 minutes at above noted doses.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">High-flow O2 via NRB; prepare advanced airway equipment for evolving angioedema</div></div>
+        <div class="action-excerpt">Assessment: Evaluate for patent airway and presence of oropharyngeal edema. Auscultate for wheezing and assess level of respiratory effort. Constant monitoring of the patient's airway and breathing is essential.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Normal saline 20 mL/kg = 1840 mL IV wide open (92 kg × 20 mL/kg); repeat as needed</div></div>
+        <div class="action-excerpt">For signs of hypoperfusion, also administer 20 mL/kg isotonic fluid (normal saline or lactated Ringer's) rapidly (over 15 minutes) via IV or IO, and repeat as needed for ongoing hypoperfusion.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Albuterol 2.5 mg nebulized for wheezing</div></div>
+        <div class="action-excerpt">If respiratory distress with wheezing is present, consider administering Albuterol 2.5–5 mg nebulized AND/OR Epinephrine 1 mg/mL, 5 mL nebulized.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Diphenhydramine 50 mg IV (92 kg × 1 mg/kg = 92 mg → cap at 50 mg max)</div></div>
+        <div class="action-excerpt">For urticaria or pruritus, administer a diphenhydramine 1 mg/kg, up to maximum dose of 50 mg IM, IV, or PO). The IV route is preferred for the patient in severe symptoms.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">Methylprednisolone 125 mg IV (within 80–125 mg adult range)</div></div>
+        <div class="action-excerpt">Consider Methylprednisolone IV push or IM, 80-125 mg OR Dexamethasone IV push, IM, or PO, 8-16 mg (pediatric 0.5 mg/kg to max of 16 mg).</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continue STEMI care (monitor, pads, transport to cath-capable) — NEVER repeat ASA</div></div>
+        <div class="action-excerpt">Patient Care Goals: Activate hospital-based STEMI system of care. Advance notification should be provided to the receiving hospital for patients identified as having a STEMI. Patient Safety Considerations: Observe for signs of clinical deterioration: dysrhythmias, chest pain, shortness of breath, decreased level of consciousness/syncope, or other signs of shock/hypotension.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Update receiving facility: active anterior STEMI PLUS iatrogenic anaphylaxis from ASA</div></div>
+        <div class="action-excerpt">Early notification to receiving facility of any changes in patient condition or serial EKGs.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">Debrief lesson: verify allergies BEFORE every medication, even reflexive bundle drugs</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: All patients should have drug allergies identified prior to administration of pain medication.</div>
+        <div class="action-ref">↳ MATC: Pain Management</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

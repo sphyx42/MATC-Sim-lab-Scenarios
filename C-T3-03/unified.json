@@ -1,0 +1,640 @@
+{
+  "meta": {
+    "id": "C-T3-03",
+    "name": "PEA Arrest with Reversible Cause",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Cardiac / Resuscitation / Toxicology",
+    "protocols": [
+      "resus-cardiac-arrest",
+      "resus-post-rosc",
+      "resus-termination",
+      "resp-respiratory-distress"
+    ],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": ["pea", "hyperkalemia", "dialysis", "esrd", "hs-and-ts", "acls", "tier-3", "calcium-chloride", "sodium-bicarbonate", "reversible-cause"]
+  },
+  "patient": {
+    "name": "Frank Delgado",
+    "age": 62,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 86,
+    "weightLbs": 190,
+    "height": 178,
+    "chiefComplaint": "Unresponsive, pulseless — found collapsed in living room",
+    "history": {
+      "hpi": "62yo male with end-stage renal disease on hemodialysis MWF at outpatient center. Per wife, he 'didn't feel like going' to dialysis Monday — complained of being tired and weak. She left for work Wednesday morning at 0700 leaving him on the couch; came home at 1530 and found him slumped over, unresponsive, no breathing. Estimated downtime up to 90 minutes if he collapsed shortly after she left. No bystander CPR. Wife states he has missed dialysis sessions before and 'gets puffy and feels bad' but never like this.",
+      "pastMedical": [
+        "End-stage renal disease on hemodialysis (Mon/Wed/Fri schedule, left forearm AV fistula)",
+        "Type 2 diabetes mellitus",
+        "Hypertension",
+        "Coronary artery disease, no prior MI",
+        "Hyperkalemia — prior ED visits for elevated K+"
+      ],
+      "medications": [
+        "Sevelamer (Renvela) 800 mg PO with meals",
+        "Lisinopril 10 mg PO daily",
+        "Insulin glargine 30 units SQ at bedtime",
+        "Calcium acetate 667 mg PO with meals",
+        "Aspirin 81 mg PO daily"
+      ],
+      "allergies": ["NKDA"],
+      "lastOralIntake": "Per wife, ate a small breakfast (eggs, orange juice) around 0630 Wednesday; no food or water observed since.",
+      "events": "Wife left for work at 0700. Came home at 1530 and found patient unresponsive on couch, no breathing, no obvious trauma. Called 911 immediately. No CPR performed prior to EMS arrival. Wife states 'He was supposed to go to dialysis Monday but he wouldn't get up — said he was too tired.'"
+    }
+  },
+  "scene": {
+    "dispatch": "Medic 14, respond priority 1 for a 62-year-old male, unresponsive, not breathing. Wife on scene. Single-family residence.",
+    "location": "Single-story home, patient supine on living room floor (moved by wife from couch). Adequate lighting. No signs of trauma or environmental hazard.",
+    "time": "Wednesday afternoon, 1538 hours. Sunny, mild weather. ~5 min response time.",
+    "safety": "Scene safe. Wife present, distraught but cooperative. One adult son arriving. No pets, no weapons, no environmental hazards.",
+    "bystanders": "Wife (Maria, 58yo) found patient. She is anxious but oriented and able to give history. No CPR performed.",
+    "visualCues": [
+      "Mature left forearm AV fistula with audible thrill on auscultation, visible scarring",
+      "Stack of dialysis center paperwork on the kitchen counter, including 'Missed Appointment' notice dated this week",
+      "Voicemail playing on speakerphone from kitchen — 'Frank, this is Riverbend Dialysis, you missed your Monday session, please call us back'",
+      "Pill organizer on coffee table — Monday and Wednesday slots still full",
+      "Patient appears mildly puffy/edematous; no obvious trauma",
+      "Glucometer and insulin pen on side table"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find 62yo male supine on living room floor. Apneic, no palpable pulse. Wife stands by, stating he was supposed to go to dialysis Monday but didn't feel up to it. Body is warm. No obvious trauma. Pulse check confirms pulselessness — patient is in cardiac arrest.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "Patent, no obstruction; no gag reflex",
+        "breathing": "Apneic. No chest rise. No breath sounds.",
+        "circulation": "No palpable carotid or femoral pulse. Skin warm. Mature AV fistula left forearm with thrill.",
+        "skin": { "color": "pale-mottled", "temperature": "warm", "moisture": "dry" },
+        "pupils": "Mid-position, sluggishly reactive bilaterally",
+        "motorFunction": "Flaccid, no spontaneous movement",
+        "otherFindings": [
+          "Visible left forearm AV fistula (catchable on focused exam) — confirms dialysis dependence",
+          "Mild peripheral edema, no JVD assessable in supine",
+          "Voicemail from dialysis center audible from kitchen",
+          "Dialysis missed-appointment paperwork on counter",
+          "No trauma signs; no needle marks; no medication bottles open"
+        ],
+        "patientSpeech": "None — unresponsive"
+      },
+      "monitorState": {
+        "ecgRhythm": "Pulseless Electrical Activity (PEA)",
+        "ecgWaveform": 9,
+        "hr": 38,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 12,
+        "temp": 36.4,
+        "tempF": 97.5,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "scene-safety",
+          "shortAction": "Confirm scene safety; BSI/PPE; rapid scene survey",
+          "protocolExcerpt": "Patient Safety Considerations: Performing manual chest compressions in a moving vehicle may pose a clinician safety concern... Ideally, patients should be resuscitated as close to the scene as operationally possible.",
+          "priority": "critical",
+          "rationale": "Scene clues (AV fistula, dialysis papers, voicemail) are the key to identifying the reversible cause. Crew must survey the room.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "confirm-arrest",
+          "shortAction": "Confirm pulselessness/apnea within 10 sec; call cardiac arrest",
+          "protocolExcerpt": "Assessment: In cases of cardiac arrest, assessments should be focused and limited to obtaining enough information to reveal the patient is pulseless. Once pulselessness is discovered, treatment should be initiated immediately, and any further history must be obtained by bystanders while treatment is ongoing.",
+          "priority": "critical",
+          "rationale": "Defines the resuscitation pathway immediately.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "obtain-history-from-wife",
+          "shortAction": "Get focused history from wife: missed dialysis, last seen, downtime",
+          "protocolExcerpt": "Assessment: Once pulselessness is discovered, treatment should be initiated immediately, and any further history must be obtained by bystanders while treatment is ongoing.",
+          "priority": "critical",
+          "rationale": "The missed-dialysis history is the single most important clue. Without it, crew won't suspect hyperkalemia.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "identify-fistula",
+          "shortAction": "Identify left forearm AV fistula on focused exam",
+          "protocolExcerpt": "Consider reversible causes of cardiac arrest which include the following: The dialysis patient/known hyperkalemic patient – Additions to care include the following: Calcium gluconate 10% 1 g IV bolus over 2 minutes... OR Calcium chloride 10% 1 g IV bolus over 2 minutes... Sodium bicarbonate 1 mEq/kg IV.",
+          "priority": "critical",
+          "rationale": "Visible/palpable AV fistula is the physical confirmation of dialysis dependence. Triggers hyperkalemia workup.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "compressions-epi",
+          "if": "Compressions started, ALS arrest pathway initiated",
+          "condition": "Crew initiates high-quality CPR within 30 seconds of confirming pulselessness, places defibrillator pads, and gathers focused history from wife while resuscitation proceeds.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["confirm-arrest", "obtain-history-from-wife"]
+        },
+        {
+          "targetPhaseId": "scene-clues-missed",
+          "if": "Crew skips scene survey/history from wife",
+          "condition": "Crew focuses entirely on resuscitation mechanics without delegating history-gathering. Wife is shooed back, no one searches the home, AV fistula is not identified during initial exam.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["obtain-history-from-wife", "identify-fistula"],
+          "timeoutSeconds": 180
+        }
+      ]
+    },
+    {
+      "id": "compressions-epi",
+      "name": "Compressions + epi",
+      "description": "High-quality CPR in progress. Pads applied — rhythm confirmed as PEA (broad-complex, rate ~40, no pulse). IV/IO access obtained. First dose of epinephrine 1 mg IV/IO given during initial compression cycle. EtCO2 reading available via BVM/advanced airway. Wife reports missed Monday dialysis; AV fistula visible on left forearm.",
+      "triggerCondition": "Crew confirmed pulselessness, initiated CPR, applied monitor showing organized broad-complex electrical activity at rate ~40 with no palpable pulse — classic PEA. ALS arrest algorithm activated.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "BVM ventilation in progress with OPA; or advanced airway placed without interrupting compressions",
+        "breathing": "Apneic. Ventilated 1 breath every 10 compressions or 10/min if advanced airway",
+        "circulation": "Pulseless. Compressions in progress at 100-120/min, depth 5-6 cm, full recoil. IO or IV access established.",
+        "skin": { "color": "pale-mottled", "temperature": "warm", "moisture": "dry" },
+        "pupils": "Mid-position, minimally reactive",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "Broad-complex PEA on monitor — wide QRS, peaked T-waves visible between compression artifacts",
+          "Wife confirms: missed Monday dialysis; usually MWF; 'he was too tired to go'",
+          "AV fistula left forearm with palpable thrill",
+          "EtCO2 reflects compression quality (~15-18 mmHg)"
+        ],
+        "patientSpeech": "None"
+      },
+      "monitorState": {
+        "ecgRhythm": "Pulseless Electrical Activity (PEA)",
+        "ecgWaveform": 9,
+        "hr": 40,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 16,
+        "temp": 36.3,
+        "tempF": 97.3,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "high-quality-cpr",
+          "shortAction": "High-quality CPR: 100-120/min, depth 5-6 cm, full recoil",
+          "protocolExcerpt": "Key Considerations: Effective chest compressions are defined as: A rate of greater than 100 and less than 120 compressions/minute; Depth of at least 2 inches (5 cm) and less than 2.4 inches (6 cm) for adults and children... Allow for complete chest recoil (avoid leaning); Minimize interruptions in compressions.",
+          "priority": "critical",
+          "rationale": "Foundation of resuscitation. Quality compressions dictate ROSC probability.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "iv-io-access",
+          "shortAction": "Establish IO (proximal humerus) or IV access without interrupting compressions",
+          "protocolExcerpt": "Treatment and Interventions: If feasible, IV or IO access should be obtained. Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms.",
+          "priority": "critical",
+          "rationale": "Required for epi and the hyperkalemia bundle (calcium, bicarb).",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "epi-first-dose",
+          "shortAction": "Epinephrine 1 mg IV/IO (1:10,000) during first/second compression cycle; repeat q3-5 min",
+          "protocolExcerpt": "Treatment and Interventions: If feasible, IV or IO access should be obtained. Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms.",
+          "priority": "critical",
+          "rationale": "PEA is non-shockable — early epi is the primary pharmacologic intervention per algorithm.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "airway-management",
+          "shortAction": "BVM at 10/min with OPA or place supraglottic airway without pausing compressions",
+          "protocolExcerpt": "Treatment and Interventions: The airway management strategy should not interrupt compressions... BVM ventilation at 10 breaths per minute (1 breath every 10 compressions), applied during the upstroke between compressions, without interrupting the compressions... Either a supraglottic airway or an endotracheal tube may be placed without interruption of compressions; Ventilations are provided at 10 breaths/minute for adults.",
+          "priority": "critical",
+          "rationale": "Maintains oxygenation/ventilation without sacrificing compression fraction.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "etco2-monitoring",
+          "shortAction": "Attach quantitative EtCO2; target >10 mmHg to confirm compression quality",
+          "protocolExcerpt": "Key Considerations: Quantitative end-tidal capnography (EtCO2) should be used to monitor effectiveness of chest compressions. If EtCO2 less than 10 mmHg during the initial phases of resuscitation, attempt to improve chest compression quality.",
+          "priority": "critical",
+          "rationale": "Real-time feedback. Also signals ROSC when EtCO2 abruptly rises.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "recognize-hyperkalemia-clue",
+          "shortAction": "Recognize hyperkalemia: dialysis pt + missed session + wide-complex PEA + peaked T-waves",
+          "protocolExcerpt": "Treatment and Interventions: Consider reversible causes of cardiac arrest which include the following: The dialysis patient/known hyperkalemic patient – Additions to care include the following: Calcium gluconate 10% 1 g IV bolus over 2 minutes (for pediatrics, the dose is 100 mg/kg which is 1 mL/kg), can repeat the dose if no response OR Calcium chloride 10% 1 g IV bolus over 2 minutes... Sodium bicarbonate 1 mEq/kg IV.",
+          "priority": "critical",
+          "rationale": "The teaching beat — vanilla ACLS alone won't fix this. Crew must connect the dots.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "hyperkalemia-bundle",
+          "if": "Hyperkalemia recognized as likely cause",
+          "condition": "Crew connects dialysis history + AV fistula + broad-complex PEA + peaked T-waves and elects to treat presumptive hyperkalemia. Calls medical direction if required, prepares calcium chloride, sodium bicarbonate, and albuterol nebulizer.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["recognize-hyperkalemia-clue"]
+        },
+        {
+          "targetPhaseId": "vanilla-acls-no-rosc",
+          "if": "Vanilla ACLS — no hyperkalemia therapy given",
+          "condition": "Crew continues straight ACLS algorithm: epi q3-5 min and compressions only. Reversible cause never addressed. After 4+ rounds (20 min) of epi + CPR with no ROSC, EtCO2 stays <15.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["recognize-hyperkalemia-clue"],
+          "timeoutSeconds": 600
+        }
+      ]
+    },
+    {
+      "id": "hyperkalemia-bundle",
+      "name": "Hyperkalemia recognized",
+      "description": "Crew has identified presumed hyperkalemia as the cause of PEA arrest. Compressions continue uninterrupted. Team leader orders the hyperkalemia bundle: calcium chloride 10% 1 g slow IV/IO, sodium bicarbonate 1 mEq/kg IV/IO, and nebulized albuterol 5 mg in-line with BVM/advanced airway. Epi continues q3-5 min.",
+      "triggerCondition": "Crew connected the scene clues and clinical picture (ESRD on dialysis, missed Monday session, AV fistula, broad-complex PEA at rate ~40 with peaked T-waves) and committed to treating presumptive hyperkalemia. Calcium and bicarb prepared simultaneously.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "Supraglottic airway or BVM with OPA; ventilations at 10/min",
+        "breathing": "Apneic, mechanically ventilated. Albuterol nebulizer in-line.",
+        "circulation": "Pulseless. Compressions ongoing. IO/IV with patent line. Second IV started for med push if available.",
+        "skin": { "color": "pale-mottled", "temperature": "warm", "moisture": "dry" },
+        "pupils": "Mid-position, minimally reactive",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "Wide-complex PEA persists during compression pause checks",
+          "Peaked T-waves visible on monitor strip",
+          "EtCO2 17-19 mmHg with good compressions"
+        ],
+        "patientSpeech": "None"
+      },
+      "monitorState": {
+        "ecgRhythm": "Pulseless Electrical Activity (PEA)",
+        "ecgWaveform": 9,
+        "hr": 42,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 18,
+        "temp": 36.3,
+        "tempF": 97.3,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "calcium-chloride",
+          "shortAction": "Calcium chloride 10% 1 g slow IV/IO over 2 min (membrane stabilization)",
+          "protocolExcerpt": "Treatment and Interventions: The dialysis patient/known hyperkalemic patient – Additions to care include the following: Calcium gluconate 10% 1 g IV bolus over 2 minutes (for pediatrics, the dose is 100 mg/kg which is 1 mL/kg), can repeat the dose if no response OR Calcium chloride 10% 1 g IV bolus over 2 minutes (for pediatrics, the dose is 20 mg/kg which is 0.2 mL/kg).",
+          "priority": "critical",
+          "rationale": "First-line for hyperkalemic arrest — stabilizes cardiac myocyte membrane within minutes. Calcium chloride preferred via central/IO access for faster effect.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "sodium-bicarbonate",
+          "shortAction": "Sodium bicarbonate 86 mEq IV/IO (86 kg × 1 mEq/kg) — shifts K+ intracellularly",
+          "protocolExcerpt": "Treatment and Interventions: The dialysis patient/known hyperkalemic patient – Additions to care include the following: Sodium bicarbonate 1 mEq/kg IV.",
+          "priority": "critical",
+          "rationale": "Alkalinization drives K+ into cells. Also corrects severe metabolic acidosis common in missed-dialysis arrest.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "albuterol-neb",
+          "shortAction": "Albuterol 5 mg nebulized in-line with BVM/advanced airway",
+          "protocolExcerpt": "Suspected bronchospasm, asthma, COPD: Inhaled Medications — While albuterol 2.5 mg nebulized is usually sufficient for mild wheezing without clinical distress, albuterol 5 mg nebulized (or 6 puffs metered dose inhaler) should be administered to all patients in respiratory distress with signs of bronchospasm (e.g., known asthmatics, quiet wheezers). Repeat at this dose with unlimited frequency for ongoing respiratory distress.",
+          "priority": "important",
+          "rationale": "Beta-2 agonism drives K+ intracellularly — adjunct to calcium and bicarb. Use the highest-dose neb available per protocol.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "epi-continued",
+          "shortAction": "Epinephrine 1 mg IV/IO q3-5 min throughout arrest",
+          "protocolExcerpt": "Treatment and Interventions: If feasible, IV or IO access should be obtained. Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms.",
+          "priority": "critical",
+          "rationale": "Continued per ACLS algorithm in parallel with K+-specific therapies.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "reassess-after-bundle",
+          "shortAction": "Reassess rhythm and pulse after bundle; watch for QRS narrowing and ROSC",
+          "protocolExcerpt": "Treatment and Interventions: If at any time during this period of resuscitation the patient regains return of spontaneous circulation, treat per Adult Post-ROSC Care Guideline.",
+          "priority": "critical",
+          "rationale": "Calcium effect occurs within 1-3 min; reassess at next pulse check.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "rosc",
+          "if": "ROSC after hyperkalemia bundle",
+          "condition": "After calcium + bicarb + albuterol + ongoing epi/CPR, QRS narrows on next rhythm check. Pulse palpable at carotid. EtCO2 jumps from 18 to 35+. Patient achieves ROSC.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["calcium-chloride", "sodium-bicarbonate", "reassess-after-bundle"]
+        }
+      ]
+    },
+    {
+      "id": "rosc",
+      "name": "ROSC",
+      "description": "ROSC achieved after hyperkalemia bundle. QRS narrowed to sinus rhythm at HR 88. Palpable carotid pulse. BP 92/60. EtCO2 surged to 32. Patient remains unresponsive (GCS 4) and apneic — requires continued ventilatory support and post-ROSC care. Transport to facility capable of emergent dialysis.",
+      "triggerCondition": "Hyperkalemia bundle (calcium chloride + sodium bicarbonate + nebulized albuterol) reversed the membrane instability. Next pulse check reveals organized narrow-complex rhythm with palpable pulse. ROSC time noted.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 2 },
+        "airway": "Advanced airway maintained (supraglottic or ETT); confirm with EtCO2 and bilateral breath sounds",
+        "breathing": "Apneic — assisted ventilation 8-10/min targeting EtCO2 35-45",
+        "circulation": "Palpable carotid pulse. BP 92/60. Capillary refill 3 sec. Cool/clammy extremities; warm trunk.",
+        "skin": { "color": "pale", "temperature": "cool", "moisture": "clammy" },
+        "pupils": "4 mm, sluggish bilaterally",
+        "motorFunction": "Withdraws to deep painful stimulus on sternal rub",
+        "otherFindings": [
+          "Post-ROSC sinus rhythm at 88; T-waves still mildly peaked but narrowing",
+          "Repeat 12-lead recommended to assess for STEMI/electrolyte changes",
+          "Continued at-risk for re-arrest — mechanical CPR device in place if used",
+          "Notify receiving facility: dialysis capable preferred"
+        ],
+        "patientSpeech": "None — comatose, GCS 4"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 88,
+        "bpSys": 92,
+        "bpDia": 60,
+        "respRate": 10,
+        "spo2": 94,
+        "etco2": 32,
+        "temp": 36.4,
+        "tempF": 97.5,
+        "obstruction": 0,
+        "glucose": 138,
+        "customMeasures": [],
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "post-rosc-airway",
+          "shortAction": "Secure airway; ventilate 8-10/min, EtCO2 35-45 mmHg, avoid hyperventilation",
+          "protocolExcerpt": "Assessment, Treatment, and Interventions: Do not hyperventilate. Maintain a ventilation rate of 8–10 breaths per minute, targeting an EtCO2 of 35–45 mmHg.",
+          "priority": "critical",
+          "rationale": "Hyperventilation drops preload and precipitates re-arrest. Most common post-ROSC error.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "post-rosc-o2-target",
+          "shortAction": "Titrate O2 to SpO2 94-98%; avoid hyperoxia",
+          "protocolExcerpt": "Assessment, Treatment, and Interventions: Administer oxygen as appropriate with a target of achieving 94–98% saturation. Do not hyperoxygenate.",
+          "priority": "important",
+          "rationale": "Hyperoxia worsens reperfusion injury post-ROSC.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "post-rosc-12-lead",
+          "shortAction": "Obtain 12-lead EKG; look for residual hyperkalemia, STEMI",
+          "protocolExcerpt": "Assessment, Treatment, and Interventions: Perform serial 12-lead EKGs to assess for evidence of reversible cause of arrest such as STEMI or electrolyte derangement (e.g., hyperkalemia).",
+          "priority": "critical",
+          "rationale": "Persistent peaked T-waves = re-treat. STEMI = redirect destination.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "post-rosc-bp-support",
+          "shortAction": "BP 92/60 — fluid bolus 250-500 mL, prep norepinephrine if MAP <65",
+          "protocolExcerpt": "Assessment, Treatment, and Interventions: For hypotension (SBP less than 90 mmHg or MAP less than 65 in adults) see Shock Guideline.",
+          "priority": "important",
+          "rationale": "Borderline pressure post-ROSC. Cardiac stunning expected — vasopressor support common.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "transport-destination",
+          "shortAction": "Transport to facility capable of emergent dialysis; early notification",
+          "protocolExcerpt": "Notes/Educational Pearls: Current research has demonstrated that care of patients with ROSC at specialized centers is associated with both decreased mortality and improved neurologic outcomes.",
+          "priority": "critical",
+          "rationale": "Definitive K+ removal requires hemodialysis. Pick the receiving facility accordingly.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "monitor-re-arrest",
+          "shortAction": "Continuous monitoring; mechanical CPR device in place for re-arrest",
+          "protocolExcerpt": "Notes/Educational Pearls: The condition of post-resuscitation patients fluctuates rapidly and continuously requiring close monitoring. A significant percentage of post-ROSC patients will re-arrest. Maintain mechanical CPR device in place in preparation for re-arrest.",
+          "priority": "critical",
+          "rationale": "Without dialysis, K+ will re-elevate. Be ready.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "scene-clues-missed",
+      "name": "Scene clues missed",
+      "description": "Crew dove straight into ACLS mechanics without delegating scene survey or history. Wife sidelined, AV fistula not identified on focused exam, dialysis paperwork on counter never noticed. Crew treats this as 'unknown PEA arrest' — runs algorithm without ever suspecting hyperkalemia.",
+      "triggerCondition": "Crew committed to compressions and pads without assigning anyone to gather history from the wife or survey the immediate scene. The AV fistula remained covered by the sleeve of the patient's flannel shirt. The voicemail from the dialysis center played in the background, unheard.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "BVM or SGA, unchanged",
+        "breathing": "Apneic, ventilated 10/min",
+        "circulation": "Pulseless. Compressions ongoing. IV/IO placed.",
+        "skin": { "color": "pale-mottled", "temperature": "warm", "moisture": "dry" },
+        "pupils": "Mid-position, dull",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "Wife is being asked perfunctory questions but not focused dialysis history",
+          "AV fistula is present but not yet identified by the crew",
+          "Wide-complex PEA at ~40 with peaked T-waves on the monitor — clue is on screen if anyone reads the strip"
+        ],
+        "patientSpeech": "None"
+      },
+      "monitorState": {
+        "ecgRhythm": "Pulseless Electrical Activity (PEA)",
+        "ecgWaveform": 9,
+        "hr": 40,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 14,
+        "temp": 36.2,
+        "tempF": 97.2,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "remedy-history",
+          "shortAction": "Stop. Delegate history-gather; reassess scene; expose arms for fistula check",
+          "protocolExcerpt": "Assessment: Once pulselessness is discovered, treatment should be initiated immediately, and any further history must be obtained by bystanders while treatment is ongoing.",
+          "priority": "critical",
+          "rationale": "The reversible cause is hiding in plain sight. A 30-second history pivot changes outcome.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "remedy-read-strip",
+          "shortAction": "Read the rhythm strip: wide complex + peaked T-waves = think K+",
+          "protocolExcerpt": "Treatment and Interventions: Consider reversible causes of cardiac arrest which include the following: The dialysis patient/known hyperkalemic patient – Additions to care include the following: Calcium gluconate 10% 1 g IV bolus over 2 minutes...",
+          "priority": "critical",
+          "rationale": "Even without history, the strip alone should trigger hyperkalemia consideration.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "hyperkalemia-bundle",
+          "if": "Crew course-corrects, identifies hyperkalemia clue",
+          "condition": "On instructor prompting or self-correction, crew assigns a member to question the wife and survey the scene. AV fistula and missed dialysis are identified within 2-3 minutes. Crew pivots to hyperkalemia bundle.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["remedy-history", "remedy-read-strip"]
+        },
+        {
+          "targetPhaseId": "vanilla-acls-no-rosc",
+          "if": "Clues remain missed; vanilla ACLS continues",
+          "condition": "Crew continues mechanical algorithm without curiosity. Drifts into 20+ minutes of epi + CPR with no recognition of reversible cause.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["remedy-history", "remedy-read-strip"],
+          "timeoutSeconds": 300
+        }
+      ]
+    },
+    {
+      "id": "vanilla-acls-no-rosc",
+      "name": "Vanilla ACLS — no ROSC",
+      "description": "Crew has run textbook PEA algorithm for 20+ minutes: high-quality CPR, four+ rounds of epinephrine, airway secured, EtCO2 monitored. No hyperkalemia therapy ever given. Rhythm remains wide-complex PEA at ~30-40. EtCO2 trending down to 12. Pupils fixed. Wife asks if there is anything more that can be done.",
+      "triggerCondition": "Reversible cause (hyperkalemia from missed dialysis) was never identified or treated. ACLS algorithm executed correctly on the surface but the H&T framework was never applied. The patient cannot be resuscitated without K+-specific therapy.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "Advanced airway in place; EtCO2 monitored",
+        "breathing": "Apneic; ventilated 10/min",
+        "circulation": "Pulseless throughout. Compressions ongoing. Four+ epi doses given.",
+        "skin": { "color": "mottled-cyanotic", "temperature": "cooling", "moisture": "dry" },
+        "pupils": "Fixed, mid-position to dilated",
+        "motorFunction": "Flaccid; no response to pain",
+        "otherFindings": [
+          "Wide-complex PEA persists at HR 30-40",
+          "EtCO2 dropped from 18 → 12 over 20 min — poor prognostic indicator",
+          "20+ minutes of resuscitation with no ROSC and no reversible cause addressed",
+          "Wife visibly distressed; second crew member supporting her"
+        ],
+        "patientSpeech": "None"
+      },
+      "monitorState": {
+        "ecgRhythm": "Pulseless Electrical Activity (PEA)",
+        "ecgWaveform": 9,
+        "hr": 32,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 11,
+        "temp": 36.0,
+        "tempF": 96.8,
+        "obstruction": 0,
+        "glucose": 138,
+        "customMeasures": [],
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "consider-termination",
+          "shortAction": "Consider termination: >20 min CPR, wide PEA <60, EtCO2 <20, no ROSC",
+          "protocolExcerpt": "Patient Management: Non-traumatic arrest — Resuscitation may be terminated in asystole and slow wide complex PEA if there is: No return of spontaneous circulation after 20 minutes in the absence of hypothermia AND The EtCO2 is less than 20 mmHg.",
+          "priority": "critical",
+          "rationale": "Patient meets termination criteria on the surface — but the protocol assumes reversible causes have been addressed. The teaching point: did this crew really run an appropriate ALS resuscitation?",
+          "protocolReference": "MATC: Termination of Resuscitative Efforts"
+        },
+        {
+          "id": "late-hyperkalemia-attempt",
+          "shortAction": "If still on scene: late hyperkalemia bundle — calcium, bicarb, albuterol",
+          "protocolExcerpt": "Treatment and Interventions: The dialysis patient/known hyperkalemic patient – Additions to care include the following: Calcium gluconate 10% 1 g IV bolus over 2 minutes... OR Calcium chloride 10% 1 g IV bolus over 2 minutes... Sodium bicarbonate 1 mEq/kg IV.",
+          "priority": "important",
+          "rationale": "Salvage attempt before termination. Outcome much less likely after 20+ min downtime, but algorithmically correct.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "med-direction-consult",
+          "shortAction": "Contact medical direction before terminating",
+          "protocolExcerpt": "Patient Management: Non-traumatic arrest — Consider contacting medical direction before termination of resuscitative efforts.",
+          "priority": "important",
+          "rationale": "Standard practice for termination decisions, especially when reversible cause is suspected late.",
+          "protocolReference": "MATC: Termination of Resuscitative Efforts"
+        },
+        {
+          "id": "family-support",
+          "shortAction": "Brief wife on situation; offer chaplain/family support resources",
+          "protocolExcerpt": "Patient Care Goals: When cardiac arrest resuscitation becomes futile, the patient's family should become the focus of the EMS clinicians. Families need to be informed of what is being done and that transporting all cardiac arrest patients to the hospital is not supported by evidence.",
+          "priority": "critical",
+          "rationale": "Termination on scene requires compassionate family communication. Crew responsibility shifts to the survivors.",
+          "protocolReference": "MATC: Termination of Resuscitative Efforts"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

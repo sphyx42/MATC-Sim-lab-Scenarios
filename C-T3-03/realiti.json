@@ -1,0 +1,422 @@
+{
+  "scenarioId": "C-T3-03",
+  "scenarioName": "PEA Arrest with Reversible Cause",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1500,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "62yo male with end-stage renal disease on hemodialysis MWF at outpatient center. Per wife, he 'didn't feel like going' to dialysis Monday — complained of being tired and weak. She left for work Wednesday morning at 0700 leaving him on the couch; came home at 1530 and found him slumped over, unresponsive, no breathing. Estimated downtime up to 90 minutes if he collapsed shortly after she left. No bystander CPR. Wife states he has missed dialysis sessions before and 'gets puffy and feels bad' but never like this.",
+    "discussion": "",
+    "course": "Initial Contact: Crew arrives to find 62yo male supine on living room floor. Apneic, no palpable pulse. Wife stands by, stating he was supposed to go to dialysis Monday but didn't feel up to it. Body is warm. No obvious trauma. Pulse check confirms pulselessness — patient is in cardiac arrest. → Compressions + epi: High-quality CPR in progress. Pads applied — rhythm confirmed as PEA (broad-complex, rate ~40, no pulse). IV/IO access obtained. First dose of epinephrine 1 mg IV/IO given during initial compression cycle. EtCO2 reading available via BVM/advanced airway. Wife reports missed Monday dialysis; AV fistula visible on left forearm. → Hyperkalemia recognized: Crew has identified presumed hyperkalemia as the cause of PEA arrest. Compressions continue uninterrupted. Team leader orders the hyperkalemia bundle: calcium chloride 10% 1 g slow IV/IO, sodium bicarbonate 1 mEq/kg IV/IO, and nebulized albuterol 5 mg in-line with BVM/advanced airway. Epi continues q3-5 min. → ROSC: ROSC achieved after hyperkalemia bundle. QRS narrowed to sinus rhythm at HR 88. Palpable carotid pulse. BP 92/60. EtCO2 surged to 32. Patient remains unresponsive (GCS 4) and apneic — requires continued ventilatory support and post-ROSC care. Transport to facility capable of emergent dialysis."
+  },
+  "patientInformation": {
+    "patientName": "Frank Delgado",
+    "patientCondition": "Unresponsive, pulseless — found collapsed in living room",
+    "patientAge": 62,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 178,
+    "patientWeight": 86,
+    "patientPhotoId": 75,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find 62yo male supine on living room floor. Apneic, no palpable pulse. Wife stands by, stating he was supposed to go to dialysis Monday but didn't feel up to it. Body is warm. No obvious trauma. Pulse check confirms pulselessness — patient is in cardiac arrest.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 38,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 12,
+        "temp": 36.4,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Confirm scene safety; BSI/PPE; rapid scene survey",
+        "Confirm pulselessness/apnea within 10 sec; call cardiac arrest",
+        "Get focused history from wife: missed dialysis, last seen, downtime",
+        "Identify left forearm AV fistula on focused exam"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Compressions + epi",
+      "description": "High-quality CPR in progress. Pads applied — rhythm confirmed as PEA (broad-complex, rate ~40, no pulse). IV/IO access obtained. First dose of epinephrine 1 mg IV/IO given during initial compression cycle. EtCO2 reading available via BVM/advanced airway. Wife reports missed Monday dialysis; AV fistula visible on left forearm.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 40,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 16,
+        "temp": 36.3,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "High-quality CPR: 100-120/min, depth 5-6 cm, full recoil",
+        "Establish IO (proximal humerus) or IV access without interrupting compressions",
+        "Epinephrine 1 mg IV/IO (1:10,000) during first/second compression cycle; repeat q3-5 min",
+        "BVM at 10/min with OPA or place supraglottic airway without pausing compressions",
+        "Attach quantitative EtCO2; target >10 mmHg to confirm compression quality",
+        "Recognize hyperkalemia: dialysis pt + missed session + wide-complex PEA + peaked T-waves"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Hyperkalemia recognized",
+      "description": "Crew has identified presumed hyperkalemia as the cause of PEA arrest. Compressions continue uninterrupted. Team leader orders the hyperkalemia bundle: calcium chloride 10% 1 g slow IV/IO, sodium bicarbonate 1 mEq/kg IV/IO, and nebulized albuterol 5 mg in-line with BVM/advanced airway. Epi continues q3-5 min.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 42,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 18,
+        "temp": 36.3,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Calcium chloride 10% 1 g slow IV/IO over 2 min (membrane stabilization)",
+        "Sodium bicarbonate 86 mEq IV/IO (86 kg × 1 mEq/kg) — shifts K+ intracellularly",
+        "Albuterol 5 mg nebulized in-line with BVM/advanced airway",
+        "Epinephrine 1 mg IV/IO q3-5 min throughout arrest",
+        "Reassess rhythm and pulse after bundle; watch for QRS narrowing and ROSC"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "ROSC",
+      "description": "ROSC achieved after hyperkalemia bundle. QRS narrowed to sinus rhythm at HR 88. Palpable carotid pulse. BP 92/60. EtCO2 surged to 32. Patient remains unresponsive (GCS 4) and apneic — requires continued ventilatory support and post-ROSC care. Transport to facility capable of emergent dialysis.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 88,
+        "bpSys": 92,
+        "bpDia": 60,
+        "respRate": 10,
+        "spo2": 94,
+        "etco2": 32,
+        "temp": 36.4,
+        "obstruction": 0,
+        "custMeasure1": 138,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Secure airway; ventilate 8-10/min, EtCO2 35-45 mmHg, avoid hyperventilation",
+        "Titrate O2 to SpO2 94-98%; avoid hyperoxia",
+        "Obtain 12-lead EKG; look for residual hyperkalemia, STEMI",
+        "BP 92/60 — fluid bolus 250-500 mL, prep norepinephrine if MAP <65",
+        "Transport to facility capable of emergent dialysis; early notification",
+        "Continuous monitoring; mechanical CPR device in place for re-arrest"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Scene clues missed",
+      "description": "Crew dove straight into ACLS mechanics without delegating scene survey or history. Wife sidelined, AV fistula not identified on focused exam, dialysis paperwork on counter never noticed. Crew treats this as 'unknown PEA arrest' — runs algorithm without ever suspecting hyperkalemia.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 40,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 14,
+        "temp": 36.2,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Stop. Delegate history-gather; reassess scene; expose arms for fistula check",
+        "Read the rhythm strip: wide complex + peaked T-waves = think K+"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Vanilla ACLS — no ROSC",
+      "description": "Crew has run textbook PEA algorithm for 20+ minutes: high-quality CPR, four+ rounds of epinephrine, airway secured, EtCO2 monitored. No hyperkalemia therapy ever given. Rhythm remains wide-complex PEA at ~30-40. EtCO2 trending down to 12. Pupils fixed. Wife asks if there is anything more that can be done.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 32,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 11,
+        "temp": 36,
+        "obstruction": 0,
+        "custMeasure1": 138,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Consider termination: >20 min CPR, wide PEA <60, EtCO2 <20, no ROSC",
+        "If still on scene: late hyperkalemia bundle — calcium, bicarb, albuterol",
+        "Contact medical direction before terminating",
+        "Brief wife on situation; offer chaplain/family support resources"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Confirm scene safety; BSI/PPE; rapid scene survey",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Confirm pulselessness/apnea within 10 sec; call cardiac arrest",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Get focused history from wife: missed dialysis, last seen, downtime",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Identify left forearm AV fistula on focused exam",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "High-quality CPR: 100-120/min, depth 5-6 cm, full recoil",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IO (proximal humerus) or IV access without interrupting compressions",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 1 mg IV/IO (1:10,000) during first/second compression cycle; repeat q3-5 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "BVM at 10/min with OPA or place supraglottic airway without pausing compressions",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Attach quantitative EtCO2; target >10 mmHg to confirm compression quality",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize hyperkalemia: dialysis pt + missed session + wide-complex PEA + peaked T-waves",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Calcium chloride 10% 1 g slow IV/IO over 2 min (membrane stabilization)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Sodium bicarbonate 86 mEq IV/IO (86 kg × 1 mEq/kg) — shifts K+ intracellularly",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Albuterol 5 mg nebulized in-line with BVM/advanced airway",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 1 mg IV/IO q3-5 min throughout arrest",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess rhythm and pulse after bundle; watch for QRS narrowing and ROSC",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Secure airway; ventilate 8-10/min, EtCO2 35-45 mmHg, avoid hyperventilation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Titrate O2 to SpO2 94-98%; avoid hyperoxia",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Obtain 12-lead EKG; look for residual hyperkalemia, STEMI",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "BP 92/60 — fluid bolus 250-500 mL, prep norepinephrine if MAP <65",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to facility capable of emergent dialysis; early notification",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous monitoring; mechanical CPR device in place for re-arrest",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Stop. Delegate history-gather; reassess scene; expose arms for fistula check",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Read the rhythm strip: wide complex + peaked T-waves = think K+",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Consider termination: >20 min CPR, wide PEA <60, EtCO2 <20, no ROSC",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "If still on scene: late hyperkalemia bundle — calcium, bicarb, albuterol",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Contact medical direction before terminating",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Brief wife on situation; offer chaplain/family support resources",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

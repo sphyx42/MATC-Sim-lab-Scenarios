@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SVT Not Responding to Vagal Maneuvers — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">SVT Not Responding to Vagal Maneuvers</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Daniel Avery</strong></span><span class="patient-chip">32 years male</span><span class="patient-chip">181 lbs (82 kg)</span><span class="patient-chip">5'11"</span><span class="patient-chip">CC: Palpitations and racing heart</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">32-year-old male, conscious and alert, complaining of palpitations and heart racing. Office building, 4th floor.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Open-plan tech office on the 4th floor of a downtown commercial building. Patient seated at his workstation, leaning forward with one hand on his chest. Coworker on scene who placed the 911 call.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Tuesday, 10:42 AM</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. Office is calm, coworkers cleared a path. Elevator access available.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Coworker (Megan) called 911 and reports patient said 'my heart is going crazy' and looked pale. No witnessed loss of consciousness.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Patient seated upright, mildly diaphoretic forehead</li><li>Half-finished coffee cup on desk</li><li>Patient appears anxious but is oriented and conversational</li><li>No vomit, no spilled medications, no obvious trauma</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">32-year-old male software developer who suddenly developed a 'fluttering' sensation in his chest while sitting at his desk approximately 35 minutes ago. Symptoms started abruptly with no precipitating activity, no chest trauma, no recent illness. Patient reports the rate 'just took off' out of nowhere. Also describes mild central chest tightness, lightheadedness, and shortness of breath. No syncope. No prior cardiac history. Drank one large coffee earlier this morning. No recreational drug use reported, no energy drinks, no stimulant supplements. Has had 'a couple of similar shorter episodes' in the past year that self-resolved within minutes, never sought care. Becomes progressively more anxious as scenario unfolds, fearing 'something is really wrong with my heart.'</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">NKDA</div></div>
+        
+        
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Coffee and a granola bar approximately 2 hours ago</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Sitting at desk at work, sudden onset of palpitations. Coworker noticed patient looked pale and called 911. Patient was unable to terminate the episode by 'bearing down' on his own.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">Crew arrives to find a 32-year-old male seated at his desk, alert and conversational, mildly diaphoretic, holding one hand to his chest. He reports a sudden 'racing heart' that started about 35 minutes ago while working. He is mildly short of breath but talking in full sentences. Skin warm and pink. Radial pulse is rapid and regular, too fast to count by palpation. Initial monitor placement reveals a narrow-complex tachycardia at ~190 with no discernible P waves — supraventricular tachycardia. He is hemodynamically stable: BP 112/72, A&amp;Ox3, SpO2 99% on room air.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Supraventricular Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">190</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">112/72</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">99%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">22</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">96</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-maintained, speaking in full sentences</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Mildly tachypneic, no distress, breath sounds clear and equal bilaterally</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse rapid and regular — too fast to count; cap refill &lt;2s; skin warm, pink, mildly diaphoretic</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · mildly diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 4mm bilaterally</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities normally, no focal deficits</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"'My heart just took off out of nowhere — I was just sitting here working. It feels like it's going to come out of my chest.'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>No JVD</li><li>No peripheral edema</li><li>No carotid bruits noted</li><li>Patient appears anxious but oriented</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Primary survey, ABCs; confirm patient stable, alert, perfusing</div></div>
+        <div class="action-excerpt">Patient Presentation: Patients will manifest elevated heart rate for age and may or may not also present with associated signs or symptoms such as palpitations, dyspnea, chest pain, syncope/near-syncope, hemodynamic compromise, altered mental status, or other signs of end organ malperfusion.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Apply SpO2; titrate O2 only if &lt;94% (currently 99%, no O2 indicated)</div></div>
+        <div class="action-excerpt">Administer oxygen as appropriate with a target of achieving 94–98% saturation.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Place on monitor; obtain 12-lead EKG; identify regular narrow-complex tachycardia (SVT)</div></div>
+        <div class="action-excerpt">Initiate monitoring and perform 12-lead EKG.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Establish IV access — prefer AC or proximal site for adenosine push</div></div>
+        <div class="action-excerpt">Establish IV access. Adenosine 6 mg IV (proximal site) followed by 10 mL fluid bolus.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Check blood glucose to rule out hypoglycemia as driver</div></div>
+        <div class="action-excerpt">Check blood glucose and treat hypoglycemia per the Hypoglycemia Guideline.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Targeted history for underlying cause (caffeine, stimulants, thyroid, prior episodes)</div></div>
+        <div class="action-excerpt">Search for underlying cause: Medications (caffeine, diet pills, thyroid, decongestants); Drugs (cocaine, amphetamines); History of dysrhythmia; Congestive heart failure (CHF).</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Perform vagal maneuvers (Valsalva, then modified Valsalva with supine leg elevation)</div></div>
+        <div class="action-excerpt">Regular Narrow Complex Tachycardia – Stable (SVT): Perform vagal maneuvers.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Vagal failed, anxiety rising</div>
+        <div class="phase-trigger">Trigger: Standard Valsalva and modified Valsalva (REVERT) attempted; rhythm persists at ~190. Patient becomes increasingly anxious, hyperventilating slightly, verbalizing distress more loudly, but vital signs remain stable. Risk: anxiety mimics instability.</div>
+        <div class="phase-desc">Vagal maneuvers have failed. Patient remains in regular narrow-complex tachycardia at HR ~190. Hemodynamics are still preserved — BP 110/70, alert, oriented, SpO2 99%. However, the patient is becoming visibly more anxious: increased restlessness on the stretcher, voice getting louder, complaining more intensely about chest tightness and 'feeling like I'm going to pass out.' This is the key decision point — the crew must recognize that anxiety symptoms (subjective distress, hyperventilation, restlessness) are NOT the same as hemodynamic instability (hypotension, altered mentation, ischemic chest pain with EKG changes, signs of shock). The clinically correct path is to hold the line and proceed with adenosine.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Supraventricular Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">192</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">110/70</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">99%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">26</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">32</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">96</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, speaking in full sentences but voice strained</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Tachypneic from anxiety, lungs clear bilaterally, no work of breathing</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse rapid and regular ~190, cap refill &lt;2s, BP holding</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 4mm, slightly dilated from sympathetic surge</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities, no focal deficits, restless on stretcher</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"'It's getting worse — please, do something! I feel like I'm going to pass out!'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Patient grasping crew member's arm</li><li>Repeatedly asking 'am I going to die?'</li><li>Subjective worsening of chest tightness but no new ischemic features on monitor</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess stability: BP, mentation, perfusion — distinguish anxiety from true instability</div></div>
+        <div class="action-excerpt">Patient Presentation: Patients will manifest elevated heart rate for age and may or may not also present with associated signs or symptoms such as palpitations, dyspnea, chest pain, syncope/near-syncope, hemodynamic compromise, altered mental status, or other signs of end organ malperfusion.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Verbal reassurance, calm coaching, slow breathing — keep patient cooperative</div></div>
+        <div class="action-excerpt">Establish patient rapport: Attempt verbal reassurance and calm patient prior to use of pharmacologic and/or physical management devices.</div>
+        <div class="action-ref">↳ MATC: Agitated or Violent Patient/Behavioral Emergency</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Prepare adenosine 6 mg IV with 10 mL NS flush via stopcock; warn pt of brief 'doom' sensation</div></div>
+        <div class="action-excerpt">Adenosine 6 mg IV (proximal site) followed by 10 mL fluid bolus. If tachycardia continues, give adenosine 12 mg IV.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Adenosine 6 mg rapid IVP, immediate 10 mL NS flush, elevate arm</div></div>
+        <div class="action-excerpt">Adenosine 6 mg IV (proximal site) followed by 10 mL fluid bolus.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Capture continuous rhythm strip across the push — document conversion or persistence</div></div>
+        <div class="action-excerpt">Obtain monitor strips after each intervention.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Converted to sinus</div>
+        <div class="phase-trigger">Trigger: Adenosine 6 mg pushed rapid IVP with immediate 10 mL flush and arm elevation. Brief AV nodal block produces a transient asystolic pause; sinus node resumes control. SVT terminated.</div>
+        <div class="phase-desc">Brief asystolic pause on the monitor (3–5 seconds) followed by spontaneous return to sinus rhythm at ~105 bpm. Patient describes a brief 'doom' or 'flushing' sensation that resolves within seconds. Chest tightness eases. BP rises to 124/78. SpO2 holds at 99%. Patient is dramatically calmer once he realizes he's better. Continue reassessment en route to the ED — recurrence is possible, so monitor continuously and have a second dose of adenosine and pads ready.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">105</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">124/78</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">99%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">18</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">96</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, full sentences, voice normal</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR settling, lungs clear, no distress</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse regular ~105, cap refill &lt;2s, skin warm and pink</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · drying</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 4mm</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities, settled on stretcher</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"'Whoa — that was awful for a second, but I can feel it stopped. Thank you.'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Patient visibly relieved</li><li>Brief 3-5 second pause on rhythm strip just prior to conversion</li><li>Mild fatigue but no recurrent symptoms</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Repeat 12-lead post-conversion; document baseline rhythm and intervals</div></div>
+        <div class="action-excerpt">Performance of serial EKGs is encouraged for symptomatic patients with EKGs initially non-diagnostic for STEMI.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Continuous cardiac monitor, ready for recurrence; second-dose adenosine (12 mg) drawn up</div></div>
+        <div class="action-excerpt">If tachycardia continues, give adenosine 12 mg IV.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Transport to appropriate ED; advance notification with rhythm strips</div></div>
+        <div class="action-excerpt">Transport and destination decisions should be based on local resources and system of care.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Document rhythm pre/post, time and dose of adenosine, response to interventions</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Initial rhythm and all rhythm changes; Time, dose, and response to medications given; Obtain monitor strips after each intervention.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Adenosine without proper flush</div>
+        <div class="phase-trigger">Trigger: Adenosine 6 mg given without immediate rapid 10 mL saline flush and/or without raising the arm. Half-life &lt;10 seconds means the drug never reached the AV node. No asystolic pause on the strip — diagnostic clue that the drug did not reach the heart.</div>
+        <div class="phase-desc">Adenosine 6 mg was pushed but the saline flush was slow, the stopcock wasn't preloaded, or the arm wasn't elevated. The drug was metabolized in the peripheral veins before reaching the AV node. No conversion. Rhythm remains regular narrow-complex at ~192. Patient experienced no 'flush' sensation — a tell that the dose didn't make it centrally. The trap is concluding 'refractory SVT' and escalating prematurely. The correct response is to recognize the technique failure, regroup with a proper setup, and give 12 mg with rapid flush and elevation.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Supraventricular Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">192</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">108/70</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">99%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">26</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">32</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">96</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Tachypneic, lungs clear</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Persistent rapid regular pulse ~192, BP holding 108/70</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 4mm</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Restless on stretcher, no deficits</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"'Did anything happen? I didn't feel anything weird.'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Patient reports NO unusual sensation during the push — red flag the drug didn't reach centrally</li><li>No transient asystole on rhythm strip</li><li>Rhythm unchanged</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize technique failure (no flush sensation, no rhythm pause) — not true refractory SVT</div></div>
+        <div class="action-excerpt">Adenosine 6 mg IV (proximal site) followed by 10 mL fluid bolus.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Set up three-way stopcock at proximal IV; preload 10 mL saline flush</div></div>
+        <div class="action-excerpt">Adenosine 6 mg IV (proximal site) followed by 10 mL fluid bolus.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Adenosine 12 mg rapid IVP, immediate 10 mL flush, elevate arm</div></div>
+        <div class="action-excerpt">If tachycardia continues, give adenosine 12 mg IV.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Cardioverted while stable</div>
+        <div class="phase-trigger">Trigger: Crew elected synchronized cardioversion on a patient who was still alert, perfusing, and normotensive. Anxiety symptoms were misread as instability. Protocol criteria for unstable narrow-complex tachycardia (hypotension, AMS, ischemic chest pain, shock) were NOT met.</div>
+        <div class="phase-desc">Crew interpreted patient's escalating anxiety and verbal distress as hemodynamic instability and proceeded to synchronized cardioversion despite preserved BP (110/70), preserved mentation (A&amp;Ox3), and preserved perfusion. This is a protocol deviation — the patient did not meet criteria for unstable narrow-complex tachycardia. Cardioversion was applied without procedural sedation (or with rushed sedation). Patient experienced a painful shock and is now traumatized, agitated, and tearful. The shock may briefly convert the rhythm, but the iatrogenic harm — pain, psychological trauma, breach of trust — was avoidable. This is a teaching branch about confusing subjective distress with objective instability.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">115</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">130/85</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">99%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">30</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">30</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">96</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, crying, hyperventilating</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Tachypneic from pain and panic, lungs clear</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Rhythm may have converted briefly to sinus tachy ~115; BP 130/85 (pain response)</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 5mm, sympathetic</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Pulling away from crew, guarding chest where pads were</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"'Why did you do that?! I was talking to you! That hurt so much — I thought you were helping me.'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Patient tearful, distressed: 'You shocked me — I was awake!'</li><li>Pad-site erythema visible</li><li>Loss of patient trust — refusing further care for several minutes</li><li>Risk of recurrence remains; this was a procedural deviation</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize protocol deviation — pt was stable; cardioversion not indicated</div></div>
+        <div class="action-excerpt">Regular Narrow Complex Tachycardia – Stable (SVT): Perform vagal maneuvers; Adenosine 6 mg IV (proximal site) followed by 10 mL fluid bolus.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess rhythm, perfusion, mental status, and trauma response post-shock</div></div>
+        <div class="action-excerpt">Observe for signs of clinical deterioration: dysrhythmias, chest pain, shortness of breath, decreased level of consciousness/syncope, or other signs of shock/hypotension.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Reestablish rapport, calm reassurance, acknowledge distress; document event accurately</div></div>
+        <div class="action-excerpt">Establish patient rapport: Attempt verbal reassurance and calm patient prior to use of pharmacologic and/or physical management devices.</div>
+        <div class="action-ref">↳ MATC: Agitated or Violent Patient/Behavioral Emergency</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

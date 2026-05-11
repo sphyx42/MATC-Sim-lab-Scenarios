@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Acute Pulmonary Edema Requiring Aggressive Management — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Acute Pulmonary Edema Requiring Aggressive Management</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Eleanor Kowalski</strong></span><span class="patient-chip">74 years female</span><span class="patient-chip">181 lbs (82 kg)</span><span class="patient-chip">5'4"</span><span class="patient-chip">CC: Severe shortness of breath that began about 90 minutes ago and has rapidly worsened. Patient is now sitting bolt upright at the edge of her recliner, unable to lie back, gasping for air with frothy pink-tinged sputum on her lips and the front of her nightgown.</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Dispatch: 74-year-old female, trouble breathing, can't catch her breath, conscious and breathing, sitting up in a chair. Single-family home, daughter on scene with the patient.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Modest single-story single-family home in an older residential neighborhood. Living room with patient seated bolt upright in a worn recliner near the front window. Hospital-style overbed table, three empty pillows on the floor next to the recliner, a half-empty glass of water on the side table.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Saturday, 03:47, very early morning, dark outside, porch light on, cool damp weather</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. Single-story home, well-lit interior, no obvious hazards. Two adults on scene (patient and daughter). One indoor cat — non-aggressive.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Adult daughter (Maria) is on scene and tearful but coherent. She is the primary informant — she will volunteer the missed-medication history without prompting if asked about meds, and will produce the empty pharmacy bottles when asked. She has the patient's medication list on her phone. No PDE5 inhibitors in the home or on the list.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Patient sitting bolt upright at the very edge of the recliner — cannot tolerate lying back even slightly</li><li>Frothy pink-tinged sputum on her lips, chin, and the front of her nightgown</li><li>Visible accessory muscle use — strap muscles of the neck, intercostal retractions</li><li>Drenching diaphoresis — hair matted, nightgown soaked across the chest and back</li><li>Dusky lips and nail beds; +3 pitting pedal edema visible up to the mid-shins</li><li>Marked jugular venous distention visible from across the room</li><li>Empty Lasix bottle on side table; pharmacy printout dated 5 days ago next to it</li><li>Three pillows on the floor — patient previously propped up in bed but moved to recliner</li><li>Daughter at her side: 'She can't lie down at all — she keeps saying she's drowning'</li><li>Patient can only speak 1–2 word phrases between gasps</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">74-year-old female with known heart failure with reduced ejection fraction (HFrEF, last echo EF 28%), longstanding hypertension, and prior hospitalizations for CHF exacerbation, who has been progressively short of breath since dinner last night. She slept in her recliner instead of in bed because she 'couldn't breathe lying down' — three pillows have not been enough for the past two nights. Her daughter, who is staying with her, noticed worsening leg swelling over the past three days and a wet cough that 'sounds different than usual.' Approximately 90 minutes prior to the 911 call, the patient became acutely worse — drenching diaphoresis, severe dyspnea, and pink froth on her lips. Daughter admits the patient ran out of her furosemide (Lasix) prescription four days ago and has not taken it for the past two days; she also missed her lisinopril and carvedilol doses for the same reason because they are filled together. Patient is anxious, scared, and air-hungry. She denies chest pain spontaneously but admits to 'pressure' when specifically asked. No fever, no recent illness, no leg pain or unilateral swelling, no recent travel. Has not used any phosphodiesterase-5 inhibitors (sildenafil, tadalafil, vardenafil) — she takes no medications for that indication.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">Sulfa drugs — reports rash</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Furosemide (Lasix) 40 mg PO twice daily — RAN OUT 4 days ago, last dose 2 days ago, Lisinopril 20 mg PO daily — missed last 2 days (refill issue), Carvedilol 12.5 mg PO twice daily — missed last 2 days (refill issue), Warfarin 5 mg PO daily — taking as prescribed, Aspirin 81 mg PO daily — taking as prescribed, Potassium chloride 20 mEq PO daily — taking as prescribed, Acetaminophen 650 mg PO as needed for joint pain</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Heart failure with reduced ejection fraction (HFrEF), last echo EF 28% (six months ago), Hypertension — longstanding, poorly controlled when off meds, Prior CHF exacerbation hospitalizations x3 in the past two years (most recent 4 months ago), Coronary artery disease — non-obstructive on prior cath; no prior MI documented, Chronic kidney disease stage 3, Atrial fibrillation — rate controlled, on warfarin, Type 2 diabetes mellitus — diet controlled, no insulin, Osteoarthritis</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Light dinner around 18:00 last night — chicken soup with crackers, glass of water. Has been too short of breath to eat or drink anything today.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Progressive dyspnea over 24–36 hours, worse with recumbency, escalating sharply over the past 90 minutes with onset of frothy pink sputum. Daughter (Maria) called 911 when the patient could no longer speak more than 2–3 words at a time and her lips began to look 'dusky.' Pharmacy refill issue means patient has missed her diuretic for 2 days and her ACE-I and beta-blocker for 2 days as well.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">EMS arrives to find a 74-year-old female in florid acute pulmonary edema — sitting bolt upright at the edge of her recliner, drenched in sweat, with frothy pink sputum on her lips and the front of her nightgown. She is using every accessory muscle, gasping at RR 38, dusky-lipped, profoundly hypoxic (SpO2 78%) and severely hypertensive (192/108). Bibasilar wet crackles extend to the mid-lung fields with frank coarse rhonchi superimposed. She is anxious, air-hungry, and can only manage 1–2 word phrases. The clinical picture screams cardiogenic pulmonary edema from CHF exacerbation in a patient who has missed her diuretic and afterload-reducing meds for two days. The student's job is to recognize this immediately and layer the appropriate interventions — maintain upright positioning, apply CPAP, begin high-dose SL nitroglycerin per the SBP-banded protocol, and establish IV access while CPAP is running. Sequencing too rigidly costs the patient. This is a true competing-priorities phase.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Atrial Fibrillation</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">128</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">192/108</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">78%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">38</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">28</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">97.9°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">142</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">14</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent but wet — audible gurgling and frothy pink-tinged sputum at the lips; patient maintaining her own airway in the upright tripod position</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Severe respiratory distress — RR 38, shallow, labored. Accessory muscle use with strap-muscle and intercostal retractions. Bibasilar wet crackles extending to the mid-lung fields with coarse rhonchi superimposed throughout. Air entry diminished at the bases. Speaks in 1–2 word phrases only.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong but rapid radial pulse, regular but fast; skin cool, profoundly diaphoretic; +3 pitting pedal edema to mid-shins; marked JVD visible across the room</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">dusky lips and nail beds, otherwise pale · cool · drenched / profusely diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal at 3 mm, reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities; grips equal; anxious but cooperative</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"'Can't... breathe... drowning...'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Frothy pink-tinged sputum on lips, chin, and nightgown</li><li>+3 pitting pedal edema to the mid-shins bilaterally</li><li>Marked jugular venous distention (JVD ++)</li><li>Empty furosemide (Lasix) bottle on the side table</li><li>Daughter confirms missed Lasix, lisinopril, and carvedilol for 2 days</li><li>No chest pain spontaneously, but admits to 'pressure' when asked</li><li>No PDE5 inhibitor use — not on med list, not in the home</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Rapid primary survey; recognize florid cardiogenic pulmonary edema</div></div>
+        <div class="action-excerpt">Signs of distress include: Apprehension, anxiety, combativeness; Hypoxia (less than 90% oxygen saturation); Intercostal/subcostal/supraclavicular retractions, accessory muscle use; Grunting, stridor, inability to speak full sentences; Nasal flaring; Cyanosis.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Maintain upright/tripod position; do NOT lay supine</div></div>
+        <div class="action-excerpt">Patient positioning can significantly impact respiratory mechanics. Patients with severe bronchospasm should be left in the position of comfort (perhaps tripod) whenever possible. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics. This can both improve the ability to ventilate and limit aspiration.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Apply CPAP early — preceeds or runs alongside other Rx</div></div>
+        <div class="action-excerpt">Adults with suspected pulmonary edema due to acute heart failure or fluid overload (such as dialysis noncompliance): Restoration of adequate oxygenation and ventilation should precede or be accomplished simultaneously with other medication therapies below — CPAP/BiPAP: See Airway Management Guideline for goals of care and escalation of interventions. Non-invasive ventilation (NIV) should be considered early for severe respiratory distress or impending respiratory failure.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Cardiac monitor + SpO2 + waveform EtCO2 + 12-lead EKG</div></div>
+        <div class="action-excerpt">Monitoring — Pulse oximetry and EtCO2 should be routinely used as adjuncts to other forms of monitoring in patients with respiratory complaints. Continuous cardiac monitoring may be indicated in patients with respiratory distress associated with suspected acute or decompensated congestive heart failure (CHF) or dysrhythmia. 12-lead EKG may be indicated to assess for dysrhythmia or ischemia, particularly in patients with risk factors for coronary artery disease and/or presentation consistent with CHF.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Screen for PDE5 inhibitor use within 48 h before nitrates</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: The use of nitrates should be avoided in any patient who has used a phosphodiesterase inhibitor within the past 48 hours. Examples are sildenafil, vardenafil and tadalafil, which are used for erectile dysfunction and pulmonary hypertension. Also avoid use in patients receiving intravenous epoprostenol or treporstenil which are used for pulmonary hypertension.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Nitroglycerin 0.8 mg SL (SBP 192 ≥ 160 band); repeat q5min if SBP &gt;100</div></div>
+        <div class="action-excerpt">SBP ≥ 160 mmHg or MAP greater than 120 — Nitroglycerin: 0.8 mg SL, can repeat every 5 minutes for SBP greater than 100 mmHg. Consider IV nitroglycerin infusion titrated to blood pressure.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Establish IV access (do not delay CPAP/NTG for IV)</div></div>
+        <div class="action-excerpt">IV Access and Fluids – IV access should be placed when IV medication administration is indicated, or when there are clinical concerns of dehydration so that IV fluids can be administered.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continuous reassessment — BP before each repeat NTG dose</div></div>
+        <div class="action-excerpt">Performance Measures: Documentation of blood pressure reassessment in patients receiving nitrates.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">CPAP + NTG running</div>
+        <div class="phase-trigger">Trigger: Within ~5 minutes of patient contact, CPAP is on with a good seal, SL NTG 0.8 mg has been given, and IV access is established. Patient is responding: SpO2 climbing, RR slowing, BP falling out of the hypertensive band.</div>
+        <div class="phase-desc">About 5 minutes after patient contact, the layered interventions are taking hold. CPAP is on with a good mask seal at 7.5 cmH2O, the first SL nitroglycerin 0.8 mg has been on board for ~4 minutes, the second dose is about due, and an 18 g IV is established in the right AC. The patient's BP has come down from 192/108 to 142/86. SpO2 is climbing toward 91% on CPAP. RR is slowing to 28. EtCO2 has risen from 28 toward 34 as ventilation normalizes. Frothy sputum is starting to clear from the mask. She is still upright, still using accessory muscles, but is now managing short sentences. This is where re-titration matters: the SBP has dropped out of the ≥160 band and now sits in the &lt;160 / &gt;100 band, so the next NTG dose drops to 0.4 mg, not 0.8 mg. Holding NTG entirely is also reasonable as long as BP remains in this range and the patient is improving. The student must explicitly recognize the band change and adjust.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Atrial Fibrillation</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">108</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">142/86</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">91%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">28</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">34</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.1°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">142</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent; CPAP mask in place with a good seal. Less audible gurgling. Some frothy sputum collecting at the lower edge of the mask but not impeding the seal.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Improving but still labored. RR 28, less use of strap muscles, mild intercostal retractions persist. Crackles still audible bibasilar but no longer extend as high; rhonchi are clearing. Patient now able to manage 4–6 word sentences between breaths.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulse strong and slightly slower, still irregularly irregular; skin cool and damp but no longer drenched; +3 pedal edema unchanged; JVD slightly less prominent.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">lips pinker, nail beds less dusky · cool · damp, no longer drenched</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal at 3 mm, reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities; cooperative with CPAP after initial coaching</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"'A little... better... thank you...'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>CPAP mask in place at ~7.5 cmH2O with good seal</li><li>18 g IV established right AC, NS at TKO</li><li>Patient tolerating CPAP after initial coaching by the daughter</li><li>12-lead obtained: rate-controlled AFib (now ~108), no acute ST changes — chronic LVH with strain pattern unchanged from baseline if available</li><li>First SL NTG 0.8 mg given ~4 min ago</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recheck BP before next NTG dose; recognize band change</div></div>
+        <div class="action-excerpt">Performance Measures: Documentation of blood pressure reassessment in patients receiving nitrates.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Nitroglycerin 0.4 mg SL (SBP 142 in &lt;160 / &gt;100 band); repeat q5min while SBP &gt;100</div></div>
+        <div class="action-excerpt">SBP less than 160 mmHg — Nitroglycerin: 0.4 mg SL, can repeat every 5 minutes for SBP greater than 100 mmHg.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Maintain CPAP seal; do NOT interrupt until ED takeover</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Once initiated and patient is tolerating mask, DO NOT discontinue CPAP/BiPAP until patient is on the emergency department stretcher and hospital CPAP/BiPAP is immediately available for patient to be switched over, or physician is at bedside and requesting CPAP/BiPAP be discontinued. Breaking the mask seal causes a significant decrease in airway pressures and may lead to abrupt decompensation due to atelectasis and alveolar collapse.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Interpret 12-lead; rule out STEMI as exacerbation trigger</div></div>
+        <div class="action-excerpt">The 12-lead EKG is the primary diagnostic tool that identifies a STEMI; it is imperative that EMS clinicians routinely acquire a 12-lead EKG within 10 minutes for all patients exhibiting signs and symptoms of ACS. Performance of serial EKGs is encouraged for symptomatic patients with EKGs initially non-diagnostic for STEMI.</div>
+        <div class="action-ref">↳ MATC: Chest Pain/Acute Coronary Syndrome (ACS)/ST-segment Elevation Myocardial Infarction (STEMI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Trend EtCO2 — rising from 28 toward 34 is normalization, not failure</div></div>
+        <div class="action-excerpt">Notes/Educational Pearls: When assessing for cause of respiratory distress, CHF tends to be associated with lower levels of EtCO2 compared to COPD. EtCO2 values that are extremely low and high are markers of poor outcomes and need for intubation or ICU admission. Patient Safety Considerations: Normal EtCO2 (35–45 mmHg) with tachypnea and respiratory distress is an indicator of impending respiratory failure.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Transport upright with CPAP running; early notification to ED</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Once initiated and patient is tolerating mask, DO NOT discontinue CPAP/BiPAP until patient is on the emergency department stretcher and hospital CPAP/BiPAP is immediately available for patient to be switched over, or physician is at bedside and requesting CPAP/BiPAP be discontinued.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">CPAP delayed</div>
+        <div class="phase-trigger">Trigger: Crew prioritizes line, 12-lead, and history over CPAP. Patient continues to decompensate during the delay — SpO2 falls into the high-60s, RR rises into the 40s, mental status declines, EtCO2 rises into the 40s. CPAP alone is now insufficient; PPV with PEEP and an airway escalation plan are required.</div>
+        <div class="phase-desc">Crew sequences too rigidly — works through the IV, the 12-lead, and a methodical SAMPLE history before applying CPAP. By the time CPAP finally goes on the patient (~8–10 minutes after contact), the patient has continued to drown. SpO2 has fallen from 78 to 68%, RR has climbed from 38 to 44 and is now becoming agitated and shallow, the patient is becoming confused — calling her daughter by the wrong name — and is no longer protecting her airway as well. EtCO2 is climbing from 28 toward 48 as hypoventilation overtakes hyperventilation. The window for CPAP is closing fast. Now the right answer escalates: BVM with PEEP (start at 5 cmH2O, titrate up) using a two-person, two-thumbs-up technique to drive oxygenation while preparing for advanced airway management. CPAP alone may no longer be tolerated by a patient with declining mental status.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Atrial Fibrillation</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">134</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">178/102</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">68%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">44</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">48</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">97.7°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">142</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Inappropriate words</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">11</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Wet — increasing audible gurgling and frothy pink sputum at the mouth. Patient less able to clear secretions as mentation declines. Suction will be needed before any mask seal.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Worse — RR 44, shallow, agitated. Accessory muscle use maximal. Crackles and rhonchi throughout all fields. Air entry diminishing. Patient no longer able to speak.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulse fast and weakening; skin cooling further; +3 pedal edema; JVD prominent</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">dusky lips, cyanotic nail beds, ashen face · cool · still drenched</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal at 3 mm, sluggish</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Withdraws to verbal stim, no longer following commands consistently</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"(no longer speaking — only moans)"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Patient now calling her daughter by the wrong name</li><li>Frothy pink sputum increasing — needs suction</li><li>Patient pulling at the line and at the cot rails — agitated from hypoxia</li><li>Approximately 8–10 minutes since patient contact, CPAP has just been applied or is still being set up</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize impending respiratory failure (AMS + rising EtCO2)</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Normal EtCO2 (35–45 mmHg) with tachypnea and respiratory distress is an indicator of impending respiratory failure. Severe respiratory distress may manifest with hypoxia, altered mentation, diaphoresis, or inability to speak more than 2–3 words.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Two-person BVM with PEEP 5 cmH2O; titrate up by 2–3 cmH2O</div></div>
+        <div class="action-excerpt">Use bag-valve-mask (BVM) ventilation in the setting of respiratory failure or arrest. Whenever possible, the patient's head should be elevated up to 30 degrees. Two-person, two-thumbs-up BVM ventilation is preferred. PEEP should be used with BVM: 5 cmH2O is generally an appropriate initial PEEP setting. Increase PEEP in stepwise fashion (2–3 cmH2O at a time) as necessary, allowing time for the patient to equilibrate with each change before further adjustments are made.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Suction frothy sputum before/between BVM cycles</div></div>
+        <div class="action-excerpt">Suction airway: for significantly contaminated airways, consider utilizing a suction assisted laryngeal airway decontamination (SALAD) technique.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Prepare for advanced airway / RSI if PPV fails to improve oxygenation</div></div>
+        <div class="action-excerpt">Endotracheal intubation — When less-invasive methods (two-person BVM, SGA placement) are ineffective or inappropriate, consider endotracheal intubation to maintain oxygenation and/or ventilation. Other indications may include potential airway obstruction, severe inhalation burns, multiple traumatic injuries, altered mental status with loss of normal protective airway reflexes.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">NTG without BP recheck</div>
+        <div class="phase-trigger">Trigger: Crew administers SL NTG aggressively without rechecking BP between doses. After multiple stacked doses, SBP collapses to the 80s while pulmonary edema is still incompletely treated. Patient is now hypotensive with continued fluid in the lungs.</div>
+        <div class="phase-desc">Crew correctly identifies pulmonary edema and starts SL nitroglycerin aggressively at 0.8 mg, but stacks repeat doses every 2–3 minutes without rechecking BP between them. By the third dose, the cumulative venous and arterial vasodilation has dropped SBP from 192 to 82. The patient is now hypotensive AND still wet — lungs are still full of fluid but perfusion has collapsed. Skin is now pale and clammy in a new way, mentation is fading, and the patient is suddenly cold and gray. CPAP at this point is removing what little preload remains by raising intrathoracic pressure further. The right response is to stop NTG, lay the patient back to ~30 degrees (NOT flat — she will drown), give a careful 250 mL fluid bolus, and prepare a norepinephrine drip while reassessing whether CPAP can be continued at a lower pressure or needs to be paused.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Atrial Fibrillation</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">138</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">82/48</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">86%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">30</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">32</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">97.5°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">142</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">12</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent; CPAP mask in place but secretions decreasing not because of resolution — because perfusion is dropping</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 30, less vigorous than the initial gasping — work of breathing is paradoxically less because the patient is tiring. Crackles still bibasilar and now extending higher.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulse thready and faster; skin cool, pale, clammy in a new way — not the warm-drenched diaphoresis of pulmonary edema but the cool-clammy pattern of poor perfusion; cap refill prolonged to 4 seconds</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale, mottled at the knees · cold · clammy</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal at 3 mm, sluggish</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Withdraws to voice, less responsive than initially</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"'Dizzy... cold...'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Three SL NTG 0.8 mg doses given over ~7 minutes without BP recheck between doses</li><li>CPAP still on patient</li><li>Lungs still wet — crackles persisting</li><li>Patient now hypotensive — a new problem layered on top of the original one</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Stop nitroglycerin immediately (SBP 82 — below threshold)</div></div>
+        <div class="action-excerpt">SBP less than 100 mmHg — IV fluid bolus 250–500 mL; Consider vasopressor: Norepinephrine 0.02–2 mcg/kg/min.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">IV NS 250 mL bolus; reassess BP and lungs after</div></div>
+        <div class="action-excerpt">SBP less than 100 mmHg — IV fluid bolus 250–500 mL.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Prepare norepinephrine 0.02–2 mcg/kg/min if BP does not respond to bolus</div></div>
+        <div class="action-excerpt">SBP less than 100 mmHg — Consider vasopressor: Norepinephrine 0.02–2 mcg/kg/min.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Reassess CPAP — pause or lower pressure if hypotension worsens</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Excessive PEEP over distends alveoli, increases dead space and work of breathing, reduces lung compliance, and compresses alveolar capillaries, reducing oxygenation and risking pulmonary barotrauma. Increased intrathoracic pressure can progressively decrease cardiac output and is most notable when PEEP is greater than 15 cmH2O. The higher the level of PEEP (over 5 cmH2O), the more likely the patient will experience a variety of adverse consequences, both ventilatory and hemodynamic.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

@@ -1,0 +1,431 @@
+{
+  "scenarioId": "C-T2-06",
+  "scenarioName": "Second-Degree Type II Progressing to Third-Degree Block",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1500,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "78-year-old female who woke around 06:30 feeling 'just weak all over' and lightheaded. She made it to the kitchen for coffee but felt close to fainting when she stood up from the table, so she sat back down and called her daughter, who is now at the bedside. Symptoms have been present for roughly 90 minutes by the time EMS arrives, gradually worsening rather than coming in waves. She denies frank syncope but says 'if I'd been standing up another second I'd have gone down.' She has had no chest pain, no shortness of breath at rest, no palpitations she can name, no nausea, no headache, no neck or back pain. She did notice her heart 'feels like it's beating really slow and heavy.' No focal weakness, slurred speech, or facial droop. She has a history of hypertension and was told a year ago she has 'early kidney trouble' — diagnosed with stage 2-3 CKD on a routine check. She takes amlodipine 10 mg daily for her blood pressure and has been on it for 3 years. She took her morning dose at the usual time today (06:45) per her daughter. She has never had a cardiac diagnosis, never had a pacemaker, never had a stress test, no prior arrhythmias documented. No new medications in the last month. No recent illnesses, no fevers, no vomiting or diarrhea.",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives to find a 78-year-old female sitting at her kitchen table, alert and oriented but pale and lightheaded. Daughter has a clear history and a med list. On the monitor she is in Mobitz II second-degree AV block at a rate of 44 with a marginal blood pressure of 102/60 — she is symptomatic (lightheaded, near-syncope, weak) but still mentating well and not yet hemodynamically collapsed. This is the high-risk rhythm the bradycardia protocol warns about — it does NOT respond reliably to atropine and is one infrahisian conduction failure away from complete heart block. The teaching beat in this opening phase is that crews must recognize Mobitz II + symptoms = high-risk bradycardia, get pacing pads on early, prepare to pace, and resist the reflex to push atropine. Per the protocol's escalation language, this is a 'least invasive manner possible, escalating as needed' situation — set up the pacer, treat reversible causes, but anticipate that drugs likely will not fix this rhythm. → Rhythm progressed to CHB: Approximately 4 minutes after the crew gets pads on the patient, the conduction system fails entirely. The monitor now shows complete heart block — wide-complex junctional escape at a rate of about 30, with completely dissociated P waves marching through the strip independently of the QRS complexes. Blood pressure drops to 78/42. The patient was A&Ox4 thirty seconds ago and is now drowsy and only intermittently answering questions (A&Ox2 to person and place; confused on time and event). Skin is now cool, pale, and diaphoretic. This is the high-grade block in 'impending hemodynamic collapse' that the protocol pearls explicitly tell you to skip drug therapy and proceed directly to transcutaneous pacing. The crew should pace now: rate ~80, start at low mA and increase until BOTH electrical (pacer spike followed by wide QRS on every beat) AND mechanical capture (palpable femoral or carotid pulse synchronized with each pacer spike) are confirmed. Sedation can be administered concurrent with pacing — this patient is just conscious enough to feel it and become agitated when capture is achieved. → Capture confirmed, transport: Pacer is set at rate 80 with output approximately 80 mA. Every pacer spike is followed by a wide-complex QRS (electrical capture) and a palpable femoral pulse (mechanical capture). Within about a minute of capture, BP recovers to 96/58 and the patient's mental status improves from A&Ox2 to A&Ox3 — she is responding to questions again and her color is returning. Sedation has been administered and the patient tolerates the pacing without agitation. The crew now transports emergent to a cardiac center capable of transvenous pacing and definitive pacemaker placement, with continuous monitoring of pacer function, mental status, BP, and skin signs. Documentation per protocol: pacing start time, rate, mA, capture confirmation (both electrical and mechanical), sedation administered, response."
+  },
+  "patientInformation": {
+    "patientName": "Margaret Holloway",
+    "patientCondition": "Feeling really faint and weak all morning; nearly passed out walking to the bathroom.",
+    "patientAge": 78,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 2,
+    "patientHeight": 163,
+    "patientWeight": 64,
+    "patientPhotoId": 94,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a 78-year-old female sitting at her kitchen table, alert and oriented but pale and lightheaded. Daughter has a clear history and a med list. On the monitor she is in Mobitz II second-degree AV block at a rate of 44 with a marginal blood pressure of 102/60 — she is symptomatic (lightheaded, near-syncope, weak) but still mentating well and not yet hemodynamically collapsed. This is the high-risk rhythm the bradycardia protocol warns about — it does NOT respond reliably to atropine and is one infrahisian conduction failure away from complete heart block. The teaching beat in this opening phase is that crews must recognize Mobitz II + symptoms = high-risk bradycardia, get pacing pads on early, prepare to pace, and resist the reflex to push atropine. Per the protocol's escalation language, this is a 'least invasive manner possible, escalating as needed' situation — set up the pacer, treat reversible causes, but anticipate that drugs likely will not fix this rhythm.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 103,
+        "hr": 44,
+        "bpSys": 102,
+        "bpDia": 60,
+        "respRate": 16,
+        "spo2": 96,
+        "etco2": 36,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 104,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Primary survey ABC; manage airway as necessary; A&Ox4, patent airway",
+        "Oxygen titrated to SpO2 94-98% (NC 2-4 LPM acceptable at SpO2 96)",
+        "Cardiac monitor + 12-lead EKG; identify Mobitz II",
+        "Establish IV access (18g antecubital preferred)",
+        "Check blood glucose; rule out hypoglycemia as reversible cause (104 mg/dL — normal)",
+        "Recognize Mobitz II + symptoms = high-risk; atropine often ineffective; prep pacer",
+        "Apply transcutaneous pacing pads anterior-posterior; do not pace yet",
+        "Draw up sedation in advance: midazolam 5 mg or fentanyl 50 mcg for pacing comfort",
+        "Review meds for AV-nodal blockers; amlodipine (CCB) noted, no overdose"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Rhythm progressed to CHB",
+      "description": "Approximately 4 minutes after the crew gets pads on the patient, the conduction system fails entirely. The monitor now shows complete heart block — wide-complex junctional escape at a rate of about 30, with completely dissociated P waves marching through the strip independently of the QRS complexes. Blood pressure drops to 78/42. The patient was A&Ox4 thirty seconds ago and is now drowsy and only intermittently answering questions (A&Ox2 to person and place; confused on time and event). Skin is now cool, pale, and diaphoretic. This is the high-grade block in 'impending hemodynamic collapse' that the protocol pearls explicitly tell you to skip drug therapy and proceed directly to transcutaneous pacing. The crew should pace now: rate ~80, start at low mA and increase until BOTH electrical (pacer spike followed by wide QRS on every beat) AND mechanical capture (palpable femoral or carotid pulse synchronized with each pacer spike) are confirmed. Sedation can be administered concurrent with pacing — this patient is just conscious enough to feel it and become agitated when capture is achieved.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 100,
+        "hr": 30,
+        "bpSys": 78,
+        "bpDia": 42,
+        "respRate": 18,
+        "spo2": 92,
+        "etco2": 34,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 104,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize CHB with impending hemodynamic collapse; proceed directly to pacing",
+        "Begin transcutaneous pacing at rate 80 bpm",
+        "Increase output (mA) until pacer spike followed by wide QRS on every beat (electrical capture)",
+        "Palpate femoral/carotid pulse synchronized with pacer spikes — confirm MECHANICAL capture",
+        "Midazolam 6.4 mg IV titrated (64 kg x 0.1 mg/kg = 6.4 mg; cap at 4 mg per dose, may repeat) for pacing discomfort",
+        "Reassess BP, mental status, color after capture; expect SBP rise and AMS improvement",
+        "If pacing fails, push-dose epi 10-20 mcg q 2 min titrated to MAP > 65"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Capture confirmed, transport",
+      "description": "Pacer is set at rate 80 with output approximately 80 mA. Every pacer spike is followed by a wide-complex QRS (electrical capture) and a palpable femoral pulse (mechanical capture). Within about a minute of capture, BP recovers to 96/58 and the patient's mental status improves from A&Ox2 to A&Ox3 — she is responding to questions again and her color is returning. Sedation has been administered and the patient tolerates the pacing without agitation. The crew now transports emergent to a cardiac center capable of transvenous pacing and definitive pacemaker placement, with continuous monitoring of pacer function, mental status, BP, and skin signs. Documentation per protocol: pacing start time, rate, mA, capture confirmation (both electrical and mechanical), sedation administered, response.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 80,
+        "bpSys": 96,
+        "bpDia": 58,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 36,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 104,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Reconfirm electrical + mechanical capture after every patient movement",
+        "Titrate sedation to RASS goal; redose midazolam 2 mg IV as needed for tolerance",
+        "Transport emergent to cardiac-capable receiving facility for transvenous pacing",
+        "Early ED notification: complete heart block, paced and capturing, ETA",
+        "Document pacing start time, rate, mA, capture (electrical + mechanical), sedation, response"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Atropine pushed for Mobitz II",
+      "description": "Crew anchored on the cookbook reflex 'symptomatic bradycardia, push atropine' and pushed atropine 1 mg IV before ever applying pacing pads. The protocol pearls explicitly warn that high-grade AV block does not respond reliably to atropine — and it does not. Heart rate stays at 44 for 90 seconds, then the conduction system fails and the rhythm degrades to complete heart block at a rate of 30 with junctional escape — and now the crew is caught flat-footed, with no pads on, no sedation drawn, an unstable patient deteriorating in front of them, and an ineffective drug already on board. They must rapidly recover: apply pads, set the pacer at 80, titrate to electrical AND mechanical capture, sedate, and transport. The teaching beat is that the wrong drug delayed the right intervention by 90 critical seconds, and that the protocol's pearls about atropine ineffectiveness in high-grade block are not academic — they describe THIS patient.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 100,
+        "hr": 30,
+        "bpSys": 76,
+        "bpDia": 40,
+        "respRate": 14,
+        "spo2": 90,
+        "etco2": 32,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 104,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize atropine ineffective for high-grade block; STOP redosing, go straight to pacing",
+        "Apply pacing pads NOW (anterior-posterior); set pacer to rate 80",
+        "Titrate output up until pacer spike + wide QRS on every beat (electrical capture)",
+        "Palpate femoral pulse synchronized with pacer spikes — mechanical capture",
+        "Push-dose epi 10-20 mcg IV q 2 min while titrating pacer to bridge perfusion gap",
+        "Midazolam 4 mg IV (64 kg x 0.1 mg/kg = 6.4 mg → cap at 4 mg max per dose) after capture",
+        "Debrief: high-grade block + symptoms = pace first, not atropine first"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Electrical capture, no perfusion check",
+      "description": "Crew saw a pacer spike followed by a wide QRS complex on every beat, called 'we have capture!' and stopped escalating output. What they did not do was palpate a femoral or carotid pulse synchronized with each pacer spike. The reality: at the output they stopped at, the pacer is producing an electrical artifact on the monitor that LOOKS like a captured QRS but is below the threshold for mechanical ventricular contraction — classic false capture. The patient's actual cardiac output is unchanged from the pre-pacing complete heart block state. BP remains 76/40, mental status is unchanged (A&Ox2 → still drowsy, intermittently responsive), and skin remains cool and diaphoretic. The monitor is lying to them and they have to learn to mistrust it. The recovery: palpate the femoral pulse RIGHT NOW, find it is NOT synchronized with the pacer spikes, increase mA stepwise until a real synchronized femoral pulse appears, then reconfirm BP and mental status improve.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 30,
+        "bpSys": 76,
+        "bpDia": 40,
+        "respRate": 16,
+        "spo2": 91,
+        "etco2": 32,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 104,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Palpate femoral pulse NOW; compare rate to pacer setting; recognize false capture",
+        "Increase pacer output (mA) stepwise until femoral pulse synchronizes with spikes",
+        "Reassess BP, mental status, EtCO2, skin signs after true capture",
+        "Push-dose epi 10-20 mcg IV q 2 min while reestablishing real capture",
+        "Debrief: treat the patient, not the monitor — electrical capture is not enough"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Primary survey ABC; manage airway as necessary; A&Ox4, patent airway",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Oxygen titrated to SpO2 94-98% (NC 2-4 LPM acceptable at SpO2 96)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Cardiac monitor + 12-lead EKG; identify Mobitz II",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access (18g antecubital preferred)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check blood glucose; rule out hypoglycemia as reversible cause (104 mg/dL — normal)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize Mobitz II + symptoms = high-risk; atropine often ineffective; prep pacer",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply transcutaneous pacing pads anterior-posterior; do not pace yet",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Draw up sedation in advance: midazolam 5 mg or fentanyl 50 mcg for pacing comfort",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Review meds for AV-nodal blockers; amlodipine (CCB) noted, no overdose",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize CHB with impending hemodynamic collapse; proceed directly to pacing",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Begin transcutaneous pacing at rate 80 bpm",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Increase output (mA) until pacer spike followed by wide QRS on every beat (electrical capture)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Palpate femoral/carotid pulse synchronized with pacer spikes — confirm MECHANICAL capture",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Midazolam 6.4 mg IV titrated (64 kg x 0.1 mg/kg = 6.4 mg; cap at 4 mg per dose, may repeat) for pacing discomfort",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess BP, mental status, color after capture; expect SBP rise and AMS improvement",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "If pacing fails, push-dose epi 10-20 mcg q 2 min titrated to MAP > 65",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reconfirm electrical + mechanical capture after every patient movement",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Titrate sedation to RASS goal; redose midazolam 2 mg IV as needed for tolerance",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport emergent to cardiac-capable receiving facility for transvenous pacing",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Early ED notification: complete heart block, paced and capturing, ETA",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document pacing start time, rate, mA, capture (electrical + mechanical), sedation, response",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize atropine ineffective for high-grade block; STOP redosing, go straight to pacing",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply pacing pads NOW (anterior-posterior); set pacer to rate 80",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Titrate output up until pacer spike + wide QRS on every beat (electrical capture)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Palpate femoral pulse synchronized with pacer spikes — mechanical capture",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Push-dose epi 10-20 mcg IV q 2 min while titrating pacer to bridge perfusion gap",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Midazolam 4 mg IV (64 kg x 0.1 mg/kg = 6.4 mg → cap at 4 mg max per dose) after capture",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Debrief: high-grade block + symptoms = pace first, not atropine first",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Palpate femoral pulse NOW; compare rate to pacer setting; recognize false capture",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Increase pacer output (mA) stepwise until femoral pulse synchronizes with spikes",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess BP, mental status, EtCO2, skin signs after true capture",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Push-dose epi 10-20 mcg IV q 2 min while reestablishing real capture",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Debrief: treat the patient, not the monitor — electrical capture is not enough",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

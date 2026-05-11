@@ -1,0 +1,599 @@
+{
+  "meta": {
+    "id": "C-T1-01",
+    "name": "Stable Angina vs. ACS — Resolved Exertional Chest Pain",
+    "version": 1,
+    "difficulty": "beginner",
+    "category": "Cardiac",
+    "protocols": [
+      "cv-chest-pain-acs-stemi",
+      "medical-pain-management"
+    ],
+    "totalTimeSeconds": 1200,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "stable angina",
+      "ACS",
+      "NSTEMI",
+      "12-lead",
+      "OPQRST",
+      "SAMPLE",
+      "PDE5",
+      "tier-1",
+      "assessment"
+    ]
+  },
+  "patient": {
+    "name": "Robert Mendelson",
+    "age": 64,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 88,
+    "weightLbs": 194,
+    "height": 178,
+    "chiefComplaint": "Chest discomfort that started during a brisk walk approximately 25 minutes ago and resolved on its own after he sat down to rest. Currently denies pain at rest but feels 'worn out' and a little nauseated.",
+    "history": {
+      "hpi": "64-year-old male was walking his dog up a hill in the neighborhood when he developed a 'heavy, squeezing' pressure in the center of his chest, rated 6/10 at peak. The discomfort radiated slightly into the left shoulder and was associated with mild diaphoresis and one episode of nausea without vomiting. He stopped walking, sat on a low retaining wall, and the discomfort gradually faded over about 5–7 minutes. He has had two similar but milder episodes over the past three weeks, all with exertion (mowing the lawn, climbing stairs), each resolving within minutes of rest — he attributed them to 'getting old.' He has not been formally diagnosed with angina. He denies tearing or ripping pain, denies radiation to the back, denies leg pain or swelling, denies recent illness or fever. He has a remote history of an exercise stress test 'a few years ago' that he was told was 'borderline'; he never followed up with cardiology. A neighbor walking by called 911 when she noticed him pale and sweating on the wall.",
+      "pastMedical": [
+        "Hypertension — diagnosed 8 years ago",
+        "Hyperlipidemia",
+        "Erectile dysfunction — uses tadalafil 'as needed,' last dose approximately 18 hours ago",
+        "Borderline exercise stress test ~3 years ago, no formal follow-up",
+        "Former smoker, quit 6 years ago after a 30 pack-year history",
+        "Family history: father MI at age 67, sister with CAD"
+      ],
+      "medications": [
+        "Lisinopril 20 mg PO daily",
+        "Atorvastatin 40 mg PO at bedtime",
+        "Tadalafil 10 mg PO as needed (last dose ~18 hours ago)",
+        "Aspirin 81 mg PO daily (took today's dose this morning)"
+      ],
+      "allergies": [
+        "NKDA"
+      ],
+      "lastOralIntake": "Light breakfast — toast and coffee — approximately 3 hours ago",
+      "events": "Developed central chest pressure during an uphill walk, sat down to rest, symptoms resolved spontaneously over 5–7 minutes. Neighbor noticed him pale and sweaty and called 911. He says he 'didn't really want them to come' but agrees to be evaluated."
+    }
+  },
+  "scene": {
+    "dispatch": "Dispatch: 64-year-old male, chest discomfort, conscious and breathing, sitting on a retaining wall outside a residence in a quiet residential neighborhood. Bystander on scene.",
+    "location": "Quiet residential street; patient seated on a low stone retaining wall at the edge of a driveway. Small dog on a leash beside him. Morning daylight, mild temperature, dry pavement.",
+    "time": "Tuesday, 09:15, late-spring morning, clear and cool",
+    "safety": "Scene safe. Quiet residential street with minimal traffic. Dog is calm and leashed. Patient ambulatory with assistance.",
+    "bystanders": "A neighbor (Mrs. Carlson) is present — she called 911 after seeing the patient pale and sweating on the wall. She does not know the patient's medical history beyond 'he walks his dog every morning.' She has not mentioned the tadalafil — the patient will only volunteer that medication if specifically asked about ED meds or 'anything else not on your pill list.'",
+    "visualCues": [
+      "Patient seated upright on retaining wall, breathing normally now",
+      "Skin pale and slightly diaphoretic but no longer actively sweating",
+      "Small dog on leash beside him, panting calmly",
+      "Patient looks tired but not in obvious distress",
+      "No medication bottles or paraphernalia visible at scene",
+      "Patient downplays symptoms — 'I'm fine now, this happens sometimes'"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a 64-year-old male seated on a low retaining wall, alert, conversational, and downplaying his symptoms. He reports that the chest discomfort has fully resolved. Skin is pale and slightly damp but he is no longer actively diaphoretic. He is reluctant to be evaluated but agrees. The fact that he is asymptomatic on arrival makes a careful, systematic assessment — full OPQRST, SAMPLE, 12-lead, and repeat vitals — the entire scenario.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent, self-maintained, speaking in full sentences",
+        "breathing": "Unlabored, equal lung sounds, no accessory muscle use, RR 18",
+        "circulation": "Strong regular radial pulse; skin pale and cool with residual moisture; cap refill <2 seconds",
+        "skin": {
+          "color": "pale",
+          "temperature": "cool",
+          "moisture": "slightly diaphoretic"
+        },
+        "pupils": "Equal at 3 mm, briskly reactive",
+        "motorFunction": "Moves all extremities equally; no focal weakness or pronator drift",
+        "otherFindings": [
+          "Patient downplays symptoms: 'I'm fine now, you didn't need to come'",
+          "No JVD, no peripheral edema, no calf tenderness",
+          "No reproducible chest wall tenderness on palpation",
+          "Mild residual diaphoresis at hairline and palms",
+          "Lung sounds clear, no rales or wheezes"
+        ],
+        "patientSpeech": "Honestly I feel okay now. It went away after I sat down. It happens sometimes when I push too hard. I really don't want to go to the hospital over nothing."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 78,
+        "bpSys": 148,
+        "bpDia": 88,
+        "respRate": 18,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 112,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "scene-primary-survey",
+          "shortAction": "Scene safety; primary survey; recognize symptoms suspicious for cardiac origin",
+          "priority": "critical",
+          "rationale": "MATC ACS Patient Care Goals — identify ACS quickly; inclusion criteria include exertional chest discomfort that may have resolved.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Patient Care Goals: Identify ST-elevation myocardial infarction (STEMI) quickly. Determine the time of symptom onset. Inclusion Criteria: Chest pain or discomfort in other areas of the body (e.g., arm, jaw, epigastrium) of suspected cardiac origin, shortness of breath, associated or unexplained sweating, nausea, vomiting, or dizziness."
+        },
+        {
+          "id": "full-opqrst",
+          "shortAction": "Full OPQRST: onset (exertional), provocation/palliation (rest), quality, radiation, severity, time/prior episodes",
+          "priority": "critical",
+          "rationale": "Inclusion criteria require recognition of cardiac-origin chest discomfort; exertional pattern that resolves with rest is the textbook stable-angina history and must be elicited.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Inclusion Criteria: Chest pain or discomfort in other areas of the body (e.g., arm, jaw, epigastrium) of suspected cardiac origin, shortness of breath, associated or unexplained sweating, nausea, vomiting, or dizziness. Atypical or unusual symptoms are more common in women, the elderly, and diabetic patients."
+        },
+        {
+          "id": "sample-with-pde5-screen",
+          "shortAction": "Full SAMPLE; specifically ask about ED meds / pulmonary hypertension meds (PDE5 inhibitors)",
+          "priority": "critical",
+          "rationale": "Nitrate use is contraindicated within 48 hours of any PDE5 inhibitor; patient took tadalafil ~18 hours ago and will only disclose if specifically asked.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Pertinent Assessment Findings: A complete medication list should be obtained from each patient. It is especially important for the treating physician and healthcare providers to be informed if the patient is taking beta-blockers, calcium channel blockers, clonidine, digoxin, blood thinners (anticoagulants), and medications for the treatment of erectile dysfunction or pulmonary hypertension. The use of nitrates should be avoided in any patient who has used a phosphodiesterase inhibitor within the past 48 hours."
+        },
+        {
+          "id": "cardiac-monitor",
+          "shortAction": "Place on cardiac monitor; SpO2; consider defibrillator pads on high-risk patient",
+          "priority": "critical",
+          "rationale": "MATC ACS step 2 — assess rhythm immediately; Patient Safety #3 — defib pads on high-risk patients.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Assess the patient's cardiac rhythm and immediately address pulseless rhythms, symptomatic tachycardia, or symptomatic bradycardia. Patient Safety Considerations: Consider placing defibrillator pads on high-risk patients."
+        },
+        {
+          "id": "twelve-lead",
+          "shortAction": "Acquire 12-lead EKG within 10 minutes of patient contact",
+          "priority": "critical",
+          "rationale": "MATC ACS step 4 — 12-lead within 10 minutes is the primary diagnostic tool; required even when pain has resolved because ischemic changes may persist.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "The 12-lead EKG is the primary diagnostic tool that identifies a STEMI; it is imperative that EMS clinicians routinely acquire a 12-lead EKG within 10 minutes for all patients exhibiting signs and symptoms of ACS."
+        },
+        {
+          "id": "aspirin",
+          "shortAction": "Aspirin 324 mg PO chewed (4 × 81 mg chewable, non-enteric)",
+          "priority": "critical",
+          "rationale": "MATC ACS step 5 — chewable, non-enteric aspirin 162–325 mg. Even though patient took his daily 81 mg, additional dose is appropriate for suspected ACS.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Administer aspirin; chewable, non-enteric-coated aspirin preferred (162–325 mg)."
+        },
+        {
+          "id": "iv-access",
+          "shortAction": "Establish IV access (saline lock or maintenance)",
+          "priority": "important",
+          "rationale": "MATC ACS step 6 — IV access required for nitrate or analgesic administration and for any deterioration.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Establish IV access."
+        },
+        {
+          "id": "repeat-vitals",
+          "shortAction": "Repeat full vitals; reassess for return of symptoms",
+          "priority": "important",
+          "rationale": "Patient Safety #1 — observe for clinical deterioration including chest pain, dysrhythmia, hypotension. Resolved pain may return with exertion or anxiety.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Patient Safety Considerations: Observe for signs of clinical deterioration: dysrhythmias, chest pain, shortness of breath, decreased level of consciousness/syncope, or other signs of shock/hypotension."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "thorough-assessment-completed",
+          "if": "Thorough assessment performed",
+          "condition": "Full OPQRST and SAMPLE elicited (including PDE5 disclosure), 12-lead acquired within 10 minutes, ASA given, IV established, repeat vitals obtained — 12-lead shows no acute ischemic changes consistent with resolved stable angina episode.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["full-opqrst", "sample-with-pde5-screen", "twelve-lead", "aspirin", "repeat-vitals"]
+        },
+        {
+          "targetPhaseId": "ntg-without-pde5-screen",
+          "if": "NTG given without PDE5 screen",
+          "condition": "Crew anchors on 'chest pain = nitro,' gives sublingual NTG without specifically asking about ED or pulmonary hypertension medications. Tadalafil within 48 hours produces severe vasodilatory hypotension despite resolved chest pain.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["sample-with-pde5-screen"]
+        },
+        {
+          "targetPhaseId": "anchored-on-benign-cause",
+          "if": "12-lead skipped, transport refused",
+          "condition": "Crew accepts the patient's 'I'm fine now' framing, skips the 12-lead and full workup, allows refusal of transport without medical-control discussion. A subtle NSTEMI (deep T-wave inversions V2–V4 — Wellens pattern) on the 12-lead that would have been visible is missed.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["twelve-lead", "full-opqrst"]
+        }
+      ]
+    },
+    {
+      "id": "thorough-assessment-completed",
+      "name": "Thorough assessment performed",
+      "description": "Full OPQRST history reveals an exertional pattern resolving with rest, consistent with stable angina. SAMPLE elicits tadalafil use 18 hours ago — critical for ruling out nitrates. 12-lead shows sinus rhythm with no acute ST-T changes, no Q waves, no Wellens or deWinter patterns. Repeat vitals stable, patient remains asymptomatic. The clinical picture fits stable angina, but the new (or newly-frequent) exertional pattern still requires ED evaluation. Crew treats per ACS protocol minus nitrates, gives a clear explanation, and transports non-emergent.",
+      "triggerCondition": "Crew obtained a complete OPQRST and SAMPLE (including PDE5 disclosure), acquired a 12-lead within 10 minutes that showed no acute ischemia, gave aspirin, established IV access, and reassessed vitals — confirming an asymptomatic patient with a likely stable angina history.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "Unlabored, lungs clear, RR 16",
+        "circulation": "Strong regular pulse; skin warming and drying; cap refill <2 seconds",
+        "skin": {
+          "color": "pink",
+          "temperature": "warm",
+          "moisture": "dry"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Intact and symmetric",
+        "otherFindings": [
+          "Patient denies any return of chest discomfort",
+          "12-lead: sinus rhythm, no ST elevation, no ST depression, no T-wave inversions, no Q waves",
+          "Now disclosed tadalafil use ~18 hours ago when specifically asked about ED medications",
+          "Patient now agrees to transport for evaluation after explanation"
+        ],
+        "patientSpeech": "Okay, I see what you're saying. If you think I should get checked out, I'll go. I do take that pill sometimes, yeah."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 74,
+        "bpSys": 142,
+        "bpDia": 84,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 112,
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "withhold-ntg-pde5",
+          "shortAction": "Withhold nitroglycerin — PDE5 inhibitor (tadalafil) within 48 hours",
+          "priority": "critical",
+          "rationale": "MATC ACS step 7 explicitly contraindicates nitrates within 48 hours of any PDE5 inhibitor.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "The use of nitrates should be avoided in any patient who has used a phosphodiesterase inhibitor within the past 48 hours. Examples include sildenafil (Viagra®, Revatio®), vardenafil (Levitra®, Staxyn®), tadalafil (Cialis®, Adcirca®) which are used for erectile dysfunction and pulmonary hypertension."
+        },
+        {
+          "id": "targeted-oxygen",
+          "shortAction": "No supplemental O2 needed (SpO2 97–98%, not dyspneic, no CHF signs)",
+          "priority": "important",
+          "rationale": "MATC ACS step 3 — O2 only if dyspneic, hypoxemic, or signs of heart failure; target 94–98%.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "If the patient is dyspneic, hypoxemic, or has obvious signs of heart failure, EMS clinicians should administer oxygen as appropriate with a target of achieving 94–98% saturation."
+        },
+        {
+          "id": "serial-twelve-lead",
+          "shortAction": "Repeat 12-lead en route or with any return of symptoms",
+          "priority": "important",
+          "rationale": "MATC ACS step 4 / Patient Safety #2 — serial 12-leads encouraged for initially non-diagnostic EKGs and with any clinical change.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Performance of serial EKGs is encouraged for symptomatic patients with EKGs initially non-diagnostic for STEMI. Patient Safety Considerations: Perform serial 12-lead EKGs (especially if clinical changes are noted)."
+        },
+        {
+          "id": "transport-non-emergent",
+          "shortAction": "Transport non-emergent to appropriate ED; communicate exertional pattern and resolved symptoms",
+          "priority": "critical",
+          "rationale": "MATC ACS step 10 — transport and destination per local resources; ED evaluation needed for any new/changing exertional chest pain even when asymptomatic.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Transport and destination decisions should be based on local resources and system of care. Early notification to receiving facility of any changes in patient condition or serial EKGs."
+        },
+        {
+          "id": "address-refusal-risk",
+          "shortAction": "Explain risk if patient declines; clarify exertional/crescendo pattern is unstable angina territory",
+          "priority": "important",
+          "rationale": "Key Considerations — ACS may present with atypical or vague symptoms; ischemic burden time matters; addressing reluctance is part of safely getting the patient to definitive care.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Key Considerations: Acute coronary syndrome may present with atypical pain, vague or only generalized complaints. Ischemic burden time is a risk for morbidity and mortality, EMS can help decrease first medical contact to intervention time/reflow by efficient scripting/training of safely minimizing scene time."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "transport-and-monitor",
+          "if": "Transport initiated, ongoing reassessment",
+          "condition": "Patient transported non-emergent to appropriate ED with ongoing cardiac monitoring and serial 12-lead capability. Crew prepared for return of symptoms en route.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["transport-non-emergent", "serial-twelve-lead"]
+        }
+      ]
+    },
+    {
+      "id": "transport-and-monitor",
+      "name": "Transport and reassessment",
+      "description": "Patient is transported non-emergent to the closest appropriate ED. He remains asymptomatic with stable vitals. Crew gives a clear bedside handoff including the exertional pattern, the prior 'borderline' stress test, the tadalafil use, the resolved symptoms on arrival, and the clean field 12-lead. They emphasize that the new/crescendo exertional pattern over three weeks warrants serial troponins and inpatient workup — they are not 'just dropping off a worried-well patient.'",
+      "triggerCondition": "Patient agreed to transport; crew is en route to ED with continued monitoring and a documented contact-to-EKG time well under 10 minutes.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "Unlabored, RR 16, lungs clear",
+        "circulation": "Strong regular pulse; warm and dry",
+        "skin": {
+          "color": "pink",
+          "temperature": "warm",
+          "moisture": "dry"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Intact",
+        "otherFindings": [
+          "No return of chest discomfort en route",
+          "Repeat 12-lead en route unchanged — sinus rhythm, no ischemic changes",
+          "Patient relaxed, conversing normally"
+        ],
+        "patientSpeech": "I feel fine now. I'm glad you got me to actually go in this time."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 72,
+        "bpSys": 138,
+        "bpDia": 82,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 112,
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "early-notification-handoff",
+          "shortAction": "Early notification of ED; deliver EKG copy and full timeline at bedside",
+          "priority": "critical",
+          "rationale": "MATC ACS step 11 / Key Documentation — early notification of any change; documentation of onset, contact-to-EKG, ASA time required.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Early notification to receiving facility of any changes in patient condition or serial EKGs. Key Documentation Elements: The time of symptom onset; The time of patient contact by EMS to the time of 12-lead EKG acquisition; The time aspirin (ASA) administered, or reason why not given."
+        },
+        {
+          "id": "monitor-for-return",
+          "shortAction": "Continue cardiac monitor; watch for return of pain or dysrhythmia",
+          "priority": "important",
+          "rationale": "Patient Safety #1 — observe for deterioration: dysrhythmia, chest pain, hypotension, syncope.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Patient Safety Considerations: Observe for signs of clinical deterioration: dysrhythmias, chest pain, shortness of breath, decreased level of consciousness/syncope, or other signs of shock/hypotension."
+        },
+        {
+          "id": "documentation",
+          "shortAction": "Document onset time, contact-to-EKG, ASA time, PDE5 finding, refusal-of-NTG rationale",
+          "priority": "important",
+          "rationale": "MATC ACS Key Documentation Elements require onset time, contact-to-EKG, ASA time, reason for any deviation from protocol (e.g., no NTG due to PDE5 inhibitor).",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Key Documentation Elements: The time of symptom onset; The time of patient contact by EMS to the time of 12-lead EKG acquisition; The time aspirin (ASA) administered, or reason why not given; The time of STEMI notification."
+        }
+      ]
+    },
+    {
+      "id": "ntg-without-pde5-screen",
+      "name": "NTG given without PDE5 screen",
+      "description": "Crew anchored on 'chest pain = nitro' and gave sublingual NTG 0.4 mg even though the patient was asymptomatic on arrival and they never specifically asked about ED or pulmonary-hypertension medications. Within 3 minutes the patient becomes lightheaded and pale, BP drops to 76/44, and HR climbs reflexively to 108. Crew must now recognize the nitrate-PDE5 interaction, stop further nitrates, lay the patient supine, and bolus IV fluids. Patient — now feeling worse than he did on EMS arrival — discloses the tadalafil use only after being directly asked.",
+      "triggerCondition": "Crew gave nitroglycerin without specifically screening for phosphodiesterase-inhibitor use; the patient took tadalafil approximately 18 hours ago, well within the 48-hour contraindication window — producing profound vasodilatory hypotension.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 4,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "RR 22, slightly shallow, lungs clear",
+        "circulation": "Weak rapid radial pulse; cool clammy skin; cap refill 3–4 seconds",
+        "skin": {
+          "color": "ashen pale",
+          "temperature": "cool",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal at 4 mm, reactive",
+        "motorFunction": "Symmetric, mild weakness from lightheadedness",
+        "otherFindings": [
+          "Severe symptomatic hypotension within 3 minutes of SL NTG",
+          "Patient reports lightheadedness, 'I feel like I might pass out'",
+          "Wife now recalls patient mentioning tadalafil last night when asked again",
+          "12-lead unchanged — still no acute ischemic changes"
+        ],
+        "patientSpeech": "Oh man, that pill made me feel worse … I feel kind of gray and dizzy …"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 108,
+        "bpSys": 76,
+        "bpDia": 44,
+        "respRate": 22,
+        "spo2": 95,
+        "etco2": 34,
+        "temp": 36.7,
+        "tempF": 98.1,
+        "obstruction": 0,
+        "glucose": 112,
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-ntg-pde5-interaction",
+          "shortAction": "Stop further NTG; supine + legs elevated; recognize NTG-PDE5 interaction",
+          "priority": "critical",
+          "rationale": "MATC ACS step 7 explicitly prohibits nitrates within 48 hours of PDE5 inhibitor use; caution warns to be ready to respond to hypotension with fluid bolus or pressor.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "The use of nitrates should be avoided in any patient who has used a phosphodiesterase inhibitor within the past 48 hours. Care should always be taken when giving nitroglycerin when the patient's blood pressure is marginal. If used in this setting, the clinician should weigh the risk and benefit of nitrate administration over the administration of an opiate analgesic and be ready to respond to hypotension with fluid bolus or pressor."
+        },
+        {
+          "id": "fluid-bolus-recovery",
+          "shortAction": "Rapid 250–500 mL NS bolus IV, reassess; titrate to SBP > 90",
+          "priority": "critical",
+          "rationale": "MATC ACS step 7 caution — be ready to respond to NTG-induced hypotension with fluid bolus or pressor.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Care should always be taken when giving nitroglycerin when the patient's blood pressure is marginal. If used in this setting, the clinician should weigh the risk and benefit of nitrate administration over the administration of an opiate analgesic and be ready to respond to hypotension with fluid bolus or pressor."
+        },
+        {
+          "id": "delayed-pde5-history",
+          "shortAction": "Re-ask about ED / pulmonary HTN meds; document tadalafil use",
+          "priority": "critical",
+          "rationale": "Pertinent Assessment Findings — complete med list, specifically including ED and pulmonary hypertension medications, is required.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Pertinent Assessment Findings: A complete medication list should be obtained from each patient. It is especially important for the treating physician and healthcare providers to be informed if the patient is taking beta-blockers, calcium channel blockers, clonidine, digoxin, blood thinners (anticoagulants), and medications for the treatment of erectile dysfunction or pulmonary hypertension."
+        },
+        {
+          "id": "notify-receiving-deterioration",
+          "shortAction": "Early notify receiving ED of NTG-induced hypotension and recovery",
+          "priority": "important",
+          "rationale": "MATC ACS step 11 — early notification of any change in patient condition.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Early notification to receiving facility of any changes in patient condition or serial EKGs."
+        }
+      ]
+    },
+    {
+      "id": "anchored-on-benign-cause",
+      "name": "Anchored on benign cause",
+      "description": "Crew accepted the patient's 'I'm fine now' framing, skipped the 12-lead, did not press for a full OPQRST or expanded medication history, and did not address transport refusal. They left the scene with the patient signing a 'patient refusal.' Twenty minutes later the patient calls 911 again — this time with recurrent chest pressure that did NOT resolve with rest, now 8/10, with marked diaphoresis. On EMS return the 12-lead now shows clear deep symmetric T-wave inversions in V2–V4 (Wellens pattern) — a NSTEMI / high-grade proximal LAD lesion that was almost certainly developing during the first encounter. This phase exists to make the cost of an incomplete assessment legible: the diagnosis was missable on the first call only because the crew did not look.",
+      "triggerCondition": "Crew did not acquire a 12-lead, did not perform a complete OPQRST/SAMPLE, anchored on the patient's denial of current symptoms, and accepted a refusal of transport. A high-risk NSTEMI was missed on the first encounter and is now declared on the recall.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "RR 22, mildly labored, lungs clear",
+        "circulation": "Strong regular pulse; cool, diaphoretic; cap refill 2–3 seconds",
+        "skin": {
+          "color": "pale",
+          "temperature": "cool",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Intact",
+        "otherFindings": [
+          "Crew dispatched back to same address 20 minutes after clearance",
+          "Now-active 8/10 substernal pressure with diaphoresis, not relieved by rest",
+          "12-lead now shows symmetric deep T-wave inversions V2–V4 (Wellens pattern)",
+          "Patient acknowledges 'I should have just gone the first time'"
+        ],
+        "patientSpeech": "It came back, and worse. It's not going away this time. I'm sorry, I should have just gone."
+      },
+      "monitorState": {
+        "ecgRhythm": "NSTEMI",
+        "ecgWaveform": 55,
+        "hr": 96,
+        "bpSys": 152,
+        "bpDia": 92,
+        "respRate": 22,
+        "spo2": 96,
+        "etco2": 36,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 112,
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "obtain-twelve-lead-now",
+          "shortAction": "Acquire 12-lead immediately; recognize Wellens / NSTEMI pattern",
+          "priority": "critical",
+          "rationale": "MATC ACS step 4 / Performance Measures — 12-lead within 10 minutes; this should have been done on the first encounter. Wellens / deep symmetric T-wave inversions V2–V4 indicate critical proximal LAD lesion.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "The 12-lead EKG is the primary diagnostic tool that identifies a STEMI; it is imperative that EMS clinicians routinely acquire a 12-lead EKG within 10 minutes for all patients exhibiting signs and symptoms of ACS. Performance of serial EKGs is encouraged for symptomatic patients with EKGs initially non-diagnostic for STEMI."
+        },
+        {
+          "id": "full-acs-workup-now",
+          "shortAction": "Full ACS workup now: ASA 324 mg chewed, IV, monitor, defib pads, O2 if SpO2 < 94%",
+          "priority": "critical",
+          "rationale": "MATC ACS steps 2–6 — apply the full ACS bundle now that diagnosis is clear; do not omit aspirin or rhythm monitoring.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Assess the patient's cardiac rhythm and immediately address pulseless rhythms, symptomatic tachycardia, or symptomatic bradycardia. If the patient is dyspneic, hypoxemic, or has obvious signs of heart failure, EMS clinicians should administer oxygen as appropriate with a target of achieving 94–98% saturation. Administer aspirin; chewable, non-enteric-coated aspirin preferred (162–325 mg). Establish IV access. Patient Safety Considerations: Consider placing defibrillator pads on high-risk patients."
+        },
+        {
+          "id": "withhold-ntg-pde5-recall",
+          "shortAction": "Still withhold NTG — tadalafil within 48 hours; consider fentanyl 88 mcg IV (88 kg × 1 mcg/kg; max 100 mcg) if pain refractory",
+          "priority": "critical",
+          "rationale": "MATC ACS step 7 contraindicates nitrates within 48 hours of PDE5; step 9 allows opiate analgesic via Pain Management. Fentanyl 1 mcg/kg IV per Pain Management; morphine cautioned in NSTEMI.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "The use of nitrates should be avoided in any patient who has used a phosphodiesterase inhibitor within the past 48 hours. If the pain is unresponsive to nitrates, opiates are an acceptable alternative. Morphine should be used with caution in unstable angina (UA)/non-STEMI due to an association with increased mortality."
+        },
+        {
+          "id": "fentanyl-pain-mgmt",
+          "shortAction": "Fentanyl 88 mcg IV (88 kg × 1 mcg/kg = 88 mcg; max 100 mcg) — per Pain Management",
+          "priority": "important",
+          "rationale": "MATC Pain Management — fentanyl 1 mcg/kg IN/IM/IV/IO with max initial 100 mcg for moderate-severe pain; preferred opiate in NSTEMI given morphine caution.",
+          "protocolReference": "MATC: Pain Management",
+          "protocolExcerpt": "For Moderate to Severe pain, analgesics include: Fentanyl: 1 mcg/kg IN, IM, IV or IO (maximum initial dose of 100 mcg). Use of non-invasive capnography is an earlier predictor of hypoventilation than pulse oximetry if opioid medications are administered."
+        },
+        {
+          "id": "rapid-transport-recall",
+          "shortAction": "Rapid transport to cath-capable facility; early ED notification with Wellens 12-lead",
+          "priority": "critical",
+          "rationale": "Key Considerations — ischemic burden drives morbidity/mortality; minimize scene time. Wellens pattern = critical LAD lesion requiring urgent cardiology.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Key Considerations: Ischemic burden time is a risk for morbidity and mortality, EMS can help decrease first medical contact to intervention time/reflow by efficient scripting/training of safely minimizing scene time. Early notification to receiving facility of any changes in patient condition or serial EKGs."
+        },
+        {
+          "id": "debrief-anchoring",
+          "shortAction": "Debrief lesson: assess every chest discomfort fully even when 'resolved'",
+          "priority": "supplemental",
+          "rationale": "Key Considerations — ACS may present with atypical, vague, or resolved symptoms; assessment must not be truncated by patient minimization.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Key Considerations: Acute coronary syndrome may present with atypical pain, vague or only generalized complaints. Atypical or unusual symptoms are more common in women, the elderly, and diabetic patients."
+        }
+      ]
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

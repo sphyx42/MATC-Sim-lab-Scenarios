@@ -1,0 +1,382 @@
+{
+  "scenarioId": "C-T1-01",
+  "scenarioName": "Stable Angina vs. ACS — Resolved Exertional Chest Pain",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1200,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "64-year-old male was walking his dog up a hill in the neighborhood when he developed a 'heavy, squeezing' pressure in the center of his chest, rated 6/10 at peak. The discomfort radiated slightly into the left shoulder and was associated with mild diaphoresis and one episode of nausea without vomiting. He stopped walking, sat on a low retaining wall, and the discomfort gradually faded over about 5–7 minutes. He has had two similar but milder episodes over the past three weeks, all with exertion (mowing the lawn, climbing stairs), each resolving within minutes of rest — he attributed them to 'getting old.' He has not been formally diagnosed with angina. He denies tearing or ripping pain, denies radiation to the back, denies leg pain or swelling, denies recent illness or fever. He has a remote history of an exercise stress test 'a few years ago' that he was told was 'borderline'; he never followed up with cardiology. A neighbor walking by called 911 when she noticed him pale and sweating on the wall.",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives to find a 64-year-old male seated on a low retaining wall, alert, conversational, and downplaying his symptoms. He reports that the chest discomfort has fully resolved. Skin is pale and slightly damp but he is no longer actively diaphoretic. He is reluctant to be evaluated but agrees. The fact that he is asymptomatic on arrival makes a careful, systematic assessment — full OPQRST, SAMPLE, 12-lead, and repeat vitals — the entire scenario. → Thorough assessment performed: Full OPQRST history reveals an exertional pattern resolving with rest, consistent with stable angina. SAMPLE elicits tadalafil use 18 hours ago — critical for ruling out nitrates. 12-lead shows sinus rhythm with no acute ST-T changes, no Q waves, no Wellens or deWinter patterns. Repeat vitals stable, patient remains asymptomatic. The clinical picture fits stable angina, but the new (or newly-frequent) exertional pattern still requires ED evaluation. Crew treats per ACS protocol minus nitrates, gives a clear explanation, and transports non-emergent. → Transport and reassessment: Patient is transported non-emergent to the closest appropriate ED. He remains asymptomatic with stable vitals. Crew gives a clear bedside handoff including the exertional pattern, the prior 'borderline' stress test, the tadalafil use, the resolved symptoms on arrival, and the clean field 12-lead. They emphasize that the new/crescendo exertional pattern over three weeks warrants serial troponins and inpatient workup — they are not 'just dropping off a worried-well patient.'"
+  },
+  "patientInformation": {
+    "patientName": "Robert Mendelson",
+    "patientCondition": "Chest discomfort that started during a brisk walk approximately 25 minutes ago and resolved on its own after he sat down to rest. Currently denies pain at rest but feels 'worn out' and a little nauseated.",
+    "patientAge": 64,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 178,
+    "patientWeight": 88,
+    "patientPhotoId": 77,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a 64-year-old male seated on a low retaining wall, alert, conversational, and downplaying his symptoms. He reports that the chest discomfort has fully resolved. Skin is pale and slightly damp but he is no longer actively diaphoretic. He is reluctant to be evaluated but agrees. The fact that he is asymptomatic on arrival makes a careful, systematic assessment — full OPQRST, SAMPLE, 12-lead, and repeat vitals — the entire scenario.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 78,
+        "bpSys": 148,
+        "bpDia": 88,
+        "respRate": 18,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 112,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Scene safety; primary survey; recognize symptoms suspicious for cardiac origin",
+        "Full OPQRST: onset (exertional), provocation/palliation (rest), quality, radiation, severity, time/prior episodes",
+        "Full SAMPLE; specifically ask about ED meds / pulmonary hypertension meds (PDE5 inhibitors)",
+        "Place on cardiac monitor; SpO2; consider defibrillator pads on high-risk patient",
+        "Acquire 12-lead EKG within 10 minutes of patient contact",
+        "Aspirin 324 mg PO chewed (4 × 81 mg chewable, non-enteric)",
+        "Establish IV access (saline lock or maintenance)",
+        "Repeat full vitals; reassess for return of symptoms"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Thorough assessment performed",
+      "description": "Full OPQRST history reveals an exertional pattern resolving with rest, consistent with stable angina. SAMPLE elicits tadalafil use 18 hours ago — critical for ruling out nitrates. 12-lead shows sinus rhythm with no acute ST-T changes, no Q waves, no Wellens or deWinter patterns. Repeat vitals stable, patient remains asymptomatic. The clinical picture fits stable angina, but the new (or newly-frequent) exertional pattern still requires ED evaluation. Crew treats per ACS protocol minus nitrates, gives a clear explanation, and transports non-emergent.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 74,
+        "bpSys": 142,
+        "bpDia": 84,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 112,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Withhold nitroglycerin — PDE5 inhibitor (tadalafil) within 48 hours",
+        "No supplemental O2 needed (SpO2 97–98%, not dyspneic, no CHF signs)",
+        "Repeat 12-lead en route or with any return of symptoms",
+        "Transport non-emergent to appropriate ED; communicate exertional pattern and resolved symptoms",
+        "Explain risk if patient declines; clarify exertional/crescendo pattern is unstable angina territory"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Transport and reassessment",
+      "description": "Patient is transported non-emergent to the closest appropriate ED. He remains asymptomatic with stable vitals. Crew gives a clear bedside handoff including the exertional pattern, the prior 'borderline' stress test, the tadalafil use, the resolved symptoms on arrival, and the clean field 12-lead. They emphasize that the new/crescendo exertional pattern over three weeks warrants serial troponins and inpatient workup — they are not 'just dropping off a worried-well patient.'",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 72,
+        "bpSys": 138,
+        "bpDia": 82,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 112,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Early notification of ED; deliver EKG copy and full timeline at bedside",
+        "Continue cardiac monitor; watch for return of pain or dysrhythmia",
+        "Document onset time, contact-to-EKG, ASA time, PDE5 finding, refusal-of-NTG rationale"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "NTG given without PDE5 screen",
+      "description": "Crew anchored on 'chest pain = nitro' and gave sublingual NTG 0.4 mg even though the patient was asymptomatic on arrival and they never specifically asked about ED or pulmonary-hypertension medications. Within 3 minutes the patient becomes lightheaded and pale, BP drops to 76/44, and HR climbs reflexively to 108. Crew must now recognize the nitrate-PDE5 interaction, stop further nitrates, lay the patient supine, and bolus IV fluids. Patient — now feeling worse than he did on EMS arrival — discloses the tadalafil use only after being directly asked.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 108,
+        "bpSys": 76,
+        "bpDia": 44,
+        "respRate": 22,
+        "spo2": 95,
+        "etco2": 34,
+        "temp": 36.7,
+        "obstruction": 0,
+        "custMeasure1": 112,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Stop further NTG; supine + legs elevated; recognize NTG-PDE5 interaction",
+        "Rapid 250–500 mL NS bolus IV, reassess; titrate to SBP > 90",
+        "Re-ask about ED / pulmonary HTN meds; document tadalafil use",
+        "Early notify receiving ED of NTG-induced hypotension and recovery"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Anchored on benign cause",
+      "description": "Crew accepted the patient's 'I'm fine now' framing, skipped the 12-lead, did not press for a full OPQRST or expanded medication history, and did not address transport refusal. They left the scene with the patient signing a 'patient refusal.' Twenty minutes later the patient calls 911 again — this time with recurrent chest pressure that did NOT resolve with rest, now 8/10, with marked diaphoresis. On EMS return the 12-lead now shows clear deep symmetric T-wave inversions in V2–V4 (Wellens pattern) — a NSTEMI / high-grade proximal LAD lesion that was almost certainly developing during the first encounter. This phase exists to make the cost of an incomplete assessment legible: the diagnosis was missable on the first call only because the crew did not look.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 55,
+        "hr": 96,
+        "bpSys": 152,
+        "bpDia": 92,
+        "respRate": 22,
+        "spo2": 96,
+        "etco2": 36,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 112,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Acquire 12-lead immediately; recognize Wellens / NSTEMI pattern",
+        "Full ACS workup now: ASA 324 mg chewed, IV, monitor, defib pads, O2 if SpO2 < 94%",
+        "Still withhold NTG — tadalafil within 48 hours; consider fentanyl 88 mcg IV (88 kg × 1 mcg/kg; max 100 mcg) if pain refractory",
+        "Fentanyl 88 mcg IV (88 kg × 1 mcg/kg = 88 mcg; max 100 mcg) — per Pain Management",
+        "Rapid transport to cath-capable facility; early ED notification with Wellens 12-lead",
+        "Debrief lesson: assess every chest discomfort fully even when 'resolved'"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Scene safety; primary survey; recognize symptoms suspicious for cardiac origin",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Full OPQRST: onset (exertional), provocation/palliation (rest), quality, radiation, severity, time/prior episodes",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Full SAMPLE; specifically ask about ED meds / pulmonary hypertension meds (PDE5 inhibitors)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place on cardiac monitor; SpO2; consider defibrillator pads on high-risk patient",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Acquire 12-lead EKG within 10 minutes of patient contact",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Aspirin 324 mg PO chewed (4 × 81 mg chewable, non-enteric)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access (saline lock or maintenance)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Repeat full vitals; reassess for return of symptoms",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Withhold nitroglycerin — PDE5 inhibitor (tadalafil) within 48 hours",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "No supplemental O2 needed (SpO2 97–98%, not dyspneic, no CHF signs)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Repeat 12-lead en route or with any return of symptoms",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport non-emergent to appropriate ED; communicate exertional pattern and resolved symptoms",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Explain risk if patient declines; clarify exertional/crescendo pattern is unstable angina territory",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Early notification of ED; deliver EKG copy and full timeline at bedside",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue cardiac monitor; watch for return of pain or dysrhythmia",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document onset time, contact-to-EKG, ASA time, PDE5 finding, refusal-of-NTG rationale",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Stop further NTG; supine + legs elevated; recognize NTG-PDE5 interaction",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Rapid 250–500 mL NS bolus IV, reassess; titrate to SBP > 90",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Re-ask about ED / pulmonary HTN meds; document tadalafil use",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Early notify receiving ED of NTG-induced hypotension and recovery",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Acquire 12-lead immediately; recognize Wellens / NSTEMI pattern",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Full ACS workup now: ASA 324 mg chewed, IV, monitor, defib pads, O2 if SpO2 < 94%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Still withhold NTG — tadalafil within 48 hours; consider fentanyl 88 mcg IV (88 kg × 1 mcg/kg; max 100 mcg) if pain refractory",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Fentanyl 88 mcg IV (88 kg × 1 mcg/kg = 88 mcg; max 100 mcg) — per Pain Management",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Rapid transport to cath-capable facility; early ED notification with Wellens 12-lead",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Debrief lesson: assess every chest discomfort fully even when 'resolved'",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

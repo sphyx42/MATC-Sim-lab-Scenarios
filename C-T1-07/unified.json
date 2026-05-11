@@ -1,0 +1,627 @@
+{
+  "meta": {
+    "id": "C-T1-07",
+    "name": "Chest Pain with Non-Cardiac Cause",
+    "version": 1,
+    "difficulty": "beginner",
+    "category": "Cardiac",
+    "protocols": [
+      "cv-chest-pain-acs-stemi",
+      "medical-pain-management"
+    ],
+    "totalTimeSeconds": 1200,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "chest pain",
+      "non-cardiac",
+      "costochondritis",
+      "pleurisy",
+      "OPQRST",
+      "12-lead",
+      "tunnel vision",
+      "tier-1",
+      "assessment"
+    ]
+  },
+  "patient": {
+    "name": "Devin Marquez",
+    "age": 32,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 80,
+    "weightLbs": 176,
+    "height": 180,
+    "chiefComplaint": "Sharp left-sided chest pain that started this morning, worse with deep breathing and movement; recovering from a head cold this past week.",
+    "history": {
+      "hpi": "32-year-old male woke this morning with a sharp, localized pain in the left anterior chest just lateral to the sternum. He noticed it first when he sat up in bed. The pain is constant at a low background level (3/10) but spikes to 7/10 with deep inspiration, coughing, twisting his torso, or pressing on the area. He has no associated shortness of breath at baseline, no diaphoresis, no nausea, no radiation to the jaw or arm, no exertional component — in fact the pain is exactly the same whether he is sitting still or walking around. He finished a week-long head cold three days ago with a lingering dry cough that he says has been 'making my chest hurt every time I cough.' He recalls helping a friend move furniture five days ago and 'really yanked on a couch' getting it up the stairs. He has no personal or family history of heart disease, no diabetes, no hypertension, no smoking history. He felt anxious enough about the pain that he asked his roommate to call EMS — he had a coworker with 'a heart attack at 38' last year and is worried this could be the same thing.",
+      "pastMedical": [
+        "Generally healthy — no chronic conditions",
+        "Seasonal allergies (mild)",
+        "Recent upper respiratory infection — resolved 3 days ago, residual dry cough",
+        "No prior cardiac history, no diabetes, no hypertension, no hyperlipidemia",
+        "No family history of premature CAD; father alive and well at 64, mother alive at 62",
+        "Lifestyle: non-smoker, occasional social alcohol, recreational runner"
+      ],
+      "medications": [
+        "Loratadine 10 mg PO as needed for allergies",
+        "Acetaminophen 500 mg PO last night for chest soreness (one dose)",
+        "Over-the-counter cough suppressant during recent URI (last dose 2 days ago)"
+      ],
+      "allergies": [
+        "NKDA"
+      ],
+      "lastOralIntake": "Light breakfast — bagel and orange juice — approximately 90 minutes ago",
+      "events": "Woke up with sharp left-sided chest pain. Recently recovering from a head cold with persistent dry cough. Helped a friend move heavy furniture 5 days ago. Pain reproducible with palpation and worse with deep breathing. Roommate called EMS because of patient anxiety about a coworker's recent young MI."
+    }
+  },
+  "scene": {
+    "dispatch": "Dispatch: 32-year-old male, chest pain, conscious and breathing, in his apartment. Roommate on the line.",
+    "location": "Second-floor apartment in a quiet residential building. Patient is seated on the couch in a clean living room. Apartment is well-lit, mid-morning. No environmental hazards.",
+    "time": "Saturday, 10:20, mid-spring morning, mild and clear",
+    "safety": "Scene safe. Apartment is calm and uncluttered. Roommate (Jordan) met EMS at the door and led them in. Patient ambulatory.",
+    "bystanders": "Roommate (Jordan, also 32) is present and helpful — confirms patient has been recovering from a cold all week with a 'horrible' dry cough, and that the patient helped a friend move furniture last weekend. Jordan also mentions the coworker who had a heart attack at 38 last year, which is why he encouraged the patient to call.",
+    "visualCues": [
+      "Patient seated upright on couch, calm but visibly anxious, talking in full sentences",
+      "Tissues and a half-empty bottle of cough suppressant on the coffee table",
+      "Patient instinctively splinting the left chest with his right hand when he shifts position",
+      "Skin warm, pink, and dry — no diaphoresis",
+      "No medication bottles for cardiac medications, no oxygen tubing, no inhalers visible",
+      "Patient asks 'do you think this is a heart attack?' as you walk in"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a healthy-appearing 32-year-old male, alert and conversational, sitting on his couch and clearly worried about whether his chest pain is cardiac. He is breathing comfortably at rest and his skin is warm, pink, and dry. The dispatch was generic 'chest pain' — the entire teaching point of this scenario is whether the crew performs a thorough enough assessment (full OPQRST, palpation of the chest wall, complete SAMPLE, 12-lead) to recognize that this pain is reproducible, pleuritic, and clearly non-cardiac — and therefore that they should NOT default into the full ACS bundle of aspirin and nitroglycerin.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent, self-maintained, speaking in full sentences without difficulty",
+        "breathing": "Unlabored at rest; lungs clear bilaterally; no accessory muscle use; RR 16. Patient takes a shallow inspiration when asked to breathe deeply and grimaces — visible splinting of the left chest.",
+        "circulation": "Strong regular radial pulse; warm, pink, dry skin; cap refill <2 seconds; no JVD; no peripheral edema",
+        "skin": {
+          "color": "pink",
+          "temperature": "warm",
+          "moisture": "dry"
+        },
+        "pupils": "Equal at 3 mm, briskly reactive",
+        "motorFunction": "Moves all extremities equally; no focal weakness",
+        "otherFindings": [
+          "Anxious but not in acute distress",
+          "Sharp, localized pain pointed to with one finger just lateral to the left sternal border (3rd–4th costochondral junction)",
+          "Pain clearly reproduced on palpation of the costochondral junctions — patient says 'yes, that's exactly it'",
+          "Pain worse with deep inspiration and with twisting torso to the right",
+          "Pain NOT worse with exertion, not relieved by rest, not radiating to jaw/arm/back",
+          "No diaphoresis, no nausea, no shortness of breath at rest",
+          "Persistent dry cough since recent URI; coughs once during assessment and visibly winces",
+          "No calf tenderness; no leg swelling; no recent travel or immobility (low PE risk)"
+        ],
+        "patientSpeech": "It's right here — it's sharp, and it hurts more when I take a deep breath or when I press on it. Do you think this is a heart attack? My coworker had one last year and he's only a few years older than me."
+      },
+      "monitorState": {
+        "ecgRhythm": "Normal Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 84,
+        "bpSys": 124,
+        "bpDia": 78,
+        "respRate": 16,
+        "spo2": 99,
+        "etco2": 38,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 96,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "scene-primary-survey",
+          "shortAction": "Scene safety; primary survey; recognize complaint requires evaluation for ACS vs alternative",
+          "priority": "critical",
+          "rationale": "MATC ACS Patient Care Goals — identify ACS quickly; inclusion criteria are broad and include any chest pain of suspected cardiac origin until ruled out.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Patient Care Goals: Identify ST-elevation myocardial infarction (STEMI) quickly. Determine the time of symptom onset. Inclusion Criteria: Chest pain or discomfort in other areas of the body (e.g., arm, jaw, epigastrium) of suspected cardiac origin, shortness of breath, associated or unexplained sweating, nausea, vomiting, or dizziness."
+        },
+        {
+          "id": "full-opqrst",
+          "shortAction": "Full OPQRST: sharp pain, pleuritic and reproducible, no exertional or radiating component",
+          "priority": "critical",
+          "rationale": "Inclusion criteria distinguish cardiac vs non-cardiac chest pain by quality, radiation, associated symptoms, and provocation pattern. A complete OPQRST is the only way to identify the pleuritic / musculoskeletal pattern.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Inclusion Criteria: Chest pain or discomfort in other areas of the body (e.g., arm, jaw, epigastrium) of suspected cardiac origin, shortness of breath, associated or unexplained sweating, nausea, vomiting, or dizziness. Atypical or unusual symptoms are more common in women, the elderly, and diabetic patients."
+        },
+        {
+          "id": "palpate-chest-wall",
+          "shortAction": "Palpate the chest wall and costochondral junctions; reproduce the pain",
+          "priority": "critical",
+          "rationale": "Reproducibility on palpation is the single most useful bedside finding that points away from ACS toward a musculoskeletal/costochondral etiology. Patient Care Goal #1 (identify STEMI quickly) implicitly requires ruling in or out the diagnosis.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Some patients will present with likely non-cardiac chest pain and otherwise have a low likelihood of ACS (e.g., blunt trauma to the chest of a child). For these patients, defer the administration of aspirin (ASA) and nitrates per the Pain Management Guideline."
+        },
+        {
+          "id": "sample-history",
+          "shortAction": "Full SAMPLE: recent URI with dry cough, lifted furniture 5 days ago, no cardiac risk factors",
+          "priority": "critical",
+          "rationale": "Recent URI with persistent dry cough supports pleurisy / cough-related musculoskeletal strain; recent heavy lifting supports musculoskeletal etiology; absence of cardiac risk factors (no HTN, no DM, no smoking, no family hx) lowers ACS pretest probability.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Pertinent Assessment Findings: A complete medication list should be obtained from each patient. It is especially important for the treating physician and healthcare providers to be informed if the patient is taking beta-blockers, calcium channel blockers, clonidine, digoxin, blood thinners (anticoagulants), and medications for the treatment of erectile dysfunction or pulmonary hypertension."
+        },
+        {
+          "id": "cardiac-monitor",
+          "shortAction": "Place on cardiac monitor; SpO2; continuous rhythm monitoring",
+          "priority": "critical",
+          "rationale": "MATC ACS step 2 — assess rhythm immediately on any chest-pain complaint; rhythm monitoring continues until ACS is confidently ruled out.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Assess the patient's cardiac rhythm and immediately address pulseless rhythms, symptomatic tachycardia, or symptomatic bradycardia."
+        },
+        {
+          "id": "twelve-lead",
+          "shortAction": "Acquire 12-lead EKG within 10 minutes of patient contact",
+          "priority": "critical",
+          "rationale": "MATC ACS step 4 — 12-lead within 10 minutes is the primary diagnostic tool. A clean 12-lead in a young patient with reproducible pleuritic pain is the strongest single piece of objective evidence against ACS.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "The 12-lead EKG is the primary diagnostic tool that identifies a STEMI; it is imperative that EMS clinicians routinely acquire a 12-lead EKG within 10 minutes for all patients exhibiting signs and symptoms of ACS."
+        },
+        {
+          "id": "auscultate-lungs",
+          "shortAction": "Auscultate lung sounds; assess for pleural rub, wheeze, decreased breath sounds",
+          "priority": "important",
+          "rationale": "Pleuritic pain after URI can represent pleurisy or, less commonly, pneumonia or PE — clear, symmetric lung sounds support a benign musculoskeletal / pleuritic etiology.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Signs and symptoms include chest pain, congestive heart failure (CHF), syncope, shock, symptoms similar to a patient's previous MI."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "non-cardiac-recognized",
+          "if": "Thorough assessment performed",
+          "condition": "Full OPQRST elicited (sharp, pleuritic, reproducible, non-exertional, non-radiating), chest wall palpated and pain reproduced, full SAMPLE obtained (recent URI, lifting injury, no cardiac risk factors), 12-lead acquired within 10 minutes and shows normal sinus rhythm with no ischemic changes — crew recognizes likely non-cardiac chest pain and defers ASA / nitrates per the Pain Management Guideline.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["full-opqrst", "palpate-chest-wall", "sample-history", "twelve-lead"]
+        },
+        {
+          "targetPhaseId": "ntg-induced-hypotension",
+          "if": "ASA + NTG given without full assessment",
+          "condition": "Crew anchors on 'chest pain = ACS bundle,' gives chewable aspirin and sublingual NTG without performing OPQRST, without palpating the chest wall, and without reviewing the clean 12-lead. NTG in a young patient with a normal-to-low-normal baseline BP and no underlying ACS produces symptomatic vasodilatory hypotension.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["full-opqrst", "palpate-chest-wall"]
+        },
+        {
+          "targetPhaseId": "tunnel-vision-on-acs",
+          "if": "ACS workup completed, true cause missed",
+          "condition": "Crew completes the ACS bundle (monitor, 12-lead, ASA, IV) but never palpates the chest wall, never asks about recent URI or lifting, and never specifically clarifies the pleuritic / reproducible quality of the pain. They transport as 'rule-out ACS' without recognizing the obvious non-cardiac etiology — the patient gets an unnecessary aspirin dose, an unnecessary IV, and arrives at the ED with an incomplete and misleading handoff.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["palpate-chest-wall", "sample-history"]
+        }
+      ]
+    },
+    {
+      "id": "non-cardiac-recognized",
+      "name": "Non-cardiac recognized",
+      "description": "Thorough assessment has identified a sharp, pleuritic, reproducible-on-palpation chest pain in a young patient with no cardiac risk factors, a clean 12-lead, normal lung sounds, recent URI with persistent dry cough, and a history of heavy lifting 5 days ago. The clinical picture is most consistent with costochondritis (with possible mild post-viral pleurisy contribution) — clearly low likelihood of ACS. Per the ACS protocol, the crew defers aspirin and nitrates and instead manages this patient under the Pain Management Guideline. They explain the working impression honestly to the patient, offer non-pharmacologic and non-opioid options for pain, and transport non-emergent for ED evaluation to confirm.",
+      "triggerCondition": "Crew obtained a complete OPQRST and SAMPLE, palpated the chest wall and reproduced the pain, acquired a 12-lead within 10 minutes that showed no ischemic changes, and recognized that the clinical picture meets the protocol's 'likely non-cardiac chest pain with low likelihood of ACS' criterion.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "Unlabored at rest, RR 16; clear bilateral lung sounds; pain reproducible with deep inspiration",
+        "circulation": "Strong regular pulse; warm, pink, dry; cap refill <2 seconds",
+        "skin": {
+          "color": "pink",
+          "temperature": "warm",
+          "moisture": "dry"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Intact and symmetric",
+        "otherFindings": [
+          "12-lead: normal sinus rhythm, normal axis, no ST elevation, no ST depression, no T-wave inversions, no Q waves",
+          "Pain consistently reproduced with palpation of left 3rd–4th costochondral junction",
+          "Patient visibly relieved when crew explains finding does not look like a heart attack",
+          "Patient still rates pain 3/10 at rest, 6/10 with deep inspiration"
+        ],
+        "patientSpeech": "Okay — yeah, that makes sense. It really does feel like a sore spot when you push on it. So you don't think it's my heart?"
+      },
+      "monitorState": {
+        "ecgRhythm": "Normal Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 78,
+        "bpSys": 122,
+        "bpDia": 76,
+        "respRate": 16,
+        "spo2": 99,
+        "etco2": 38,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 96,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "defer-asa-ntg",
+          "shortAction": "Defer aspirin and nitrates — likely non-cardiac, low likelihood of ACS",
+          "priority": "critical",
+          "rationale": "MATC ACS Inclusion Criteria #3 explicitly directs clinicians to defer ASA and nitrates and manage per Pain Management when the picture is likely non-cardiac with low ACS likelihood.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Some patients will present with likely non-cardiac chest pain and otherwise have a low likelihood of ACS (e.g., blunt trauma to the chest of a child). For these patients, defer the administration of aspirin (ASA) and nitrates per the Pain Management Guideline."
+        },
+        {
+          "id": "pain-score",
+          "shortAction": "Obtain numeric pain score (NRS) before and after any intervention",
+          "priority": "important",
+          "rationale": "MATC Pain Management step 3 — patients greater than 12 years use a self-report numeric rating scale; document pre/post pain scores.",
+          "protocolReference": "MATC: Pain Management",
+          "protocolExcerpt": "Determine patient's pain score assessment using standard pain scale. Greater than 12 years old: Self-report scale — Numeric Rating Scale (NRS)."
+        },
+        {
+          "id": "non-pharm-pain",
+          "shortAction": "Position of comfort; verbal reassurance; ice pack to area as patient prefers",
+          "priority": "important",
+          "rationale": "MATC Pain Management step 4 — non-pharmacologic options include position of comfort, ice pack/splint for traumatic/MSK pain, and verbal reassurance to control anxiety.",
+          "protocolReference": "MATC: Pain Management",
+          "protocolExcerpt": "Non-pharmacologic pain management options include placement of the patient in a position of comfort, application of ice packs and/or splints for pain secondary to trauma, verbal reassurance to control anxiety."
+        },
+        {
+          "id": "acetaminophen-option",
+          "shortAction": "Offer acetaminophen 1 g PO (80 kg × 15 mg/kg = 1200 mg → cap at 1 g max) for mild pain",
+          "priority": "supplemental",
+          "rationale": "MATC Pain Management step 5a — acetaminophen 15 mg/kg PO or IV (max 1 g) is appropriate for minor pain. Patient already took 500 mg last night; another dose is reasonable per timing. Avoid NSAIDs en route given uncertainty about exact etiology.",
+          "protocolReference": "MATC: Pain Management",
+          "protocolExcerpt": "Minor pain or as an adjunct for moderate/severe pain consider the following non-opioid analgesic options: Acetaminophen 15 mg/kg PO or IV (maximum dose 1 g)."
+        },
+        {
+          "id": "targeted-oxygen",
+          "shortAction": "No supplemental O2 (SpO2 99%, not dyspneic, no CHF signs)",
+          "priority": "important",
+          "rationale": "MATC ACS step 3 — supplemental O2 only if dyspneic, hypoxemic, or signs of heart failure; target 94–98%.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "If the patient is dyspneic, hypoxemic, or has obvious signs of heart failure, EMS clinicians should administer oxygen as appropriate with a target of achieving 94–98% saturation."
+        },
+        {
+          "id": "explain-and-transport",
+          "shortAction": "Explain working impression; transport non-emergent for ED evaluation to confirm",
+          "priority": "critical",
+          "rationale": "MATC ACS step 10 — transport and destination per local resources. Even when the picture looks non-cardiac, an ED evaluation confirms and rules out less common mimics (PE, pneumonia, pericarditis). Verbal reassurance per Pain Management is also part of care.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Transport and destination decisions should be based on local resources and system of care."
+        },
+        {
+          "id": "continuous-monitor-enroute",
+          "shortAction": "Continue cardiac monitor and reassess en route; repeat 12-lead if symptoms change",
+          "priority": "important",
+          "rationale": "MATC ACS Patient Safety #1 / step 4 — observe for deterioration; perform serial 12-leads if initial was non-diagnostic and clinical changes occur.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Patient Safety Considerations: Observe for signs of clinical deterioration: dysrhythmias, chest pain, shortness of breath, decreased level of consciousness/syncope, or other signs of shock/hypotension. Perform serial 12-lead EKGs (especially if clinical changes are noted)."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "transport-non-emergent",
+          "if": "Transport initiated, ongoing reassessment",
+          "condition": "Patient agrees with the working impression and transport plan. Crew transports non-emergent with continued cardiac monitoring; pain managed with position of comfort and reassurance.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["explain-and-transport", "continuous-monitor-enroute"]
+        }
+      ]
+    },
+    {
+      "id": "transport-non-emergent",
+      "name": "Transport and handoff",
+      "description": "Patient is transported non-emergent to the closest appropriate ED. He remains comfortable, with stable vitals and unchanged pain pattern. Crew delivers a clear handoff that documents the reproducible pleuritic pain, the clean 12-lead, the recent URI, the lifting history, and the explicit decision to defer aspirin and nitrates per the protocol's non-cardiac caveat. The handoff helps the ED triage this patient appropriately rather than into the chest-pain rule-out pathway.",
+      "triggerCondition": "Patient agreed with the working impression of likely non-cardiac chest pain and transport plan; en route to ED with continued monitoring.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "Unlabored, RR 16, lungs clear",
+        "circulation": "Strong regular pulse; warm and dry",
+        "skin": {
+          "color": "pink",
+          "temperature": "warm",
+          "moisture": "dry"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Intact",
+        "otherFindings": [
+          "Patient relaxed, conversing normally",
+          "Pain unchanged en route — 3/10 at rest, sharp with deep breaths",
+          "Repeat 12-lead en route unchanged",
+          "Patient thanks crew for explanation"
+        ],
+        "patientSpeech": "I feel a lot better just knowing it's probably not my heart. I still want to get checked out, but thanks for taking the time."
+      },
+      "monitorState": {
+        "ecgRhythm": "Normal Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 76,
+        "bpSys": 120,
+        "bpDia": 74,
+        "respRate": 16,
+        "spo2": 99,
+        "etco2": 38,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 96,
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "ed-notification-handoff",
+          "shortAction": "Notify ED; bedside handoff with 12-lead, OPQRST, palpation finding, no-ASA/no-NTG rationale",
+          "priority": "critical",
+          "rationale": "MATC ACS step 11 / Key Documentation — early notification of any changes; document onset, contact-to-EKG time, reason ASA was withheld.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Early notification to receiving facility of any changes in patient condition or serial EKGs. Key Documentation Elements: The time of symptom onset; The time of patient contact by EMS to the time of 12-lead EKG acquisition; The time aspirin (ASA) administered, or reason why not given."
+        },
+        {
+          "id": "monitor-for-return",
+          "shortAction": "Continue cardiac monitor; reassess pain score and vitals every 5 minutes",
+          "priority": "important",
+          "rationale": "MATC Pain Management Key Documentation — reassessment with repeat vitals and pain scale; MATC ACS Patient Safety #1 — observe for deterioration.",
+          "protocolReference": "MATC: Pain Management",
+          "protocolExcerpt": "Key Documentation Elements: Documentation of patient reassessment with repeat vital signs and patient pain scale assessment."
+        },
+        {
+          "id": "documentation",
+          "shortAction": "Document OPQRST, palpation reproducing pain, clean 12-lead, rationale for deferring ASA/NTG",
+          "priority": "important",
+          "rationale": "MATC ACS Key Documentation Elements require onset time, contact-to-EKG, ASA time or reason withheld; documenting the protocol-cited reason for deferral protects the patient and the crew.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Key Documentation Elements: The time of symptom onset; The time of patient contact by EMS to the time of 12-lead EKG acquisition; The time aspirin (ASA) administered, or reason why not given; The time of STEMI notification."
+        }
+      ]
+    },
+    {
+      "id": "ntg-induced-hypotension",
+      "name": "NTG given without screening",
+      "description": "Crew anchored on the word 'chest pain' from dispatch and walked into the apartment running the full ACS bundle in their heads. They put the patient on the monitor, gave chewable aspirin 324 mg, and pushed sublingual NTG 0.4 mg — all before they ever did an OPQRST, palpated the chest wall, or really looked at the 12-lead (which is clean). Within 3 minutes the patient becomes lightheaded and pale, BP drops to 84/52, HR climbs to 104. He says 'I feel really weird now, way worse than before.' Crew must now recognize they treated a non-cardiac pain with a vasodilator, lay the patient supine, bolus IV fluids, and reassess. On reassessment they finally palpate the chest wall and reproduce the pain — the true diagnosis was sitting there the whole time.",
+      "triggerCondition": "Crew gave aspirin and sublingual nitroglycerin reflexively to a 'chest pain' complaint without completing OPQRST, without palpating the chest wall, and without recognizing the clean 12-lead and benign clinical pattern. The vasodilatory effect of NTG in a euvolemic young patient with no underlying ischemia produces symptomatic hypotension.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 4,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "RR 20, slightly shallow, lungs clear",
+        "circulation": "Weak radial pulse; cool clammy skin appearing within minutes of NTG; cap refill 3 seconds",
+        "skin": {
+          "color": "pale",
+          "temperature": "cool",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal at 4 mm, reactive",
+        "motorFunction": "Symmetric, mild generalized weakness from lightheadedness",
+        "otherFindings": [
+          "Symptomatic hypotension within 3 minutes of SL NTG",
+          "Patient reports 'I feel really weird, dizzy, way worse than the original pain'",
+          "Original sharp left chest pain is still present and STILL reproducible with palpation when finally examined",
+          "12-lead remains clean — no ischemic changes",
+          "No PDE5 inhibitor history — this is straightforward NTG-induced vasodilatory hypotension in a patient who never needed nitrates"
+        ],
+        "patientSpeech": "Whoa — whatever that little pill was, it made me feel a lot worse … I'm really dizzy now …"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 104,
+        "bpSys": 84,
+        "bpDia": 52,
+        "respRate": 20,
+        "spo2": 97,
+        "etco2": 35,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 96,
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-iatrogenic-hypotension",
+          "shortAction": "Stop further NTG; supine + legs elevated; recognize NTG-induced hypotension",
+          "priority": "critical",
+          "rationale": "MATC ACS step 7 — care should always be taken giving NTG with marginal BP; clinician must be ready to respond to hypotension with fluid bolus or pressor. Here the NTG should not have been given at all.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Care should always be taken when giving nitroglycerin when the patient's blood pressure is marginal. If used in this setting, the clinician should weigh the risk and benefit of nitrate administration over the administration of an opiate analgesic and be ready to respond to hypotension with fluid bolus or pressor."
+        },
+        {
+          "id": "fluid-bolus",
+          "shortAction": "Rapid 250–500 mL NS bolus IV; reassess; titrate to SBP > 90",
+          "priority": "critical",
+          "rationale": "MATC ACS step 7 caution — be ready to respond to NTG-induced hypotension with fluid bolus or pressor.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Care should always be taken when giving nitroglycerin when the patient's blood pressure is marginal. If used in this setting, the clinician should weigh the risk and benefit of nitrate administration over the administration of an opiate analgesic and be ready to respond to hypotension with fluid bolus or pressor."
+        },
+        {
+          "id": "complete-the-assessment-now",
+          "shortAction": "Complete deferred assessment: OPQRST, palpate chest wall, reproduce the pain",
+          "priority": "critical",
+          "rationale": "MATC ACS Inclusion Criteria #3 explicitly identifies the non-cardiac low-likelihood-of-ACS subset that should have its ASA and nitrates deferred — this assessment should have been the first move on scene.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Some patients will present with likely non-cardiac chest pain and otherwise have a low likelihood of ACS (e.g., blunt trauma to the chest of a child). For these patients, defer the administration of aspirin (ASA) and nitrates per the Pain Management Guideline."
+        },
+        {
+          "id": "withhold-further-ntg",
+          "shortAction": "Hold all further NTG; do not redose despite original chest pain still present",
+          "priority": "critical",
+          "rationale": "MATC ACS step 7 — caution with nitrates; with iatrogenic hypotension already established and a non-cardiac etiology, further NTG is contraindicated. Manage pain per Pain Management instead.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Nitroglycerin 0.4 mg sublingual (SL), can repeat q (quaque, every) 3–5 minutes if SBP greater than 100 mmHg."
+        },
+        {
+          "id": "early-notify-deterioration",
+          "shortAction": "Early notify receiving ED of NTG-induced hypotension and revised working impression",
+          "priority": "important",
+          "rationale": "MATC ACS step 11 — early notification of any change in patient condition.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Early notification to receiving facility of any changes in patient condition or serial EKGs."
+        },
+        {
+          "id": "debrief-anchoring-ntg",
+          "shortAction": "Debrief lesson: complete assessment BEFORE the ACS bundle, not after",
+          "priority": "supplemental",
+          "rationale": "Inclusion Criteria #3 distinguishes the non-cardiac subgroup who should have ASA and nitrates deferred — that decision can only be made if the assessment is done first.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Some patients will present with likely non-cardiac chest pain and otherwise have a low likelihood of ACS (e.g., blunt trauma to the chest of a child). For these patients, defer the administration of aspirin (ASA) and nitrates per the Pain Management Guideline."
+        }
+      ]
+    },
+    {
+      "id": "tunnel-vision-on-acs",
+      "name": "Tunnel vision on ACS",
+      "description": "Crew completes the standard ACS bundle — monitor, 12-lead, aspirin 324 mg, IV access — but never palpates the chest wall, never specifically asks about recent URI or heavy lifting, and never clarifies whether the pain is pleuritic or reproducible. The 12-lead is clean and the patient's vitals stay normal, but the crew never actually rules in or rules out a non-cardiac etiology. They transport as 'rule-out ACS' and hand off a vague 'young guy with chest pain, clean 12-lead, aspirin on board' report. The patient leaves the encounter with an unnecessary aspirin dose, an unnecessary IV, an undiagnosed musculoskeletal/pleuritic pain, and no real reassurance — and the ED begins a chest-pain rule-out pathway that the EMS assessment could have headed off. The 'patient harm' here is subtle: not a hypotensive event, but an incomplete assessment and a misleading handoff.",
+      "triggerCondition": "Crew applied the ACS bundle reflexively to a 'chest pain' complaint without doing a real OPQRST, without palpating the chest wall, and without exploring the recent URI / lifting history. The true non-cardiac etiology is missed; the handoff to the ED is therefore inaccurate.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "Unlabored at rest, RR 16; pain still worse with deep breath but crew has not specifically asked",
+        "circulation": "Strong regular pulse; warm, pink, dry",
+        "skin": {
+          "color": "pink",
+          "temperature": "warm",
+          "moisture": "dry"
+        },
+        "pupils": "Equal, briskly reactive",
+        "motorFunction": "Intact",
+        "otherFindings": [
+          "12-lead clean — read but not contextualized against a non-cardiac differential",
+          "Pain still reproducible with palpation — but never palpated by crew",
+          "Patient still anxious — 'so do you think it's a heart attack or not?' goes unanswered",
+          "Aspirin 324 mg already given; IV established"
+        ],
+        "patientSpeech": "I appreciate everything you're doing, but … is it my heart or not? I don't really know what you guys think."
+      },
+      "monitorState": {
+        "ecgRhythm": "Normal Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 86,
+        "bpSys": 122,
+        "bpDia": 76,
+        "respRate": 16,
+        "spo2": 99,
+        "etco2": 38,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 96,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-incomplete-assessment",
+          "shortAction": "Recognize ACS bundle without full assessment is incomplete; finish OPQRST + palpation now",
+          "priority": "critical",
+          "rationale": "MATC ACS Inclusion Criteria #3 — identifying the non-cardiac low-likelihood-of-ACS subgroup requires actually doing the assessment that would identify them.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Some patients will present with likely non-cardiac chest pain and otherwise have a low likelihood of ACS (e.g., blunt trauma to the chest of a child). For these patients, defer the administration of aspirin (ASA) and nitrates per the Pain Management Guideline."
+        },
+        {
+          "id": "retroactive-palpation",
+          "shortAction": "Palpate chest wall now; reproduce the pain; document the finding",
+          "priority": "critical",
+          "rationale": "Reproducible-on-palpation chest pain is the single bedside finding that most strongly points away from ACS; documenting it materially changes the ED handoff and downstream workup.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Assess the patient's cardiac rhythm and immediately address pulseless rhythms, symptomatic tachycardia, or symptomatic bradycardia."
+        },
+        {
+          "id": "complete-history",
+          "shortAction": "Ask about recent URI, dry cough, heavy lifting, twisting injuries; document",
+          "priority": "important",
+          "rationale": "MATC Pain Management Pertinent Assessment Findings — careful history of the precipitating event guides management; for MSK / pleuritic pain the precipitating event is often a cough or strain.",
+          "protocolReference": "MATC: Pain Management",
+          "protocolExcerpt": "Pertinent Assessment Findings: Mental status (Glasgow Coma Score (GCS) and pain level), Respiratory system (tidal volume, chest rigidity), Gastrointestinal (assess for tenderness, rebound, guarding, and nausea)."
+        },
+        {
+          "id": "answer-patient",
+          "shortAction": "Answer patient's question; verbal reassurance about non-cardiac findings",
+          "priority": "important",
+          "rationale": "MATC Pain Management step 4c — verbal reassurance to control anxiety is part of non-pharmacologic pain management; leaving a worried patient unanswered is its own clinical failure.",
+          "protocolReference": "MATC: Pain Management",
+          "protocolExcerpt": "Non-pharmacologic pain management options include placement of the patient in a position of comfort, application of ice packs and/or splints for pain secondary to trauma, verbal reassurance to control anxiety."
+        },
+        {
+          "id": "updated-handoff",
+          "shortAction": "Give ED an accurate handoff with palpation finding and revised working impression",
+          "priority": "critical",
+          "rationale": "MATC ACS Key Documentation — onset time, contact-to-EKG, ASA time, reason given or withheld. An accurate impression in the handoff helps the ED triage correctly.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Early notification to receiving facility of any changes in patient condition or serial EKGs. Key Documentation Elements: The time of symptom onset; The time of patient contact by EMS to the time of 12-lead EKG acquisition; The time aspirin (ASA) administered, or reason why not given."
+        },
+        {
+          "id": "debrief-bundle-first",
+          "shortAction": "Debrief lesson: bundle follows assessment, not the other way around",
+          "priority": "supplemental",
+          "rationale": "Inclusion Criteria #3 explicitly contemplates patients who should not get the bundle — recognizing them requires assessing them first.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI",
+          "protocolExcerpt": "Some patients will present with likely non-cardiac chest pain and otherwise have a low likelihood of ACS (e.g., blunt trauma to the chest of a child). For these patients, defer the administration of aspirin (ASA) and nitrates per the Pain Management Guideline."
+        }
+      ]
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

@@ -1,0 +1,526 @@
+{
+  "meta": {
+    "id": "C-T2-04",
+    "name": "Unstable A-Fib with RVR",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Cardiac",
+    "protocols": ["cv-tachycardia", "resp-airway-management", "medical-pain-management"],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": ["cardiac", "tachycardia", "atrial-fibrillation", "rvr", "cardioversion", "sedation", "decision-dense", "tier-2"]
+  },
+  "patient": {
+    "name": "Daniel Whitman",
+    "age": 66,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 82,
+    "weightLbs": 181,
+    "height": 178,
+    "chiefComplaint": "Palpitations, chest pressure, lightheadedness",
+    "history": {
+      "hpi": "66-year-old male with history of paroxysmal atrial fibrillation and hypertension developed sudden onset of pounding heartbeat about 90 minutes ago while watching TV. Reports central, non-radiating chest pressure 5/10, mild shortness of breath, and increasing lightheadedness. He admits he ran out of metoprolol and has missed his last 2 doses. No prior episodes this severe; in the past, A-fib has self-converted within an hour. Apixaban taken this morning. Denies syncope, denies recent travel, denies illicit drug use, denies caffeine or energy drinks today.",
+      "pastMedical": [
+        "Hypertension",
+        "Paroxysmal atrial fibrillation (anticoagulated)",
+        "Hyperlipidemia",
+        "Mild OSA (no CPAP)"
+      ],
+      "medications": [
+        "Apixaban 5 mg PO BID (last dose this morning)",
+        "Metoprolol succinate 50 mg PO daily (missed x2 days — ran out)",
+        "Atorvastatin 40 mg PO QHS",
+        "Lisinopril 10 mg PO daily"
+      ],
+      "allergies": ["NKDA"],
+      "lastOralIntake": "Light dinner ~2 hours ago — chicken sandwich, water. No alcohol.",
+      "events": "Pt was at home on the couch when he felt his heart 'take off.' Wife called 911 when he became pale and clammy and said he 'felt like he was going to pass out.' EMS arrived 8 minutes later."
+    }
+  },
+  "scene": {
+    "dispatch": "66-year-old male, feeling really bad, heart pounding. Conscious and breathing. Wife on scene.",
+    "location": "Single-family home, living room. Patient seated upright in recliner. Adequate lighting, room temperature.",
+    "time": "Tuesday evening, 19:42",
+    "safety": "Scene safe. No pets restrained. Clear path for stretcher.",
+    "bystanders": "Wife (primary caregiver) is calm, articulate, and provides a clear medication list and history. She has the pill bottles ready.",
+    "visualCues": [
+      "Pt is sitting forward, diaphoretic, pale",
+      "Empty metoprolol bottle on the side table — last refill 35 days ago",
+      "Apixaban bottle (current) on the kitchen counter",
+      "TV still on, dinner plate half-finished"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 66-year-old male seated in his recliner, pale and diaphoretic, gripping the armrest. He answers questions but is clearly uncomfortable and slow to respond. Wife reports he's been getting 'foggier' over the last 20 minutes. Initial impression: sick, tachycardic, possibly unstable.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 4, "motor": 6 },
+        "airway": "Patent, self-maintaining, speaking in short sentences",
+        "breathing": "Tachypneic at 26, mild accessory muscle use, lungs clear bilaterally, no rales/wheezing",
+        "circulation": "Radial pulse weak, rapid, irregularly irregular; carotid strong; cap refill ~3 sec; cool, diaphoretic skin",
+        "skin": { "color": "pale", "temperature": "cool", "moisture": "diaphoretic" },
+        "pupils": "PERRL 3 mm",
+        "motorFunction": "Moves all extremities on command; mild generalized weakness",
+        "otherFindings": [
+          "Pt states central chest pressure 5/10, non-radiating, started with palpitations",
+          "Denies focal neuro deficits",
+          "Mildly slow to answer; oriented to person and place, hazy on day/date (A&Ox2)",
+          "Wife confirms missed metoprolol x2 days"
+        ],
+        "patientSpeech": "\"My heart is just... pounding. I feel like I'm going to pass out. Make it stop.\""
+      },
+      "monitorState": {
+        "ecgRhythm": "Atrial Fibrillation",
+        "ecgWaveform": 38,
+        "hr": 168,
+        "bpSys": 84,
+        "bpDia": 56,
+        "respRate": 26,
+        "spo2": 95,
+        "etco2": 34,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 112,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "primary-survey",
+          "shortAction": "Rapid primary survey; identify A-fib RVR with instability (HR 168, BP 84/56, AMS, CP)",
+          "protocolExcerpt": "Patient Presentation: Patients will manifest elevated heart rate for age and may or may not also present with associated signs or symptoms such as palpitations, dyspnea, chest pain, syncope/near-syncope, hemodynamic compromise, altered mental status, or other signs of end organ malperfusion.",
+          "priority": "critical",
+          "rationale": "Instability criteria (hypotension + AMS + chest pain) drive the entire decision tree. Misidentifying as 'stable' is the judgment-error branch.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "oxygen",
+          "shortAction": "Apply O2 via NC, titrate to SpO2 94-98%",
+          "protocolExcerpt": "Adult Management: Administer oxygen as appropriate with a target of achieving 94–98% saturation.",
+          "priority": "important",
+          "rationale": "Rate hypoxia as a tachycardia driver; pt is currently 95% on RA but in shock state.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "monitor-12-lead",
+          "shortAction": "Place on monitor; obtain 12-lead EKG to confirm A-fib (not flutter, SVT, or VT)",
+          "protocolExcerpt": "Adult Management: Initiate monitoring and perform 12-lead EKG.",
+          "priority": "critical",
+          "rationale": "Confirms irregular narrow-complex rhythm; rules out wide-complex/pre-excited A-fib (which would contraindicate AV-nodal blockers).",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "iv-access",
+          "shortAction": "Establish large-bore IV access (18g antecubital preferred for cardioversion sedation)",
+          "protocolExcerpt": "Adult Management: Establish IV access.",
+          "priority": "critical",
+          "rationale": "Required for sedation prior to cardioversion and for any rescue fluids/pressors.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "glucose-check",
+          "shortAction": "Check blood glucose; rule out hypoglycemia as tachycardia driver",
+          "protocolExcerpt": "Adult Management: Check blood glucose and treat hypoglycemia per the Hypoglycemia Guideline.",
+          "priority": "important",
+          "rationale": "Standard tachycardia workup; rules out reversible cause before cardioversion.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "identify-unstable",
+          "shortAction": "Classify as Irregular Narrow Complex Tachycardia — UNSTABLE (hypotension + AMS + CP)",
+          "protocolExcerpt": "Irregular Narrow Complex Tachycardia – Unstable: Deliver a synchronized shock based on manufacturer's recommendation. For responsive patients, consider sedation.",
+          "priority": "critical",
+          "rationale": "This is the pivotal decision. The MATC protocol decision tree branches on stable vs unstable — get it wrong and the patient gets diltiazem (and crashes).",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "sedation-given",
+          "if": "Recognized unstable; sedation prepared",
+          "condition": "Crew correctly identifies the patient as unstable (hypotension + AMS + chest pain) per the MATC tachycardia decision tree, establishes IV access, and prepares sedation prior to synchronized cardioversion.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["identify-unstable", "iv-access"]
+        },
+        {
+          "targetPhaseId": "misjudged-stable",
+          "if": "Misjudged as stable; vagal/diltiazem path",
+          "condition": "Crew misjudges patient as stable (because patient is still conversant and BP 'isn't that low') and pursues the stable A-fib pathway — vagal maneuvers and/or diltiazem 0.25 mg/kg IV. Patient continues to deteriorate.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["identify-unstable"]
+        },
+        {
+          "targetPhaseId": "cardiovert-no-sedation",
+          "if": "Cardioverted without sedation",
+          "condition": "Crew correctly identifies instability but skips sedation in a responsive patient and proceeds directly to synchronized cardioversion.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["identify-unstable"]
+        }
+      ]
+    },
+    {
+      "id": "sedation-given",
+      "name": "Sedation given",
+      "description": "Crew has IV access. Patient remains alert enough to feel a shock and is consented (briefly) for cardioversion. Low-dose midazolam is selected to minimize further BP drop given borderline shock state. Crew explains the plan and prepares pads in anterior-posterior position; defibrillator in synchronized mode at 120 J biphasic per dose-escalation strategy.",
+      "triggerCondition": "Patient correctly identified as unstable irregular narrow-complex tachycardia. IV access obtained. Crew is preparing sedation prior to synchronized cardioversion in a responsive patient per MATC protocol.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 4, "motor": 6 },
+        "airway": "Patent, self-maintaining",
+        "breathing": "RR 26, equal/clear, mild accessory muscle use",
+        "circulation": "Pulse remains weak/irregular at ~165; cool diaphoretic skin",
+        "skin": { "color": "pale", "temperature": "cool", "moisture": "diaphoretic" },
+        "pupils": "PERRL 3 mm",
+        "motorFunction": "Moves all extremities; mildly weak",
+        "otherFindings": [
+          "Pads placed anterior-posterior",
+          "Monitor in SYNC mode; sync markers visible on R-waves",
+          "Pt verbalizes understanding of cardioversion plan"
+        ],
+        "patientSpeech": "\"Just... do whatever you need to. I feel awful.\""
+      },
+      "monitorState": {
+        "ecgRhythm": "Atrial Fibrillation",
+        "ecgWaveform": 38,
+        "hr": 164,
+        "bpSys": 86,
+        "bpDia": 58,
+        "respRate": 22,
+        "spo2": 97,
+        "etco2": 36,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 112,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "sedation-midaz",
+          "shortAction": "Midazolam 2 mg IV slow push (82 kg × 0.025 mg/kg ≈ 2 mg — low end of 0.05-0.10 mg/kg range due to hypotension)",
+          "protocolExcerpt": "Rapid/Delayed Sequence Intubation — Administer induction sedative agent: Midazolam IV push, 0.05-0.10 mg/kg. Patient Safety Considerations: If using cardioversion, consider sedation and pain control.",
+          "priority": "critical",
+          "rationale": "Procedural sedation per the airway management induction range, dosed at the low end given hypotension. Tachycardia protocol explicitly requires sedation consideration in responsive cardioversion.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "analgesic-consider",
+          "shortAction": "Consider Fentanyl 75 mcg IV (82 kg × 1 mcg/kg = 82 mcg → ~75 mcg; max initial 100 mcg) for procedural pain",
+          "protocolExcerpt": "For Moderate to Severe pain, analgesics include: Fentanyl: 1 mcg/kg IN, IM, IV or IO (maximum initial dose of 100 mcg).",
+          "priority": "supplemental",
+          "rationale": "Tachycardia protocol says 'consider sedation AND analgesia' for unstable cardioversion. Fentanyl preferred over morphine due to morphine's mortality signal in UA/NSTEMI and less hemodynamic effect. Optional — may defer if BP marginal.",
+          "protocolReference": "MATC: Pain Management"
+        },
+        {
+          "id": "pre-shock-monitor",
+          "shortAction": "Verify sync mode active and R-wave markers present before charging",
+          "protocolExcerpt": "Irregular Narrow Complex Tachycardia – Unstable: Deliver a synchronized shock based on manufacturer's recommendation.",
+          "priority": "critical",
+          "rationale": "Unsynchronized shock on a T-wave can induce VF. SYNC must be confirmed each shock.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "sync-cardiovert",
+          "shortAction": "Synchronized cardioversion at 120 J biphasic (escalation: 70 → 120 → 150 → 170 J)",
+          "protocolExcerpt": "Biphasic waveforms have been proven to convert A-FIB at lower energies and higher rates of success than monophasic waveforms. Strategies include dose escalation (70, 120, 150, 170 joules (J) for biphasic or 100, 200, 300, 360 J for monophasic) versus beginning with single high energy/highest success rate for single shock delivered.",
+          "priority": "critical",
+          "rationale": "Mid-range starting energy on the biphasic escalation ladder; appropriate given clear instability without need to start at minimum.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "post-conversion",
+          "if": "Cardioverted; sinus restored",
+          "condition": "Synchronized cardioversion at 120 J biphasic successfully converts patient to sinus rhythm with hemodynamic improvement.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["sync-cardiovert"]
+        }
+      ]
+    },
+    {
+      "id": "post-conversion",
+      "name": "Sinus restored; airway watch",
+      "description": "Cardioversion successful — patient converts to normal sinus at HR 92 with BP improving to 108/70. However, midazolam onset has deepened. Pt is drowsy, GCS 13 (E3V4M6), responds to voice but eyes close between prompts. Airway remains patent; SpO2 maintained on NC. Crew must now monitor airway, watch for re-entry into A-fib, and reassess pain/AMS resolution.",
+      "triggerCondition": "Synchronized cardioversion at 120 J biphasic restored sinus rhythm. BP improved to 108/70 and HR is 92. Patient is now drowsy from midazolam — protective reflexes intact but lighter LOC requires monitoring for airway compromise and recurrence of A-fib.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 4, "motor": 6 },
+        "airway": "Patent, snoring respirations briefly noted but resolves with chin lift",
+        "breathing": "RR 14, equal/clear, no accessory muscle use",
+        "circulation": "Radial pulse strong, regular at 92; warm dry skin returning; cap refill <2 sec",
+        "skin": { "color": "improving pink", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL 3 mm",
+        "motorFunction": "Moves all extremities to command; slow to follow",
+        "otherFindings": [
+          "Chest pressure has resolved per pt when prompted",
+          "Pt drowsy, eyes closing between questions — needs verbal stimulation",
+          "Monitor shows sinus rhythm with occasional PAC",
+          "12-lead post-conversion: NSR, no ST changes"
+        ],
+        "patientSpeech": "\"Better... tired... thank you.\""
+      },
+      "monitorState": {
+        "ecgRhythm": "Normal Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 92,
+        "bpSys": 108,
+        "bpDia": 70,
+        "respRate": 14,
+        "spo2": 96,
+        "etco2": 38,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 112,
+        "trendTimeSeconds": 25,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "post-airway-monitor",
+          "shortAction": "Continuous airway monitoring; chin lift/jaw thrust PRN; suction ready",
+          "protocolExcerpt": "Open and maintain patent airway. If needed, Provide head tilt/chin lift, or jaw thrust if concern for potential spinal injury.",
+          "priority": "critical",
+          "rationale": "Midazolam-induced sedation depresses protective airway reflexes; snoring respirations are an early warning of upper airway collapse.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "post-capnography",
+          "shortAction": "Maintain waveform capnography to detect hypoventilation before SpO2 drops",
+          "protocolExcerpt": "Use of non-invasive capnography is an earlier predictor of hypoventilation than pulse oximetry if opioid medications are administered.",
+          "priority": "important",
+          "rationale": "Especially critical if fentanyl was given with the midazolam — synergistic respiratory depression.",
+          "protocolReference": "MATC: Pain Management"
+        },
+        {
+          "id": "post-reassess-rhythm",
+          "shortAction": "Reassess rhythm; obtain post-conversion 12-lead; watch for re-entry into A-fib",
+          "protocolExcerpt": "Key Documentation Elements: Initial rhythm and all rhythm changes. Obtain monitor strips after each intervention.",
+          "priority": "critical",
+          "rationale": "A-fib can re-enter; 12-lead documents conversion and screens for ischemia that may have been rate-related.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "post-reassess-pain",
+          "shortAction": "Reassess chest pain; if recurrent CP and BP allows, consider ASA 324 mg PO chewed",
+          "protocolExcerpt": "Administer aspirin; chewable, non-enteric-coated aspirin preferred (162–325 mg).",
+          "priority": "important",
+          "rationale": "Underlying ischemia may have driven the A-fib; reassess for ACS now that rate is controlled.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/ST-segment Elevation Myocardial Infarction (STEMI)"
+        },
+        {
+          "id": "post-transport",
+          "shortAction": "Transport to ED with continuous monitoring; notify of converted A-fib RVR + sedation given",
+          "protocolExcerpt": "Transport and destination decisions should be based on local resources and system of care. Early notification to receiving facility of any changes in patient condition or serial EKGs.",
+          "priority": "important",
+          "rationale": "Receiving ED needs to know rhythm history, energy delivered, and sedation given for ongoing airway watch.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/ST-segment Elevation Myocardial Infarction (STEMI)"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "misjudged-stable",
+      "name": "Misjudged stable; deterioration",
+      "description": "Crew anchored on the patient being conversant and pursued the STABLE irregular narrow-complex pathway — attempted vagal maneuvers and drew up diltiazem. Within minutes, BP drops to 72/40, patient becomes Verbal-only, and has a brief syncopal episode. Crew must now transition to emergent cardioversion under worse conditions — pads not yet placed, sedation not pre-loaded, deteriorating mental status.",
+      "triggerCondition": "Crew misclassified the patient as stable despite clear instability criteria (hypotension + AMS + chest pain) and pursued vagal maneuvers and/or diltiazem 0.25 mg/kg IV. Diltiazem dropped an already-low BP further; vagal maneuvers slowed conduction transiently with rebound. Patient deteriorated to BP 72/40 with syncope. Now requires emergent synchronized cardioversion in a less stable patient.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 3, "motor": 5 },
+        "airway": "Patent, no gag, snoring respirations",
+        "breathing": "RR 30, shallow, accessory muscle use",
+        "circulation": "Radial pulse not palpable; carotid weak/irregular at ~170; cap refill 4 sec; mottled extremities",
+        "skin": { "color": "ashen/mottled", "temperature": "cold", "moisture": "diaphoretic" },
+        "pupils": "PERRL 3 mm but slow",
+        "motorFunction": "Withdraws to noxious stimuli; not following commands",
+        "otherFindings": [
+          "Brief witnessed syncopal episode (~10 sec) with no convulsive activity",
+          "Wife is now visibly panicking",
+          "Pads not yet on chest — crew scrambling",
+          "Diltiazem drawn up but not given (or partially given before recognition)"
+        ],
+        "patientSpeech": "Moans to voice; no coherent speech"
+      },
+      "monitorState": {
+        "ecgRhythm": "Atrial Fibrillation",
+        "ecgWaveform": 38,
+        "hr": 172,
+        "bpSys": 72,
+        "bpDia": 40,
+        "respRate": 30,
+        "spo2": 91,
+        "etco2": 30,
+        "temp": 36.7,
+        "tempF": 98.0,
+        "obstruction": 0,
+        "glucose": 110,
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "rescue-recognize",
+          "shortAction": "Recognize patient is now profoundly unstable; abort stable-pathway; transition to emergent sync cardioversion",
+          "protocolExcerpt": "Irregular Narrow Complex Tachycardia – Unstable: Deliver a synchronized shock based on manufacturer's recommendation. For responsive patients, consider sedation.",
+          "priority": "critical",
+          "rationale": "Reset to the unstable pathway. The error is anchoring; the correction is recognizing the trajectory and pivoting fast.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "rescue-pads",
+          "shortAction": "Place defib pads anterior-posterior; switch monitor to SYNC mode",
+          "protocolExcerpt": "Irregular Narrow Complex Tachycardia – Unstable: Deliver a synchronized shock based on manufacturer's recommendation.",
+          "priority": "critical",
+          "rationale": "Pads should have been placed in initial-contact phase; now scrambling to set up while pt deteriorates.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "rescue-cardiovert",
+          "shortAction": "Emergent synchronized cardioversion at 120 J biphasic — abbreviated sedation given LOC drop",
+          "protocolExcerpt": "Biphasic waveforms have been proven to convert A-FIB at lower energies and higher rates of success than monophasic waveforms. Strategies include dose escalation (70, 120, 150, 170 joules (J) for biphasic or 100, 200, 300, 360 J for monophasic) versus beginning with single high energy/highest success rate for single shock delivered.",
+          "priority": "critical",
+          "rationale": "Sedation may be deferred or minimized given declining LOC and acute hemodynamic collapse — pt may not feel/remember the shock.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "rescue-fluids",
+          "shortAction": "NS 500 mL IV bolus to address diltiazem/vagal-induced hypotension while pads prepare",
+          "protocolExcerpt": "Patient Safety Considerations: Patients who receive beta-blockers (e.g., metoprolol) with calcium channel blockers (e.g., diltiazem) are at increased risk for hypotension and bradycardia.",
+          "priority": "important",
+          "rationale": "Pt is on metoprolol (even though missed doses) and may have received diltiazem — compounding hypotension risk explicitly called out by protocol.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "rescue-debrief-error",
+          "shortAction": "Debrief flag: instability criteria were present from minute one — recognize anchoring bias",
+          "protocolExcerpt": "Patient Presentation: Patients will manifest elevated heart rate for age and may or may not also present with associated signs or symptoms such as palpitations, dyspnea, chest pain, syncope/near-syncope, hemodynamic compromise, altered mental status, or other signs of end organ malperfusion.",
+          "priority": "supplemental",
+          "rationale": "Teaching point — 'still talking' does not equal 'stable.' MAP, mentation, end-organ signs all flagged shock from the start.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "cardiovert-no-sedation",
+      "name": "Cardioverted without sedation",
+      "description": "Crew recognized instability but skipped sedation and delivered synchronized cardioversion on a fully responsive patient. Shock delivered — pt screams, swings arm, dislodges lead, and is briefly agitated/combative. Conversion occurred but the experience was traumatic, lead artifact obscured the post-shock rhythm strip momentarily, and crew now must rebuild rapport and re-secure leads. Patient is awake but tearful and refusing further interventions.",
+      "triggerCondition": "Crew correctly identified the patient as unstable but proceeded directly to synchronized cardioversion without administering sedation/analgesia to a responsive patient. Shock delivered; rhythm converted but patient experienced full conscious sensation of the shock — agitated, painful, refusing further care.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 4, "motor": 6 },
+        "airway": "Patent, yelling",
+        "breathing": "RR 28, hyperventilating from distress",
+        "circulation": "Radial pulse strong/regular at 96; warming",
+        "skin": { "color": "flushed", "temperature": "warm", "moisture": "diaphoretic from distress" },
+        "pupils": "PERRL 4 mm (sympathetic surge)",
+        "motorFunction": "Pulling at leads; trying to sit up",
+        "otherFindings": [
+          "Rhythm converted to NSR per brief glimpse before lead artifact",
+          "Pt yelling 'WHAT THE HELL DID YOU DO TO ME'",
+          "Wife distressed, asking why he wasn't given anything for the pain",
+          "Crew rapport severely damaged; pt verbalizing refusal of further treatment"
+        ],
+        "patientSpeech": "\"Don't touch me! That hurt! I told you my chest hurt — you didn't even warn me!\""
+      },
+      "monitorState": {
+        "ecgRhythm": "Normal Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 96,
+        "bpSys": 134,
+        "bpDia": 84,
+        "respRate": 28,
+        "spo2": 97,
+        "etco2": 30,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 112,
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "no-sed-debrief",
+          "shortAction": "Recognize protocol violation: responsive patient requires sedation/analgesia consideration",
+          "protocolExcerpt": "Irregular Narrow Complex Tachycardia – Unstable: Deliver a synchronized shock based on manufacturer's recommendation. For responsive patients, consider sedation. Patient Safety Considerations: If using cardioversion, consider sedation and pain control.",
+          "priority": "critical",
+          "rationale": "Protocol uses the word 'consider' but in a responsive, alert patient with time to establish IV and BP that supports low-dose midazolam, sedation should be given.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "no-sed-rapport",
+          "shortAction": "Rebuild rapport; verbal de-escalation; explain what happened and what's next",
+          "protocolExcerpt": "Non-pharmacologic pain management options include Verbal reassurance to control anxiety.",
+          "priority": "important",
+          "rationale": "Refusal of further care is a real risk after a painful procedure; verbal de-escalation is protocol-supported.",
+          "protocolReference": "MATC: Pain Management"
+        },
+        {
+          "id": "no-sed-late-analgesia",
+          "shortAction": "Offer late analgesia: Fentanyl 75 mcg IV (82 kg × 1 mcg/kg = 82 mcg → ~75 mcg; max initial 100 mcg) for post-shock pain",
+          "protocolExcerpt": "For Moderate to Severe pain, analgesics include: Fentanyl: 1 mcg/kg IN, IM, IV or IO (maximum initial dose of 100 mcg). If indicated based on pain assessment, and vital signs allow, repeat pain medication administration (excluding acetaminophen and nonsteroidal anti-inflammatory medicines) after 5 minutes of the previous dose.",
+          "priority": "important",
+          "rationale": "Post-shock myalgia and chest wall pain are real; salvage analgesia is appropriate now that BP is normalized.",
+          "protocolReference": "MATC: Pain Management"
+        },
+        {
+          "id": "no-sed-document",
+          "shortAction": "Document protocol deviation in PCR; brief receiving ED on rhythm history and missed sedation",
+          "protocolExcerpt": "Key Documentation Elements: Cardioversion times, synchronization, attempts, joules, and response.",
+          "priority": "important",
+          "rationale": "Transparency in documentation and handoff is essential for QI and continuity of care.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 120,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

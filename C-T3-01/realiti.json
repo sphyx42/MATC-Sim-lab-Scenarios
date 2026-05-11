@@ -1,0 +1,586 @@
+{
+  "scenarioId": "C-T3-01",
+  "scenarioName": "Witnessed V-Fib Arrest — Shock First",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1800,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "58-year-old male was at his desk at home reviewing paperwork when, approximately 25 minutes prior to EMS arrival, he developed substernal chest pressure described as 'tight, heavy' and rated 6/10. He became diaphoretic and 'gray' per his wife, and told her 'something is wrong, I feel really off.' He denies pain prior to today, denies recent illness, denies trauma. He has a history of hypertension and hyperlipidemia, both medication-controlled, and was a smoker until 8 years ago (30 pack-year history). Father had a fatal MI at age 62. Wife dialed 911 when his color became 'ashy.' On EMS arrival the patient is seated upright on the kitchen chair, alert and oriented, still complaining of substernal pressure now rated 5/10, diaphoretic, and slightly anxious. He confirms no phosphodiesterase-5 inhibitor use (no sildenafil/tadalafil/vardenafil). Approximately 45 seconds into the assessment — while pads are being placed and a 12-lead is being captured — he says 'I feel really weird' and slumps forward, pulseless and apneic. Witnessed arrest with crew present and monitor/defibrillator at the patient's side.",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives to find a 58-year-old male seated at the kitchen table, alert and oriented, complaining of substernal chest pressure that started 25 minutes ago. He is gray, diaphoretic, and visibly uncomfortable but talking in full sentences. Vitals reveal a sinus rhythm in the 90s with subtle anterior ischemic changes, BP 138/86, SpO2 96% on room air. The clinical picture is textbook ACS with a HIGH risk of dysrhythmia. The crew has a brief window — approximately 45 seconds — to recognize this is a 'pads-on-now' patient. If pads are placed promptly and the monitor is on the patient when he arrests, this becomes a true witnessed arrest with immediate defibrillation as the critical first action. If pads are NOT on when he arrests, the crew loses 60-90 seconds applying pads while the patient is in VF. → Witnessed collapse: Patient slumps forward, unresponsive. Crew confirms pulselessness within 5 seconds. Monitor — already attached — shows COARSE VENTRICULAR FIBRILLATION. Pads are on. This is the 'shock first' scenario in its purest form: witnessed arrest, monitor on, pads on, shockable rhythm. The protocol is unambiguous — defibrillate now, do not delay to start a CPR cycle. ETCO2 not yet capturing (no advanced airway, no compressions yet). The crew has roughly 10-15 seconds from rhythm recognition to first shock delivery if they execute well. → First shock — 200 J: First defibrillation delivered at 200 J biphasic within ~15 seconds of arrest recognition. Per protocol, chest compressions resume IMMEDIATELY post-shock without a pulse check for 2 minutes regardless of the post-shock rhythm. IV access (placed pre-arrest) is patent. Airway managed with BVM + OPA + high-flow O2; advanced airway deferred. ETCO2 with capnometry on the BVM circuit reads ~12 mmHg during compressions — adequate but at the low end; the crew should aim higher with quality CPR. The rhythm remains coarse VFib on the next analysis check. → Second shock + Epi 1 mg: After 2 minutes of compressions, rhythm check shows persistent coarse VFib. Second shock delivered at 200 J biphasic; compressions resumed immediately. Epinephrine 1 mg IV push administered during the next compression cycle and flushed with 20 mL NS. ETCO2 improves to 18 mmHg — quality CPR is being delivered. Crew is preparing amiodarone for the next round and continues to defer advanced airway. → Third shock + Amiodarone 300 mg: Third shock delivered at 200 J for persistent VFib. Per protocol, antiarrhythmic is now indicated for refractory VF/pulseless VT. Amiodarone 300 mg IV bolus administered, flushed. Compressions continue. ETCO2 holds at 20 mmHg — sustained quality CPR. Crew should also be assessing pad placement (consider switching to anterior-posterior if no conversion) and reviewing reversible causes. Decision point coming: if next rhythm check still shows VFib, the crew must decide between continuing the standard cycle OR considering refractory-VF strategies (changed pad position, double-sequential defibrillation per local OLMC, repositioning, addressing reversible causes). → ROSC: After the third shock + amiodarone, the next rhythm analysis reveals organized narrow-complex sinus rhythm at HR 102. Carotid pulse is strong and palpable. ROSC achieved at approximately 8-9 minutes of downtime, with high-quality CPR throughout. Patient remains unresponsive (GCS 5) and apneic — BVM ventilation continues. BP returns at 96/58 — borderline; ETCO2 rises to 28 mmHg as perfusion returns. The post-ROSC 12-lead shows ST elevation across V1-V4 confirming anterior STEMI as the etiology. The crew now pivots to post-ROSC care: protect airway, optimize hemodynamics, avoid hyper/hypoventilation, and transport to a STEMI-receiving / cath-capable facility."
+  },
+  "patientInformation": {
+    "patientName": "Frank Delgado",
+    "patientCondition": "Sudden onset substernal chest pressure with diaphoresis and a vague 'I just don't feel right' that progressed to witnessed collapse with cardiac arrest in front of the EMS crew approximately 45 seconds after their arrival.",
+    "patientAge": 58,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 178,
+    "patientWeight": 88,
+    "patientPhotoId": 70,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a 58-year-old male seated at the kitchen table, alert and oriented, complaining of substernal chest pressure that started 25 minutes ago. He is gray, diaphoretic, and visibly uncomfortable but talking in full sentences. Vitals reveal a sinus rhythm in the 90s with subtle anterior ischemic changes, BP 138/86, SpO2 96% on room air. The clinical picture is textbook ACS with a HIGH risk of dysrhythmia. The crew has a brief window — approximately 45 seconds — to recognize this is a 'pads-on-now' patient. If pads are placed promptly and the monitor is on the patient when he arrests, this becomes a true witnessed arrest with immediate defibrillation as the critical first action. If pads are NOT on when he arrests, the crew loses 60-90 seconds applying pads while the patient is in VF.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 23,
+        "hr": 96,
+        "bpSys": 138,
+        "bpDia": 86,
+        "respRate": 20,
+        "spo2": 96,
+        "etco2": 38,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Rapid primary survey; recognize unstable ACS at high arrest risk",
+        "Place defibrillator pads immediately on chest (anterolateral) — pre-emptive",
+        "12-lead EKG within 10 minutes; recognize anterior ST elevation",
+        "Aspirin 324 mg PO chewed (4 × 81 mg) — confirm no allergy",
+        "Establish IV access (18g antecubital) before arrest occurs",
+        "Screen for PDE5 inhibitor use before any nitroglycerin"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Witnessed collapse",
+      "description": "Patient slumps forward, unresponsive. Crew confirms pulselessness within 5 seconds. Monitor — already attached — shows COARSE VENTRICULAR FIBRILLATION. Pads are on. This is the 'shock first' scenario in its purest form: witnessed arrest, monitor on, pads on, shockable rhythm. The protocol is unambiguous — defibrillate now, do not delay to start a CPR cycle. ETCO2 not yet capturing (no advanced airway, no compressions yet). The crew has roughly 10-15 seconds from rhythm recognition to first shock delivery if they execute well.",
+      "monitorType": 0,
+      "trendTime": 15,
+      "jumpTime": 0,
+      "defibShock": true,
+      "defibDisarm": false,
+      "parameters": {
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 0,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Confirm pulselessness; call cardiac arrest aloud; move patient to floor",
+        "Recognize coarse VFib on the monitor",
+        "Charge defibrillator immediately — do NOT start a CPR cycle first"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "First shock — 200 J",
+      "description": "First defibrillation delivered at 200 J biphasic within ~15 seconds of arrest recognition. Per protocol, chest compressions resume IMMEDIATELY post-shock without a pulse check for 2 minutes regardless of the post-shock rhythm. IV access (placed pre-arrest) is patent. Airway managed with BVM + OPA + high-flow O2; advanced airway deferred. ETCO2 with capnometry on the BVM circuit reads ~12 mmHg during compressions — adequate but at the low end; the crew should aim higher with quality CPR. The rhythm remains coarse VFib on the next analysis check.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": true,
+      "defibDisarm": false,
+      "parameters": {
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 12,
+        "temp": 36.7,
+        "obstruction": 0,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Deliver first shock 200 J biphasic (Zoll max adult dose)",
+        "Resume compressions immediately post-shock — no pulse check ×2 min",
+        "Quality CPR: rate 100–120, depth ≥2 in, full recoil, minimal pauses",
+        "BVM + OPA at 10/min with high-flow O2 (passive airway acceptable early)",
+        "Capnography on circuit; target ETCO2 ≥10 mmHg as CPR quality marker"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Second shock + Epi 1 mg",
+      "description": "After 2 minutes of compressions, rhythm check shows persistent coarse VFib. Second shock delivered at 200 J biphasic; compressions resumed immediately. Epinephrine 1 mg IV push administered during the next compression cycle and flushed with 20 mL NS. ETCO2 improves to 18 mmHg — quality CPR is being delivered. Crew is preparing amiodarone for the next round and continues to defer advanced airway.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": true,
+      "defibDisarm": false,
+      "parameters": {
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 18,
+        "temp": 36.7,
+        "obstruction": 0,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Deliver second shock 200 J biphasic",
+        "Epinephrine 1 mg IV push (1:10,000) — fixed adult dose; repeat q3–5 min",
+        "Flush epi with 20 mL NS; raise arm during CPR",
+        "Resume compressions immediately; rotate rescuer at 2-min mark",
+        "Consider H's & T's — anterior STEMI is the leading etiology here"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Third shock + Amiodarone 300 mg",
+      "description": "Third shock delivered at 200 J for persistent VFib. Per protocol, antiarrhythmic is now indicated for refractory VF/pulseless VT. Amiodarone 300 mg IV bolus administered, flushed. Compressions continue. ETCO2 holds at 20 mmHg — sustained quality CPR. Crew should also be assessing pad placement (consider switching to anterior-posterior if no conversion) and reviewing reversible causes. Decision point coming: if next rhythm check still shows VFib, the crew must decide between continuing the standard cycle OR considering refractory-VF strategies (changed pad position, double-sequential defibrillation per local OLMC, repositioning, addressing reversible causes).",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": true,
+      "defibDisarm": false,
+      "parameters": {
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 20,
+        "temp": 36.7,
+        "obstruction": 0,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Deliver third shock 200 J biphasic",
+        "Amiodarone 300 mg IV bolus (fixed adult first dose); 150 mg in 4–6 min if still VF",
+        "Reassess H's & T's; confirm anterior STEMI as etiology",
+        "Continue 2-min CPR cycles; epi 1 mg q3–5 min ongoing",
+        "Anticipate refractory VF; prepare pad reposition (A-P) if no conversion"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "ROSC",
+      "description": "After the third shock + amiodarone, the next rhythm analysis reveals organized narrow-complex sinus rhythm at HR 102. Carotid pulse is strong and palpable. ROSC achieved at approximately 8-9 minutes of downtime, with high-quality CPR throughout. Patient remains unresponsive (GCS 5) and apneic — BVM ventilation continues. BP returns at 96/58 — borderline; ETCO2 rises to 28 mmHg as perfusion returns. The post-ROSC 12-lead shows ST elevation across V1-V4 confirming anterior STEMI as the etiology. The crew now pivots to post-ROSC care: protect airway, optimize hemodynamics, avoid hyper/hypoventilation, and transport to a STEMI-receiving / cath-capable facility.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 23,
+        "hr": 102,
+        "bpSys": 96,
+        "bpDia": 58,
+        "respRate": 10,
+        "spo2": 94,
+        "etco2": 28,
+        "temp": 36.5,
+        "obstruction": 0,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Confirm ROSC; recheck pulse + BP; reassess every 2 minutes",
+        "Continue BVM at 10/min; target ETCO2 35–45; do NOT hyperventilate",
+        "Titrate O2 to SpO2 94–98%; do NOT hyperoxygenate",
+        "Post-ROSC 12-lead EKG; recognize anterior STEMI",
+        "Transport to cath-capable STEMI receiving facility with advance notification",
+        "Manage hypotension: SBP <90 → fluid bolus per Shock guideline",
+        "Recheck blood glucose post-ROSC",
+        "Keep defib pads on; anticipate re-arrest; monitor continuously"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Delayed defib — CPR first",
+      "description": "BRANCH (improper): The crew either failed to place pads pre-emptively or, after arrest, defaulted to a CPR cycle 'per algorithm' before defibrillating despite the witnessed-with-pads opportunity. First shock is delayed by 90-180 seconds. During this time the coarse VFib deteriorates toward fine VFib — a less perfusable rhythm with markedly lower defibrillation success. ETCO2 with CPR is poor (~8 mmHg) due to the delayed start. When the first shock is eventually delivered the rhythm does not convert, and the resuscitation enters a refractory pattern from the start. The teaching beat: witnessed arrest with pads is a SHOCK-FIRST scenario. Inserting a CPR cycle is a judgment error specific to witnessed-with-pads events.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": true,
+      "defibDisarm": false,
+      "parameters": {
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 8,
+        "temp": 36.7,
+        "obstruction": 0,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize the missed shock-first window; defibrillate now at 200 J",
+        "Improve CPR quality immediately — ETCO2 <10 = compression problem",
+        "Epinephrine 1 mg IV; consider amiodarone 300 mg early given fine VF",
+        "Debrief on the teaching point: witnessed-with-pads = SHOCK FIRST"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Refractory VF — no escalation",
+      "description": "BRANCH (improper): After three shocks plus epi and amiodarone, the patient remains in coarse VFib. Instead of escalating to refractory-VF strategies — repositioning pads to anterior-posterior, considering double-sequential defibrillation per OLMC, methodically working through reversible causes, or critically reviewing CPR quality — the crew either (a) continues the same cycle on autopilot indefinitely, (b) prematurely calls for termination, or (c) loads-and-goes with poor in-vehicle CPR. The result is prolonged downtime without conversion. The teaching beat: refractory VF requires escalation, not repetition.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": true,
+      "defibDisarm": false,
+      "parameters": {
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 14,
+        "temp": 36.6,
+        "obstruction": 0,
+        "custMeasure1": 118,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Escalate: amiodarone 150 mg IV second dose at 4–6 min mark",
+        "Reposition pads anterior-posterior; reassess CPR quality (depth/recoil/rate)",
+        "Systematic H's & T's review aloud; confirm cause-directed plan",
+        "Continue epi q3–5 min; do not prematurely terminate",
+        "Debrief: refractory VF demands ESCALATION, not repetition"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Rapid primary survey; recognize unstable ACS at high arrest risk",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place defibrillator pads immediately on chest (anterolateral) — pre-emptive",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "12-lead EKG within 10 minutes; recognize anterior ST elevation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Aspirin 324 mg PO chewed (4 × 81 mg) — confirm no allergy",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access (18g antecubital) before arrest occurs",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Screen for PDE5 inhibitor use before any nitroglycerin",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Confirm pulselessness; call cardiac arrest aloud; move patient to floor",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize coarse VFib on the monitor",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Charge defibrillator immediately — do NOT start a CPR cycle first",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Deliver first shock 200 J biphasic (Zoll max adult dose)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Resume compressions immediately post-shock — no pulse check ×2 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Quality CPR: rate 100–120, depth ≥2 in, full recoil, minimal pauses",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "BVM + OPA at 10/min with high-flow O2 (passive airway acceptable early)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Capnography on circuit; target ETCO2 ≥10 mmHg as CPR quality marker",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Deliver second shock 200 J biphasic",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 1 mg IV push (1:10,000) — fixed adult dose; repeat q3–5 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Flush epi with 20 mL NS; raise arm during CPR",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Resume compressions immediately; rotate rescuer at 2-min mark",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Consider H's & T's — anterior STEMI is the leading etiology here",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Deliver third shock 200 J biphasic",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Amiodarone 300 mg IV bolus (fixed adult first dose); 150 mg in 4–6 min if still VF",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess H's & T's; confirm anterior STEMI as etiology",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue 2-min CPR cycles; epi 1 mg q3–5 min ongoing",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Anticipate refractory VF; prepare pad reposition (A-P) if no conversion",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Confirm ROSC; recheck pulse + BP; reassess every 2 minutes",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue BVM at 10/min; target ETCO2 35–45; do NOT hyperventilate",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Titrate O2 to SpO2 94–98%; do NOT hyperoxygenate",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Post-ROSC 12-lead EKG; recognize anterior STEMI",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to cath-capable STEMI receiving facility with advance notification",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Manage hypotension: SBP <90 → fluid bolus per Shock guideline",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recheck blood glucose post-ROSC",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Keep defib pads on; anticipate re-arrest; monitor continuously",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize the missed shock-first window; defibrillate now at 200 J",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Improve CPR quality immediately — ETCO2 <10 = compression problem",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 1 mg IV; consider amiodarone 300 mg early given fine VF",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Debrief on the teaching point: witnessed-with-pads = SHOCK FIRST",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Escalate: amiodarone 150 mg IV second dose at 4–6 min mark",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reposition pads anterior-posterior; reassess CPR quality (depth/recoil/rate)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Systematic H's & T's review aloud; confirm cause-directed plan",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue epi q3–5 min; do not prematurely terminate",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Debrief: refractory VF demands ESCALATION, not repetition",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

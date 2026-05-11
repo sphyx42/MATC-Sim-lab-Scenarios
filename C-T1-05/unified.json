@@ -1,0 +1,491 @@
+{
+  "meta": {
+    "id": "C-T1-05",
+    "name": "CHF Exacerbation, Early Presentation",
+    "version": 1,
+    "difficulty": "beginner",
+    "category": "Cardiac",
+    "protocols": [
+      "resp-respiratory-distress",
+      "resp-airway-management",
+      "cv-chest-pain-acs-stemi"
+    ],
+    "totalTimeSeconds": 1200,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "CHF",
+      "pulmonary edema",
+      "CPAP",
+      "nitroglycerin",
+      "assessment",
+      "Tier 1"
+    ]
+  },
+  "patient": {
+    "name": "Walter Hensley",
+    "age": 72,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 88,
+    "weightLbs": 194,
+    "height": 178,
+    "chiefComplaint": "Progressive shortness of breath over several days, worse tonight",
+    "history": {
+      "hpi": "Patient reports gradual worsening of dyspnea over the past 4-5 days. Initially only short of breath with exertion, now short of breath at rest. Sleeping in his recliner for the last 2 nights because lying flat makes him feel like he is suffocating (orthopnea). Wakes multiple times overnight gasping for air (PND). Reports his ankles and lower legs have become much more swollen than usual, and he is up about 7 pounds on his bathroom scale from a week ago. Admits he has not been taking his furosemide (Lasix) for the past 2 days because he ran out and has not refilled. No chest pain, no fever, no cough productive of yellow/green sputum, no leg pain or unilateral leg swelling.",
+      "pastMedical": [
+        "Congestive heart failure (HFrEF, EF 35% per last echo)",
+        "Hypertension",
+        "Coronary artery disease, s/p stent x2 (2019)",
+        "Hyperlipidemia",
+        "Type 2 diabetes mellitus"
+      ],
+      "medications": [
+        "Furosemide (Lasix) 40 mg PO daily — missed last 2 doses",
+        "Lisinopril 20 mg PO daily",
+        "Metoprolol succinate 50 mg PO daily",
+        "Atorvastatin 40 mg PO nightly",
+        "Aspirin 81 mg PO daily",
+        "Metformin 1000 mg PO BID"
+      ],
+      "allergies": [
+        "NKDA"
+      ],
+      "lastOralIntake": "Light dinner (soup and crackers) about 4 hours ago; sips of water since",
+      "events": "Wife called 911 after patient was unable to catch his breath while walking from the recliner to the bathroom and refused to lie back down."
+    }
+  },
+  "scene": {
+    "dispatch": "72-year-old male, trouble breathing, conscious and alert, at a private residence.",
+    "location": "Single-story home, living room. Patient seated upright in a recliner near an open window. Home oxygen is NOT present.",
+    "time": "Tuesday evening, 2030 hours",
+    "safety": "Scene is safe. Well-lit room, clear ingress and egress, no pets, no hazards.",
+    "bystanders": "Wife is present, calm but worried. She states he has been getting worse for several days and his ankles are 'twice the size they usually are.' Confirms he ran out of his water pill and missed the last 2 doses.",
+    "visualCues": [
+      "Patient sitting bolt upright in recliner, leaning slightly forward, visibly working to breathe",
+      "Speaking in 3-4 word sentences between breaths",
+      "Pillows stacked on the bed in the adjacent bedroom (sleeping upright)",
+      "Empty Lasix bottle on the kitchen counter",
+      "Pill organizer on side table; today's slot still has evening pills in it",
+      "Visible pedal edema with sock indentations on both lower legs",
+      "Discharge paperwork from cardiology visit on coffee table — diagnosis includes 'CHF'"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial",
+      "name": "Initial Contact",
+      "description": "Crew enters the living room to find a 72-year-old male seated bolt upright in a recliner, leaning slightly forward, working visibly to breathe but conversant in 3-4 word phrases. Skin is warm and slightly diaphoretic. No obvious chest pain, no acute trauma. He is anxious but cooperative.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, self-maintained",
+        "breathing": "Tachypneic with mild accessory muscle use; speaking in 3-4 word sentences; tripoding in recliner",
+        "circulation": "Radial pulse strong and regular-rapid; skin warm, slightly diaphoretic; +2 pitting pedal edema bilaterally; capillary refill <2 seconds",
+        "skin": { "color": "pink, slightly flushed", "temperature": "warm", "moisture": "mildly diaphoretic" },
+        "pupils": "PERRL, 3 mm bilaterally",
+        "motorFunction": "Moves all extremities to command; no focal deficits",
+        "otherFindings": [
+          "Patient sitting upright, refuses to lie back",
+          "Wife reports several days of progressive shortness of breath",
+          "Wife reports missed last 2 doses of Lasix"
+        ],
+        "patientSpeech": "Can't... catch... my breath. Worse... at night."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 112,
+        "bpSys": 158,
+        "bpDia": 96,
+        "respRate": 28,
+        "spo2": 90,
+        "etco2": 33,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "scene-bsi",
+          "shortAction": "Scene safety, BSI, general impression",
+          "protocolExcerpt": "Implement emergent interventions and monitoring [Refer to Universal Care Guideline]",
+          "priority": "critical",
+          "rationale": "Standard universal care opening — confirms a safe environment and forms a general impression of severity (sitting upright, tripoding, tachypneic = sick).",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "primary-survey",
+          "shortAction": "Primary survey (ABC); position of comfort upright",
+          "protocolExcerpt": "Patient positioning can significantly impact respiratory mechanics. Patients with severe bronchospasm should be left in the position of comfort (perhaps tripod) whenever possible. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics.",
+          "priority": "critical",
+          "rationale": "Keep the CHF patient in high-Fowler's — laying him back will worsen pulmonary edema and respiratory mechanics.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "o2-target",
+          "shortAction": "Apply O2 (NC or NRB) targeting SpO2 94-98%",
+          "protocolExcerpt": "Give supplemental oxygen for dyspnea to a target of 94–98% saturation. Escalate from a nasal cannula as needed to reach this goal.",
+          "priority": "critical",
+          "rationale": "Hypoxic patient (SpO2 90% RA) needs supplemental O2 with escalation if target is not met.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "lung-sounds",
+          "shortAction": "Auscultate lungs in all fields — listen for crackles vs wheezes",
+          "protocolExcerpt": "Breath sounds (wheezes, crackles, rales, rhonchi, diminished, clear)",
+          "priority": "critical",
+          "rationale": "The KEY exam finding that distinguishes CHF (rales/crackles) from COPD/asthma (wheezing). Bibasilar crackles point to pulmonary edema.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "jvd-edema-exam",
+          "shortAction": "Assess for JVD and peripheral/sacral edema",
+          "protocolExcerpt": "Fluid overload etiology (e.g., CHF, pulmonary edema) is suggested by: Jugular venous distention; Rales on auscultation; Peripheral edema; History of CHF, diuretic therapy, dialysis noncompliance, hypertension",
+          "priority": "critical",
+          "rationale": "JVD + bilateral pitting edema confirm fluid overload picture and steer treatment toward CHF pathway rather than bronchospasm pathway.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "sample-history",
+          "shortAction": "SAMPLE history — orthopnea, PND, weight gain, missed Lasix",
+          "protocolExcerpt": "History — Onset of symptoms; Concurrent symptoms (e.g., fever, cough, rhinorrhea, tongue/lip swelling, rash, labored breathing, foreign body aspiration); Usual triggers of symptoms; Treatments prior to EMS: Oxygen, inhaler, nebulizer, other treatments, chronic or recent steroids; Hospitalizations: Number of emergency department visits in the past year, number of hospital admissions in the past year, number of ICU admissions (ever), previously intubated (ever)",
+          "priority": "critical",
+          "rationale": "The history is the pathognomonic clue: orthopnea + PND + weight gain + missed diuretic = CHF exacerbation. Without this, students may chase bronchospasm.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "monitor-spo2-etco2",
+          "shortAction": "Continuous SpO2 + waveform capnography",
+          "protocolExcerpt": "Pulse oximetry and EtCO2 should be routinely used as adjuncts to other forms of monitoring in patients with respiratory complaints",
+          "priority": "important",
+          "rationale": "Capnography waveform shape helps distinguish CHF (normal shape, lower EtCO2) from bronchospasm (shark-fin).",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "cardiac-monitor-12-lead",
+          "shortAction": "Cardiac monitor + 12-lead ECG",
+          "protocolExcerpt": "Continuous cardiac monitoring may be indicated in patients with respiratory distress associated with suspected acute or decompensated congestive heart failure (CHF) or dysrhythmia. 12-lead EKG may be indicated to assess for dysrhythmia or ischemia, particularly in patients with risk factors for coronary artery disease and/or presentation consistent with CHF",
+          "priority": "important",
+          "rationale": "CHF and ACS overlap. 12-lead screens for ischemia and dysrhythmia driving the failure.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "iv-access",
+          "shortAction": "Establish IV access (medication route anticipated)",
+          "protocolExcerpt": "IV Access and Fluids – IV access should be placed when IV medication administration is indicated, or when there are clinical concerns of dehydration so that IV fluids can be administered",
+          "priority": "important",
+          "rationale": "IV access anticipated in case of decompensation or need for vasopressor support if BP drops.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "chf-recognized",
+          "if": "JVD and edema noted",
+          "condition": "Crew completes thorough respiratory and cardiac exam — auscultates bibasilar crackles, identifies JVD and +2 bilateral pedal edema, and elicits orthopnea/PND/missed Lasix history. CHF exacerbation correctly identified and CHF pathway initiated.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["lung-sounds", "jvd-edema-exam", "sample-history"]
+        },
+        {
+          "targetPhaseId": "treated-as-copd",
+          "if": "Treated as COPD/asthma",
+          "condition": "Crew anchors on the cardiac wheeze or skips full assessment, misses JVD/edema/orthopnea history, and treats presumptively as COPD/asthma exacerbation with albuterol nebulizer. The bronchodilator increases myocardial oxygen demand and HR while doing nothing for fluid overload.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["lung-sounds", "jvd-edema-exam", "sample-history"]
+        }
+      ]
+    },
+    {
+      "id": "chf-recognized",
+      "name": "CHF recognized",
+      "description": "Crew has put the picture together: bibasilar crackles, +JVD, +2 pedal edema, orthopnea/PND, weight gain, missed Lasix. Patient still hypertensive at 156/94 with SpO2 92% on NRB. Working to set up CPAP and prepare SL NTG. Patient remains alert and able to follow coaching.",
+      "triggerCondition": "Crew has completed a thorough respiratory and cardiac assessment — auscultated bibasilar crackles, identified JVD and bilateral pedal edema, and obtained the orthopnea/PND/missed-Lasix history. The fluid-overload picture is now obvious and the CHF treatment pathway is the next step.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, self-maintained",
+        "breathing": "Still tachypneic at 26, audible crackles to mid-lung fields, accessory muscle use easing slightly with NRB and upright positioning",
+        "circulation": "HR 110, sinus tachycardia, strong regular radial pulse, skin warm and diaphoretic",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "diaphoretic" },
+        "pupils": "PERRL, 3 mm",
+        "motorFunction": "Moves all extremities, follows commands, cooperative",
+        "otherFindings": [
+          "Bibasilar crackles to mid-lung fields, no wheezing on better auscultation",
+          "JVD visible at 45 degrees",
+          "+2 pitting edema to mid-shin bilaterally",
+          "12-lead: sinus tachycardia, no acute ST changes, LBBB unchanged from prior"
+        ],
+        "patientSpeech": "Little... better... sitting up."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 110,
+        "bpSys": 156,
+        "bpDia": 94,
+        "respRate": 26,
+        "spo2": 92,
+        "etco2": 34,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "screen-pde5",
+          "shortAction": "Screen for PDE-5 inhibitor use in past 48 hours before NTG",
+          "protocolExcerpt": "Patient Safety Considerations: The use of nitrates should be avoided in any patient who has used a phosphodiesterase inhibitor within the past 48 hours. Examples are sildenafil, vardenafil and tadalafil, which are used for erectile dysfunction and pulmonary hypertension. Also avoid use in patients receiving intravenous epoprostenol or treporstenil which are used for pulmonary hypertension",
+          "priority": "critical",
+          "rationale": "Mandatory safety check before any nitrate. Coadministration with a PDE-5 inhibitor can produce profound, refractory hypotension.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "cpap-setup",
+          "shortAction": "Apply CPAP for severe respiratory distress with pulmonary edema",
+          "protocolExcerpt": "Restoration of adequate oxygenation and ventilation should precede or be accomplished simultaneously with other medication therapies below — CPAP/BiPAP: See Airway Management Guideline for goals of care and escalation of interventions. Non-invasive ventilation (NIV) should be administered for severe respiratory distress via BVM, continuous positive airway pressure (CPAP) or bi-level positive airway pressure (BiPAP).",
+          "priority": "critical",
+          "rationale": "CPAP recruits collapsed alveoli, drives fluid out of the alveolar space, and reduces preload — the single highest-yield CHF intervention before NTG.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "ntg-sl",
+          "shortAction": "Nitroglycerin 0.4 mg SL (SBP 156 → use 0.4 mg dose; repeat q5min while SBP >100)",
+          "protocolExcerpt": "SBP less than 160 mmHg — Nitroglycerin: 0.4 mg SL, can repeat every 5 minutes for SBP greater than 100 mmHg",
+          "priority": "critical",
+          "rationale": "Patient SBP is 156 (in the <160 band), so the 0.4 mg SL dose is correct. NTG drops preload via venous dilation — direct mechanism for pulmonary edema.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "bp-reassess-ntg",
+          "shortAction": "Reassess BP before each repeat NTG; hold if SBP ≤ 100",
+          "protocolExcerpt": "Performance Measures: Documentation of blood pressure reassessment in patients receiving nitrates",
+          "priority": "important",
+          "rationale": "NTG-induced hypotension is the main risk; BP-gated re-dosing is the safeguard.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "reassess-improvement",
+          "shortAction": "Reassess RR, SpO2, lung sounds, work of breathing after each intervention",
+          "protocolExcerpt": "Document key aspects of the exam at baseline and after each intervention: Respiratory rate; Oxygen saturation; EtCO2/waveform shape; Use of accessory muscles; Breath sounds and quality; Mental status; Response to interventions",
+          "priority": "important",
+          "rationale": "Reassessment-driven care is the core competency of this scenario.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "transport-decision",
+          "shortAction": "Transport in high-Fowler's; do not break CPAP seal en route",
+          "protocolExcerpt": "Patient Safety Considerations: Once initiated and patient is tolerating mask, DO NOT discontinue CPAP/BiPAP until patient is on the emergency department stretcher and hospital CPAP/BiPAP is immediately available for patient to be switched over, or physician is at bedside and requesting CPAP/BiPAP be discontinued. Breaking the mask seal causes a significant decrease in airway pressures and may lead to abrupt decompensation due to atelectasis and alveolar collapse.",
+          "priority": "important",
+          "rationale": "Breaking the CPAP seal in transport reverses alveolar recruitment and risks abrupt decompensation.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "cpap-ntg-improving",
+          "if": "CPAP + NTG started",
+          "condition": "CPAP applied with good mask seal and SL nitroglycerin 0.4 mg administered after PDE-5 screen. Patient experiences expected preload reduction with improved work of breathing, decreasing RR, and improving SpO2 over the next several minutes.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["cpap-setup", "ntg-sl", "screen-pde5"]
+        }
+      ]
+    },
+    {
+      "id": "cpap-ntg-improving",
+      "name": "CPAP + NTG improving",
+      "description": "After 5-7 minutes on CPAP with one dose of SL nitroglycerin, the patient is breathing easier, SpO2 has climbed to 96%, RR is down to 20, and lung sounds — while still showing crackles in the bases — are clearing in the mid fields. BP has come down to a more normal range. Patient remains alert and tolerating the mask. Transport ongoing.",
+      "triggerCondition": "CPAP applied with good mask seal and SL nitroglycerin 0.4 mg administered. Preload reduction and alveolar recruitment have produced the expected clinical improvement: lower respiratory rate, higher SpO2, less accessory muscle use.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, on CPAP with good seal",
+        "breathing": "Markedly improved work of breathing; RR 20 on CPAP; crackles still present at bases but clearing in mid-fields",
+        "circulation": "HR 96, sinus, strong regular pulse; skin warm and now dry",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL, 3 mm",
+        "motorFunction": "Tolerating mask, calm, follows coaching",
+        "otherFindings": [
+          "Patient gives thumbs-up and says he can breathe easier",
+          "12-lead unchanged; no new ST changes",
+          "BP appropriately decreased after NTG, well above 100 SBP"
+        ],
+        "patientSpeech": "Breathing... easier... thank you."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 96,
+        "bpSys": 138,
+        "bpDia": 82,
+        "respRate": 20,
+        "spo2": 96,
+        "etco2": 36,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "ongoing-reassess",
+          "shortAction": "Ongoing reassessment q5min; document trend",
+          "protocolExcerpt": "Document key aspects of the exam at baseline and after each intervention: Respiratory rate; Oxygen saturation; EtCO2/waveform shape; Use of accessory muscles; Breath sounds and quality; Mental status; Response to interventions",
+          "priority": "important",
+          "rationale": "Trended vitals demonstrate effect of CPAP + NTG and support continued or escalated therapy.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "maintain-cpap-transport",
+          "shortAction": "Maintain CPAP through ED handoff; don't break the seal",
+          "protocolExcerpt": "Patient Safety Considerations: Once initiated and patient is tolerating mask, DO NOT discontinue CPAP/BiPAP until patient is on the emergency department stretcher and hospital CPAP/BiPAP is immediately available for patient to be switched over, or physician is at bedside and requesting CPAP/BiPAP be discontinued. Breaking the mask seal causes a significant decrease in airway pressures and may lead to abrupt decompensation due to atelectasis and alveolar collapse.",
+          "priority": "critical",
+          "rationale": "Premature CPAP removal is the most common decompensation cause in these patients.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "consider-repeat-ntg",
+          "shortAction": "Consider repeat NTG 0.4 mg SL q5min if SBP >100 and symptoms persist",
+          "protocolExcerpt": "SBP less than 160 mmHg — Nitroglycerin: 0.4 mg SL, can repeat every 5 minutes for SBP greater than 100 mmHg",
+          "priority": "important",
+          "rationale": "Repeat dosing is appropriate while SBP remains above 100 and dyspnea persists.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "ed-radio-report",
+          "shortAction": "ED radio report — CHF exacerbation, on CPAP, NTG given, improving",
+          "protocolExcerpt": "Key Documentation Elements — Document key aspects of the exam at baseline and after each intervention: Respiratory rate; Oxygen saturation; EtCO2/waveform shape; Use of accessory muscles; Breath sounds and quality; Mental status; Response to interventions",
+          "priority": "supplemental",
+          "rationale": "Sets up the receiving facility for continuous CPAP transfer and ongoing nitrate therapy.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        }
+      ]
+    },
+    {
+      "id": "treated-as-copd",
+      "name": "Treated as COPD",
+      "description": "Crew anchored on a perceived cardiac wheeze, skipped the JVD/edema exam and the orthopnea/PND/missed-Lasix history, and started an albuterol/ipratropium DuoNeb for presumed COPD/asthma exacerbation. The bronchodilator does nothing for the fluid in the alveoli — and the beta-agonist drives HR up and increases myocardial oxygen demand on an already failing heart. Patient is starting to look worse.",
+      "triggerCondition": "Crew misinterpreted the wheeze-like sounds as bronchospasm without confirming bibasilar crackles, JVD, or peripheral edema, and without eliciting the orthopnea/PND/missed-Lasix history. Albuterol/ipratropium nebulizer was started in place of CPAP and NTG.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, on nebulizer mask",
+        "breathing": "Work of breathing climbing; RR up to 32, more accessory muscle use, patient pulling at the mask, frothy pink-tinged sputum at the lips",
+        "circulation": "HR climbing to 128 with nebulizer, sinus tachycardia, strong pulse, skin now markedly diaphoretic",
+        "skin": { "color": "pale, slightly dusky around lips", "temperature": "cool", "moisture": "very diaphoretic" },
+        "pupils": "PERRL, 3 mm",
+        "motorFunction": "Restless, repositioning, anxious",
+        "otherFindings": [
+          "Frothy pink-tinged sputum appearing at mouth — pathognomonic for pulmonary edema",
+          "Crackles now extending higher up lung fields",
+          "Patient saying 'I can't breathe' — air hunger worsening",
+          "JVD now more visible at 45 degrees if reassessed"
+        ],
+        "patientSpeech": "Can't... breathe... worse..."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 128,
+        "bpSys": 164,
+        "bpDia": 100,
+        "respRate": 32,
+        "spo2": 86,
+        "etco2": 30,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-error",
+          "shortAction": "Recognize deterioration; reassess for CHF (crackles, JVD, edema)",
+          "protocolExcerpt": "Document key aspects of the exam at baseline and after each intervention: Respiratory rate; Oxygen saturation; EtCO2/waveform shape; Use of accessory muscles; Breath sounds and quality; Mental status; Response to interventions",
+          "priority": "critical",
+          "rationale": "Recovery starts with admitting the working diagnosis is wrong and reassessing. Pink frothy sputum, climbing RR, dropping SpO2 despite bronchodilator are the giveaways.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "stop-neb-switch-cpap",
+          "shortAction": "Discontinue albuterol; switch to CPAP",
+          "protocolExcerpt": "Restoration of adequate oxygenation and ventilation should precede or be accomplished simultaneously with other medication therapies below — CPAP/BiPAP: See Airway Management Guideline for goals of care and escalation of interventions. Non-invasive ventilation (NIV) should be administered for severe respiratory distress via BVM, continuous positive airway pressure (CPAP) or bi-level positive airway pressure (BiPAP).",
+          "priority": "critical",
+          "rationale": "CPAP is now the first-line intervention; the bronchodilator is not addressing fluid in the alveoli and is driving HR up.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "ntg-sl-recovery",
+          "shortAction": "Nitroglycerin 0.8 mg SL (SBP 164 → use 0.8 mg dose; repeat q5min while SBP >100)",
+          "protocolExcerpt": "SBP >= 160 mmHg or MAP greater than 120 — Nitroglycerin: 0.8 mg SL, can repeat every 5 minutes for SBP greater than 100 mmHg; Consider IV nitroglycerin infusion titrated to blood pressure",
+          "priority": "critical",
+          "rationale": "SBP now 164 — patient has crossed into the higher BP band, so the 0.8 mg dose is appropriate. Must screen PDE-5 first.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "expedite-transport",
+          "shortAction": "Expedite transport; continuous reassessment en route",
+          "protocolExcerpt": "Transport to the closest appropriate hospital for airway stabilization when respiratory failure cannot be successfully managed in the prehospital setting",
+          "priority": "important",
+          "rationale": "Patient is now sicker than at first contact — minimize scene time and reassess constantly.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "cpap-ntg-improving",
+          "if": "Recognized error; CPAP + NTG started",
+          "condition": "Crew recognizes the bronchodilator path was wrong, stops the nebulizer, applies CPAP with good mask seal, screens for PDE-5 inhibitors, and administers SL nitroglycerin at the appropriate dose for current SBP. Patient begins to recover as preload drops and alveoli recruit.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["stop-neb-switch-cpap", "ntg-sl-recovery", "recognize-error"]
+        }
+      ]
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

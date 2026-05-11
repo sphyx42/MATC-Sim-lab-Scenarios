@@ -1,0 +1,531 @@
+{
+  "meta": {
+    "id": "C-T2-03",
+    "name": "Acute Pulmonary Edema Requiring Aggressive Management",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Cardiac",
+    "protocols": [
+      "resp-respiratory-distress",
+      "resp-airway-management",
+      "cv-chest-pain-acs-stemi"
+    ],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "CHF",
+      "pulmonary edema",
+      "CPAP",
+      "nitroglycerin",
+      "hypertensive",
+      "HFrEF",
+      "decision-dense",
+      "tier-2",
+      "layered-interventions",
+      "reassessment"
+    ]
+  },
+  "patient": {
+    "name": "Eleanor Kowalski",
+    "age": 74,
+    "ageUnit": "years",
+    "sex": "female",
+    "weight": 82,
+    "weightLbs": 181,
+    "height": 163,
+    "chiefComplaint": "Severe shortness of breath that began about 90 minutes ago and has rapidly worsened. Patient is now sitting bolt upright at the edge of her recliner, unable to lie back, gasping for air with frothy pink-tinged sputum on her lips and the front of her nightgown.",
+    "history": {
+      "hpi": "74-year-old female with known heart failure with reduced ejection fraction (HFrEF, last echo EF 28%), longstanding hypertension, and prior hospitalizations for CHF exacerbation, who has been progressively short of breath since dinner last night. She slept in her recliner instead of in bed because she 'couldn't breathe lying down' — three pillows have not been enough for the past two nights. Her daughter, who is staying with her, noticed worsening leg swelling over the past three days and a wet cough that 'sounds different than usual.' Approximately 90 minutes prior to the 911 call, the patient became acutely worse — drenching diaphoresis, severe dyspnea, and pink froth on her lips. Daughter admits the patient ran out of her furosemide (Lasix) prescription four days ago and has not taken it for the past two days; she also missed her lisinopril and carvedilol doses for the same reason because they are filled together. Patient is anxious, scared, and air-hungry. She denies chest pain spontaneously but admits to 'pressure' when specifically asked. No fever, no recent illness, no leg pain or unilateral swelling, no recent travel. Has not used any phosphodiesterase-5 inhibitors (sildenafil, tadalafil, vardenafil) — she takes no medications for that indication.",
+      "pastMedical": [
+        "Heart failure with reduced ejection fraction (HFrEF), last echo EF 28% (six months ago)",
+        "Hypertension — longstanding, poorly controlled when off meds",
+        "Prior CHF exacerbation hospitalizations x3 in the past two years (most recent 4 months ago)",
+        "Coronary artery disease — non-obstructive on prior cath; no prior MI documented",
+        "Chronic kidney disease stage 3",
+        "Atrial fibrillation — rate controlled, on warfarin",
+        "Type 2 diabetes mellitus — diet controlled, no insulin",
+        "Osteoarthritis"
+      ],
+      "medications": [
+        "Furosemide (Lasix) 40 mg PO twice daily — RAN OUT 4 days ago, last dose 2 days ago",
+        "Lisinopril 20 mg PO daily — missed last 2 days (refill issue)",
+        "Carvedilol 12.5 mg PO twice daily — missed last 2 days (refill issue)",
+        "Warfarin 5 mg PO daily — taking as prescribed",
+        "Aspirin 81 mg PO daily — taking as prescribed",
+        "Potassium chloride 20 mEq PO daily — taking as prescribed",
+        "Acetaminophen 650 mg PO as needed for joint pain"
+      ],
+      "allergies": [
+        "Sulfa drugs — reports rash"
+      ],
+      "lastOralIntake": "Light dinner around 18:00 last night — chicken soup with crackers, glass of water. Has been too short of breath to eat or drink anything today.",
+      "events": "Progressive dyspnea over 24–36 hours, worse with recumbency, escalating sharply over the past 90 minutes with onset of frothy pink sputum. Daughter (Maria) called 911 when the patient could no longer speak more than 2–3 words at a time and her lips began to look 'dusky.' Pharmacy refill issue means patient has missed her diuretic for 2 days and her ACE-I and beta-blocker for 2 days as well."
+    }
+  },
+  "scene": {
+    "dispatch": "Dispatch: 74-year-old female, trouble breathing, can't catch her breath, conscious and breathing, sitting up in a chair. Single-family home, daughter on scene with the patient.",
+    "location": "Modest single-story single-family home in an older residential neighborhood. Living room with patient seated bolt upright in a worn recliner near the front window. Hospital-style overbed table, three empty pillows on the floor next to the recliner, a half-empty glass of water on the side table.",
+    "time": "Saturday, 03:47, very early morning, dark outside, porch light on, cool damp weather",
+    "safety": "Scene safe. Single-story home, well-lit interior, no obvious hazards. Two adults on scene (patient and daughter). One indoor cat — non-aggressive.",
+    "bystanders": "Adult daughter (Maria) is on scene and tearful but coherent. She is the primary informant — she will volunteer the missed-medication history without prompting if asked about meds, and will produce the empty pharmacy bottles when asked. She has the patient's medication list on her phone. No PDE5 inhibitors in the home or on the list.",
+    "visualCues": [
+      "Patient sitting bolt upright at the very edge of the recliner — cannot tolerate lying back even slightly",
+      "Frothy pink-tinged sputum on her lips, chin, and the front of her nightgown",
+      "Visible accessory muscle use — strap muscles of the neck, intercostal retractions",
+      "Drenching diaphoresis — hair matted, nightgown soaked across the chest and back",
+      "Dusky lips and nail beds; +3 pitting pedal edema visible up to the mid-shins",
+      "Marked jugular venous distention visible from across the room",
+      "Empty Lasix bottle on side table; pharmacy printout dated 5 days ago next to it",
+      "Three pillows on the floor — patient previously propped up in bed but moved to recliner",
+      "Daughter at her side: 'She can't lie down at all — she keeps saying she's drowning'",
+      "Patient can only speak 1–2 word phrases between gasps"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a 74-year-old female in florid acute pulmonary edema — sitting bolt upright at the edge of her recliner, drenched in sweat, with frothy pink sputum on her lips and the front of her nightgown. She is using every accessory muscle, gasping at RR 38, dusky-lipped, profoundly hypoxic (SpO2 78%) and severely hypertensive (192/108). Bibasilar wet crackles extend to the mid-lung fields with frank coarse rhonchi superimposed. She is anxious, air-hungry, and can only manage 1–2 word phrases. The clinical picture screams cardiogenic pulmonary edema from CHF exacerbation in a patient who has missed her diuretic and afterload-reducing meds for two days. The student's job is to recognize this immediately and layer the appropriate interventions — maintain upright positioning, apply CPAP, begin high-dose SL nitroglycerin per the SBP-banded protocol, and establish IV access while CPAP is running. Sequencing too rigidly costs the patient. This is a true competing-priorities phase.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 4,
+          "motor": 6
+        },
+        "airway": "Patent but wet — audible gurgling and frothy pink-tinged sputum at the lips; patient maintaining her own airway in the upright tripod position",
+        "breathing": "Severe respiratory distress — RR 38, shallow, labored. Accessory muscle use with strap-muscle and intercostal retractions. Bibasilar wet crackles extending to the mid-lung fields with coarse rhonchi superimposed throughout. Air entry diminished at the bases. Speaks in 1–2 word phrases only.",
+        "circulation": "Strong but rapid radial pulse, regular but fast; skin cool, profoundly diaphoretic; +3 pitting pedal edema to mid-shins; marked JVD visible across the room",
+        "skin": {
+          "color": "dusky lips and nail beds, otherwise pale",
+          "temperature": "cool",
+          "moisture": "drenched / profusely diaphoretic"
+        },
+        "pupils": "Equal at 3 mm, reactive",
+        "motorFunction": "Moves all extremities; grips equal; anxious but cooperative",
+        "otherFindings": [
+          "Frothy pink-tinged sputum on lips, chin, and nightgown",
+          "+3 pitting pedal edema to the mid-shins bilaterally",
+          "Marked jugular venous distention (JVD ++)",
+          "Empty furosemide (Lasix) bottle on the side table",
+          "Daughter confirms missed Lasix, lisinopril, and carvedilol for 2 days",
+          "No chest pain spontaneously, but admits to 'pressure' when asked",
+          "No PDE5 inhibitor use — not on med list, not in the home"
+        ],
+        "patientSpeech": "'Can't... breathe... drowning...'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Atrial Fibrillation",
+        "ecgWaveform": 38,
+        "hr": 128,
+        "bpSys": 192,
+        "bpDia": 108,
+        "respRate": 38,
+        "spo2": 78,
+        "etco2": 28,
+        "temp": 36.6,
+        "tempF": 97.9,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "primary-survey",
+          "shortAction": "Rapid primary survey; recognize florid cardiogenic pulmonary edema",
+          "protocolExcerpt": "Signs of distress include: Apprehension, anxiety, combativeness; Hypoxia (less than 90% oxygen saturation); Intercostal/subcostal/supraclavicular retractions, accessory muscle use; Grunting, stridor, inability to speak full sentences; Nasal flaring; Cyanosis.",
+          "priority": "critical",
+          "rationale": "Pattern recognition drives everything else: bolt-upright posture, frothy pink sputum, wet crackles, JVD, +3 pedal edema, hypertension, hypoxia, missed Lasix — this is cardiogenic pulmonary edema until proven otherwise.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "position-upright",
+          "shortAction": "Maintain upright/tripod position; do NOT lay supine",
+          "protocolExcerpt": "Patient positioning can significantly impact respiratory mechanics. Patients with severe bronchospasm should be left in the position of comfort (perhaps tripod) whenever possible. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics. This can both improve the ability to ventilate and limit aspiration.",
+          "priority": "critical",
+          "rationale": "Patient is in the position of comfort for a physiologic reason. Laying her flat would acutely worsen pulmonary edema and may precipitate arrest.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "apply-cpap",
+          "shortAction": "Apply CPAP early — preceeds or runs alongside other Rx",
+          "protocolExcerpt": "Adults with suspected pulmonary edema due to acute heart failure or fluid overload (such as dialysis noncompliance): Restoration of adequate oxygenation and ventilation should precede or be accomplished simultaneously with other medication therapies below — CPAP/BiPAP: See Airway Management Guideline for goals of care and escalation of interventions. Non-invasive ventilation (NIV) should be considered early for severe respiratory distress or impending respiratory failure.",
+          "priority": "critical",
+          "rationale": "CPAP is the single most effective evidence-based intervention for acute cardiogenic pulmonary edema. Re-expanding partially collapsed alveoli reduces preload and afterload via increased intrathoracic pressure, decreases work of breathing, and reduces intubation rates and mortality. It should be initiated as soon as practical — not deferred until 'after the IV is in.'",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "monitor-spo2-etco2-12lead",
+          "shortAction": "Cardiac monitor + SpO2 + waveform EtCO2 + 12-lead EKG",
+          "protocolExcerpt": "Monitoring — Pulse oximetry and EtCO2 should be routinely used as adjuncts to other forms of monitoring in patients with respiratory complaints. Continuous cardiac monitoring may be indicated in patients with respiratory distress associated with suspected acute or decompensated congestive heart failure (CHF) or dysrhythmia. 12-lead EKG may be indicated to assess for dysrhythmia or ischemia, particularly in patients with risk factors for coronary artery disease and/or presentation consistent with CHF.",
+          "priority": "critical",
+          "rationale": "12-lead is required to rule out ischemic trigger for the CHF exacerbation. EtCO2 trend (currently 28 from hyperventilation) is a key early indicator of impending respiratory failure if it begins to rise.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "screen-pde5",
+          "shortAction": "Screen for PDE5 inhibitor use within 48 h before nitrates",
+          "protocolExcerpt": "Patient Safety Considerations: The use of nitrates should be avoided in any patient who has used a phosphodiesterase inhibitor within the past 48 hours. Examples are sildenafil, vardenafil and tadalafil, which are used for erectile dysfunction and pulmonary hypertension. Also avoid use in patients receiving intravenous epoprostenol or treporstenil which are used for pulmonary hypertension.",
+          "priority": "critical",
+          "rationale": "Mandatory safety screen before any nitrate. Negative in this patient — proceed.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "ntg-high-dose",
+          "shortAction": "Nitroglycerin 0.8 mg SL (SBP 192 ≥ 160 band); repeat q5min if SBP >100",
+          "protocolExcerpt": "SBP ≥ 160 mmHg or MAP greater than 120 — Nitroglycerin: 0.8 mg SL, can repeat every 5 minutes for SBP greater than 100 mmHg. Consider IV nitroglycerin infusion titrated to blood pressure.",
+          "priority": "critical",
+          "rationale": "SBP 192 puts this patient squarely in the high-dose band. Nitrates reduce LV filling pressure via venous dilation and, at higher doses, also lower systemic afterload — both directly useful in flash pulmonary edema. Dosing must be re-checked against the BP band before every repeat.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "iv-access-while-cpap",
+          "shortAction": "Establish IV access (do not delay CPAP/NTG for IV)",
+          "protocolExcerpt": "IV Access and Fluids – IV access should be placed when IV medication administration is indicated, or when there are clinical concerns of dehydration so that IV fluids can be administered.",
+          "priority": "important",
+          "rationale": "IV is needed in case patient deteriorates (vasopressor if SBP drops, IV NTG escalation), but CPAP and SL nitro do not require an IV first. Layer the IV in while CPAP is running.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "reassess-vitals",
+          "shortAction": "Continuous reassessment — BP before each repeat NTG dose",
+          "protocolExcerpt": "Performance Measures: Documentation of blood pressure reassessment in patients receiving nitrates.",
+          "priority": "critical",
+          "rationale": "Re-titrating NTG dose against the SBP band is the central decision of this scenario. If SBP drops below 160, the dose drops to 0.4 mg. If it drops below 100, hold the nitrate and consider fluids/pressor.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "cpap-ntg-running",
+          "if": "CPAP applied + NTG 0.8 mg given",
+          "condition": "Within ~5 minutes of patient contact, CPAP is on the patient with a good mask seal and the first SL nitroglycerin 0.8 mg has been given. IV is in or being placed alongside. Patient is showing early signs of response.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "apply-cpap",
+            "ntg-high-dose"
+          ]
+        },
+        {
+          "targetPhaseId": "delayed-cpap",
+          "if": "CPAP delayed for full IV/12-lead setup",
+          "condition": "Crew sequences too rigidly — gets the IV established, runs the 12-lead, and then applies CPAP. By the time CPAP goes on (~8–10 minutes in), patient has continued to deteriorate.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": [
+            "apply-cpap"
+          ]
+        },
+        {
+          "targetPhaseId": "ntg-no-bp-recheck",
+          "if": "Repeat NTG dosing without BP recheck",
+          "condition": "Crew administers SL NTG aggressively (multiple doses within a few minutes) without rechecking BP between doses. SBP falls into the low band, but the next 0.8 mg dose is given anyway — patient becomes hypotensive while still wet.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": [
+            "reassess-vitals"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cpap-ntg-running",
+      "name": "CPAP + NTG running",
+      "description": "About 5 minutes after patient contact, the layered interventions are taking hold. CPAP is on with a good mask seal at 7.5 cmH2O, the first SL nitroglycerin 0.8 mg has been on board for ~4 minutes, the second dose is about due, and an 18 g IV is established in the right AC. The patient's BP has come down from 192/108 to 142/86. SpO2 is climbing toward 91% on CPAP. RR is slowing to 28. EtCO2 has risen from 28 toward 34 as ventilation normalizes. Frothy sputum is starting to clear from the mask. She is still upright, still using accessory muscles, but is now managing short sentences. This is where re-titration matters: the SBP has dropped out of the ≥160 band and now sits in the <160 / >100 band, so the next NTG dose drops to 0.4 mg, not 0.8 mg. Holding NTG entirely is also reasonable as long as BP remains in this range and the patient is improving. The student must explicitly recognize the band change and adjust.",
+      "triggerCondition": "Within ~5 minutes of patient contact, CPAP is on with a good seal, SL NTG 0.8 mg has been given, and IV access is established. Patient is responding: SpO2 climbing, RR slowing, BP falling out of the hypertensive band.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent; CPAP mask in place with a good seal. Less audible gurgling. Some frothy sputum collecting at the lower edge of the mask but not impeding the seal.",
+        "breathing": "Improving but still labored. RR 28, less use of strap muscles, mild intercostal retractions persist. Crackles still audible bibasilar but no longer extend as high; rhonchi are clearing. Patient now able to manage 4–6 word sentences between breaths.",
+        "circulation": "Pulse strong and slightly slower, still irregularly irregular; skin cool and damp but no longer drenched; +3 pedal edema unchanged; JVD slightly less prominent.",
+        "skin": {
+          "color": "lips pinker, nail beds less dusky",
+          "temperature": "cool",
+          "moisture": "damp, no longer drenched"
+        },
+        "pupils": "Equal at 3 mm, reactive",
+        "motorFunction": "Moves all extremities; cooperative with CPAP after initial coaching",
+        "otherFindings": [
+          "CPAP mask in place at ~7.5 cmH2O with good seal",
+          "18 g IV established right AC, NS at TKO",
+          "Patient tolerating CPAP after initial coaching by the daughter",
+          "12-lead obtained: rate-controlled AFib (now ~108), no acute ST changes — chronic LVH with strain pattern unchanged from baseline if available",
+          "First SL NTG 0.8 mg given ~4 min ago"
+        ],
+        "patientSpeech": "'A little... better... thank you...'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Atrial Fibrillation",
+        "ecgWaveform": 38,
+        "hr": 108,
+        "bpSys": 142,
+        "bpDia": 86,
+        "respRate": 28,
+        "spo2": 91,
+        "etco2": 34,
+        "temp": 36.7,
+        "tempF": 98.1,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recheck-bp",
+          "shortAction": "Recheck BP before next NTG dose; recognize band change",
+          "protocolExcerpt": "Performance Measures: Documentation of blood pressure reassessment in patients receiving nitrates.",
+          "priority": "critical",
+          "rationale": "BP has fallen from 192/108 to 142/86 — out of the high-dose band, still in the standard band. The next dose must be re-titrated.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "ntg-lower-band",
+          "shortAction": "Nitroglycerin 0.4 mg SL (SBP 142 in <160 / >100 band); repeat q5min while SBP >100",
+          "protocolExcerpt": "SBP less than 160 mmHg — Nitroglycerin: 0.4 mg SL, can repeat every 5 minutes for SBP greater than 100 mmHg.",
+          "priority": "critical",
+          "rationale": "Continued venous/arterial vasodilation is still needed — the patient is still wet — but the dose halves now that she has dropped out of the hypertensive band. This is the headline decision of the phase.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "maintain-cpap-seal",
+          "shortAction": "Maintain CPAP seal; do NOT interrupt until ED takeover",
+          "protocolExcerpt": "Patient Safety Considerations: Once initiated and patient is tolerating mask, DO NOT discontinue CPAP/BiPAP until patient is on the emergency department stretcher and hospital CPAP/BiPAP is immediately available for patient to be switched over, or physician is at bedside and requesting CPAP/BiPAP be discontinued. Breaking the mask seal causes a significant decrease in airway pressures and may lead to abrupt decompensation due to atelectasis and alveolar collapse.",
+          "priority": "critical",
+          "rationale": "Breaking the seal — for example, to give a nebulizer or to move the patient sloppily — causes immediate loss of PEEP and atelectasis. Most field decompensations on CPAP happen at transitions.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "12-lead-interpretation",
+          "shortAction": "Interpret 12-lead; rule out STEMI as exacerbation trigger",
+          "protocolExcerpt": "The 12-lead EKG is the primary diagnostic tool that identifies a STEMI; it is imperative that EMS clinicians routinely acquire a 12-lead EKG within 10 minutes for all patients exhibiting signs and symptoms of ACS. Performance of serial EKGs is encouraged for symptomatic patients with EKGs initially non-diagnostic for STEMI.",
+          "priority": "important",
+          "rationale": "Ischemia is a classic trigger for acute CHF. This patient's 12-lead shows rate-controlled AFib without acute ST elevation — but serial EKGs should be considered in transport.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/ST-segment Elevation Myocardial Infarction (STEMI)"
+        },
+        {
+          "id": "etco2-trend",
+          "shortAction": "Trend EtCO2 — rising from 28 toward 34 is normalization, not failure",
+          "protocolExcerpt": "Notes/Educational Pearls: When assessing for cause of respiratory distress, CHF tends to be associated with lower levels of EtCO2 compared to COPD. EtCO2 values that are extremely low and high are markers of poor outcomes and need for intubation or ICU admission. Patient Safety Considerations: Normal EtCO2 (35–45 mmHg) with tachypnea and respiratory distress is an indicator of impending respiratory failure.",
+          "priority": "important",
+          "rationale": "EtCO2 climbing from 28 to 34 while RR is falling and SpO2 is rising represents resolving hyperventilation — a good trend. A rising EtCO2 with worsening mental status would be the opposite — impending failure.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "transport-decision",
+          "shortAction": "Transport upright with CPAP running; early notification to ED",
+          "protocolExcerpt": "Patient Safety Considerations: Once initiated and patient is tolerating mask, DO NOT discontinue CPAP/BiPAP until patient is on the emergency department stretcher and hospital CPAP/BiPAP is immediately available for patient to be switched over, or physician is at bedside and requesting CPAP/BiPAP be discontinued.",
+          "priority": "important",
+          "rationale": "Patient is responding. Transport seated upright on the cot with CPAP running uninterrupted, early notification to the ED so a CPAP/BiPAP setup is ready at bedside.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "delayed-cpap",
+      "name": "CPAP delayed",
+      "description": "Crew sequences too rigidly — works through the IV, the 12-lead, and a methodical SAMPLE history before applying CPAP. By the time CPAP finally goes on the patient (~8–10 minutes after contact), the patient has continued to drown. SpO2 has fallen from 78 to 68%, RR has climbed from 38 to 44 and is now becoming agitated and shallow, the patient is becoming confused — calling her daughter by the wrong name — and is no longer protecting her airway as well. EtCO2 is climbing from 28 toward 48 as hypoventilation overtakes hyperventilation. The window for CPAP is closing fast. Now the right answer escalates: BVM with PEEP (start at 5 cmH2O, titrate up) using a two-person, two-thumbs-up technique to drive oxygenation while preparing for advanced airway management. CPAP alone may no longer be tolerated by a patient with declining mental status.",
+      "triggerCondition": "Crew prioritizes line, 12-lead, and history over CPAP. Patient continues to decompensate during the delay — SpO2 falls into the high-60s, RR rises into the 40s, mental status declines, EtCO2 rises into the 40s. CPAP alone is now insufficient; PPV with PEEP and an airway escalation plan are required.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": {
+          "eye": 3,
+          "verbal": 3,
+          "motor": 5
+        },
+        "airway": "Wet — increasing audible gurgling and frothy pink sputum at the mouth. Patient less able to clear secretions as mentation declines. Suction will be needed before any mask seal.",
+        "breathing": "Worse — RR 44, shallow, agitated. Accessory muscle use maximal. Crackles and rhonchi throughout all fields. Air entry diminishing. Patient no longer able to speak.",
+        "circulation": "Pulse fast and weakening; skin cooling further; +3 pedal edema; JVD prominent",
+        "skin": {
+          "color": "dusky lips, cyanotic nail beds, ashen face",
+          "temperature": "cool",
+          "moisture": "still drenched"
+        },
+        "pupils": "Equal at 3 mm, sluggish",
+        "motorFunction": "Withdraws to verbal stim, no longer following commands consistently",
+        "otherFindings": [
+          "Patient now calling her daughter by the wrong name",
+          "Frothy pink sputum increasing — needs suction",
+          "Patient pulling at the line and at the cot rails — agitated from hypoxia",
+          "Approximately 8–10 minutes since patient contact, CPAP has just been applied or is still being set up"
+        ],
+        "patientSpeech": "(no longer speaking — only moans)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Atrial Fibrillation",
+        "ecgWaveform": 38,
+        "hr": 134,
+        "bpSys": 178,
+        "bpDia": 102,
+        "respRate": 44,
+        "spo2": 68,
+        "etco2": 48,
+        "temp": 36.5,
+        "tempF": 97.7,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-failure",
+          "shortAction": "Recognize impending respiratory failure (AMS + rising EtCO2)",
+          "protocolExcerpt": "Patient Safety Considerations: Normal EtCO2 (35–45 mmHg) with tachypnea and respiratory distress is an indicator of impending respiratory failure. Severe respiratory distress may manifest with hypoxia, altered mentation, diaphoresis, or inability to speak more than 2–3 words.",
+          "priority": "critical",
+          "rationale": "Falling mental status plus rising EtCO2 in the setting of a tachypneic patient means hypoventilation is overtaking hyperventilation — the patient is failing. CPAP requires a cooperative patient; this patient no longer is one.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "escalate-to-bvm-peep",
+          "shortAction": "Two-person BVM with PEEP 5 cmH2O; titrate up by 2–3 cmH2O",
+          "protocolExcerpt": "Use bag-valve-mask (BVM) ventilation in the setting of respiratory failure or arrest. Whenever possible, the patient's head should be elevated up to 30 degrees. Two-person, two-thumbs-up BVM ventilation is preferred. PEEP should be used with BVM: 5 cmH2O is generally an appropriate initial PEEP setting. Increase PEEP in stepwise fashion (2–3 cmH2O at a time) as necessary, allowing time for the patient to equilibrate with each change before further adjustments are made.",
+          "priority": "critical",
+          "rationale": "When CPAP can no longer be tolerated due to declining mental status, the right escalation is two-person BVM with a PEEP valve — same physiologic benefit, but the crew now controls each breath.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "suction-airway",
+          "shortAction": "Suction frothy sputum before/between BVM cycles",
+          "protocolExcerpt": "Suction airway: for significantly contaminated airways, consider utilizing a suction assisted laryngeal airway decontamination (SALAD) technique.",
+          "priority": "critical",
+          "rationale": "Frothy pulmonary edema fluid will defeat a mask seal and will fill any advanced airway. Aggressive suction is required to keep the airway usable.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "prepare-advanced-airway",
+          "shortAction": "Prepare for advanced airway / RSI if PPV fails to improve oxygenation",
+          "protocolExcerpt": "Endotracheal intubation — When less-invasive methods (two-person BVM, SGA placement) are ineffective or inappropriate, consider endotracheal intubation to maintain oxygenation and/or ventilation. Other indications may include potential airway obstruction, severe inhalation burns, multiple traumatic injuries, altered mental status with loss of normal protective airway reflexes.",
+          "priority": "important",
+          "rationale": "If PPV with PEEP does not promptly improve oxygenation, an advanced airway is the next escalation. Pre-oxygenation and pre-procedure resuscitation are essential because peri-intubation arrest in flash pulmonary edema is a real risk.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "ntg-no-bp-recheck",
+      "name": "NTG without BP recheck",
+      "description": "Crew correctly identifies pulmonary edema and starts SL nitroglycerin aggressively at 0.8 mg, but stacks repeat doses every 2–3 minutes without rechecking BP between them. By the third dose, the cumulative venous and arterial vasodilation has dropped SBP from 192 to 82. The patient is now hypotensive AND still wet — lungs are still full of fluid but perfusion has collapsed. Skin is now pale and clammy in a new way, mentation is fading, and the patient is suddenly cold and gray. CPAP at this point is removing what little preload remains by raising intrathoracic pressure further. The right response is to stop NTG, lay the patient back to ~30 degrees (NOT flat — she will drown), give a careful 250 mL fluid bolus, and prepare a norepinephrine drip while reassessing whether CPAP can be continued at a lower pressure or needs to be paused.",
+      "triggerCondition": "Crew administers SL NTG aggressively without rechecking BP between doses. After multiple stacked doses, SBP collapses to the 80s while pulmonary edema is still incompletely treated. Patient is now hypotensive with continued fluid in the lungs.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": {
+          "eye": 3,
+          "verbal": 4,
+          "motor": 5
+        },
+        "airway": "Patent; CPAP mask in place but secretions decreasing not because of resolution — because perfusion is dropping",
+        "breathing": "RR 30, less vigorous than the initial gasping — work of breathing is paradoxically less because the patient is tiring. Crackles still bibasilar and now extending higher.",
+        "circulation": "Pulse thready and faster; skin cool, pale, clammy in a new way — not the warm-drenched diaphoresis of pulmonary edema but the cool-clammy pattern of poor perfusion; cap refill prolonged to 4 seconds",
+        "skin": {
+          "color": "pale, mottled at the knees",
+          "temperature": "cold",
+          "moisture": "clammy"
+        },
+        "pupils": "Equal at 3 mm, sluggish",
+        "motorFunction": "Withdraws to voice, less responsive than initially",
+        "otherFindings": [
+          "Three SL NTG 0.8 mg doses given over ~7 minutes without BP recheck between doses",
+          "CPAP still on patient",
+          "Lungs still wet — crackles persisting",
+          "Patient now hypotensive — a new problem layered on top of the original one"
+        ],
+        "patientSpeech": "'Dizzy... cold...'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Atrial Fibrillation",
+        "ecgWaveform": 38,
+        "hr": 138,
+        "bpSys": 82,
+        "bpDia": 48,
+        "respRate": 30,
+        "spo2": 86,
+        "etco2": 32,
+        "temp": 36.4,
+        "tempF": 97.5,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "hold-ntg",
+          "shortAction": "Stop nitroglycerin immediately (SBP 82 — below threshold)",
+          "protocolExcerpt": "SBP less than 100 mmHg — IV fluid bolus 250–500 mL; Consider vasopressor: Norepinephrine 0.02–2 mcg/kg/min.",
+          "priority": "critical",
+          "rationale": "SBP is well below the 100 mmHg threshold below which the protocol switches from nitrates to fluids and pressors. No more NTG.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "fluid-bolus",
+          "shortAction": "IV NS 250 mL bolus; reassess BP and lungs after",
+          "protocolExcerpt": "SBP less than 100 mmHg — IV fluid bolus 250–500 mL.",
+          "priority": "critical",
+          "rationale": "Modest fluid bolus to restore preload that has been pharmacologically removed by stacked nitrates. Reassess lungs and BP after — do not run wide open.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "prepare-norepi",
+          "shortAction": "Prepare norepinephrine 0.02–2 mcg/kg/min if BP does not respond to bolus",
+          "protocolExcerpt": "SBP less than 100 mmHg — Consider vasopressor: Norepinephrine 0.02–2 mcg/kg/min.",
+          "priority": "important",
+          "rationale": "If a single 250 mL bolus does not improve perfusion, norepinephrine is the next step — a pure pressor is preferable to giving more fluid into a wet patient.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "reassess-cpap-tolerance",
+          "shortAction": "Reassess CPAP — pause or lower pressure if hypotension worsens",
+          "protocolExcerpt": "Patient Safety Considerations: Excessive PEEP over distends alveoli, increases dead space and work of breathing, reduces lung compliance, and compresses alveolar capillaries, reducing oxygenation and risking pulmonary barotrauma. Increased intrathoracic pressure can progressively decrease cardiac output and is most notable when PEEP is greater than 15 cmH2O. The higher the level of PEEP (over 5 cmH2O), the more likely the patient will experience a variety of adverse consequences, both ventilatory and hemodynamic.",
+          "priority": "important",
+          "rationale": "Positive intrathoracic pressure further reduces venous return — bad in a now-hypotensive patient. Lower the PEEP/CPAP pressure rather than breaking the seal if at all possible.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

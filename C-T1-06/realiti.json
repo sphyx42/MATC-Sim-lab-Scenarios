@@ -1,0 +1,321 @@
+{
+  "scenarioId": "C-T1-06",
+  "scenarioName": "Symptomatic Bradycardia, Medication-Induced",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1200,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "78-year-old female with longstanding hypertension and atrial fibrillation was sitting at her kitchen table finishing breakfast when she stood up to take her dishes to the sink. Within a few steps she felt the room 'tilt,' became diaphoretic, and grabbed the counter. She did not fall and did not lose consciousness, but her daughter (who lives with her) helped her into a chair. Daughter says Mom 'looked gray for a minute' before slowly returning to her normal color. No chest pain, no shortness of breath, no palpitations, no headache, no focal weakness or speech changes. Patient denies any pain. She admits she has felt 'sluggish and tired' for the past three days but attributed it to poor sleep. Daughter reports that Mom's primary care physician *increased* her metoprolol succinate from 25 mg daily to 50 mg twice daily about a week ago because her home blood pressures were running 150s/90s. Mom has been taking the new dose faithfully. No new other medications, no missed doses, no falls, no recent illness, no diarrhea or vomiting, normal urine output. She still feels 'a little dizzy' if she shifts in her chair, but it resolves when she sits still. The patient is reluctant to go to the hospital and would prefer to 'just lie down for a while.'",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives to find a 78-year-old female seated in a kitchen chair after a near-syncopal episode that occurred when she stood up after breakfast. She is alert and conversing, mildly diaphoretic, and feels 'a little woozy' if she moves but is comfortable at rest. The radial pulse is slow but regular. She is symptomatic — dizziness, near-syncope, pallor, diaphoresis — but her blood pressure is holding and her mental status is intact. The teaching point of this scenario is recognizing that this is symptomatic bradycardia that is still hemodynamically compensated, identifying the recently-doubled metoprolol as the likely culprit, and choosing monitoring/IV/transport over reflex atropine. → Proper assessment performed: Crew has completed a full primary and secondary survey, acquired a 12-lead EKG (sinus bradycardia, no AV block, no ischemic changes), confirmed glucose 102 mg/dL, and obtained a detailed SAMPLE that surfaces the recently-doubled metoprolol. They have correctly classified the patient as symptomatic but hemodynamically compensated. IV access is established, the patient is on the cardiac monitor, and they are preparing for transport in a position of comfort. Vitals trend gently in a reassuring direction at rest; the patient's dizziness has eased significantly."
+  },
+  "patientInformation": {
+    "patientName": "Eleanor Pacholski",
+    "patientCondition": "Dizziness and a near-fainting episode when she stood up from the kitchen table about 20 minutes ago. Currently feels 'a little woozy' but is alert and conversing. Daughter notes patient looks paler than usual.",
+    "patientAge": 78,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 2,
+    "patientHeight": 163,
+    "patientWeight": 68,
+    "patientPhotoId": 94,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a 78-year-old female seated in a kitchen chair after a near-syncopal episode that occurred when she stood up after breakfast. She is alert and conversing, mildly diaphoretic, and feels 'a little woozy' if she moves but is comfortable at rest. The radial pulse is slow but regular. She is symptomatic — dizziness, near-syncope, pallor, diaphoresis — but her blood pressure is holding and her mental status is intact. The teaching point of this scenario is recognizing that this is symptomatic bradycardia that is still hemodynamically compensated, identifying the recently-doubled metoprolol as the likely culprit, and choosing monitoring/IV/transport over reflex atropine.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 44,
+        "bpSys": 108,
+        "bpDia": 64,
+        "respRate": 16,
+        "spo2": 96,
+        "etco2": 36,
+        "temp": 36.7,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Scene size-up, BSI, general impression; note pallor and diaphoresis",
+        "Primary survey: airway patent, breathing adequate, pulse slow but regular",
+        "Apply cardiac monitor and acquire 12-lead EKG",
+        "Full vitals including BP, SpO2, RR, temperature; recheck in 5 min",
+        "Check blood glucose",
+        "Obtain SAMPLE/OPQRST history; ask specifically about recent medication or dose changes",
+        "Identify metoprolol dose increase as likely culprit; treat as BB-mediated brady",
+        "Classify as symptomatic but hemodynamically stable; defer atropine on intact perfusion",
+        "Establish IV access (saline lock or KVO) for medication readiness",
+        "Transport on cardiac monitor, semi-Fowler's, reassess vitals every 5 minutes",
+        "Early ED notification: symptomatic brady, suspected BB-induced; glucagon may be needed"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Proper assessment performed",
+      "description": "Crew has completed a full primary and secondary survey, acquired a 12-lead EKG (sinus bradycardia, no AV block, no ischemic changes), confirmed glucose 102 mg/dL, and obtained a detailed SAMPLE that surfaces the recently-doubled metoprolol. They have correctly classified the patient as symptomatic but hemodynamically compensated. IV access is established, the patient is on the cardiac monitor, and they are preparing for transport in a position of comfort. Vitals trend gently in a reassuring direction at rest; the patient's dizziness has eased significantly.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 46,
+        "bpSys": 112,
+        "bpDia": 66,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 37,
+        "temp": 36.7,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Reassess full vitals; document trend (HR 44 → 46, BP holding 112/66)",
+        "Position semi-Fowler's; avoid sudden postural changes",
+        "Apply oxygen only if SpO2 <94%; titrate to 94–98%",
+        "Transport on cardiac monitor with continuous SpO2; reassess every 5 minutes",
+        "ED handoff: symptomatic brady, suspected metoprolol effect, stable on arrival"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Atropine pushed reflexively",
+      "description": "Crew skipped the perfusion check, saw HR 44 on the monitor, and pushed atropine 1 mg IV before identifying the beta-blocker etiology. Per the protocol's educational pearls, atropine 'may have little or no effect' in beta-blocker–mediated bradycardia. Heart rate bumps transiently from 44 to 50 and drifts back to 46 within 60 seconds. BP is unchanged. The crew is now considering escalation to a second atropine or pacing on an awake, conversational patient with adequate perfusion — neither indicated. The teaching point is that atropine in BB-mediated brady on a compensated patient burns the drug, may not work, and can prompt inappropriate further escalation.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 46,
+        "bpSys": 110,
+        "bpDia": 64,
+        "respRate": 16,
+        "spo2": 96,
+        "etco2": 36,
+        "temp": 36.7,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize minimal atropine response is consistent with BB-mediated brady",
+        "Do NOT pace an awake, perfusing patient; pacing reserved for impending collapse",
+        "Stop escalating; place on monitor, transport, notify ED of suspected BB cause"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Patient dismissed as asymptomatic",
+      "description": "Crew sees a comfortable elderly patient sitting quietly, accepts the daughter's general medication list at face value without probing for recent changes, skips the 12-lead, and decides this is a 'vasovagal-type' episode that does not need transport. Patient is encouraged to follow up with her primary care doctor. As she stands to walk the crew to the door, she immediately becomes dizzy and pale again. The crew has now missed the beta-blocker effect entirely, has no rhythm strip documenting the brady, and is one orthostatic event away from a witnessed syncope and fall in an elderly anticoagulated patient.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 42,
+        "bpSys": 96,
+        "bpDia": 58,
+        "respRate": 18,
+        "spo2": 95,
+        "etco2": 36,
+        "temp": 36.7,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize 'symptomatic bradycardia' per protocol; near-syncope and pallor qualify",
+        "Place on monitor, acquire 12-lead, establish IV — re-enter the bradycardia pathway",
+        "Transport with monitor; do NOT accept refusal in symptomatic anticoagulated elder"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Scene size-up, BSI, general impression; note pallor and diaphoresis",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Primary survey: airway patent, breathing adequate, pulse slow but regular",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply cardiac monitor and acquire 12-lead EKG",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Full vitals including BP, SpO2, RR, temperature; recheck in 5 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check blood glucose",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Obtain SAMPLE/OPQRST history; ask specifically about recent medication or dose changes",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Identify metoprolol dose increase as likely culprit; treat as BB-mediated brady",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Classify as symptomatic but hemodynamically stable; defer atropine on intact perfusion",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access (saline lock or KVO) for medication readiness",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport on cardiac monitor, semi-Fowler's, reassess vitals every 5 minutes",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Early ED notification: symptomatic brady, suspected BB-induced; glucagon may be needed",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess full vitals; document trend (HR 44 → 46, BP holding 112/66)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Position semi-Fowler's; avoid sudden postural changes",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply oxygen only if SpO2 <94%; titrate to 94–98%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport on cardiac monitor with continuous SpO2; reassess every 5 minutes",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "ED handoff: symptomatic brady, suspected metoprolol effect, stable on arrival",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize minimal atropine response is consistent with BB-mediated brady",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Do NOT pace an awake, perfusing patient; pacing reserved for impending collapse",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Stop escalating; place on monitor, transport, notify ED of suspected BB cause",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize 'symptomatic bradycardia' per protocol; near-syncope and pallor qualify",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place on monitor, acquire 12-lead, establish IV — re-enter the bradycardia pathway",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport with monitor; do NOT accept refusal in symptomatic anticoagulated elder",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

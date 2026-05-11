@@ -1,0 +1,476 @@
+{
+  "meta": {
+    "id": "C-T2-02",
+    "name": "SVT Not Responding to Vagal Maneuvers",
+    "version": 1,
+    "difficulty": "intermediate",
+    "category": "Cardiac",
+    "protocols": [
+      "cv-tachycardia",
+      "medical-agitated-violent-behavioral",
+      "cv-chest-pain-acs-stemi"
+    ],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": ["cardiac", "svt", "adenosine", "vagal-maneuvers", "tier-2", "decision-dense"]
+  },
+  "patient": {
+    "name": "Daniel Avery",
+    "age": 32,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 82,
+    "weightLbs": 181,
+    "height": 180,
+    "chiefComplaint": "Palpitations and racing heart",
+    "history": {
+      "hpi": "32-year-old male software developer who suddenly developed a 'fluttering' sensation in his chest while sitting at his desk approximately 35 minutes ago. Symptoms started abruptly with no precipitating activity, no chest trauma, no recent illness. Patient reports the rate 'just took off' out of nowhere. Also describes mild central chest tightness, lightheadedness, and shortness of breath. No syncope. No prior cardiac history. Drank one large coffee earlier this morning. No recreational drug use reported, no energy drinks, no stimulant supplements. Has had 'a couple of similar shorter episodes' in the past year that self-resolved within minutes, never sought care. Becomes progressively more anxious as scenario unfolds, fearing 'something is really wrong with my heart.'",
+      "pastMedical": [],
+      "medications": [],
+      "allergies": ["NKDA"],
+      "lastOralIntake": "Coffee and a granola bar approximately 2 hours ago",
+      "events": "Sitting at desk at work, sudden onset of palpitations. Coworker noticed patient looked pale and called 911. Patient was unable to terminate the episode by 'bearing down' on his own."
+    }
+  },
+  "scene": {
+    "dispatch": "32-year-old male, conscious and alert, complaining of palpitations and heart racing. Office building, 4th floor.",
+    "location": "Open-plan tech office on the 4th floor of a downtown commercial building. Patient seated at his workstation, leaning forward with one hand on his chest. Coworker on scene who placed the 911 call.",
+    "time": "Tuesday, 10:42 AM",
+    "safety": "Scene safe. Office is calm, coworkers cleared a path. Elevator access available.",
+    "bystanders": "Coworker (Megan) called 911 and reports patient said 'my heart is going crazy' and looked pale. No witnessed loss of consciousness.",
+    "visualCues": [
+      "Patient seated upright, mildly diaphoretic forehead",
+      "Half-finished coffee cup on desk",
+      "Patient appears anxious but is oriented and conversational",
+      "No vomit, no spilled medications, no obvious trauma"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 32-year-old male seated at his desk, alert and conversational, mildly diaphoretic, holding one hand to his chest. He reports a sudden 'racing heart' that started about 35 minutes ago while working. He is mildly short of breath but talking in full sentences. Skin warm and pink. Radial pulse is rapid and regular, too fast to count by palpation. Initial monitor placement reveals a narrow-complex tachycardia at ~190 with no discernible P waves — supraventricular tachycardia. He is hemodynamically stable: BP 112/72, A&Ox3, SpO2 99% on room air.",
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, self-maintained, speaking in full sentences",
+        "breathing": "Mildly tachypneic, no distress, breath sounds clear and equal bilaterally",
+        "circulation": "Radial pulse rapid and regular — too fast to count; cap refill <2s; skin warm, pink, mildly diaphoretic",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "mildly diaphoretic" },
+        "pupils": "PERRL 4mm bilaterally",
+        "motorFunction": "Moves all extremities normally, no focal deficits",
+        "otherFindings": [
+          "No JVD",
+          "No peripheral edema",
+          "No carotid bruits noted",
+          "Patient appears anxious but oriented"
+        ],
+        "patientSpeech": "'My heart just took off out of nowhere — I was just sitting here working. It feels like it's going to come out of my chest.'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Supraventricular Tachycardia",
+        "ecgWaveform": 4,
+        "hr": 190,
+        "bpSys": 112,
+        "bpDia": 72,
+        "respRate": 22,
+        "spo2": 99,
+        "etco2": 36,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 96,
+        "trendTimeSeconds": 0,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": false, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "primary-survey",
+          "shortAction": "Primary survey, ABCs; confirm patient stable, alert, perfusing",
+          "protocolExcerpt": "Patient Presentation: Patients will manifest elevated heart rate for age and may or may not also present with associated signs or symptoms such as palpitations, dyspnea, chest pain, syncope/near-syncope, hemodynamic compromise, altered mental status, or other signs of end organ malperfusion.",
+          "priority": "critical",
+          "rationale": "Determines stable vs unstable — drives the entire pathway. Stable + alert + perfusing = medical management; unstable = cardioversion.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "o2-target",
+          "shortAction": "Apply SpO2; titrate O2 only if <94% (currently 99%, no O2 indicated)",
+          "protocolExcerpt": "Administer oxygen as appropriate with a target of achieving 94–98% saturation.",
+          "priority": "important",
+          "rationale": "Avoid hyperoxia in a saturating patient; supports recognition that this is rhythm-driven, not hypoxia-driven.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "monitor-12-lead",
+          "shortAction": "Place on monitor; obtain 12-lead EKG; identify regular narrow-complex tachycardia (SVT)",
+          "protocolExcerpt": "Initiate monitoring and perform 12-lead EKG.",
+          "priority": "critical",
+          "rationale": "12-lead confirms narrow-complex, regular, rate ~190 with no P waves — SVT. Rules in/out wide complex which would change drug choice.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "iv-access",
+          "shortAction": "Establish IV access — prefer AC or proximal site for adenosine push",
+          "protocolExcerpt": "Establish IV access. Adenosine 6 mg IV (proximal site) followed by 10 mL fluid bolus.",
+          "priority": "critical",
+          "rationale": "Adenosine has a half-life of <10 seconds; must be a proximal vein with a flush ready to reach the AV node before metabolism.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "glucose-check",
+          "shortAction": "Check blood glucose to rule out hypoglycemia as driver",
+          "protocolExcerpt": "Check blood glucose and treat hypoglycemia per the Hypoglycemia Guideline.",
+          "priority": "important",
+          "rationale": "Hypoglycemia is on the differential of tachycardia per the H's and T's; quick to exclude.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "history-causes",
+          "shortAction": "Targeted history for underlying cause (caffeine, stimulants, thyroid, prior episodes)",
+          "protocolExcerpt": "Search for underlying cause: Medications (caffeine, diet pills, thyroid, decongestants); Drugs (cocaine, amphetamines); History of dysrhythmia; Congestive heart failure (CHF).",
+          "priority": "important",
+          "rationale": "Patient reports coffee and prior self-resolving episodes — supports paroxysmal SVT diagnosis.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "vagal-maneuvers",
+          "shortAction": "Perform vagal maneuvers (Valsalva, then modified Valsalva with supine leg elevation)",
+          "protocolExcerpt": "Regular Narrow Complex Tachycardia – Stable (SVT): Perform vagal maneuvers.",
+          "priority": "critical",
+          "rationale": "First-line for stable SVT. Modified Valsalva (REVERT) has higher conversion rate than standard Valsalva.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "vagal-failed-anxious",
+          "if": "Vagal maneuvers fail, pt stable",
+          "condition": "Vagal maneuvers (standard Valsalva and modified Valsalva) attempted and unsuccessful. Patient remains in SVT at HR ~190, BP holds at 110/70, mentation intact. Patient begins to verbalize increasing anxiety about his heart.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["vagal-maneuvers"]
+        },
+        {
+          "targetPhaseId": "cardioverted-stable-pt",
+          "if": "Cardioverted before adenosine trial",
+          "condition": "Crew misreads patient's anxiety and palpitation complaints as 'instability' and proceeds directly to synchronized cardioversion without first attempting adenosine. Patient is still alert and perfusing — cardioversion is premature and painful.",
+          "conditionType": "action_taken"
+        }
+      ]
+    },
+    {
+      "id": "vagal-failed-anxious",
+      "name": "Vagal failed, anxiety rising",
+      "description": "Vagal maneuvers have failed. Patient remains in regular narrow-complex tachycardia at HR ~190. Hemodynamics are still preserved — BP 110/70, alert, oriented, SpO2 99%. However, the patient is becoming visibly more anxious: increased restlessness on the stretcher, voice getting louder, complaining more intensely about chest tightness and 'feeling like I'm going to pass out.' This is the key decision point — the crew must recognize that anxiety symptoms (subjective distress, hyperventilation, restlessness) are NOT the same as hemodynamic instability (hypotension, altered mentation, ischemic chest pain with EKG changes, signs of shock). The clinically correct path is to hold the line and proceed with adenosine.",
+      "triggerCondition": "Standard Valsalva and modified Valsalva (REVERT) attempted; rhythm persists at ~190. Patient becomes increasingly anxious, hyperventilating slightly, verbalizing distress more loudly, but vital signs remain stable. Risk: anxiety mimics instability.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, speaking in full sentences but voice strained",
+        "breathing": "Tachypneic from anxiety, lungs clear bilaterally, no work of breathing",
+        "circulation": "Radial pulse rapid and regular ~190, cap refill <2s, BP holding",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "diaphoretic" },
+        "pupils": "PERRL 4mm, slightly dilated from sympathetic surge",
+        "motorFunction": "Moves all extremities, no focal deficits, restless on stretcher",
+        "otherFindings": [
+          "Patient grasping crew member's arm",
+          "Repeatedly asking 'am I going to die?'",
+          "Subjective worsening of chest tightness but no new ischemic features on monitor"
+        ],
+        "patientSpeech": "'It's getting worse — please, do something! I feel like I'm going to pass out!'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Supraventricular Tachycardia",
+        "ecgWaveform": 4,
+        "hr": 192,
+        "bpSys": 110,
+        "bpDia": 70,
+        "respRate": 26,
+        "spo2": 99,
+        "etco2": 32,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 96,
+        "trendTimeSeconds": 35,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": false, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "reassess-stability",
+          "shortAction": "Reassess stability: BP, mentation, perfusion — distinguish anxiety from true instability",
+          "protocolExcerpt": "Patient Presentation: Patients will manifest elevated heart rate for age and may or may not also present with associated signs or symptoms such as palpitations, dyspnea, chest pain, syncope/near-syncope, hemodynamic compromise, altered mental status, or other signs of end organ malperfusion.",
+          "priority": "critical",
+          "rationale": "Anxiety, restlessness, subjective chest discomfort, and a louder voice are NOT instability. Instability = hypotension (BP <90), altered mentation, ischemic EKG changes, or signs of shock. BP 110/70 and A&Ox3 is still stable.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "verbal-reassurance",
+          "shortAction": "Verbal reassurance, calm coaching, slow breathing — keep patient cooperative",
+          "protocolExcerpt": "Establish patient rapport: Attempt verbal reassurance and calm patient prior to use of pharmacologic and/or physical management devices.",
+          "priority": "important",
+          "rationale": "Anxiety contributes catecholamine surge that perpetuates SVT. Calming the patient is therapy, not just bedside manner.",
+          "protocolReference": "MATC: Agitated or Violent Patient/Behavioral Emergency"
+        },
+        {
+          "id": "adenosine-prep",
+          "shortAction": "Prepare adenosine 6 mg IV with 10 mL NS flush via stopcock; warn pt of brief 'doom' sensation",
+          "protocolExcerpt": "Adenosine 6 mg IV (proximal site) followed by 10 mL fluid bolus. If tachycardia continues, give adenosine 12 mg IV.",
+          "priority": "critical",
+          "rationale": "Adenosine half-life is <10 sec — drug must reach AV node before metabolism. Stopcock setup with a saline flush is technique-critical. Pre-briefing the patient reduces panic during the asystolic pause.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "adenosine-6mg",
+          "shortAction": "Adenosine 6 mg rapid IVP, immediate 10 mL NS flush, elevate arm",
+          "protocolExcerpt": "Adenosine 6 mg IV (proximal site) followed by 10 mL fluid bolus.",
+          "priority": "critical",
+          "rationale": "First adenosine dose for stable narrow-complex regular SVT. Fixed dose — not weight-based in adults. Flush + arm elevation are essential.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "monitor-rhythm-strip",
+          "shortAction": "Capture continuous rhythm strip across the push — document conversion or persistence",
+          "protocolExcerpt": "Obtain monitor strips after each intervention.",
+          "priority": "important",
+          "rationale": "Documents conversion (brief asystolic pause then sinus) vs persistence. Required for hospital handoff and supports the next-dose decision.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "converted-sinus",
+          "if": "Adenosine 6 mg with proper flush given",
+          "condition": "Adenosine 6 mg pushed rapid IVP at proximal site with immediate 10 mL saline flush and arm elevation. Brief asystolic pause on monitor, then rhythm breaks to sinus tachycardia ~105, BP rises slightly, patient feels the 'flush' but recovers within seconds.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["adenosine-6mg"]
+        },
+        {
+          "targetPhaseId": "adenosine-no-flush",
+          "if": "Adenosine given without rapid flush or arm elevation",
+          "condition": "Adenosine 6 mg pushed but flush is slow, delayed, or omitted (no stopcock setup, no arm elevation). Drug is metabolized before reaching the AV node. No conversion. Crew may incorrectly conclude the SVT is 'refractory' when the real problem was administration technique.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["adenosine-6mg"]
+        },
+        {
+          "targetPhaseId": "cardioverted-stable-pt",
+          "if": "Cardioversion chosen for 'anxious-but-stable' pt",
+          "condition": "Crew misinterprets patient's escalating anxiety and verbal distress as hemodynamic instability and proceeds to synchronized cardioversion without giving adenosine. Patient is still alert, BP 110/70, perfusing — does not meet protocol criteria for unstable narrow-complex tachycardia.",
+          "conditionType": "action_taken"
+        }
+      ]
+    },
+    {
+      "id": "converted-sinus",
+      "name": "Converted to sinus",
+      "description": "Brief asystolic pause on the monitor (3–5 seconds) followed by spontaneous return to sinus rhythm at ~105 bpm. Patient describes a brief 'doom' or 'flushing' sensation that resolves within seconds. Chest tightness eases. BP rises to 124/78. SpO2 holds at 99%. Patient is dramatically calmer once he realizes he's better. Continue reassessment en route to the ED — recurrence is possible, so monitor continuously and have a second dose of adenosine and pads ready.",
+      "triggerCondition": "Adenosine 6 mg pushed rapid IVP with immediate 10 mL flush and arm elevation. Brief AV nodal block produces a transient asystolic pause; sinus node resumes control. SVT terminated.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, full sentences, voice normal",
+        "breathing": "RR settling, lungs clear, no distress",
+        "circulation": "Radial pulse regular ~105, cap refill <2s, skin warm and pink",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "drying" },
+        "pupils": "PERRL 4mm",
+        "motorFunction": "Moves all extremities, settled on stretcher",
+        "otherFindings": [
+          "Patient visibly relieved",
+          "Brief 3-5 second pause on rhythm strip just prior to conversion",
+          "Mild fatigue but no recurrent symptoms"
+        ],
+        "patientSpeech": "'Whoa — that was awful for a second, but I can feel it stopped. Thank you.'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 105,
+        "bpSys": 124,
+        "bpDia": 78,
+        "respRate": 18,
+        "spo2": 99,
+        "etco2": 38,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 96,
+        "trendTimeSeconds": 25,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": false, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "post-conversion-12-lead",
+          "shortAction": "Repeat 12-lead post-conversion; document baseline rhythm and intervals",
+          "protocolExcerpt": "Performance of serial EKGs is encouraged for symptomatic patients with EKGs initially non-diagnostic for STEMI.",
+          "priority": "critical",
+          "rationale": "Post-conversion 12-lead can reveal underlying WPW (delta wave, short PR) which would change long-term management and warn of recurrence risk.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI"
+        },
+        {
+          "id": "continuous-monitoring",
+          "shortAction": "Continuous cardiac monitor, ready for recurrence; second-dose adenosine (12 mg) drawn up",
+          "protocolExcerpt": "If tachycardia continues, give adenosine 12 mg IV.",
+          "priority": "important",
+          "rationale": "Paroxysmal SVT can recur; have the 12 mg dose ready and pads pre-placed in case of deterioration.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "transport-disposition",
+          "shortAction": "Transport to appropriate ED; advance notification with rhythm strips",
+          "protocolExcerpt": "Transport and destination decisions should be based on local resources and system of care.",
+          "priority": "important",
+          "rationale": "Patient needs ED evaluation for electrophysiology workup, even after successful field conversion.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI"
+        },
+        {
+          "id": "documentation",
+          "shortAction": "Document rhythm pre/post, time and dose of adenosine, response to interventions",
+          "protocolExcerpt": "Key Documentation Elements: Initial rhythm and all rhythm changes; Time, dose, and response to medications given; Obtain monitor strips after each intervention.",
+          "priority": "important",
+          "rationale": "Quality field documentation directly drives ED disposition and EP referral.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "adenosine-no-flush",
+      "name": "Adenosine without proper flush",
+      "description": "Adenosine 6 mg was pushed but the saline flush was slow, the stopcock wasn't preloaded, or the arm wasn't elevated. The drug was metabolized in the peripheral veins before reaching the AV node. No conversion. Rhythm remains regular narrow-complex at ~192. Patient experienced no 'flush' sensation — a tell that the dose didn't make it centrally. The trap is concluding 'refractory SVT' and escalating prematurely. The correct response is to recognize the technique failure, regroup with a proper setup, and give 12 mg with rapid flush and elevation.",
+      "triggerCondition": "Adenosine 6 mg given without immediate rapid 10 mL saline flush and/or without raising the arm. Half-life <10 seconds means the drug never reached the AV node. No asystolic pause on the strip — diagnostic clue that the drug did not reach the heart.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent",
+        "breathing": "Tachypneic, lungs clear",
+        "circulation": "Persistent rapid regular pulse ~192, BP holding 108/70",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "diaphoretic" },
+        "pupils": "PERRL 4mm",
+        "motorFunction": "Restless on stretcher, no deficits",
+        "otherFindings": [
+          "Patient reports NO unusual sensation during the push — red flag the drug didn't reach centrally",
+          "No transient asystole on rhythm strip",
+          "Rhythm unchanged"
+        ],
+        "patientSpeech": "'Did anything happen? I didn't feel anything weird.'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Supraventricular Tachycardia",
+        "ecgWaveform": 4,
+        "hr": 192,
+        "bpSys": 108,
+        "bpDia": 70,
+        "respRate": 26,
+        "spo2": 99,
+        "etco2": 32,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 96,
+        "trendTimeSeconds": 20,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": false, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-technique-failure",
+          "shortAction": "Recognize technique failure (no flush sensation, no rhythm pause) — not true refractory SVT",
+          "protocolExcerpt": "Adenosine 6 mg IV (proximal site) followed by 10 mL fluid bolus.",
+          "priority": "critical",
+          "rationale": "The absence of any patient sensation and the absence of a brief asystolic pause on the strip both indicate the drug did not reach the AV node. The fix is technique, not dose escalation to non-adenosine agents.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "setup-stopcock",
+          "shortAction": "Set up three-way stopcock at proximal IV; preload 10 mL saline flush",
+          "protocolExcerpt": "Adenosine 6 mg IV (proximal site) followed by 10 mL fluid bolus.",
+          "priority": "critical",
+          "rationale": "Stopcock technique allows adenosine and flush to be pushed in immediate sequence with no dead time.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "adenosine-12mg",
+          "shortAction": "Adenosine 12 mg rapid IVP, immediate 10 mL flush, elevate arm",
+          "protocolExcerpt": "If tachycardia continues, give adenosine 12 mg IV.",
+          "priority": "critical",
+          "rationale": "Per protocol, second dose is 12 mg with the same technique requirements. If technique is now correct, expect conversion.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "cardioverted-stable-pt",
+      "name": "Cardioverted while stable",
+      "description": "Crew interpreted patient's escalating anxiety and verbal distress as hemodynamic instability and proceeded to synchronized cardioversion despite preserved BP (110/70), preserved mentation (A&Ox3), and preserved perfusion. This is a protocol deviation — the patient did not meet criteria for unstable narrow-complex tachycardia. Cardioversion was applied without procedural sedation (or with rushed sedation). Patient experienced a painful shock and is now traumatized, agitated, and tearful. The shock may briefly convert the rhythm, but the iatrogenic harm — pain, psychological trauma, breach of trust — was avoidable. This is a teaching branch about confusing subjective distress with objective instability.",
+      "triggerCondition": "Crew elected synchronized cardioversion on a patient who was still alert, perfusing, and normotensive. Anxiety symptoms were misread as instability. Protocol criteria for unstable narrow-complex tachycardia (hypotension, AMS, ischemic chest pain, shock) were NOT met.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, crying, hyperventilating",
+        "breathing": "Tachypneic from pain and panic, lungs clear",
+        "circulation": "Rhythm may have converted briefly to sinus tachy ~115; BP 130/85 (pain response)",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "diaphoretic" },
+        "pupils": "PERRL 5mm, sympathetic",
+        "motorFunction": "Pulling away from crew, guarding chest where pads were",
+        "otherFindings": [
+          "Patient tearful, distressed: 'You shocked me — I was awake!'",
+          "Pad-site erythema visible",
+          "Loss of patient trust — refusing further care for several minutes",
+          "Risk of recurrence remains; this was a procedural deviation"
+        ],
+        "patientSpeech": "'Why did you do that?! I was talking to you! That hurt so much — I thought you were helping me.'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 115,
+        "bpSys": 130,
+        "bpDia": 85,
+        "respRate": 30,
+        "spo2": 99,
+        "etco2": 30,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 96,
+        "trendTimeSeconds": 15,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": false, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-protocol-deviation",
+          "shortAction": "Recognize protocol deviation — pt was stable; cardioversion not indicated",
+          "protocolExcerpt": "Regular Narrow Complex Tachycardia – Stable (SVT): Perform vagal maneuvers; Adenosine 6 mg IV (proximal site) followed by 10 mL fluid bolus.",
+          "priority": "critical",
+          "rationale": "Stable SVT pathway is vagal → adenosine 6 mg → adenosine 12 mg. Cardioversion is reserved for UNSTABLE tachycardia (hypotension, AMS, ischemic CP, shock). Anxiety is not instability.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "post-shock-reassessment",
+          "shortAction": "Reassess rhythm, perfusion, mental status, and trauma response post-shock",
+          "protocolExcerpt": "Observe for signs of clinical deterioration: dysrhythmias, chest pain, shortness of breath, decreased level of consciousness/syncope, or other signs of shock/hypotension.",
+          "priority": "critical",
+          "rationale": "Even an unnecessary shock requires full reassessment — rhythm may be transient, pad-site injury, psychological trauma must all be addressed.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/STEMI"
+        },
+        {
+          "id": "verbal-rapport-repair",
+          "shortAction": "Reestablish rapport, calm reassurance, acknowledge distress; document event accurately",
+          "protocolExcerpt": "Establish patient rapport: Attempt verbal reassurance and calm patient prior to use of pharmacologic and/or physical management devices.",
+          "priority": "important",
+          "rationale": "Trust repair is clinically necessary — patient needs to remain cooperative for ongoing monitoring, IV access, transport. Documentation must reflect what actually happened.",
+          "protocolReference": "MATC: Agitated or Violent Patient/Behavioral Emergency"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 100,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

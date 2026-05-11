@@ -1,0 +1,485 @@
+{
+  "scenarioId": "C-T3-02",
+  "scenarioName": "V-Tach Deterioration to V-Fib Arrest",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1800,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "68-year-old male found unresponsive in the bathroom by his wife approximately 1-2 minutes prior to EMS arrival. Earlier in the evening he complained of fluttering in his chest and felt lightheaded after standing up from dinner. Walked to the bathroom, then she heard a thud and found him on the floor. Wife reports he has been 'forgetting his pills' over the last several weeks and has skipped doses of his amiodarone. Known history of CAD with prior anterior MI (stented 2019) and prior episodes of 'fast heart rhythm' for which he was started on oral amiodarone. No chest pain reported tonight before the collapse, no trauma witnessed.",
+    "discussion": "",
+    "course": "Initial Contact: On arrival, 68-year-old male supine on bathroom tile, unresponsive. Crew exposes the chest and applies the monitor/defibrillator pads in the FAST patch configuration. The monitor displays a wide-complex tachycardia at a rate of approximately 200 — regular, monomorphic, broad QRS. He has no spontaneous movement, no respiratory effort, and skin is pale and cool. This is the critical decision point: the rhythm LOOKS like it could be a perfusing VT, but pulse and apnea must drive the decision. A central pulse check (carotid, no more than 10 seconds) is non-negotiable. → First shock delivered: Crew correctly identified pulseless VT, delivered the first 200 J unsynchronized shock within ~1 minute of patient contact, and resumed compressions immediately. Two-minute cycle of CPR underway with passive O2 via NRB + OPA. IO established at the proximal humerus and first dose of epinephrine 1 mg IV/IO administered during this cycle. End of cycle 1: rhythm check shows persistent pulseless VT. Second 200 J shock delivered, compressions resumed. Amiodarone 300 mg IV/IO bolus given for shock-refractory pulseless VT. Capnography post-supraglottic-airway shows EtCO2 ~22 mmHg — compressions are adequate. → ROSC — post-arrest care: Approximately 8 minutes into resus, the rhythm converts to a narrow-complex sinus rhythm after the third 200 J shock. Pulse check during the planned rhythm check confirms a weak but regular carotid pulse. EtCO2 has spiked from 22 to 38 mmHg. Blood pressure cycles at 88/56. Patient remains unresponsive (GCS 6 — withdraws to pain), with shallow spontaneous respirations supplemented by BVM at 10/min through the SGA. Crew now transitions to Post-ROSC care: avoid hyperventilation, avoid hyperoxygenation, identify cause, acquire 12-lead, prepare for re-arrest, transport to PCI-capable facility."
+  },
+  "patientInformation": {
+    "patientName": "Walter Kosinski",
+    "patientCondition": "Found unresponsive after complaining of palpitations and near-syncope",
+    "patientAge": 68,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 178,
+    "patientWeight": 86,
+    "patientPhotoId": 82,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "On arrival, 68-year-old male supine on bathroom tile, unresponsive. Crew exposes the chest and applies the monitor/defibrillator pads in the FAST patch configuration. The monitor displays a wide-complex tachycardia at a rate of approximately 200 — regular, monomorphic, broad QRS. He has no spontaneous movement, no respiratory effort, and skin is pale and cool. This is the critical decision point: the rhythm LOOKS like it could be a perfusing VT, but pulse and apnea must drive the decision. A central pulse check (carotid, no more than 10 seconds) is non-negotiable.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": true,
+      "defibDisarm": false,
+      "parameters": {
+        "ecgWaveform": 12,
+        "hr": 200,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 0,
+        "temp": 36.6,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Rapid scene size-up; expose chest; recognize unresponsive + apneic",
+        "Carotid pulse check ≤10 seconds — confirm PULSELESS",
+        "Verbalize: 'Pulseless VT — treat as cardiac arrest'",
+        "Begin high-quality CPR 100-120/min, depth ≥2 in, full recoil",
+        "Defibrillate 200 J biphasic (Zoll max) — pulseless VT is shockable",
+        "Resume compressions immediately post-shock — no pulse/rhythm check ×2 min",
+        "IO proximal humerus; Epinephrine 1 mg IV/IO during first or second compression round",
+        "Passive O2 via NRB + OPA initially; BVM 10/min once advanced airway placed"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "First shock delivered",
+      "description": "Crew correctly identified pulseless VT, delivered the first 200 J unsynchronized shock within ~1 minute of patient contact, and resumed compressions immediately. Two-minute cycle of CPR underway with passive O2 via NRB + OPA. IO established at the proximal humerus and first dose of epinephrine 1 mg IV/IO administered during this cycle. End of cycle 1: rhythm check shows persistent pulseless VT. Second 200 J shock delivered, compressions resumed. Amiodarone 300 mg IV/IO bolus given for shock-refractory pulseless VT. Capnography post-supraglottic-airway shows EtCO2 ~22 mmHg — compressions are adequate.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": true,
+      "defibDisarm": false,
+      "parameters": {
+        "ecgWaveform": 12,
+        "hr": 200,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 22,
+        "temp": 36.5,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Rhythm check at 2 min; second defibrillation 200 J for persistent pulseless VT",
+        "Amiodarone 300 mg IV/IO bolus after 2nd shock (shock-refractory VF/pulseless VT)",
+        "Epinephrine 1 mg IV/IO every 3-5 minutes throughout arrest",
+        "Place supraglottic airway without interrupting compressions; ventilate 10/min",
+        "Continuous EtCO2 — target >10 mmHg, watch for sudden rise (ROSC)",
+        "Consider reversible causes (H's & T's) — focus on MI given history",
+        "Third 200 J shock at next 2-min mark if persistent VF/pulseless VT"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "ROSC — post-arrest care",
+      "description": "Approximately 8 minutes into resus, the rhythm converts to a narrow-complex sinus rhythm after the third 200 J shock. Pulse check during the planned rhythm check confirms a weak but regular carotid pulse. EtCO2 has spiked from 22 to 38 mmHg. Blood pressure cycles at 88/56. Patient remains unresponsive (GCS 6 — withdraws to pain), with shallow spontaneous respirations supplemented by BVM at 10/min through the SGA. Crew now transitions to Post-ROSC care: avoid hyperventilation, avoid hyperoxygenation, identify cause, acquire 12-lead, prepare for re-arrest, transport to PCI-capable facility.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 88,
+        "bpSys": 88,
+        "bpDia": 56,
+        "respRate": 10,
+        "spo2": 94,
+        "etco2": 38,
+        "temp": 36.4,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Maintain SGA; ventilate 10/min; target EtCO2 35-45; SpO2 94-98%",
+        "Acquire 12-lead EKG immediately to identify STEMI as cause of arrest",
+        "NS 500 mL IV bolus for SBP 88; reassess; consider repeat per Shock Guideline",
+        "Pads stay on; monitor closely for re-arrest; mechanical CPR device staged",
+        "Recheck glucose (142); avoid hyperthermia — no warm blankets above 37.5°C",
+        "Transport to PCI-capable receiving facility; early notification"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Shock-refractory — second amio",
+      "description": "After 3 shocks, epi ×2, and amiodarone 300 mg, rhythm remains coarse VFib. Crew now in the 8-10 minute mark. Amiodarone 150 mg second dose given per protocol. Considering lidocaine as alternative if amiodarone unavailable or contraindicated. Reversible causes worked through — most likely recurrent ischemia. Compressions ongoing, mechanical CPR device applied for transport. Ongoing 200 J shocks q 2 min. Crew prepares for prolonged resus and PCI-capable destination if/when ROSC achieved; otherwise considers termination criteria.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": true,
+      "defibDisarm": false,
+      "parameters": {
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 19,
+        "temp": 36.4,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Amiodarone 150 mg IV/IO 4-6 min after first dose for persistent VF/pulseless VT",
+        "Lidocaine 1-1.5 mg/kg IV (86 kg × 1 mg/kg = 86 mg; max 3 mg/kg) if amio unavailable",
+        "Continue 200 J shock + 2 min CPR cycle; epi 1 mg q 3-5 min",
+        "Apply mechanical CPR device for safe transport compressions",
+        "Consider termination criteria with medical control if persistently refractory"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "No pulse check — VFib arrest",
+      "description": "Crew applied the monitor, saw the wide-complex tachycardia at 200, and anchored on the Tachycardia-with-a-Pulse pathway. Discussion focused on stable vs unstable wide-complex tachycardia; team reached for synchronized cardioversion setup or considered an amiodarone INFUSION at 150 mg over 10 minutes. NO CAROTID PULSE CHECK was performed. 60-90 seconds elapse without compressions and without defibrillation. The pulseless VT — unsupported by perfusion — degrades to coarse VFib. EtCO2 falls (no perfusion at all). Crew now recognizes arrest, but resuscitation begins from a worse baseline: longer no-flow time, longer time to first shock, and a less organized starting rhythm. The teaching beat: wide-complex tachycardia on the monitor REQUIRES a pulse check before deciding the pathway.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": true,
+      "defibDisarm": false,
+      "parameters": {
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 0,
+        "temp": 36.5,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize: pulse check missed; rhythm now VFib — start CPR NOW",
+        "Begin high-quality CPR 100-120/min immediately",
+        "Defibrillate 200 J as soon as defibrillator ready; resume compressions immediately",
+        "Epi 1 mg IV/IO cycle 1-2; amiodarone 300 mg IV/IO after 2nd shock",
+        "Debrief: every wide-complex tach in unresponsive patient gets a pulse check"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Sync mode selected — no shock",
+      "description": "Crew correctly identified the patient as 'unstable wide-complex tachycardia' but anchored on synchronized cardioversion. With sync mode engaged, the Zoll algorithm cannot reliably mark R waves at rate 200 with broad monomorphic QRS — particularly when the patient is pulseless and there is no synchronized arterial signal to validate. The defibrillator either fails to deliver a shock, or delivers one with significant delay. Compressions are also delayed because the team is troubleshooting the device. The rhythm degenerates from pulseless VT toward coarse VFib. Recovery requires recognizing the error, switching to defibrillation (unsynchronized), restoring compressions, and proceeding through the standard VF/pulseless VT algorithm from a delayed and worse baseline.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": true,
+      "defibDisarm": false,
+      "parameters": {
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 0,
+        "temp": 36.5,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize error; disable SYNC mode on defibrillator",
+        "Resume high-quality CPR immediately while device re-arms",
+        "Defibrillate 200 J unsynchronized; resume compressions immediately",
+        "Epi 1 mg IV/IO during first/second cycle; amio 300 mg IV/IO after 2nd shock",
+        "Debrief: sync = perfusing patient; defib = pulseless. Pulse check first."
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Rapid scene size-up; expose chest; recognize unresponsive + apneic",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Carotid pulse check ≤10 seconds — confirm PULSELESS",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Verbalize: 'Pulseless VT — treat as cardiac arrest'",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Begin high-quality CPR 100-120/min, depth ≥2 in, full recoil",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Defibrillate 200 J biphasic (Zoll max) — pulseless VT is shockable",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Resume compressions immediately post-shock — no pulse/rhythm check ×2 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "IO proximal humerus; Epinephrine 1 mg IV/IO during first or second compression round",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Passive O2 via NRB + OPA initially; BVM 10/min once advanced airway placed",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Rhythm check at 2 min; second defibrillation 200 J for persistent pulseless VT",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Amiodarone 300 mg IV/IO bolus after 2nd shock (shock-refractory VF/pulseless VT)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 1 mg IV/IO every 3-5 minutes throughout arrest",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place supraglottic airway without interrupting compressions; ventilate 10/min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous EtCO2 — target >10 mmHg, watch for sudden rise (ROSC)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Consider reversible causes (H's & T's) — focus on MI given history",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Third 200 J shock at next 2-min mark if persistent VF/pulseless VT",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Maintain SGA; ventilate 10/min; target EtCO2 35-45; SpO2 94-98%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Acquire 12-lead EKG immediately to identify STEMI as cause of arrest",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "NS 500 mL IV bolus for SBP 88; reassess; consider repeat per Shock Guideline",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Pads stay on; monitor closely for re-arrest; mechanical CPR device staged",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recheck glucose (142); avoid hyperthermia — no warm blankets above 37.5°C",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to PCI-capable receiving facility; early notification",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Amiodarone 150 mg IV/IO 4-6 min after first dose for persistent VF/pulseless VT",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Lidocaine 1-1.5 mg/kg IV (86 kg × 1 mg/kg = 86 mg; max 3 mg/kg) if amio unavailable",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue 200 J shock + 2 min CPR cycle; epi 1 mg q 3-5 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply mechanical CPR device for safe transport compressions",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Consider termination criteria with medical control if persistently refractory",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize: pulse check missed; rhythm now VFib — start CPR NOW",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Begin high-quality CPR 100-120/min immediately",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Defibrillate 200 J as soon as defibrillator ready; resume compressions immediately",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epi 1 mg IV/IO cycle 1-2; amiodarone 300 mg IV/IO after 2nd shock",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Debrief: every wide-complex tach in unresponsive patient gets a pulse check",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize error; disable SYNC mode on defibrillator",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Resume high-quality CPR immediately while device re-arms",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Defibrillate 200 J unsynchronized; resume compressions immediately",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epi 1 mg IV/IO during first/second cycle; amio 300 mg IV/IO after 2nd shock",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Debrief: sync = perfusing patient; defib = pulseless. Pulse check first.",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

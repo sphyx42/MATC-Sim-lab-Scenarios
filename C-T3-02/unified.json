@@ -1,0 +1,712 @@
+{
+  "meta": {
+    "id": "C-T3-02",
+    "name": "V-Tach Deterioration to V-Fib Arrest",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Cardiac",
+    "protocols": [
+      "resus-cardiac-arrest",
+      "cv-tachycardia",
+      "resus-post-rosc"
+    ],
+    "totalTimeSeconds": 1800,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "cardiac",
+      "resuscitation",
+      "v-tach",
+      "v-fib",
+      "pulseless-vt",
+      "defibrillation",
+      "acls",
+      "tier-3",
+      "high-acuity",
+      "urgency-deficit"
+    ]
+  },
+  "patient": {
+    "name": "Walter Kosinski",
+    "age": 68,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 86,
+    "weightLbs": 190,
+    "height": 178,
+    "chiefComplaint": "Found unresponsive after complaining of palpitations and near-syncope",
+    "history": {
+      "hpi": "68-year-old male found unresponsive in the bathroom by his wife approximately 1-2 minutes prior to EMS arrival. Earlier in the evening he complained of fluttering in his chest and felt lightheaded after standing up from dinner. Walked to the bathroom, then she heard a thud and found him on the floor. Wife reports he has been 'forgetting his pills' over the last several weeks and has skipped doses of his amiodarone. Known history of CAD with prior anterior MI (stented 2019) and prior episodes of 'fast heart rhythm' for which he was started on oral amiodarone. No chest pain reported tonight before the collapse, no trauma witnessed.",
+      "pastMedical": [
+        "CAD with prior anterior MI (2019)",
+        "PCI with drug-eluting stent to LAD (2019)",
+        "Non-sustained ventricular tachycardia (2021)",
+        "HTN",
+        "Hyperlipidemia",
+        "Type 2 diabetes (diet-controlled)"
+      ],
+      "medications": [
+        "Amiodarone 200 mg PO daily (poorly compliant — wife reports missed doses)",
+        "Metoprolol succinate 50 mg PO daily",
+        "Aspirin 81 mg PO daily",
+        "Atorvastatin 40 mg PO nightly",
+        "Lisinopril 20 mg PO daily"
+      ],
+      "allergies": ["NKDA"],
+      "lastOralIntake": "Dinner approximately 90 minutes ago — pot roast, potatoes, one glass of red wine",
+      "events": "Felt palpitations after dinner, walked to bathroom, collapsed within ~30 seconds. Wife heard the fall, ran in, found him unresponsive on the floor and called 911. No bystander CPR initiated. EMS arrived ~6 minutes after the 911 call."
+    }
+  },
+  "scene": {
+    "dispatch": "68-year-old male, possible cardiac, complaining of palpitations and now passed out per wife. Single-family residence, wife meeting at front door. CPR not in progress.",
+    "location": "Single-family home, master bathroom upstairs. Patient supine on tile floor, partially wedged between toilet and tub. Tight working space — crew must extricate to the bedroom or hallway for resus.",
+    "time": "Sunday, 1947 — clear, cool evening",
+    "safety": "Scene secure. No hazards. Family pet (dog) confined to a back room. Wife distressed but cooperative. Floor is tile, somewhat slippery from a knocked-over glass of water near the patient.",
+    "bystanders": "Wife (mid-60s) present, frantic. Reports 'he just dropped.' Confirms history of heart attack, prior ventricular rhythm, on amiodarone but 'he forgets it.' No witnessed seizure activity, no prior trauma.",
+    "visualCues": [
+      "Patient supine, eyes closed, no spontaneous movement",
+      "Skin pale and mottled; no obvious external trauma",
+      "Pill bottles visible on bathroom counter — amiodarone, metoprolol, aspirin, atorvastatin, lisinopril",
+      "Spilled glass of water near patient's right hand",
+      "No vomit, no incontinence, no obvious bleeding",
+      "Wife clutching phone, repeating 'he was just complaining about his heart fluttering'"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial",
+      "name": "Initial Contact",
+      "description": "On arrival, 68-year-old male supine on bathroom tile, unresponsive. Crew exposes the chest and applies the monitor/defibrillator pads in the FAST patch configuration. The monitor displays a wide-complex tachycardia at a rate of approximately 200 — regular, monomorphic, broad QRS. He has no spontaneous movement, no respiratory effort, and skin is pale and cool. This is the critical decision point: the rhythm LOOKS like it could be a perfusing VT, but pulse and apnea must drive the decision. A central pulse check (carotid, no more than 10 seconds) is non-negotiable.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "Patent but no spontaneous respirations; no gag",
+        "breathing": "Apneic — no chest rise, no breath sounds. Occasional agonal gasp not adequate ventilation.",
+        "circulation": "NO PALPABLE CENTRAL PULSE on carotid check (this is the trap — students who skip the pulse check or assume perfusion from the monitor will miss this). Skin pale, cool, mottled extremities; cap refill >4 sec.",
+        "skin": { "color": "pale, mottled", "temperature": "cool", "moisture": "dry" },
+        "pupils": "Mid-position (~4-5 mm), sluggish, equal",
+        "motorFunction": "Flaccid, no movement",
+        "otherFindings": [
+          "Wife reports collapse witnessed within 1-2 minutes of EMS arrival — short downtime",
+          "Monitor shows wide-complex regular tachycardia rate ~200, QRS ~0.16 s, monomorphic",
+          "No respiratory effort, no spontaneous movement",
+          "No external trauma, no signs of obvious overdose",
+          "Pill bottles on counter consistent with reported PMH"
+        ],
+        "patientSpeech": "(unresponsive — no speech)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Ventricular Tachycardia (Monomorphic)",
+        "ecgWaveform": 12,
+        "hr": 200,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 0,
+        "temp": 36.6,
+        "tempF": 97.9,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "scene-and-primary",
+          "shortAction": "Rapid scene size-up; expose chest; recognize unresponsive + apneic",
+          "protocolExcerpt": "Assessment: The patient in cardiac arrest requires a prompt balance of treatment and assessment. In cases of cardiac arrest, assessments should be focused and limited to obtaining enough information to reveal the patient is pulseless.",
+          "priority": "critical",
+          "rationale": "Tier 3 deficit target: students must not be slowed by full secondary survey. Recognize unresponsive + apneic in under 10 seconds and move directly to circulation.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "central-pulse-check",
+          "shortAction": "Carotid pulse check ≤10 seconds — confirm PULSELESS",
+          "protocolExcerpt": "Assessment: Once pulselessness is discovered, treatment should be initiated immediately, and any further history must be obtained by bystanders while treatment is ongoing.",
+          "priority": "critical",
+          "rationale": "THE central teaching beat. A wide-complex tachycardia on the monitor REQUIRES a pulse check before deciding stable vs unstable vs pulseless. Skipping or delaying the pulse check is the deficit being targeted.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "recognize-pulseless-vt",
+          "shortAction": "Verbalize: 'Pulseless VT — treat as cardiac arrest'",
+          "protocolExcerpt": "Patient Presentation — Inclusion Criteria: Patients with cardiac arrest. The most important therapies for patients suffering from cardiac arrest are prompt cardiac defibrillation for shockable rhythms and minimally interrupted effective chest compressions.",
+          "priority": "critical",
+          "rationale": "Pulseless VT is a cardiac arrest rhythm — it is NOT managed under the Tachycardia-with-a-Pulse guideline. Naming it correctly drives the right pathway.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "start-compressions",
+          "shortAction": "Begin high-quality CPR 100-120/min, depth ≥2 in, full recoil",
+          "protocolExcerpt": "Key Considerations: Effective chest compressions are defined as: A rate of greater than 100 and less than 120 compressions/minute; Depth of at least 2 inches (5 cm) and less than 2.4 inches (6 cm) for adults and children; Allow for complete chest recoil (avoid leaning); Minimize interruptions in compressions.",
+          "priority": "critical",
+          "rationale": "Compressions are initiated immediately on recognizing pulselessness — even while pads are placed and defibrillator is charging.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "first-defib-pulseless-vt",
+          "shortAction": "Defibrillate 200 J biphasic (Zoll max) — pulseless VT is shockable",
+          "protocolExcerpt": "Defibrillation dosing should follow manufacturer's recommendation in the case of biphasic defibrillators. If the manufacturer's recommendation is unknown, use highest setting possible. Zoll Adult – 120 J, 150 J, 200 J. The maximum setting on the defibrillator should be used for initial and subsequent defibrillation attempts.",
+          "priority": "critical",
+          "rationale": "Pulseless VT gets DEFIBRILLATION (unsynchronized), not synchronized cardioversion. Zoll max is 200 J for adults.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "resume-compressions-post-shock",
+          "shortAction": "Resume compressions immediately post-shock — no pulse/rhythm check ×2 min",
+          "protocolExcerpt": "Chest compressions should resume immediately after defibrillation attempts with no pauses for pulse checks for 2 minutes regardless of the rhythm displayed on the cardiac monitor.",
+          "priority": "critical",
+          "rationale": "Minimizing peri-shock pause is the single biggest survival driver. No rhythm check or pulse check until the next 2-minute cycle.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "io-access-and-epi",
+          "shortAction": "IO proximal humerus; Epinephrine 1 mg IV/IO during first or second compression round",
+          "protocolExcerpt": "If feasible, IV or IO access should be obtained. Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms.",
+          "priority": "critical",
+          "rationale": "Vascular access should not interrupt compressions. Epinephrine 1 mg every 3-5 min throughout the arrest.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "airway-passive-then-bvm",
+          "shortAction": "Passive O2 via NRB + OPA initially; BVM 10/min once advanced airway placed",
+          "protocolExcerpt": "Passive ventilation: High flow oxygen is applied via a non-rebreather mask with an oropharyngeal airway; Some oxygen will be entrained with each decompression of the chest; This may be applied for the first 3–4 compression cycles (6–8 minutes), after which one may consider BVM ventilation or placement of an advanced airway.",
+          "priority": "important",
+          "rationale": "Airway is secondary to compressions and defibrillation in adult arrest. Passive O2 acceptable for first 6-8 min.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "defib-and-cpr",
+          "if": "Pulseless VT recognized, defibrillated 200 J",
+          "condition": "Crew checks central pulse within 10 seconds of monitor application, confirms pulselessness, names the rhythm as pulseless VT, starts compressions, and delivers a 200 J unsynchronized defibrillation. Compressions resume immediately post-shock.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["central-pulse-check", "recognize-pulseless-vt", "first-defib-pulseless-vt"]
+        },
+        {
+          "targetPhaseId": "no-pulse-check-vfib",
+          "if": "Pulse check skipped — treated as perfusing VT",
+          "condition": "Crew sees wide-complex tachycardia on the monitor and anchors on the Tachycardia-with-a-Pulse pathway — preparing synchronized cardioversion or considering amiodarone INFUSION — without performing a carotid pulse check. 60-90 seconds elapse without compressions or defibrillation. Untreated pulseless VT degrades to coarse VFib.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["central-pulse-check", "recognize-pulseless-vt"],
+          "timeoutSeconds": 90
+        },
+        {
+          "targetPhaseId": "sync-cardioverted",
+          "if": "Synchronized cardioversion attempted on pulseless VT",
+          "condition": "Crew recognizes the patient is unstable but selects synchronized cardioversion mode rather than defibrillation. With a pulseless patient and rapid monomorphic VT, the sync algorithm cannot reliably mark R waves; no shock is delivered or shock is significantly delayed. Compressions also delayed because crew is troubleshooting the defibrillator. Rhythm degrades.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["first-defib-pulseless-vt"]
+        }
+      ]
+    },
+    {
+      "id": "defib-and-cpr",
+      "name": "First shock delivered",
+      "description": "Crew correctly identified pulseless VT, delivered the first 200 J unsynchronized shock within ~1 minute of patient contact, and resumed compressions immediately. Two-minute cycle of CPR underway with passive O2 via NRB + OPA. IO established at the proximal humerus and first dose of epinephrine 1 mg IV/IO administered during this cycle. End of cycle 1: rhythm check shows persistent pulseless VT. Second 200 J shock delivered, compressions resumed. Amiodarone 300 mg IV/IO bolus given for shock-refractory pulseless VT. Capnography post-supraglottic-airway shows EtCO2 ~22 mmHg — compressions are adequate.",
+      "triggerCondition": "Following the protocol-correct sequence: pulse check confirmed pulseless VT, 200 J defibrillation delivered, immediate compressions, IO access, epinephrine 1 mg, persistent pulseless VT after first shock, second 200 J shock, amiodarone 300 mg IV bolus given for shock-refractory pulseless VT. Now in the middle of cycle 2-3 of the ACLS algorithm.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "Supraglottic airway placed without compression interruption; good chest rise",
+        "breathing": "BVM via SGA at 10/min, asynchronous with compressions",
+        "circulation": "CPR in progress; no spontaneous pulse between shocks",
+        "skin": { "color": "pale, mottled", "temperature": "cool", "moisture": "dry" },
+        "pupils": "Mid-position (~4 mm), sluggish, equal",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "Two 200 J shocks delivered for persistent pulseless VT",
+          "Epinephrine 1 mg IO given during cycle 1",
+          "Amiodarone 300 mg IV/IO bolus given for shock-refractory pulseless VT",
+          "EtCO2 via SGA capnography: 22 mmHg — adequate compression quality",
+          "Compression fraction tracked; rescuer switch at 2 min"
+        ],
+        "patientSpeech": "(unresponsive)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Ventricular Tachycardia (Monomorphic)",
+        "ecgWaveform": 12,
+        "hr": 200,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 22,
+        "temp": 36.5,
+        "tempF": 97.7,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "second-shock",
+          "shortAction": "Rhythm check at 2 min; second defibrillation 200 J for persistent pulseless VT",
+          "protocolExcerpt": "Continue the cycle of chest compressions for 2 minutes, followed by rhythm analysis and defibrillation of shockable rhythms. The maximum setting on the defibrillator should be used for initial and subsequent defibrillation attempts.",
+          "priority": "critical",
+          "rationale": "Shock-refractory pulseless VT gets another max-energy defibrillation at the next 2-minute mark.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "amiodarone-300",
+          "shortAction": "Amiodarone 300 mg IV/IO bolus after 2nd shock (shock-refractory VF/pulseless VT)",
+          "protocolExcerpt": "Consider use of antiarrhythmic for recurrent VF/Pulseless VT — Amiodarone 300mg, followed by 150mg 4-6 min later if still in refractory VF and pulseless VT.",
+          "priority": "critical",
+          "rationale": "First antiarrhythmic dose after 2-3 shocks for shock-refractory VF/pulseless VT. Fixed-dose adult bolus (not weight-based for adult arrest dosing).",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "epi-q-3-5",
+          "shortAction": "Epinephrine 1 mg IV/IO every 3-5 minutes throughout arrest",
+          "protocolExcerpt": "Administer epinephrine (0.1 mg/kg, maximum dose 1 mg) IV/IO during the first or second round of compressions.",
+          "priority": "critical",
+          "rationale": "Repeat epi every 3-5 min — typically every other cycle — until ROSC or termination.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "advanced-airway",
+          "shortAction": "Place supraglottic airway without interrupting compressions; ventilate 10/min",
+          "protocolExcerpt": "Advanced airway placement: Either a supraglottic airway or an endotracheal tube may be placed without interruption of compressions; Ventilations are provided at 10 breaths/minute for adults.",
+          "priority": "important",
+          "rationale": "Advanced airway after 3-4 compression cycles; do not interrupt compressions for placement; 10/min ventilations.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "etco2-monitor",
+          "shortAction": "Continuous EtCO2 — target >10 mmHg, watch for sudden rise (ROSC)",
+          "protocolExcerpt": "Quantitative end-tidal capnography (EtCO2) should be used to monitor effectiveness of chest compressions. If EtCO2 less than 10 mmHg during the initial phases of resuscitation, attempt to improve chest compression quality.",
+          "priority": "critical",
+          "rationale": "EtCO2 <10 means compressions are inadequate; sudden EtCO2 spike often precedes pulse return.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "reversible-causes",
+          "shortAction": "Consider reversible causes (H's & T's) — focus on MI given history",
+          "protocolExcerpt": "Consider reversible causes of cardiac arrest which include the following: Hypothermia; The dialysis patient/known hyperkalemic patient; Tricyclic antidepressant overdose; Hypovolemia; If the patient is intubated at the time of arrest, assess for tension pneumothorax and misplaced ETT.",
+          "priority": "important",
+          "rationale": "Patient has known CAD with prior MI — recurrent ischemia/AMI is the leading suspect; this also drives destination choice (PCI-capable).",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "third-shock-if-refractory",
+          "shortAction": "Third 200 J shock at next 2-min mark if persistent VF/pulseless VT",
+          "protocolExcerpt": "Continue the cycle of chest compressions for 2 minutes, followed by rhythm analysis and defibrillation of shockable rhythms.",
+          "priority": "critical",
+          "rationale": "Continue the shock-CPR-drug cycle. After amiodarone 300 mg, the next dose is 150 mg 4-6 min later if still refractory.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "rosc-post-arrest",
+          "if": "Third shock → ROSC achieved",
+          "condition": "After the third 200 J shock and amiodarone 300 mg bolus, rhythm check at the next 2-min mark shows a narrow-complex rhythm. Pulse check during the planned rhythm check reveals weak but palpable carotid pulse. EtCO2 jumps from 22 to 38 mmHg. ROSC declared.",
+          "conditionType": "vital_threshold",
+          "triggerActionIds": ["second-shock", "amiodarone-300", "epi-q-3-5"]
+        },
+        {
+          "targetPhaseId": "refractory-amio-second-dose",
+          "if": "Persistent shock-refractory VF/pulseless VT",
+          "condition": "After three shocks, epinephrine ×2, and amiodarone 300 mg, the rhythm remains in coarse VFib/pulseless VT. Crew continues ACLS — amiodarone 150 mg second dose 4-6 min after the first, ongoing compressions, ongoing 200 J shocks. Considers lidocaine alternative and reversible causes.",
+          "conditionType": "vital_threshold"
+        }
+      ]
+    },
+    {
+      "id": "rosc-post-arrest",
+      "name": "ROSC — post-arrest care",
+      "description": "Approximately 8 minutes into resus, the rhythm converts to a narrow-complex sinus rhythm after the third 200 J shock. Pulse check during the planned rhythm check confirms a weak but regular carotid pulse. EtCO2 has spiked from 22 to 38 mmHg. Blood pressure cycles at 88/56. Patient remains unresponsive (GCS 6 — withdraws to pain), with shallow spontaneous respirations supplemented by BVM at 10/min through the SGA. Crew now transitions to Post-ROSC care: avoid hyperventilation, avoid hyperoxygenation, identify cause, acquire 12-lead, prepare for re-arrest, transport to PCI-capable facility.",
+      "triggerCondition": "Following three 200 J defibrillations, epinephrine 1 mg IV/IO ×2, and amiodarone 300 mg IV/IO bolus, the rhythm converted to sinus rhythm and a weak carotid pulse returned. EtCO2 spiked from 22 to 38 mmHg confirming ROSC. Patient remains comatose with shallow spontaneous respirations and post-arrest hypotension.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 4 },
+        "airway": "SGA in place, secured; suctioned ×1 for small amount of secretions",
+        "breathing": "Spontaneous shallow respirations ~8/min; BVM-assisted ventilations through SGA at 10/min to target EtCO2 35-45 mmHg",
+        "circulation": "Carotid and weak radial pulse present; BP 88/56; skin slowly improving from mottled to pale",
+        "skin": { "color": "pale, less mottled", "temperature": "cool, warming", "moisture": "dry" },
+        "pupils": "Mid-position (~4 mm), sluggishly reactive, equal",
+        "motorFunction": "Withdraws weakly to deep sternal rub; no purposeful movement",
+        "otherFindings": [
+          "ROSC achieved after 3 shocks + epi ×2 + amiodarone 300 mg",
+          "EtCO2 jumped from 22 to 38 mmHg — confirms ROSC",
+          "Patient remains comatose; secure airway maintained",
+          "12-lead acquired: sinus rhythm with old anterior Q waves and possible new ST changes — must r/o evolving STEMI",
+          "BP 88/56 — post-arrest myocardial stunning; consider fluid bolus per shock protocol",
+          "High risk of re-arrest — maintain pad placement, mechanical CPR device ready"
+        ],
+        "patientSpeech": "(unresponsive, occasional groan to noxious stimulus)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 88,
+        "bpSys": 88,
+        "bpDia": 56,
+        "respRate": 10,
+        "spo2": 94,
+        "etco2": 38,
+        "temp": 36.4,
+        "tempF": 97.5,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "rosc-airway-vent",
+          "shortAction": "Maintain SGA; ventilate 10/min; target EtCO2 35-45; SpO2 94-98%",
+          "protocolExcerpt": "Do not hyperventilate. Maintain a ventilation rate of 8–10 breaths per minute, targeting an EtCO2 of 35–45 mmHg. Administer oxygen as appropriate with a target of achieving 94–98% saturation. Do not hyperoxygenate.",
+          "priority": "critical",
+          "rationale": "Hyperventilation is the #1 cause of post-ROSC hypotension and re-arrest. Titrate O2 to 94-98%, not 100%.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "rosc-12-lead",
+          "shortAction": "Acquire 12-lead EKG immediately to identify STEMI as cause of arrest",
+          "protocolExcerpt": "Perform serial 12-lead EKGs to assess for evidence of reversible cause of arrest such as STEMI or electrolyte derangement (e.g., hyperkalemia). Post-cardiac arrest patients with evidence or interpretation consistent with ST elevation myocardial infarction (STEMI/acute MI) should be transported preferably to a facility capable of emergent cardiac catheterization.",
+          "priority": "critical",
+          "rationale": "Patient has known CAD + prior MI — recurrent ischemia is the leading suspected etiology of the VT arrest. STEMI identification drives destination.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "rosc-bp-management",
+          "shortAction": "NS 500 mL IV bolus for SBP 88; reassess; consider repeat per Shock Guideline",
+          "protocolExcerpt": "For hypotension (SBP less than 90 mmHg or MAP less than 65 in adults) see Shock Guideline.",
+          "priority": "critical",
+          "rationale": "Post-ROSC myocardial stunning — most patients need volume and/or vasopressor. Start with crystalloid bolus, reassess for pulmonary edema given cardiac history.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "rosc-rearrest-watch",
+          "shortAction": "Pads stay on; monitor closely for re-arrest; mechanical CPR device staged",
+          "protocolExcerpt": "Monitor closely for recurrence of cardiac arrest using clinical and adjunctive criteria such as cardiac monitoring, EtCO2 monitoring, and physical signs of perfusion. Maintain mechanical CPR device in place in preparation for re-arrest.",
+          "priority": "critical",
+          "rationale": "A significant percentage of post-ROSC patients re-arrest. Keep pads on, defibrillator armed, and crew positioned.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "rosc-glucose-temp",
+          "shortAction": "Recheck glucose (142); avoid hyperthermia — no warm blankets above 37.5°C",
+          "protocolExcerpt": "Check blood glucose. If hypoglycemic, treat per Hypoglycemia Guideline. Avoid hyperthermia (temperature greater than 37.5° C or 99.5° F) by avoiding excessive environmental heat exposure, warm blankets, etc.",
+          "priority": "important",
+          "rationale": "Hyperthermia worsens neurologic outcome; mild cooling is acceptable. Glucose normal, no D10 needed.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "rosc-transport-pci",
+          "shortAction": "Transport to PCI-capable receiving facility; early notification",
+          "protocolExcerpt": "Post-cardiac arrest patients with evidence or interpretation consistent with ST elevation myocardial infarction (STEMI/acute MI) should be transported preferably to a facility capable of emergent cardiac catheterization or, as a secondary option, to a STEMI receiving facility based upon local resources and system of care. Consider transporting patients to an age-appropriate facility which offers specialized adult or pediatric post-resuscitation care.",
+          "priority": "critical",
+          "rationale": "Destination decision is part of post-ROSC care. PCI-capable + post-arrest center improves both mortality and neuro outcomes.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "refractory-amio-second-dose",
+      "name": "Shock-refractory — second amio",
+      "description": "After 3 shocks, epi ×2, and amiodarone 300 mg, rhythm remains coarse VFib. Crew now in the 8-10 minute mark. Amiodarone 150 mg second dose given per protocol. Considering lidocaine as alternative if amiodarone unavailable or contraindicated. Reversible causes worked through — most likely recurrent ischemia. Compressions ongoing, mechanical CPR device applied for transport. Ongoing 200 J shocks q 2 min. Crew prepares for prolonged resus and PCI-capable destination if/when ROSC achieved; otherwise considers termination criteria.",
+      "triggerCondition": "After 3 defibrillations, epi ×2, and amiodarone 300 mg, the rhythm remains in coarse VFib. Crew administers the second amiodarone 150 mg dose 4-6 minutes after the first, considers lidocaine alternative, and continues high-quality ACLS.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "SGA in place; no secretions",
+        "breathing": "BVM via SGA 10/min; no spontaneous respirations",
+        "circulation": "No spontaneous pulse; mechanical CPR device delivering compressions",
+        "skin": { "color": "pale, mottled", "temperature": "cool", "moisture": "dry" },
+        "pupils": "Dilated (~6 mm), non-reactive",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "Persistent coarse VFib after 3 shocks + epi ×2 + amio 300 mg",
+          "Amiodarone 150 mg IV/IO second dose given",
+          "EtCO2 holding at 18-20 mmHg — compression quality acceptable",
+          "Mechanical CPR device applied for transport",
+          "Crew considering lidocaine alternative and reversible causes",
+          "Considering termination criteria if rhythm remains shockable but unresponsive"
+        ],
+        "patientSpeech": "(unresponsive)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Ventricular Fibrillation (Coarse)",
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 19,
+        "temp": 36.4,
+        "tempF": 97.5,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "amio-150-second",
+          "shortAction": "Amiodarone 150 mg IV/IO 4-6 min after first dose for persistent VF/pulseless VT",
+          "protocolExcerpt": "Amiodarone 300mg, followed by 150mg 4-6 min later if still in refractory VF and pulseless VT.",
+          "priority": "critical",
+          "rationale": "Second antiarrhythmic dose for refractory rhythm. Fixed-dose adult bolus.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "lidocaine-alt",
+          "shortAction": "Lidocaine 1-1.5 mg/kg IV (86 kg × 1 mg/kg = 86 mg; max 3 mg/kg) if amio unavailable",
+          "protocolExcerpt": "Lidocaine (1 mg/kg IV) may be considered as an alternative to amiodarone for VF/pulseless VT that is unresponsive to CPR, defibrillation, and vasopressor therapy. May be repeated at 5-minute intervals for a maximum dose of 3 mg/kg IV.",
+          "priority": "supplemental",
+          "rationale": "Only one antiarrhythmic at a time; lidocaine is the alternative if amio not available or contraindicated.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "continue-shock-cycle",
+          "shortAction": "Continue 200 J shock + 2 min CPR cycle; epi 1 mg q 3-5 min",
+          "protocolExcerpt": "Continue the cycle of chest compressions for 2 minutes, followed by rhythm analysis and defibrillation of shockable rhythms.",
+          "priority": "critical",
+          "rationale": "The fundamental ACLS rhythm must continue — shock, compressions, drug, repeat.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "mechanical-cpr",
+          "shortAction": "Apply mechanical CPR device for safe transport compressions",
+          "protocolExcerpt": "Patient Safety Considerations: Performing manual chest compressions in a moving vehicle may pose a clinician safety concern; manual chest compressions during patient movement are less effective in regard to hands on time, depth, recoil and rate.",
+          "priority": "important",
+          "rationale": "If transport with ongoing CPR is required, mechanical device preserves quality and crew safety.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "termination-consider",
+          "shortAction": "Consider termination criteria with medical control if persistently refractory",
+          "protocolExcerpt": "If resuscitation remains ineffective, consider termination of resuscitation.",
+          "priority": "supplemental",
+          "rationale": "If after prolonged ACLS the rhythm is unshockable and unresponsive, termination per the Termination guideline is appropriate.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "no-pulse-check-vfib",
+      "name": "No pulse check — VFib arrest",
+      "description": "Crew applied the monitor, saw the wide-complex tachycardia at 200, and anchored on the Tachycardia-with-a-Pulse pathway. Discussion focused on stable vs unstable wide-complex tachycardia; team reached for synchronized cardioversion setup or considered an amiodarone INFUSION at 150 mg over 10 minutes. NO CAROTID PULSE CHECK was performed. 60-90 seconds elapse without compressions and without defibrillation. The pulseless VT — unsupported by perfusion — degrades to coarse VFib. EtCO2 falls (no perfusion at all). Crew now recognizes arrest, but resuscitation begins from a worse baseline: longer no-flow time, longer time to first shock, and a less organized starting rhythm. The teaching beat: wide-complex tachycardia on the monitor REQUIRES a pulse check before deciding the pathway.",
+      "triggerCondition": "Crew anchored on the perfusing-VT pathway because the rhythm 'looked perfusing.' No carotid pulse check was performed. Crew prepared synchronized cardioversion or considered amiodarone INFUSION 150 mg over 10 min instead of immediate defibrillation. 60-90 seconds elapsed without compressions or defibrillation. Pulseless VT degenerated to coarse VFib. Resuscitation now begins from a worse starting point.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "Patent, no respirations",
+        "breathing": "Apneic — still no respiratory effort",
+        "circulation": "Confirmed pulseless on belated check; cap refill >5 sec; skin profoundly mottled",
+        "skin": { "color": "cyanotic-mottled", "temperature": "cool", "moisture": "dry" },
+        "pupils": "Dilated (~6 mm), sluggish, equal",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "Rhythm degraded from monomorphic pulseless VT to coarse VFib",
+          "60-90 seconds of no-flow time elapsed before recognition",
+          "Crew now realizes the wide-complex tach was never perfusing",
+          "Resus starts late — every downstream time-to-shock and time-to-drug metric worse",
+          "Pill bottles and prior cardiac hx still on the counter — clear evidence base"
+        ],
+        "patientSpeech": "(unresponsive)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Ventricular Fibrillation (Coarse)",
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 0,
+        "temp": 36.5,
+        "tempF": 97.7,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-error-pulse",
+          "shortAction": "Recognize: pulse check missed; rhythm now VFib — start CPR NOW",
+          "protocolExcerpt": "Assessment: Once pulselessness is discovered, treatment should be initiated immediately, and any further history must be obtained by bystanders while treatment is ongoing.",
+          "priority": "critical",
+          "rationale": "First step is recognizing the iatrogenic delay — every monitor rhythm in an unresponsive patient gets a pulse check.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "immediate-cpr-rescue",
+          "shortAction": "Begin high-quality CPR 100-120/min immediately",
+          "protocolExcerpt": "Chest compressions are usually the most rapidly applied therapy for the patient in cardiac arrest and should be initiated as soon as the patient is noted to be pulseless.",
+          "priority": "critical",
+          "rationale": "No-flow time has already accumulated; compressions are now even more urgent.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "defib-vfib-200",
+          "shortAction": "Defibrillate 200 J as soon as defibrillator ready; resume compressions immediately",
+          "protocolExcerpt": "Defibrillation dosing should follow manufacturer's recommendation in the case of biphasic defibrillators. Zoll Adult – 120 J, 150 J, 200 J. Chest compressions should resume immediately after defibrillation attempts with no pauses for pulse checks for 2 minutes regardless of the rhythm displayed on the cardiac monitor.",
+          "priority": "critical",
+          "rationale": "VFib is shockable; max-energy biphasic per device, then 2 min CPR with no pulse check.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "epi-and-amio-rescue",
+          "shortAction": "Epi 1 mg IV/IO cycle 1-2; amiodarone 300 mg IV/IO after 2nd shock",
+          "protocolExcerpt": "Administer Epinephrine 1mg during the first or second round of compressions. Amiodarone 300mg, followed by 150mg 4-6 min later if still in refractory VF and pulseless VT.",
+          "priority": "critical",
+          "rationale": "Now operating the standard VF/pulseless VT algorithm — but starting from a delayed baseline.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "debrief-pulse-check",
+          "shortAction": "Debrief: every wide-complex tach in unresponsive patient gets a pulse check",
+          "protocolExcerpt": "Patient Presentation — Inclusion Criteria: Patients with cardiac arrest. Assessment: In cases of cardiac arrest, assessments should be focused and limited to obtaining enough information to reveal the patient is pulseless.",
+          "priority": "supplemental",
+          "rationale": "Cognitive close-out: 'monitor looks like perfusing VT' is not a substitute for a pulse check.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "sync-cardioverted",
+      "name": "Sync mode selected — no shock",
+      "description": "Crew correctly identified the patient as 'unstable wide-complex tachycardia' but anchored on synchronized cardioversion. With sync mode engaged, the Zoll algorithm cannot reliably mark R waves at rate 200 with broad monomorphic QRS — particularly when the patient is pulseless and there is no synchronized arterial signal to validate. The defibrillator either fails to deliver a shock, or delivers one with significant delay. Compressions are also delayed because the team is troubleshooting the device. The rhythm degenerates from pulseless VT toward coarse VFib. Recovery requires recognizing the error, switching to defibrillation (unsynchronized), restoring compressions, and proceeding through the standard VF/pulseless VT algorithm from a delayed and worse baseline.",
+      "triggerCondition": "Crew recognized the patient was 'unstable' but selected synchronized cardioversion instead of defibrillation for a pulseless rhythm. With monomorphic VT at rate ~200 and no perfusion, sync mode struggled to mark R waves; no shock was delivered or the shock was significantly delayed while compressions also lagged. The pulseless VT degenerated toward coarse VFib.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "Patent, no respirations",
+        "breathing": "Apneic",
+        "circulation": "Pulseless on belated re-check; skin cool, mottled",
+        "skin": { "color": "mottled, cyanotic at fingertips", "temperature": "cool", "moisture": "dry" },
+        "pupils": "Dilated (~5-6 mm), sluggish, equal",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "Defibrillator armed in SYNC mode — failed to deliver / significantly delayed shock",
+          "Compressions delayed while troubleshooting device",
+          "Crew has to consciously disable sync and confirm defibrillation mode",
+          "Rhythm degenerating from monomorphic VT to coarse VFib"
+        ],
+        "patientSpeech": "(unresponsive)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Ventricular Fibrillation (Coarse)",
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 0,
+        "temp": 36.5,
+        "tempF": 97.7,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "disable-sync",
+          "shortAction": "Recognize error; disable SYNC mode on defibrillator",
+          "protocolExcerpt": "Patient Presentation — Inclusion Criteria: Patients with cardiac arrest. The most important therapies for patients suffering from cardiac arrest are prompt cardiac defibrillation for shockable rhythms and minimally interrupted effective chest compressions.",
+          "priority": "critical",
+          "rationale": "Pulseless rhythms require unsynchronized defibrillation. Sync mode is for the perfusing-patient cardioversion pathway only.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "compressions-now",
+          "shortAction": "Resume high-quality CPR immediately while device re-arms",
+          "protocolExcerpt": "Chest compressions are usually the most rapidly applied therapy for the patient in cardiac arrest and should be initiated as soon as the patient is noted to be pulseless. All attempts should be made to prevent avoidable interruptions in chest compressions, such as pre-charging the defibrillator and hovering over the chest, rather than stepping away during defibrillations.",
+          "priority": "critical",
+          "rationale": "Every second of device troubleshooting is a second without compressions. Restart compressions while sorting the defibrillator.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "defib-200-rescue",
+          "shortAction": "Defibrillate 200 J unsynchronized; resume compressions immediately",
+          "protocolExcerpt": "Defibrillation dosing should follow manufacturer's recommendation in the case of biphasic defibrillators. Zoll Adult – 120 J, 150 J, 200 J. Chest compressions should resume immediately after defibrillation attempts with no pauses for pulse checks for 2 minutes regardless of the rhythm displayed on the cardiac monitor.",
+          "priority": "critical",
+          "rationale": "Now correctly defibrillating the arrest rhythm — but from a delayed baseline.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "rescue-epi-amio",
+          "shortAction": "Epi 1 mg IV/IO during first/second cycle; amio 300 mg IV/IO after 2nd shock",
+          "protocolExcerpt": "Administer Epinephrine 1mg during the first or second round of compressions. Amiodarone 300mg, followed by 150mg 4-6 min later if still in refractory VF and pulseless VT.",
+          "priority": "critical",
+          "rationale": "Standard VF/pulseless VT drug sequence resumed.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "debrief-sync-vs-defib",
+          "shortAction": "Debrief: sync = perfusing patient; defib = pulseless. Pulse check first.",
+          "protocolExcerpt": "Regular Wide Complex Tachycardia – Unstable: Deliver a synchronized shock based on manufacturer's recommendation. Patient Presentation — Inclusion Criteria: Patients with cardiac arrest.",
+          "priority": "supplemental",
+          "rationale": "The decision tree branches at the pulse check. With a pulse → Tachycardia guideline (sync cardioversion if unstable). Without a pulse → Cardiac Arrest guideline (defibrillation).",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

@@ -1,0 +1,528 @@
+{
+  "meta": {
+    "id": "C-T1-06",
+    "name": "Symptomatic Bradycardia, Medication-Induced",
+    "version": 1,
+    "difficulty": "beginner",
+    "category": "Cardiac",
+    "protocols": [
+      "cv-bradycardia",
+      "tox-beta-blocker-poisoning-overdose",
+      "cv-syncope"
+    ],
+    "totalTimeSeconds": 1200,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "bradycardia",
+      "beta-blocker",
+      "metoprolol",
+      "near-syncope",
+      "12-lead",
+      "SAMPLE",
+      "medication-review",
+      "tier-1",
+      "assessment",
+      "stable-vs-unstable"
+    ]
+  },
+  "patient": {
+    "name": "Eleanor Pacholski",
+    "age": 78,
+    "ageUnit": "years",
+    "sex": "female",
+    "weight": 68,
+    "weightLbs": 150,
+    "height": 163,
+    "chiefComplaint": "Dizziness and a near-fainting episode when she stood up from the kitchen table about 20 minutes ago. Currently feels 'a little woozy' but is alert and conversing. Daughter notes patient looks paler than usual.",
+    "history": {
+      "hpi": "78-year-old female with longstanding hypertension and atrial fibrillation was sitting at her kitchen table finishing breakfast when she stood up to take her dishes to the sink. Within a few steps she felt the room 'tilt,' became diaphoretic, and grabbed the counter. She did not fall and did not lose consciousness, but her daughter (who lives with her) helped her into a chair. Daughter says Mom 'looked gray for a minute' before slowly returning to her normal color. No chest pain, no shortness of breath, no palpitations, no headache, no focal weakness or speech changes. Patient denies any pain. She admits she has felt 'sluggish and tired' for the past three days but attributed it to poor sleep. Daughter reports that Mom's primary care physician *increased* her metoprolol succinate from 25 mg daily to 50 mg twice daily about a week ago because her home blood pressures were running 150s/90s. Mom has been taking the new dose faithfully. No new other medications, no missed doses, no falls, no recent illness, no diarrhea or vomiting, normal urine output. She still feels 'a little dizzy' if she shifts in her chair, but it resolves when she sits still. The patient is reluctant to go to the hospital and would prefer to 'just lie down for a while.'",
+      "pastMedical": [
+        "Hypertension — 20+ years",
+        "Atrial fibrillation — paroxysmal, on rate control",
+        "Hyperlipidemia",
+        "Osteoarthritis (knees)",
+        "Cataract surgery, bilateral, ~5 years ago",
+        "No prior MI, no known CAD on cath, no pacemaker"
+      ],
+      "medications": [
+        "Metoprolol succinate 50 mg PO BID (recently increased from 25 mg daily ~1 week ago)",
+        "Lisinopril 20 mg PO daily",
+        "Atorvastatin 40 mg PO at bedtime",
+        "Apixaban 5 mg PO BID",
+        "Acetaminophen 500 mg PO PRN for knees"
+      ],
+      "allergies": [
+        "Sulfa (rash)"
+      ],
+      "lastOralIntake": "Half a piece of toast and coffee with breakfast about 45 minutes ago. Also took all of her morning medications, including the increased dose of metoprolol, with breakfast.",
+      "events": "Stood up from the kitchen table after breakfast and experienced sudden dizziness, near-syncope, and diaphoresis. Did not lose consciousness, did not fall. Daughter helped her into a chair and called 911. Patient feels somewhat improved at rest but still mildly dizzy with positional changes."
+    }
+  },
+  "scene": {
+    "dispatch": "Dispatch: 78-year-old female, dizziness and near-fainting, conscious and breathing, single-family residence. Daughter on scene with patient.",
+    "location": "Tidy single-family home, kitchen and adjacent living room. Patient seated in a padded dining chair near the kitchen table. Good lighting, climate-controlled, no obvious hazards.",
+    "time": "Wednesday, 08:40, mid-morning, mild weather",
+    "safety": "Scene safe. Calm home environment. Daughter cooperative and helpful. No pets in the room. Clear path to the stretcher from the front door.",
+    "bystanders": "Daughter (Karen, mid-50s) is present and acts as historian. She is the one who noticed the new metoprolol dose and will mention it if asked about 'any medication changes in the last week or two.' If crew only asks 'what does she take?' Karen will recite the list but may not flag the dose change unless prompted. Karen is calm but worried.",
+    "visualCues": [
+      "Patient seated upright in dining chair, alert and conversing",
+      "Skin appears pale, slightly diaphoretic on forehead",
+      "Pill organizer open on the kitchen counter with the morning compartment empty",
+      "Prescription bottle for metoprolol succinate visible on counter — label dated within the past week",
+      "No vomit, no incontinence, no signs of trauma anywhere on the patient or in the room",
+      "Coffee cup half full on the table, half-eaten toast on a plate",
+      "Cane leaning against the wall near patient's chair (used for arthritis)"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a 78-year-old female seated in a kitchen chair after a near-syncopal episode that occurred when she stood up after breakfast. She is alert and conversing, mildly diaphoretic, and feels 'a little woozy' if she moves but is comfortable at rest. The radial pulse is slow but regular. She is symptomatic — dizziness, near-syncope, pallor, diaphoresis — but her blood pressure is holding and her mental status is intact. The teaching point of this scenario is recognizing that this is symptomatic bradycardia that is still hemodynamically compensated, identifying the recently-doubled metoprolol as the likely culprit, and choosing monitoring/IV/transport over reflex atropine.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent, self-maintained, speaking in full sentences without difficulty",
+        "breathing": "Unlabored, equal bilateral lung sounds, no accessory muscle use, RR 16",
+        "circulation": "Radial pulse present, slow, regular; skin pale and slightly cool with mild diaphoresis on forehead; capillary refill <2 seconds; no peripheral edema",
+        "skin": {
+          "color": "pale",
+          "temperature": "cool",
+          "moisture": "slightly diaphoretic"
+        },
+        "pupils": "Equal at 3 mm, briskly reactive bilaterally",
+        "motorFunction": "Moves all four extremities equally; grip strength symmetric; no pronator drift; no facial droop; speech clear",
+        "otherFindings": [
+          "Patient reports current symptoms: 'mostly fine sitting still, but the room spins a little if I move'",
+          "Denies chest pain, shortness of breath, palpitations, headache",
+          "No JVD, no peripheral edema, no calf tenderness",
+          "Lung sounds clear in all fields",
+          "Abdomen soft, non-tender",
+          "No focal neuro deficits — patient passes informal stroke screen on initial look"
+        ],
+        "patientSpeech": "I just got a little dizzy when I stood up. I'm fine now if I sit still. I really don't think we need to make a big fuss over this."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Bradycardia",
+        "ecgWaveform": 9,
+        "hr": 44,
+        "bpSys": 108,
+        "bpDia": 64,
+        "respRate": 16,
+        "spo2": 96,
+        "etco2": 36,
+        "temp": 36.7,
+        "tempF": 98.1,
+        "obstruction": 0,
+        "glucose": 102,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "scene-bsi",
+          "shortAction": "Scene size-up, BSI, general impression; note pallor and diaphoresis",
+          "protocolExcerpt": "Assessment: Assess ABCDs and if indicated expose and then cover to assure retention of body heat. Vital signs which include temperature.",
+          "priority": "critical",
+          "rationale": "First-look establishes whether this is stable enough to assess versus an immediate intervention case.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "primary-abc",
+          "shortAction": "Primary survey: airway patent, breathing adequate, pulse slow but regular",
+          "protocolExcerpt": "Adult Management: Manage airway as necessary. Administer oxygen as appropriate with a target of achieving 94–98% saturation.",
+          "priority": "critical",
+          "rationale": "Confirms ABCs are intact and frames the brady as 'symptomatic but compensated' rather than 'in extremis.'",
+          "protocolReference": "MATC: Bradycardia"
+        },
+        {
+          "id": "monitor-12lead",
+          "shortAction": "Apply cardiac monitor and acquire 12-lead EKG",
+          "protocolExcerpt": "Adult Management: Initiate monitoring and perform 12-lead EKG.",
+          "priority": "critical",
+          "rationale": "Confirms sinus brady (not heart block, not ischemic brady) and screens for AV block or ACS as alternate causes.",
+          "protocolReference": "MATC: Bradycardia"
+        },
+        {
+          "id": "full-vitals",
+          "shortAction": "Full vitals including BP, SpO2, RR, temperature; recheck in 5 min",
+          "protocolExcerpt": "Assessment: Vital signs which include temperature. Apply a cardiac monitor, examine rhythm strip for arrhythmias, and consider obtaining a 12-lead EKG. Monitor pulse oximetry and EtCO2 for respiratory decompensation.",
+          "priority": "critical",
+          "rationale": "Documents that BP is holding (108/64), perfusion adequate — the key data point that determines whether to push atropine or monitor.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "glucose-check",
+          "shortAction": "Check blood glucose",
+          "protocolExcerpt": "Adult Management: Check blood glucose and treat hypoglycemia per the Hypoglycemia Guideline and Hyperglycemia Guideline.",
+          "priority": "important",
+          "rationale": "Hypoglycemia is on the bradycardia differential; beta-blocker overdose can also cause hypoglycemia. Glucose 102 mg/dL rules this in/out.",
+          "protocolReference": "MATC: Bradycardia"
+        },
+        {
+          "id": "sample-history",
+          "shortAction": "Obtain SAMPLE/OPQRST history; ask specifically about recent medication or dose changes",
+          "protocolExcerpt": "Review of Systems: Current medications (new medications, changes in doses). Fluid losses (nausea/vomiting/diarrhea) and fluid intake. Last menstrual period/pregnant. Occult blood loss (gastrointestinal (GI)/genitourinary (GU)). Palpitations.",
+          "priority": "critical",
+          "rationale": "The recent doubling of metoprolol is the diagnosis — only revealed by asking specifically about dose changes.",
+          "protocolReference": "MATC: Adult and Pediatric Syncope and Near Syncope"
+        },
+        {
+          "id": "med-review-bb",
+          "shortAction": "Identify metoprolol dose increase as likely culprit; treat as BB-mediated brady",
+          "protocolExcerpt": "Key Considerations: Consider potential culprit medications including beta-blockers, calcium channel blockers, sodium channel blockers/anti-depressants, digoxin, and clonidine. If medication overdose is considered, refer to appropriate guideline in the Toxins and Environmental Section.",
+          "priority": "critical",
+          "rationale": "Recognizing the etiology guides expectations for atropine response (often poor) and the need for glucagon/pacing if she deteriorates.",
+          "protocolReference": "MATC: Bradycardia"
+        },
+        {
+          "id": "stable-vs-unstable",
+          "shortAction": "Classify as symptomatic but hemodynamically stable; defer atropine on intact perfusion",
+          "protocolExcerpt": "Adult Management: Consider the following additional therapies if bradycardia and symptoms or hemodynamic instability continue: Atropine 1 mg IV q 3–5 minutes (maximum total dose of 3 mg). Patient Safety Considerations (Educational Pearls): Bradycardia should be managed via the least invasive manner possible, escalating care as needed.",
+          "priority": "critical",
+          "rationale": "The central decision of the scenario: 'symptomatic' alone does not mandate atropine — perfusion (BP, mentation, end-organ signs) drives escalation. Pacing is reserved for impending collapse.",
+          "protocolReference": "MATC: Bradycardia"
+        },
+        {
+          "id": "iv-access",
+          "shortAction": "Establish IV access (saline lock or KVO) for medication readiness",
+          "protocolExcerpt": "Adult Management: Establish IV access.",
+          "priority": "important",
+          "rationale": "Access is prophylactic — needed if she deteriorates en route and atropine, fluids, or glucagon become necessary.",
+          "protocolReference": "MATC: Bradycardia"
+        },
+        {
+          "id": "monitored-transport",
+          "shortAction": "Transport on cardiac monitor, semi-Fowler's, reassess vitals every 5 minutes",
+          "protocolExcerpt": "Patient Safety Considerations: Patients suffering from syncope due to arrhythmia may experience recurrent arrhythmias and should therefore be placed on a cardiac monitor. Pertinent Assessment Findings (Beta Blocker): Frequent reassessment is essential as patient deterioration can be rapid and catastrophic.",
+          "priority": "critical",
+          "rationale": "She is stable now, but BB-induced brady can deteriorate. Continuous monitoring catches early decompensation.",
+          "protocolReference": "MATC: Adult and Pediatric Syncope and Near Syncope"
+        },
+        {
+          "id": "early-notification",
+          "shortAction": "Early ED notification: symptomatic brady, suspected BB-induced; glucagon may be needed",
+          "protocolExcerpt": "For symptomatic patients with cardiac effects (e.g., hypotension, bradycardia) consider: Adult: Glucagon initial dose 5 mg IVP — this can be repeated in 5–10 minutes for a total of 10 mg.",
+          "priority": "important",
+          "rationale": "Glucagon and ICU-level pressor support are inpatient resources — the ED needs a heads-up to have glucagon and a pacing/pressor plan ready.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "proper-assessment",
+          "if": "Full assessment performed, perfusion confirmed adequate",
+          "condition": "Crew completes primary survey, obtains 12-lead EKG, full vital signs, blood glucose, and a SAMPLE history that identifies the recently-doubled metoprolol. They recognize the patient is symptomatic but hemodynamically compensated (BP 108/64, A&Ox3, no end-organ signs) and elect to establish IV access, place on cardiac monitor, and transport with early ED notification rather than push atropine.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "monitor-12lead",
+            "full-vitals",
+            "sample-history",
+            "stable-vs-unstable",
+            "monitored-transport"
+          ]
+        },
+        {
+          "targetPhaseId": "reflex-atropine",
+          "if": "Atropine pushed without stability assessment",
+          "condition": "Crew sees HR in the 40s on the monitor and reflexively pushes atropine 1 mg IV without first completing a full assessment of perfusion (BP, mental status, end-organ signs), without recognizing this is beta-blocker–mediated bradycardia, and without confirming hemodynamic instability per protocol.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "stable-vs-unstable",
+            "med-review-bb"
+          ]
+        },
+        {
+          "targetPhaseId": "dismissed-asymptomatic",
+          "if": "Crew labels patient asymptomatic, skips 12-lead and med review",
+          "condition": "Crew sees that the patient looks comfortable seated and is alert, labels her 'asymptomatic,' and elects not to acquire a 12-lead, not to obtain a detailed medication-change history, and not to place the patient on a cardiac monitor for transport. Patient is encouraged to follow up with her primary care physician.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": [
+            "monitor-12lead",
+            "sample-history",
+            "med-review-bb",
+            "monitored-transport"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "proper-assessment",
+      "name": "Proper assessment performed",
+      "description": "Crew has completed a full primary and secondary survey, acquired a 12-lead EKG (sinus bradycardia, no AV block, no ischemic changes), confirmed glucose 102 mg/dL, and obtained a detailed SAMPLE that surfaces the recently-doubled metoprolol. They have correctly classified the patient as symptomatic but hemodynamically compensated. IV access is established, the patient is on the cardiac monitor, and they are preparing for transport in a position of comfort. Vitals trend gently in a reassuring direction at rest; the patient's dizziness has eased significantly.",
+      "triggerCondition": "Crew completed a full assessment (primary survey, monitor, 12-lead, full vitals, glucose, SAMPLE with medication-change query), correctly identified the recently-increased metoprolol as the likely cause, and recognized that intact mental status and adequate BP define this as symptomatic-but-compensated bradycardia — atropine is deferred per the 'least invasive manner possible' guidance.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent, self-maintained, speaking comfortably",
+        "breathing": "Unlabored, RR 16, lungs clear",
+        "circulation": "Radial pulse slow but regular; skin warmer and drier than on arrival; cap refill brisk; no JVD",
+        "skin": {
+          "color": "pink",
+          "temperature": "warm",
+          "moisture": "dry"
+        },
+        "pupils": "Equal at 3 mm, briskly reactive",
+        "motorFunction": "Moves all extremities equally; no focal weakness",
+        "otherFindings": [
+          "IV established 18 ga left antecubital, saline lock, patent",
+          "12-lead: sinus bradycardia, rate ~46, normal axis, no AV block, no ischemic changes, QTc within normal limits",
+          "Patient reports dizziness has resolved at rest; still feels 'a tiny bit lightheaded' if she shifts upright",
+          "Daughter has confirmed metoprolol dose change and brought all medication bottles for ED",
+          "Patient placed semi-Fowler's on stretcher with reassuring affect"
+        ],
+        "patientSpeech": "I feel a lot better now that I'm just sitting here. Maybe you're right that I should get this checked out — Karen said the doctor doubled my heart pill last week, I guess that's worth telling them about."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Bradycardia",
+        "ecgWaveform": 9,
+        "hr": 46,
+        "bpSys": 112,
+        "bpDia": 66,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 37,
+        "temp": 36.7,
+        "tempF": 98.1,
+        "obstruction": 0,
+        "glucose": 102,
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "reassess-vitals",
+          "shortAction": "Reassess full vitals; document trend (HR 44 → 46, BP holding 112/66)",
+          "protocolExcerpt": "Pertinent Assessment Findings: Frequent reassessment is essential as patient deterioration can be rapid and catastrophic.",
+          "priority": "critical",
+          "rationale": "Confirms stability is real and trending favorably, not a snapshot artifact.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "position-comfort",
+          "shortAction": "Position semi-Fowler's; avoid sudden postural changes",
+          "protocolExcerpt": "Patient Presentation: Rapid first aid during the onset may improve symptoms and prevent syncope.",
+          "priority": "important",
+          "rationale": "Preserves cerebral perfusion in a patient prone to orthostatic recurrence.",
+          "protocolReference": "MATC: Adult and Pediatric Syncope and Near Syncope"
+        },
+        {
+          "id": "o2-targeted",
+          "shortAction": "Apply oxygen only if SpO2 <94%; titrate to 94–98%",
+          "protocolExcerpt": "Adult Management: Administer oxygen as appropriate with a target of achieving 94–98% saturation.",
+          "priority": "important",
+          "rationale": "Avoids hyperoxia in a patient already at 96–97%; supplemental O2 only when indicated by saturation.",
+          "protocolReference": "MATC: Bradycardia"
+        },
+        {
+          "id": "monitored-transport-2",
+          "shortAction": "Transport on cardiac monitor with continuous SpO2; reassess every 5 minutes",
+          "protocolExcerpt": "Patient Safety Considerations: Patients suffering from syncope due to arrhythmia may experience recurrent arrhythmias and should therefore be placed on a cardiac monitor.",
+          "priority": "critical",
+          "rationale": "BB-induced brady can decompensate suddenly; continuous monitor catches it before BP collapses.",
+          "protocolReference": "MATC: Adult and Pediatric Syncope and Near Syncope"
+        },
+        {
+          "id": "ed-handoff",
+          "shortAction": "ED handoff: symptomatic brady, suspected metoprolol effect, stable on arrival",
+          "protocolExcerpt": "Key Documentation Elements: Cardiac rhythm/rate. Time, dose, and response of medications given. History of event supporting treatment of underlying causes.",
+          "priority": "important",
+          "rationale": "Clean, structured handoff sets the receiving team up for glucagon-readiness and observation rather than restarting the workup from zero.",
+          "protocolReference": "MATC: Bradycardia"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "reflex-atropine",
+      "name": "Atropine pushed reflexively",
+      "description": "Crew skipped the perfusion check, saw HR 44 on the monitor, and pushed atropine 1 mg IV before identifying the beta-blocker etiology. Per the protocol's educational pearls, atropine 'may have little or no effect' in beta-blocker–mediated bradycardia. Heart rate bumps transiently from 44 to 50 and drifts back to 46 within 60 seconds. BP is unchanged. The crew is now considering escalation to a second atropine or pacing on an awake, conversational patient with adequate perfusion — neither indicated. The teaching point is that atropine in BB-mediated brady on a compensated patient burns the drug, may not work, and can prompt inappropriate further escalation.",
+      "triggerCondition": "Crew pushed atropine 1 mg IV reflexively on the basis of a slow heart rate alone, without first confirming hemodynamic instability and without recognizing the beta-blocker etiology. The protocol's 'least invasive manner possible' and 'consider potential culprit medications' guidance was bypassed.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent, conversational",
+        "breathing": "Unlabored, lungs clear",
+        "circulation": "Radial pulse present, regular, slow; skin pale and slightly cool, mild diaphoresis persists",
+        "skin": {
+          "color": "pale",
+          "temperature": "cool",
+          "moisture": "slightly diaphoretic"
+        },
+        "pupils": "Equal at 4 mm (slightly dilated post-atropine), reactive",
+        "motorFunction": "Moves all extremities; no focal weakness",
+        "otherFindings": [
+          "Transient HR bump to 50 for ~30 seconds after atropine, then drifts back to 46",
+          "Patient reports mouth feels dry (anticholinergic effect)",
+          "BP unchanged at 110/64",
+          "Patient still alert and conversing",
+          "Crew is now debating second dose of atropine versus transcutaneous pacing"
+        ],
+        "patientSpeech": "My mouth feels really dry all of a sudden. Did that medicine you gave me do that? I still feel about the same as before."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Bradycardia",
+        "ecgWaveform": 9,
+        "hr": 46,
+        "bpSys": 110,
+        "bpDia": 64,
+        "respRate": 16,
+        "spo2": 96,
+        "etco2": 36,
+        "temp": 36.7,
+        "tempF": 98.1,
+        "obstruction": 0,
+        "glucose": 102,
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-bb-atropine-failure",
+          "shortAction": "Recognize minimal atropine response is consistent with BB-mediated brady",
+          "protocolExcerpt": "Key Considerations: Atropine may have little or no effect (likely to be more helpful in mild overdoses) — the hypotension and bradycardia may be mutually exclusive, and the blood pressure may not respond to correction of bradycardia.",
+          "priority": "critical",
+          "rationale": "Recognizing the poor response prevents stacking more atropine and prompts the correct mental model (BB toxicity, glucagon-eligible).",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "do-not-pace-awake-stable",
+          "shortAction": "Do NOT pace an awake, perfusing patient; pacing reserved for impending collapse",
+          "protocolExcerpt": "Key Considerations: Bradycardia should be managed via the least invasive manner possible, escalating care as needed. In cases of impending hemodynamic collapse, proceed directly to transcutaneous pacing.",
+          "priority": "critical",
+          "rationale": "Pacing an alert, perfusing patient is painful, unnecessary, and a protocol violation when 'impending hemodynamic collapse' is not present.",
+          "protocolReference": "MATC: Bradycardia"
+        },
+        {
+          "id": "course-correct-monitor",
+          "shortAction": "Stop escalating; place on monitor, transport, notify ED of suspected BB cause",
+          "protocolExcerpt": "Pertinent Assessment Findings: Frequent reassessment is essential as patient deterioration can be rapid and catastrophic.",
+          "priority": "critical",
+          "rationale": "The save here is recognizing the misstep, stopping further unnecessary interventions, and getting back onto the monitor-and-transport pathway.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "dismissed-asymptomatic",
+      "name": "Patient dismissed as asymptomatic",
+      "description": "Crew sees a comfortable elderly patient sitting quietly, accepts the daughter's general medication list at face value without probing for recent changes, skips the 12-lead, and decides this is a 'vasovagal-type' episode that does not need transport. Patient is encouraged to follow up with her primary care doctor. As she stands to walk the crew to the door, she immediately becomes dizzy and pale again. The crew has now missed the beta-blocker effect entirely, has no rhythm strip documenting the brady, and is one orthostatic event away from a witnessed syncope and fall in an elderly anticoagulated patient.",
+      "triggerCondition": "Crew did not place the patient on a cardiac monitor, did not acquire a 12-lead, did not probe medications for recent dose changes, and elected to leave the patient at home with PCP follow-up — missing both the symptomatic bradycardia and the beta-blocker etiology. The 'symptomatic' criterion (dizziness, near-syncope, pallor, diaphoresis) was discounted because the patient looked comfortable seated.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "Unlabored",
+        "circulation": "Radial pulse slow; pallor returns and diaphoresis worsens when she stands",
+        "skin": {
+          "color": "pale",
+          "temperature": "cool",
+          "moisture": "diaphoretic"
+        },
+        "pupils": "Equal at 3 mm, reactive",
+        "motorFunction": "Becomes unsteady on standing; daughter catches her elbow",
+        "otherFindings": [
+          "Recurrent near-syncope on standing — orthostatic event reproduced in front of crew",
+          "Crew has no rhythm strip and no 12-lead documented",
+          "Daughter is now visibly distressed and asks crew to reconsider transport",
+          "No fall this time, but the next one may not be witnessed",
+          "Patient is anticoagulated on apixaban — fall risk is significant"
+        ],
+        "patientSpeech": "Oh no, it's happening again — please don't let me fall. Karen, hold on to me."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Bradycardia",
+        "ecgWaveform": 9,
+        "hr": 42,
+        "bpSys": 96,
+        "bpDia": 58,
+        "respRate": 18,
+        "spo2": 95,
+        "etco2": 36,
+        "temp": 36.7,
+        "tempF": 98.1,
+        "obstruction": 0,
+        "glucose": 102,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-still-symptomatic",
+          "shortAction": "Recognize 'symptomatic bradycardia' per protocol; near-syncope and pallor qualify",
+          "protocolExcerpt": "Inclusion Criteria: Heart rate less than 60 beats per minute (BPM) with either symptoms (altered mental status (AMS), chest pain (CP), congestive heart failure (CHF), seizure, syncope, shock, pallor, diaphoresis) or evidence of hemodynamic instability.",
+          "priority": "critical",
+          "rationale": "Pallor, diaphoresis, and near-syncope explicitly meet protocol 'symptomatic' criteria — the patient was never a non-transport candidate.",
+          "protocolReference": "MATC: Bradycardia"
+        },
+        {
+          "id": "course-correct-monitor-12lead",
+          "shortAction": "Place on monitor, acquire 12-lead, establish IV — re-enter the bradycardia pathway",
+          "protocolExcerpt": "Adult Management: Initiate monitoring and perform 12-lead EKG. Establish IV access.",
+          "priority": "critical",
+          "rationale": "Restarts the omitted workup so the receiving ED has the rhythm strip and 12-lead that confirm the etiology.",
+          "protocolReference": "MATC: Bradycardia"
+        },
+        {
+          "id": "transport-not-refusal",
+          "shortAction": "Transport with monitor; do NOT accept refusal in symptomatic anticoagulated elder",
+          "protocolExcerpt": "Patient Safety Considerations: Geriatric patients suffering falls from standing may sustain significant injury and should be diligently screened for trauma.",
+          "priority": "critical",
+          "rationale": "An anticoagulated 78-year-old with reproducible orthostatic near-syncope is high-risk for traumatic ICH on the next event; refusal here is unsafe.",
+          "protocolReference": "MATC: Adult and Pediatric Syncope and Near Syncope"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

@@ -1,0 +1,518 @@
+{
+  "meta": {
+    "id": "C-T1-03",
+    "name": "Hypertensive Crisis without End-Organ Symptoms",
+    "version": 1,
+    "difficulty": "beginner",
+    "category": "Cardiac",
+    "protocols": [
+      "cv-stroke-tia",
+      "medical-altered-mental-status",
+      "medical-pain-management",
+      "cv-chest-pain-acs-stemi"
+    ],
+    "totalTimeSeconds": 1200,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "hypertensive-urgency",
+      "tier-1",
+      "assessment-focused",
+      "headache",
+      "stroke-mimic",
+      "anchoring-bias"
+    ]
+  },
+  "patient": {
+    "name": "Howard Ellison",
+    "age": 62,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 91,
+    "weightLbs": 200,
+    "height": 178,
+    "chiefComplaint": "Headache for 3 hours; 'pressure behind my eyes'",
+    "history": {
+      "hpi": "62-year-old male with a 3-hour history of generalized, dull, throbbing headache rated 6/10. Patient was working in the garage when he noticed pressure behind his eyes and a mild headache that has not improved with two ibuprofen. He denies vision changes, weakness, numbness, slurred speech, chest pain, shortness of breath, nausea, or vomiting. He has not had a headache like this in months. No recent trauma. He admits he 'ran out' of his lisinopril and amlodipine about a week ago and has not refilled them.",
+      "pastMedical": [
+        "Hypertension (10+ years)",
+        "Hyperlipidemia",
+        "Type 2 diabetes (diet-controlled)",
+        "Obesity"
+      ],
+      "medications": [
+        "Lisinopril 40 mg PO daily (last taken ~7 days ago)",
+        "Amlodipine 10 mg PO daily (last taken ~7 days ago)",
+        "Atorvastatin 40 mg PO nightly",
+        "Aspirin 81 mg PO daily"
+      ],
+      "allergies": ["NKDA"],
+      "lastOralIntake": "Coffee and a bagel ~2 hours ago; took 400 mg ibuprofen 90 minutes ago for the headache",
+      "events": "Patient was cleaning out the garage on a warm afternoon when he developed a gradual dull headache. After two ibuprofen failed to relieve it, his wife checked his home BP cuff, got a reading of 215/124, panicked, and called 911."
+    }
+  },
+  "scene": {
+    "dispatch": "62-year-old male, headache, not feeling well. Conscious and breathing. Single-family residence.",
+    "location": "Suburban single-family home, patient seated upright in a kitchen chair at the breakfast bar. Quiet, well-lit, comfortable temperature.",
+    "time": "Saturday, 14:20 — warm spring afternoon",
+    "safety": "Scene secured. Spouse present and cooperative. No pets, no weapons, no environmental hazards.",
+    "bystanders": "Wife is anxious; she took his blood pressure on their home cuff and got 215/124. She wants him taken to the hospital 'right now.' She tells you he 'ran out of his pills last week' and has been too busy to refill them.",
+    "visualCues": [
+      "Empty pill bottles for lisinopril and amlodipine on the counter",
+      "Home automatic BP cuff still wrapped around the patient's left arm",
+      "Patient looks his stated age, well-groomed, in no obvious distress",
+      "Bottle of ibuprofen on the counter, cap off",
+      "Patient is talking in full sentences and tracks you with his eyes as you enter"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "You arrive to find Mr. Ellison sitting calmly at his kitchen counter. He is alert, oriented, and able to give a clear history. His wife is more upset than he is and waves a home BP printout in your face that reads 215/124. The patient himself describes a dull, generalized headache that started gradually 3 hours ago, rated 6/10. He denies any focal weakness, numbness, vision changes, slurred speech, chest pain, or shortness of breath. He admits he stopped taking his BP meds 'about a week ago' because he ran out and was too busy to refill them.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, self-maintained, speaking in full sentences",
+        "breathing": "Unlabored, equal bilateral chest rise, clear bilateral breath sounds",
+        "circulation": "Strong, regular radial pulses bilaterally; warm, dry skin",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL 4 mm bilaterally, no deficits",
+        "motorFunction": "Moves all four extremities equally with normal strength",
+        "otherFindings": [
+          "No facial droop on initial visual inspection",
+          "Speech clear and goal-directed",
+          "Patient describes headache as 'pressure behind my eyes,' generalized, dull, throbbing, 6/10"
+        ],
+        "patientSpeech": "I just have a headache. My wife is the one who panicked — I think I just need my medications back."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 88,
+        "bpSys": 218,
+        "bpDia": 126,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.9,
+        "tempF": 98.4,
+        "obstruction": 0,
+        "glucose": 118,
+        "customMeasures": [],
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "initial-bsi-scene",
+          "shortAction": "BSI, scene size-up, form general impression",
+          "protocolExcerpt": "Environment: Survey for pills, paraphernalia, substance use, medication patches, medical devices, ambient temperature, social indicators of neglect, carbon monoxide exposures, multiple casualties with same complaint.",
+          "priority": "critical",
+          "rationale": "Anchors crew to systematic assessment rather than the dramatic number on the home cuff.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "initial-abc-survey",
+          "shortAction": "Primary survey: airway, breathing, circulation, mentation",
+          "protocolExcerpt": "Airway: Make sure airway remains patent; reposition patient as needed. Breathing: Look for respiratory depression; check SPO2, EtCO2, and CO detector readings. Circulation: Look for signs of poor perfusion. Glasgow Coma Score and/or AVPU.",
+          "priority": "critical",
+          "rationale": "Confirms no acute life threat; sets the stage for a methodical secondary assessment.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "initial-bp-both-arms",
+          "shortAction": "Repeat BP manually on BOTH arms; confirm reading",
+          "protocolExcerpt": "Documentation of patient vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) with pulse oximetry.",
+          "priority": "important",
+          "rationale": "Home cuffs are notoriously inaccurate. A confirmed manual BP — and a sided difference — drives the entire disposition.",
+          "protocolReference": "MATC: Pain Management"
+        },
+        {
+          "id": "initial-pain-score",
+          "shortAction": "Document headache severity using NRS (0–10)",
+          "protocolExcerpt": "Greater than 12 years old: Self-report scale — Numeric Rating Scale (NRS). Pain severity scores should be recorded before and after analgesic medication administration and upon arrival at destination.",
+          "priority": "important",
+          "rationale": "Quantifies the chief complaint and gives a baseline to reassess against.",
+          "protocolReference": "MATC: Pain Management"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "systematic-assessment",
+          "if": "Systematic assessment performed",
+          "condition": "Crew performs a full primary survey, repeats BP on both arms, takes a thorough SAMPLE history including medication adherence and recent stimulant/sympathomimetic use, and proceeds to detailed neuro exam.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["initial-bsi-scene", "initial-abc-survey", "initial-bp-both-arms"]
+        },
+        {
+          "targetPhaseId": "anchor-on-number",
+          "if": "NTG given without neuro exam",
+          "condition": "Crew anchors on the dramatic BP reading and administers nitroglycerin 0.4 mg SL (or pursues other aggressive prehospital BP reduction) before completing a systematic neuro exam and SAMPLE history.",
+          "conditionType": "action_taken"
+        },
+        {
+          "targetPhaseId": "neuro-exam-skipped",
+          "if": "Neuro exam skipped or incomplete",
+          "condition": "Crew obtains vitals and treats the patient as 'just a headache' without performing a stroke scale, pupil check, motor/sensory exam, or detailed mental status assessment.",
+          "conditionType": "action_not_taken"
+        }
+      ]
+    },
+    {
+      "id": "systematic-assessment",
+      "name": "Systematic assessment performed",
+      "description": "Crew has performed a complete primary survey and confirmed the dramatic BP on a manual cuff (right arm 218/126, left arm 216/124 — no significant side difference). Skin is warm, pink, and dry. Patient remains calm and conversational. Stage is now set for the detailed neurologic exam and history that will distinguish hypertensive URGENCY from hypertensive EMERGENCY.",
+      "triggerCondition": "Crew has resisted the urge to act on the home-cuff number alone and is now driving the call with a structured exam.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent",
+        "breathing": "Unlabored 16/min, lungs clear bilaterally",
+        "circulation": "Strong, regular pulses; warm, dry, pink skin; no peripheral edema; no carotid bruit",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL 4 mm bilaterally, equal and reactive",
+        "motorFunction": "5/5 grip strength bilaterally, no pronator drift",
+        "otherFindings": [
+          "Manual BP confirmed: right 218/126, left 216/124",
+          "No bruits, no JVD",
+          "Patient oriented x4 (person, place, time, event)",
+          "No chest pain, no SOB, no nausea/vomiting, no blurred vision"
+        ],
+        "patientSpeech": "I feel fine, honestly. Just this headache. I don't know why she called you."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 86,
+        "bpSys": 216,
+        "bpDia": 124,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.9,
+        "tempF": 98.4,
+        "obstruction": 0,
+        "glucose": 118,
+        "customMeasures": [],
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "stroke-scale",
+          "shortAction": "Perform Cincinnati Stroke Scale (face, arms, speech)",
+          "protocolExcerpt": "Use a validated prehospital stroke scale that may include, but is not limited to: Facial smile/grimace – ask patient to smile; Arm drift – close eyes and hold out arms for count of 10 seconds; Speech – ask patient to say \"You can't teach an old dog new tricks\".",
+          "priority": "critical",
+          "rationale": "Severe HTN with headache is exactly the patient where you must rule out hemorrhagic or ischemic stroke before calling it urgency.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "stroke-severity",
+          "shortAction": "Assess vision, neglect, aphasia (LVO severity screen)",
+          "protocolExcerpt": "Use a validated prehospital stroke severity scale that may include, but is not limited to: Vision changes; Sensory neglect; Aphasia.",
+          "priority": "critical",
+          "rationale": "Headache + severe HTN can mask an LVO. Severity screen drives destination decision.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "pupils-motor-sensory",
+          "shortAction": "Pupils, motor strength, and sensory exam x4 extremities",
+          "protocolExcerpt": "Pertinent Assessment Findings: Focal neurologic changes. Pupils. Look for treatable causes of altered mental status (AMS): Glasgow Coma Score and/or AVPU; Pupils; Stroke assessment tool including focal neurologic findings.",
+          "priority": "critical",
+          "rationale": "Focal deficit converts this from urgency to true emergency. Document presence or absence explicitly.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "sample-meds-stimulants",
+          "shortAction": "Detailed SAMPLE: missed meds, cocaine/meth, OTC stimulants",
+          "protocolExcerpt": "A complete medication list should be obtained from each patient. It is especially important for the treating physician and healthcare providers to be informed if the patient is taking beta-blockers, calcium channel blockers, clonidine, digoxin, blood thinners (anticoagulants), and medications for the treatment of erectile dysfunction or pulmonary hypertension. Substance use in the home (e.g., tobacco, marijuana, cocaine, amphetamines, PCP, alcohol).",
+          "priority": "critical",
+          "rationale": "Missed antihypertensives explain the picture. Stimulant use would change disposition entirely (sympathomimetic crisis).",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/ST-segment Elevation Myocardial Infarction (STEMI)"
+        },
+        {
+          "id": "bgl-check",
+          "shortAction": "Check blood glucose (rule out hypoglycemic stroke mimic)",
+          "protocolExcerpt": "Check blood glucose level (BGL) — Treat only if glucose less than 60 mg/dL.",
+          "priority": "important",
+          "rationale": "Stroke protocol mandates ruling out hypoglycemia as a mimic before settling on a neuro etiology.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "12-lead",
+          "shortAction": "Acquire 12-lead EKG to screen for ACS/LVH",
+          "protocolExcerpt": "Acquire 12-lead EKG, if possible.",
+          "priority": "important",
+          "rationale": "Headache plus severe HTN warrants screening for cardiac end-organ involvement.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "urgency-confirmed",
+          "if": "Neuro exam negative, no end-organ signs",
+          "condition": "Cincinnati Stroke Scale is negative, LVO severity screen negative, pupils and motor/sensory exam normal, BGL within normal limits, 12-lead with no acute ischemic changes. Picture is consistent with hypertensive URGENCY — severe HTN without end-organ damage.",
+          "conditionType": "vital_threshold",
+          "triggerActionIds": ["stroke-scale", "stroke-severity", "pupils-motor-sensory", "sample-meds-stimulants"]
+        }
+      ]
+    },
+    {
+      "id": "urgency-confirmed",
+      "name": "Hypertensive urgency confirmed",
+      "description": "Systematic assessment is complete and reassuring: stroke scale negative, no focal deficits, pupils equal and reactive, mental status fully intact, 12-lead shows sinus rhythm with mild LVH but no acute changes, and BGL is 118 mg/dL. The clinical picture is hypertensive URGENCY — severely elevated BP with no end-organ damage — driven by a one-week medication holiday. Goal now is calm transport, NOT aggressive prehospital BP reduction.",
+      "triggerCondition": "Complete neuro exam, stroke scale, pupil/motor/sensory check, BGL, 12-lead, and SAMPLE history all returned negative for end-organ involvement. This is hypertensive urgency, not emergency.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent",
+        "breathing": "Unlabored, lungs clear",
+        "circulation": "Strong regular pulses; skin warm, dry, pink",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL 4 mm bilaterally",
+        "motorFunction": "5/5 strength all extremities; no drift; sensation intact",
+        "otherFindings": [
+          "Cincinnati Stroke Scale: negative on all three elements",
+          "12-lead: NSR, no acute ST/T changes, mild LVH",
+          "BGL 118 mg/dL",
+          "Headache improved slightly with quiet environment, now 4/10"
+        ],
+        "patientSpeech": "The headache's a little better. Honestly I think I just need to take my pills again."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 82,
+        "bpSys": 212,
+        "bpDia": 122,
+        "respRate": 14,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 36.9,
+        "tempF": 98.4,
+        "obstruction": 0,
+        "glucose": 118,
+        "customMeasures": [],
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "no-prehospital-htn-tx",
+          "shortAction": "Do NOT lower BP prehospital; avoid NTG without indication",
+          "protocolExcerpt": "Do not treat hypertension.",
+          "priority": "critical",
+          "rationale": "The single most important teaching point of this scenario. Aggressive BP reduction in urgency causes harm.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "calm-environment",
+          "shortAction": "Calm, quiet environment; position of comfort; dim lights",
+          "protocolExcerpt": "Non-pharmacologic pain management options include: Placement of the patient in a position of comfort; Verbal reassurance to control anxiety.",
+          "priority": "important",
+          "rationale": "Reducing sympathetic drive often produces a meaningful, safe drop in BP without medication.",
+          "protocolReference": "MATC: Pain Management"
+        },
+        {
+          "id": "iv-access",
+          "shortAction": "Establish IV access (saline lock)",
+          "protocolExcerpt": "Establish IV access.",
+          "priority": "supplemental",
+          "rationale": "Have a line in case the patient deteriorates en route, but no fluids and no meds indicated right now.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/ST-segment Elevation Myocardial Infarction (STEMI)"
+        },
+        {
+          "id": "serial-vitals-neuro",
+          "shortAction": "Serial vitals and serial neuro exams every 5 minutes",
+          "protocolExcerpt": "Observe for signs of clinical deterioration: dysrhythmias, chest pain, shortness of breath, decreased level of consciousness/syncope, or other signs of shock/hypotension. Perform serial 12-lead EKGs (especially if clinical changes are noted).",
+          "priority": "critical",
+          "rationale": "Catches the urgency-to-emergency transition early if it happens.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/ST-segment Elevation Myocardial Infarction (STEMI)"
+        },
+        {
+          "id": "transport-disposition",
+          "shortAction": "Transport non-emergent for evaluation and med restart",
+          "protocolExcerpt": "Transport in position of comfort and reassess as indicated.",
+          "priority": "important",
+          "rationale": "Hospital can safely restart his oral regimen and arrange follow-up. No need for lights and sirens.",
+          "protocolReference": "MATC: Pain Management"
+        },
+        {
+          "id": "hospital-notification",
+          "shortAction": "Notify receiving ED with full assessment findings",
+          "protocolExcerpt": "Early notification to receiving facility of any changes in patient condition or serial EKGs.",
+          "priority": "supplemental",
+          "rationale": "Sets expectations: severe HTN, NEGATIVE stroke/cardiac workup, missed-medication etiology.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/ST-segment Elevation Myocardial Infarction (STEMI)"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "anchor-on-number",
+      "name": "NTG given without indication",
+      "description": "Crew sees 218/126 and thinks 'hypertensive emergency.' Without completing a neuro exam, without an indication of ACS or pulmonary edema, they administer nitroglycerin 0.4 mg SL to try to bring the pressure down. Five minutes later, BP has dropped abruptly to 142/78 — a 76-point systolic drop. The patient, whose cerebral autoregulation has been chronically reset upward by years of untreated hypertension, can no longer perfuse his watershed zones. He becomes pale, lightheaded, and develops new slurred speech and a subtle right-sided drift — an iatrogenic watershed stroke. The crew has converted urgency into an emergency they caused.",
+      "triggerCondition": "Crew administered nitroglycerin 0.4 mg SL (or pursued other aggressive prehospital BP reduction) in response to the BP reading alone, without a neuro exam, ACS findings, or pulmonary edema. Chronic HTN means autoregulation is shifted right; abrupt BP reduction drops cerebral perfusion below the lower limit.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 4, "motor": 6 },
+        "airway": "Patent but speech now slurred",
+        "breathing": "Unlabored, lungs clear",
+        "circulation": "Pulses now weaker, skin pale and cool",
+        "skin": { "color": "pale", "temperature": "cool", "moisture": "dry" },
+        "pupils": "PERRL but patient complains vision is 'gray around the edges'",
+        "motorFunction": "Subtle right-sided pronator drift; right grip 3/5, left 5/5",
+        "otherFindings": [
+          "New facial droop on right",
+          "New slurred speech (NEW Cincinnati positive)",
+          "Patient confused about what just happened",
+          "BP crashed from 218/126 to 142/78 in under 5 minutes"
+        ],
+        "patientSpeech": "I... I don't... my head feels weird. Why is the room spinning?"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 104,
+        "bpSys": 142,
+        "bpDia": 78,
+        "respRate": 18,
+        "spo2": 96,
+        "etco2": 36,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 116,
+        "customMeasures": [],
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-iatrogenic",
+          "shortAction": "Recognize iatrogenic hypoperfusion stroke from rapid BP drop",
+          "protocolExcerpt": "Do not treat hypertension.",
+          "priority": "critical",
+          "rationale": "Debrief teaching point: prehospital BP reduction in urgency causes watershed strokes. This is exactly that.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "now-stroke-alert",
+          "shortAction": "Stroke alert, last-known-well = onset of new deficit",
+          "protocolExcerpt": "Determine \"last known well\" time. Early hospital notification per local stroke plan that should include any suspected large vessel occlusion (LVO) stroke.",
+          "priority": "critical",
+          "rationale": "He now has a new neuro deficit; the clock starts NOW.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "elevate-hob",
+          "shortAction": "Elevate head of stretcher 15–30 degrees; neutral neck alignment",
+          "protocolExcerpt": "Prevent aspiration – elevate head of stretcher 15–30 degrees if systolic BP greater than 100 mmHg. Maintain head and neck in neutral alignment, without flexing the neck.",
+          "priority": "important",
+          "rationale": "Standard stroke positioning now that he is a stroke patient.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "neuro-exam-skipped",
+      "name": "Neuro exam skipped",
+      "description": "Crew obtains vitals, notes the elevated BP, and treats this as 'just a headache from missing his meds.' They never perform a stroke scale, never check pupils, never assess motor or sensory function. They package the patient and head to the hospital BLS-style. On arrival, the ED catches a subtle left facial droop and mild expressive aphasia that the crew missed — this was a true hypertensive EMERGENCY with an evolving stroke, undertriaged and untreated. Last-known-well window is now eaten up by an unhurried response.",
+      "triggerCondition": "Crew skipped the Cincinnati Stroke Scale, pupil exam, motor/sensory exam, and detailed mental status assessment. They anchored on 'headache + missed meds = urgency' without doing the work to rule out emergency.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 4, "motor": 6 },
+        "airway": "Patent",
+        "breathing": "Unlabored",
+        "circulation": "Strong pulses, warm dry skin",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL — but never documented by crew",
+        "motorFunction": "Subtle left facial droop and mild expressive aphasia present from arrival, missed by crew",
+        "otherFindings": [
+          "ED triage nurse identifies left facial droop and word-finding difficulty within 60 seconds",
+          "Last-known-well window now compressed",
+          "CT confirms an evolving ischemic stroke with hemorrhagic conversion risk",
+          "Crew documentation reads 'neuro grossly intact' — but no scale was actually performed"
+        ],
+        "patientSpeech": "My... my head still hurts. Can I... can I get some water?"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 90,
+        "bpSys": 220,
+        "bpDia": 128,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.9,
+        "tempF": 98.4,
+        "obstruction": 0,
+        "glucose": 118,
+        "customMeasures": [],
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "retroactive-stroke-scale",
+          "shortAction": "Recognize missed stroke; activate stroke alert immediately",
+          "protocolExcerpt": "Use a validated prehospital stroke scale that may include, but is not limited to: Facial smile/grimace – ask patient to smile; Arm drift – close eyes and hold out arms for count of 10 seconds; Speech – ask patient to say \"You can't teach an old dog new tricks\". Early hospital notification per local stroke plan that should include any suspected large vessel occlusion (LVO) stroke.",
+          "priority": "critical",
+          "rationale": "Debrief: a stroke scale on every severe-HTN headache patient takes 90 seconds and could have changed the destination.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "evaluate-mimics",
+          "shortAction": "Evaluate for stroke mimics (BGL, seizure, sepsis, migraine)",
+          "protocolExcerpt": "Evaluate for the presence of stroke mimics including: Hypoglycemia; Seizure; Sepsis; Migraine; Intoxication.",
+          "priority": "important",
+          "rationale": "Even when you suspect stroke, work through the mimics list — it's also how you catch the diagnoses you anchored away from.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

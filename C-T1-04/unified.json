@@ -1,0 +1,546 @@
+{
+  "meta": {
+    "id": "C-T1-04",
+    "name": "Syncope with Cardiac Etiology",
+    "version": 1,
+    "difficulty": "beginner",
+    "category": "Cardiac",
+    "protocols": [
+      "cv-syncope",
+      "cv-chest-pain-acs-stemi",
+      "cv-tachycardia",
+      "resus-cardiac-arrest"
+    ],
+    "totalTimeSeconds": 900,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "syncope",
+      "brugada",
+      "12-lead",
+      "assessment",
+      "tier-1",
+      "cardiac"
+    ]
+  },
+  "patient": {
+    "name": "Marcus Bell",
+    "age": 28,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 82,
+    "weightLbs": 181,
+    "height": 180,
+    "chiefComplaint": "Witnessed brief loss of consciousness; alert on EMS arrival",
+    "history": {
+      "hpi": "Patient is a 28-year-old male who was at a family cookout when he suddenly collapsed without warning. A cousin saw him drop mid-conversation — no chest pain, no lightheadedness, no nausea, no aura beforehand. He hit the grass; no head strike witnessed. He was 'out' for maybe 20-30 seconds, briefly stiff per family but no rhythmic shaking, and woke up on his own with mild confusion that cleared within a minute. He was not exerting himself. He denies palpitations now but says he has had two prior 'almost passed out' episodes in the last year, one while sleeping (woke up sweaty and disoriented). No drugs, no alcohol today. Family history: a paternal uncle died suddenly in his 30s — 'in his sleep,' no clear cause given.",
+      "pastMedical": [
+        "No known cardiac disease",
+        "Occasional unexplained near-syncope (2 prior episodes in past year)",
+        "Otherwise healthy"
+      ],
+      "medications": [],
+      "allergies": [
+        "NKDA"
+      ],
+      "lastOralIntake": "Burger and water about 45 minutes prior; no alcohol today",
+      "events": "Witnessed sudden collapse without prodrome at a family cookout while standing and talking. No exertion, no trauma. Spontaneous return of consciousness within ~30 seconds. Family called 911."
+    }
+  },
+  "scene": {
+    "dispatch": "28-year-old male, possible fainting episode, now conscious. Backyard at a private residence. BLS engine en route.",
+    "location": "Suburban backyard cookout; patient seated on a folding lawn chair in the shade, family gathered around him",
+    "time": "Saturday afternoon, 1645",
+    "safety": "Scene safe — daylight, family cooperative, no hazards, dogs secured by owner",
+    "bystanders": "Three family members present. Cousin witnessed the collapse and describes a sudden 'drop' with no warning; states he was 'out cold' for under a minute. Patient's mother quietly mentions her brother died suddenly in his 30s.",
+    "visualCues": [
+      "Patient sitting upright in lawn chair, alert and oriented",
+      "Mild diaphoresis on forehead, otherwise pink and well-perfused",
+      "Grass-stained shirt and one elbow abrasion from the fall",
+      "Family members tense, watching closely",
+      "No visible head trauma, no incontinence"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 28-year-old male sitting in a lawn chair, fully alert and conversational. Family states he collapsed suddenly without warning approximately 4 minutes ago. He denies pain or symptoms now. Vitals at first look are unremarkable — this can easily read as a benign 'he just passed out for a second' call.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent; speaking in full sentences",
+        "breathing": "Even, unlabored, clear lung sounds bilaterally",
+        "circulation": "Strong, regular radial pulse; no obvious hemorrhage",
+        "skin": {
+          "color": "Pink",
+          "temperature": "Warm",
+          "moisture": "Mildly diaphoretic on forehead"
+        },
+        "pupils": "PERRL 4 mm bilaterally",
+        "motorFunction": "Moves all extremities equally; gait not yet tested",
+        "otherFindings": [
+          "Small abrasion to right elbow from the fall",
+          "No tongue laceration, no incontinence",
+          "Patient oriented x4 with no residual confusion"
+        ],
+        "patientSpeech": "\"I'm fine, really. I just felt funny for a second and then I was on the ground. This kind of happened to me once before but it went away.\""
+      },
+      "monitorState": {
+        "ecgRhythm": "Normal Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 78,
+        "bpSys": 124,
+        "bpDia": 78,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 36,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 102,
+        "customMeasures": [],
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "primary-survey",
+          "shortAction": "Primary survey ABCs; confirm patient awake, protecting airway, perfusing",
+          "protocolExcerpt": "Treatment and Interventions: Should be directed at abnormalities discovered in the physical exam or on additional examination and may include management of cardiac dysrhythmias, cardiac ischemia/infarct, hemorrhage, shock, etc. Manage airway as indicated. Oxygen as appropriate. Evaluate for hemorrhage and treat for shock if indicated.",
+          "priority": "critical",
+          "rationale": "Even with a well-appearing patient, the protocol still opens with airway/breathing/circulation; this is also the moment to rule out ongoing instability.",
+          "protocolReference": "MATC: Adult and Pediatric Syncope and Near Syncope"
+        },
+        {
+          "id": "focused-hpi",
+          "shortAction": "Focused syncope HPI: prodrome, position, exertion, palpitations",
+          "protocolExcerpt": "History of Present Illness: Conditions leading to the event: after transition from recumbent/sitting to standing; occurring with strenuous exercise (notably in the young and seemingly healthy). Syncope that occurs during exercise often indicates an ominous cardiac cause. Patient complaints before or after the event including prodromal symptoms. History of symptoms described by others on scene, including seizures or shaking, presence of pulse/breathing (if noted), duration of the event, events that lead to the resolution of the event.",
+          "priority": "critical",
+          "rationale": "Absence of prodrome, syncope while standing/talking (not on standing up), and recurrence pattern raise the index of suspicion for a cardiac cause.",
+          "protocolReference": "MATC: Adult and Pediatric Syncope and Near Syncope"
+        },
+        {
+          "id": "family-history",
+          "shortAction": "Ask about family history of sudden death or known dysrhythmia",
+          "protocolExcerpt": "Pertinent History: Review the patient's past medical history including a history of: Cardiovascular disease (e.g., cardiac disease/stroke, valvular disease, hypertrophic cardiomyopathy, mitral valve prolapse); Seizure; Recent trauma; Active cancer diagnosis; Dysrhythmias including prior electrophysiology studies/pacemaker and/or implantable cardioverter defibrillator (ICD); History of syncope; History of thrombosis or emboli.",
+          "priority": "important",
+          "rationale": "Patient's mother volunteers that an uncle died suddenly in his 30s — a classic Brugada / inherited channelopathy clue that only surfaces if the crew asks.",
+          "protocolReference": "MATC: Adult and Pediatric Syncope and Near Syncope"
+        },
+        {
+          "id": "neuro-trauma-exam",
+          "shortAction": "Detailed neuro exam and head-to-toe for trauma from the fall",
+          "protocolExcerpt": "Pertinent Physical Exam: Attention to vital signs and evaluation for trauma. Note overall patient appearance, diaphoresis, pallor. Detailed neurologic exam (including stroke screening and mental status). Heart, lung, abdominal, and extremity exam.",
+          "priority": "important",
+          "rationale": "Rules out stroke/seizure as the cause and identifies any injuries from the fall.",
+          "protocolReference": "MATC: Adult and Pediatric Syncope and Near Syncope"
+        },
+        {
+          "id": "cardiac-monitor-glucose",
+          "shortAction": "Apply 4-lead cardiac monitor; check blood glucose",
+          "protocolExcerpt": "Additional Evaluation: Cardiac monitoring; Oxygen saturation (SPO2); Ongoing vital signs; 12-lead EKG; Blood glucose level (BGL).",
+          "priority": "critical",
+          "rationale": "Continuous rhythm monitoring is required because arrhythmia-driven syncope can recur. BGL rules out a hypoglycemic faint.",
+          "protocolReference": "MATC: Adult and Pediatric Syncope and Near Syncope"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "assessment-deepens",
+          "if": "Thorough syncope assessment performed",
+          "condition": "Crew obtains a focused HPI (no prodrome, no exertion trigger, prior near-syncope, positive family history of sudden death), performs a neuro exam, applies the cardiac monitor, and checks blood glucose — all elements from the Syncope protocol's Additional Evaluation list.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "focused-hpi",
+            "family-history",
+            "neuro-trauma-exam",
+            "cardiac-monitor-glucose"
+          ]
+        },
+        {
+          "targetPhaseId": "anchored-vasovagal",
+          "if": "Crew anchors on vasovagal; no 12-lead",
+          "condition": "Crew treats the patient as a benign vasovagal faint based on young age and current well appearance: no 12-lead acquired, no IV established, no cardiac monitor applied for transport, no inquiry into family history.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": [
+            "cardiac-monitor-glucose",
+            "family-history"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "assessment-deepens",
+      "name": "Thorough assessment performed",
+      "description": "Focused history and exam are complete. The crew now has clear yellow flags: (1) syncope without any prodrome, (2) not positional, not exertional but not clearly benign either, (3) a prior nocturnal near-syncope episode, and (4) a paternal uncle who died suddenly in his 30s. The cardiac monitor shows sinus rhythm but the crew has not yet shot a 12-lead. Vitals remain unremarkable.",
+      "triggerCondition": "Crew completed the protocol-driven syncope assessment — HPI, family history, neuro exam, monitor and BGL — and now has enough red flags to escalate evaluation beyond a 'simple faint.'",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "Even, unlabored",
+        "circulation": "Strong regular radial pulse",
+        "skin": {
+          "color": "Pink",
+          "temperature": "Warm",
+          "moisture": "Dry now"
+        },
+        "pupils": "PERRL 4 mm",
+        "motorFunction": "Full strength and sensation in all extremities; normal finger-to-nose; steady gait when tested",
+        "otherFindings": [
+          "Cincinnati / FAST stroke screen negative",
+          "No tongue bite, no incontinence — argues against generalized seizure",
+          "Mother quietly confirms paternal uncle died in his sleep in his 30s, no autopsy explanation given",
+          "Patient recalls a prior near-syncope while sleeping that he never reported to a doctor"
+        ],
+        "patientSpeech": "\"I don't know what happened. I wasn't dizzy, I wasn't hot, I was just standing there. Same thing kind of woke me up a few months ago, actually.\""
+      },
+      "monitorState": {
+        "ecgRhythm": "Normal Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 76,
+        "bpSys": 122,
+        "bpDia": 76,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 36,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 102,
+        "customMeasures": [],
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "acquire-12-lead",
+          "shortAction": "Acquire 12-lead EKG within 10 minutes of patient contact",
+          "protocolExcerpt": "The 12-lead EKG is the primary diagnostic tool that identifies a STEMI; it is imperative that EMS clinicians routinely acquire a 12-lead EKG within 10 minutes for all patients exhibiting signs and symptoms of ACS. Performance of serial EKGs is encouraged for symptomatic patients with EKGs initially non-diagnostic for STEMI.",
+          "priority": "critical",
+          "rationale": "12-lead is mandatory for any syncope workup and is the only field test that will surface Brugada or long QT in this patient.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/ST-segment Elevation Myocardial Infarction (STEMI)"
+        },
+        {
+          "id": "interpret-high-risk-ecg",
+          "shortAction": "Read 12-lead for high-risk features (prolonged QT, Brugada, delta waves)",
+          "protocolExcerpt": "Consider high-risk 12-lead EKG features including, but not limited to: Evidence of QT prolongation (generally over 500 msec); Delta waves; Brugada syndrome (incomplete right bundle branch block (RBBB) pattern in V1/V2 with ST segment elevation); Hypertrophic obstructive cardiomyopathy.",
+          "priority": "critical",
+          "rationale": "The whole point of the 12-lead in a young, currently-well syncope patient is to catch exactly these patterns.",
+          "protocolReference": "MATC: Adult and Pediatric Syncope and Near Syncope"
+        },
+        {
+          "id": "iv-access",
+          "shortAction": "Establish IV access",
+          "protocolExcerpt": "Treatment and Interventions: Manage airway as indicated. Oxygen as appropriate. Evaluate for hemorrhage and treat for shock if indicated. Establish IV access. Fluid bolus if appropriate. Cardiac monitor. 12-lead EKG. Monitor for and treat arrhythmias (if present, refer to appropriate guideline).",
+          "priority": "important",
+          "rationale": "If the patient codes en route in TdP or polymorphic VT, the crew will need IV access for magnesium and ACLS drugs immediately.",
+          "protocolReference": "MATC: Adult and Pediatric Syncope and Near Syncope"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "brugada-recognized",
+          "if": "12-lead obtained and read",
+          "condition": "Crew acquires a 12-lead EKG and recognizes an abnormal pattern consistent with Brugada (coved ST elevation in V1-V2 with an incomplete RBBB pattern). They explicitly identify this as a high-risk feature flagged by the Syncope protocol.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "acquire-12-lead",
+            "interpret-high-risk-ecg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brugada-recognized",
+      "name": "12-lead obtained — abnormal",
+      "description": "12-lead shows a Brugada Type 1 pattern: coved ST elevation in V1-V2 with an incomplete RBBB morphology. Patient remains awake and stable but the crew now recognizes this is NOT vasovagal — this is high-risk syncope with a substrate for sudden polymorphic VT / VF. The mindset for the rest of the call shifts: monitor continuously, IV in, pads near at hand, alert the receiving facility.",
+      "triggerCondition": "12-lead EKG reveals a Brugada-pattern coved ST elevation in V1-V2 — one of the high-risk EKG features explicitly listed in the Syncope protocol. The 'young healthy faint' framing is now ruled out.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "Even, unlabored",
+        "circulation": "Strong regular radial pulse; no edema",
+        "skin": {
+          "color": "Pink",
+          "temperature": "Warm",
+          "moisture": "Dry"
+        },
+        "pupils": "PERRL 4 mm",
+        "motorFunction": "Intact and symmetric",
+        "otherFindings": [
+          "12-lead: sinus rhythm at 78 with coved ST elevation in V1-V2 and incomplete RBBB — Brugada Type 1 morphology",
+          "No chest pain, no dyspnea reported",
+          "Patient looks well but is appropriately concerned once the finding is explained"
+        ],
+        "patientSpeech": "\"What does that mean — my heart? My uncle died in his sleep, you know. Do I need to go to the hospital?\""
+      },
+      "monitorState": {
+        "ecgRhythm": "Brugada Syndrome",
+        "ecgWaveform": 35,
+        "hr": 78,
+        "bpSys": 124,
+        "bpDia": 78,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 36,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 102,
+        "customMeasures": [],
+        "trendTimeSeconds": 25,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "continuous-monitor",
+          "shortAction": "Maintain continuous cardiac monitoring throughout transport",
+          "protocolExcerpt": "Patient Safety Considerations: Patients suffering from syncope due to arrhythmia may experience recurrent arrhythmias and should therefore be placed on a cardiac monitor.",
+          "priority": "critical",
+          "rationale": "Brugada substrate can recur as polymorphic VT/VF without warning. Continuous monitoring is the single most important intervention.",
+          "protocolReference": "MATC: Adult and Pediatric Syncope and Near Syncope"
+        },
+        {
+          "id": "pads-on",
+          "shortAction": "Apply defibrillator pads; configure VT/VF alert",
+          "protocolExcerpt": "Patient Safety Considerations: Observe for signs of clinical deterioration: dysrhythmias, chest pain, shortness of breath, decreased level of consciousness/syncope, or other signs of shock/hypotension. Perform serial 12-lead EKGs (especially if clinical changes are noted). Consider placing defibrillator pads on high-risk patients. Consider configuring monitor/defibrillator to allow automatic VT/VF alert.",
+          "priority": "critical",
+          "rationale": "The Chest Pain/ACS protocol explicitly recommends pre-applying pads on high-risk patients — the Brugada finding makes this patient high-risk for sudden VT/VF.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/ST-segment Elevation Myocardial Infarction (STEMI)"
+        },
+        {
+          "id": "serial-12-leads",
+          "shortAction": "Repeat serial 12-leads en route and document all rhythm changes",
+          "protocolExcerpt": "Patient Safety Considerations: Perform serial 12-lead EKGs (especially if clinical changes are noted).",
+          "priority": "important",
+          "rationale": "Brugada changes can be dynamic; serial 12-leads also document the rhythm at the time of any new symptoms.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/ST-segment Elevation Myocardial Infarction (STEMI)"
+        },
+        {
+          "id": "alert-receiving",
+          "shortAction": "Early notification to receiving facility — high-risk syncope, Brugada-pattern 12-lead",
+          "protocolExcerpt": "Early notification to receiving facility of any changes in patient condition or serial EKGs. All EKGs should be made available to treating personnel at the receiving hospital, whether hand delivered as hard copy or transmitted from the field.",
+          "priority": "critical",
+          "rationale": "Pre-arrival notification lets the ED have an electrophysiology-capable team and cardiology consult ready.",
+          "protocolReference": "MATC: Chest Pain/Acute Coronary Syndrome (ACS)/ST-segment Elevation Myocardial Infarction (STEMI)"
+        },
+        {
+          "id": "document-key-elements",
+          "shortAction": "Document presenting rhythm, BP, pulse, BGL, symptoms before event, status on arrival",
+          "protocolExcerpt": "Key Documentation Elements: Presenting cardiac rhythm; Cardiac rhythm present when patient is symptomatic; Any cardiac rhythm changes; Blood pressure; Pulse; Blood glucose level (BGL); Symptoms immediately preceding event; Patient status on EMS arrival: recovered or still symptomatic.",
+          "priority": "important",
+          "rationale": "These are the protocol-mandated documentation elements for any syncope call.",
+          "protocolReference": "MATC: Adult and Pediatric Syncope and Near Syncope"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "anchored-vasovagal",
+      "name": "Anchored on vasovagal",
+      "description": "Crew treats this as a benign vasovagal episode. They reason: young patient, alert and well-appearing now, vitals normal, 'probably just stood up too fast.' They skip the 12-lead, do not establish IV access, do not put the patient on the cardiac monitor for transport, and never ask the family history question that would have flipped the framing. Patient is loaded for transport sitting up on the gurney.",
+      "triggerCondition": "Crew anchored on a benign vasovagal interpretation based on the patient's current well appearance and skipped the protocol-mandated 12-lead, IV access, continuous monitoring, and family-history inquiry. The high-risk substrate is now invisible to the crew.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent",
+        "breathing": "Even, unlabored",
+        "circulation": "Strong regular radial pulse",
+        "skin": {
+          "color": "Pink",
+          "temperature": "Warm",
+          "moisture": "Dry"
+        },
+        "pupils": "PERRL 4 mm",
+        "motorFunction": "Intact",
+        "otherFindings": [
+          "No 12-lead acquired",
+          "No IV access established",
+          "No continuous cardiac monitor applied",
+          "No defibrillator pads on the patient",
+          "Family-history question never asked"
+        ],
+        "patientSpeech": "\"I really feel fine. Are you sure I even need to go?\""
+      },
+      "monitorState": {
+        "ecgRhythm": "Brugada Syndrome",
+        "ecgWaveform": 35,
+        "hr": 80,
+        "bpSys": 124,
+        "bpDia": 78,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 36,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 102,
+        "customMeasures": [],
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "course-correct-12-lead",
+          "shortAction": "Course correct: acquire 12-lead now and place on continuous monitor",
+          "protocolExcerpt": "Performance Measures: Acquisition of 12-lead EKG; Application of cardiac monitor. Patient Safety Considerations: Patients suffering from syncope due to arrhythmia may experience recurrent arrhythmias and should therefore be placed on a cardiac monitor.",
+          "priority": "critical",
+          "rationale": "Even if the crew has anchored, the protocol-listed performance measures are 12-lead acquisition and cardiac monitor application. Recovery is to do them now, before transport.",
+          "protocolReference": "MATC: Adult and Pediatric Syncope and Near Syncope"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "arrest-en-route",
+          "if": "Transport without monitor or IV",
+          "condition": "Crew transports without 12-lead, IV, continuous monitoring, or pads. Patient develops a run of polymorphic VT degenerating to pulseless VT in the back of the ambulance with the crew unprepared.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": [
+            "course-correct-12-lead"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "arrest-en-route",
+      "name": "Arrest en route",
+      "description": "Roughly 8 minutes into transport, patient suddenly slumps over on the gurney. No pulse. Crew now has to start CPR in a moving ambulance, with no pads pre-applied, no IV access, and no prior 12-lead documenting what they were looking at. The rhythm on a quick lead check is polymorphic — a torsades/polymorphic VT pattern — which has degenerated to pulselessness. This is the cost of the anchored framing.",
+      "triggerCondition": "Patient deteriorated to pulseless polymorphic VT en route. Crew transported without continuous monitoring, IV access, or defibrillator pads — exactly the safeguards the Syncope and ACS protocols call out for high-risk patients.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 1
+        },
+        "airway": "Obtunded, needs BLS airway maneuvers",
+        "breathing": "Agonal then apneic",
+        "circulation": "Pulseless",
+        "skin": {
+          "color": "Pale, becoming mottled",
+          "temperature": "Cool",
+          "moisture": "Diaphoretic"
+        },
+        "pupils": "Dilated, sluggish",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "Cardiac arrest in the back of a moving ambulance",
+          "No pads pre-applied — pads must now be placed mid-compressions",
+          "No IV/IO access — must be established under CPR",
+          "Rhythm on quick look: polymorphic VT / torsades-pattern, pulseless"
+        ],
+        "patientSpeech": "Unresponsive."
+      },
+      "monitorState": {
+        "ecgRhythm": "Ventricular Fibrillation (Coarse)",
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 14,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 102,
+        "customMeasures": [],
+        "trendTimeSeconds": 15,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "start-cpr",
+          "shortAction": "Immediate high-quality chest compressions; pull over to resuscitate on scene if possible",
+          "protocolExcerpt": "The most important therapies for patients suffering from cardiac arrest are prompt cardiac defibrillation for shockable rhythms and minimally interrupted effective chest compressions. Patient Safety Considerations: Performing manual chest compressions in a moving vehicle may pose a clinician safety concern. Ideally, patients should be resuscitated as close to the scene as operationally possible.",
+          "priority": "critical",
+          "rationale": "Compressions in a moving rig are both unsafe and lower quality — protocol calls for stopping the rig to resuscitate when feasible.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "defibrillate",
+          "shortAction": "Apply pads; defibrillate at 200 J (Zoll biphasic) for shockable rhythm",
+          "protocolExcerpt": "Defibrillation dosing should follow manufacturer's recommendation in the case of biphasic defibrillators. If the manufacturer's recommendation is unknown, use highest setting possible. Zoll: Adult - 120 J, 150 J, 200 J.",
+          "priority": "critical",
+          "rationale": "Pulseless polymorphic VT/VF is shockable. Time to first shock is the strongest survival predictor.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "iv-io-epi",
+          "shortAction": "Establish IV/IO; Epinephrine 1 mg IV/IO during first or second cycle",
+          "protocolExcerpt": "If feasible, IV or IO access should be obtained. Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms.",
+          "priority": "critical",
+          "rationale": "Fixed-dose epinephrine in cardiac arrest is given as soon as access is obtained, ideally during cycle 1 or 2.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "magnesium-tdp",
+          "shortAction": "Magnesium sulfate 2 g IV over 1-2 minutes for torsades / polymorphic VT",
+          "protocolExcerpt": "For torsades de pointes, give magnesium sulfate 2 g IV administered over 1-2 minutes (or 25-50 mg/kg for pediatrics). There is insufficient evidence to recommend for or against the routine administration during cardiac arrest.",
+          "priority": "important",
+          "rationale": "Polymorphic VT in the setting of an inherited channelopathy substrate is the textbook magnesium-responsive arrest.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

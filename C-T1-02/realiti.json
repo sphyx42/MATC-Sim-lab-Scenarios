@@ -1,0 +1,319 @@
+{
+  "scenarioId": "C-T1-02",
+  "scenarioName": "New-Onset Atrial Fibrillation with Adequate Rate",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1200,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "68-year-old male was watching TV after dinner when he suddenly felt his heart 'fluttering' in his chest about 90 minutes ago. He stood up to get a glass of water and felt lightheaded enough to sit back down. Symptoms have not resolved. He denies chest pain or pressure, denies shortness of breath at rest, denies syncope. He says he 'feels weird' and his wife pushed him to call 911. No similar episodes in the past. No recent illness, fever, caffeine binge, energy drinks, or new medications.",
+    "discussion": "",
+    "course": "Initial Contact: Crew arrives to find a 68-year-old male seated in a recliner. He greets the crew, oriented, says his heart has been 'fluttering' for about an hour and a half. He looks slightly anxious but in no acute distress. Pulse is rapid and irregular at the radial; he is warm, pink, and dry. The story so far is 'palpitations and lightheaded with standing' — the diagnosis is not on the table until a 12-lead is acquired. → 12-lead obtained: A 12-lead EKG is acquired and shows an irregularly irregular narrow-complex rhythm with absent P waves and fibrillatory baseline — atrial fibrillation with a ventricular rate around 120. There is no ST elevation, no significant ST depression, no T-wave inversions concerning for ischemia. The patient remains alert, SBP holds at 130s, and lightheadedness only occurs with movement. The clinical question is no longer 'what is it' but 'is this patient stable?' — and by every protocol criterion, he is. → Treated as stable; transported: Crew transports the patient in a position of comfort to the receiving emergency department for definitive evaluation and rate control. Patient remains alert, hemodynamically stable, and asymptomatic at rest throughout transport. Receiving facility is notified with a clean handoff: new-onset A-fib with RVR, compensated, 12-lead transmitted, no STEMI, no field intervention beyond monitoring and IV access."
+  },
+  "patientInformation": {
+    "patientName": "Howard Bellamy",
+    "patientCondition": "Palpitations and lightheadedness",
+    "patientAge": 68,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 178,
+    "patientWeight": 86,
+    "patientPhotoId": 82,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 68-year-old male seated in a recliner. He greets the crew, oriented, says his heart has been 'fluttering' for about an hour and a half. He looks slightly anxious but in no acute distress. Pulse is rapid and irregular at the radial; he is warm, pink, and dry. The story so far is 'palpitations and lightheaded with standing' — the diagnosis is not on the table until a 12-lead is acquired.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 38,
+        "hr": 122,
+        "bpSys": 132,
+        "bpDia": 84,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 108,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Primary survey; airway patent, breathing unlabored, perfusion adequate",
+        "Apply cardiac monitor; note rate and irregularity",
+        "Targeted SAMPLE history; identify onset, palpitations, near-syncope",
+        "Check blood glucose to rule out hypoglycemia as a tachycardia driver"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "12-lead obtained",
+      "description": "A 12-lead EKG is acquired and shows an irregularly irregular narrow-complex rhythm with absent P waves and fibrillatory baseline — atrial fibrillation with a ventricular rate around 120. There is no ST elevation, no significant ST depression, no T-wave inversions concerning for ischemia. The patient remains alert, SBP holds at 130s, and lightheadedness only occurs with movement. The clinical question is no longer 'what is it' but 'is this patient stable?' — and by every protocol criterion, he is.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 38,
+        "hr": 118,
+        "bpSys": 130,
+        "bpDia": 82,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 108,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Acquire and interpret 12-lead within 10 minutes of contact",
+        "Recognize compensated state: SBP >110, alert, no chest pain — no field rate control indicated",
+        "Establish IV access (saline lock or TKO); no fluid bolus indicated",
+        "Apply O2 only if SpO2 <94%; titrate to 94–98%",
+        "Reassess and trend vitals every 5 minutes"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Treated as stable; transported",
+      "description": "Crew transports the patient in a position of comfort to the receiving emergency department for definitive evaluation and rate control. Patient remains alert, hemodynamically stable, and asymptomatic at rest throughout transport. Receiving facility is notified with a clean handoff: new-onset A-fib with RVR, compensated, 12-lead transmitted, no STEMI, no field intervention beyond monitoring and IV access.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 38,
+        "hr": 114,
+        "bpSys": 134,
+        "bpDia": 80,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 37,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 108,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Early notification to receiving facility with rhythm and 12-lead",
+        "Continuous cardiac monitoring; serial 12-leads if symptoms change",
+        "Document rhythm, onset time, vitals trend, and decision NOT to rate-control"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "No 12-lead; misread as sinus tach",
+      "description": "Crew applies the monitor in lead II only, sees a rapid narrow-complex rhythm, and labels it sinus tachycardia. The irregularity is missed on a single lead, and no 12-lead is acquired. Crew assumes a benign 'anxious patient with elevated HR' and provides no targeted handoff. The receiving facility identifies atrial fibrillation on triage EKG — a quality-improvement debrief follows because the rhythm onset window for rate/rhythm-control decisions was undocumented.",
+      "monitorType": 0,
+      "trendTime": 25,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 38,
+        "hr": 120,
+        "bpSys": 130,
+        "bpDia": 82,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 108,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize gap: acquire 12-lead now and reassess rhythm interpretation",
+        "Reassess history for palpitation onset, prodrome, and cardiac risk factors"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Diltiazem requested without indication",
+      "description": "Crew identifies atrial fibrillation but treats the patient as unstable, contacting medical control to request diltiazem despite a SBP of 130, alert mental status, and no chest pain. If diltiazem is administered, the patient becomes hypotensive (SBP drops to ~88) and more symptomatic with worsening lightheadedness — an iatrogenic complication of treating the monitor instead of the patient. Protocol reserves rate-control medications for patients with signs/symptoms or hemodynamic instability that continue despite initial supportive care.",
+      "monitorType": 0,
+      "trendTime": 35,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 38,
+        "hr": 96,
+        "bpSys": 88,
+        "bpDia": 56,
+        "respRate": 20,
+        "spo2": 96,
+        "etco2": 36,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 108,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize iatrogenic hypotension; support BP and stop further AV-nodal agents",
+        "Reassess against stability criteria: BP, mental status, perfusion, chest pain",
+        "Notify receiving facility of medication administered and adverse response"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Primary survey; airway patent, breathing unlabored, perfusion adequate",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply cardiac monitor; note rate and irregularity",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Targeted SAMPLE history; identify onset, palpitations, near-syncope",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check blood glucose to rule out hypoglycemia as a tachycardia driver",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Acquire and interpret 12-lead within 10 minutes of contact",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize compensated state: SBP >110, alert, no chest pain — no field rate control indicated",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access (saline lock or TKO); no fluid bolus indicated",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply O2 only if SpO2 <94%; titrate to 94–98%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess and trend vitals every 5 minutes",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Early notification to receiving facility with rhythm and 12-lead",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous cardiac monitoring; serial 12-leads if symptoms change",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document rhythm, onset time, vitals trend, and decision NOT to rate-control",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize gap: acquire 12-lead now and reassess rhythm interpretation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess history for palpitation onset, prodrome, and cardiac risk factors",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize iatrogenic hypotension; support BP and stop further AV-nodal agents",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess against stability criteria: BP, mental status, perfusion, chest pain",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Notify receiving facility of medication administered and adverse response",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}
