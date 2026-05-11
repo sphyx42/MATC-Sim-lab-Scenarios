@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Febrile Seizure (Adult), Post-Ictal — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Simple Febrile Seizure (Adult), Post-Ictal</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Marcus Delaney</strong></span><span class="patient-chip">34 years male</span><span class="patient-chip">181 lbs (82 kg)</span><span class="patient-chip">5'11"</span><span class="patient-chip">CC: Witnessed generalized seizure, now post-ictal with fever</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Medic 14, respond Code 3 to 812 Lakeshore Drive, Apartment 2B, for a 34-year-old male — caller states he passed out and was shaking. Now unresponsive but breathing. Caller is the patient's roommate.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Second-floor apartment, small living room. Patient supine on the carpeted floor between a couch and coffee table. Lighting good, easy access through main entry.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">1418, Wednesday afternoon</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. No weapons, no pets, no environmental hazards. Roommate is calm and cooperative. Coffee table moved aside before EMS arrival.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Roommate (primary witness) — describes a clear generalized tonic-clonic seizure lasting about 3 minutes. States patient has been ill for 3 days with fever, headache, sore throat, and body aches. Denies any prior seizures, head injury today, drug use, alcohol use, or known medical problems. Patient lives alone with the roommate; no family contact information immediately available.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Patient supine on carpet, sweat-soaked t-shirt, flushed face</li><li>Crumpled tissues and a half-empty Gatorade bottle on the side table</li><li>Bottle of acetaminophen on the kitchen counter — opened, recently used</li><li>Thermometer on the bathroom sink (visible from the hallway)</li><li>No pill bottles, no paraphernalia, no signs of trauma in the room</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">Patient is a 34-year-old male with no prior seizure history who became unwell over the past 3 days with a flu-like illness — subjective fever, chills, body aches, headache, and a sore throat that started yesterday. He stayed home from work today, took acetaminophen this morning, and was reportedly drinking less than usual. At approximately 1410, his roommate heard a thump from the living room and found the patient on the floor, generalized stiffening then rhythmic shaking of all four extremities, with eyes rolled up and lips bluish. The roommate timed the convulsion at roughly 3 minutes; afterward the patient was limp and snoring, slowly becoming more responsive. EMS was called immediately. By EMS arrival (≈8 minutes after seizure end), patient is post-ictal — eyes open to voice, confused, words mumbled but improving. He is warm to the touch and visibly diaphoretic. There is no witnessed history of trauma during the fall; the roommate moved a coffee table out of the way but is uncertain whether the patient struck his head on it as he fell.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">NKDA</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Acetaminophen 1000 mg PO this morning (≈0800) for fever, Occasional ibuprofen for headaches, No prescription medications</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Generally healthy — no known chronic medical conditions, No prior seizures, No diabetes</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Few sips of water around noon; minimal solid intake for 24 hours</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Three days of flu-like illness with progressive fever, headache, sore throat, and body aches. Roommate witnessed a generalized tonic-clonic seizure lasting ~3 minutes at 1410; patient was limp and snoring after. EMS arrived ~8 minutes post-seizure to a post-ictal but improving patient.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">Crew arrives ~8 minutes after a witnessed 3-minute generalized tonic-clonic seizure. Patient is post-ictal: opens eyes to voice, confused, mumbling but words are starting to come back. He is warm and visibly diaphoretic. Roommate describes 3 days of fever, headache, sore throat, and body aches. The teaching focus here is a thorough post-ictal assessment — confirm the seizure has actually ended, run the full neuro/airway exam, get a glucose, get a temperature, and recognize that fever + new-onset seizure + flu-like prodrome is a sepsis/meningitis screen as much as a seizure call.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">118</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">124/76</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">96%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">20</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">102.7°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">104</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">12</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-maintained; small amount of frothy saliva at the corner of the mouth, no active vomiting; mild lip/tongue laceration on the right lateral tongue with minor oozing</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous, regular, mildly deep; clear and equal lung sounds bilaterally; no stridor or wheeze</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse strong and regular but fast; cap refill 2 seconds; skin flushed and warm</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">flushed · hot · diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL, 4 mm bilaterally; no nystagmus, no fixed eye deviation, no focal twitching</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all four extremities symmetrically to noxious stimulus; no focal weakness; no posturing</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Mumbled, short words — answers name correctly when prompted twice, cannot give the date; oriented x1"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Mild right lateral tongue laceration with minor oozing — classic seizure finding</li><li>Mild urinary incontinence — wet spot on pants</li><li>Sweat-soaked t-shirt, ambient temperature normal</li><li>No external head trauma palpable; no Battle's sign, no raccoon eyes</li><li>No neck stiffness on gentle passive range of motion, but limited cooperation given mental status</li><li>No rash on exposed skin (no petechiae visible)</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Scene size-up and BSI; survey environment for trauma, toxins, infection clues</div></div>
+        <div class="action-excerpt">Environment: Survey for pills, paraphernalia, substance use, medication patches, medical devices, ambient temperature, social indicators of neglect, carbon monoxide exposures, multiple casualties with same complaint.</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Confirm seizure has ended — check for subtle status (eye deviation, focal twitching, nystagmus)</div></div>
+        <div class="action-excerpt">Inclusion Criteria: Seizure activity upon arrival of prehospital personnel or new/recurrent seizure activity lasting greater than 5 minutes. History: Focality of onset, direction of eye deviation. Exam: Neurologic status (GCS, nystagmus, pupil size, focal neurologic deficit, or signs of stroke).</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Assess airway patency; suction prn; place NPA if needed; O2 to keep SpO2 94-98%</div></div>
+        <div class="action-excerpt">If signs of airway obstruction are present and a chin-lift, jaw thrust, positioning, and/or suctioning does not alleviate it, place oropharyngeal airway (if gag reflex is absent) or nasopharyngeal airway. Place pulse oximeter and/or waveform capnography to monitor oxygenation/ventilation. Administer oxygen as appropriate with a target of achieving 94–98% saturation. Use bag-valve-mask (BVM) ventilation if oxygenation/ventilation are compromised.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Place patient in recovery (lateral) position; clear oral secretions</div></div>
+        <div class="action-excerpt">If signs of airway obstruction are present and a chin-lift, jaw thrust, positioning, and/or suctioning does not alleviate it, place oropharyngeal airway (if gag reflex is absent) or nasopharyngeal airway.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Place SpO2, EtCO2, and cardiac monitor; full set of vitals q5 min</div></div>
+        <div class="action-excerpt">Place pulse oximeter and/or waveform capnography to monitor oxygenation/ventilation. EKG or cardiac monitor: arrhythmia limiting perfusion.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Obtain finger-stick blood glucose — rule out hypoglycemia-induced seizure</div></div>
+        <div class="action-excerpt">Glucometry: If still actively seizing, check blood glucose level. If less than 60 mg/dL, treat per the Hypoglycemia Guideline. Blood glucose level.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Measure temperature — document fever (102.8 °F / 39.3 °C)</div></div>
+        <div class="action-excerpt">Extremities/skin: Track marks, hydration, edema, dialysis shunt, temperature to touch (or if able, use a thermometer), signs of trauma. Signs of infection: Fever, cough, skin changes, dysuria.</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Document GCS and AVPU; note focal deficits, pupils, neck stiffness</div></div>
+        <div class="action-excerpt">Glasgow Coma Score and/or AVPU. Pupils. Neck: Rigidity or pain with range of motion. Stroke assessment tool including focal neurologic findings.</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Obtain SAMPLE from roommate; characterize seizure (onset, duration, focality)</div></div>
+        <div class="action-excerpt">History: Duration of current seizure. Prior history of seizures, diabetes, or hypoglycemia. Typical appearance of seizures. Baseline seizure frequency and duration. Focality of onset, direction of eye deviation. Concurrent symptoms of apnea, cyanosis, vomiting, bowel/bladder incontinence, or fever. Bystander administration of medications to stop the seizure. Current medications, including anticonvulsants. Recent dose changes or non-compliance with anticonvulsants. History of trauma, pregnancy, heat exposure, or toxin exposure.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Inspect head/mouth for trauma — tongue/lip injury, scalp lacerations, occult fall trauma</div></div>
+        <div class="action-excerpt">Head and neck: Evaluate for signs of trauma. Concurrent symptoms of apnea, cyanosis, vomiting, bowel/bladder incontinence, or fever.</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Screen for sepsis — fever + tachycardia + tachypnea = SIRS; alert ED of possible meningitis/sepsis</div></div>
+        <div class="action-excerpt">Signs of infection: Fever, cough, skin changes, dysuria. Inclusion Criteria — Signs of poor perfusion (due to a medical cause) such as one or more of the following: Altered mental status; Respiratory rate greater than 20 breaths per minute in adults or elevated in children; Tachycardia or bradycardia for age, out of proportion to temperature.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Establish IV access (saline lock or NS TKO)</div></div>
+        <div class="action-excerpt">IV placement is not necessary for treatment of seizures, but could be obtained if needed for other reasons. Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Thorough workup performed</div>
+        <div class="phase-trigger">Trigger: Crew completed a thorough post-ictal assessment — confirmed no subtle ongoing seizure activity, checked glucose, measured temperature, obtained a full SAMPLE history, examined for trauma, and recognized the febrile/septic context. Patient is improving and stable; the lesson question is now whether supportive management is matched to the assessment findings.</div>
+        <div class="phase-desc">Crew has run the full post-ictal assessment. Patient is improving — GCS now 13-14, vital signs stable, glucose normal, fever confirmed at 102.8 °F. Working impression: simple post-ictal phase following a first-ever generalized tonic-clonic seizure provoked by a febrile illness. Differential remains broad — meningitis, encephalitis, and sepsis must be ruled out in the ED. Management is supportive: recovery position, O2 to keep SpO2 ≥94 %, small NS fluid bolus for the tachycardia and insensible losses, antipyretic per protocol, sepsis-aware transport with ED advance notification.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">112</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">120/74</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">97%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">18</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">102.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">104</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">14</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-protected; gag intact; tongue laceration noted, minor oozing only</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous, regular, slightly deep; lungs clear bilaterally</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse strong, regular, mildly fast; cap refill 2 seconds</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">flushed · hot · diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL, 4 mm; no eye deviation</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities symmetrically and purposefully to command; no focal weakness</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Slow, short sentences; answering questions appropriately but still 'thick-tongued'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Patient now answering simple questions correctly — knows name and approximate location, fuzzy on date</li><li>Glucometer: 104 mg/dL</li><li>Tympanic temperature 102.8 °F (39.3 °C)</li><li>Wet pants from incontinence noted to roommate; tongue bite reconfirmed</li><li>No neck stiffness on gentle ROM, no rash on body exposure</li><li>Sepsis screen: fever + HR 118 + RR 20 + AMS → meets SIRS, consistent with possible meningitis/sepsis</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Maintain supportive care — recovery position, O2 prn, continuous monitoring</div></div>
+        <div class="action-excerpt">Administer oxygen as appropriate with a target of achieving 94–98% saturation. Use bag-valve-mask (BVM) ventilation if oxygenation/ventilation are compromised. Place pulse oximeter and/or waveform capnography to monitor oxygenation/ventilation.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">NS 500 mL IV bolus for tachycardia, fever, and reduced PO intake</div></div>
+        <div class="action-excerpt">Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Acetaminophen 1000 mg PO/IV (15 mg/kg × 82 kg = 1230 mg → cap at 1000 mg)</div></div>
+        <div class="action-excerpt">Antipyretics for fever – nonsteroidal anti-inflammatory agents are contraindicated in infants less than 6 months of age. Acetaminophen (15 mg/kg; maximum dose of 1000 mg).</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">Remove excess clothing; apply cool compresses for passive cooling</div></div>
+        <div class="action-excerpt">For febrile seizures, consider the following interventions after stopping the seizure: Removing excessive layers of clothing AND/OR Applying cool compresses to the body.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Acquire 12-lead ECG — screen for cardiac cause of new-onset seizure</div></div>
+        <div class="action-excerpt">Consider acquiring a 12-lead EKG following cessation of seizure in patients without a history of seizure to determine possible cardiac cause.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess GCS, vitals, and for seizure recurrence every 5 minutes</div></div>
+        <div class="action-excerpt">Reassess vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) and mental status.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Advance notification to ED — first-ever seizure with fever; possible meningitis/sepsis</div></div>
+        <div class="action-excerpt">Provide advanced notification to the hospital.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Transport, improving</div>
+        <div class="phase-trigger">Trigger: Patient received complete supportive care during transport — supplemental O2, NS bolus, antipyretic, 12-lead ECG, ED notification — and continues to improve clinically. No seizure recurrence. This phase is the resolution beat of the default path.</div>
+        <div class="phase-desc">Patient continues to improve en route. GCS now 14-15, oriented x3, vitals trending toward normal, no seizure recurrence. ED is expecting a possible meningitis/sepsis workup. Handoff is clean: witnessed first-ever generalized tonic-clonic seizure, ~3 minutes, in the setting of a 3-day febrile illness; assessment unremarkable for focal deficit or trauma; supportive management given with NS bolus and acetaminophen.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">102</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">122/76</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">98%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">16</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">102.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">102</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-protected; tongue laceration minor</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous, regular, unlabored; clear lung sounds</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse normal rate and quality; skin still warm but improving</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · moist</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL, 4 mm</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Symmetric, full strength, follows commands</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Clear, full sentences; oriented, mildly tired-sounding"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Oriented to person, place, year</li><li>Has no memory of the seizure itself ('I just remember feeling really crummy and then I was on the floor')</li><li>Reports mild post-seizure headache and muscle soreness — typical post-ictal</li><li>Tympanic temp now 102.1 °F after antipyretic; still febrile but trending down</li><li>No new seizure activity during transport</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Structured ED handoff — first-ever seizure, febrile illness, sepsis screen positive</div></div>
+        <div class="action-excerpt">Provide advanced notification to the hospital.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Continue monitoring for seizure recurrence and hemodynamic change until handoff</div></div>
+        <div class="action-excerpt">Actively seizing during transport and time of seizure onset/cessation. Reassess vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) and mental status.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Subtle status missed</div>
+        <div class="phase-trigger">Trigger: Crew did not perform a careful neurologic check for subtle ongoing seizure activity. Eye deviation and focal twitching that were present on EMS arrival were attributed to 'just post-ictal twitches.' Without benzodiazepine treatment, the subtle seizure activity progressed into an overt generalized tonic-clonic seizure during transport — the patient is now actively seizing again with airway and hemodynamic compromise.</div>
+        <div class="phase-desc">Crew accepted the post-ictal label at face value and never confirmed that seizure activity had truly ended. Subtle right gaze preference and intermittent right thumb twitching, present on arrival, were not appreciated. No benzodiazepine was given. Approximately 6 minutes into transport, the patient progresses into an overt generalized tonic-clonic seizure — clenched jaw, rhythmic four-extremity convulsion, eyes deviated, SpO2 dropping. Crew now must manage active seizure activity in a moving ambulance, with the airway compromised and a much narrower margin for error.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">142</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">148/92</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">88%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">28</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">52</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">102.9°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">98</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Flexion (decorticate)</span><span class="gcs-score">3</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">5</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Clenched jaw, copious oral secretions, snoring respirations between convulsions; airway at risk</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Irregular, breath-holding during tonic phase, then deep snoring respirations; SpO2 trending down</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Tachycardic, strong central pulse; peripheral cap refill 3 seconds</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">cyanotic-tinged around lips · hot · diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Right gaze preference; pupils 5 mm bilaterally, sluggish</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Generalized tonic-clonic activity, rhythmic four-extremity convulsion</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"None — actively seizing"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Convulsive activity now overt — no longer subtle</li><li>Tongue laceration worsening, fresh blood in oral cavity</li><li>Crew is in a moving ambulance — limited resources, working IV is luckily already established</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize recurrent seizure; reclassify as status epilepticus (continuous &gt;5 min or recurrent)</div></div>
+        <div class="action-excerpt">Inclusion Criteria: Seizure activity upon arrival of prehospital personnel or new/recurrent seizure activity lasting greater than 5 minutes.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Position airway, suction, BVM with O2 if hypoventilating</div></div>
+        <div class="action-excerpt">If signs of airway obstruction are present and a chin-lift, jaw thrust, positioning, and/or suctioning does not alleviate it, place oropharyngeal airway (if gag reflex is absent) or nasopharyngeal airway. Administer oxygen as appropriate with a target of achieving 94–98% saturation. Use bag-valve-mask (BVM) ventilation if oxygenation/ventilation are compromised.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Midazolam 4 mg IV (82 kg × 0.1 mg/kg = 8.2 mg → cap at 4 mg max per dose; may repeat)</div></div>
+        <div class="action-excerpt">Anticonvulsant Treatment — If vascular access (IV or IO) is present: Diazepam 0.2 mg/kg IV or IO, maximum 10 mg; Lorazepam 0.1 mg/kg IV or IO, maximum 4 mg; Midazolam 0.1 mg/kg IV or IO, maximum 4 mg.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">If IV lost or unavailable: Midazolam 10 mg IM (82 kg × 0.2 mg/kg = 16.4 mg → cap at 10 mg max)</div></div>
+        <div class="action-excerpt">Anticonvulsant Treatment — If vascular access is absent: Midazolam 0.2 mg/kg (maximum dose 10 mg), IM preferred, or IN.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Monitor for benzo-induced respiratory depression; be ready to BVM post-administration</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Trained personnel should be able to give medication without contacting medical direction, however, more than two doses of benzodiazepines are associated with high-risk of airway compromise.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Update ED — patient now in status epilepticus, benzo given, ETA</div></div>
+        <div class="action-excerpt">Provide advanced notification to the hospital.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Sepsis screen missed</div>
+        <div class="phase-trigger">Trigger: Crew did not integrate the fever, tachycardia, tachypnea, and altered mental status as a SIRS/sepsis picture. No fluid bolus, no antipyretic, no advance notification of possible meningitis/sepsis. Patient deteriorates hemodynamically during transport — early septic shock manifests with widening pulse pressure, decreased EtCO2, and peripheral mottling.</div>
+        <div class="phase-desc">Crew treats this as a simple seizure call. The fever is noted in passing but not framed as part of a sepsis/meningitis picture. No NS bolus is given for the tachycardia and reduced PO intake, no antipyretic is offered, and the ED is told only that 'we have a seizure post-ictal.' Over the next 10-15 minutes, the patient's vitals drift in the wrong direction — HR climbs, BP softens, EtCO2 trends low, skin becomes mottled at the extremities. The ED is now seeing an undifferentiated septic patient who arrives without a head start.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">132</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">102/56</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">95%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">26</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">28</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">103.1°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">98</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Inappropriate words</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">11</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent; secretions manageable</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous, slightly rapid and shallow; lungs clear</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse rapid, weaker; cap refill 3-4 seconds at the fingertips; peripheral mottling beginning</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">flushed centrally, mottled peripherally · hot core, cool fingers · diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL, 4 mm</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities; weak grip; reports feeling 'really tired and shaky'</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Short answers, slower than before; says he 'feels worse'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Patient now slipping back into more confusion rather than continuing to improve</li><li>EtCO2 trending down toward 28 mmHg — early marker of poor perfusion</li><li>Patient reports feeling cold despite measured fever — rigor onset</li><li>ED is not expecting a sepsis-screen patient — no resus bay prepared</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize sepsis picture — SIRS + suspected infection source; reframe priorities</div></div>
+        <div class="action-excerpt">Inclusion Criteria — Signs of poor perfusion (due to a medical cause) such as one or more of the following: Altered mental status; Delayed capillary refill (&gt; 3 seconds); Respiratory rate greater than 20 breaths per minute in adults or elevated in children; Tachycardia or bradycardia for age, out of proportion to temperature; Cool/mottled or flushed/ruddy skin. Potential etiologies of shock: Distributive (sepsis, anaphylaxis, neurogenic, overdose, endocrine).</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">NS 500 mL IV bolus now; reassess; repeat up to 30 mL/kg (≈2.5 L for 82 kg) as needed</div></div>
+        <div class="action-excerpt">Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops. Physiologic target: MAP goal 65 mmHg.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Acetaminophen 1000 mg PO/IV (15 mg/kg × 82 kg = 1230 mg → cap at 1000 mg)</div></div>
+        <div class="action-excerpt">Antipyretics for fever – nonsteroidal anti-inflammatory agents are contraindicated in infants less than 6 months of age. Acetaminophen (15 mg/kg; maximum dose of 1000 mg).</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Upgrade ED notification — possible sepsis/meningitis; request resus bay</div></div>
+        <div class="action-excerpt">Provide advanced notification to the hospital. Consider empiric antibiotics for suspected septic shock if transport time is anticipated to be prolonged, if blood cultures can be obtained in advance, and/or EMS has coordinated with regional receiving hospitals about choice of antibiotic therapy.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess vitals and mental status after each 500 mL bolus</div></div>
+        <div class="action-excerpt">Reassess vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) and mental status. Full vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) with reassessment q 15 minutes or more frequently as appropriate.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

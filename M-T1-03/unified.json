@@ -1,0 +1,599 @@
+{
+  "meta": {
+    "id": "M-T1-03",
+    "scenarioId": "M-T1-03",
+    "name": "Simple Febrile Seizure (Adult), Post-Ictal",
+    "version": 1,
+    "difficulty": "beginner",
+    "category": "Medical",
+    "protocols": [
+      "medical-seizures",
+      "medical-altered-mental-status",
+      "medical-shock"
+    ],
+    "totalTimeSeconds": 1200,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": ["seizure", "post-ictal", "fever", "sepsis screen", "assessment", "Tier 1"]
+  },
+  "patient": {
+    "name": "Marcus Delaney",
+    "age": 34,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 82,
+    "weightLbs": 181,
+    "height": 180,
+    "chiefComplaint": "Witnessed generalized seizure, now post-ictal with fever",
+    "history": {
+      "hpi": "Patient is a 34-year-old male with no prior seizure history who became unwell over the past 3 days with a flu-like illness — subjective fever, chills, body aches, headache, and a sore throat that started yesterday. He stayed home from work today, took acetaminophen this morning, and was reportedly drinking less than usual. At approximately 1410, his roommate heard a thump from the living room and found the patient on the floor, generalized stiffening then rhythmic shaking of all four extremities, with eyes rolled up and lips bluish. The roommate timed the convulsion at roughly 3 minutes; afterward the patient was limp and snoring, slowly becoming more responsive. EMS was called immediately. By EMS arrival (≈8 minutes after seizure end), patient is post-ictal — eyes open to voice, confused, words mumbled but improving. He is warm to the touch and visibly diaphoretic. There is no witnessed history of trauma during the fall; the roommate moved a coffee table out of the way but is uncertain whether the patient struck his head on it as he fell.",
+      "pastMedical": [
+        "Generally healthy — no known chronic medical conditions",
+        "No prior seizures",
+        "No diabetes"
+      ],
+      "medications": [
+        "Acetaminophen 1000 mg PO this morning (≈0800) for fever",
+        "Occasional ibuprofen for headaches",
+        "No prescription medications"
+      ],
+      "allergies": ["NKDA"],
+      "lastOralIntake": "Few sips of water around noon; minimal solid intake for 24 hours",
+      "events": "Three days of flu-like illness with progressive fever, headache, sore throat, and body aches. Roommate witnessed a generalized tonic-clonic seizure lasting ~3 minutes at 1410; patient was limp and snoring after. EMS arrived ~8 minutes post-seizure to a post-ictal but improving patient."
+    }
+  },
+  "scene": {
+    "dispatch": "Medic 14, respond Code 3 to 812 Lakeshore Drive, Apartment 2B, for a 34-year-old male — caller states he passed out and was shaking. Now unresponsive but breathing. Caller is the patient's roommate.",
+    "location": "Second-floor apartment, small living room. Patient supine on the carpeted floor between a couch and coffee table. Lighting good, easy access through main entry.",
+    "time": "1418, Wednesday afternoon",
+    "safety": "Scene safe. No weapons, no pets, no environmental hazards. Roommate is calm and cooperative. Coffee table moved aside before EMS arrival.",
+    "bystanders": "Roommate (primary witness) — describes a clear generalized tonic-clonic seizure lasting about 3 minutes. States patient has been ill for 3 days with fever, headache, sore throat, and body aches. Denies any prior seizures, head injury today, drug use, alcohol use, or known medical problems. Patient lives alone with the roommate; no family contact information immediately available.",
+    "visualCues": [
+      "Patient supine on carpet, sweat-soaked t-shirt, flushed face",
+      "Crumpled tissues and a half-empty Gatorade bottle on the side table",
+      "Bottle of acetaminophen on the kitchen counter — opened, recently used",
+      "Thermometer on the bathroom sink (visible from the hallway)",
+      "No pill bottles, no paraphernalia, no signs of trauma in the room"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial",
+      "name": "Initial Contact",
+      "description": "Crew arrives ~8 minutes after a witnessed 3-minute generalized tonic-clonic seizure. Patient is post-ictal: opens eyes to voice, confused, mumbling but words are starting to come back. He is warm and visibly diaphoretic. Roommate describes 3 days of fever, headache, sore throat, and body aches. The teaching focus here is a thorough post-ictal assessment — confirm the seizure has actually ended, run the full neuro/airway exam, get a glucose, get a temperature, and recognize that fever + new-onset seizure + flu-like prodrome is a sepsis/meningitis screen as much as a seizure call.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 4, "motor": 5 },
+        "airway": "Patent, self-maintained; small amount of frothy saliva at the corner of the mouth, no active vomiting; mild lip/tongue laceration on the right lateral tongue with minor oozing",
+        "breathing": "Spontaneous, regular, mildly deep; clear and equal lung sounds bilaterally; no stridor or wheeze",
+        "circulation": "Radial pulse strong and regular but fast; cap refill 2 seconds; skin flushed and warm",
+        "skin": { "color": "flushed", "temperature": "hot", "moisture": "diaphoretic" },
+        "pupils": "PERRL, 4 mm bilaterally; no nystagmus, no fixed eye deviation, no focal twitching",
+        "motorFunction": "Moves all four extremities symmetrically to noxious stimulus; no focal weakness; no posturing",
+        "otherFindings": [
+          "Mild right lateral tongue laceration with minor oozing — classic seizure finding",
+          "Mild urinary incontinence — wet spot on pants",
+          "Sweat-soaked t-shirt, ambient temperature normal",
+          "No external head trauma palpable; no Battle's sign, no raccoon eyes",
+          "No neck stiffness on gentle passive range of motion, but limited cooperation given mental status",
+          "No rash on exposed skin (no petechiae visible)"
+        ],
+        "patientSpeech": "Mumbled, short words — answers name correctly when prompted twice, cannot give the date; oriented x1"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 118,
+        "bpSys": 124,
+        "bpDia": 76,
+        "respRate": 20,
+        "spo2": 96,
+        "etco2": 38,
+        "temp": 39.3,
+        "tempF": 102.8,
+        "obstruction": 0,
+        "glucose": 104,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-scene-safety",
+          "shortAction": "Scene size-up and BSI; survey environment for trauma, toxins, infection clues",
+          "protocolExcerpt": "Environment: Survey for pills, paraphernalia, substance use, medication patches, medical devices, ambient temperature, social indicators of neglect, carbon monoxide exposures, multiple casualties with same complaint.",
+          "priority": "critical",
+          "rationale": "Identifies the acetaminophen bottle, tissues, and lack of pill bottles/paraphernalia — supports a febrile rather than toxic seizure.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "act-confirm-not-seizing",
+          "shortAction": "Confirm seizure has ended — check for subtle status (eye deviation, focal twitching, nystagmus)",
+          "protocolExcerpt": "Inclusion Criteria: Seizure activity upon arrival of prehospital personnel or new/recurrent seizure activity lasting greater than 5 minutes. History: Focality of onset, direction of eye deviation. Exam: Neurologic status (GCS, nystagmus, pupil size, focal neurologic deficit, or signs of stroke).",
+          "priority": "critical",
+          "rationale": "Subtle status epilepticus can be missed in a 'post-ictal' patient — eye deviation, isolated twitching, or persistently fixed gaze are red flags requiring benzodiazepine treatment.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-airway-breathing",
+          "shortAction": "Assess airway patency; suction prn; place NPA if needed; O2 to keep SpO2 94-98%",
+          "protocolExcerpt": "If signs of airway obstruction are present and a chin-lift, jaw thrust, positioning, and/or suctioning does not alleviate it, place oropharyngeal airway (if gag reflex is absent) or nasopharyngeal airway. Place pulse oximeter and/or waveform capnography to monitor oxygenation/ventilation. Administer oxygen as appropriate with a target of achieving 94–98% saturation. Use bag-valve-mask (BVM) ventilation if oxygenation/ventilation are compromised.",
+          "priority": "critical",
+          "rationale": "Post-ictal patients commonly hypoventilate or accumulate secretions; recovery position and suction protect the airway.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-recovery-position",
+          "shortAction": "Place patient in recovery (lateral) position; clear oral secretions",
+          "protocolExcerpt": "If signs of airway obstruction are present and a chin-lift, jaw thrust, positioning, and/or suctioning does not alleviate it, place oropharyngeal airway (if gag reflex is absent) or nasopharyngeal airway.",
+          "priority": "important",
+          "rationale": "Supportive care for the post-ictal patient — prevents aspiration of saliva or vomit.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-monitor-vitals",
+          "shortAction": "Place SpO2, EtCO2, and cardiac monitor; full set of vitals q5 min",
+          "protocolExcerpt": "Place pulse oximeter and/or waveform capnography to monitor oxygenation/ventilation. EKG or cardiac monitor: arrhythmia limiting perfusion.",
+          "priority": "important",
+          "rationale": "Capnography flags hypoventilation early; cardiac monitor screens for arrhythmia as a cause.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-glucose",
+          "shortAction": "Obtain finger-stick blood glucose — rule out hypoglycemia-induced seizure",
+          "protocolExcerpt": "Glucometry: If still actively seizing, check blood glucose level. If less than 60 mg/dL, treat per the Hypoglycemia Guideline. Blood glucose level.",
+          "priority": "critical",
+          "rationale": "Hypoglycemia is a reversible cause of seizure and AMS; mandatory check on every seizure/AMS patient.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-temperature",
+          "shortAction": "Measure temperature — document fever (102.8 °F / 39.3 °C)",
+          "protocolExcerpt": "Extremities/skin: Track marks, hydration, edema, dialysis shunt, temperature to touch (or if able, use a thermometer), signs of trauma. Signs of infection: Fever, cough, skin changes, dysuria.",
+          "priority": "critical",
+          "rationale": "Fever is the lesson finding — drives the differential toward febrile/septic etiology, not idiopathic seizure.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "act-gcs-neuro",
+          "shortAction": "Document GCS and AVPU; note focal deficits, pupils, neck stiffness",
+          "protocolExcerpt": "Glasgow Coma Score and/or AVPU. Pupils. Neck: Rigidity or pain with range of motion. Stroke assessment tool including focal neurologic findings.",
+          "priority": "critical",
+          "rationale": "Establishes a baseline against which to trend post-ictal improvement; meningismus is a meningitis red flag.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "act-sample-history",
+          "shortAction": "Obtain SAMPLE from roommate; characterize seizure (onset, duration, focality)",
+          "protocolExcerpt": "History: Duration of current seizure. Prior history of seizures, diabetes, or hypoglycemia. Typical appearance of seizures. Baseline seizure frequency and duration. Focality of onset, direction of eye deviation. Concurrent symptoms of apnea, cyanosis, vomiting, bowel/bladder incontinence, or fever. Bystander administration of medications to stop the seizure. Current medications, including anticonvulsants. Recent dose changes or non-compliance with anticonvulsants. History of trauma, pregnancy, heat exposure, or toxin exposure.",
+          "priority": "critical",
+          "rationale": "First-seizure history is critical to ED workup — duration, focality, witness count, prior events all change downstream care.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-head-trauma-exam",
+          "shortAction": "Inspect head/mouth for trauma — tongue/lip injury, scalp lacerations, occult fall trauma",
+          "protocolExcerpt": "Head and neck: Evaluate for signs of trauma. Concurrent symptoms of apnea, cyanosis, vomiting, bowel/bladder incontinence, or fever.",
+          "priority": "important",
+          "rationale": "Tongue bite supports true seizure; rules out occult head injury from the fall as the cause of AMS.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "act-sepsis-screen",
+          "shortAction": "Screen for sepsis — fever + tachycardia + tachypnea = SIRS; alert ED of possible meningitis/sepsis",
+          "protocolExcerpt": "Signs of infection: Fever, cough, skin changes, dysuria. Inclusion Criteria — Signs of poor perfusion (due to a medical cause) such as one or more of the following: Altered mental status; Respiratory rate greater than 20 breaths per minute in adults or elevated in children; Tachycardia or bradycardia for age, out of proportion to temperature.",
+          "priority": "critical",
+          "rationale": "Febrile seizure in an adult with a flu-like prodrome should raise meningitis/sepsis suspicion; early identification changes ED disposition and antibiotic timing.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "act-iv-access",
+          "shortAction": "Establish IV access (saline lock or NS TKO)",
+          "protocolExcerpt": "IV placement is not necessary for treatment of seizures, but could be obtained if needed for other reasons. Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle.",
+          "priority": "important",
+          "rationale": "Required for IV antipyretics, fluid for the febrile/tachycardic patient, and for benzodiazepine access if seizure recurs.",
+          "protocolReference": "MATC: Shock"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "thorough-workup",
+          "if": "Thorough post-ictal workup performed",
+          "condition": "Crew performs a complete post-ictal assessment: confirms seizure has stopped (no eye deviation, no focal twitching, GCS trending up), checks glucose (104 mg/dL), measures temperature (102.8 °F), gets a full SAMPLE from the roommate, examines for trauma, and recognizes the febrile/septic context. Supportive care continues; sepsis-aware transport is initiated.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["act-confirm-not-seizing", "act-glucose", "act-temperature", "act-gcs-neuro", "act-sample-history", "act-sepsis-screen"]
+        },
+        {
+          "targetPhaseId": "subtle-status-missed",
+          "if": "Subtle ongoing seizure missed",
+          "condition": "Crew accepts the 'post-ictal' label without confirming seizure cessation — misses subtle right gaze preference and intermittent thumb twitching that indicates ongoing nonconvulsive/subtle status. No benzodiazepine is given. During transport the patient progresses back into an overt generalized tonic-clonic seizure.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["act-confirm-not-seizing"]
+        },
+        {
+          "targetPhaseId": "sepsis-screen-missed",
+          "if": "Fever recognized but sepsis screen skipped",
+          "condition": "Crew treats this purely as a 'seizure call,' fails to integrate the fever, tachycardia, and tachypnea as a SIRS/sepsis picture. No fluid bolus is given, no antipyretic considered, no advance notification of possible meningitis/sepsis. Patient continues to deteriorate hemodynamically en route.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["act-sepsis-screen", "act-temperature"]
+        }
+      ]
+    },
+    {
+      "id": "thorough-workup",
+      "name": "Thorough workup performed",
+      "description": "Crew has run the full post-ictal assessment. Patient is improving — GCS now 13-14, vital signs stable, glucose normal, fever confirmed at 102.8 °F. Working impression: simple post-ictal phase following a first-ever generalized tonic-clonic seizure provoked by a febrile illness. Differential remains broad — meningitis, encephalitis, and sepsis must be ruled out in the ED. Management is supportive: recovery position, O2 to keep SpO2 ≥94 %, small NS fluid bolus for the tachycardia and insensible losses, antipyretic per protocol, sepsis-aware transport with ED advance notification.",
+      "triggerCondition": "Crew completed a thorough post-ictal assessment — confirmed no subtle ongoing seizure activity, checked glucose, measured temperature, obtained a full SAMPLE history, examined for trauma, and recognized the febrile/septic context. Patient is improving and stable; the lesson question is now whether supportive management is matched to the assessment findings.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 4, "verbal": 4, "motor": 6 },
+        "airway": "Patent, self-protected; gag intact; tongue laceration noted, minor oozing only",
+        "breathing": "Spontaneous, regular, slightly deep; lungs clear bilaterally",
+        "circulation": "Radial pulse strong, regular, mildly fast; cap refill 2 seconds",
+        "skin": { "color": "flushed", "temperature": "hot", "moisture": "diaphoretic" },
+        "pupils": "PERRL, 4 mm; no eye deviation",
+        "motorFunction": "Moves all extremities symmetrically and purposefully to command; no focal weakness",
+        "otherFindings": [
+          "Patient now answering simple questions correctly — knows name and approximate location, fuzzy on date",
+          "Glucometer: 104 mg/dL",
+          "Tympanic temperature 102.8 °F (39.3 °C)",
+          "Wet pants from incontinence noted to roommate; tongue bite reconfirmed",
+          "No neck stiffness on gentle ROM, no rash on body exposure",
+          "Sepsis screen: fever + HR 118 + RR 20 + AMS → meets SIRS, consistent with possible meningitis/sepsis"
+        ],
+        "patientSpeech": "Slow, short sentences; answering questions appropriately but still 'thick-tongued'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 112,
+        "bpSys": 120,
+        "bpDia": 74,
+        "respRate": 18,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 39.2,
+        "tempF": 102.6,
+        "obstruction": 0,
+        "glucose": 104,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-supportive-care",
+          "shortAction": "Maintain supportive care — recovery position, O2 prn, continuous monitoring",
+          "protocolExcerpt": "Administer oxygen as appropriate with a target of achieving 94–98% saturation. Use bag-valve-mask (BVM) ventilation if oxygenation/ventilation are compromised. Place pulse oximeter and/or waveform capnography to monitor oxygenation/ventilation.",
+          "priority": "critical",
+          "rationale": "Simple post-ictal patients improve without aggressive intervention — protect the airway and monitor.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-fluid-bolus",
+          "shortAction": "NS 500 mL IV bolus for tachycardia, fever, and reduced PO intake",
+          "protocolExcerpt": "Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops.",
+          "priority": "important",
+          "rationale": "Febrile, tachycardic, poor PO intake — fluid resuscitation is appropriate per Shock protocol's adult bolus pathway.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "act-antipyretic",
+          "shortAction": "Acetaminophen 1000 mg PO/IV (15 mg/kg × 82 kg = 1230 mg → cap at 1000 mg)",
+          "protocolExcerpt": "Antipyretics for fever – nonsteroidal anti-inflammatory agents are contraindicated in infants less than 6 months of age. Acetaminophen (15 mg/kg; maximum dose of 1000 mg).",
+          "priority": "important",
+          "rationale": "Treats fever, reduces seizure recurrence risk, and provides symptomatic relief. Confirm timing of last home dose first.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "act-passive-cooling",
+          "shortAction": "Remove excess clothing; apply cool compresses for passive cooling",
+          "protocolExcerpt": "For febrile seizures, consider the following interventions after stopping the seizure: Removing excessive layers of clothing AND/OR Applying cool compresses to the body.",
+          "priority": "supplemental",
+          "rationale": "Cheap, safe, immediately available adjunct to pharmacologic antipyresis.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-12-lead",
+          "shortAction": "Acquire 12-lead ECG — screen for cardiac cause of new-onset seizure",
+          "protocolExcerpt": "Consider acquiring a 12-lead EKG following cessation of seizure in patients without a history of seizure to determine possible cardiac cause.",
+          "priority": "important",
+          "rationale": "Protocol-specified for first-time seizures; rules out long QT, ischemia, or other cardiac syncope mimics.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-reassessment",
+          "shortAction": "Reassess GCS, vitals, and for seizure recurrence every 5 minutes",
+          "protocolExcerpt": "Reassess vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) and mental status.",
+          "priority": "critical",
+          "rationale": "Trends improvement vs. deterioration; catches subtle/recurrent seizure or worsening sepsis early.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "act-ed-notification",
+          "shortAction": "Advance notification to ED — first-ever seizure with fever; possible meningitis/sepsis",
+          "protocolExcerpt": "Provide advanced notification to the hospital.",
+          "priority": "critical",
+          "rationale": "Triggers ED sepsis/meningitis workup (LP, cultures, antibiotics) to begin on arrival rather than wait for triage.",
+          "protocolReference": "MATC: Shock"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "transport-improving",
+          "if": "Supportive care given; patient transported",
+          "condition": "Crew completes supportive care: O2, recovery position, NS 500 mL bolus, antipyretic given (or noted home dose), 12-lead obtained (sinus tach, no acute changes), passive cooling, and ED pre-notified. Patient continues to improve through transport — GCS approaches 15, vitals stabilize, no seizure recurrence.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["act-supportive-care", "act-fluid-bolus", "act-antipyretic", "act-ed-notification"]
+        }
+      ]
+    },
+    {
+      "id": "transport-improving",
+      "name": "Transport, improving",
+      "description": "Patient continues to improve en route. GCS now 14-15, oriented x3, vitals trending toward normal, no seizure recurrence. ED is expecting a possible meningitis/sepsis workup. Handoff is clean: witnessed first-ever generalized tonic-clonic seizure, ~3 minutes, in the setting of a 3-day febrile illness; assessment unremarkable for focal deficit or trauma; supportive management given with NS bolus and acetaminophen.",
+      "triggerCondition": "Patient received complete supportive care during transport — supplemental O2, NS bolus, antipyretic, 12-lead ECG, ED notification — and continues to improve clinically. No seizure recurrence. This phase is the resolution beat of the default path.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, self-protected; tongue laceration minor",
+        "breathing": "Spontaneous, regular, unlabored; clear lung sounds",
+        "circulation": "Radial pulse normal rate and quality; skin still warm but improving",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "moist" },
+        "pupils": "PERRL, 4 mm",
+        "motorFunction": "Symmetric, full strength, follows commands",
+        "otherFindings": [
+          "Oriented to person, place, year",
+          "Has no memory of the seizure itself ('I just remember feeling really crummy and then I was on the floor')",
+          "Reports mild post-seizure headache and muscle soreness — typical post-ictal",
+          "Tympanic temp now 102.1 °F after antipyretic; still febrile but trending down",
+          "No new seizure activity during transport"
+        ],
+        "patientSpeech": "Clear, full sentences; oriented, mildly tired-sounding"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 102,
+        "bpSys": 122,
+        "bpDia": 76,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 39.0,
+        "tempF": 102.1,
+        "obstruction": 0,
+        "glucose": 102,
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-handoff",
+          "shortAction": "Structured ED handoff — first-ever seizure, febrile illness, sepsis screen positive",
+          "protocolExcerpt": "Provide advanced notification to the hospital.",
+          "priority": "critical",
+          "rationale": "ED needs the full seizure description, post-ictal course, fever timeline, and SAMPLE so meningitis/sepsis workup proceeds immediately.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "act-continued-monitoring",
+          "shortAction": "Continue monitoring for seizure recurrence and hemodynamic change until handoff",
+          "protocolExcerpt": "Actively seizing during transport and time of seizure onset/cessation. Reassess vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) and mental status.",
+          "priority": "important",
+          "rationale": "Documents trend and catches recurrence in the last 5 minutes when crews tend to disengage.",
+          "protocolReference": "MATC: Seizures"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "subtle-status-missed",
+      "name": "Subtle status missed",
+      "description": "Crew accepted the post-ictal label at face value and never confirmed that seizure activity had truly ended. Subtle right gaze preference and intermittent right thumb twitching, present on arrival, were not appreciated. No benzodiazepine was given. Approximately 6 minutes into transport, the patient progresses into an overt generalized tonic-clonic seizure — clenched jaw, rhythmic four-extremity convulsion, eyes deviated, SpO2 dropping. Crew now must manage active seizure activity in a moving ambulance, with the airway compromised and a much narrower margin for error.",
+      "triggerCondition": "Crew did not perform a careful neurologic check for subtle ongoing seizure activity. Eye deviation and focal twitching that were present on EMS arrival were attributed to 'just post-ictal twitches.' Without benzodiazepine treatment, the subtle seizure activity progressed into an overt generalized tonic-clonic seizure during transport — the patient is now actively seizing again with airway and hemodynamic compromise.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 3 },
+        "airway": "Clenched jaw, copious oral secretions, snoring respirations between convulsions; airway at risk",
+        "breathing": "Irregular, breath-holding during tonic phase, then deep snoring respirations; SpO2 trending down",
+        "circulation": "Tachycardic, strong central pulse; peripheral cap refill 3 seconds",
+        "skin": { "color": "cyanotic-tinged around lips", "temperature": "hot", "moisture": "diaphoretic" },
+        "pupils": "Right gaze preference; pupils 5 mm bilaterally, sluggish",
+        "motorFunction": "Generalized tonic-clonic activity, rhythmic four-extremity convulsion",
+        "otherFindings": [
+          "Convulsive activity now overt — no longer subtle",
+          "Tongue laceration worsening, fresh blood in oral cavity",
+          "Crew is in a moving ambulance — limited resources, working IV is luckily already established"
+        ],
+        "patientSpeech": "None — actively seizing"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 142,
+        "bpSys": 148,
+        "bpDia": 92,
+        "respRate": 28,
+        "spo2": 88,
+        "etco2": 52,
+        "temp": 39.4,
+        "tempF": 102.9,
+        "obstruction": 30,
+        "glucose": 98,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-recognize-recurrence",
+          "shortAction": "Recognize recurrent seizure; reclassify as status epilepticus (continuous >5 min or recurrent)",
+          "protocolExcerpt": "Inclusion Criteria: Seizure activity upon arrival of prehospital personnel or new/recurrent seizure activity lasting greater than 5 minutes.",
+          "priority": "critical",
+          "rationale": "Recognizing this as a treatable seizure (not 'just twitching') drives the benzodiazepine decision.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-airway-bvm",
+          "shortAction": "Position airway, suction, BVM with O2 if hypoventilating",
+          "protocolExcerpt": "If signs of airway obstruction are present and a chin-lift, jaw thrust, positioning, and/or suctioning does not alleviate it, place oropharyngeal airway (if gag reflex is absent) or nasopharyngeal airway. Administer oxygen as appropriate with a target of achieving 94–98% saturation. Use bag-valve-mask (BVM) ventilation if oxygenation/ventilation are compromised.",
+          "priority": "critical",
+          "rationale": "SpO2 88 % and EtCO2 52 mmHg indicate respiratory compromise during active seizure — BVM is the bridge until benzo works.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-midazolam-iv",
+          "shortAction": "Midazolam 4 mg IV (82 kg × 0.1 mg/kg = 8.2 mg → cap at 4 mg max per dose; may repeat)",
+          "protocolExcerpt": "Anticonvulsant Treatment — If vascular access (IV or IO) is present: Diazepam 0.2 mg/kg IV or IO, maximum 10 mg; Lorazepam 0.1 mg/kg IV or IO, maximum 4 mg; Midazolam 0.1 mg/kg IV or IO, maximum 4 mg.",
+          "priority": "critical",
+          "rationale": "Per-protocol first-line benzodiazepine for IV-access status epilepticus.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-midazolam-im-backup",
+          "shortAction": "If IV lost or unavailable: Midazolam 10 mg IM (82 kg × 0.2 mg/kg = 16.4 mg → cap at 10 mg max)",
+          "protocolExcerpt": "Anticonvulsant Treatment — If vascular access is absent: Midazolam 0.2 mg/kg (maximum dose 10 mg), IM preferred, or IN.",
+          "priority": "important",
+          "rationale": "Backup pathway if the IV is unusable in the moving rig; IM midazolam is at least as effective as IV lorazepam.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-airway-watch",
+          "shortAction": "Monitor for benzo-induced respiratory depression; be ready to BVM post-administration",
+          "protocolExcerpt": "Patient Safety Considerations: Trained personnel should be able to give medication without contacting medical direction, however, more than two doses of benzodiazepines are associated with high-risk of airway compromise.",
+          "priority": "critical",
+          "rationale": "Benzodiazepines drop respiratory drive — anticipate, do not react.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-update-ed",
+          "shortAction": "Update ED — patient now in status epilepticus, benzo given, ETA",
+          "protocolExcerpt": "Provide advanced notification to the hospital.",
+          "priority": "important",
+          "rationale": "Lets the ED prepare second-line therapy (levetiracetam/fosphenytoin), airway resources, and a resus bay.",
+          "protocolReference": "MATC: Shock"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "sepsis-screen-missed",
+      "name": "Sepsis screen missed",
+      "description": "Crew treats this as a simple seizure call. The fever is noted in passing but not framed as part of a sepsis/meningitis picture. No NS bolus is given for the tachycardia and reduced PO intake, no antipyretic is offered, and the ED is told only that 'we have a seizure post-ictal.' Over the next 10-15 minutes, the patient's vitals drift in the wrong direction — HR climbs, BP softens, EtCO2 trends low, skin becomes mottled at the extremities. The ED is now seeing an undifferentiated septic patient who arrives without a head start.",
+      "triggerCondition": "Crew did not integrate the fever, tachycardia, tachypnea, and altered mental status as a SIRS/sepsis picture. No fluid bolus, no antipyretic, no advance notification of possible meningitis/sepsis. Patient deteriorates hemodynamically during transport — early septic shock manifests with widening pulse pressure, decreased EtCO2, and peripheral mottling.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 3, "motor": 5 },
+        "airway": "Patent; secretions manageable",
+        "breathing": "Spontaneous, slightly rapid and shallow; lungs clear",
+        "circulation": "Radial pulse rapid, weaker; cap refill 3-4 seconds at the fingertips; peripheral mottling beginning",
+        "skin": { "color": "flushed centrally, mottled peripherally", "temperature": "hot core, cool fingers", "moisture": "diaphoretic" },
+        "pupils": "PERRL, 4 mm",
+        "motorFunction": "Moves all extremities; weak grip; reports feeling 'really tired and shaky'",
+        "otherFindings": [
+          "Patient now slipping back into more confusion rather than continuing to improve",
+          "EtCO2 trending down toward 28 mmHg — early marker of poor perfusion",
+          "Patient reports feeling cold despite measured fever — rigor onset",
+          "ED is not expecting a sepsis-screen patient — no resus bay prepared"
+        ],
+        "patientSpeech": "Short answers, slower than before; says he 'feels worse'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 132,
+        "bpSys": 102,
+        "bpDia": 56,
+        "respRate": 26,
+        "spo2": 95,
+        "etco2": 28,
+        "temp": 39.5,
+        "tempF": 103.1,
+        "obstruction": 0,
+        "glucose": 98,
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-recognize-sepsis",
+          "shortAction": "Recognize sepsis picture — SIRS + suspected infection source; reframe priorities",
+          "protocolExcerpt": "Inclusion Criteria — Signs of poor perfusion (due to a medical cause) such as one or more of the following: Altered mental status; Delayed capillary refill (> 3 seconds); Respiratory rate greater than 20 breaths per minute in adults or elevated in children; Tachycardia or bradycardia for age, out of proportion to temperature; Cool/mottled or flushed/ruddy skin. Potential etiologies of shock: Distributive (sepsis, anaphylaxis, neurogenic, overdose, endocrine).",
+          "priority": "critical",
+          "rationale": "Reframing the call from 'seizure' to 'sepsis with seizure as the presenting event' is the lesson recovery point.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "act-fluid-now",
+          "shortAction": "NS 500 mL IV bolus now; reassess; repeat up to 30 mL/kg (≈2.5 L for 82 kg) as needed",
+          "protocolExcerpt": "Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops. Physiologic target: MAP goal 65 mmHg.",
+          "priority": "critical",
+          "rationale": "Early, aggressive fluids are essential in suspected septic shock per protocol.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "act-antipyretic-late",
+          "shortAction": "Acetaminophen 1000 mg PO/IV (15 mg/kg × 82 kg = 1230 mg → cap at 1000 mg)",
+          "protocolExcerpt": "Antipyretics for fever – nonsteroidal anti-inflammatory agents are contraindicated in infants less than 6 months of age. Acetaminophen (15 mg/kg; maximum dose of 1000 mg).",
+          "priority": "important",
+          "rationale": "Lowering fever reduces metabolic demand and seizure recurrence risk.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "act-upgrade-ed",
+          "shortAction": "Upgrade ED notification — possible sepsis/meningitis; request resus bay",
+          "protocolExcerpt": "Provide advanced notification to the hospital. Consider empiric antibiotics for suspected septic shock if transport time is anticipated to be prolonged, if blood cultures can be obtained in advance, and/or EMS has coordinated with regional receiving hospitals about choice of antibiotic therapy.",
+          "priority": "critical",
+          "rationale": "Early ED activation reduces time to antibiotics and definitive workup (LP, cultures).",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "act-reassess-after",
+          "shortAction": "Reassess vitals and mental status after each 500 mL bolus",
+          "protocolExcerpt": "Reassess vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) and mental status. Full vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) with reassessment q 15 minutes or more frequently as appropriate.",
+          "priority": "critical",
+          "rationale": "Targets MAP ≥65 mmHg, watches for pulmonary edema, and detects fluid-refractory shock.",
+          "protocolReference": "MATC: Shock"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

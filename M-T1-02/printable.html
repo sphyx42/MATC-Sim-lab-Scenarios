@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CVA/Stroke with Clear Onset Time — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">CVA/Stroke with Clear Onset Time</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Margaret Ellsworth</strong></span><span class="patient-chip">67 years female</span><span class="patient-chip">159 lbs (72 kg)</span><span class="patient-chip">5'5"</span><span class="patient-chip">CC: Sudden right-sided weakness and difficulty speaking</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Engine 4, Medic 11, respond to 1827 Linden Crescent for a 67-year-old female, weakness and can't speak right. Husband on scene.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Single-family home, breakfast nook off the kitchen on the ground floor. Patient seated in a recliner the husband moved her into. Good lighting, easy stretcher access through front door.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">0835 Tuesday morning</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. No pets restrained, no weapons, no environmental hazards. Husband cooperative and a clear historian.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Husband (witness to onset) — calm, organized, has her medication list pulled up on his phone. States, 'It happened at 0810 — I looked at the clock right when it happened.' Adult daughter on the way but not yet on scene.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Coffee cup on its side on the kitchen table; coffee spilled across the newspaper</li><li>Half-eaten slice of toast on a plate at the patient's place setting</li><li>Patient's right arm rests limp in her lap; her face is visibly asymmetric on the right</li><li>Pill organizer on the counter, today's morning compartment is empty</li><li>Wall clock visible in the kitchen — confirms current time</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">Patient was sitting at the breakfast table with her husband at approximately 0810, eating toast and reading the newspaper, when she suddenly dropped her coffee cup and could not pick it up with her right hand. Her husband noticed her face 'pulled to one side' and that her speech became garbled — she could understand him but could not form words clearly. She tried to stand but her right leg gave out. Husband helped her into a recliner and called 911 immediately. Husband states symptoms began abruptly at exactly 0810 — he checked the kitchen clock when it happened. No headache, no chest pain, no recent fall, no preceding warning symptoms. She has been awake since 0645 and was completely normal until 0810.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">Sulfa drugs — rash</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Apixaban 5 mg PO BID (last dose this morning at 0700), Metoprolol succinate 50 mg PO daily, Lisinopril 10 mg PO daily, Atorvastatin 40 mg PO daily, Metformin 500 mg PO BID</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Atrial fibrillation (diagnosed 3 years ago, on anticoagulation), Hypertension, Hyperlipidemia, Type 2 diabetes mellitus (diet-controlled), Osteoarthritis of the knees</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Half a slice of toast and a few sips of coffee at 0805 (5 minutes before onset)</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Husband witnessed sudden onset at 0810 while both were at the breakfast table. Symptoms have been present and unchanged for approximately 25 minutes by the time EMS makes patient contact. No trauma, no fall, no seizure activity observed.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">Crew arrives to find a 67-year-old female with sudden-onset right-sided weakness, right facial droop, and expressive aphasia witnessed by her husband at exactly 0810 — approximately 25 minutes ago. The history is clean and the LKW is precise. The presentation looks like a classic stroke, but the protocol still requires ruling out hypoglycemia as a stroke mimic before activating the stroke pathway. This scenario rewards systematic assessment: stroke scale, finger-stick glucose, anticoagulant history, BP both arms, 12-lead to screen for atrial fibrillation, and precise documentation of LKW.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Atrial Fibrillation</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">88</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">178/96</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">97%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">16</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">102</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">14</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-maintained; no stridor, no secretions</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous, regular, unlabored; clear lung sounds bilaterally</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse present at the left wrist (regular); right radial weaker; cap refill 2 seconds</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL, 4 mm bilaterally; conjugate gaze, no neglect to the left field</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Right facial droop (lower face, sparing forehead); right arm drift to bed within 5 seconds when held out; right leg weakness — cannot lift heel off the recliner; left side strength intact and symmetric</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Effortful, garbled single words; cannot complete the standard stroke-scale phrase; says 'yes' and 'no' clearly when asked yes/no questions"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Expressive aphasia — patient understands commands and tries to speak but produces garbled, effortful single words</li><li>Patient is oriented x4 by gesture/nod when asked simple yes/no questions</li><li>Husband states symptoms began at exactly 0810; he checked the clock</li><li>No tongue bite, no incontinence, no signs of seizure or trauma</li><li>No headache reported (patient shakes head 'no' to headache question)</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Scene size-up, BSI, and rapid primary survey (ABC)</div></div>
+        <div class="action-excerpt">Airway: Make sure airway remains patent; reposition patient as needed. Breathing: Look for respiratory depression; check SPO2, EtCO2, and CO detector readings. Circulation: Look for signs of poor perfusion.</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Perform validated stroke scale (Cincinnati: face/arm/speech)</div></div>
+        <div class="action-excerpt">Use a validated prehospital stroke scale that may include, but is not limited to: Facial smile/grimace – ask patient to smile; Arm drift – close eyes and hold out arms for count of 10 seconds; Speech – ask patient to say &quot;You can't teach an old dog new tricks&quot;.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Perform stroke severity screen (vision, neglect, aphasia) for LVO</div></div>
+        <div class="action-excerpt">Use a validated prehospital stroke severity scale that may include, but is not limited to: Vision changes; Sensory neglect; Aphasia.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Document precise last-known-well time and source (husband: 0810)</div></div>
+        <div class="action-excerpt">Determine &quot;last known well&quot; time. History – &quot;last known well&quot; and source of that information. Key Documentation Elements: &quot;Last known well&quot; must be specific. If the patient was last known well prior to bedtime the night before, this is the time to be documented (not time the patient woke up with symptoms present).</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Obtain finger-stick blood glucose to rule out hypoglycemic stroke mimic</div></div>
+        <div class="action-excerpt">Check blood glucose level (BGL). Treat only if glucose less than 60 mg/dL. Evaluate for the presence of stroke mimics including: Hypoglycemia; Seizure; Sepsis; Migraine; Intoxication.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Identify anticoagulant use (apixaban) and document last dose</div></div>
+        <div class="action-excerpt">Pertinent historical data includes: Patient is taking warfarin or any anticoagulant medication. History of recent trauma. History of recent seizure. History of recent surgery. History of recent hemorrhage (e.g., GI bleed).</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Obtain blood pressure in both arms; cardiac monitor on</div></div>
+        <div class="action-excerpt">Place on cardiac monitor.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Acquire 12-lead EKG — screen for atrial fibrillation and STEMI</div></div>
+        <div class="action-excerpt">Acquire 12-lead EKG, if possible.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Apply SpO2; supplemental O2 only if SpO2 &lt; 94%</div></div>
+        <div class="action-excerpt">Administer oxygen as appropriate with a target of achieving 94–98% saturation.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Stroke alert activated</div>
+        <div class="phase-trigger">Trigger: The crew completed a systematic stroke workup at the scene: stroke scale positive in all three Cincinnati elements, hypoglycemia ruled out by finger-stick (102 mg/dL), anticoagulant use identified (apixaban, last dose 0700), atrial fibrillation captured on 12-lead, and a precise husband-witnessed LKW of 0810 documented. The stroke pathway is now confirmed appropriate, the patient is well within the thrombolytic window, and the crew is ready to activate.</div>
+        <div class="phase-desc">Systematic assessment confirms: positive stroke scale (3/3), positive severity findings (expressive aphasia, right-sided neglect of affected limbs), glucose 102 mg/dL (hypoglycemia ruled out), apixaban on board with last dose at 0700, atrial fibrillation on the 12-lead, LKW exactly 0810. Crew activates a stroke alert with the receiving thrombectomy-capable center, documents LKW precisely, elevates head of stretcher 15-30 degrees, avoids treating the hypertension and avoids aspirin (cannot distinguish ischemic vs hemorrhagic in the field), and minimizes scene time.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Atrial Fibrillation</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">88</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">176/94</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">97%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">16</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">102</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">14</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-maintained</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous, regular, unlabored</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse irregularly irregular (consistent with a-fib on monitor); skin warm and dry</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL, 4 mm; conjugate gaze</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Right hemiparesis stable — right arm drift, right leg weakness, right facial droop unchanged from initial exam</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Effortful, garbled; able to nod yes/no appropriately to questions"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Glucose: 102 mg/dL — hypoglycemia ruled out</li><li>12-lead: atrial fibrillation, rate ~88, no acute ST changes</li><li>BP right arm 178/96, left arm 174/94 — symmetric (aortic dissection unlikely)</li><li>Apixaban last dose 0700 — confirmed with husband</li><li>Head of stretcher elevated 20 degrees; neck in neutral alignment</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Activate stroke alert with thrombectomy-capable receiving facility</div></div>
+        <div class="action-excerpt">Early hospital notification per local stroke plan that should include any suspected large vessel occlusion (LVO) stroke. Transport and destination decisions should be based on local resources and stroke system of care. Destination hospitals may include: Stroke Ready; Primary Stroke Center; Thrombectomy-capable Stroke Center; Comprehensive Stroke Center.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Elevate head of stretcher 15-30 degrees; neutral neck alignment</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Prevent aspiration – elevate head of stretcher 15–30 degrees if systolic BP greater than 100 mmHg. Maintain head and neck in neutral alignment, without flexing the neck.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Do NOT treat the hypertension — permissive HTN preserves penumbra</div></div>
+        <div class="action-excerpt">Key Considerations: Do not treat hypertension.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Do NOT give aspirin — cannot distinguish ischemic vs hemorrhagic prehospital</div></div>
+        <div class="action-excerpt">Exclusion Criteria: If trauma and Glasgow Coma Score (GCS) less than or equal to 13, treat per the Head Injury Guideline and General Trauma Management Guideline.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Establish IV access; avoid multiple attempts</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Avoid multiple IV attempts. Protect paralyzed limbs from injury.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Minimize scene time; package and transport without delay</div></div>
+        <div class="action-excerpt">Performance Measures: Minimize EMS scene time. Hospital stroke team pre-arrival alert or activation occurred as early as possible after positive stroke assessment finding.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Structured handoff: LKW 0810, Cincinnati 3/3, glucose 102, apixaban 0700</div></div>
+        <div class="action-excerpt">Key Documentation Elements: &quot;Last known well&quot; must be specific. Blood glucose results. Specific validated stroke scale used and findings. Time of notification to receiving hospital.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Stroke alert, no glucose checked</div>
+        <div class="phase-trigger">Trigger: Crew did not perform a finger-stick blood glucose at the scene. They activated a stroke alert and began transport based on stroke-scale findings alone, bypassing the protocol's explicit hypoglycemia rule-out step. While the underlying diagnosis here is genuinely stroke, the procedural error reflects unsafe practice that in a different patient would have meant missed hypoglycemia.</div>
+        <div class="phase-desc">Crew anchors on the obvious deficits, calls a stroke alert, and transports without performing a finger-stick blood glucose at the scene. The patient does have a true stroke, but skipping the protocol-mandated hypoglycemia rule-out is a documentation and competency failure. On arrival the stroke team takes the patient straight to CT — but because the prehospital glucose was never recorded, the receiving facility delays activation by 4-6 minutes while their own finger-stick is performed and resulted. In a hypoglycemic-mimic patient this same shortcut would have meant a stroke bay was occupied and treatment was withheld. The lesson: the glucose check is non-negotiable on every AMS / stroke patient.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Atrial Fibrillation</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">90</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">180/98</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">97%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">16</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">102</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">14</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-maintained</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous, regular, unlabored</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse irregular; skin warm and dry</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL, 4 mm</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Right hemiparesis and right facial droop unchanged</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Effortful, garbled"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>No prehospital glucose recorded — gap in the workup</li><li>ED finger-stick on arrival: 102 mg/dL (i.e., the diagnosis WAS stroke, but the crew never knew that prehospital)</li><li>Stroke team activation delayed 4-6 minutes while ED ruled out hypoglycemia</li><li>Debrief teaching point: in a hypoglycemic-mimic patient this same omission would have meant missed treatment and an unnecessary stroke-bay activation</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize missed hypoglycemia rule-out; perform finger-stick en route</div></div>
+        <div class="action-excerpt">Check blood glucose level (BGL). Treat only if glucose less than 60 mg/dL. Evaluate for the presence of stroke mimics including: Hypoglycemia; Seizure; Sepsis; Migraine; Intoxication.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Add glucose result to handoff so ED does not duplicate the test</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Blood glucose results.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Stroke alert without precise LKW</div>
+        <div class="phase-trigger">Trigger: Crew did not obtain a specific last-known-well time from the husband, despite the husband being present and capable of providing one. The PCR will reflect 'found this way' or 'symptoms this morning,' leaving the receiving facility unable to determine thrombolytic eligibility from prehospital documentation.</div>
+        <div class="phase-desc">Crew packages quickly and transports without obtaining a precise last-known-well time from the husband — the PCR will document only 'found this way' or 'symptoms this morning.' On arrival, the ED stroke team cannot establish whether the patient is inside the 4.5-hour thrombolytic window, and without a clear LKW from a witness, thrombolytic therapy is held until a more definitive history can be obtained — by which point the window may close. The husband was on scene with the answer. Taking 30 seconds to ask 'When exactly did this start?' would have preserved her chance at intervention.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Atrial Fibrillation</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">90</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">178/96</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">97%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">16</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">102</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">14</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-maintained</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous, regular, unlabored</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse irregular; skin warm and dry</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL, 4 mm</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Right hemiparesis and right facial droop unchanged</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Effortful, garbled"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>No specific LKW time on the PCR — 'found this way' is what the receiving facility sees</li><li>Stroke team unable to confirm thrombolytic eligibility window from prehospital data</li><li>Treatment delayed while ED attempts to reach husband by phone for confirmation</li><li>Debrief teaching point: husband was the gold-standard witness and was right there on scene — a 30-second question would have preserved the intervention window</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Radio husband's phone or back to scene for precise LKW (0810)</div></div>
+        <div class="action-excerpt">Determine &quot;last known well&quot; time. History – &quot;last known well&quot; and source of that information. &quot;Last known well&quot; must be specific. If the patient was last known well prior to bedtime the night before, this is the time to be documented (not time the patient woke up with symptoms present).</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Update receiving facility with corrected LKW and source</div></div>
+        <div class="action-excerpt">Key Documentation Elements: &quot;Last known well&quot; must be specific. Time of notification to receiving hospital. Performance Measures: Documentation of time &quot;last known well&quot;.</div>
+        <div class="action-ref">↳ MATC: Suspected Stroke/Transient Ischemic Attack</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

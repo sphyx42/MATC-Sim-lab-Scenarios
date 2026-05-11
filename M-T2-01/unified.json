@@ -1,0 +1,458 @@
+{
+  "meta": {
+    "id": "M-T2-01",
+    "name": "Opioid Overdose with Complicated Airway",
+    "version": 1,
+    "difficulty": "intermediate",
+    "category": "Medical",
+    "protocols": [
+      "tox-opioid-poisoning-overdose",
+      "resp-airway-management",
+      "medical-altered-mental-status",
+      "tox-poisoning-overdose-universal"
+    ],
+    "totalTimeSeconds": 1200,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "tier-2",
+      "decision-dense",
+      "opioid",
+      "airway",
+      "naloxone",
+      "aspiration",
+      "competing-priorities"
+    ]
+  },
+  "patient": {
+    "name": "Marcus Bell",
+    "age": 27,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 75,
+    "weightLbs": 165,
+    "height": 178,
+    "chiefComplaint": "Unresponsive, shallow breathing, vomit at mouth",
+    "history": {
+      "hpi": "27-year-old male found unresponsive in an alley behind a downtown bar by passing bystanders. Friend who was with patient reportedly ran from scene when bystanders approached. Patient last seen acting normal approximately 45 minutes ago per witness. On EMS arrival, patient is supine on pavement, GCS 4 (E1V1M2), with snoring respirations and visible vomit at the mouth and on the front of his shirt. Pinpoint pupils noted bilaterally. Multiple healed and fresh track marks on bilateral antecubital fossae. Used syringe and small wax-paper fold (suspected heroin/fentanyl packaging) on the ground within arm's reach. No signs of obvious trauma. No medical alert tags.",
+      "pastMedical": [
+        "Opioid use disorder (per bystander report)",
+        "Prior overdose 6 months ago per bystander"
+      ],
+      "medications": [
+        "None reported / unknown"
+      ],
+      "allergies": [
+        "NKDA per bystander"
+      ],
+      "lastOralIntake": "Unknown — bystanders saw him drinking beer at the bar earlier in the evening",
+      "events": "Witnessed walking with a friend into the alley approximately 20 minutes prior. A passerby found patient down, snoring, with vomit at his mouth and called 911. Friend gone on EMS arrival. Drug paraphernalia visible near patient."
+    }
+  },
+  "scene": {
+    "dispatch": "Engine 14 and Medic 12, respond to the alley behind 422 N Water St for an unconscious 27-year-old male, possible overdose, caller reports patient is not waking up. PD en route.",
+    "location": "Narrow alley behind a downtown bar at 2230 on a Friday night. Patient is supine on damp pavement next to a dumpster. Low ambient light from a single overhead fixture. Cool ambient temperature, light rain. Working space is tight; head-of-bed positioning will be limited.",
+    "time": "Friday, 22:30",
+    "safety": "Scene declared safe by first-arriving PD. BSI required — visible vomit on patient and uncapped used syringe on the ground within 18 inches of the patient's right arm. PD has secured the syringe in a sharps container. No active threats; bystanders pushed back behind the alley entrance.",
+    "bystanders": "Two passersby who called 911 are at the alley entrance. They state the patient was walking with another male about 20 minutes ago, then they heard 'a thud' and found the patient down. Friend reportedly fled when bystanders approached. No one administered naloxone or did rescue breathing prior to EMS arrival.",
+    "visualCues": [
+      "Visible vomit at the corners of the patient's mouth and pooled on the front of his shirt",
+      "Snoring/gurgling respirations audible from 4 feet away",
+      "Multiple fresh and healed track marks on bilateral antecubital fossae",
+      "Used 3 mL syringe with attached needle on the pavement near patient's right hand",
+      "Small wax-paper fold (suspected heroin/fentanyl packaging) approximately 2 feet from patient",
+      "Pinpoint pupils noted on initial gross visualization",
+      "Patient cyanotic around the lips"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives in the alley and finds a 27-year-old male supine on the pavement. He is unresponsive with snoring/gurgling respirations and visible vomit at the mouth and on his shirt. SpO2 78% on room air, RR 4 and shallow, pinpoint pupils, GCS 4. This is the classic competing-priorities scenario: an obvious opioid toxidrome with respiratory depression, but the airway is contaminated and the patient is at high risk of aspiration if he wakes up suddenly. The crew must resist the reflex to push naloxone first and instead manage the airway before any reversal agent.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 2 },
+        "airway": "Partially obstructed — visible vomit at the corners of the mouth, audible snoring respirations, gurgling on inhalation",
+        "breathing": "Shallow, slow, irregular respirations at 4/min; minimal chest rise; no accessory muscle use; lung sounds difficult to auscultate over snoring/gurgling",
+        "circulation": "Carotid pulse present and bounding at approximately 60/min; radial pulse weak but palpable; capillary refill 3 seconds",
+        "skin": { "color": "Pale with peri-oral cyanosis", "temperature": "Cool", "moisture": "Damp from rain, otherwise dry" },
+        "pupils": "Pinpoint (approximately 1 mm) bilaterally, sluggishly reactive",
+        "motorFunction": "Flaccid; withdraws minimally to sternal rub (motor 2); no posturing",
+        "otherFindings": [
+          "Bilateral antecubital track marks, some fresh",
+          "Used syringe and wax-paper fold within arm's reach",
+          "Vomit on chest, chin, and pooled in left cheek",
+          "No obvious signs of trauma to head, torso, or extremities"
+        ],
+        "patientSpeech": "None — unresponsive"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Bradycardia",
+        "ecgWaveform": 9,
+        "hr": 58,
+        "bpSys": 108,
+        "bpDia": 68,
+        "respRate": 4,
+        "spo2": 78,
+        "etco2": 62,
+        "temp": 36.4,
+        "tempF": 97.5,
+        "obstruction": 30,
+        "glucose": 92,
+        "trendTimeSeconds": 0,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": true, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "scene-safety-ppe",
+          "shortAction": "Don gloves + eye protection; mind uncapped syringe on ground",
+          "protocolExcerpt": "Patient Management: Don the appropriate PPE. Note that opioids have minimal vapor pressure and do not pose an exposure risk to rescuers unless aerosolized or ingested. Be aware that unsecured hypodermic needles may be on scene if the intravenous route may have been used by the patient, and that there is a higher risk of needle sticks during the management of this patient population which may also have an increased incidence of blood-borne pathogens.",
+          "priority": "critical",
+          "rationale": "Visible body fluids and an uncapped needle within arm's reach create real exposure risk; standard precautions are mandatory before patient contact.",
+          "protocolReference": "MATC: Opioid Poisoning/Overdose"
+        },
+        {
+          "id": "primary-survey",
+          "shortAction": "Rapid primary survey (ABC); recognize opioid toxidrome with soiled airway",
+          "protocolExcerpt": "Assessment: Assess the patient's airway, breathing, circulation, and mental status. Support the patient's airway by positioning, oxygen administration, and ventilator assistance with a bag valve mask if necessary. Assess the patient for other etiologies of altered mental status including hypoxia (pulse oximetry less than 94%), hypoglycemia, hypotension, and traumatic head injury.",
+          "priority": "critical",
+          "rationale": "Identify the threat: respiratory depression PLUS contaminated airway. This recognition is what drives airway-first management.",
+          "protocolReference": "MATC: Opioid Poisoning/Overdose"
+        },
+        {
+          "id": "suction-airway",
+          "shortAction": "Suction oropharynx with Yankauer (consider SALAD); clear vomit before ventilation",
+          "protocolExcerpt": "Open and maintain patent airway. If needed, Suction airway: for significantly contaminated airways, consider utilizing a suction assisted laryngeal airway decontamination (SALAD) technique. Patient Safety Considerations: Suctioning to limit aspiration is a priority, since it is associated with development of hospital acquired pneumonia and related increases in ICU stay and mortality.",
+          "priority": "critical",
+          "rationale": "Airway management precedes naloxone in this protocol explicitly. Suctioning a soiled airway BEFORE positive pressure ventilation prevents driving vomit into the lungs.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "lateral-recovery-position",
+          "shortAction": "Place in lateral recovery position; pad head; keep suction at the head",
+          "protocolExcerpt": "Patient positioning can significantly impact respiratory mechanics. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics. This can both improve the ability to ventilate and limit aspiration.",
+          "priority": "important",
+          "rationale": "Lateral position keeps the airway gravity-protected against further aspiration while you prepare BVM and IV access.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "opa-insertion",
+          "shortAction": "Insert OPA (no gag reflex); prepare two-person BVM",
+          "protocolExcerpt": "Oropharyngeal airways (OPA) or nasopharyngeal airways (NPA) can be placed if needed to maintain a patent airway and make BVM ventilation more effective. OPA are used for patients without gag reflex. Two-person, two-thumbs-up BVM ventilation is preferred.",
+          "priority": "critical",
+          "rationale": "GCS 4 with no gag reflex tolerates OPA; two-person BVM produces the best seal and tidal volume.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "bvm-with-peep",
+          "shortAction": "Two-person BVM with PEEP 5 cmH2O, 10–12 breaths/min; titrate to SpO2 94–98%",
+          "protocolExcerpt": "Use bag-valve-mask (BVM) ventilation in the setting of respiratory failure or arrest. PEEP should be used with BVM. 5 cmH2O is generally an appropriate initial PEEP setting. Tidal volume: Ventilate with just enough volume to see chest rise, approximately 6–8 mL/kg ideal body weight. Rate Adult: 10–12 breaths/minute.",
+          "priority": "critical",
+          "rationale": "Reverse hypoxia and hypercarbia BEFORE administering naloxone. Patients on fentanyl analogs may need PEEP for chest wall rigidity.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "blood-glucose",
+          "shortAction": "Check blood glucose to rule out hypoglycemia as AMS cause",
+          "protocolExcerpt": "Assessment: Assess the patient for other etiologies of altered mental status including hypoxia (pulse oximetry less than 94%), hypoglycemia, hypotension, and traumatic head injury.",
+          "priority": "important",
+          "rationale": "Don't anchor on opioids alone — confirm BGL is normal before attributing AMS solely to overdose.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "monitor-etco2",
+          "shortAction": "Apply cardiac monitor + continuous waveform capnography during BVM",
+          "protocolExcerpt": "Monitoring: Patients with significant respiratory distress should have continuous pulse oximetry and waveform capnography monitoring for both assessment and for guiding therapy. Continuous wave-form capnography monitoring should be placed in line.",
+          "priority": "important",
+          "rationale": "EtCO2 confirms effective BVM ventilation and detects hypoventilation in real time.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "airway-secured",
+          "if": "Suction + BVM done before naloxone",
+          "condition": "Crew suctions the airway, positions the patient, inserts OPA, and begins two-person BVM with PEEP. After approximately 2 minutes of effective ventilation the SpO2 rises and the crew is now ready to consider naloxone.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["suction-airway", "opa-insertion", "bvm-with-peep"]
+        },
+        {
+          "targetPhaseId": "naloxone-first-aspiration",
+          "if": "Naloxone pushed before clearing airway",
+          "condition": "Crew administers naloxone (IV, IM, or IN) without first suctioning the oropharynx and establishing controlled ventilation. Patient rouses while vomit is still in the airway and aspirates.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["suction-airway", "bvm-with-peep"]
+        }
+      ]
+    },
+    {
+      "id": "airway-secured",
+      "name": "Airway secured, ready for naloxone",
+      "description": "Approximately two minutes of focused airway management has paid off: airway cleared with suction, OPA in place, two-person BVM with PEEP 5 has restored SpO2 to 92% and dropped EtCO2 from 62 to 48. Pulse and BP remain stable. Now the crew is positioned safely to administer naloxone at a LOW initial dose to reverse respiratory depression without precipitating a violent withdrawal. Continued suction must remain immediately at the head.",
+      "triggerCondition": "After suction, OPA, and two-person BVM with PEEP, SpO2 has improved from 78% to 92% and EtCO2 trended from 62 to 48. The airway is now controlled. The crew has IV access and is ready to administer naloxone using the lowest effective starting dose, anticipating that arousal may re-soil the airway.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 2 },
+        "airway": "Open with OPA in place; previously suctioned; no new secretions visible at the moment; suction unit at the head of patient",
+        "breathing": "Apneic between BVM breaths; chest rises adequately with two-person BVM and PEEP 5",
+        "circulation": "Pulse 58, regular, strong radial; cap refill 2 seconds; BP 110/70",
+        "skin": { "color": "Improving — peri-oral cyanosis resolving, pink lips returning", "temperature": "Cool", "moisture": "Dry" },
+        "pupils": "Still pinpoint (~1 mm) bilaterally, sluggish",
+        "motorFunction": "Flaccid; no spontaneous movement",
+        "otherFindings": [
+          "OPA in place and tolerated (no gag)",
+          "Patent IV in left antecubital — 18g",
+          "Suction unit on and within reach"
+        ],
+        "patientSpeech": "None"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Bradycardia",
+        "ecgWaveform": 9,
+        "hr": 58,
+        "bpSys": 110,
+        "bpDia": 70,
+        "respRate": 12,
+        "spo2": 92,
+        "etco2": 48,
+        "temp": 36.4,
+        "tempF": 97.5,
+        "obstruction": 5,
+        "glucose": 92,
+        "trendTimeSeconds": 40,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": true, "cvpVisible": true }
+      },
+      "expectedActions": [
+        {
+          "id": "iv-access",
+          "shortAction": "Establish 18g IV antecubital; saline lock; consider 250 mL NS",
+          "protocolExcerpt": "Treatment and Interventions: Initiate IV access for infusion of treatment medication and/or lactated Ringer's or normal saline if indicated, and obtain blood samples if EMS management might change based upon the value (e.g., glucose, lactate, cyanide).",
+          "priority": "important",
+          "rationale": "IV access enables titratable naloxone — more predictable than IM or IN in this case.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "naloxone-low-dose-iv",
+          "shortAction": "Naloxone 0.4 mg IV slow push; titrate to RR and adequate respiratory effort (NOT full alertness)",
+          "protocolExcerpt": "Treatments and Interventions: If the patient has respiratory depression from a confirmed or suspected opioid overdose, consider naloxone administration. The administration of the initial dose or subsequent doses can be incrementally titrated until respiratory depression is reversed. Adults: The typical initial adult dose ranges between Naloxone 0.4–2 mg IV, IM, up to a dose of 4 mg IN or 5 mg ETT. The administration of naloxone can be titrated until adequate respiratory effort is achieved if administered with a syringe IV, IM, IN, or ETT.",
+          "priority": "critical",
+          "rationale": "Lowest effective dose minimizes the violent withdrawal/vomiting response. The clinical endpoint is restored respiratory drive, not GCS 15.",
+          "protocolReference": "MATC: Opioid Poisoning/Overdose"
+        },
+        {
+          "id": "keep-suction-ready",
+          "shortAction": "Keep Yankauer suction in-hand at head; anticipate vomiting on arousal",
+          "protocolExcerpt": "Patient Safety Considerations: EMS clinicians should be prepared to initiate airway management before, during, and after naloxone administration and to provide appropriate airway support until the patient has adequate respiratory effort. Patient Safety Considerations: Suctioning to limit aspiration is a priority, since it is associated with development of hospital acquired pneumonia and related increases in ICU stay and mortality.",
+          "priority": "critical",
+          "rationale": "Naloxone-induced arousal commonly triggers emesis. Suction must be in the hand, not in the bag.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "continue-bvm-during-naloxone",
+          "shortAction": "Continue BVM ventilations while naloxone takes effect (1–3 min)",
+          "protocolExcerpt": "Treatments and Interventions: Regardless of the doses of naloxone administered, airway management with provision of adequate oxygenation and ventilation is the primary goal in patients with confirmed or suspected opioid overdose.",
+          "priority": "critical",
+          "rationale": "Do not stop ventilating because the drug is in. IV naloxone takes 1–3 minutes for clinical effect.",
+          "protocolReference": "MATC: Opioid Poisoning/Overdose"
+        },
+        {
+          "id": "scene-safety-withdrawal",
+          "shortAction": "Brief team on withdrawal/agitation risk; plan body positioning for arousal",
+          "protocolExcerpt": "Patient Safety Considerations: Opioid withdrawal — Patients with altered mental status secondary to an opioid overdose may become agitated or violent following naloxone administration due to opioid withdrawal therefore the goal is to use the lowest dose as possible to avoid precipitating withdrawal. Be prepared for this potential scenario and take the appropriate measures in advance to ensure and maintain scene safety.",
+          "priority": "important",
+          "rationale": "An aroused patient in withdrawal can swing, vomit, or pull lines. Plan now, not after he sits up.",
+          "protocolReference": "MATC: Opioid Poisoning/Overdose"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "post-naloxone-vomits",
+          "if": "Naloxone 0.4 mg IV given; arousal + emesis",
+          "condition": "Within 2 minutes of slow IV naloxone the patient opens his eyes, takes a few breaths, then immediately vomits a small volume of stomach contents. Crew suctions and protects the airway; transport ongoing.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["naloxone-low-dose-iv"]
+        }
+      ]
+    },
+    {
+      "id": "post-naloxone-vomits",
+      "name": "Aroused — vomits, airway protected",
+      "description": "Naloxone 0.4 mg IV has restored respiratory drive. The patient opens his eyes, begins spontaneous breathing at 14/min with adequate tidal volume, but is now agitated and immediately vomits again. The crew's pre-positioned suction and lateral-recovery plan pays off: they roll him, suction the oropharynx, and continue supplemental O2 by NRB. The patient remains drowsy but breathing on his own. Crew must reassess every 5 minutes for recurrent respiratory depression as naloxone wears off (30–90 min) before the underlying opioid does (often 4+ hours).",
+      "triggerCondition": "Approximately 90 seconds after IV naloxone the patient takes a deep breath, opens his eyes, becomes agitated, and vomits. Because the crew kept the suction in hand and the patient laterally positioned, the airway is rapidly cleared. Patient is now breathing spontaneously at 14/min with SpO2 96% on NRB but remains lethargic.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 3, "motor": 5 },
+        "airway": "Patent — OPA removed when gag returned; freshly suctioned; lateral recovery",
+        "breathing": "Spontaneous 14/min, adequate depth; no accessory muscle use; lungs clear bilaterally",
+        "circulation": "Pulse 88 strong regular; BP 128/82; warm dry pink skin",
+        "skin": { "color": "Pink", "temperature": "Warm", "moisture": "Dry" },
+        "pupils": "3 mm bilaterally, reactive",
+        "motorFunction": "Moves all extremities; localizes to pain; pulls at IV when agitated",
+        "otherFindings": [
+          "Patient mumbling, occasionally combative; oriented to person only",
+          "Emesis suctioned promptly — no aspiration; lung sounds clear",
+          "NRB at 15 LPM in place"
+        ],
+        "patientSpeech": "'Get off me… leave me alone…' Mumbled, slurred, intermittent."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 88,
+        "bpSys": 128,
+        "bpDia": 82,
+        "respRate": 14,
+        "spo2": 96,
+        "etco2": 42,
+        "temp": 36.5,
+        "tempF": 97.7,
+        "obstruction": 5,
+        "glucose": 92,
+        "trendTimeSeconds": 30,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": true, "cvpVisible": true }
+      },
+      "expectedActions": [
+        {
+          "id": "suction-repeat",
+          "shortAction": "Repeat suction with Yankauer; lateral position; assess lung sounds for aspiration",
+          "protocolExcerpt": "Open and maintain patent airway. If needed, Suction airway: for significantly contaminated airways, consider utilizing a suction assisted laryngeal airway decontamination (SALAD) technique. Patient positioning can significantly impact respiratory mechanics. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics. This can both improve the ability to ventilate and limit aspiration.",
+          "priority": "critical",
+          "rationale": "Second emesis is expected; rapid suction and lateral position are the proven defense.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "supplemental-o2",
+          "shortAction": "NRB at 15 LPM; titrate to SpO2 94–98%",
+          "protocolExcerpt": "Administer oxygen if needed for air hunger or respiratory distress and titrate to a target SPO2 of 94–98%. Depending on patient presentation, this may be accomplished with nasal cannula, nonrebreather, BVM, NIV.",
+          "priority": "important",
+          "rationale": "Spontaneously breathing now; NRB maintains oxygenation without need for positive pressure.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "reassess-q5min",
+          "shortAction": "Reassess RR, SpO2, GCS every 5 min; watch for re-narcosis",
+          "protocolExcerpt": "Patient Safety Considerations: Clinical duration of naloxone — The clinical opioid reversal effect of naloxone is limited and may end within an hour whereas opioids often have a duration of 4 hours or longer. Monitor the patient for recurrent respiratory depression and decreased mental status.",
+          "priority": "critical",
+          "rationale": "Naloxone's effect outlasted by most opioids — especially methadone and ER formulations. Plan for redose.",
+          "protocolReference": "MATC: Opioid Poisoning/Overdose"
+        },
+        {
+          "id": "redose-prn",
+          "shortAction": "Prepare 2nd naloxone 0.4 mg IV PRN if RR<10 or SpO2<92%",
+          "protocolExcerpt": "Treatments and Interventions: The administration of the initial dose or subsequent doses can be incrementally titrated until respiratory depression is reversed. High-potency opioids may require higher and/or more frequently administered doses of naloxone to reverse respiratory depression and/or to maintain adequate respirations.",
+          "priority": "important",
+          "rationale": "Have the next dose drawn and labeled — don't be searching for it when the patient drops.",
+          "protocolReference": "MATC: Opioid Poisoning/Overdose"
+        },
+        {
+          "id": "transport-decision",
+          "shortAction": "Transport to ED for observation; do not honor patient refusal",
+          "protocolExcerpt": "Performance Measures: Number of patients who refuse transport following naloxone administration. Patient Safety Considerations: Monitor the patient for recurrent respiratory depression and decreased mental status.",
+          "priority": "important",
+          "rationale": "Patient is likely to feel 'fine' and want to leave; underlying opioid duration mandates ED observation.",
+          "protocolReference": "MATC: Opioid Poisoning/Overdose"
+        },
+        {
+          "id": "document-response",
+          "shortAction": "Document naloxone dose, route, time, and clinical response",
+          "protocolExcerpt": "Key Documentation Elements: Naloxone dose and route of administration. Clinical response to medication administration. Number of doses of naloxone to achieve a clinical response.",
+          "priority": "supplemental",
+          "rationale": "ED handoff and QA hinge on accurate dose/response timeline.",
+          "protocolReference": "MATC: Opioid Poisoning/Overdose"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "naloxone-first-aspiration",
+      "name": "Naloxone first — aspirated",
+      "description": "Judgment-error branch. Crew gave naloxone (most commonly 2 mg IN or 0.4 mg IV) WITHOUT first suctioning the oropharynx or establishing controlled ventilation. The patient roused suddenly while vomit was still pooled in the posterior pharynx and aspirated a substantial volume on his first deep breaths. SpO2 has dropped to 82% on room air despite the airway being open. New coarse crackles and rhonchi heard bilaterally — aspiration pneumonitis is brewing. He is now altered AND combative AND hypoxic, making suction far harder than it would have been 90 seconds ago.",
+      "triggerCondition": "Crew administered naloxone before adequate airway management. Approximately 60 seconds after naloxone, patient took a sudden deep gasp and aspirated visible vomit. SpO2 dropped from 78% to 82%, RR rose to 24 and labored. Patient is now awake-but-altered, combative, swatting at hands, while bilateral coarse breath sounds confirm aspiration.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 2, "motor": 5 },
+        "airway": "Soiled — vomit visible in mouth; patient now has gag and is fighting suction; coughing intermittently",
+        "breathing": "Labored 24/min; coarse crackles and rhonchi bilaterally, worse on the right; mild accessory muscle use; weak cough",
+        "circulation": "HR 118 sinus tach; BP 138/86; cap refill 2 seconds",
+        "skin": { "color": "Cyanotic peripherally; lips dusky", "temperature": "Cool peripherally", "moisture": "Diaphoretic" },
+        "pupils": "4 mm bilaterally, reactive",
+        "motorFunction": "Combative — pushing crew away, swatting at suction, pulling at NRB",
+        "otherFindings": [
+          "Active emesis ongoing during transport",
+          "Suction not pre-positioned — crew now scrambling to set up",
+          "Patient yelling unintelligibly; cannot keep mask on face",
+          "Audible gurgling and wet coughs"
+        ],
+        "patientSpeech": "'Get off! What the f—' Combative, uncooperative, will not tolerate mask."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 118,
+        "bpSys": 138,
+        "bpDia": 86,
+        "respRate": 24,
+        "spo2": 82,
+        "etco2": 38,
+        "temp": 36.6,
+        "tempF": 97.9,
+        "obstruction": 45,
+        "glucose": 92,
+        "trendTimeSeconds": 20,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": true, "cvpVisible": true }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-aspiration",
+          "shortAction": "Recognize aspiration event (new crackles + hypoxia after naloxone)",
+          "protocolExcerpt": "Performance Measures: Frequency of patients who develop adverse effects or complications (recurrent respiratory depression or decreased mental status, aspiration pneumonia or pulmonary edema). Pertinent Assessment Findings: The risk of respiratory arrest with subsequent cardiac arrest from an opioid overdose as well as hypoxia (pulse oximetry less than 94%), hypercarbia, and aspiration may be increased when other substances such as alcohol, benzodiazepines, or other medications have also been taken by the patient.",
+          "priority": "critical",
+          "rationale": "Naming what happened is the first step in a structured recovery. Document accurately for ED.",
+          "protocolReference": "MATC: Opioid Poisoning/Overdose"
+        },
+        {
+          "id": "suction-combative",
+          "shortAction": "Suction with Yankauer; coach patient; lateral position if tolerated",
+          "protocolExcerpt": "Open and maintain patent airway. If needed, Suction airway: for significantly contaminated airways, consider utilizing a suction assisted laryngeal airway decontamination (SALAD) technique. Patient Safety Considerations: Suctioning to limit aspiration is a priority, since it is associated with development of hospital acquired pneumonia and related increases in ICU stay and mortality.",
+          "priority": "critical",
+          "rationale": "Removing residual gastric contents is essential; an awake combative patient makes it much harder than it would have been pre-naloxone.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "high-flow-o2",
+          "shortAction": "NRB at 15 LPM; target SpO2 ≥94%; consider NIV if tolerated and stable",
+          "protocolExcerpt": "Administer oxygen if needed for air hunger or respiratory distress and titrate to a target SPO2 of 94–98%. Depending on patient presentation, this may be accomplished with nasal cannula, nonrebreather, BVM, NIV. Non-invasive ventilation (NIV) should be considered early for severe respiratory distress or impending respiratory failure.",
+          "priority": "critical",
+          "rationale": "High-flow O2 supports the V/Q mismatch from aspiration injury. NIV only if the patient can tolerate the mask.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "do-not-redose-narcan",
+          "shortAction": "Do NOT redose naloxone — RR is now adequate; resist reflex",
+          "protocolExcerpt": "Treatments and Interventions: Regardless of the doses of naloxone administered, airway management with provision of adequate oxygenation and ventilation is the primary goal in patients with confirmed or suspected opioid overdose. Patient Safety Considerations: Opioid withdrawal — Patients with altered mental status secondary to an opioid overdose may become agitated or violent following naloxone administration due to opioid withdrawal therefore the goal is to use the lowest dose as possible to avoid precipitating withdrawal.",
+          "priority": "important",
+          "rationale": "More naloxone doesn't fix aspiration. The patient is hypoxic from lung injury, not from opioid effect.",
+          "protocolReference": "MATC: Opioid Poisoning/Overdose"
+        },
+        {
+          "id": "rapid-transport-aspiration",
+          "shortAction": "Expedite transport; notify ED of aspiration event + naloxone dose/route",
+          "protocolExcerpt": "Transport to the closest appropriate hospital for airway stabilization when respiratory failure cannot be successfully managed in the prehospital setting. Key Documentation Elements: Airway management. Naloxone dose and route of administration. Clinical response to medication administration.",
+          "priority": "critical",
+          "rationale": "Aspiration pneumonitis is going to deteriorate. ED needs lead time for likely intubation and antibiotics.",
+          "protocolReference": "MATC: Opioid Poisoning/Overdose"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

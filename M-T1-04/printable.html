@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Allergic Reaction without Anaphylaxis — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Allergic Reaction without Anaphylaxis</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Marcus Delgado</strong></span><span class="patient-chip">38 years male</span><span class="patient-chip">181 lbs (82 kg)</span><span class="patient-chip">5'10"</span><span class="patient-chip">CC: Hives and itching after eating at a family barbecue</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Medic 4, respond Code 2 to 1812 Sycamore Drive for a 38-year-old male with an allergic reaction and hives. Patient is conscious and breathing. Caller is family member.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Single-family residence, large backyard with a picnic table and a charcoal grill. Patient seated at the picnic table in the shade. Adequate access via a side gate.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">1645 Saturday afternoon, sunny, ~78°F ambient</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. No pets loose, no agitated bystanders. Charcoal grill is at idle but cooling. Family is cooperative.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Patient's sister (host of the barbecue) — calm, knows patient's history, confirms timing of meal and onset of rash. Several other family members present at a distance, not interfering.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Diffuse raised pink/red wheals (urticaria) visible on patient's forearms, upper chest, and neck</li><li>Patient is scratching arms and chest intermittently</li><li>No facial swelling, no lip/tongue swelling, no audible stridor</li><li>Patient is speaking in full sentences without effort</li><li>Plates with leftover food (including a clearly labeled shrimp dish) still on the picnic table</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">Patient is a 38-year-old male who developed diffuse, raised, itchy red welts across his chest, arms, and upper back about 20 minutes ago, while at a family barbecue. Eruption began roughly 30 minutes after eating. He reports the rash started on his forearms and 'spread fast' across his chest. He is itchy but specifically denies any throat tightness, voice change, trouble breathing, chest tightness, lightheadedness, abdominal cramping, nausea, vomiting, or diarrhea. He has never had a reaction like this before but says a cousin mentioned shrimp was in one of the side dishes — he tried to avoid it but is not sure. He took no medications prior to EMS arrival.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">Shellfish (per patient — 'mom told me I had a rash as a kid', never tested or confirmed), NKDA</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Loratadine 10 mg PO PRN seasonal allergies (last dose &gt;1 week ago)</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Seasonal allergic rhinitis, No prior anaphylaxis, No asthma</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Grilled chicken, pasta salad, and a side dish containing shrimp (suspected) ~50 minutes ago at family barbecue</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Family member called 911 after patient developed widespread hives and persistent itching at a backyard barbecue. Patient is sitting at a picnic table when EMS arrives, scratching his arms and chest, looking uncomfortable but otherwise calm.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">Crew arrives to find a 38-year-old male seated at a picnic table, alert and conversational, with diffuse hives across his chest, arms, and upper back. He is itchy and uncomfortable but in NO respiratory distress, voice is normal, no lip or tongue swelling, no stridor, no wheezing, no GI symptoms, no hypotension. Per the MATC Anaphylaxis and Allergic Reaction protocol, this is a single-organ-system (skin only) reaction — a non-anaphylactic allergic reaction. The clinical task is to deliberately work through the anaphylaxis criteria (airway, breathing, circulation, GI, skin) and conclude that the patient does NOT meet criteria, then treat proportionally with diphenhydramine — NOT epinephrine.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Rhythm</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">88</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">122/78</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">98%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">16</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">102</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-maintained. No oropharyngeal edema. No lip, tongue, or uvular swelling. Voice clear and normal in pitch — no hoarseness.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous, regular, unlabored. No accessory muscle use. Speaking in full sentences. Lung sounds clear and equal bilaterally — no wheezing, no stridor.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse strong and regular. Cap refill &lt;2 seconds. No diaphoresis. Skin warm.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink (with diffuse urticaria) · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL, 4 mm bilaterally</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities normally; full grip strength bilaterally</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Speaking calmly in full sentences: 'I'm just really itchy. My throat feels normal, I can breathe fine — I just want this rash to stop.'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Diffuse raised wheals across chest, arms, and upper back</li><li>Active scratching, particularly forearms and chest</li><li>No angioedema (lips, tongue, eyelids all normal)</li><li>No throat tightness reported on direct questioning</li><li>No nausea, vomiting, abdominal cramping, or diarrhea</li><li>No lightheadedness, syncope, or chest tightness</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Scene size-up and BSI; identify likely allergen exposure</div></div>
+        <div class="action-excerpt">Key Considerations: History of Present Illness — Onset and location; Insect sting or bite; Food allergy/exposure; New clothing, soap, detergent; Past history of reactions; Medication history.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Assess airway for edema, voice change, stridor — none present</div></div>
+        <div class="action-excerpt">Assessment: Evaluate for patent airway and presence of oropharyngeal edema.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Auscultate lungs and assess work of breathing — clear, no wheeze</div></div>
+        <div class="action-excerpt">Assessment: Auscultate for wheezing and assess level of respiratory effort.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Assess perfusion; obtain full vitals — BP 122/78, HR 88, SpO2 98%</div></div>
+        <div class="action-excerpt">Assessment: Assess for adequacy of perfusion.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Directly ask about GI symptoms — denies nausea, vomiting, cramping</div></div>
+        <div class="action-excerpt">Anaphylaxis – More severe and is characterized by an acute onset involving: Two or more of the following occurring rapidly after exposure to a likely allergen: Skin and/or mucosal involvement; Respiratory compromise; Persistent gastrointestinal symptoms (vomiting, abdominal pain, diarrhea); Hypotension or associated symptoms.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Classify as non-anaphylactic allergic reaction (skin only, single system)</div></div>
+        <div class="action-excerpt">Non-anaphylactic Allergic Reaction: Signs involving only one organ system (e.g., localized angioedema that does not compromise the airway, or not associated with vomiting; hives alone).</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">Apply cardiac monitor and SpO2; obtain 12-lead per local practice</div></div>
+        <div class="action-excerpt">Transport as soon as possible, and perform ongoing assessment as indicated. Cardiac monitoring is not required, but should be considered for those with known heart problems or who received multiple doses of epinephrine.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Benadryl given</div>
+        <div class="phase-trigger">Trigger: Crew worked through the anaphylaxis criteria, found the patient meets none of them (no airway compromise, no respiratory distress, no hypotension, no GI symptoms — skin involvement only), and chose the protocol-appropriate treatment: diphenhydramine for urticaria/pruritus, no epinephrine.</div>
+        <div class="phase-desc">Crew has correctly classified the reaction as non-anaphylactic (single-system, skin only) and administered diphenhydramine per protocol. Over the next 10-15 minutes, itching softens, hives begin to fade, and the patient remains hemodynamically stable with a clear airway and normal breathing. Crew completes the transport with serial reassessments.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Rhythm</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">84</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">124/78</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">98%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">14</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">102</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent. No oropharyngeal edema. Voice normal.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous, unlabored. Lungs clear bilaterally. Speaking in full sentences.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse strong and regular. Cap refill &lt;2 seconds.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink (urticaria fading) · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL, 4 mm</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities normally</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"'Yeah, that medicine helped a lot. The itching is way down. My throat still feels fine.'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Hives notably less raised and pink than on initial contact</li><li>Itching reported as 'much better — maybe a 3 out of 10'</li><li>Patient drowsy from diphenhydramine but easily arousable and conversant</li><li>No new symptoms: still no throat tightness, no SOB, no GI complaints</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Diphenhydramine 50 mg IV/IM (82 kg × 1 mg/kg = 82 mg → cap at 50 mg max)</div></div>
+        <div class="action-excerpt">For urticaria or pruritus, administer a diphenhydramine 1 mg/kg, up to maximum dose of 50 mg IM, IV, or PO). The IV route is preferred for the patient in severe symptoms.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Explicitly DO NOT give epinephrine — patient does not meet criteria</div></div>
+        <div class="action-excerpt">If signs of allergic reaction without signs of anaphylaxis, go to Step 8.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess airway, breathing, perfusion every 5 minutes en route</div></div>
+        <div class="action-excerpt">Transport as soon as possible, and perform ongoing assessment as indicated. Constant monitoring of the patient's airway and breathing is essential.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Transport to closest appropriate facility for ED evaluation</div></div>
+        <div class="action-excerpt">Transport as soon as possible, and perform ongoing assessment as indicated.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Structured handoff: single-system reaction, Benadryl given, stable</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Medications given; Dose and concentration of epinephrine given; Route of epinephrine administration; Time of epinephrine administration; Signs and symptoms of the patient.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">IM Epi given without criteria</div>
+        <div class="phase-trigger">Trigger: Crew reached for IM epinephrine reflexively as soon as 'allergic reaction' was on the dispatch, without taking 60-90 seconds to confirm whether anaphylaxis criteria were actually met. Patient does NOT meet criteria — he has skin involvement only and no respiratory, circulatory, or GI signs. The drug produced its expected pharmacologic effects in a normotensive patient.</div>
+        <div class="phase-desc">Crew administered IM epinephrine 0.3 mg without first working through the anaphylaxis criteria. The patient does not have airway, breathing, perfusion, or GI involvement — this is a single-system (hives only) reaction that should have been treated with diphenhydramine alone. Within minutes of injection, the patient develops the expected catecholamine effects: marked tachycardia, modest hypertension, anxiety, fine tremor, and new chest tightness in an otherwise healthy 38-year-old. He is now MORE uncomfortable than before, with new symptoms iatrogenically produced.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">132</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">156/96</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">98%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">22</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">34</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">102</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, no edema, voice normal</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous and regular but slightly faster; lungs clear</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse strong, rapid, regular; cap refill &lt;2 seconds</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink (hives fading independently) · warm · mildly diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL, 4 mm</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Fine tremor of bilateral hands; full strength</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"'Was that shot supposed to make me feel like this? My chest feels weird and my heart is racing.'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Patient now reports 'my heart is pounding' and 'I feel really anxious'</li><li>New complaint of mild chest tightness/pressure — not present before epi</li><li>Fine bilateral hand tremor (catecholamine effect)</li><li>Hives are still present but no worse than baseline</li><li>Crew now realizing the symptoms developed AFTER the injection</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize symptoms are catecholamine effects, not anaphylaxis</div></div>
+        <div class="action-excerpt">Non-anaphylactic Allergic Reaction: Signs involving only one organ system (e.g., localized angioedema that does not compromise the airway, or not associated with vomiting; hives alone).</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Apply 12-lead ECG; monitor for ischemic changes</div></div>
+        <div class="action-excerpt">Cardiac monitoring is not required, but should be considered for those with known heart problems or who received multiple doses of epinephrine.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Diphenhydramine 50 mg IV/IM (82 kg × 1 mg/kg = 82 mg → cap at 50 mg max)</div></div>
+        <div class="action-excerpt">For urticaria or pruritus, administer a diphenhydramine 1 mg/kg, up to maximum dose of 50 mg IM, IV, or PO).</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Transport with monitoring; document indication for and effects of epi</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Medications given; Dose and concentration of epinephrine given; Route of epinephrine administration; Time of epinephrine administration; Signs and symptoms of the patient.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Progression missed en route</div>
+        <div class="phase-trigger">Trigger: Crew chose the correct initial treatment (diphenhydramine) but failed to reassess airway and breathing en route. Patient progressed from single-system (skin) to two-system (skin + respiratory) involvement — now meeting anaphylaxis criteria — and the crew has not noticed because lung sounds were not rechecked after the initial assessment.</div>
+        <div class="phase-desc">Crew correctly identified the initial reaction as non-anaphylactic and administered diphenhydramine. However, they did not perform serial reassessment of airway and breathing during transport. About 12 minutes into transport, the patient quietly developed new wheezing and mild dyspnea. With skin involvement still present and now respiratory compromise emerging, the patient NOW meets two-system anaphylaxis criteria. Because the crew was not actively listening to lung sounds, this transition was missed. The patient is becoming more anxious, breathing faster, and beginning to use accessory muscles.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">108</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">118/76</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">94%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">24</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">32</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">102</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, but voice slightly tight; no overt edema yet</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Faster, mildly labored; expiratory wheezing now audible bilaterally; mild accessory muscle use</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse rapid; cap refill &lt;2 seconds</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink (hives still present) · warm · mildly diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL, 4 mm</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Full strength</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"'I feel like my chest is getting kind of tight... is that normal?'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>New diffuse expiratory wheeze on auscultation (would be heard if checked)</li><li>Patient now leaning forward slightly, using subtle accessory muscles</li><li>Patient reports 'a little harder to take a deep breath now' if asked</li><li>Hives still present; itching no better despite Benadryl</li><li>Two-system involvement (skin + respiratory) — anaphylaxis criteria now met</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess and recognize progression to anaphylaxis (skin + respiratory)</div></div>
+        <div class="action-excerpt">Anaphylaxis – More severe and is characterized by an acute onset involving: Two or more of the following occurring rapidly after exposure to a likely allergen: Skin and/or mucosal involvement (urticaria, itchy, swollen tongue/lips); Respiratory compromise (dyspnea, wheezing, stridor, hypoxemia).</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Epinephrine 0.3 mg IM anterolateral thigh (1 mg/mL, adult ≥25 kg)</div></div>
+        <div class="action-excerpt">Epinephrine administration is the primary treatment for anaphylaxis. If signs of anaphylaxis, administer epinephrine 1 mg/mL at the following dose and route: Adult (25 kg or more) 0.3 mg IM in the anterolateral thigh.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Albuterol 2.5 mg nebulized for active wheezing</div></div>
+        <div class="action-excerpt">If respiratory distress with wheezing is present, consider administering Albuterol 2.5–5 mg nebulized AND/OR Epinephrine 1 mg/mL, 5 mL nebulized.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess every 5 minutes; repeat IM epi q5-15 min if symptoms persist</div></div>
+        <div class="action-excerpt">If signs of anaphylaxis and hypoperfusion persist following the first dose of epinephrine, additional IM epinephrine can be repeated q5–15 minutes at above noted doses.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Notify ED of progression to anaphylaxis; update with IM epi given</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Medications given; Dose and concentration of epinephrine given; Route of epinephrine administration; Time of epinephrine administration; Signs and symptoms of the patient.</div>
+        <div class="action-ref">↳ MATC: Anaphylaxis and Allergic Reaction</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

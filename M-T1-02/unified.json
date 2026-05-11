@@ -1,0 +1,448 @@
+{
+  "meta": {
+    "id": "M-T1-02",
+    "scenarioId": "M-T1-02",
+    "name": "CVA/Stroke with Clear Onset Time",
+    "version": 1,
+    "difficulty": "beginner",
+    "category": "Medical",
+    "protocols": [
+      "cv-stroke-tia",
+      "medical-altered-mental-status",
+      "medical-hypoglycemia"
+    ],
+    "totalTimeSeconds": 1200,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": ["stroke", "CVA", "last known well", "assessment", "Tier 1", "time-critical"]
+  },
+  "patient": {
+    "name": "Margaret Ellsworth",
+    "age": 67,
+    "ageUnit": "years",
+    "sex": "female",
+    "weight": 72,
+    "weightLbs": 159,
+    "height": 165,
+    "chiefComplaint": "Sudden right-sided weakness and difficulty speaking",
+    "history": {
+      "hpi": "Patient was sitting at the breakfast table with her husband at approximately 0810, eating toast and reading the newspaper, when she suddenly dropped her coffee cup and could not pick it up with her right hand. Her husband noticed her face 'pulled to one side' and that her speech became garbled — she could understand him but could not form words clearly. She tried to stand but her right leg gave out. Husband helped her into a recliner and called 911 immediately. Husband states symptoms began abruptly at exactly 0810 — he checked the kitchen clock when it happened. No headache, no chest pain, no recent fall, no preceding warning symptoms. She has been awake since 0645 and was completely normal until 0810.",
+      "pastMedical": [
+        "Atrial fibrillation (diagnosed 3 years ago, on anticoagulation)",
+        "Hypertension",
+        "Hyperlipidemia",
+        "Type 2 diabetes mellitus (diet-controlled)",
+        "Osteoarthritis of the knees"
+      ],
+      "medications": [
+        "Apixaban 5 mg PO BID (last dose this morning at 0700)",
+        "Metoprolol succinate 50 mg PO daily",
+        "Lisinopril 10 mg PO daily",
+        "Atorvastatin 40 mg PO daily",
+        "Metformin 500 mg PO BID"
+      ],
+      "allergies": ["Sulfa drugs — rash"],
+      "lastOralIntake": "Half a slice of toast and a few sips of coffee at 0805 (5 minutes before onset)",
+      "events": "Husband witnessed sudden onset at 0810 while both were at the breakfast table. Symptoms have been present and unchanged for approximately 25 minutes by the time EMS makes patient contact. No trauma, no fall, no seizure activity observed."
+    }
+  },
+  "scene": {
+    "dispatch": "Engine 4, Medic 11, respond to 1827 Linden Crescent for a 67-year-old female, weakness and can't speak right. Husband on scene.",
+    "location": "Single-family home, breakfast nook off the kitchen on the ground floor. Patient seated in a recliner the husband moved her into. Good lighting, easy stretcher access through front door.",
+    "time": "0835 Tuesday morning",
+    "safety": "Scene safe. No pets restrained, no weapons, no environmental hazards. Husband cooperative and a clear historian.",
+    "bystanders": "Husband (witness to onset) — calm, organized, has her medication list pulled up on his phone. States, 'It happened at 0810 — I looked at the clock right when it happened.' Adult daughter on the way but not yet on scene.",
+    "visualCues": [
+      "Coffee cup on its side on the kitchen table; coffee spilled across the newspaper",
+      "Half-eaten slice of toast on a plate at the patient's place setting",
+      "Patient's right arm rests limp in her lap; her face is visibly asymmetric on the right",
+      "Pill organizer on the counter, today's morning compartment is empty",
+      "Wall clock visible in the kitchen — confirms current time"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 67-year-old female with sudden-onset right-sided weakness, right facial droop, and expressive aphasia witnessed by her husband at exactly 0810 — approximately 25 minutes ago. The history is clean and the LKW is precise. The presentation looks like a classic stroke, but the protocol still requires ruling out hypoglycemia as a stroke mimic before activating the stroke pathway. This scenario rewards systematic assessment: stroke scale, finger-stick glucose, anticoagulant history, BP both arms, 12-lead to screen for atrial fibrillation, and precise documentation of LKW.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 4, "motor": 6 },
+        "airway": "Patent, self-maintained; no stridor, no secretions",
+        "breathing": "Spontaneous, regular, unlabored; clear lung sounds bilaterally",
+        "circulation": "Radial pulse present at the left wrist (regular); right radial weaker; cap refill 2 seconds",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL, 4 mm bilaterally; conjugate gaze, no neglect to the left field",
+        "motorFunction": "Right facial droop (lower face, sparing forehead); right arm drift to bed within 5 seconds when held out; right leg weakness — cannot lift heel off the recliner; left side strength intact and symmetric",
+        "otherFindings": [
+          "Expressive aphasia — patient understands commands and tries to speak but produces garbled, effortful single words",
+          "Patient is oriented x4 by gesture/nod when asked simple yes/no questions",
+          "Husband states symptoms began at exactly 0810; he checked the clock",
+          "No tongue bite, no incontinence, no signs of seizure or trauma",
+          "No headache reported (patient shakes head 'no' to headache question)"
+        ],
+        "patientSpeech": "Effortful, garbled single words; cannot complete the standard stroke-scale phrase; says 'yes' and 'no' clearly when asked yes/no questions"
+      },
+      "monitorState": {
+        "ecgRhythm": "Atrial Fibrillation",
+        "ecgWaveform": 38,
+        "hr": 88,
+        "bpSys": 178,
+        "bpDia": 96,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 102,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-scene-primary",
+          "shortAction": "Scene size-up, BSI, and rapid primary survey (ABC)",
+          "protocolExcerpt": "Airway: Make sure airway remains patent; reposition patient as needed. Breathing: Look for respiratory depression; check SPO2, EtCO2, and CO detector readings. Circulation: Look for signs of poor perfusion.",
+          "priority": "critical",
+          "rationale": "Standard EMS approach; confirms the patient is stable enough for an unhurried focused stroke assessment.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "act-stroke-scale",
+          "shortAction": "Perform validated stroke scale (Cincinnati: face/arm/speech)",
+          "protocolExcerpt": "Use a validated prehospital stroke scale that may include, but is not limited to: Facial smile/grimace – ask patient to smile; Arm drift – close eyes and hold out arms for count of 10 seconds; Speech – ask patient to say \"You can't teach an old dog new tricks\".",
+          "priority": "critical",
+          "rationale": "Three findings positive (face, arm, speech) — high probability of stroke; drives stroke-alert activation.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "act-severity-scale",
+          "shortAction": "Perform stroke severity screen (vision, neglect, aphasia) for LVO",
+          "protocolExcerpt": "Use a validated prehospital stroke severity scale that may include, but is not limited to: Vision changes; Sensory neglect; Aphasia.",
+          "priority": "important",
+          "rationale": "Severity screen identifies likely large vessel occlusion (LVO), which drives transport to a thrombectomy-capable center.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "act-lkw-time",
+          "shortAction": "Document precise last-known-well time and source (husband: 0810)",
+          "protocolExcerpt": "Determine \"last known well\" time. History – \"last known well\" and source of that information. Key Documentation Elements: \"Last known well\" must be specific. If the patient was last known well prior to bedtime the night before, this is the time to be documented (not time the patient woke up with symptoms present).",
+          "priority": "critical",
+          "rationale": "LKW is the single most important piece of data for thrombolytic and thrombectomy eligibility. Husband witnessed onset — this is a gold-standard LKW.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "act-bgl",
+          "shortAction": "Obtain finger-stick blood glucose to rule out hypoglycemic stroke mimic",
+          "protocolExcerpt": "Check blood glucose level (BGL). Treat only if glucose less than 60 mg/dL. Evaluate for the presence of stroke mimics including: Hypoglycemia; Seizure; Sepsis; Migraine; Intoxication.",
+          "priority": "critical",
+          "rationale": "Hypoglycemia is the #1 stroke mimic. Glucose <60 mg/dL is a protocol exclusion for the stroke pathway. Must be checked on every suspected stroke.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "act-anticoag-history",
+          "shortAction": "Identify anticoagulant use (apixaban) and document last dose",
+          "protocolExcerpt": "Pertinent historical data includes: Patient is taking warfarin or any anticoagulant medication. History of recent trauma. History of recent seizure. History of recent surgery. History of recent hemorrhage (e.g., GI bleed).",
+          "priority": "critical",
+          "rationale": "Anticoagulant status is a critical handoff datum — changes thrombolytic eligibility and bleeding risk assessment at the receiving stroke center.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "act-bp-both-arms",
+          "shortAction": "Obtain blood pressure in both arms; cardiac monitor on",
+          "protocolExcerpt": "Place on cardiac monitor.",
+          "priority": "important",
+          "rationale": "Aortic dissection can mimic stroke; BP asymmetry between arms is a red flag. Monitor identifies the underlying atrial fibrillation here.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "act-12-lead",
+          "shortAction": "Acquire 12-lead EKG — screen for atrial fibrillation and STEMI",
+          "protocolExcerpt": "Acquire 12-lead EKG, if possible.",
+          "priority": "important",
+          "rationale": "A-fib is a major embolic-stroke source; documenting it now informs the receiving facility. Also screens for concurrent STEMI.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "act-spo2-target",
+          "shortAction": "Apply SpO2; supplemental O2 only if SpO2 < 94%",
+          "protocolExcerpt": "Administer oxygen as appropriate with a target of achieving 94–98% saturation.",
+          "priority": "important",
+          "rationale": "Routine high-flow O2 is not indicated in normoxic stroke patients; target 94-98%.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "stroke-alert",
+          "if": "Full assessment completed; LKW + glucose documented",
+          "condition": "Crew performs the systematic assessment — stroke scale, severity screen, finger-stick glucose (102 mg/dL, rules out hypoglycemia), anticoagulant history (apixaban, last dose 0700), BP both arms, 12-lead (atrial fibrillation), and precise LKW (0810, husband-witnessed). Stroke pathway is confirmed appropriate and the crew is ready to activate.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["act-stroke-scale", "act-lkw-time", "act-bgl", "act-anticoag-history"]
+        },
+        {
+          "targetPhaseId": "no-glucose-checked",
+          "if": "Stroke alert called without finger-stick glucose",
+          "condition": "Crew anchors on the obvious stroke findings and calls a stroke alert without performing the protocol-mandated finger-stick glucose check. The hypoglycemia exclusion was never ruled out at the scene.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["act-bgl"]
+        },
+        {
+          "targetPhaseId": "no-lkw",
+          "if": "Transport begun without precise LKW from husband",
+          "condition": "Crew packages and transports without taking the time to obtain a precise last-known-well time from the husband. The PCR documents only 'found this way' or 'this morning,' leaving the ED unable to determine thrombolytic eligibility.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["act-lkw-time"]
+        }
+      ]
+    },
+    {
+      "id": "stroke-alert",
+      "name": "Stroke alert activated",
+      "description": "Systematic assessment confirms: positive stroke scale (3/3), positive severity findings (expressive aphasia, right-sided neglect of affected limbs), glucose 102 mg/dL (hypoglycemia ruled out), apixaban on board with last dose at 0700, atrial fibrillation on the 12-lead, LKW exactly 0810. Crew activates a stroke alert with the receiving thrombectomy-capable center, documents LKW precisely, elevates head of stretcher 15-30 degrees, avoids treating the hypertension and avoids aspirin (cannot distinguish ischemic vs hemorrhagic in the field), and minimizes scene time.",
+      "triggerCondition": "The crew completed a systematic stroke workup at the scene: stroke scale positive in all three Cincinnati elements, hypoglycemia ruled out by finger-stick (102 mg/dL), anticoagulant use identified (apixaban, last dose 0700), atrial fibrillation captured on 12-lead, and a precise husband-witnessed LKW of 0810 documented. The stroke pathway is now confirmed appropriate, the patient is well within the thrombolytic window, and the crew is ready to activate.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 4, "motor": 6 },
+        "airway": "Patent, self-maintained",
+        "breathing": "Spontaneous, regular, unlabored",
+        "circulation": "Radial pulse irregularly irregular (consistent with a-fib on monitor); skin warm and dry",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL, 4 mm; conjugate gaze",
+        "motorFunction": "Right hemiparesis stable — right arm drift, right leg weakness, right facial droop unchanged from initial exam",
+        "otherFindings": [
+          "Glucose: 102 mg/dL — hypoglycemia ruled out",
+          "12-lead: atrial fibrillation, rate ~88, no acute ST changes",
+          "BP right arm 178/96, left arm 174/94 — symmetric (aortic dissection unlikely)",
+          "Apixaban last dose 0700 — confirmed with husband",
+          "Head of stretcher elevated 20 degrees; neck in neutral alignment"
+        ],
+        "patientSpeech": "Effortful, garbled; able to nod yes/no appropriately to questions"
+      },
+      "monitorState": {
+        "ecgRhythm": "Atrial Fibrillation",
+        "ecgWaveform": 38,
+        "hr": 88,
+        "bpSys": 176,
+        "bpDia": 94,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 102,
+        "trendTimeSeconds": 25,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-stroke-alert",
+          "shortAction": "Activate stroke alert with thrombectomy-capable receiving facility",
+          "protocolExcerpt": "Early hospital notification per local stroke plan that should include any suspected large vessel occlusion (LVO) stroke. Transport and destination decisions should be based on local resources and stroke system of care. Destination hospitals may include: Stroke Ready; Primary Stroke Center; Thrombectomy-capable Stroke Center; Comprehensive Stroke Center.",
+          "priority": "critical",
+          "rationale": "Pre-arrival notification mobilizes the stroke team. LVO findings (aphasia + dense hemiparesis) favor a thrombectomy-capable destination.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "act-hob-elevated",
+          "shortAction": "Elevate head of stretcher 15-30 degrees; neutral neck alignment",
+          "protocolExcerpt": "Patient Safety Considerations: Prevent aspiration – elevate head of stretcher 15–30 degrees if systolic BP greater than 100 mmHg. Maintain head and neck in neutral alignment, without flexing the neck.",
+          "priority": "important",
+          "rationale": "Reduces aspiration risk in a patient with bulbar/aphasic findings while preserving cerebral perfusion.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "act-no-bp-treatment",
+          "shortAction": "Do NOT treat the hypertension — permissive HTN preserves penumbra",
+          "protocolExcerpt": "Key Considerations: Do not treat hypertension.",
+          "priority": "critical",
+          "rationale": "Aggressive BP reduction worsens infarct extension by reducing cerebral perfusion in the ischemic penumbra. Explicit protocol prohibition.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "act-no-aspirin",
+          "shortAction": "Do NOT give aspirin — cannot distinguish ischemic vs hemorrhagic prehospital",
+          "protocolExcerpt": "Exclusion Criteria: If trauma and Glasgow Coma Score (GCS) less than or equal to 13, treat per the Head Injury Guideline and General Trauma Management Guideline.",
+          "priority": "critical",
+          "rationale": "MATC stroke protocol does not authorize prehospital aspirin. CT scan distinguishes ischemic from hemorrhagic — that decision belongs to the ED.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "act-iv-access",
+          "shortAction": "Establish IV access; avoid multiple attempts",
+          "protocolExcerpt": "Patient Safety Considerations: Avoid multiple IV attempts. Protect paralyzed limbs from injury.",
+          "priority": "important",
+          "rationale": "IV is needed for ED imaging and thrombolytics. Avoid multiple sticks (anticoagulated patient + thrombolytic candidate) and avoid the paretic right arm.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "act-scene-time",
+          "shortAction": "Minimize scene time; package and transport without delay",
+          "protocolExcerpt": "Performance Measures: Minimize EMS scene time. Hospital stroke team pre-arrival alert or activation occurred as early as possible after positive stroke assessment finding.",
+          "priority": "critical",
+          "rationale": "Time is brain. Every minute on scene reduces the window for intervention.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "act-handoff",
+          "shortAction": "Structured handoff: LKW 0810, Cincinnati 3/3, glucose 102, apixaban 0700",
+          "protocolExcerpt": "Key Documentation Elements: \"Last known well\" must be specific. Blood glucose results. Specific validated stroke scale used and findings. Time of notification to receiving hospital.",
+          "priority": "critical",
+          "rationale": "The stroke team's clock starts the moment they hear LKW. A precise, structured handoff is the deliverable of prehospital stroke care.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "no-glucose-checked",
+      "name": "Stroke alert, no glucose checked",
+      "description": "Crew anchors on the obvious deficits, calls a stroke alert, and transports without performing a finger-stick blood glucose at the scene. The patient does have a true stroke, but skipping the protocol-mandated hypoglycemia rule-out is a documentation and competency failure. On arrival the stroke team takes the patient straight to CT — but because the prehospital glucose was never recorded, the receiving facility delays activation by 4-6 minutes while their own finger-stick is performed and resulted. In a hypoglycemic-mimic patient this same shortcut would have meant a stroke bay was occupied and treatment was withheld. The lesson: the glucose check is non-negotiable on every AMS / stroke patient.",
+      "triggerCondition": "Crew did not perform a finger-stick blood glucose at the scene. They activated a stroke alert and began transport based on stroke-scale findings alone, bypassing the protocol's explicit hypoglycemia rule-out step. While the underlying diagnosis here is genuinely stroke, the procedural error reflects unsafe practice that in a different patient would have meant missed hypoglycemia.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 4, "motor": 6 },
+        "airway": "Patent, self-maintained",
+        "breathing": "Spontaneous, regular, unlabored",
+        "circulation": "Radial pulse irregular; skin warm and dry",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL, 4 mm",
+        "motorFunction": "Right hemiparesis and right facial droop unchanged",
+        "otherFindings": [
+          "No prehospital glucose recorded — gap in the workup",
+          "ED finger-stick on arrival: 102 mg/dL (i.e., the diagnosis WAS stroke, but the crew never knew that prehospital)",
+          "Stroke team activation delayed 4-6 minutes while ED ruled out hypoglycemia",
+          "Debrief teaching point: in a hypoglycemic-mimic patient this same omission would have meant missed treatment and an unnecessary stroke-bay activation"
+        ],
+        "patientSpeech": "Effortful, garbled"
+      },
+      "monitorState": {
+        "ecgRhythm": "Atrial Fibrillation",
+        "ecgWaveform": 38,
+        "hr": 90,
+        "bpSys": 180,
+        "bpDia": 98,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 102,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-recognize-mimic-gap",
+          "shortAction": "Recognize missed hypoglycemia rule-out; perform finger-stick en route",
+          "protocolExcerpt": "Check blood glucose level (BGL). Treat only if glucose less than 60 mg/dL. Evaluate for the presence of stroke mimics including: Hypoglycemia; Seizure; Sepsis; Migraine; Intoxication.",
+          "priority": "critical",
+          "rationale": "Recovery step. Performance Measures: 'Blood glucose level obtained' — protocol does not allow the step to be skipped, only deferred.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "act-update-handoff-glucose",
+          "shortAction": "Add glucose result to handoff so ED does not duplicate the test",
+          "protocolExcerpt": "Key Documentation Elements: Blood glucose results.",
+          "priority": "important",
+          "rationale": "Once the glucose is finally obtained, communicating it allows the ED to skip their own check and accelerate activation.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "no-lkw",
+      "name": "Stroke alert without precise LKW",
+      "description": "Crew packages quickly and transports without obtaining a precise last-known-well time from the husband — the PCR will document only 'found this way' or 'symptoms this morning.' On arrival, the ED stroke team cannot establish whether the patient is inside the 4.5-hour thrombolytic window, and without a clear LKW from a witness, thrombolytic therapy is held until a more definitive history can be obtained — by which point the window may close. The husband was on scene with the answer. Taking 30 seconds to ask 'When exactly did this start?' would have preserved her chance at intervention.",
+      "triggerCondition": "Crew did not obtain a specific last-known-well time from the husband, despite the husband being present and capable of providing one. The PCR will reflect 'found this way' or 'symptoms this morning,' leaving the receiving facility unable to determine thrombolytic eligibility from prehospital documentation.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 4, "motor": 6 },
+        "airway": "Patent, self-maintained",
+        "breathing": "Spontaneous, regular, unlabored",
+        "circulation": "Radial pulse irregular; skin warm and dry",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL, 4 mm",
+        "motorFunction": "Right hemiparesis and right facial droop unchanged",
+        "otherFindings": [
+          "No specific LKW time on the PCR — 'found this way' is what the receiving facility sees",
+          "Stroke team unable to confirm thrombolytic eligibility window from prehospital data",
+          "Treatment delayed while ED attempts to reach husband by phone for confirmation",
+          "Debrief teaching point: husband was the gold-standard witness and was right there on scene — a 30-second question would have preserved the intervention window"
+        ],
+        "patientSpeech": "Effortful, garbled"
+      },
+      "monitorState": {
+        "ecgRhythm": "Atrial Fibrillation",
+        "ecgWaveform": 38,
+        "hr": 90,
+        "bpSys": 178,
+        "bpDia": 96,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 102,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-recover-lkw",
+          "shortAction": "Radio husband's phone or back to scene for precise LKW (0810)",
+          "protocolExcerpt": "Determine \"last known well\" time. History – \"last known well\" and source of that information. \"Last known well\" must be specific. If the patient was last known well prior to bedtime the night before, this is the time to be documented (not time the patient woke up with symptoms present).",
+          "priority": "critical",
+          "rationale": "Recovery step. The husband's witness time is the gold standard; getting it (even late) preserves at least some chance of thrombolytic eligibility once documented.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "act-update-handoff-lkw",
+          "shortAction": "Update receiving facility with corrected LKW and source",
+          "protocolExcerpt": "Key Documentation Elements: \"Last known well\" must be specific. Time of notification to receiving hospital. Performance Measures: Documentation of time \"last known well\".",
+          "priority": "critical",
+          "rationale": "ED clock for thrombolytic eligibility starts from LKW. Updating with the precise witnessed time may still salvage the intervention window.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

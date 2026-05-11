@@ -1,0 +1,523 @@
+{
+  "meta": {
+    "id": "M-T1-01",
+    "scenarioId": "M-T1-01",
+    "name": "Hypoglycemia Presenting as Altered Mental Status",
+    "version": 1,
+    "difficulty": "beginner",
+    "category": "Medical",
+    "protocols": [
+      "medical-altered-mental-status",
+      "medical-hypoglycemia",
+      "cv-stroke-tia"
+    ],
+    "totalTimeSeconds": 1200,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": ["AMS", "hypoglycemia", "stroke mimic", "assessment", "Tier 1"]
+  },
+  "patient": {
+    "name": "Daniel Whitaker",
+    "age": 67,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 86,
+    "weightLbs": 190,
+    "height": 178,
+    "chiefComplaint": "Altered mental status — confusion and slurred speech",
+    "history": {
+      "hpi": "Wife found patient sitting at the kitchen table around 0830 confused, unable to answer simple questions, with slurred speech and a slight droop on the right side of his face. He attempted to stand and was unsteady, leaning to the right. Symptoms began sometime between 0800 (when she last saw him normal) and 0830. He took his usual long-acting insulin last night and his rapid-acting insulin this morning at 0730, but never sat down to eat breakfast because he was working in the garage. Wife denies any complaint of headache, chest pain, fall, or trauma. He has been progressively more confused since she found him and is now barely responsive to her voice.",
+      "pastMedical": [
+        "Type 2 diabetes mellitus (insulin-dependent, 12 years)",
+        "Hypertension",
+        "Hyperlipidemia",
+        "GERD"
+      ],
+      "medications": [
+        "Insulin glargine 30 units SQ qHS",
+        "Insulin aspart sliding scale with meals",
+        "Lisinopril 20 mg PO daily",
+        "Atorvastatin 40 mg PO daily",
+        "Omeprazole 20 mg PO daily",
+        "Aspirin 81 mg PO daily"
+      ],
+      "allergies": ["NKDA"],
+      "lastOralIntake": "Dinner last night (~1830); skipped breakfast this morning",
+      "events": "Wife last saw patient normal at 0800 while she went upstairs to shower. Returned downstairs at 0830 to find him slumped at the kitchen table, confused, slurring his words, and with a right-sided facial droop. She called 911 immediately, fearing a stroke."
+    }
+  },
+  "scene": {
+    "dispatch": "Engine 12, Medic 7, respond Code 3 to 4218 Oakridge Lane for a 67-year-old male, altered mental status, possible stroke. Caller is the patient's wife.",
+    "location": "Single-family home, kitchen on the ground floor. Patient seated in a dining chair, slumped forward. Adequate lighting and access.",
+    "time": "0838 Saturday morning",
+    "safety": "Scene safe. No pets, no weapons, no environmental hazards. Wife is cooperative and present.",
+    "bystanders": "Wife (primary historian) — anxious but able to answer questions. Reports patient has been a diabetic for over a decade and 'never acts like this.' States he took his morning insulin but did not eat.",
+    "visualCues": [
+      "Insulin pen and used pen needles visible on the kitchen counter",
+      "Uneaten plate of toast and a full coffee cup on the table",
+      "Glucometer kit on the counter, lid open",
+      "Patient is diaphoretic — visible sweat on forehead and shirt collar"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 67-year-old male slumped at his kitchen table. He is confused, opens eyes only to voice, mumbles unintelligibly with slurred speech, and has an apparent right-sided facial droop. Skin is pale, cool, and diaphoretic. The presentation looks like a stroke at first glance, but the diaphoresis, tachycardia, and missed-meal-after-insulin history are subtle clues to hypoglycemia. A blood glucose check is the lynchpin assessment.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 3, "motor": 5 },
+        "airway": "Patent, self-maintained; no stridor or secretions",
+        "breathing": "Spontaneous, regular, unlabored; clear lung sounds bilaterally",
+        "circulation": "Radial pulse present, rapid and regular; cap refill 2 seconds",
+        "skin": { "color": "pale", "temperature": "cool", "moisture": "diaphoretic" },
+        "pupils": "PERRL, 4 mm bilaterally",
+        "motorFunction": "Mild right-sided weakness on grip; right facial droop present; moves all extremities to command but slowly",
+        "otherFindings": [
+          "Slurred, garbled speech",
+          "Unable to state name, day, or location",
+          "Diaphoresis out of proportion to scene/ambient temperature",
+          "No tongue bite, no incontinence",
+          "No signs of trauma"
+        ],
+        "patientSpeech": "Mumbles, words run together; cannot follow two-step commands"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 112,
+        "bpSys": 148,
+        "bpDia": 92,
+        "respRate": 18,
+        "spo2": 97,
+        "etco2": 36,
+        "temp": 36.6,
+        "tempF": 97.9,
+        "obstruction": 0,
+        "glucose": 38,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-scene-safety",
+          "shortAction": "Scene size-up and BSI; confirm scene safe before approach",
+          "protocolExcerpt": "Environment: Survey for pills, paraphernalia, substance use, medication patches, medical devices, ambient temperature, social indicators of neglect, carbon monoxide exposures, multiple casualties with same complaint.",
+          "priority": "critical",
+          "rationale": "Standard EMS approach; identifies environmental clues (insulin pen, uneaten food) that point to hypoglycemia.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "act-primary-abc",
+          "shortAction": "Rapid primary survey (ABC); confirm patent airway and adequate breathing",
+          "protocolExcerpt": "Airway: Make sure airway remains patent; reposition patient as needed. Breathing: Look for respiratory depression; check SPO2, EtCO2, and CO detector readings. Circulation: Look for signs of poor perfusion.",
+          "priority": "critical",
+          "rationale": "AMS patients are at risk for airway compromise; foundation of every AMS workup.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "act-gcs-avpu",
+          "shortAction": "Document GCS and AVPU; note focal neurologic deficits",
+          "protocolExcerpt": "Glasgow Coma Score and/or AVPU. Pupils. Stroke assessment tool including focal neurologic findings.",
+          "priority": "critical",
+          "rationale": "Baseline neuro exam essential for AMS; documents focal deficits seen at presentation.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "act-monitor-spo2",
+          "shortAction": "Apply SpO2, cardiac monitor, and 4-lead ECG",
+          "protocolExcerpt": "EKG or cardiac monitor: arrhythmia limiting perfusion.",
+          "priority": "important",
+          "rationale": "Identify arrhythmia as a cause of poor perfusion/AMS; baseline for ongoing monitoring.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "act-bgl",
+          "shortAction": "Obtain finger-stick blood glucose — the lesson-critical assessment",
+          "protocolExcerpt": "Blood glucose level. Glucose [Refer to Hypoglycemia Guideline].",
+          "priority": "critical",
+          "rationale": "Hypoglycemia is the #1 stroke mimic and a reversible cause of AMS. Per stroke protocol, glucose <60 mg/dL is an EXCLUSION criterion for the stroke pathway.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "act-stroke-screen",
+          "shortAction": "Perform validated stroke scale (e.g., Cincinnati) and establish last-known-well",
+          "protocolExcerpt": "Use a validated prehospital stroke scale that may include, but is not limited to: Facial smile/grimace – ask patient to smile; Arm drift – close eyes and hold out arms for count of 10 seconds; Speech – ask patient to say \"You can't teach an old dog new tricks\". History – \"last known well\" and source of that information.",
+          "priority": "important",
+          "rationale": "Stroke screen drives destination; but per protocol, hypoglycemia must be excluded first.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "act-history-sample",
+          "shortAction": "Obtain SAMPLE history from wife; identify insulin + missed meal",
+          "protocolExcerpt": "Key Considerations: History from bystanders and caregivers. Patients with history of diabetes and other medical symptoms.",
+          "priority": "important",
+          "rationale": "The 'took insulin, didn't eat' history is the historical fingerprint of hypoglycemia.",
+          "protocolReference": "MATC: Altered Mental Status"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "glucose-checked",
+          "if": "Glucose checked",
+          "condition": "Crew performs the finger-stick blood glucose check as part of the AMS workup; reading returns at 38 mg/dL, identifying hypoglycemia as the cause and excluding the stroke pathway per protocol.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["act-bgl"]
+        },
+        {
+          "targetPhaseId": "stroke-alert-no-glucose",
+          "if": "Stroke alert called without glucose check",
+          "condition": "Crew anchors on the right-sided facial droop and slurred speech, calls a stroke alert, packages and begins transport without obtaining a blood glucose level — bypassing the protocol-mandated hypoglycemia rule-out.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["act-bgl"]
+        }
+      ]
+    },
+    {
+      "id": "glucose-checked",
+      "name": "Glucose checked",
+      "description": "Crew obtains a finger-stick blood glucose: 38 mg/dL. Hypoglycemia is now the working diagnosis. Per the stroke protocol, glucose <60 mg/dL excludes the stroke pathway and redirects to the Hypoglycemia Guideline. Patient cannot safely protect his airway for oral glucose given his GCS, so IV dextrose (D10) is the preferred treatment, with IM glucagon as the backup if no IV access.",
+      "triggerCondition": "Crew obtained a finger-stick blood glucose during the primary AMS workup; result is 38 mg/dL. This shifts the differential decisively away from stroke and toward hypoglycemia, and per the stroke protocol's exclusion criteria the stroke pathway is no longer indicated.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 3, "motor": 5 },
+        "airway": "Still patent, self-maintained, but tongue posture suggests airway will not stay protected if mental status drops further",
+        "breathing": "Spontaneous, regular, unlabored",
+        "circulation": "Radial pulse rapid; skin cool, pale, diaphoretic",
+        "skin": { "color": "pale", "temperature": "cool", "moisture": "diaphoretic" },
+        "pupils": "PERRL, 4 mm",
+        "motorFunction": "Right-sided weakness and facial droop persist; moves all extremities slowly to command",
+        "otherFindings": [
+          "Glucometer reading: 38 mg/dL",
+          "Patient unable to safely swallow — gag is sluggish, cannot follow commands to chew/swallow"
+        ],
+        "patientSpeech": "Still slurred and confused"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 110,
+        "bpSys": 146,
+        "bpDia": 90,
+        "respRate": 18,
+        "spo2": 97,
+        "etco2": 36,
+        "temp": 36.6,
+        "tempF": 97.9,
+        "obstruction": 0,
+        "glucose": 38,
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-recognize-hypo",
+          "shortAction": "Recognize hypoglycemia; switch from stroke pathway to Hypoglycemia Guideline",
+          "protocolExcerpt": "Exclusion Criteria: If glucose less than 60 mg/dL (deciliter), treat per the Hypoglycemia Guideline.",
+          "priority": "critical",
+          "rationale": "The stroke protocol explicitly excludes hypoglycemic patients. Recognizing this shift is the core teaching point of the scenario.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "act-airway-assess",
+          "shortAction": "Assess airway protective reflexes before any oral therapy",
+          "protocolExcerpt": "Treatment and Interventions: If altered level of consciousness or stroke, treat per Altered Mental Status Guideline or Suspected Stroke/Transient Ischemic Attack Guideline accordingly. Conscious patient with a patent airway: Glucose, oral. Unconscious patient, or patients who are unable to protect their own airway: Dextrose IV.",
+          "priority": "critical",
+          "rationale": "Determines oral glucose (safe) vs IV/IM dextrose/glucagon (required here given GCS 11).",
+          "protocolReference": "MATC: Hypoglycemia"
+        },
+        {
+          "id": "act-iv-access",
+          "shortAction": "Establish IV access — large-bore preferred; lock or NS to KVO",
+          "protocolExcerpt": "Unconscious patient, or patients who are unable to protect their own airway: Dextrose IV – administer in incremental doses until mental status improves or maximum field dosing is reached (if available, D10% is preferred).",
+          "priority": "critical",
+          "rationale": "IV is the preferred route for an AMS hypoglycemic patient who cannot safely take oral glucose.",
+          "protocolReference": "MATC: Hypoglycemia"
+        },
+        {
+          "id": "act-d10-administration",
+          "shortAction": "Dextrose 10% 250 mL IV (25 g max field dose); titrate to mental status",
+          "protocolExcerpt": "Maximum field adult dosing: 25 g of 10–50% dextrose IV — 50 mL of 50% dextrose; 100 mL of 25% dextrose; 250 mL of 10% dextrose. Patient Safety Considerations: Dextrose 10% can be safely used in all ages of patient. Dextrose 10% works as effectively and quickly as other concentrations.",
+          "priority": "critical",
+          "rationale": "D10 is the preferred concentration per protocol — same efficacy, lower extravasation/hyperglycemia risk than D50.",
+          "protocolReference": "MATC: Hypoglycemia"
+        },
+        {
+          "id": "act-glucagon-backup",
+          "shortAction": "If no IV access in 2 attempts: Glucagon 1 mg IM (adult fixed dose)",
+          "protocolExcerpt": "Glucagon IM/IN – an option for patients for whom IV access cannot be established. Adult dosing: 1 mg IM/IN (or prefilled 3 mg dry powder IN or prefilled IM autoinjector).",
+          "priority": "important",
+          "rationale": "Backup pathway when IV access fails; protocol-specified adult dose.",
+          "protocolReference": "MATC: Hypoglycemia"
+        },
+        {
+          "id": "act-reassess-bgl",
+          "shortAction": "Reassess mental status and recheck glucose after treatment",
+          "protocolExcerpt": "Reassess patient: Reassess vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) and mental status. Repeat check of blood glucose level if previous hypoglycemia and mental status has not returned to normal.",
+          "priority": "critical",
+          "rationale": "Confirms response and identifies refractory hypoglycemia needing repeat dosing or alternative diagnosis.",
+          "protocolReference": "MATC: Hypoglycemia"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "treated-resolved",
+          "if": "D10 given; mental status improving",
+          "condition": "After 250 mL of D10 IV (25 g), patient's mental status improves over 2-3 minutes; facial droop and slurred speech resolve as glucose normalizes; repeat finger-stick is 112 mg/dL.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["act-d10-administration", "act-reassess-bgl"]
+        }
+      ]
+    },
+    {
+      "id": "treated-resolved",
+      "name": "Treated for hypoglycemia",
+      "description": "After D10 25 g IV, the patient's mental status clears noticeably within 2-3 minutes. The right facial droop and slurred speech resolve completely, confirming that the deficits were due to neuroglycopenia rather than stroke. Repeat glucose is 112 mg/dL. Crew transports for ED evaluation per protocol — recurrent hypoglycemia is a real risk given his long-acting insulin onboard.",
+      "triggerCondition": "Patient received D10 25 g IV with appropriate reassessment. Mental status improved from GCS 11 to GCS 15 within 2-3 minutes; the right-sided 'stroke-like' deficits resolved entirely as glucose normalized — the classic fingerprint of a hypoglycemic stroke mimic.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, self-protected, swallowing normally",
+        "breathing": "Spontaneous, regular, unlabored",
+        "circulation": "Radial pulse strong; skin warming and drying",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL, 4 mm",
+        "motorFunction": "Symmetric grip strength; facial droop resolved; gait not tested (on stretcher)",
+        "otherFindings": [
+          "Patient oriented x4; remembers events up to leaving for the garage but not the period of altered mental status",
+          "Repeat glucometer: 112 mg/dL",
+          "Diaphoresis resolved"
+        ],
+        "patientSpeech": "Clear, coherent speech; appropriate answers to all questions"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 86,
+        "bpSys": 138,
+        "bpDia": 84,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 36.7,
+        "tempF": 98.1,
+        "obstruction": 0,
+        "glucose": 112,
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-confirm-improvement",
+          "shortAction": "Document mental status return and resolution of focal deficits",
+          "protocolExcerpt": "Document reassessment of vital signs and mental status after administration of glucose/dextrose/glucagon.",
+          "priority": "critical",
+          "rationale": "Documentation supports the diagnostic conclusion and the safe-transport decision.",
+          "protocolReference": "MATC: Hypoglycemia"
+        },
+        {
+          "id": "act-transport-decision",
+          "shortAction": "Transport to closest appropriate facility — long-acting insulin onboard",
+          "protocolExcerpt": "Disposition: If hypoglycemia with continued symptoms, transport to closest appropriate receiving facility. If symptoms of hypoglycemia resolve after treatment, release without transport should only be considered if all the following are true: Patient takes insulin or metformin to control diabetes and does not take long-acting oral sulphunylurea agents.",
+          "priority": "critical",
+          "rationale": "Patient takes long-acting basal insulin (glargine); recurrent hypoglycemia is likely. Field release is not appropriate without all release criteria met.",
+          "protocolReference": "MATC: Hypoglycemia"
+        },
+        {
+          "id": "act-feed-if-able",
+          "shortAction": "Offer complex carbohydrate PO if alert with intact airway",
+          "protocolExcerpt": "Conscious patient with a patent airway: Glucose, oral (in form of glucose tablets, glucose gel, tube of cake icing, etc.). Adult Dosing: 25 g.",
+          "priority": "supplemental",
+          "rationale": "Sustains the dextrose bolus and helps prevent rebound hypoglycemia en route.",
+          "protocolReference": "MATC: Hypoglycemia"
+        },
+        {
+          "id": "act-handoff-report",
+          "shortAction": "Give structured handoff: stroke-mimic hypoglycemia, treated with D10",
+          "protocolExcerpt": "Key Documentation Elements: Document point of care glucose level (if in scope of practice) when indicated. Document reassessment of vital signs and mental status after administration of glucose/dextrose/glucagon.",
+          "priority": "important",
+          "rationale": "ED needs to know the initial presentation, the glucose, the dose given, and the response.",
+          "protocolReference": "MATC: Hypoglycemia"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "stroke-alert-no-glucose",
+      "name": "Stroke alert without glucose",
+      "description": "Crew anchors on the right-sided facial droop and slurred speech, calls a stroke alert, packages quickly, and begins transport without obtaining a blood glucose level. This violates the stroke protocol's explicit exclusion criterion (glucose <60 mg/dL is treated as hypoglycemia, NOT stroke). En route the patient deteriorates as his neuroglycopenia worsens.",
+      "triggerCondition": "Crew did not obtain a finger-stick blood glucose during scene assessment. Anchoring on facial droop and slurred speech, they called a stroke alert and loaded the patient for transport without ruling out hypoglycemia — bypassing the protocol-mandated step.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 2, "verbal": 2, "motor": 4 },
+        "airway": "Becoming compromised — pooling secretions, tongue falling back; gag absent",
+        "breathing": "Spontaneous but shallow; rate slowing",
+        "circulation": "Radial pulse weak and rapid; skin colder and more diaphoretic",
+        "skin": { "color": "pale", "temperature": "cold", "moisture": "diaphoretic" },
+        "pupils": "PERRL, 4 mm",
+        "motorFunction": "Right hemiparesis more pronounced; withdraws only to noxious stimuli on the left",
+        "otherFindings": [
+          "Patient deteriorating en route — no longer responding to verbal stimuli",
+          "Brief generalized tonic-clonic seizure activity (~30 seconds) during transport",
+          "Glucose was never checked; crew still calling this a stroke"
+        ],
+        "patientSpeech": "Unintelligible groaning to painful stimuli only"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 126,
+        "bpSys": 156,
+        "bpDia": 96,
+        "respRate": 10,
+        "spo2": 94,
+        "etco2": 42,
+        "temp": 36.4,
+        "tempF": 97.5,
+        "obstruction": 20,
+        "glucose": 32,
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-airway-rescue",
+          "shortAction": "Reposition airway, suction secretions, consider OPA/NPA and BVM if RR < 10",
+          "protocolExcerpt": "Patient Safety Considerations: With depressed mental status, initial focus is on airway protection, oxygenation, ventilation, and perfusion.",
+          "priority": "critical",
+          "rationale": "Patient is now unable to protect his airway; the deeper AMS is the consequence of the missed diagnosis.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "act-recognize-error",
+          "shortAction": "Recognize stroke-mimic possibility; obtain finger-stick glucose NOW",
+          "protocolExcerpt": "Evaluate for the presence of stroke mimics including: Hypoglycemia; Seizure; Sepsis; Migraine; Intoxication. Check blood glucose level (BGL) — Treat only if glucose less than 60 mg/dL.",
+          "priority": "critical",
+          "rationale": "Glucose check is mandatory on every AMS / suspected-stroke patient per BOTH protocols. The recovery pathway begins with finally doing it.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "glucose-finally-checked",
+          "if": "Glucose finally checked en route",
+          "condition": "Recognizing deterioration and remembering the stroke-mimic differential, crew finally performs the finger-stick blood glucose during transport — reading is 32 mg/dL — and initiates the hypoglycemia pathway belatedly.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["act-recognize-error"]
+        }
+      ]
+    },
+    {
+      "id": "glucose-finally-checked",
+      "name": "Glucose finally checked",
+      "description": "Crew finally obtains a finger-stick glucose during transport: 32 mg/dL. The patient has post-ictal AMS with airway compromise from progressive neuroglycopenia. They abandon the stroke-alert pathway, establish IV access, administer D10, and notify the ED of the corrected diagnosis. Outcome is recoverable but a teaching example of how skipping a 30-second assessment cascades into preventable deterioration.",
+      "triggerCondition": "After patient deterioration and a witnessed seizure during transport, crew obtained the long-missed finger-stick blood glucose: 32 mg/dL. The error is recognized, the stroke-alert pathway is abandoned, and the hypoglycemia protocol is finally initiated mid-transport.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 2, "verbal": 2, "motor": 4 },
+        "airway": "OPA and BVM in place; ventilating with bag-mask at 10/min",
+        "breathing": "Assisted via BVM",
+        "circulation": "Radial pulse rapid; skin cold and diaphoretic",
+        "skin": { "color": "pale", "temperature": "cold", "moisture": "diaphoretic" },
+        "pupils": "PERRL, 4 mm",
+        "motorFunction": "Post-ictal; flaccid; withdraws to pain on left",
+        "otherFindings": [
+          "Glucometer finally checked en route: 32 mg/dL",
+          "Witnessed 30-second tonic-clonic seizure resolved without intervention",
+          "Crew now treating per Hypoglycemia Guideline"
+        ],
+        "patientSpeech": "Non-verbal"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 120,
+        "bpSys": 152,
+        "bpDia": 94,
+        "respRate": 10,
+        "spo2": 96,
+        "etco2": 40,
+        "temp": 36.4,
+        "tempF": 97.5,
+        "obstruction": 15,
+        "glucose": 32,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-iv-d10-late",
+          "shortAction": "Dextrose 10% 250 mL IV (25 g max field dose); titrate to mental status",
+          "protocolExcerpt": "Maximum field adult dosing: 25 g of 10–50% dextrose IV — 50 mL of 50% dextrose; 100 mL of 25% dextrose; 250 mL of 10% dextrose. Dextrose 10% can be safely used in all ages of patient.",
+          "priority": "critical",
+          "rationale": "Definitive treatment for hypoglycemia in a patient who cannot protect his airway.",
+          "protocolReference": "MATC: Hypoglycemia"
+        },
+        {
+          "id": "act-seizure-noted",
+          "shortAction": "Document witnessed seizure; transport to hospital regardless of response",
+          "protocolExcerpt": "Hypoglycemic patients who have had a seizure should be transported to the hospital regardless of their mental status and response to therapy.",
+          "priority": "critical",
+          "rationale": "Seizure mandates transport per protocol — no field release option.",
+          "protocolReference": "MATC: Hypoglycemia"
+        },
+        {
+          "id": "act-update-destination",
+          "shortAction": "Update receiving hospital — cancel stroke alert, report hypoglycemia",
+          "protocolExcerpt": "Early hospital notification per local stroke plan that should include any suspected large vessel occlusion (LVO) stroke.",
+          "priority": "critical",
+          "rationale": "ED resource activation must match the actual diagnosis; correcting the radio report prevents wasted stroke-team activation.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "act-airway-management",
+          "shortAction": "Continue BVM with O2 to target SpO2 94-98% until mental status returns",
+          "protocolExcerpt": "Oxygen [Refer to Universal Care Guideline]. Administer oxygen as appropriate with a target of achieving 94–98% saturation.",
+          "priority": "critical",
+          "rationale": "Patient remains unable to protect his airway until glucose corrects.",
+          "protocolReference": "MATC: Altered Mental Status"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

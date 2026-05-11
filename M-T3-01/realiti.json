@@ -1,0 +1,441 @@
+{
+  "scenarioId": "M-T3-01",
+  "scenarioName": "Polysubstance Overdose with Hemodynamic Collapse",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1500,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "31-year-old female found unresponsive on her living room couch by her roommate, who returned home from a closing shift around 02:10. Roommate reports the patient was 'partying' earlier in the evening with an ex-boyfriend who left several hours ago. The patient has a known history of anxiety, chronic back pain, and prior cocaine use; the roommate has 'gotten her to the ER' twice in the past year for overdoses. On the coffee table next to the patient are an open bottle of alprazolam 1 mg (prescribed, last filled 2 weeks ago, mostly empty), a partially full bottle of oxycodone 10 mg (prescribed to ex-boyfriend per roommate), a glass with residue, a rolled bill, and white powdery residue on a hand mirror. A capped syringe is on the floor. The patient is supine on the couch, GCS 6, breathing shallowly with cyanotic lips. Pupils are 4 mm and sluggish — not the pinpoint pupils the roommate 'expected,' which is a clue this is NOT a pure opioid overdose.",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives to find a 31-year-old female on the couch, unresponsive, with shallow respirations and visible cyanosis around the lips. The scene strongly suggests overdose — drug paraphernalia on the coffee table — but the picture is mixed: pupils are 4 mm and sluggish (NOT pinpoint), heart rate is 124, blood pressure is 78/52, and the monitor shows a wide-complex sinus tachycardia with QRS measured at 130 ms. This is the teaching beat of this scenario: pure opioid overdose produces miosis, bradypnea, AND bradycardia/hypotension with NORMAL QRS. Tachycardia plus wide QRS plus mid-sized pupils points to a polysubstance picture — likely cocaine (sympathomimetic, sodium-channel-blocking) plus benzodiazepine plus opioid. The crew must resist the reflex to push naloxone first and instead manage airway, breathing, circulation, and start working through the competing toxidromes individually. → Airway supported, BVM started: With two-person BVM, PEEP 5 cmH2O, and an OPA in place, the patient's SpO2 climbs from 84% to 92% over the next 90 seconds and EtCO2 falls from 58 to 48 mmHg. Heart rate remains 120, blood pressure has not improved — 80/54 with a MAP of 63. QRS still 128 ms on the rhythm strip. The patient is still GCS 6, no improvement in mentation. This is the window where the crew must work the hypotension and the wide-complex rhythm as their own problems rather than waiting for naloxone to fix the picture. → Fluid-refractory hypotension: After 1 L of NS and sodium bicarbonate 100 mEq IV, the QRS has narrowed to 110 ms and SpO2 is 96% on BVM, but the blood pressure has only crept up to 84/56 (MAP 65). Heart rate 116. The patient remains GCS 6 with shallow respirations between BVM-delivered breaths. This is the moment to add push-dose epinephrine while continuing fluid resuscitation and preparing for transport. Reassess for additional bicarb if QRS widens again. → Stabilized, en route to ED: Patient is loaded and en route to the receiving emergency department. BP has come up to 96/62 after push-dose epinephrine, QRS is 108 ms, SpO2 96% on BVM. The patient remains GCS 6 but is being adequately oxygenated and ventilated. Crew continues to reassess vitals every 5 minutes, watch for naloxone wear-off, watch for QRS rewidening, and is prepared to re-dose bicarb or push-dose epi en route. The polysubstance picture has been managed by treating each component individually rather than chasing a single antidote."
+  },
+  "patientInformation": {
+    "patientName": "Danielle Voss",
+    "patientCondition": "Unresponsive, suspected polysubstance overdose",
+    "patientAge": 31,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 2,
+    "patientHeight": 165,
+    "patientWeight": 68,
+    "patientPhotoId": 38,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a 31-year-old female on the couch, unresponsive, with shallow respirations and visible cyanosis around the lips. The scene strongly suggests overdose — drug paraphernalia on the coffee table — but the picture is mixed: pupils are 4 mm and sluggish (NOT pinpoint), heart rate is 124, blood pressure is 78/52, and the monitor shows a wide-complex sinus tachycardia with QRS measured at 130 ms. This is the teaching beat of this scenario: pure opioid overdose produces miosis, bradypnea, AND bradycardia/hypotension with NORMAL QRS. Tachycardia plus wide QRS plus mid-sized pupils points to a polysubstance picture — likely cocaine (sympathomimetic, sodium-channel-blocking) plus benzodiazepine plus opioid. The crew must resist the reflex to push naloxone first and instead manage airway, breathing, circulation, and start working through the competing toxidromes individually.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 124,
+        "bpSys": 78,
+        "bpDia": 52,
+        "respRate": 8,
+        "spo2": 84,
+        "etco2": 58,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 92,
+        "custMeasureLabel1": "mg/dL",
+        "custMeasure2": 130,
+        "custMeasureLabel2": "QRS duration (ms)",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Scene safety, BSI, secure sharps; identify all substances on scene",
+        "Rapid primary survey (ABCDE); recognize impending respiratory failure",
+        "Suction prn, open airway, insert OPA",
+        "Two-person BVM with PEEP 5 cmH2O at 10–12 breaths/min, titrate to SpO2 94–98%",
+        "Cardiac monitor + 12-lead ECG; note wide QRS = 130 ms",
+        "Blood glucose: 92 mg/dL (rules out hypoglycemia)",
+        "Establish IV access x2 (large bore preferred)",
+        "Recognize mixed toxidrome: opioids + stimulant + benzo (not pure opioid)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Airway supported, BVM started",
+      "description": "With two-person BVM, PEEP 5 cmH2O, and an OPA in place, the patient's SpO2 climbs from 84% to 92% over the next 90 seconds and EtCO2 falls from 58 to 48 mmHg. Heart rate remains 120, blood pressure has not improved — 80/54 with a MAP of 63. QRS still 128 ms on the rhythm strip. The patient is still GCS 6, no improvement in mentation. This is the window where the crew must work the hypotension and the wide-complex rhythm as their own problems rather than waiting for naloxone to fix the picture.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 120,
+        "bpSys": 80,
+        "bpDia": 54,
+        "respRate": 12,
+        "spo2": 92,
+        "etco2": 48,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 92,
+        "custMeasureLabel1": "mg/dL",
+        "custMeasure2": 128,
+        "custMeasureLabel2": "QRS duration (ms)",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Naloxone 0.4 mg IV slow push, titrate to respiratory effort (not alertness)",
+        "NS 1.4 L bolus (68 kg × 20 mL/kg = 1360 mL), reassess after each 500 mL",
+        "Sodium bicarbonate 68–136 mEq IV (68 kg × 1–2 mEq/kg) for wide QRS",
+        "Reassess vitals, GCS, QRS, EtCO2 every 3–5 min",
+        "DO NOT give flumazenil — risk of seizures in mixed OD"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Fluid-refractory hypotension",
+      "description": "After 1 L of NS and sodium bicarbonate 100 mEq IV, the QRS has narrowed to 110 ms and SpO2 is 96% on BVM, but the blood pressure has only crept up to 84/56 (MAP 65). Heart rate 116. The patient remains GCS 6 with shallow respirations between BVM-delivered breaths. This is the moment to add push-dose epinephrine while continuing fluid resuscitation and preparing for transport. Reassess for additional bicarb if QRS widens again.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 116,
+        "bpSys": 84,
+        "bpDia": 56,
+        "respRate": 12,
+        "spo2": 96,
+        "etco2": 42,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 92,
+        "custMeasureLabel1": "mg/dL",
+        "custMeasure2": 110,
+        "custMeasureLabel2": "QRS duration (ms)",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Push-dose epi 10 mcg IV (1 mL of 10 mcg/mL dilution) q3–5 min, titrate to MAP ≥65",
+        "Continue NS to ~30 mL/kg (~2 L total), reassess for rales",
+        "If QRS rewidens >100 ms, repeat sodium bicarb 68–136 mEq IV (1–2 mEq/kg)",
+        "Early transport with advanced ED notification (polysubstance, wide-QRS, on pressors)",
+        "Monitor for recurrent respiratory depression as naloxone wears off"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Stabilized, en route to ED",
+      "description": "Patient is loaded and en route to the receiving emergency department. BP has come up to 96/62 after push-dose epinephrine, QRS is 108 ms, SpO2 96% on BVM. The patient remains GCS 6 but is being adequately oxygenated and ventilated. Crew continues to reassess vitals every 5 minutes, watch for naloxone wear-off, watch for QRS rewidening, and is prepared to re-dose bicarb or push-dose epi en route. The polysubstance picture has been managed by treating each component individually rather than chasing a single antidote.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 108,
+        "bpSys": 96,
+        "bpDia": 62,
+        "respRate": 12,
+        "spo2": 96,
+        "etco2": 40,
+        "temp": 36.9,
+        "obstruction": 0,
+        "custMeasure1": 92,
+        "custMeasureLabel1": "mg/dL",
+        "custMeasure2": 108,
+        "custMeasureLabel2": "QRS duration (ms)",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Continuous reassessment q5 min en route; document vitals + QRS",
+        "Structured handoff: agents involved, timeline, doses given, response"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Naloxone-anchored: escalating doses, missed picture",
+      "description": "Crew anchors on the opioid component and pushes naloxone before securing the airway or recognizing the wide-complex tachycardia. They give 0.4 mg, then 2 mg, then 4 mg IN, chasing alertness while the patient remains hypotensive at 76/50 with a QRS that widens to 140 ms. SpO2 drops to 80% because no one has been managing the airway. The hypotension and wide QRS are completely untreated. This is a Tier-3 teaching branch: an antidote-only mindset misses parallel toxidromes and the patient deteriorates toward arrest.",
+      "monitorType": 0,
+      "trendTime": 25,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 134,
+        "bpSys": 76,
+        "bpDia": 50,
+        "respRate": 4,
+        "spo2": 80,
+        "etco2": 65,
+        "temp": 36.7,
+        "obstruction": 0,
+        "custMeasure1": 92,
+        "custMeasureLabel1": "mg/dL",
+        "custMeasure2": 140,
+        "custMeasureLabel2": "QRS duration (ms)",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "STOP escalating naloxone; recognize this is not pure opioid",
+        "Rescue airway: suction, OPA, two-person BVM with PEEP",
+        "Sodium bicarb 68–136 mEq IV (68 kg × 1–2 mEq/kg) for QRS 140 ms",
+        "NS bolus + push-dose epi 10 mcg IV for refractory hypotension"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Flumazenil given → seizures",
+      "description": "Crew gives flumazenil 0.2 mg IV thinking it will reverse the benzodiazepine component. Within 90 seconds the patient develops a tonic-clonic seizure. The combination of unmasking the proconvulsant effect of cocaine, removing the benzodiazepine's anticonvulsant brake, and the existing sodium-channel blockade produces a refractory seizure picture. SpO2 crashes during the seizure, QRS widens further to 150 ms. This is a catastrophic, protocol-violating branch — flumazenil is explicitly contraindicated in mixed overdose.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 140,
+        "bpSys": 72,
+        "bpDia": 48,
+        "respRate": 0,
+        "spo2": 76,
+        "etco2": 70,
+        "temp": 37.4,
+        "obstruction": 0,
+        "custMeasure1": 92,
+        "custMeasureLabel1": "mg/dL",
+        "custMeasure2": 150,
+        "custMeasureLabel2": "QRS duration (ms)",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize flumazenil error; do NOT repeat the dose",
+        "Midazolam 5 mg IV (68 kg × 0.1 mg/kg = 6.8 mg → cap at 5 mg max single dose)",
+        "Secure airway during seizure: suction, OPA when jaw relaxes, BVM with PEEP",
+        "Sodium bicarb 136 mEq IV (68 kg × 2 mEq/kg) for QRS 150 ms"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Scene safety, BSI, secure sharps; identify all substances on scene",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Rapid primary survey (ABCDE); recognize impending respiratory failure",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Suction prn, open airway, insert OPA",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Two-person BVM with PEEP 5 cmH2O at 10–12 breaths/min, titrate to SpO2 94–98%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Cardiac monitor + 12-lead ECG; note wide QRS = 130 ms",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Blood glucose: 92 mg/dL (rules out hypoglycemia)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access x2 (large bore preferred)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize mixed toxidrome: opioids + stimulant + benzo (not pure opioid)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Naloxone 0.4 mg IV slow push, titrate to respiratory effort (not alertness)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "NS 1.4 L bolus (68 kg × 20 mL/kg = 1360 mL), reassess after each 500 mL",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Sodium bicarbonate 68–136 mEq IV (68 kg × 1–2 mEq/kg) for wide QRS",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess vitals, GCS, QRS, EtCO2 every 3–5 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "DO NOT give flumazenil — risk of seizures in mixed OD",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Push-dose epi 10 mcg IV (1 mL of 10 mcg/mL dilution) q3–5 min, titrate to MAP ≥65",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue NS to ~30 mL/kg (~2 L total), reassess for rales",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "If QRS rewidens >100 ms, repeat sodium bicarb 68–136 mEq IV (1–2 mEq/kg)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Early transport with advanced ED notification (polysubstance, wide-QRS, on pressors)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Monitor for recurrent respiratory depression as naloxone wears off",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous reassessment q5 min en route; document vitals + QRS",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Structured handoff: agents involved, timeline, doses given, response",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "STOP escalating naloxone; recognize this is not pure opioid",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Rescue airway: suction, OPA, two-person BVM with PEEP",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Sodium bicarb 68–136 mEq IV (68 kg × 1–2 mEq/kg) for QRS 140 ms",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "NS bolus + push-dose epi 10 mcg IV for refractory hypotension",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize flumazenil error; do NOT repeat the dose",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Midazolam 5 mg IV (68 kg × 0.1 mg/kg = 6.8 mg → cap at 5 mg max single dose)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Secure airway during seizure: suction, OPA when jaw relaxes, BVM with PEEP",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Sodium bicarb 136 mEq IV (68 kg × 2 mEq/kg) for QRS 150 ms",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

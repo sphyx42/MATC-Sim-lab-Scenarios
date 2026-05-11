@@ -1,0 +1,500 @@
+{
+  "scenarioId": "M-T3-03",
+  "scenarioName": "Severe Sepsis Progressing to Septic Shock",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1800,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "72-year-old female found on her recliner by her adult daughter, who states 'Mom isn't herself.' Per daughter, patient was diagnosed with a urinary tract infection at urgent care 3 days ago and given a prescription for an oral antibiotic but never picked it up. Over the past 24 hours she has become progressively weaker, complaining of subjective fever and chills, decreased oral intake, and increasing confusion. This morning the daughter found her slumped in the recliner, warm to the touch, breathing fast, and only oriented to person. No chest pain, no obvious shortness of breath complaint, no focal neuro deficits per daughter. On EMS arrival the patient appears markedly ill — hot, flushed, breathing rapidly, with delayed capillary refill and obvious altered mentation. qSOFA criteria are met (altered mentation, RR ≥ 22, SBP ≤ 100). This patient is septic on arrival and is going to get worse during the call.",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives to find a 72-year-old female who is clearly already sick. qSOFA is positive on first look: she is altered (A&Ox2, down from her baseline A&Ox3 per daughter), RR is 28, and SBP is 84. She is febrile (102.8°F), tachycardic at 124, and SpO2 is 91% on room air. Skin is warm, flushed, and diaphoretic. Capillary refill is delayed at 3-4 seconds. This is severe sepsis with a urinary source — the patient is not impending shock, she IS in distributive shock. The clock starts now: the crew needs IV access x 2, a 30 mL/kg crystalloid bolus, supplemental O2, continuous monitoring, and a transport decision. Glucose is 138 (no hypoglycemia). Lactate, if pulled, would be 4.8. This is the front door of a multi-system failure case. → Fluid-refractory shock: Full 30 mL/kg is in (1800 mL). BP has barely moved — 86/54 with MAP 65 at best, sliding back to 60 between cycles. Mentation is unchanged. Lactate would still be high. This patient meets the definition of fluid-refractory septic shock: she needs a vasopressor NOW. The standard move is to bridge with push-dose epinephrine (10 mcg q3-5 min) while the second crew member draws up and primes a norepinephrine infusion. Norepi is the first-line pressor for distributive/septic shock per the protocol. Stress-dose steroids (hydrocortisone) are reasonable for fluid-refractory shock per protocol #10. The crew should also be watching the respiratory system — RR is climbing, EtCO2 is dropping further as the metabolic acidosis deepens. → Respiratory failure / pre-RSI: Compensation has run out. Despite pressor support, the patient's respiratory drive is no longer enough to clear the metabolic acidosis — RR is 36, shallow, SpO2 is 88% on NRB, EtCO2 is 24, GCS is 11 (E3 V3 M5). She cannot protect her airway much longer, she cannot oxygenate, and she cannot ventilate enough to keep up with her acidosis. This is the indication for RSI. The catch in this patient: induction agent choice matters enormously. Ketamine (1-2 mg/kg IV) preserves sympathetic tone and is the preferred induction in shock. Etomidate is on the protocol but causes adrenal suppression and predictably worsens shock post-intubation. The crew must pre-oxygenate with BVM + PEEP, optimize positioning, push fentanyl + ketamine + rocuronium, and intubate in one careful pass. → Post-RSI transport: Patient is intubated, oxygenating, ventilating, and on a norepi infusion. The crew has stabilized — not fixed — three failing systems (cardiovascular, respiratory, neurologic) and now has to maintain that stability on the way to a sepsis-capable ED. Mechanical ventilation if available; PEEP 5 to start; target EtCO2 30-35 to allow respiratory compensation for metabolic acidosis (do NOT normalize EtCO2 to 35-45 — it would worsen the systemic acidosis); continue sedation with fentanyl + midazolam; gastric decompression with NG/OG; reassess MAP, lactate, and norepi rate every few minutes; advance notify the ED with the full picture — septic shock, fluid-refractory, on norepi at X mcg/min, intubated. This is the 'support the systems and hand off' phase."
+  },
+  "patientInformation": {
+    "patientName": "Eleanor Vasquez",
+    "patientCondition": "Weakness, fever, 'not herself' per daughter; sick x3 days",
+    "patientAge": 72,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 2,
+    "patientHeight": 160,
+    "patientWeight": 60,
+    "patientPhotoId": 87,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a 72-year-old female who is clearly already sick. qSOFA is positive on first look: she is altered (A&Ox2, down from her baseline A&Ox3 per daughter), RR is 28, and SBP is 84. She is febrile (102.8°F), tachycardic at 124, and SpO2 is 91% on room air. Skin is warm, flushed, and diaphoretic. Capillary refill is delayed at 3-4 seconds. This is severe sepsis with a urinary source — the patient is not impending shock, she IS in distributive shock. The clock starts now: the crew needs IV access x 2, a 30 mL/kg crystalloid bolus, supplemental O2, continuous monitoring, and a transport decision. Glucose is 138 (no hypoglycemia). Lactate, if pulled, would be 4.8. This is the front door of a multi-system failure case.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 124,
+        "bpSys": 84,
+        "bpDia": 52,
+        "respRate": 28,
+        "spo2": 91,
+        "etco2": 30,
+        "temp": 39.3,
+        "obstruction": 0,
+        "custMeasure1": 138,
+        "custMeasureLabel1": "mg/dL",
+        "custMeasure2": 4.8,
+        "custMeasureLabel2": "Lactate (POC if available)",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Rapid primary survey (ABC); recognize sepsis/distributive shock on qSOFA",
+        "Apply NRB at 15 L/min; target SpO2 94-98%",
+        "Cardiac monitor, SpO2, waveform EtCO2 (low EtCO2 = poor perfusion)",
+        "Two large-bore IVs (18g preferred); IO if no IV in 2 attempts/90s",
+        "Check blood glucose; correct only if <60 mg/dL (this patient: 138)",
+        "Draw POC lactate if available (>2 mmol/L abnormal; this patient: 4.8)",
+        "NS 1800 mL bolus (60 kg × 30 mL/kg) pressure-infused, in 500 mL aliquots over <15 min each",
+        "Acquire 12-lead EKG (rule out cardiogenic etiology)",
+        "Septic shock alert / advance notification to receiving ED"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Fluid-refractory shock",
+      "description": "Full 30 mL/kg is in (1800 mL). BP has barely moved — 86/54 with MAP 65 at best, sliding back to 60 between cycles. Mentation is unchanged. Lactate would still be high. This patient meets the definition of fluid-refractory septic shock: she needs a vasopressor NOW. The standard move is to bridge with push-dose epinephrine (10 mcg q3-5 min) while the second crew member draws up and primes a norepinephrine infusion. Norepi is the first-line pressor for distributive/septic shock per the protocol. Stress-dose steroids (hydrocortisone) are reasonable for fluid-refractory shock per protocol #10. The crew should also be watching the respiratory system — RR is climbing, EtCO2 is dropping further as the metabolic acidosis deepens.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 128,
+        "bpSys": 86,
+        "bpDia": 54,
+        "respRate": 32,
+        "spo2": 90,
+        "etco2": 26,
+        "temp": 39.4,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "custMeasure2": 65,
+        "custMeasureLabel2": "MAP (target ≥ 65)",
+        "custMeasure3": 5.1,
+        "custMeasureLabel3": "Lactate",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize fluid-refractory shock after 30 mL/kg; escalate to pressor",
+        "Push-dose epi 10 mcg IV (1 mL of 10 mcg/mL dilution) q3-5 min while norepi prepared",
+        "Norepinephrine infusion 3-30 mcg/min (60 kg × 0.05-0.5 mcg/kg/min); start at 5 mcg/min, titrate to MAP ≥ 65",
+        "Hydrocortisone 100 mg IV (60 kg × 2 mg/kg = 120 mg → cap at 100 mg max)",
+        "Acetaminophen 1000 mg PO/PR (15 mg/kg × 60 kg = 900 mg → round to 1 g max)",
+        "Reassess full vitals/neuro q5 min during pressor titration; document each change"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Respiratory failure / pre-RSI",
+      "description": "Compensation has run out. Despite pressor support, the patient's respiratory drive is no longer enough to clear the metabolic acidosis — RR is 36, shallow, SpO2 is 88% on NRB, EtCO2 is 24, GCS is 11 (E3 V3 M5). She cannot protect her airway much longer, she cannot oxygenate, and she cannot ventilate enough to keep up with her acidosis. This is the indication for RSI. The catch in this patient: induction agent choice matters enormously. Ketamine (1-2 mg/kg IV) preserves sympathetic tone and is the preferred induction in shock. Etomidate is on the protocol but causes adrenal suppression and predictably worsens shock post-intubation. The crew must pre-oxygenate with BVM + PEEP, optimize positioning, push fentanyl + ketamine + rocuronium, and intubate in one careful pass.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 132,
+        "bpSys": 96,
+        "bpDia": 54,
+        "respRate": 36,
+        "spo2": 88,
+        "etco2": 24,
+        "temp": 39.4,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "custMeasure2": 68,
+        "custMeasureLabel2": "MAP (norepi-supported)",
+        "custMeasure3": 8,
+        "custMeasureLabel3": "Norepi (mcg/min)",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize impending respiratory failure (low EtCO2 + tachypnea + drop in GCS)",
+        "Pre-oxygenate 2+ min: BVM with PEEP 5 + apneic NC at 15 L/min",
+        "Fentanyl 60 mcg IV (60 kg × 1 mcg/kg) 2-3 min before laryngoscopy",
+        "Ketamine 90 mg IV push (60 kg × 1.5 mg/kg) — preferred induction in shock",
+        "Rocuronium 60 mg IV push (60 kg × 1 mg/kg) for paralysis",
+        "Intubate (7.5 mm ETT); confirm with waveform EtCO2 + bilateral breath sounds"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Post-RSI transport",
+      "description": "Patient is intubated, oxygenating, ventilating, and on a norepi infusion. The crew has stabilized — not fixed — three failing systems (cardiovascular, respiratory, neurologic) and now has to maintain that stability on the way to a sepsis-capable ED. Mechanical ventilation if available; PEEP 5 to start; target EtCO2 30-35 to allow respiratory compensation for metabolic acidosis (do NOT normalize EtCO2 to 35-45 — it would worsen the systemic acidosis); continue sedation with fentanyl + midazolam; gastric decompression with NG/OG; reassess MAP, lactate, and norepi rate every few minutes; advance notify the ED with the full picture — septic shock, fluid-refractory, on norepi at X mcg/min, intubated. This is the 'support the systems and hand off' phase.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 116,
+        "bpSys": 104,
+        "bpDia": 56,
+        "respRate": 14,
+        "spo2": 96,
+        "etco2": 32,
+        "temp": 39.1,
+        "obstruction": 0,
+        "custMeasure1": 138,
+        "custMeasureLabel1": "mg/dL",
+        "custMeasure2": 72,
+        "custMeasureLabel2": "MAP (norepi-supported)",
+        "custMeasure3": 10,
+        "custMeasureLabel3": "Norepi (mcg/min)",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Ventilate 14/min, TV 6-8 mL/kg IBW (~420 mL), PEEP 5; target EtCO2 30-35",
+        "Post-intubation sedation: fentanyl 60-120 mcg + midazolam 1-2 mg IV (titrate)",
+        "Place OG/NG tube for gastric decompression",
+        "Titrate norepi q2-3 min to MAP ≥ 65 (currently 10 mcg/min, range 3-30 mcg/min)",
+        "Continuous waveform EtCO2; reconfirm placement after every movement",
+        "Update receiving ED: septic shock, intubated, norepi 10 mcg/min, ETA"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Fluids alone (no pressor)",
+      "description": "Crew anchors on volume. The MAP didn't come up after 30 mL/kg, so they hang another liter. Then another. By the time the rig pulls into the bay, 4 L of NS has gone in and the BP is barely different from when it started — 86/54. The lungs that were clear on arrival now have rales in the bases. The patient's mentation hasn't improved, her urine output is still nothing, and her CKD-baseline kidneys are now sitting in a fluid-overloaded body that still can't perfuse. This is the iatrogenic complication of fluid-anchoring in fluid-refractory septic shock: distributive shock PLUS pulmonary edema, on top of CKD. Now the crew has to add CPAP/BiPAP support to fix the iatrogenic edema while still trying to get a pressor going.",
+      "monitorType": 0,
+      "trendTime": 55,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 130,
+        "bpSys": 86,
+        "bpDia": 54,
+        "respRate": 36,
+        "spo2": 86,
+        "etco2": 28,
+        "temp": 39.4,
+        "obstruction": 0,
+        "custMeasure1": 140,
+        "custMeasureLabel1": "mg/dL",
+        "custMeasure2": 65,
+        "custMeasureLabel2": "MAP",
+        "custMeasure3": 5.6,
+        "custMeasureLabel3": "Lactate",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Stop further crystalloid bolus; recognize cardiogenic/pulmonary edema overlay",
+        "Start norepinephrine 3-30 mcg/min (60 kg × 0.05-0.5 mcg/kg/min); begin 5 mcg/min",
+        "Initiate CPAP/BiPAP for iatrogenic pulmonary edema",
+        "Expedite transport; advance notify ED that fluids alone failed"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Etomidate-induced post-RSI hypotension",
+      "description": "Crew chose etomidate 0.2-0.3 mg/kg as the induction agent. Etomidate is on the protocol list. The intubation itself goes fine — first pass, capnography confirms, tube secured. But within 2-3 minutes the BP crashes: SBP 64, MAP 48, despite the norepi infusion that was already running. Etomidate causes adrenal suppression via 11-beta-hydroxylase inhibition, and in a patient who is already fluid-refractory and depending on stress steroids to make catecholamines, that suppression cracks the floor out from under the BP. The crew now has to rescue: push-dose epi boluses, up-titrate the norepi, give hydrocortisone (if not already given), and accept that this patient is now going to need more pressor than would have been required with ketamine.",
+      "monitorType": 0,
+      "trendTime": 25,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 138,
+        "bpSys": 78,
+        "bpDia": 44,
+        "respRate": 14,
+        "spo2": 95,
+        "etco2": 30,
+        "temp": 39.1,
+        "obstruction": 0,
+        "custMeasure1": 138,
+        "custMeasureLabel1": "mg/dL",
+        "custMeasure2": 55,
+        "custMeasureLabel2": "MAP (post-etomidate)",
+        "custMeasure3": 20,
+        "custMeasureLabel3": "Norepi (mcg/min)",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Rescue push-dose epi 10 mcg IV q3-5 min until norepi catches up",
+        "Up-titrate norepi to 20-30 mcg/min (still within 60 kg × 0.5 mcg/kg/min cap)",
+        "Hydrocortisone 100 mg IV if not already given (etomidate adrenal suppression)",
+        "Document peri-intubation hypotension event and rescue interventions"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Rapid primary survey (ABC); recognize sepsis/distributive shock on qSOFA",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply NRB at 15 L/min; target SpO2 94-98%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Cardiac monitor, SpO2, waveform EtCO2 (low EtCO2 = poor perfusion)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Two large-bore IVs (18g preferred); IO if no IV in 2 attempts/90s",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check blood glucose; correct only if <60 mg/dL (this patient: 138)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Draw POC lactate if available (>2 mmol/L abnormal; this patient: 4.8)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "NS 1800 mL bolus (60 kg × 30 mL/kg) pressure-infused, in 500 mL aliquots over <15 min each",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Acquire 12-lead EKG (rule out cardiogenic etiology)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Septic shock alert / advance notification to receiving ED",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize fluid-refractory shock after 30 mL/kg; escalate to pressor",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Push-dose epi 10 mcg IV (1 mL of 10 mcg/mL dilution) q3-5 min while norepi prepared",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Norepinephrine infusion 3-30 mcg/min (60 kg × 0.05-0.5 mcg/kg/min); start at 5 mcg/min, titrate to MAP ≥ 65",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Hydrocortisone 100 mg IV (60 kg × 2 mg/kg = 120 mg → cap at 100 mg max)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Acetaminophen 1000 mg PO/PR (15 mg/kg × 60 kg = 900 mg → round to 1 g max)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess full vitals/neuro q5 min during pressor titration; document each change",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize impending respiratory failure (low EtCO2 + tachypnea + drop in GCS)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Pre-oxygenate 2+ min: BVM with PEEP 5 + apneic NC at 15 L/min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Fentanyl 60 mcg IV (60 kg × 1 mcg/kg) 2-3 min before laryngoscopy",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Ketamine 90 mg IV push (60 kg × 1.5 mg/kg) — preferred induction in shock",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Rocuronium 60 mg IV push (60 kg × 1 mg/kg) for paralysis",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Intubate (7.5 mm ETT); confirm with waveform EtCO2 + bilateral breath sounds",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Ventilate 14/min, TV 6-8 mL/kg IBW (~420 mL), PEEP 5; target EtCO2 30-35",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Post-intubation sedation: fentanyl 60-120 mcg + midazolam 1-2 mg IV (titrate)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place OG/NG tube for gastric decompression",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Titrate norepi q2-3 min to MAP ≥ 65 (currently 10 mcg/min, range 3-30 mcg/min)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous waveform EtCO2; reconfirm placement after every movement",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Update receiving ED: septic shock, intubated, norepi 10 mcg/min, ETA",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Stop further crystalloid bolus; recognize cardiogenic/pulmonary edema overlay",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Start norepinephrine 3-30 mcg/min (60 kg × 0.05-0.5 mcg/kg/min); begin 5 mcg/min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Initiate CPAP/BiPAP for iatrogenic pulmonary edema",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Expedite transport; advance notify ED that fluids alone failed",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Rescue push-dose epi 10 mcg IV q3-5 min until norepi catches up",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Up-titrate norepi to 20-30 mcg/min (still within 60 kg × 0.5 mcg/kg/min cap)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Hydrocortisone 100 mg IV if not already given (etomidate adrenal suppression)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document peri-intubation hypotension event and rescue interventions",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

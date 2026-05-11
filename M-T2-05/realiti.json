@@ -1,0 +1,354 @@
+{
+  "scenarioId": "M-T2-05",
+  "scenarioName": "Sepsis with Ambiguous Source",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1500,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "82-year-old female resident of Maplewood Assisted Living. Daughter visited this afternoon and found mom 'just not herself' — quieter than usual, slower to answer questions, didn't want to get out of her chair. Staff confirm she ate only a few bites of breakfast and skipped lunch. No falls witnessed. No specific complaint of pain, chest pain, shortness of breath, dysuria, cough, abdominal pain, or rash. No recent antibiotics. No new medications. No vomiting or diarrhea. Last well per staff: yesterday evening at dinner, ambulating with walker, conversant at her baseline (A&Ox3). Daughter called 911 because mom 'isn't tracking the conversation' and 'feels warm.'",
+    "discussion": "",
+    "course": "Initial Contact: Crew arrives to a vague, low-acuity-feeling call. Patient is awake but quieter than baseline. Daughter cannot point to a specific complaint — 'she's just not herself.' Facility nurse hands over med list. First glance suggests a soft, social-work-flavored call. The vitals will tell a different story. → Sepsis recognized: Crew has connected the dots: HR 112, RR 24, T 100.6°F, A&Ox2 off a baseline of A&Ox3, BP 96/60. That constellation meets sepsis criteria. There is no obvious source on exam, but in the elderly an absent source is the rule, not the exception. Crew commits to empiric sepsis management: airway/oxygen, two IVs, 30 mL/kg NS bolus, sepsis alert. → Under-responding to bolus: About 5 minutes into the bolus the BP has actually drifted DOWN to 88/52 instead of climbing. MAP is now 64 — under the 65 target. This is the moment that says: she's sicker than the door suggested, this is fluid-refractory or fluid-pending septic shock, and pressors need to be on deck. Continue the bolus, prep norepinephrine drip (or push-dose epi as a bridge), and upgrade the hospital notification to septic shock. → Sepsis alert handoff: Arrival at ED with a full sepsis alert. Bolus is in (or nearly in), pressor ready or hung, patient is still A&Ox2-3 with MAP holding around 65-70. ED team is at the door, antibiotics are drawn up, central access kit is open. The vague-weakness call has become a sepsis save because the crew refused to anchor on the soft presentation."
+  },
+  "patientInformation": {
+    "patientName": "Eleanor Whitfield",
+    "patientCondition": "Generalized weakness and 'not acting like herself' per daughter",
+    "patientAge": 82,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 2,
+    "patientHeight": 160,
+    "patientWeight": 60,
+    "patientPhotoId": 99,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "Crew arrives to a vague, low-acuity-feeling call. Patient is awake but quieter than baseline. Daughter cannot point to a specific complaint — 'she's just not herself.' Facility nurse hands over med list. First glance suggests a soft, social-work-flavored call. The vitals will tell a different story.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 112,
+        "bpSys": 96,
+        "bpDia": 60,
+        "respRate": 24,
+        "spo2": 93,
+        "etco2": 30,
+        "temp": 38.1,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Rapid primary survey (ABC); recognize change from baseline mental status",
+        "Full vital signs + temperature + SpO2 + EtCO2",
+        "Check blood glucose (rule out hypo/hyperglycemia as AMS cause)",
+        "Detailed history from daughter and facility nurse",
+        "Sweep for infection sources: cough, dysuria, abd pain, wounds, lines",
+        "Cardiac monitor, 12-lead EKG (rule out ACS/dysrhythmia masquerade)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Sepsis recognized",
+      "description": "Crew has connected the dots: HR 112, RR 24, T 100.6°F, A&Ox2 off a baseline of A&Ox3, BP 96/60. That constellation meets sepsis criteria. There is no obvious source on exam, but in the elderly an absent source is the rule, not the exception. Crew commits to empiric sepsis management: airway/oxygen, two IVs, 30 mL/kg NS bolus, sepsis alert.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 110,
+        "bpSys": 94,
+        "bpDia": 58,
+        "respRate": 24,
+        "spo2": 95,
+        "etco2": 30,
+        "temp": 38.1,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Titrated O2 via NC to maintain SpO2 94-98%",
+        "Establish two large-bore IVs (IO if 2 attempts/90 sec fail)",
+        "NS 1800 mL bolus pressure-infused (60 kg × 30 mL/kg = 1800 mL), 500 mL aliquots <15 min each, target MAP ≥65",
+        "Apply waveform capnography (low EtCO2 = poor perfusion marker)",
+        "Check lactate if available (>2 mmol/L abnormal)",
+        "Provide advanced notification — sepsis alert to receiving ED"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Under-responding to bolus",
+      "description": "About 5 minutes into the bolus the BP has actually drifted DOWN to 88/52 instead of climbing. MAP is now 64 — under the 65 target. This is the moment that says: she's sicker than the door suggested, this is fluid-refractory or fluid-pending septic shock, and pressors need to be on deck. Continue the bolus, prep norepinephrine drip (or push-dose epi as a bridge), and upgrade the hospital notification to septic shock.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 116,
+        "bpSys": 88,
+        "bpDia": 52,
+        "respRate": 26,
+        "spo2": 95,
+        "etco2": 28,
+        "temp": 38.2,
+        "obstruction": 0,
+        "custMeasure1": 138,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Continue NS bolus to full 30 mL/kg (1800 mL); reassess lungs each 500 mL",
+        "Prepare norepinephrine 0.05-0.5 mcg/kg/min drip (preferred pressor for septic shock)",
+        "Consider push-dose epi 10 mcg q3-5 min as bridge (10 mcg/mL: 1 mL of 1:10,000 in 9 mL NS)",
+        "Upgrade ED notification: septic shock, vasopressors likely needed",
+        "Reassess vitals + mental status + lung sounds q5 min"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Sepsis alert handoff",
+      "description": "Arrival at ED with a full sepsis alert. Bolus is in (or nearly in), pressor ready or hung, patient is still A&Ox2-3 with MAP holding around 65-70. ED team is at the door, antibiotics are drawn up, central access kit is open. The vague-weakness call has become a sepsis save because the crew refused to anchor on the soft presentation.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 104,
+        "bpSys": 102,
+        "bpDia": 60,
+        "respRate": 22,
+        "spo2": 97,
+        "etco2": 32,
+        "temp": 38,
+        "obstruction": 0,
+        "custMeasure1": 130,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Structured handoff: vitals trend, fluids given, pressors started, source unknown"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Undertriaged as 'weakness'",
+      "description": "JUDGMENT-ERROR BRANCH. Crew anchored on the soft presentation and the absent obvious source. Temperature was not measured, or was measured and dismissed ('she always runs a little warm'). No IV established. No fluid bolus given. No advanced ED notification. Transported as a low-acuity 'weakness' transfer. By the time the rig backs into the ED bay, BP has crashed to 76/44, mental status is now Verbal-only, and the receiving team is meeting them cold without a sepsis team activated. Strong teaching beat: in geriatrics, vague + criteria-positive = treat empirically, even with no source.",
+      "monitorType": 0,
+      "trendTime": 55,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 128,
+        "bpSys": 76,
+        "bpDia": 44,
+        "respRate": 30,
+        "spo2": 90,
+        "etco2": 24,
+        "temp": 38.4,
+        "obstruction": 0,
+        "custMeasure1": 134,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize sepsis-driven deterioration: late distributive shock",
+        "Rescue IV access + immediate NS bolus en route (60 kg × 30 mL/kg = 1800 mL); IO if 2 attempts/90 sec",
+        "Call sepsis alert NOW — upgrade transport priority",
+        "Debrief: vague + elderly + criteria-positive = treat empirically"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Rapid primary survey (ABC); recognize change from baseline mental status",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Full vital signs + temperature + SpO2 + EtCO2",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check blood glucose (rule out hypo/hyperglycemia as AMS cause)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Detailed history from daughter and facility nurse",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Sweep for infection sources: cough, dysuria, abd pain, wounds, lines",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Cardiac monitor, 12-lead EKG (rule out ACS/dysrhythmia masquerade)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Titrated O2 via NC to maintain SpO2 94-98%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish two large-bore IVs (IO if 2 attempts/90 sec fail)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "NS 1800 mL bolus pressure-infused (60 kg × 30 mL/kg = 1800 mL), 500 mL aliquots <15 min each, target MAP ≥65",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply waveform capnography (low EtCO2 = poor perfusion marker)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check lactate if available (>2 mmol/L abnormal)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Provide advanced notification — sepsis alert to receiving ED",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue NS bolus to full 30 mL/kg (1800 mL); reassess lungs each 500 mL",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Prepare norepinephrine 0.05-0.5 mcg/kg/min drip (preferred pressor for septic shock)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Consider push-dose epi 10 mcg q3-5 min as bridge (10 mcg/mL: 1 mL of 1:10,000 in 9 mL NS)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Upgrade ED notification: septic shock, vasopressors likely needed",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess vitals + mental status + lung sounds q5 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Structured handoff: vitals trend, fluids given, pressors started, source unknown",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize sepsis-driven deterioration: late distributive shock",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Rescue IV access + immediate NS bolus en route (60 kg × 30 mL/kg = 1800 mL); IO if 2 attempts/90 sec",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Call sepsis alert NOW — upgrade transport priority",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Debrief: vague + elderly + criteria-positive = treat empirically",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

@@ -1,0 +1,498 @@
+{
+  "meta": {
+    "id": "M-T2-02",
+    "name": "Stroke Mimic",
+    "version": 1,
+    "difficulty": "intermediate",
+    "category": "Medical",
+    "protocols": [
+      "cv-stroke-tia",
+      "medical-altered-mental-status",
+      "medical-hypoglycemia",
+      "medical-seizures"
+    ],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": ["medical", "stroke", "stroke-mimic", "todds-paralysis", "seizure", "differential", "tier-2", "decision-dense"]
+  },
+  "patient": {
+    "name": "Margaret Holloway",
+    "age": 64,
+    "ageUnit": "years",
+    "sex": "female",
+    "weight": 72,
+    "weightLbs": 159,
+    "height": 165,
+    "chiefComplaint": "Right-sided weakness and slurred speech",
+    "history": {
+      "hpi": "64-year-old female found by her husband this morning in their bedroom with right-sided weakness, mild facial droop, and slurred speech. Husband woke around 0640 and found her 'not acting right' — speech thick, right arm weak, right corner of mouth drooping. He called 911 immediately stating 'I think she's having a stroke.' On further questioning, husband recalls being woken briefly around 0200 by 'shaking' in the bed beside him; he assumed she was 'just having a bad dream' and went back to sleep. He cannot specifically say when she was 'last known well' — she was normal at bedtime around 2230 last night. Patient has known focal epilepsy diagnosed 4 years ago, on levetiracetam (Keppra) 1000 mg PO BID, with admitted inconsistent compliance — husband states she 'sometimes skips doses' and her last witnessed seizure was approximately 3 months ago (focal motor seizure of right arm, post-ictal weakness lasted about 90 minutes per the ED note he describes). No reported headache, no neck pain, no recent trauma, no chest pain, no fever. No anticoagulant medications. Patient mildly confused and dysarthric on EMS arrival but answering simple questions; weakness is fluctuating on serial exam and mental status appears to be improving over the first few minutes of contact.",
+      "pastMedical": [
+        "Focal epilepsy (diagnosed 4 years ago)",
+        "Hypertension",
+        "Hyperlipidemia",
+        "Prior witnessed focal motor seizure 3 months ago with post-ictal Todd's paralysis"
+      ],
+      "medications": [
+        "Levetiracetam (Keppra) 1000 mg PO BID — admitted inconsistent compliance",
+        "Lisinopril 20 mg PO daily",
+        "Atorvastatin 40 mg PO at bedtime"
+      ],
+      "allergies": ["NKDA"],
+      "lastOralIntake": "Light dinner around 1900 last night; nothing since",
+      "events": "Husband woke at 0640 and found patient with right-sided weakness and slurred speech. Recalls — only when asked directly — being awakened around 0200 by 'shaking' in the bed that he dismissed as a bad dream. Patient was reportedly normal at bedtime ~2230 the night before. 911 called immediately when husband saw the deficits this morning."
+    }
+  },
+  "scene": {
+    "dispatch": "64-year-old female, weakness and 'can't talk right.' Possible stroke. Private residence.",
+    "location": "Single-story private residence, master bedroom. Patient seated on edge of bed, supported by husband. Bedside lamp on, sheets disheveled on patient's side of the bed.",
+    "time": "Monday, 0651 — early morning",
+    "safety": "Scene safe. Husband cooperative and oriented. No pets, clear egress.",
+    "bystanders": "Husband (primary historian) reports she 'woke up like this.' On directed questioning, he recalls overnight 'shaking' around 0200 he dismissed. Says she 'forgets her seizure pills sometimes.'",
+    "visualCues": [
+      "Pill organizer on nightstand — Monday morning compartment still has a Keppra tablet visible (this morning's dose not yet taken)",
+      "Bottle of levetiracetam (Keppra) on the dresser",
+      "Sheets disheveled on patient's side of the bed; pillow off-center",
+      "Patient supported by husband, right arm hanging slightly lower than left",
+      "Right corner of mouth visibly droops; patient slow to answer but engaging"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 64-year-old female sitting on the edge of her bed with her husband supporting her. Right facial droop, right arm drift, mildly slurred speech. GCS 14 (E4 V4 M6). LAMS scores 3 (face 1, arm 1, grip 1). On the surface this looks like a textbook acute stroke — and the husband is already saying 'she's having a stroke.' But there are flags: the husband cannot give a precise 'last known well,' he recalls overnight 'shaking' that he dismissed, the patient is on Keppra for known focal epilepsy with inconsistent compliance, her mental status seems to be slowly improving even during the primary survey, and her arm strength is fluctuating between repeat exams. Glucose, anticoagulant status, exact onset, and seizure history all need to be worked.",
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 4, "motor": 6 },
+        "airway": "Patent, self-maintained, mildly dysarthric speech",
+        "breathing": "Unlabored, breath sounds clear and equal, no distress",
+        "circulation": "Strong regular radial pulses bilaterally, cap refill <2s, skin warm and dry",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL 4 mm bilaterally, no dysconjugate gaze",
+        "motorFunction": "Right arm drift on 10-second hold (drops to ~45 degrees, then stabilizes); right hand grip 4/5; right leg 4+/5; left side full strength 5/5; right facial droop with preserved forehead movement",
+        "otherFindings": [
+          "LAMS = 3 (face 1, arm 1, grip 1)",
+          "Mild dysarthria — slurs 'You can't teach an old dog new tricks'",
+          "No headache, no neck stiffness, no vomiting",
+          "No tongue bite visible on inspection",
+          "No incontinence noted",
+          "Husband states she 'forgets her Keppra sometimes'",
+          "On serial exam over first 3-4 minutes, mental status subtly improving (more spontaneous speech, better word-finding)"
+        ],
+        "patientSpeech": "'My arm... feels heavy. I can't... my mouth feels funny. What happened?' (Speech slow and slurred but content appropriate; orientation intact.)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Normal Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 88,
+        "bpSys": 152,
+        "bpDia": 88,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 96,
+        "trendTimeSeconds": 0,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": false, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "primary-survey",
+          "shortAction": "Primary survey ABCs; airway patent, no immediate threats",
+          "protocolExcerpt": "Assessment: Airway: Make sure airway remains patent; reposition patient as needed. Breathing: Look for respiratory depression; check SPO2, EtCO2, and CO detector readings. Circulation: Look for signs of poor perfusion.",
+          "priority": "critical",
+          "rationale": "Confirms no acute airway/breathing/circulation threat; frees the crew to do the differential work this scenario hinges on.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "stroke-scale",
+          "shortAction": "Perform validated stroke scale (Cincinnati/LAMS); document findings",
+          "protocolExcerpt": "Use a validated prehospital stroke scale that may include, but is not limited to: Facial smile/grimace – ask patient to smile; Arm drift – close eyes and hold out arms for count of 10 seconds; Speech – ask patient to say 'You can't teach an old dog new tricks.' Use a validated prehospital stroke severity scale that may include, but is not limited to: Vision changes; Sensory neglect; Aphasia.",
+          "priority": "critical",
+          "rationale": "Objectifies deficits and sets a baseline for the serial re-exam that will reveal the mimic.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "blood-glucose",
+          "shortAction": "Check blood glucose — finger-stick (rule out hypoglycemia mimic)",
+          "protocolExcerpt": "Exclusion Criteria: If glucose less than 60 mg/dL (deciliter), treat per the Hypoglycemia Guideline. Treatment and Interventions: Check blood glucose level (BGL) — Treat only if glucose less than 60 mg/dL.",
+          "priority": "critical",
+          "rationale": "Glucose 96 mg/dL rules out the most common stroke mimic and means no dextrose indicated; documents that the mimic differential was actively worked.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "last-known-well",
+          "shortAction": "Determine exact 'last known well' time and source",
+          "protocolExcerpt": "Determine 'last known well' time. Key Documentation Elements: 'Last known well' must be specific — If the patient was last known well prior to bedtime the night before, this is the time to be documented (not time the patient woke up with symptoms present).",
+          "priority": "critical",
+          "rationale": "Forces the crew past the husband's 0640 'I found her' anchor — true LKW is bedtime ~2230, which is itself a flag and which makes thrombectomy windows tighter and a mimic more likely.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "mimic-screen",
+          "shortAction": "Actively screen stroke mimics: hypoglycemia, seizure, sepsis, migraine, intox",
+          "protocolExcerpt": "Evaluate for the presence of stroke mimics including: Hypoglycemia; Seizure; Sepsis; Migraine; Intoxication.",
+          "priority": "critical",
+          "rationale": "This is the core teaching point. The protocol requires mimic screening; the clinical picture here will pay off only if the crew actually does it.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "seizure-history",
+          "shortAction": "Ask about recent seizure activity and anti-epileptic compliance",
+          "protocolExcerpt": "Pertinent historical data includes: History – 'last known well' and source of that information; Neurologic status assessment; Patient is taking warfarin or any anticoagulant medication; History of recent trauma; History of recent seizure; History of recent surgery; History of recent hemorrhage (e.g., GI bleed).",
+          "priority": "critical",
+          "rationale": "Specifically prompted by the protocol. Asking opens the door to the husband's recall of overnight 'shaking' he dismissed — the single fact that flips the diagnosis.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "anticoag-trauma-hx",
+          "shortAction": "Screen anticoagulant use and recent trauma/surgery/hemorrhage",
+          "protocolExcerpt": "Pertinent historical data includes: Patient is taking warfarin or any anticoagulant medication; History of recent trauma; History of recent surgery; History of recent hemorrhage (e.g., GI bleed).",
+          "priority": "important",
+          "rationale": "Standard stroke workup data that the receiving stroke team will need regardless of whether this turns out to be a mimic.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "aeiou-tips-differential",
+          "shortAction": "Run AEIOU-TIPS differential for AMS; document considerations",
+          "protocolExcerpt": "Consider the following differential using the mnemonic AEIOU-TIPS: A – Alcohol, Abuse, Atypical migraine; E – Epilepsy, Electrolytes; I – Insulin (hypoglycemia); O – Oxygen, Overdose; U – Uremia (kidney failure); T – Trauma, Tumor; I – Infection; P – Psych, Poisoning; S – Seizure, Subarachnoid hemorrhage, Sepsis.",
+          "priority": "important",
+          "rationale": "Structures the broader differential beyond just the stroke pathway — the 'E' and 'S' of AEIOU-TIPS land directly on this patient.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "o2-target",
+          "shortAction": "Titrate O2 to 94-98% SpO2 (currently 97% room air, no O2 needed)",
+          "protocolExcerpt": "Administer oxygen as appropriate with a target of achieving 94–98% saturation.",
+          "priority": "important",
+          "rationale": "Reinforces target-saturation oxygen practice; no supplemental O2 indicated at 97%.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "monitor-12-lead",
+          "shortAction": "Place on cardiac monitor; acquire 12-lead EKG if possible",
+          "protocolExcerpt": "Acquire 12-lead EKG, if possible. Key Considerations: Place on cardiac monitor.",
+          "priority": "important",
+          "rationale": "Identifies AFib or other cardiac contributors to embolic stroke; baseline for transport.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "no-htn-treatment",
+          "shortAction": "Do not treat the BP of 152/88 — permissive hypertension",
+          "protocolExcerpt": "Key Considerations: Do not treat hypertension.",
+          "priority": "important",
+          "rationale": "Common student error; the protocol explicitly says do not treat HTN in suspected stroke.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "mimic-recognized",
+          "if": "Differential worked; mimic recognized",
+          "condition": "Crew completes glucose check, captures exact LKW (~2230 prior night), elicits husband's overnight 'shaking' recall, recognizes pattern of fluctuating/improving deficit on serial LAMS exam consistent with Todd's paralysis after focal seizure, and treats as stroke mimic — not thrombectomy alert.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["blood-glucose", "last-known-well", "seizure-history", "mimic-screen", "aeiou-tips-differential"]
+        },
+        {
+          "targetPhaseId": "stroke-alert-no-differential",
+          "if": "Stroke alert without working differential",
+          "condition": "Crew anchors on family's 'she's having a stroke,' fails to take exact LKW from husband, fails to elicit overnight seizure activity, fails to repeat the LAMS serially, and calls a thrombectomy-capable stroke alert based solely on initial LAMS 3 with right-sided deficits.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["seizure-history", "last-known-well", "mimic-screen"]
+        }
+      ]
+    },
+    {
+      "id": "mimic-recognized",
+      "name": "Mimic recognized",
+      "description": "Crew has worked the differential. Glucose normal at 96 mg/dL. True last known well is bedtime ~2230 the night before, which the husband — under direct questioning — confirms, and he now also remembers being woken around 0200 by 'shaking' in the bed that he had dismissed as a dream. On serial exam over the last ~5 minutes the right arm has gone from drifting to ~45 degrees to holding at 4/5 with effort; speech is becoming clearer. The pattern — known focal epilepsy on Keppra with admitted non-compliance, witnessed overnight nocturnal shaking, fluctuating-and-improving focal deficit, normal glucose — fits post-ictal Todd's paralysis far better than acute large-vessel stroke. Crew packages for transport, but as a low-acuity neurology evaluation rather than a thrombectomy alert, and pre-notifies the receiving ED accordingly.",
+      "triggerCondition": "Crew completed glucose check, established exact LKW (~2230 prior night, not 0640 found-time), elicited husband's overnight 'shaking' recall, and observed the fluctuating/improving deficit on serial LAMS exam — recognizing the picture as a stroke mimic rather than acute ischemic stroke.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, self-maintained, speech clearer than initial",
+        "breathing": "Unlabored, lungs clear, no distress",
+        "circulation": "Strong regular radial pulses, cap refill <2s, skin warm and dry",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL 4 mm bilaterally",
+        "motorFunction": "Right arm now holds 10-second test at ~70 degrees with mild drift; grip 4/5 (improved from earlier); right facial droop subtly less pronounced",
+        "otherFindings": [
+          "Repeat LAMS now 2 (face 1, arm 1, grip 0)",
+          "Patient now able to repeat 'You can't teach an old dog new tricks' with mild slurring only",
+          "Husband, on prompt, recalls 'shaking on her side of the bed around 2 AM — I thought she was just dreaming'",
+          "No tongue bite, no urinary incontinence — but pillow off-center and sheets disheveled on her side",
+          "No headache, no neck pain, no vomiting"
+        ],
+        "patientSpeech": "'I feel a little better. My arm's still tired but I can move it more now.'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Normal Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 84,
+        "bpSys": 148,
+        "bpDia": 86,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 36.9,
+        "tempF": 98.4,
+        "obstruction": 0,
+        "glucose": 96,
+        "trendTimeSeconds": 40,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": false, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "name-the-mimic",
+          "shortAction": "Recognize stroke mimic — likely Todd's paralysis post-focal seizure",
+          "protocolExcerpt": "Evaluate for the presence of stroke mimics including: Hypoglycemia; Seizure; Sepsis; Migraine; Intoxication.",
+          "priority": "critical",
+          "rationale": "Verbalizing the working diagnosis is the teaching beat — it forces the crew to commit to an interpretation rather than reflexively running a stroke alert.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "no-active-seizure-treatment",
+          "shortAction": "No active seizure; no benzodiazepine indicated (post-ictal only)",
+          "protocolExcerpt": "Inclusion Criteria: Seizure activity upon arrival of prehospital personnel or new/recurrent seizure activity lasting greater than 5 minutes.",
+          "priority": "important",
+          "rationale": "Active anticonvulsant therapy is for active seizures or status >5 min — neither is present. Post-ictal patient gets supportive care, not midazolam.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "elevate-head",
+          "shortAction": "Elevate head of stretcher 15-30 degrees (BP >100 systolic)",
+          "protocolExcerpt": "Patient Safety Considerations: Prevent aspiration – elevate head of stretcher 15–30 degrees if systolic BP greater than 100 mmHg — Maintain head and neck in neutral alignment, without flexing the neck.",
+          "priority": "important",
+          "rationale": "Even in a mimic, post-ictal patients with persistent dysarthria are at aspiration risk; HOB elevation is protocol-driven.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "protect-paralyzed-limb",
+          "shortAction": "Protect the weak right arm during packaging and transport",
+          "protocolExcerpt": "Patient Safety Considerations: Protect paralyzed limbs from injury.",
+          "priority": "supplemental",
+          "rationale": "Whether stroke or post-ictal weakness, the limb is at risk for positioning injury.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "iv-conservative",
+          "shortAction": "Single IV attempt only; avoid multiple sticks",
+          "protocolExcerpt": "Patient Safety Considerations: Avoid multiple IV attempts.",
+          "priority": "supplemental",
+          "rationale": "Protocol-driven — protect future thrombolytic options if the differential later flips back.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "neuro-not-thrombectomy",
+          "shortAction": "Transport as low-priority neurology eval — NOT thrombectomy alert",
+          "protocolExcerpt": "Transport and destination decisions should be based on local resources and stroke system of care — Destination hospitals may include: Stroke Ready; Primary Stroke Center; Thrombectomy-capable Stroke Center; Comprehensive Stroke Center.",
+          "priority": "critical",
+          "rationale": "Calling thrombectomy on a Todd's paralysis ties up the receiving team, the angio suite, and CT angio time for a patient who does not need them and delays workup of a patient who does. Right transport, right resource.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "ed-pre-notification",
+          "shortAction": "Pre-notify ED: post-ictal/Todd's paralysis suspected, not stroke alert",
+          "protocolExcerpt": "Early hospital notification per local stroke plan that should include any suspected large vessel occlusion (LVO) stroke.",
+          "priority": "important",
+          "rationale": "Even when downgrading, notification lets the ED stage neurology and not stroke-team resources — and lets them be ready to revisit if symptoms re-evolve.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "transport-improving",
+          "if": "Weakness improves further in transport",
+          "condition": "During transport, repeat serial neuro exam shows right arm strength returning to 5/5, speech clear, LAMS 0. Pattern fully consistent with resolving Todd's paralysis. Crew updates the receiving ED on the trend.",
+          "conditionType": "time_elapsed",
+          "timeoutSeconds": 480
+        }
+      ]
+    },
+    {
+      "id": "transport-improving",
+      "name": "Transport — symptoms resolving",
+      "description": "Approximately 8 minutes into transport, serial neuro reassessment shows right arm strength back to 5/5, grip strength symmetric, speech clear with no residual dysarthria, facial droop resolved. LAMS now 0. Patient is fully alert, oriented to person/place/time/event, and asking what happened. The trajectory — resolution of focal deficit over ~30 minutes from EMS contact — is incompatible with an acute LVO and definitive for Todd's paralysis. Crew updates the receiving facility to expect a post-ictal patient, not a stroke alert, and continues monitoring for seizure recurrence en route.",
+      "triggerCondition": "Over the course of transport the right-sided weakness improves from 4/5 to 5/5, speech clears, and the facial droop resolves — confirming the mimic and ruling out an evolving large-vessel stroke.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, speech clear and articulate",
+        "breathing": "Unlabored, lungs clear",
+        "circulation": "Strong regular pulses, cap refill <2s, skin warm and dry",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL 4 mm bilaterally",
+        "motorFunction": "Symmetric 5/5 strength upper and lower extremities; symmetric grip; no facial droop on repeat exam",
+        "otherFindings": [
+          "Repeat LAMS = 0",
+          "Patient repeats 'You can't teach an old dog new tricks' clearly",
+          "Patient endorses post-event fatigue and mild headache — typical post-ictal",
+          "No active seizure activity during transport",
+          "Husband on phone with adult daughter, recounting overnight 'shaking' he hadn't thought to mention"
+        ],
+        "patientSpeech": "'I feel almost back to normal. I'm just tired. Did I have another seizure? I didn't take my Keppra yesterday morning, did I?'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Normal Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 78,
+        "bpSys": 138,
+        "bpDia": 82,
+        "respRate": 14,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 36.9,
+        "tempF": 98.4,
+        "obstruction": 0,
+        "glucose": 94,
+        "trendTimeSeconds": 50,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": false, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "serial-neuro-reassess",
+          "shortAction": "Repeat neuro exam and LAMS; document improvement trajectory",
+          "protocolExcerpt": "Reassess patient — Reassess vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) and mental status.",
+          "priority": "critical",
+          "rationale": "Documenting the improvement is what definitively distinguishes the mimic from a stroke for the receiving team.",
+          "protocolReference": "MATC: Hypoglycemia"
+        },
+        {
+          "id": "update-receiving",
+          "shortAction": "Update receiving ED on full symptom resolution and trajectory",
+          "protocolExcerpt": "Early hospital notification per local stroke plan that should include any suspected large vessel occlusion (LVO) stroke.",
+          "priority": "important",
+          "rationale": "The ED can re-allocate the stroke team and prepare for a post-ictal/AED-compliance workup if they know the symptoms have resolved en route.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "monitor-recurrence",
+          "shortAction": "Continuous monitoring for seizure recurrence during transport",
+          "protocolExcerpt": "Patient Care Goals: Minimizing seizure recurrence during transport.",
+          "priority": "important",
+          "rationale": "Sub-therapeutic Keppra plus a witnessed overnight focal seizure puts this patient at meaningful risk of recurrence.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "post-ictal-positioning",
+          "shortAction": "Maintain lateral recumbent or HOB-elevated positioning",
+          "protocolExcerpt": "Patient Safety Considerations: Prevent aspiration – elevate head of stretcher 15–30 degrees if systolic BP greater than 100 mmHg.",
+          "priority": "supplemental",
+          "rationale": "Continued airway protection during a post-ictal/resolving period.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "document-lkw-seizure",
+          "shortAction": "Document LKW 2230, witnessed nocturnal seizure ~0200, Keppra non-compliance",
+          "protocolExcerpt": "Key Documentation Elements: 'Last known well' must be specific — If the patient was last known well prior to bedtime the night before, this is the time to be documented (not time the patient woke up with symptoms present); Blood glucose results; Specific validated stroke scale used and findings; Time of notification to receiving hospital.",
+          "priority": "important",
+          "rationale": "These three data points are what justify the downgrade and steer the receiving workup toward AED levels and EEG instead of CT-angio/thrombectomy.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "stroke-alert-no-differential",
+      "name": "Stroke alert without differential",
+      "description": "Crew anchors on the husband's 'she's having a stroke' and the LAMS 3 score and calls a thrombectomy-capable stroke alert without doing the mimic differential. Glucose was not yet drawn, exact LKW was not pressed (crew has '0640' on the chart as time of onset, not bedtime), and the husband's overnight 'shaking' recall was never elicited because the seizure-history question was skipped. On arrival the ED activates the stroke/thrombectomy team and rolls the patient straight to CT — CTA protocol — bumping a STEMI being worked up in the next bay. By the time the neurology fellow sees the patient at the scanner, her right arm is back to 5/5 and her speech is clear: a textbook Todd's paralysis. The thrombectomy team stands down, the CTA is unnecessary, and the AED-compliance/EEG workup that should have started in the first 15 minutes is delayed by ~40 minutes. No direct patient harm — but the wrong resources were used, real stroke alerts in the queue were delayed, and the missed differential is the documented teaching point at debrief.",
+      "triggerCondition": "Glucose not drawn, exact LKW not pressed beyond the husband's 'found her at 0640,' seizure history and AED compliance not asked about, mimic differential not worked — crew calls a thrombectomy-capable stroke alert based on LAMS 3 alone.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 4, "motor": 6 },
+        "airway": "Patent, mild dysarthria initially; clearing by ED arrival",
+        "breathing": "Unlabored",
+        "circulation": "Strong regular pulses, skin warm and dry",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL 4 mm bilaterally",
+        "motorFunction": "Right-sided weakness on EMS arrival improves during transport — but crew does not document serial exam; ED finds full 5/5 strength at scanner",
+        "otherFindings": [
+          "Crew chart lists 'onset 0640' rather than 'LKW 2230 prior night'",
+          "No glucose value documented on patient care report",
+          "No mention of seizure history or Keppra non-compliance on radio report",
+          "Thrombectomy/CTA team activated by receiving ED based on EMS report",
+          "STEMI patient in adjacent bay waits ~25 min for cath lab handoff while stroke bay is occupied",
+          "On ED reassessment at CT, LAMS = 0; thrombectomy team stands down"
+        ],
+        "patientSpeech": "'I feel okay now... did I really need all this?'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Normal Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 82,
+        "bpSys": 144,
+        "bpDia": 84,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 36.9,
+        "tempF": 98.4,
+        "obstruction": 0,
+        "glucose": 96,
+        "trendTimeSeconds": 30,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": false, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "missed-mimic-screen",
+          "shortAction": "Missed: active mimic screen (hypoglycemia, seizure, sepsis, migraine, intox)",
+          "protocolExcerpt": "Evaluate for the presence of stroke mimics including: Hypoglycemia; Seizure; Sepsis; Migraine; Intoxication.",
+          "priority": "critical",
+          "rationale": "The protocol-required mimic screen is the single step that would have caught this. Skipping it is the root error.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "missed-seizure-history",
+          "shortAction": "Missed: recent-seizure history question and AED compliance check",
+          "protocolExcerpt": "Pertinent historical data includes: History – 'last known well' and source of that information; Neurologic status assessment; Patient is taking warfarin or any anticoagulant medication; History of recent trauma; History of recent seizure; History of recent surgery; History of recent hemorrhage (e.g., GI bleed).",
+          "priority": "critical",
+          "rationale": "Recent-seizure question would have unlocked husband's overnight 'shaking' recall.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "missed-lkw-specificity",
+          "shortAction": "Missed: exact LKW (bedtime ~2230) — used 'found at 0640' instead",
+          "protocolExcerpt": "Key Documentation Elements: 'Last known well' must be specific — If the patient was last known well prior to bedtime the night before, this is the time to be documented (not time the patient woke up with symptoms present).",
+          "priority": "critical",
+          "rationale": "Found-time anchoring is the most common stroke-workup error in the literature. Protocol calls it out specifically.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "missed-glucose",
+          "shortAction": "Missed: blood glucose check before stroke alert",
+          "protocolExcerpt": "Exclusion Criteria: If glucose less than 60 mg/dL (deciliter), treat per the Hypoglycemia Guideline.",
+          "priority": "critical",
+          "rationale": "Glucose is a protocol-mandated exclusion step and a documentation/performance measure for stroke care.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "consequence-unnecessary-thrombectomy",
+          "shortAction": "Consequence: unnecessary thrombectomy team activation and CTA",
+          "protocolExcerpt": "Transport and destination decisions should be based on local resources and stroke system of care — Destination hospitals may include: Stroke Ready; Primary Stroke Center; Thrombectomy-capable Stroke Center; Comprehensive Stroke Center.",
+          "priority": "critical",
+          "rationale": "Resource misuse — a Todd's paralysis does not require thrombectomy-capable resources. Calls in unnecessary specialists, occupies the angio bay, contrast load and time the patient did not need.",
+          "protocolReference": "MATC: Suspected Stroke/Transient Ischemic Attack"
+        },
+        {
+          "id": "consequence-delayed-real-workup",
+          "shortAction": "Consequence: delayed AED-level/EEG workup for true diagnosis",
+          "protocolExcerpt": "Patient Care Goals: Identify treatable causes; Perform appropriate assessment and diagnostics (e.g., oxygen saturation, glucose check, monitor); Protect patient from complications of altered mental status (e.g., respiratory failure, shock, cardiopulmonary arrest).",
+          "priority": "important",
+          "rationale": "While the stroke workup is being un-done, the actual workup — AED levels, possible EEG, neurology referral for compliance and possible regimen change — is delayed by ~40 minutes.",
+          "protocolReference": "MATC: Altered Mental Status"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

@@ -1,0 +1,586 @@
+{
+  "meta": {
+    "id": "M-T3-02",
+    "name": "Status Epilepticus Refractory to Benzodiazepines",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Medical",
+    "protocols": [
+      "medical-seizures",
+      "resp-airway-management",
+      "env-hyperthermia-heat-exposure",
+      "medical-altered-mental-status"
+    ],
+    "totalTimeSeconds": 1800,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "tier-3",
+      "high-acuity",
+      "status-epilepticus",
+      "refractory",
+      "RSI",
+      "hyperthermia",
+      "neurology",
+      "airway"
+    ]
+  },
+  "patient": {
+    "name": "Brittany Hollis",
+    "age": 28,
+    "ageUnit": "years",
+    "sex": "female",
+    "weight": 70,
+    "weightLbs": 154,
+    "height": 168,
+    "chiefComplaint": "Active generalized tonic-clonic seizure that will not stop",
+    "history": {
+      "hpi": "28-year-old female with known epilepsy (diagnosed at age 14, generalized tonic-clonic type) found by her boyfriend convulsing on the bedroom floor at home. Per boyfriend, she has been seizing continuously for at least 6 minutes by the time EMS arrives — convulsions have not paused, no return of consciousness, no postictal interval observed. Patient ran out of her Keppra (levetiracetam) approximately one week ago; refill at pharmacy was delayed due to insurance issue and she has not taken her anticonvulsant in 7 days. No prior episodes of prolonged seizing — typical seizures last 60-90 seconds and self-resolve. Boyfriend denies witnessed trauma, recent drug use, alcohol use, or fever-like illness, but the apartment is warm and she has been actively seizing for several minutes in heavy clothing. No bystander medication given prior to EMS arrival.",
+      "pastMedical": [
+        "Generalized epilepsy (tonic-clonic), diagnosed age 14",
+        "Anxiety (managed with PRN hydroxyzine, no daily med)",
+        "Migraine headaches"
+      ],
+      "medications": [
+        "Levetiracetam (Keppra) 1000 mg PO BID — OUT OF MEDICATION x 1 week",
+        "Hydroxyzine 25 mg PO PRN anxiety",
+        "Sumatriptan 50 mg PO PRN migraine"
+      ],
+      "allergies": [
+        "Phenytoin (rash)"
+      ],
+      "lastOralIntake": "Dinner approximately 1900 hours — pasta and water. No alcohol, no recreational drugs per boyfriend.",
+      "events": "Patient was watching TV with boyfriend on the couch around 2145 when she suddenly stopped responding, rolled her eyes back, and went into a generalized convulsion. Boyfriend lowered her to the floor and called 911 immediately. Convulsions have been continuous since onset — approximately 6 minutes prior to EMS arrival. Boyfriend reports patient has been out of her seizure medication for one week."
+    }
+  },
+  "scene": {
+    "dispatch": "Medic 7, respond priority 1 for a 28-year-old female, seizure, won't stop seizing. Boyfriend on scene, scene secure. 412 Greenwood Apartments, unit 3B.",
+    "location": "Second-floor apartment, bedroom-adjacent hallway. Patient on carpeted floor between couch and coffee table. Apartment is warm — boyfriend reports the AC has been out for two days and the thermostat reads 84°F.",
+    "time": "Tuesday, 2152 hours. Warm spring evening, indoor ambient temp approximately 84°F.",
+    "safety": "Scene safe. Boyfriend cooperative and helpful, has moved coffee table out of the way. No pets, no weapons, no signs of struggle. Adequate space to work but apartment is hot.",
+    "bystanders": "Boyfriend (primary historian, 30yo, calm and focused). Empty Keppra pill bottle visible on the kitchen counter — last fill date approximately one month ago.",
+    "visualCues": [
+      "Patient on her back on carpet, generalized tonic-clonic convulsions — rhythmic jerking of all four extremities, head turning left, lips blue-tinged",
+      "Frothy saliva and a small amount of blood at the mouth (tongue likely bitten)",
+      "Patient is sweating heavily; skin is flushed and hot to the touch",
+      "Apartment is noticeably warm — thermostat visible at 84°F, no fans running, windows closed",
+      "Empty Keppra pill bottle on kitchen counter",
+      "Patient is wearing a sweatshirt and sweatpants",
+      "No medical alert bracelet visible, no signs of trauma to head or extremities"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "Crew arrives to an actively convulsing young woman who has been seizing for 6+ minutes prior to arrival. She is GCS 3 during the seizure with irregular agonal-pattern respirations, cyanotic lips, and hypoxia on quick SpO2 placement. Boyfriend reports she ran out of her Keppra a week ago. The room is hot and she is hot. This is status epilepticus — every clock is running: airway, oxygenation, seizure cessation, and temperature.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 4 },
+        "airway": "Threatened. Frothy blood-tinged saliva at the mouth, jaw clenched intermittently during clonic phase. No foreign body. Tongue likely bitten. No formal airway adjunct possible until clonic activity quiets.",
+        "breathing": "Irregular, agonal-pattern grunting respirations between clonic bursts. No effective tidal volume during active convulsion. Cyanosis at lips and fingertips. Chest moves asymmetrically with convulsions.",
+        "circulation": "Radial pulse strong and rapid. Skin hot, flushed, and diaphoretic. Cap refill ~2 seconds.",
+        "skin": { "color": "flushed with peripheral cyanosis", "temperature": "hot", "moisture": "profusely diaphoretic" },
+        "pupils": "Pupils 5 mm, sluggishly reactive, with intermittent rightward eye deviation.",
+        "motorFunction": "Generalized tonic-clonic convulsion — rhythmic jerking of all four extremities, head turning to the left, no purposeful movement.",
+        "otherFindings": [
+          "Tactile temperature: notably hot — patient is hyperthermic",
+          "Tongue laceration with small amount of bleeding at the mouth",
+          "Urinary incontinence present (jeans soaked at groin)",
+          "No signs of head trauma, no obvious deformity",
+          "Boyfriend reports continuous seizure for 6+ minutes prior to EMS arrival"
+        ],
+        "patientSpeech": "No speech — patient is in active generalized convulsion."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 140,
+        "bpSys": 152,
+        "bpDia": 96,
+        "respRate": 8,
+        "spo2": 84,
+        "etco2": 58,
+        "temp": 39.1,
+        "tempF": 102.4,
+        "obstruction": 30,
+        "glucose": 98,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "transitions": [
+        {
+          "targetPhaseId": "first-benzo-given",
+          "if": "First-line IM benzo given at max dose",
+          "condition": "Crew recognizes status epilepticus, manages airway with positioning/NPA + BVM with high-flow oxygen, and administers first-line midazolam 10 mg IM (or IV equivalent at protocol dose) within the first few minutes.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["recognize-status", "airway-bvm", "first-benzo-im"]
+        },
+        {
+          "targetPhaseId": "hyperthermia-ignored",
+          "if": "Seizure addressed but hyperthermia ignored",
+          "condition": "Crew gives benzo and works the airway but never measures temperature, never removes the sweatshirt/sweatpants, and never initiates passive cooling despite hot/flushed skin in an 84°F apartment.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["check-temp", "passive-cooling"]
+        }
+      ],
+      "expectedActions": [
+        {
+          "id": "recognize-status",
+          "shortAction": "Recognize status epilepticus (seizure >5 min on arrival)",
+          "protocolExcerpt": "Inclusion Criteria: Seizure activity upon arrival of prehospital personnel or new/recurrent seizure activity lasting greater than 5 minutes.",
+          "priority": "critical",
+          "rationale": "Sets the clinical frame. This is not a routine seizure — it is status, and treatment is time-critical.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "airway-bvm",
+          "shortAction": "Position airway, place NPA, BVM with high-flow O2, target SpO2 94-98%",
+          "protocolExcerpt": "If signs of airway obstruction are present and a chin-lift, jaw thrust, positioning, and/or suctioning does not alleviate it, place oropharyngeal airway (if gag reflex is absent) or nasopharyngeal airway. Place pulse oximeter and/or waveform capnography to monitor oxygenation/ventilation. Administer oxygen as appropriate with a target of achieving 94-98% saturation. Use bag-valve-mask (BVM) ventilation if oxygenation/ventilation are compromised.",
+          "priority": "critical",
+          "rationale": "Airway and oxygenation come before pharmacology. SpO2 84% is unacceptable.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "first-benzo-im",
+          "shortAction": "Midazolam 10 mg IM (70 kg x 0.2 mg/kg = 14 mg → cap at 10 mg max; IM preferred, no IV yet)",
+          "protocolExcerpt": "Anticonvulsant Treatment - If vascular access is absent: Midazolam 0.2 mg/kg (maximum dose 10 mg), IM preferred, or IN. Routes for treatment: IN/IM routes are preferred over IV or IO routes (if not already established).",
+          "priority": "critical",
+          "rationale": "IM midazolam works as fast as IV lorazepam in status. Don't delay drug to chase a line.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "check-temp",
+          "shortAction": "Obtain temperature; recognize hyperthermia (102.4°F and climbing)",
+          "protocolExcerpt": "Vital signs: Core temperature: usually 104°F or greater (if thermometer available); Skin: flushed and hot, dry or sweaty.",
+          "priority": "critical",
+          "rationale": "Status + warm environment + heavy clothing = hyperthermia. Temperature is the missed vital sign in seizure calls.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "passive-cooling",
+          "shortAction": "Remove clothing; move to cooler space; prep ice packs to neck/axilla/groin",
+          "protocolExcerpt": "Move victim to a cool area and shield from the sun or any external heat source. Remove as much clothing as is practical and loosen any restrictive garments.",
+          "priority": "important",
+          "rationale": "Passive cooling started early prevents the late teaching beat (rhabdo, multi-organ injury).",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "establish-iv",
+          "shortAction": "Establish IV/IO access for second-line dosing and post-RSI sedation",
+          "protocolExcerpt": "Routes for treatment: IV placement is not necessary for treatment of seizures, but could be obtained if needed for other reasons.",
+          "priority": "important",
+          "rationale": "IM benzo first, but IV needed for everything downstream (second-line, RSI drugs, fluids).",
+          "protocolReference": "MATC: Seizures"
+        }
+      ]
+    },
+    {
+      "id": "first-benzo-given",
+      "name": "First benzo given",
+      "description": "Five minutes after first-line midazolam, the patient is STILL convulsing. This is refractory status epilepticus by definition. Airway remains threatened, SpO2 has come up slightly on BVM but is not where it needs to be. Glucose is normal. Crew must now choose: a second benzo dose (protocol max) and then pivot, or pivot directly to RSI for definitive airway and seizure control.",
+      "triggerCondition": "After 5 minutes, the patient remains in active generalized convulsion despite first-line midazolam at protocol max dose. By definition, this is now refractory status epilepticus.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 4 },
+        "airway": "Still threatened, jaw still clenching intermittently. NPA in place if crew placed one. Continued frothy secretions.",
+        "breathing": "Slightly improved with BVM assistance between clonic bursts but still inadequate spontaneous ventilation. Some chest rise with BVM.",
+        "circulation": "HR remains tachycardic, BP still elevated from sympathetic surge. Skin remains hot and diaphoretic.",
+        "skin": { "color": "flushed, less cyanotic with BVM", "temperature": "hot", "moisture": "profusely diaphoretic" },
+        "pupils": "5 mm, sluggish, persistent rightward eye deviation.",
+        "motorFunction": "Continued generalized tonic-clonic convulsion — no break in clonic activity.",
+        "otherFindings": [
+          "Glucometry obtained: 98 mg/dL — normoglycemic, no dextrose indicated",
+          "Patient has now been convulsing for ~12 minutes total",
+          "Temperature climbing: 103.2°F if rechecked",
+          "Boyfriend asks 'why isn't it stopping?'"
+        ],
+        "patientSpeech": "No speech — still actively seizing."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 148,
+        "bpSys": 160,
+        "bpDia": 100,
+        "respRate": 12,
+        "spo2": 90,
+        "etco2": 50,
+        "temp": 39.6,
+        "tempF": 103.2,
+        "obstruction": 25,
+        "glucose": 98,
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "transitions": [
+        {
+          "targetPhaseId": "refractory-recognized",
+          "if": "Second benzo given, refractory status recognized",
+          "condition": "Crew administers a second protocol-dose benzo, glucose checked and normal, and explicitly recognizes refractory status epilepticus — preparing to pivot to RSI rather than continue indefinite benzo dosing.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["second-benzo", "glucose-check", "recognize-refractory"]
+        },
+        {
+          "targetPhaseId": "benzo-stacking",
+          "if": "Crew keeps stacking benzos past max",
+          "condition": "Instead of recognizing refractory status and pivoting, crew gives a third, fourth, or fifth dose of benzodiazepine attempting to break the seizure with more medication.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["second-benzo"]
+        }
+      ],
+      "expectedActions": [
+        {
+          "id": "glucose-check",
+          "shortAction": "Check blood glucose (98 mg/dL — normoglycemic, no dextrose indicated)",
+          "protocolExcerpt": "Glucometry: If still actively seizing, check blood glucose level. If less than 60 mg/dL, treat per the Hypoglycemia Guideline.",
+          "priority": "critical",
+          "rationale": "Hypoglycemia is a reversible cause of refractory seizure. Must be ruled out.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "second-benzo",
+          "shortAction": "Second dose: Midazolam 4 mg IV (70 kg x 0.1 mg/kg = 7 mg → cap at 4 mg max; IV now established)",
+          "protocolExcerpt": "Anticonvulsant Treatment - If vascular access (IV or IO) is present: Diazepam 0.2 mg/kg IV or IO, maximum 10 mg; Lorazepam 0.1 mg/kg IV or IO, maximum 4 mg; Midazolam 0.1 mg/kg IV or IO, maximum 4 mg.",
+          "priority": "critical",
+          "rationale": "Second protocol-dose attempt. If this doesn't work, the patient is refractory and the plan must change.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "recognize-refractory",
+          "shortAction": "Recognize refractory status; STOP further benzos; pivot to RSI",
+          "protocolExcerpt": "Patient Safety Considerations: Trained personnel should be able to give medication without contacting medical direction, however, more than two doses of benzodiazepines are associated with high-risk of airway compromise. Use caution, weigh risks/benefits of deferring treatment until hospital, and/or consider consultation with medical direction if patient has received two doses of benzodiazepines by bystanders and/or prehospital clinicians.",
+          "priority": "critical",
+          "rationale": "This is the central teaching beat: protocol explicitly limits to two doses. After that, the answer is not more benzo.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "consider-other-causes",
+          "shortAction": "Consider other causes of refractory seizure (toxin, electrolyte, eclampsia, hyperthermia)",
+          "protocolExcerpt": "Key Considerations: For new onset seizures or seizures that are refractory to treatment, consider other potential causes including, but not limited to, trauma, stroke, electrolyte abnormality, toxic ingestion, pregnancy with eclampsia, hyperthermia.",
+          "priority": "important",
+          "rationale": "Hyperthermia is on this list and matters here. Pregnancy must also be screened.",
+          "protocolReference": "MATC: Seizures"
+        }
+      ]
+    },
+    {
+      "id": "refractory-recognized",
+      "name": "Refractory status, RSI prepped",
+      "description": "Crew has correctly identified this as refractory status epilepticus after two doses of benzodiazepine have failed to break the seizure. With no second-line anticonvulsant available in the MATC prehospital scope, the pivot is to RSI — the paralytic stops the convulsive activity while definitive second-line treatment continues at the ED. Crew is now setting up: pre-oxygenation, monitors, suction, induction agent (ketamine preferred — bronchodilator-friendly, hemodynamically supportive, and provides additional seizure-threshold modulation), paralytic (rocuronium), and a back-up airway plan.",
+      "triggerCondition": "Two doses of benzodiazepine have failed to stop the convulsions; crew correctly identifies this as refractory status epilepticus and pivots to RSI for definitive airway control while the paralytic eliminates convulsive activity.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 4 },
+        "airway": "Still threatened during ongoing clonic activity. NPA in place, OPA not tolerated due to clenching. Suction ready at bedside.",
+        "breathing": "Pre-oxygenation underway with two-person BVM + PEEP + apneic-O2 nasal cannula in preparation for RSI. Some improvement in SpO2.",
+        "circulation": "HR remains 140s, BP elevated. Patient warm and flushed.",
+        "skin": { "color": "flushed", "temperature": "hot", "moisture": "diaphoretic" },
+        "pupils": "5 mm, sluggish.",
+        "motorFunction": "Persistent generalized convulsion — has been ongoing approximately 14 minutes.",
+        "otherFindings": [
+          "Two airway practitioners now at the head of the patient",
+          "IV established (18g antecubital), running NS TKO",
+          "Suction Yankauer connected and tested",
+          "Bougie, video laryngoscope, and back-up SGA at bedside",
+          "Temperature continues to climb: 103.6°F"
+        ],
+        "patientSpeech": "No speech."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 144,
+        "bpSys": 158,
+        "bpDia": 98,
+        "respRate": 14,
+        "spo2": 94,
+        "etco2": 45,
+        "temp": 39.8,
+        "tempF": 103.6,
+        "obstruction": 20,
+        "glucose": 98,
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "transitions": [
+        {
+          "targetPhaseId": "post-rsi-cooling",
+          "if": "RSI performed; cooling initiated",
+          "condition": "Crew completes RSI with ketamine induction + rocuronium paralysis, intubates successfully with waveform capnography confirmation, and begins active passive cooling (remove clothes, ice packs to neck/axilla/groin) en route.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["ketamine-induction", "rocuronium-paralytic", "intubate-confirm", "active-cooling"]
+        }
+      ],
+      "expectedActions": [
+        {
+          "id": "preox-rsi",
+          "shortAction": "Pre-oxygenate x 2 min with BVM + PEEP 5 + apneic nasal cannula O2",
+          "protocolExcerpt": "Patient should be pre-oxygenated with high flow oxygen, and positive pressure ventilation for a minimum of two minutes prior to the procedure. In some circumstances, sedation may be required for adequate pre-oxygenation. In addition to preoxygenation, apneic oxygenation (high-flow oxygen by nasal cannula) may prolong the period before hypoxia during an intubation attempt.",
+          "priority": "critical",
+          "rationale": "Pre-O2 is the most important determinant of first-pass success without desaturation.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "ketamine-induction",
+          "shortAction": "Ketamine 105-140 mg IV induction (70 kg x 1-2 mg/kg)",
+          "protocolExcerpt": "Administer induction sedative agent: Etomidate IV push, 0.2-0.3 mg/kg OR Ketamine IV push, 1-2 mg/kg OR Midazolam IV push, 0.05-0.10 mg/kg.",
+          "priority": "critical",
+          "rationale": "Ketamine preferred here: hemodynamically supportive, bronchodilator, and provides additional sedation/seizure-threshold modulation. Etomidate also acceptable.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "rocuronium-paralytic",
+          "shortAction": "Rocuronium 70 mg IV paralytic (70 kg x 1 mg/kg)",
+          "protocolExcerpt": "Administer paralytic agent: Succinylcholine IV push, 1-2 mg/kg OR Rocuronium IV push, 1 mg/kg OR Vecuronium IV push, 0.1 mg/kg. Allow time for complete paralysis.",
+          "priority": "critical",
+          "rationale": "Paralysis ends the convulsive activity while ED loads second-line anticonvulsant (Keppra/fosphenytoin). Avoid succinylcholine here if rhabdomyolysis is suspected.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "intubate-confirm",
+          "shortAction": "Intubate ETT 7.5; confirm with waveform capnography + bilateral breath sounds; secure tube",
+          "protocolExcerpt": "Confirm placement of advanced airway (endotracheal tube, SGA) with waveform capnography (most reliable), absent gastric sounds, and bilateral breath sounds. Secure tube manually. Once proper position is confirmed, secure the tube with tape, twill, or commercial device. Continuously monitor correct airway placement with waveform capnography during treatment and transport, paying particular attention to reassessing after each patient movement.",
+          "priority": "critical",
+          "rationale": "Waveform capnography is the standard for confirmation. Adult female ETT is 7.5 mm.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "two-practitioners",
+          "shortAction": "Two experienced airway practitioners at the head; back-up SGA and bougie ready",
+          "protocolExcerpt": "Rapid/Delayed Sequence Intubation: Used in circumstances when protective airway reflexes are intact, and the patient requires the placement of an endotracheal tube. There should be a minimum of two experienced airway practitioners at the patient's side for this procedure.",
+          "priority": "important",
+          "rationale": "RSI is a team procedure with explicit protocol staffing requirements.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "active-cooling",
+          "shortAction": "Strip clothing; apply ice packs to neck/axilla/groin; target temp <102.2°F",
+          "protocolExcerpt": "If core temperature is greater than 104°F (40°C) or if altered mental status is present, begin active cooling by: Ice bath immersion provides the most rapid cooling mechanism. If ice bath immersion is not available, consider the following: Tarp-assisted cooling with oscillation; Rotating ice water-soaked towels or sheets; Continually misting the exposed skin with tepid water while fanning the victim; Truncal ice packs may be used, but are less effective than evaporation. Cooling efforts should continue until the patient's temperature is less than 102.2°F (39°C).",
+          "priority": "critical",
+          "rationale": "Status + 102+ °F = active cooling indicated. Pair with the airway procedure, don't defer it.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        }
+      ]
+    },
+    {
+      "id": "post-rsi-cooling",
+      "name": "Post-RSI, cooling, transporting",
+      "description": "Patient is intubated, paralyzed, and now mechanically ventilated. Convulsive activity has stopped with paralysis — but the underlying seizure focus is presumed still active in the cortex; this is why second-line agents (Keppra IV, fosphenytoin) at the ED matter. Crew has stripped clothing and applied ice packs to neck/axilla/groin. SpO2 is now in the high 90s on BVM, EtCO2 is in target range, temperature is starting to come down. Transport to the closest appropriate facility is underway with post-intubation sedation in place.",
+      "triggerCondition": "RSI completed successfully — endotracheal tube confirmed with waveform capnography, paralysis has eliminated convulsive activity, and crew has initiated passive cooling for hyperthermia while transporting to the receiving ED.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "Definitively secured — 7.5 mm cuffed ETT at 22 cm at the lip, cuff inflated to 20 cmH2O, waveform capnography continuous and confirming placement. Tube secured with commercial holder.",
+        "breathing": "Apneic from paralytic — controlled BVM ventilations at 10/min with 6-8 mL/kg tidal volume and PEEP 5. Bilateral breath sounds, no gastric sounds. EtCO2 trending toward target.",
+        "circulation": "HR has dropped slightly with sedation. BP stable. Skin still warm but no longer hot — cooling beginning to work.",
+        "skin": { "color": "pink with peripheral cool zones from ice packs", "temperature": "warm (cooling)", "moisture": "still diaphoretic" },
+        "pupils": "5 mm, sluggish but symmetric — eye deviation has resolved.",
+        "motorFunction": "Flaccid — paralyzed from rocuronium. No convulsive activity.",
+        "otherFindings": [
+          "ETT depth 22 cm at lip, confirmed with capnography",
+          "Ice packs applied to neck, both axillae, both groins",
+          "Clothing removed; patient covered with sheet for transport modesty",
+          "Post-intubation sedation: midazolam continuous low-dose, ketamine bolus available",
+          "Receiving ED notified — patient is refractory status, intubated, will need Keppra load on arrival"
+        ],
+        "patientSpeech": "Intubated and sedated — no speech."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 118,
+        "bpSys": 134,
+        "bpDia": 82,
+        "respRate": 10,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 39.2,
+        "tempF": 102.6,
+        "obstruction": 0,
+        "glucose": 98,
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "post-intub-sedation",
+          "shortAction": "Post-intubation sedation: midazolam 1.4 mg IV (70 kg x 0.02 mg/kg) and/or fentanyl 70-140 mcg IV (70 kg x 1-2 mcg/kg)",
+          "protocolExcerpt": "Consider sedation with sedative and/or opioid medications if agitated: Fentanyl 1-2 mcg/kg And Midazolam 0.02 mg/kg OR Ketamine IV push, 0.5-1 mg/kg",
+          "priority": "critical",
+          "rationale": "Paralyzed patients still feel and remember. Sedation must continue after RSI, especially with a long-acting paralytic like rocuronium.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "transport-closest-appropriate",
+          "shortAction": "Transport to closest appropriate ED; pre-arrival notification for refractory status",
+          "protocolExcerpt": "Transport to the closest appropriate hospital for airway stabilization when respiratory failure cannot be successfully managed in the prehospital setting.",
+          "priority": "critical",
+          "rationale": "Patient needs IV second-line anticonvulsant (Keppra/fosphenytoin) immediately on arrival.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ]
+    },
+    {
+      "id": "benzo-stacking",
+      "name": "Benzo stacking past max",
+      "description": "Crew, frustrated that the patient is still seizing, gives a third and then a fourth dose of midazolam attempting to break the seizure with more medication. The patient is now snowed on benzodiazepines — respiratory drive is gone, but the cortical seizure activity continues because benzos at this point are no longer the right drug. SpO2 craters. BP drops from cumulative benzo effect. The crew is now managing a respiratory failure AND an ongoing seizure simultaneously, with no remaining benzo budget. RSI is now an emergency, not a planned procedure.",
+      "triggerCondition": "Crew gave a third (and potentially fourth) dose of benzodiazepine instead of recognizing refractory status and pivoting to RSI. Cumulative benzo dose has caused respiratory depression and hypotension without stopping the seizure — patient now has BOTH respiratory failure and ongoing convulsions.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 3 },
+        "airway": "Severely threatened — copious secretions, no gag, OPA tolerated now (concerning sign), continued clonic activity.",
+        "breathing": "Apneic between clonic bursts. No effective spontaneous ventilation. BVM is now the only ventilation — and it is hard because clonic activity is still impairing chest wall mechanics.",
+        "circulation": "HR up at 150, but BP has DROPPED into the 80s/50s from cumulative benzo effect. Skin remains hot and flushed.",
+        "skin": { "color": "flushed but with mottled extremities", "temperature": "hot", "moisture": "diaphoretic" },
+        "pupils": "4 mm, sluggish.",
+        "motorFunction": "Continued low-amplitude clonic activity — convulsions are not stopping despite massive benzo dose.",
+        "otherFindings": [
+          "Cumulative midazolam in: well above 20 mg",
+          "Patient now hypotensive AND hypoxic AND still seizing",
+          "Temperature still climbing: 103.8°F",
+          "This is a teaching beat: 'more than two doses of benzodiazepines are associated with high-risk of airway compromise' — protocol warned this would happen"
+        ],
+        "patientSpeech": "No speech."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 150,
+        "bpSys": 88,
+        "bpDia": 54,
+        "respRate": 4,
+        "spo2": 78,
+        "etco2": 62,
+        "temp": 39.9,
+        "tempF": 103.8,
+        "obstruction": 35,
+        "glucose": 98,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "stop-benzo-stacking",
+          "shortAction": "STOP further benzo dosing; recognize >2 doses = airway compromise risk",
+          "protocolExcerpt": "Patient Safety Considerations: Trained personnel should be able to give medication without contacting medical direction, however, more than two doses of benzodiazepines are associated with high-risk of airway compromise. Use caution, weigh risks/benefits of deferring treatment until hospital, and/or consider consultation with medical direction if patient has received two doses of benzodiazepines by bystanders and/or prehospital clinicians.",
+          "priority": "critical",
+          "rationale": "Direct teaching point: stacking benzos past two doses causes respiratory depression and hemodynamic compromise without controlling the seizure.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "emergent-rsi-rescue",
+          "shortAction": "Emergent RSI: ketamine 105-140 mg IV induction + rocuronium 70 mg IV paralytic",
+          "protocolExcerpt": "Administer induction sedative agent: Etomidate IV push, 0.2-0.3 mg/kg OR Ketamine IV push, 1-2 mg/kg OR Midazolam IV push, 0.05-0.10 mg/kg. Administer paralytic agent: Succinylcholine IV push, 1-2 mg/kg OR Rocuronium IV push, 1 mg/kg OR Vecuronium IV push, 0.1 mg/kg.",
+          "priority": "critical",
+          "rationale": "Patient now has respiratory failure AND ongoing seizure. RSI is the only path forward.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ]
+    },
+    {
+      "id": "hyperthermia-ignored",
+      "name": "Hyperthermia ignored",
+      "description": "Crew controlled the airway and gave a benzo, but never measured temperature, never removed the heavy clothing, and never initiated passive cooling. Seizure eventually stops with RSI, but the patient's core temperature is now 105.4°F. They are now developing the whole-body sequelae of prolonged hyperthermia: rhabdomyolysis (tea-colored urine starting to appear in the foley collection bag at the hospital), arrhythmia risk, cerebral edema risk. The teaching beat: prolonged status epilepticus is a hyperthermia emergency, not just a brain emergency.",
+      "triggerCondition": "Crew successfully controlled the seizure and managed the airway but never assessed temperature, never removed the patient's heavy clothing, and never initiated passive cooling despite hot/flushed skin and a known 84°F apartment environment. Patient is now severely hyperthermic with developing multi-organ injury.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "Secured with ETT — RSI was performed correctly.",
+        "breathing": "Mechanically ventilated, EtCO2 in range.",
+        "circulation": "HR remains 130s — sinus tach driven by hyperthermia. BP marginal at 100/60. Skin is dangerously hot to the touch.",
+        "skin": { "color": "deeply flushed, mottled at extremities", "temperature": "extremely hot", "moisture": "diaphoresis has stopped — anhidrotic, a late and ominous sign" },
+        "pupils": "5 mm, sluggish.",
+        "motorFunction": "Paralyzed.",
+        "otherFindings": [
+          "Core temperature now 105.4°F",
+          "Patient is still in the sweatshirt and sweatpants",
+          "No ice packs, no cooling measures applied",
+          "Receiving ED is concerned: 'why didn't you cool her?'",
+          "Tea-colored urine in foley at ED — early rhabdomyolysis"
+        ],
+        "patientSpeech": "Intubated, paralyzed — no speech."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 138,
+        "bpSys": 100,
+        "bpDia": 60,
+        "respRate": 10,
+        "spo2": 96,
+        "etco2": 40,
+        "temp": 40.8,
+        "tempF": 105.4,
+        "obstruction": 0,
+        "glucose": 92,
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "rescue-cooling",
+          "shortAction": "Strip clothing; apply ice packs to neck/axilla/groin; goal temp <102.2°F",
+          "protocolExcerpt": "If core temperature is greater than 104°F (40°C) or if altered mental status is present, begin active cooling by: Ice bath immersion provides the most rapid cooling mechanism. If ice bath immersion is not available, consider the following: Tarp-assisted cooling with oscillation; Rotating ice water-soaked towels or sheets; Continually misting the exposed skin with tepid water while fanning the victim; Truncal ice packs may be used, but are less effective than evaporation. Cooling efforts should continue until the patient's temperature is less than 102.2°F (39°C).",
+          "priority": "critical",
+          "rationale": "Direct teaching point: prolonged status causes hyperthermia, and hyperthermia causes rhabdo, arrhythmia, and cerebral edema. Cooling is not optional — it's part of the seizure workup.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "rescue-temp-assess",
+          "shortAction": "Obtain core temperature; recognize hyperthermia as a co-emergency",
+          "protocolExcerpt": "Vital signs: Core temperature: usually 104°F or greater (if thermometer available); Skin: flushed and hot, dry or sweaty, signs of first or second degree burns from sun exposure.",
+          "priority": "critical",
+          "rationale": "Temperature is the missed vital sign here.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        }
+      ]
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

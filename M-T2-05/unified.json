@@ -1,0 +1,535 @@
+{
+  "meta": {
+    "id": "M-T2-05",
+    "name": "Sepsis with Ambiguous Source",
+    "version": 1,
+    "difficulty": "intermediate",
+    "category": "Medical",
+    "protocols": [
+      "medical-shock",
+      "medical-altered-mental-status",
+      "resp-respiratory-distress",
+      "medical-hyperglycemia"
+    ],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "tier-2",
+      "decision-dense",
+      "sepsis",
+      "geriatric",
+      "atypical-presentation",
+      "shock"
+    ]
+  },
+  "patient": {
+    "name": "Eleanor Whitfield",
+    "age": 82,
+    "ageUnit": "years",
+    "sex": "female",
+    "weight": 60,
+    "weightLbs": 132,
+    "height": 160,
+    "chiefComplaint": "Generalized weakness and 'not acting like herself' per daughter",
+    "history": {
+      "hpi": "82-year-old female resident of Maplewood Assisted Living. Daughter visited this afternoon and found mom 'just not herself' — quieter than usual, slower to answer questions, didn't want to get out of her chair. Staff confirm she ate only a few bites of breakfast and skipped lunch. No falls witnessed. No specific complaint of pain, chest pain, shortness of breath, dysuria, cough, abdominal pain, or rash. No recent antibiotics. No new medications. No vomiting or diarrhea. Last well per staff: yesterday evening at dinner, ambulating with walker, conversant at her baseline (A&Ox3). Daughter called 911 because mom 'isn't tracking the conversation' and 'feels warm.'",
+      "pastMedical": [
+        "Type 2 diabetes mellitus (diet + metformin controlled)",
+        "Hypertension",
+        "Chronic kidney disease, stage 3",
+        "Mild-to-moderate dementia (baseline A&Ox3, lives independently in assisted living with med management)",
+        "Osteoarthritis",
+        "Remote cholecystectomy"
+      ],
+      "medications": [
+        "Metformin 500 mg PO BID",
+        "Lisinopril 10 mg PO daily",
+        "Amlodipine 5 mg PO daily",
+        "Donepezil 5 mg PO daily",
+        "Acetaminophen 500 mg PO PRN"
+      ],
+      "allergies": [
+        "Sulfa (rash)"
+      ],
+      "lastOralIntake": "A few bites of toast and coffee this morning around 0800; refused lunch; no fluids since approximately 1000.",
+      "events": "Family noticed change in mental status during afternoon visit. Vague onset over the past 12-24 hours per assisted living staff. No trauma, no fall, no obvious infectious complaint volunteered."
+    }
+  },
+  "scene": {
+    "dispatch": "Medic 12, respond priority 1 for an 82-year-old female, weakness and altered mental status, lift assist requested. Family on scene at Maplewood Assisted Living, 4218 Birch Lane, apartment 217.",
+    "location": "Apartment 217 inside Maplewood Assisted Living — small one-bedroom apartment. Patient seated in recliner in living room. Daughter present, calm but worried. Facility nurse meets crew at door with med list.",
+    "time": "Tuesday, 1518 hours. Mild spring afternoon, scene well-lit.",
+    "safety": "Scene safe. Single carpeted entry, no pets, no clutter. Adequate room for stretcher in living room.",
+    "bystanders": "Daughter (primary historian, 58yo, articulate). Facility nurse (LPN) with med list and recent vitals from this morning (HR 88, BP 142/78, T 98.4°F per facility log at 0800).",
+    "visualCues": [
+      "Patient slumped slightly in recliner, eyes open but slow to engage",
+      "Walker positioned next to chair, unused today",
+      "Cup of cold tea on side table, mostly full",
+      "Skin appears flushed; no obvious rash, no foley bag, no surgical wounds",
+      "No oxygen equipment in the home",
+      "No vomit basin, no signs of incontinence at first glance"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "Crew arrives to a vague, low-acuity-feeling call. Patient is awake but quieter than baseline. Daughter cannot point to a specific complaint — 'she's just not herself.' Facility nurse hands over med list. First glance suggests a soft, social-work-flavored call. The vitals will tell a different story.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 4, "motor": 6 },
+        "airway": "Patent, self-maintaining. No drool, no stridor, no edema.",
+        "breathing": "Mildly tachypneic at rest, no accessory muscle use, no retractions. Lungs clear bilaterally on initial auscultation — no rales, no wheezes, no rhonchi.",
+        "circulation": "Radial pulse palpable but fast and thready. Cap refill ~3 seconds at fingertips. Skin warm and slightly flushed, mildly diaphoretic on forehead.",
+        "skin": { "color": "flushed", "temperature": "warm", "moisture": "mildly moist" },
+        "pupils": "PERRL 3 mm bilaterally.",
+        "motorFunction": "Moves all extremities on command but slowly. No focal deficit. No facial droop. Speech is slow but not slurred.",
+        "otherFindings": [
+          "A&Ox2 (person, place — confused on date and 'what's going on today'). Daughter confirms baseline is A&Ox3.",
+          "No localizing pain on gentle abdominal palpation",
+          "No flank tenderness, no CVA tenderness elicited",
+          "No obvious cellulitis, no wounds, no IV lines or ports",
+          "No productive cough, no dysuria volunteered, no abdominal complaint",
+          "Mucous membranes slightly tacky"
+        ],
+        "patientSpeech": "'I'm okay, honey. Just tired today. I don't know why everyone's making a fuss.'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 112,
+        "bpSys": 96,
+        "bpDia": 60,
+        "respRate": 24,
+        "spo2": 93,
+        "etco2": 30,
+        "temp": 38.1,
+        "tempF": 100.6,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "primary-survey",
+          "shortAction": "Rapid primary survey (ABC); recognize change from baseline mental status",
+          "protocolExcerpt": "Look for treatable causes of altered mental status (AMS): Airway: Make sure airway remains patent; reposition patient as needed. Breathing: Look for respiratory depression; check SPO2, EtCO2, and CO detector readings. Circulation: Look for signs of poor perfusion. Glasgow Coma Score and/or AVPU.",
+          "priority": "critical",
+          "rationale": "Vague-complaint calls in geriatrics still get a real primary survey. The vitals will not match the 'soft call' feel.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "full-vitals",
+          "shortAction": "Full vital signs + temperature + SpO2 + EtCO2",
+          "protocolExcerpt": "Exam: Full set of vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment), temperature, and O2 saturation. Consider temperature and waveform capnography.",
+          "priority": "critical",
+          "rationale": "Temperature is the move here. Without measuring it, the sepsis criteria stay hidden — daughter and patient both deny fever.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "glucose-check",
+          "shortAction": "Check blood glucose (rule out hypo/hyperglycemia as AMS cause)",
+          "protocolExcerpt": "Monitoring: Check blood glucose level.",
+          "priority": "critical",
+          "rationale": "Diabetic patient, AMS — glucose is mandatory. Result of 142 rules out hypoglycemia and is not high enough to drive DKA-pattern AMS, which redirects toward sepsis.",
+          "protocolReference": "MATC: Hyperglycemia"
+        },
+        {
+          "id": "history-from-daughter",
+          "shortAction": "Detailed history from daughter and facility nurse",
+          "protocolExcerpt": "Key Considerations: History from bystanders and caregivers. Age of the patient. Development age and baseline functional status.",
+          "priority": "important",
+          "rationale": "Daughter establishes baseline A&Ox3 — this is the keystone that makes today's A&Ox2 a real finding rather than a 'demented elder' anchor.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "infection-sweep",
+          "shortAction": "Sweep for infection sources: cough, dysuria, abd pain, wounds, lines",
+          "protocolExcerpt": "Signs of infection: Fever, cough, skin changes, dysuria. Extremities/skin: Track marks, hydration, edema, dialysis shunt, temperature to touch (or if able, use a thermometer), signs of trauma.",
+          "priority": "important",
+          "rationale": "Standard sepsis-source sweep. Coming up empty does NOT rule out sepsis in the elderly — that is the teaching point.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "cardiac-monitor",
+          "shortAction": "Cardiac monitor, 12-lead EKG (rule out ACS/dysrhythmia masquerade)",
+          "protocolExcerpt": "Treatment and Interventions: Cardiac monitor. EKG.",
+          "priority": "important",
+          "rationale": "Elderly + AMS + tachycardia — silent MI presents this way and must be excluded. Sinus tach without ischemic changes redirects toward shock.",
+          "protocolReference": "MATC: Shock"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "sepsis-recognized",
+          "if": "Sepsis criteria recognized",
+          "condition": "Crew assembles the vitals + temperature + baseline change and identifies that this patient meets sepsis criteria despite the vague complaint and absent obvious source: HR >100, RR >20, T >38°C, AMS off baseline, borderline hypotension. Crew commits to treating empirically.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["primary-survey", "full-vitals", "history-from-daughter"]
+        },
+        {
+          "targetPhaseId": "undertriaged",
+          "if": "Patient undertriaged as 'just weakness'",
+          "condition": "Crew anchors on the soft-call feel and the absence of an obvious infectious source. No temperature taken or temperature taken and dismissed. No IV established. No fluid bolus. No sepsis alert called. Transport begins as a low-acuity 'weakness' call.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["full-vitals", "infection-sweep"]
+        }
+      ]
+    },
+    {
+      "id": "sepsis-recognized",
+      "name": "Sepsis recognized",
+      "description": "Crew has connected the dots: HR 112, RR 24, T 100.6°F, A&Ox2 off a baseline of A&Ox3, BP 96/60. That constellation meets sepsis criteria. There is no obvious source on exam, but in the elderly an absent source is the rule, not the exception. Crew commits to empiric sepsis management: airway/oxygen, two IVs, 30 mL/kg NS bolus, sepsis alert.",
+      "triggerCondition": "Crew identifies that the vitals + temperature + baseline change meet sepsis criteria despite the vague chief complaint and the negative source sweep, and commits to empiric sepsis management.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 4, "motor": 6 },
+        "airway": "Patent, self-maintaining.",
+        "breathing": "Tachypneic at 24, shallow. Lungs still clear. SpO2 93% on room air.",
+        "circulation": "Radial pulse 112, thready. Cap refill ~3 seconds. Skin warm, flushed, mildly diaphoretic — classic distributive picture.",
+        "skin": { "color": "flushed", "temperature": "warm", "moisture": "mildly moist" },
+        "pupils": "PERRL 3 mm bilaterally.",
+        "motorFunction": "Symmetric, no focal deficit.",
+        "otherFindings": [
+          "A&Ox2, slow but appropriate responses",
+          "Two large-bore IV sites identified (right AC, left forearm)",
+          "Daughter informed of working impression: 'we think Mom is fighting an infection somewhere and it's making her blood pressure drift down'"
+        ],
+        "patientSpeech": "'You're poking both arms?' (then closes eyes again)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 110,
+        "bpSys": 94,
+        "bpDia": 58,
+        "respRate": 24,
+        "spo2": 95,
+        "etco2": 30,
+        "temp": 38.1,
+        "tempF": 100.6,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "titrated-o2",
+          "shortAction": "Titrated O2 via NC to maintain SpO2 94-98%",
+          "protocolExcerpt": "Administer oxygen as appropriate with a target of achieving 94–98% saturation.",
+          "priority": "critical",
+          "rationale": "Initial SpO2 93% RA is just below target. Low-flow NC titrated up gets her into the 94-98% window without over-oxygenating.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "two-ivs",
+          "shortAction": "Establish two large-bore IVs (IO if 2 attempts/90 sec fail)",
+          "protocolExcerpt": "Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle.",
+          "priority": "critical",
+          "rationale": "Aggressive volume resuscitation needs reliable access. Two lines also let you run fluids fast and have a port ready for pressors if needed.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "ns-bolus-30mlkg",
+          "shortAction": "NS 1800 mL bolus pressure-infused (60 kg × 30 mL/kg = 1800 mL), 500 mL aliquots <15 min each, target MAP ≥65",
+          "protocolExcerpt": "Adult: Physiologic target: MAP goal 65 mmHg. Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops.",
+          "priority": "critical",
+          "rationale": "Patient is 60 kg → 30 mL/kg = 1800 mL. Pressure-infuse in 500 mL aliquots. MAP currently (2×58 + 94)/3 = 70 — still above 65 but trending wrong; the bolus is preemptive as well as therapeutic.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "etco2-monitoring",
+          "shortAction": "Apply waveform capnography (low EtCO2 = poor perfusion marker)",
+          "protocolExcerpt": "Pulse oximetry and EtCO2 (reading of less than 25 mmHg may be sign of poor perfusion).",
+          "priority": "important",
+          "rationale": "EtCO2 30 is already trending low for her tachypnea — a perfusion red flag and a real-time response marker through the bolus.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "lactate-if-available",
+          "shortAction": "Check lactate if available (>2 mmol/L abnormal)",
+          "protocolExcerpt": "Check lactate, if available (greater than 2 mmol/L is abnormal).",
+          "priority": "supplemental",
+          "rationale": "Where field lactate is available, an elevated value confirms occult hypoperfusion and strengthens the sepsis alert.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "sepsis-alert",
+          "shortAction": "Provide advanced notification — sepsis alert to receiving ED",
+          "protocolExcerpt": "Provide advanced notification to the hospital.",
+          "priority": "critical",
+          "rationale": "Early hospital notification triggers ED sepsis bundle (cultures, broad-spectrum antibiotics, central access if needed) before arrival. Empiric antibiotics in the field are allowed when transport is prolonged and regional coordination exists.",
+          "protocolReference": "MATC: Shock"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "under-responding",
+          "if": "5 min into bolus, BP drifts to 88/52",
+          "condition": "Approximately 5 minutes into the fluid bolus, repeat blood pressure shows 88/52 — patient is under-responding to volume. MAP has dropped from 70 to 64, just below the 65 target. Patient remains A&Ox2, perhaps slightly slower. EtCO2 has drifted to 28. Crew must escalate planning: continue bolus to full 30 mL/kg, prepare push-dose or drip vasopressor, upgrade hospital notification.",
+          "conditionType": "vital_threshold"
+        }
+      ]
+    },
+    {
+      "id": "under-responding",
+      "name": "Under-responding to bolus",
+      "description": "About 5 minutes into the bolus the BP has actually drifted DOWN to 88/52 instead of climbing. MAP is now 64 — under the 65 target. This is the moment that says: she's sicker than the door suggested, this is fluid-refractory or fluid-pending septic shock, and pressors need to be on deck. Continue the bolus, prep norepinephrine drip (or push-dose epi as a bridge), and upgrade the hospital notification to septic shock.",
+      "triggerCondition": "Approximately 5 minutes into the NS bolus, repeat BP is 88/52 (MAP 64, below the 65 target). Patient is under-responding to volume — clinical picture has shifted from 'meets sepsis criteria' to 'evolving septic shock.'",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 4, "motor": 6 },
+        "airway": "Patent.",
+        "breathing": "RR 26, shallow. Lungs still clear — no rales developing, no pulmonary edema from the bolus.",
+        "circulation": "Pulse 116, thready. Cap refill 3-4 seconds. Skin warmth less pronounced — extremities beginning to feel cooler. Mottling not yet present.",
+        "skin": { "color": "pale", "temperature": "cool", "moisture": "diaphoretic" },
+        "pupils": "PERRL 3 mm.",
+        "motorFunction": "Symmetric. Slower to respond to verbal prompts.",
+        "otherFindings": [
+          "GCS 13 (was 14) — eyes close between questions",
+          "About 700 mL of the 1800 mL bolus in",
+          "No pulmonary edema/rales after 700 mL — safe to continue bolus",
+          "Daughter visibly more anxious; reassure and update"
+        ],
+        "patientSpeech": "(eyes closed, opens to voice) 'Mm-hmm.'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 116,
+        "bpSys": 88,
+        "bpDia": 52,
+        "respRate": 26,
+        "spo2": 95,
+        "etco2": 28,
+        "temp": 38.2,
+        "tempF": 100.8,
+        "obstruction": 0,
+        "glucose": 138,
+        "customMeasures": [],
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "continue-bolus",
+          "shortAction": "Continue NS bolus to full 30 mL/kg (1800 mL); reassess lungs each 500 mL",
+          "protocolExcerpt": "Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops.",
+          "priority": "critical",
+          "rationale": "She is under-responding but lungs are clear and she has not blown past MAP target — keep going until full 30 mL/kg in or lungs change or MAP ≥65 achieved.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "prep-norepi",
+          "shortAction": "Prepare norepinephrine 0.05-0.5 mcg/kg/min drip (preferred pressor for septic shock)",
+          "protocolExcerpt": "Vasopressors (shock unresponsive to IV fluids) titrated to physiologic targets. Cardiogenic, hypovolemic, obstructive shock and distributive shock: Norepinephrine 0.05–0.5 mcg/kg/minute. Preference in both neurogenic and infectious (sepsis) causes of distributive shock.",
+          "priority": "critical",
+          "rationale": "If fluids fail to restore MAP ≥65, norepinephrine is first-line for septic shock per protocol. Have it drawn up and ready rather than waiting until she's crashing.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "push-dose-bridge",
+          "shortAction": "Consider push-dose epi 10 mcg q3-5 min as bridge (10 mcg/mL: 1 mL of 1:10,000 in 9 mL NS)",
+          "protocolExcerpt": "Alternative to a drip, push dose epinephrine may be administered: Prepare 10 mcg/mL by diluting 1 mL of epinephrine 0.1 mg/mL (1:10,000) in 9 mL of normal saline. Administer 0.01 mg/kg (0.1 mL/kg) up to a maximum single dose of 10 mcg (1 mL) q 3–5 minutes titrated to maintain goal MAP.",
+          "priority": "important",
+          "rationale": "Useful bridge while drip is being set up — buys time, supports MAP. 60 kg adult: 0.1 mL/kg = 6 mL would exceed the 10 mcg / 1 mL adult max, so cap at the 10 mcg max single dose per protocol.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "upgrade-notification",
+          "shortAction": "Upgrade ED notification: septic shock, vasopressors likely needed",
+          "protocolExcerpt": "Provide advanced notification to the hospital.",
+          "priority": "critical",
+          "rationale": "ED needs the heads-up to have a pressor pump, antibiotics, and a code-sepsis team ready at the door rather than triaging her as a 'weakness' transport.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "reassess-q5",
+          "shortAction": "Reassess vitals + mental status + lung sounds q5 min",
+          "protocolExcerpt": "Reassess patient. Reassess vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment), mental status, and signs of dehydration.",
+          "priority": "important",
+          "rationale": "Worsening MAP, mental status, or new rales are decision points (more fluid vs. start pressors vs. hold fluids).",
+          "protocolReference": "MATC: Hyperglycemia"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "ed-handoff",
+          "if": "Bolus continued + pressors prepped",
+          "condition": "Crew completed the 30 mL/kg bolus (or got most of it in), had norepinephrine ready, upgraded sepsis alert, and arrived at ED with patient stabilized but clearly septic. Receiving team meets ambulance.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["continue-bolus", "prep-norepi", "upgrade-notification"]
+        }
+      ]
+    },
+    {
+      "id": "ed-handoff",
+      "name": "Sepsis alert handoff",
+      "description": "Arrival at ED with a full sepsis alert. Bolus is in (or nearly in), pressor ready or hung, patient is still A&Ox2-3 with MAP holding around 65-70. ED team is at the door, antibiotics are drawn up, central access kit is open. The vague-weakness call has become a sepsis save because the crew refused to anchor on the soft presentation.",
+      "triggerCondition": "Crew completed the empiric sepsis bundle (oxygen, two IVs, full 30 mL/kg bolus, pressors prepared/started, advanced ED notification) and delivered the patient to a receiving facility that was ready.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 4, "motor": 6 },
+        "airway": "Patent.",
+        "breathing": "RR 22, no distress. Lungs still clear.",
+        "circulation": "Pulse 104, regular. Cap refill 2-3 seconds. Skin warm, less flushed.",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL 3 mm.",
+        "motorFunction": "Symmetric.",
+        "otherFindings": [
+          "Full 1800 mL bolus completed en route, no rales developed",
+          "Push-dose epi x1 (10 mcg) given during transition; norepi drip hung at 0.05 mcg/kg/min, titrating to MAP 65",
+          "ED has cultures, antibiotics, and pressor pump ready at bedside"
+        ],
+        "patientSpeech": "'Where are we?'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 104,
+        "bpSys": 102,
+        "bpDia": 60,
+        "respRate": 22,
+        "spo2": 97,
+        "etco2": 32,
+        "temp": 38.0,
+        "tempF": 100.4,
+        "obstruction": 0,
+        "glucose": 130,
+        "customMeasures": [],
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "structured-handoff",
+          "shortAction": "Structured handoff: vitals trend, fluids given, pressors started, source unknown",
+          "protocolExcerpt": "Key Documentation Elements: Medications administered. Full vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) with reassessment q 15 minutes or more frequently as appropriate. Amount of fluids given.",
+          "priority": "critical",
+          "rationale": "Capture the trend (BP dipped at 5 min, responded to ongoing bolus, pressor started) — that story drives the ED's next moves.",
+          "protocolReference": "MATC: Shock"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "undertriaged",
+      "name": "Undertriaged as 'weakness'",
+      "description": "JUDGMENT-ERROR BRANCH. Crew anchored on the soft presentation and the absent obvious source. Temperature was not measured, or was measured and dismissed ('she always runs a little warm'). No IV established. No fluid bolus given. No advanced ED notification. Transported as a low-acuity 'weakness' transfer. By the time the rig backs into the ED bay, BP has crashed to 76/44, mental status is now Verbal-only, and the receiving team is meeting them cold without a sepsis team activated. Strong teaching beat: in geriatrics, vague + criteria-positive = treat empirically, even with no source.",
+      "triggerCondition": "Crew anchored on the soft, vague presentation. Temperature was not obtained or its significance was dismissed. No IV was started. No 30 mL/kg bolus was initiated. No advanced sepsis notification was made to the receiving facility. The patient was transported as a low-acuity 'weakness' call and deteriorates en route.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 3, "motor": 5 },
+        "airway": "Patent but no longer self-protecting briskly; secretions pooling slightly.",
+        "breathing": "RR 30, shallow.",
+        "circulation": "Pulse 128, thready. Cap refill >4 seconds. Skin pale, cool, mottling beginning at knees.",
+        "skin": { "color": "pale", "temperature": "cool", "moisture": "diaphoretic" },
+        "pupils": "PERRL 3 mm.",
+        "motorFunction": "Symmetric but weak; withdraws from sternal rub.",
+        "otherFindings": [
+          "GCS 11 (was 14 on arrival to apartment)",
+          "Mottling at knees — late distributive picture",
+          "No IV access in place — establishing now in ED",
+          "ED team is meeting the patient cold — no sepsis bundle pre-staged"
+        ],
+        "patientSpeech": "(moans, eyes flutter open to loud voice)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 128,
+        "bpSys": 76,
+        "bpDia": 44,
+        "respRate": 30,
+        "spo2": 90,
+        "etco2": 24,
+        "temp": 38.4,
+        "tempF": 101.1,
+        "obstruction": 0,
+        "glucose": 134,
+        "customMeasures": [],
+        "trendTimeSeconds": 55,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-deterioration",
+          "shortAction": "Recognize sepsis-driven deterioration: late distributive shock",
+          "protocolExcerpt": "Hypotension indicates uncompensated shock, which may progress to cardiopulmonary failure within minutes.",
+          "priority": "critical",
+          "rationale": "EtCO2 24 is below the 25 perfusion threshold, BP 76/44, MAP 55, mottling — the patient is now in uncompensated shock that should have been recognized 20 minutes ago.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "rescue-iv-bolus",
+          "shortAction": "Rescue IV access + immediate NS bolus en route (60 kg × 30 mL/kg = 1800 mL); IO if 2 attempts/90 sec",
+          "protocolExcerpt": "Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle. Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops.",
+          "priority": "critical",
+          "rationale": "Late catch is still better than no catch. Get the line, start the bolus, push-dose epi as bridge to drip.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "late-sepsis-alert",
+          "shortAction": "Call sepsis alert NOW — upgrade transport priority",
+          "protocolExcerpt": "Provide advanced notification to the hospital.",
+          "priority": "critical",
+          "rationale": "Catch-up notification so the ED can pre-stage pressors, antibiotics, and a code-sepsis team even though it's late.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "debrief-anchor",
+          "shortAction": "Debrief: vague + elderly + criteria-positive = treat empirically",
+          "protocolExcerpt": "Patients predisposed to shock: Immunocompromised (patients undergoing chemotherapy or with a primary or acquired immunodeficiency). Adrenal insufficiency (Addison's disease, congenital adrenal hyperplasia, chronic or recent steroid use). History of a solid organ or bone marrow transplant. Infants. Elderly. In most adults, tachycardia is the first sign of compensated shock, and may persist for hours.",
+          "priority": "supplemental",
+          "rationale": "Closing teaching point for instructor debrief: elderly patients hide sepsis behind 'weakness' and 'not herself' — vitals + temperature do the talking.",
+          "protocolReference": "MATC: Shock"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

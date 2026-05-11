@@ -1,0 +1,413 @@
+{
+  "scenarioId": "M-T2-04",
+  "scenarioName": "Tricyclic Antidepressant Overdose",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1500,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "28-year-old female with a history of chronic low-back pain and major depressive disorder, found unresponsive in her bedroom by her roommate. Per the roommate, the patient has been increasingly withdrawn over the past two weeks and texted a 'goodbye' message about an hour before being found. Two prescription bottles on the nightstand: an empty 100-tablet bottle of amitriptyline 50 mg (filled 4 days ago) and a near-empty bottle of ibuprofen. No vomiting noted. No witnessed seizure. Time of ingestion unknown but estimated within the last 2-3 hours based on the goodbye text timeline.",
+    "discussion": "",
+    "course": "Initial Contact: Crew arrives to find a 28-year-old female unresponsive on her bed. Roommate hands the crew two pill bottles — an empty amitriptyline 50 mg bottle (filled 4 days ago, 100 tabs) and a near-empty ibuprofen bottle. Patient is flushed, dry-skinned, with sluggish dilated pupils and a palpably distended bladder. Monitor shows sinus tachycardia at 122 with a visibly widened QRS (138 ms). BP 86/52. This is the diagnostic moment: anticholinergic toxidrome (red, dry, mad, blind, hot, full, tachy) PLUS wide QRS + hypotension = TCA overdose. Sodium bicarbonate is the antidote — but only if the toxidrome is recognized. → Bicarb given; QRS narrowing: Crew identified TCA overdose and administered sodium bicarbonate 65 mEq IV bolus (1 mEq/kg × 65 kg). Within 60-90 seconds, QRS narrows from 138 ms to 108 ms and BP climbs to 102/64. Crew has also started a 1300 mL NS fluid bolus (20 mL/kg) and is gently hyperventilating via BVM targeting EtCO2 30-35 to assist alkalinization (goal pH ~7.50). Patient remains GCS 8. As the crew prepares for transport, the patient develops a brief generalized tonic-clonic seizure (~90 seconds) — a known late TCA effect. → Stabilized; ED handoff: Patient is now hemodynamically supported and en route to the ED. Sodium bicarbonate bolus has narrowed the QRS, fluids have restored a systolic in the low 100s, and midazolam has aborted the seizure. Patient remains GCS 8 — airway is being managed with NPA + BVM. Crew provides early notification to the receiving ED with toxidrome identification, time of ingestion, and current status. Continued monitoring for QRS rewidening, recurrent seizure, hypotension, or progression to arrhythmia."
+  },
+  "patientInformation": {
+    "patientName": "Hannah Mercer",
+    "patientCondition": "Unresponsive — found at home by roommate; suspected intentional overdose",
+    "patientAge": 28,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 2,
+    "patientHeight": 165,
+    "patientWeight": 65,
+    "patientPhotoId": 34,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 28-year-old female unresponsive on her bed. Roommate hands the crew two pill bottles — an empty amitriptyline 50 mg bottle (filled 4 days ago, 100 tabs) and a near-empty ibuprofen bottle. Patient is flushed, dry-skinned, with sluggish dilated pupils and a palpably distended bladder. Monitor shows sinus tachycardia at 122 with a visibly widened QRS (138 ms). BP 86/52. This is the diagnostic moment: anticholinergic toxidrome (red, dry, mad, blind, hot, full, tachy) PLUS wide QRS + hypotension = TCA overdose. Sodium bicarbonate is the antidote — but only if the toxidrome is recognized.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 122,
+        "bpSys": 86,
+        "bpDia": 52,
+        "respRate": 10,
+        "spo2": 94,
+        "etco2": 38,
+        "temp": 37.9,
+        "obstruction": 0,
+        "custMeasure1": 108,
+        "custMeasureLabel1": "mg/dL",
+        "custMeasure2": 138,
+        "custMeasureLabel2": "QRS (ms)",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Rapid primary survey (ABCD); note AMS, hypotension, wide-complex tachycardia",
+        "Position airway; NPA; assist ventilations BVM with O2 to SpO2 94-98% and EtCO2 35-40",
+        "Check blood glucose (rule out hypoglycemia as AMS driver) — 108 mg/dL, not hypoglycemic",
+        "Establish 2 large-bore IVs (18g antecubital); draw blood for ED",
+        "Obtain ingestion history; collect bottles; identify amitriptyline (TCA) and dose/quantity",
+        "Recognize anticholinergic toxidrome + wide QRS = TCA / sodium-channel blocker overdose",
+        "Obtain 12-lead EKG; document QRS width (138 ms) and any terminal R in aVR"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Bicarb given; QRS narrowing",
+      "description": "Crew identified TCA overdose and administered sodium bicarbonate 65 mEq IV bolus (1 mEq/kg × 65 kg). Within 60-90 seconds, QRS narrows from 138 ms to 108 ms and BP climbs to 102/64. Crew has also started a 1300 mL NS fluid bolus (20 mL/kg) and is gently hyperventilating via BVM targeting EtCO2 30-35 to assist alkalinization (goal pH ~7.50). Patient remains GCS 8. As the crew prepares for transport, the patient develops a brief generalized tonic-clonic seizure (~90 seconds) — a known late TCA effect.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 118,
+        "bpSys": 102,
+        "bpDia": 64,
+        "respRate": 12,
+        "spo2": 97,
+        "etco2": 32,
+        "temp": 37.9,
+        "obstruction": 0,
+        "custMeasure1": 108,
+        "custMeasureLabel1": "mg/dL",
+        "custMeasure2": 108,
+        "custMeasureLabel2": "QRS (ms)",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Sodium bicarbonate 65 mEq IV bolus (65 kg × 1 mEq/kg; range 1-2 mEq/kg; may repeat to narrow QRS)",
+        "NS 1300 mL IV bolus (65 kg × 20 mL/kg) for hypotension; pressure-infuse over <15 min",
+        "Gentle hyperventilation via BVM; target EtCO2 30-35 mmHg to assist alkalinization (pH ~7.50)",
+        "Recognize TCA-induced seizure; protect airway; continue BVM with O2",
+        "Midazolam 4 mg IV (65 kg × 0.1 mg/kg = 6.5 mg → cap at 4 mg max per dose)",
+        "AVOID phenytoin/Class IA-IC antiarrhythmics (Na-channel blockers worsen TCA cardiotox)",
+        "Repeat 12-lead and QRS measurement after bicarb; redose 1 mEq/kg if QRS rewidens"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Stabilized; ED handoff",
+      "description": "Patient is now hemodynamically supported and en route to the ED. Sodium bicarbonate bolus has narrowed the QRS, fluids have restored a systolic in the low 100s, and midazolam has aborted the seizure. Patient remains GCS 8 — airway is being managed with NPA + BVM. Crew provides early notification to the receiving ED with toxidrome identification, time of ingestion, and current status. Continued monitoring for QRS rewidening, recurrent seizure, hypotension, or progression to arrhythmia.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 112,
+        "bpSys": 108,
+        "bpDia": 68,
+        "respRate": 12,
+        "spo2": 98,
+        "etco2": 32,
+        "temp": 37.8,
+        "obstruction": 0,
+        "custMeasure1": 108,
+        "custMeasureLabel1": "mg/dL",
+        "custMeasure2": 108,
+        "custMeasureLabel2": "QRS (ms)",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Continuous monitoring of QRS, BP, EtCO2, GCS; reassess q5 min",
+        "Have second bicarb dose ready (65 mEq, repeat 1 mEq/kg) if QRS rewidens >100 ms",
+        "Contact Poison Control (1-800-222-1222) early for confirmation of TCA dosing strategy",
+        "Early ED notification: TCA overdose, ~5 g amitriptyline, GCS 8, bicarb given, seizure aborted",
+        "Document: time of ingestion, quantity, anticholinergic findings, QRS trend, bicarb dose, seizure"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Amiodarone given; cardiotox worsens",
+      "description": "Crew anchored on 'wide-complex tachycardia' and applied the cardiac tachycardia protocol — administered amiodarone 150 mg IV over 10 minutes for presumed regular wide-complex tachycardia. Amiodarone is itself a sodium-channel blocker (Vaughan-Williams Class III with Class I activity); stacking it on top of the TCA's sodium-channel blockade catastrophically worsens cardiotoxicity. Within minutes the QRS widens further (138 → 168 ms), BP drops to 64/38, and the rhythm degenerates toward torsades-like polymorphic VT. Sodium bicarbonate must now be given urgently along with full resuscitation.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": true,
+      "defibDisarm": false,
+      "parameters": {
+        "ecgWaveform": 12,
+        "hr": 138,
+        "bpSys": 64,
+        "bpDia": 38,
+        "respRate": 6,
+        "spo2": 86,
+        "etco2": 24,
+        "temp": 37.8,
+        "obstruction": 0,
+        "custMeasure1": 108,
+        "custMeasureLabel1": "mg/dL",
+        "custMeasure2": 168,
+        "custMeasureLabel2": "QRS (ms)",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize amiodarone stacked Na-channel blockade; STOP amiodarone; transition to TCA protocol",
+        "Sodium bicarbonate 130 mEq IV bolus (2 mEq/kg upper-range dose); repeat as needed",
+        "Magnesium sulfate 2 g IV over 10 min if polymorphic VT/torsades pattern",
+        "Place defib pads; prepare for synchronized cardioversion or defib if pulseless",
+        "Debrief flag: wide QRS in an OD ≠ VT. Always ask 'what's the toxidrome?' first"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "TCA missed; arrest en route",
+      "description": "Crew treated only the surface findings — supplemental O2, IV access, a fluid bolus — without checking QRS width, without asking the roommate about the pill bottles on the nightstand, and without recognizing the anticholinergic toxidrome. As the TCA continues to absorb, QRS widens, BP fails to respond to fluids, and approximately 8 minutes into transport the patient deteriorates into pulseless wide-complex rhythm — effectively a sodium-channel-blockade-mediated cardiac arrest. CPR is initiated; the antidote (sodium bicarbonate) is now given as part of the arrest algorithm.",
+      "monitorType": 0,
+      "trendTime": 60,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 12,
+        "temp": 37.6,
+        "obstruction": 0,
+        "custMeasure1": 108,
+        "custMeasureLabel1": "mg/dL",
+        "custMeasure2": 180,
+        "custMeasureLabel2": "QRS (ms)",
+        "spo2Visible": false,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Begin high-quality CPR; switch compressors q2 min; minimize pauses",
+        "Sodium bicarbonate 130 mEq IV bolus (2 mEq/kg); repeat aggressively for toxic arrest",
+        "Belatedly identify TCA toxidrome from history and bottles; communicate to ED",
+        "Epinephrine 1 mg IV/IO q3-5 min per ACLS",
+        "Debrief flag: failure to perform full toxicology assessment (bottles, QRS, toxidrome)"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Rapid primary survey (ABCD); note AMS, hypotension, wide-complex tachycardia",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Position airway; NPA; assist ventilations BVM with O2 to SpO2 94-98% and EtCO2 35-40",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check blood glucose (rule out hypoglycemia as AMS driver) — 108 mg/dL, not hypoglycemic",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish 2 large-bore IVs (18g antecubital); draw blood for ED",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Obtain ingestion history; collect bottles; identify amitriptyline (TCA) and dose/quantity",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize anticholinergic toxidrome + wide QRS = TCA / sodium-channel blocker overdose",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Obtain 12-lead EKG; document QRS width (138 ms) and any terminal R in aVR",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Sodium bicarbonate 65 mEq IV bolus (65 kg × 1 mEq/kg; range 1-2 mEq/kg; may repeat to narrow QRS)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "NS 1300 mL IV bolus (65 kg × 20 mL/kg) for hypotension; pressure-infuse over <15 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Gentle hyperventilation via BVM; target EtCO2 30-35 mmHg to assist alkalinization (pH ~7.50)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize TCA-induced seizure; protect airway; continue BVM with O2",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Midazolam 4 mg IV (65 kg × 0.1 mg/kg = 6.5 mg → cap at 4 mg max per dose)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "AVOID phenytoin/Class IA-IC antiarrhythmics (Na-channel blockers worsen TCA cardiotox)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Repeat 12-lead and QRS measurement after bicarb; redose 1 mEq/kg if QRS rewidens",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous monitoring of QRS, BP, EtCO2, GCS; reassess q5 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Have second bicarb dose ready (65 mEq, repeat 1 mEq/kg) if QRS rewidens >100 ms",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Contact Poison Control (1-800-222-1222) early for confirmation of TCA dosing strategy",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Early ED notification: TCA overdose, ~5 g amitriptyline, GCS 8, bicarb given, seizure aborted",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document: time of ingestion, quantity, anticholinergic findings, QRS trend, bicarb dose, seizure",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize amiodarone stacked Na-channel blockade; STOP amiodarone; transition to TCA protocol",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Sodium bicarbonate 130 mEq IV bolus (2 mEq/kg upper-range dose); repeat as needed",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Magnesium sulfate 2 g IV over 10 min if polymorphic VT/torsades pattern",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place defib pads; prepare for synchronized cardioversion or defib if pulseless",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Debrief flag: wide QRS in an OD ≠ VT. Always ask 'what's the toxidrome?' first",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Begin high-quality CPR; switch compressors q2 min; minimize pauses",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Sodium bicarbonate 130 mEq IV bolus (2 mEq/kg); repeat aggressively for toxic arrest",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Belatedly identify TCA toxidrome from history and bottles; communicate to ED",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 1 mg IV/IO q3-5 min per ACLS",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Debrief flag: failure to perform full toxicology assessment (bottles, QRS, toxidrome)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

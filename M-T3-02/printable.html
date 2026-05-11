@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Status Epilepticus Refractory to Benzodiazepines — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Status Epilepticus Refractory to Benzodiazepines</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Brittany Hollis</strong></span><span class="patient-chip">28 years female</span><span class="patient-chip">154 lbs (70 kg)</span><span class="patient-chip">5'6"</span><span class="patient-chip">CC: Active generalized tonic-clonic seizure that will not stop</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Medic 7, respond priority 1 for a 28-year-old female, seizure, won't stop seizing. Boyfriend on scene, scene secure. 412 Greenwood Apartments, unit 3B.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Second-floor apartment, bedroom-adjacent hallway. Patient on carpeted floor between couch and coffee table. Apartment is warm — boyfriend reports the AC has been out for two days and the thermostat reads 84°F.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Tuesday, 2152 hours. Warm spring evening, indoor ambient temp approximately 84°F.</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. Boyfriend cooperative and helpful, has moved coffee table out of the way. No pets, no weapons, no signs of struggle. Adequate space to work but apartment is hot.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Boyfriend (primary historian, 30yo, calm and focused). Empty Keppra pill bottle visible on the kitchen counter — last fill date approximately one month ago.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Patient on her back on carpet, generalized tonic-clonic convulsions — rhythmic jerking of all four extremities, head turning left, lips blue-tinged</li><li>Frothy saliva and a small amount of blood at the mouth (tongue likely bitten)</li><li>Patient is sweating heavily; skin is flushed and hot to the touch</li><li>Apartment is noticeably warm — thermostat visible at 84°F, no fans running, windows closed</li><li>Empty Keppra pill bottle on kitchen counter</li><li>Patient is wearing a sweatshirt and sweatpants</li><li>No medical alert bracelet visible, no signs of trauma to head or extremities</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">28-year-old female with known epilepsy (diagnosed at age 14, generalized tonic-clonic type) found by her boyfriend convulsing on the bedroom floor at home. Per boyfriend, she has been seizing continuously for at least 6 minutes by the time EMS arrives — convulsions have not paused, no return of consciousness, no postictal interval observed. Patient ran out of her Keppra (levetiracetam) approximately one week ago; refill at pharmacy was delayed due to insurance issue and she has not taken her anticonvulsant in 7 days. No prior episodes of prolonged seizing — typical seizures last 60-90 seconds and self-resolve. Boyfriend denies witnessed trauma, recent drug use, alcohol use, or fever-like illness, but the apartment is warm and she has been actively seizing for several minutes in heavy clothing. No bystander medication given prior to EMS arrival.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">Phenytoin (rash)</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Levetiracetam (Keppra) 1000 mg PO BID — OUT OF MEDICATION x 1 week, Hydroxyzine 25 mg PO PRN anxiety, Sumatriptan 50 mg PO PRN migraine</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Generalized epilepsy (tonic-clonic), diagnosed age 14, Anxiety (managed with PRN hydroxyzine, no daily med), Migraine headaches</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Dinner approximately 1900 hours — pasta and water. No alcohol, no recreational drugs per boyfriend.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Patient was watching TV with boyfriend on the couch around 2145 when she suddenly stopped responding, rolled her eyes back, and went into a generalized convulsion. Boyfriend lowered her to the floor and called 911 immediately. Convulsions have been continuous since onset — approximately 6 minutes prior to EMS arrival. Boyfriend reports patient has been out of her seizure medication for one week.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">Crew arrives to an actively convulsing young woman who has been seizing for 6+ minutes prior to arrival. She is GCS 3 during the seizure with irregular agonal-pattern respirations, cyanotic lips, and hypoxia on quick SpO2 placement. Boyfriend reports she ran out of her Keppra a week ago. The room is hot and she is hot. This is status epilepticus — every clock is running: airway, oxygenation, seizure cessation, and temperature.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">140</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">152/96</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">84%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">8</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">58</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">102.4°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">98</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Withdraws from pain</span><span class="gcs-score">4</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">6</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Threatened. Frothy blood-tinged saliva at the mouth, jaw clenched intermittently during clonic phase. No foreign body. Tongue likely bitten. No formal airway adjunct possible until clonic activity quiets.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Irregular, agonal-pattern grunting respirations between clonic bursts. No effective tidal volume during active convulsion. Cyanosis at lips and fingertips. Chest moves asymmetrically with convulsions.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse strong and rapid. Skin hot, flushed, and diaphoretic. Cap refill ~2 seconds.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">flushed with peripheral cyanosis · hot · profusely diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Pupils 5 mm, sluggishly reactive, with intermittent rightward eye deviation.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Generalized tonic-clonic convulsion — rhythmic jerking of all four extremities, head turning to the left, no purposeful movement.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"No speech — patient is in active generalized convulsion."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Tactile temperature: notably hot — patient is hyperthermic</li><li>Tongue laceration with small amount of bleeding at the mouth</li><li>Urinary incontinence present (jeans soaked at groin)</li><li>No signs of head trauma, no obvious deformity</li><li>Boyfriend reports continuous seizure for 6+ minutes prior to EMS arrival</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize status epilepticus (seizure &gt;5 min on arrival)</div></div>
+        <div class="action-excerpt">Inclusion Criteria: Seizure activity upon arrival of prehospital personnel or new/recurrent seizure activity lasting greater than 5 minutes.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Position airway, place NPA, BVM with high-flow O2, target SpO2 94-98%</div></div>
+        <div class="action-excerpt">If signs of airway obstruction are present and a chin-lift, jaw thrust, positioning, and/or suctioning does not alleviate it, place oropharyngeal airway (if gag reflex is absent) or nasopharyngeal airway. Place pulse oximeter and/or waveform capnography to monitor oxygenation/ventilation. Administer oxygen as appropriate with a target of achieving 94-98% saturation. Use bag-valve-mask (BVM) ventilation if oxygenation/ventilation are compromised.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Midazolam 10 mg IM (70 kg x 0.2 mg/kg = 14 mg → cap at 10 mg max; IM preferred, no IV yet)</div></div>
+        <div class="action-excerpt">Anticonvulsant Treatment - If vascular access is absent: Midazolam 0.2 mg/kg (maximum dose 10 mg), IM preferred, or IN. Routes for treatment: IN/IM routes are preferred over IV or IO routes (if not already established).</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Obtain temperature; recognize hyperthermia (102.4°F and climbing)</div></div>
+        <div class="action-excerpt">Vital signs: Core temperature: usually 104°F or greater (if thermometer available); Skin: flushed and hot, dry or sweaty.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Remove clothing; move to cooler space; prep ice packs to neck/axilla/groin</div></div>
+        <div class="action-excerpt">Move victim to a cool area and shield from the sun or any external heat source. Remove as much clothing as is practical and loosen any restrictive garments.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Establish IV/IO access for second-line dosing and post-RSI sedation</div></div>
+        <div class="action-excerpt">Routes for treatment: IV placement is not necessary for treatment of seizures, but could be obtained if needed for other reasons.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">First benzo given</div>
+        <div class="phase-trigger">Trigger: After 5 minutes, the patient remains in active generalized convulsion despite first-line midazolam at protocol max dose. By definition, this is now refractory status epilepticus.</div>
+        <div class="phase-desc">Five minutes after first-line midazolam, the patient is STILL convulsing. This is refractory status epilepticus by definition. Airway remains threatened, SpO2 has come up slightly on BVM but is not where it needs to be. Glucose is normal. Crew must now choose: a second benzo dose (protocol max) and then pivot, or pivot directly to RSI for definitive airway and seizure control.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">148</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">160/100</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">90%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">12</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">50</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">103.3°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">98</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Withdraws from pain</span><span class="gcs-score">4</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">6</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Still threatened, jaw still clenching intermittently. NPA in place if crew placed one. Continued frothy secretions.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Slightly improved with BVM assistance between clonic bursts but still inadequate spontaneous ventilation. Some chest rise with BVM.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR remains tachycardic, BP still elevated from sympathetic surge. Skin remains hot and diaphoretic.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">flushed, less cyanotic with BVM · hot · profusely diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">5 mm, sluggish, persistent rightward eye deviation.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Continued generalized tonic-clonic convulsion — no break in clonic activity.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"No speech — still actively seizing."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Glucometry obtained: 98 mg/dL — normoglycemic, no dextrose indicated</li><li>Patient has now been convulsing for ~12 minutes total</li><li>Temperature climbing: 103.2°F if rechecked</li><li>Boyfriend asks 'why isn't it stopping?'</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Check blood glucose (98 mg/dL — normoglycemic, no dextrose indicated)</div></div>
+        <div class="action-excerpt">Glucometry: If still actively seizing, check blood glucose level. If less than 60 mg/dL, treat per the Hypoglycemia Guideline.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Second dose: Midazolam 4 mg IV (70 kg x 0.1 mg/kg = 7 mg → cap at 4 mg max; IV now established)</div></div>
+        <div class="action-excerpt">Anticonvulsant Treatment - If vascular access (IV or IO) is present: Diazepam 0.2 mg/kg IV or IO, maximum 10 mg; Lorazepam 0.1 mg/kg IV or IO, maximum 4 mg; Midazolam 0.1 mg/kg IV or IO, maximum 4 mg.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize refractory status; STOP further benzos; pivot to RSI</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Trained personnel should be able to give medication without contacting medical direction, however, more than two doses of benzodiazepines are associated with high-risk of airway compromise. Use caution, weigh risks/benefits of deferring treatment until hospital, and/or consider consultation with medical direction if patient has received two doses of benzodiazepines by bystanders and/or prehospital clinicians.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Consider other causes of refractory seizure (toxin, electrolyte, eclampsia, hyperthermia)</div></div>
+        <div class="action-excerpt">Key Considerations: For new onset seizures or seizures that are refractory to treatment, consider other potential causes including, but not limited to, trauma, stroke, electrolyte abnormality, toxic ingestion, pregnancy with eclampsia, hyperthermia.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Refractory status, RSI prepped</div>
+        <div class="phase-trigger">Trigger: Two doses of benzodiazepine have failed to stop the convulsions; crew correctly identifies this as refractory status epilepticus and pivots to RSI for definitive airway control while the paralytic eliminates convulsive activity.</div>
+        <div class="phase-desc">Crew has correctly identified this as refractory status epilepticus after two doses of benzodiazepine have failed to break the seizure. With no second-line anticonvulsant available in the MATC prehospital scope, the pivot is to RSI — the paralytic stops the convulsive activity while definitive second-line treatment continues at the ED. Crew is now setting up: pre-oxygenation, monitors, suction, induction agent (ketamine preferred — bronchodilator-friendly, hemodynamically supportive, and provides additional seizure-threshold modulation), paralytic (rocuronium), and a back-up airway plan.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">144</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">158/98</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">94%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">14</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">45</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">103.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">98</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Withdraws from pain</span><span class="gcs-score">4</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">6</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Still threatened during ongoing clonic activity. NPA in place, OPA not tolerated due to clenching. Suction ready at bedside.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Pre-oxygenation underway with two-person BVM + PEEP + apneic-O2 nasal cannula in preparation for RSI. Some improvement in SpO2.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR remains 140s, BP elevated. Patient warm and flushed.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">flushed · hot · diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">5 mm, sluggish.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Persistent generalized convulsion — has been ongoing approximately 14 minutes.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"No speech."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Two airway practitioners now at the head of the patient</li><li>IV established (18g antecubital), running NS TKO</li><li>Suction Yankauer connected and tested</li><li>Bougie, video laryngoscope, and back-up SGA at bedside</li><li>Temperature continues to climb: 103.6°F</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Pre-oxygenate x 2 min with BVM + PEEP 5 + apneic nasal cannula O2</div></div>
+        <div class="action-excerpt">Patient should be pre-oxygenated with high flow oxygen, and positive pressure ventilation for a minimum of two minutes prior to the procedure. In some circumstances, sedation may be required for adequate pre-oxygenation. In addition to preoxygenation, apneic oxygenation (high-flow oxygen by nasal cannula) may prolong the period before hypoxia during an intubation attempt.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Ketamine 105-140 mg IV induction (70 kg x 1-2 mg/kg)</div></div>
+        <div class="action-excerpt">Administer induction sedative agent: Etomidate IV push, 0.2-0.3 mg/kg OR Ketamine IV push, 1-2 mg/kg OR Midazolam IV push, 0.05-0.10 mg/kg.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Rocuronium 70 mg IV paralytic (70 kg x 1 mg/kg)</div></div>
+        <div class="action-excerpt">Administer paralytic agent: Succinylcholine IV push, 1-2 mg/kg OR Rocuronium IV push, 1 mg/kg OR Vecuronium IV push, 0.1 mg/kg. Allow time for complete paralysis.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Intubate ETT 7.5; confirm with waveform capnography + bilateral breath sounds; secure tube</div></div>
+        <div class="action-excerpt">Confirm placement of advanced airway (endotracheal tube, SGA) with waveform capnography (most reliable), absent gastric sounds, and bilateral breath sounds. Secure tube manually. Once proper position is confirmed, secure the tube with tape, twill, or commercial device. Continuously monitor correct airway placement with waveform capnography during treatment and transport, paying particular attention to reassessing after each patient movement.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Two experienced airway practitioners at the head; back-up SGA and bougie ready</div></div>
+        <div class="action-excerpt">Rapid/Delayed Sequence Intubation: Used in circumstances when protective airway reflexes are intact, and the patient requires the placement of an endotracheal tube. There should be a minimum of two experienced airway practitioners at the patient's side for this procedure.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Strip clothing; apply ice packs to neck/axilla/groin; target temp &lt;102.2°F</div></div>
+        <div class="action-excerpt">If core temperature is greater than 104°F (40°C) or if altered mental status is present, begin active cooling by: Ice bath immersion provides the most rapid cooling mechanism. If ice bath immersion is not available, consider the following: Tarp-assisted cooling with oscillation; Rotating ice water-soaked towels or sheets; Continually misting the exposed skin with tepid water while fanning the victim; Truncal ice packs may be used, but are less effective than evaporation. Cooling efforts should continue until the patient's temperature is less than 102.2°F (39°C).</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Post-RSI, cooling, transporting</div>
+        <div class="phase-trigger">Trigger: RSI completed successfully — endotracheal tube confirmed with waveform capnography, paralysis has eliminated convulsive activity, and crew has initiated passive cooling for hyperthermia while transporting to the receiving ED.</div>
+        <div class="phase-desc">Patient is intubated, paralyzed, and now mechanically ventilated. Convulsive activity has stopped with paralysis — but the underlying seizure focus is presumed still active in the cortex; this is why second-line agents (Keppra IV, fosphenytoin) at the ED matter. Crew has stripped clothing and applied ice packs to neck/axilla/groin. SpO2 is now in the high 90s on BVM, EtCO2 is in target range, temperature is starting to come down. Transport to the closest appropriate facility is underway with post-intubation sedation in place.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">118</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">134/82</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">98%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">102.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">98</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Definitively secured — 7.5 mm cuffed ETT at 22 cm at the lip, cuff inflated to 20 cmH2O, waveform capnography continuous and confirming placement. Tube secured with commercial holder.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic from paralytic — controlled BVM ventilations at 10/min with 6-8 mL/kg tidal volume and PEEP 5. Bilateral breath sounds, no gastric sounds. EtCO2 trending toward target.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR has dropped slightly with sedation. BP stable. Skin still warm but no longer hot — cooling beginning to work.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink with peripheral cool zones from ice packs · warm (cooling) · still diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">5 mm, sluggish but symmetric — eye deviation has resolved.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid — paralyzed from rocuronium. No convulsive activity.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Intubated and sedated — no speech."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>ETT depth 22 cm at lip, confirmed with capnography</li><li>Ice packs applied to neck, both axillae, both groins</li><li>Clothing removed; patient covered with sheet for transport modesty</li><li>Post-intubation sedation: midazolam continuous low-dose, ketamine bolus available</li><li>Receiving ED notified — patient is refractory status, intubated, will need Keppra load on arrival</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Post-intubation sedation: midazolam 1.4 mg IV (70 kg x 0.02 mg/kg) and/or fentanyl 70-140 mcg IV (70 kg x 1-2 mcg/kg)</div></div>
+        <div class="action-excerpt">Consider sedation with sedative and/or opioid medications if agitated: Fentanyl 1-2 mcg/kg And Midazolam 0.02 mg/kg OR Ketamine IV push, 0.5-1 mg/kg</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Transport to closest appropriate ED; pre-arrival notification for refractory status</div></div>
+        <div class="action-excerpt">Transport to the closest appropriate hospital for airway stabilization when respiratory failure cannot be successfully managed in the prehospital setting.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Benzo stacking past max</div>
+        <div class="phase-trigger">Trigger: Crew gave a third (and potentially fourth) dose of benzodiazepine instead of recognizing refractory status and pivoting to RSI. Cumulative benzo dose has caused respiratory depression and hypotension without stopping the seizure — patient now has BOTH respiratory failure and ongoing convulsions.</div>
+        <div class="phase-desc">Crew, frustrated that the patient is still seizing, gives a third and then a fourth dose of midazolam attempting to break the seizure with more medication. The patient is now snowed on benzodiazepines — respiratory drive is gone, but the cortical seizure activity continues because benzos at this point are no longer the right drug. SpO2 craters. BP drops from cumulative benzo effect. The crew is now managing a respiratory failure AND an ongoing seizure simultaneously, with no remaining benzo budget. RSI is now an emergency, not a planned procedure.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">150</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">88/54</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">78%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">4</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">62</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">103.8°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">98</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Flexion (decorticate)</span><span class="gcs-score">3</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">5</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Severely threatened — copious secretions, no gag, OPA tolerated now (concerning sign), continued clonic activity.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic between clonic bursts. No effective spontaneous ventilation. BVM is now the only ventilation — and it is hard because clonic activity is still impairing chest wall mechanics.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR up at 150, but BP has DROPPED into the 80s/50s from cumulative benzo effect. Skin remains hot and flushed.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">flushed but with mottled extremities · hot · diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">4 mm, sluggish.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Continued low-amplitude clonic activity — convulsions are not stopping despite massive benzo dose.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"No speech."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Cumulative midazolam in: well above 20 mg</li><li>Patient now hypotensive AND hypoxic AND still seizing</li><li>Temperature still climbing: 103.8°F</li><li>This is a teaching beat: 'more than two doses of benzodiazepines are associated with high-risk of airway compromise' — protocol warned this would happen</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">STOP further benzo dosing; recognize &gt;2 doses = airway compromise risk</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Trained personnel should be able to give medication without contacting medical direction, however, more than two doses of benzodiazepines are associated with high-risk of airway compromise. Use caution, weigh risks/benefits of deferring treatment until hospital, and/or consider consultation with medical direction if patient has received two doses of benzodiazepines by bystanders and/or prehospital clinicians.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Emergent RSI: ketamine 105-140 mg IV induction + rocuronium 70 mg IV paralytic</div></div>
+        <div class="action-excerpt">Administer induction sedative agent: Etomidate IV push, 0.2-0.3 mg/kg OR Ketamine IV push, 1-2 mg/kg OR Midazolam IV push, 0.05-0.10 mg/kg. Administer paralytic agent: Succinylcholine IV push, 1-2 mg/kg OR Rocuronium IV push, 1 mg/kg OR Vecuronium IV push, 0.1 mg/kg.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Hyperthermia ignored</div>
+        <div class="phase-trigger">Trigger: Crew successfully controlled the seizure and managed the airway but never assessed temperature, never removed the patient's heavy clothing, and never initiated passive cooling despite hot/flushed skin and a known 84°F apartment environment. Patient is now severely hyperthermic with developing multi-organ injury.</div>
+        <div class="phase-desc">Crew controlled the airway and gave a benzo, but never measured temperature, never removed the heavy clothing, and never initiated passive cooling. Seizure eventually stops with RSI, but the patient's core temperature is now 105.4°F. They are now developing the whole-body sequelae of prolonged hyperthermia: rhabdomyolysis (tea-colored urine starting to appear in the foley collection bag at the hospital), arrhythmia risk, cerebral edema risk. The teaching beat: prolonged status epilepticus is a hyperthermia emergency, not just a brain emergency.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">138</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">100/60</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">96%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">40</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">105.4°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">92</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Secured with ETT — RSI was performed correctly.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Mechanically ventilated, EtCO2 in range.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR remains 130s — sinus tach driven by hyperthermia. BP marginal at 100/60. Skin is dangerously hot to the touch.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">deeply flushed, mottled at extremities · extremely hot · diaphoresis has stopped — anhidrotic, a late and ominous sign</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">5 mm, sluggish.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Paralyzed.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Intubated, paralyzed — no speech."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Core temperature now 105.4°F</li><li>Patient is still in the sweatshirt and sweatpants</li><li>No ice packs, no cooling measures applied</li><li>Receiving ED is concerned: 'why didn't you cool her?'</li><li>Tea-colored urine in foley at ED — early rhabdomyolysis</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Strip clothing; apply ice packs to neck/axilla/groin; goal temp &lt;102.2°F</div></div>
+        <div class="action-excerpt">If core temperature is greater than 104°F (40°C) or if altered mental status is present, begin active cooling by: Ice bath immersion provides the most rapid cooling mechanism. If ice bath immersion is not available, consider the following: Tarp-assisted cooling with oscillation; Rotating ice water-soaked towels or sheets; Continually misting the exposed skin with tepid water while fanning the victim; Truncal ice packs may be used, but are less effective than evaporation. Cooling efforts should continue until the patient's temperature is less than 102.2°F (39°C).</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Obtain core temperature; recognize hyperthermia as a co-emergency</div></div>
+        <div class="action-excerpt">Vital signs: Core temperature: usually 104°F or greater (if thermometer available); Skin: flushed and hot, dry or sweaty, signs of first or second degree burns from sun exposure.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

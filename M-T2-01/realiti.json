@@ -1,0 +1,335 @@
+{
+  "scenarioId": "M-T2-01",
+  "scenarioName": "Opioid Overdose with Complicated Airway",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1200,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "27-year-old male found unresponsive in an alley behind a downtown bar by passing bystanders. Friend who was with patient reportedly ran from scene when bystanders approached. Patient last seen acting normal approximately 45 minutes ago per witness. On EMS arrival, patient is supine on pavement, GCS 4 (E1V1M2), with snoring respirations and visible vomit at the mouth and on the front of his shirt. Pinpoint pupils noted bilaterally. Multiple healed and fresh track marks on bilateral antecubital fossae. Used syringe and small wax-paper fold (suspected heroin/fentanyl packaging) on the ground within arm's reach. No signs of obvious trauma. No medical alert tags.",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives in the alley and finds a 27-year-old male supine on the pavement. He is unresponsive with snoring/gurgling respirations and visible vomit at the mouth and on his shirt. SpO2 78% on room air, RR 4 and shallow, pinpoint pupils, GCS 4. This is the classic competing-priorities scenario: an obvious opioid toxidrome with respiratory depression, but the airway is contaminated and the patient is at high risk of aspiration if he wakes up suddenly. The crew must resist the reflex to push naloxone first and instead manage the airway before any reversal agent. → Airway secured, ready for naloxone: Approximately two minutes of focused airway management has paid off: airway cleared with suction, OPA in place, two-person BVM with PEEP 5 has restored SpO2 to 92% and dropped EtCO2 from 62 to 48. Pulse and BP remain stable. Now the crew is positioned safely to administer naloxone at a LOW initial dose to reverse respiratory depression without precipitating a violent withdrawal. Continued suction must remain immediately at the head. → Aroused — vomits, airway protected: Naloxone 0.4 mg IV has restored respiratory drive. The patient opens his eyes, begins spontaneous breathing at 14/min with adequate tidal volume, but is now agitated and immediately vomits again. The crew's pre-positioned suction and lateral-recovery plan pays off: they roll him, suction the oropharynx, and continue supplemental O2 by NRB. The patient remains drowsy but breathing on his own. Crew must reassess every 5 minutes for recurrent respiratory depression as naloxone wears off (30–90 min) before the underlying opioid does (often 4+ hours)."
+  },
+  "patientInformation": {
+    "patientName": "Marcus Bell",
+    "patientCondition": "Unresponsive, shallow breathing, vomit at mouth",
+    "patientAge": 27,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 178,
+    "patientWeight": 75,
+    "patientPhotoId": 33,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives in the alley and finds a 27-year-old male supine on the pavement. He is unresponsive with snoring/gurgling respirations and visible vomit at the mouth and on his shirt. SpO2 78% on room air, RR 4 and shallow, pinpoint pupils, GCS 4. This is the classic competing-priorities scenario: an obvious opioid toxidrome with respiratory depression, but the airway is contaminated and the patient is at high risk of aspiration if he wakes up suddenly. The crew must resist the reflex to push naloxone first and instead manage the airway before any reversal agent.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 58,
+        "bpSys": 108,
+        "bpDia": 68,
+        "respRate": 4,
+        "spo2": 78,
+        "etco2": 62,
+        "temp": 36.4,
+        "obstruction": 30,
+        "custMeasure1": 92,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Don gloves + eye protection; mind uncapped syringe on ground",
+        "Rapid primary survey (ABC); recognize opioid toxidrome with soiled airway",
+        "Suction oropharynx with Yankauer (consider SALAD); clear vomit before ventilation",
+        "Place in lateral recovery position; pad head; keep suction at the head",
+        "Insert OPA (no gag reflex); prepare two-person BVM",
+        "Two-person BVM with PEEP 5 cmH2O, 10–12 breaths/min; titrate to SpO2 94–98%",
+        "Check blood glucose to rule out hypoglycemia as AMS cause",
+        "Apply cardiac monitor + continuous waveform capnography during BVM"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Airway secured, ready for naloxone",
+      "description": "Approximately two minutes of focused airway management has paid off: airway cleared with suction, OPA in place, two-person BVM with PEEP 5 has restored SpO2 to 92% and dropped EtCO2 from 62 to 48. Pulse and BP remain stable. Now the crew is positioned safely to administer naloxone at a LOW initial dose to reverse respiratory depression without precipitating a violent withdrawal. Continued suction must remain immediately at the head.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 58,
+        "bpSys": 110,
+        "bpDia": 70,
+        "respRate": 12,
+        "spo2": 92,
+        "etco2": 48,
+        "temp": 36.4,
+        "obstruction": 5,
+        "custMeasure1": 92,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": true
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Establish 18g IV antecubital; saline lock; consider 250 mL NS",
+        "Naloxone 0.4 mg IV slow push; titrate to RR and adequate respiratory effort (NOT full alertness)",
+        "Keep Yankauer suction in-hand at head; anticipate vomiting on arousal",
+        "Continue BVM ventilations while naloxone takes effect (1–3 min)",
+        "Brief team on withdrawal/agitation risk; plan body positioning for arousal"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Aroused — vomits, airway protected",
+      "description": "Naloxone 0.4 mg IV has restored respiratory drive. The patient opens his eyes, begins spontaneous breathing at 14/min with adequate tidal volume, but is now agitated and immediately vomits again. The crew's pre-positioned suction and lateral-recovery plan pays off: they roll him, suction the oropharynx, and continue supplemental O2 by NRB. The patient remains drowsy but breathing on his own. Crew must reassess every 5 minutes for recurrent respiratory depression as naloxone wears off (30–90 min) before the underlying opioid does (often 4+ hours).",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 88,
+        "bpSys": 128,
+        "bpDia": 82,
+        "respRate": 14,
+        "spo2": 96,
+        "etco2": 42,
+        "temp": 36.5,
+        "obstruction": 5,
+        "custMeasure1": 92,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": true
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Repeat suction with Yankauer; lateral position; assess lung sounds for aspiration",
+        "NRB at 15 LPM; titrate to SpO2 94–98%",
+        "Reassess RR, SpO2, GCS every 5 min; watch for re-narcosis",
+        "Prepare 2nd naloxone 0.4 mg IV PRN if RR<10 or SpO2<92%",
+        "Transport to ED for observation; do not honor patient refusal",
+        "Document naloxone dose, route, time, and clinical response"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Naloxone first — aspirated",
+      "description": "Judgment-error branch. Crew gave naloxone (most commonly 2 mg IN or 0.4 mg IV) WITHOUT first suctioning the oropharynx or establishing controlled ventilation. The patient roused suddenly while vomit was still pooled in the posterior pharynx and aspirated a substantial volume on his first deep breaths. SpO2 has dropped to 82% on room air despite the airway being open. New coarse crackles and rhonchi heard bilaterally — aspiration pneumonitis is brewing. He is now altered AND combative AND hypoxic, making suction far harder than it would have been 90 seconds ago.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 118,
+        "bpSys": 138,
+        "bpDia": 86,
+        "respRate": 24,
+        "spo2": 82,
+        "etco2": 38,
+        "temp": 36.6,
+        "obstruction": 45,
+        "custMeasure1": 92,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": true
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize aspiration event (new crackles + hypoxia after naloxone)",
+        "Suction with Yankauer; coach patient; lateral position if tolerated",
+        "NRB at 15 LPM; target SpO2 ≥94%; consider NIV if tolerated and stable",
+        "Do NOT redose naloxone — RR is now adequate; resist reflex",
+        "Expedite transport; notify ED of aspiration event + naloxone dose/route"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Don gloves + eye protection; mind uncapped syringe on ground",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Rapid primary survey (ABC); recognize opioid toxidrome with soiled airway",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Suction oropharynx with Yankauer (consider SALAD); clear vomit before ventilation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place in lateral recovery position; pad head; keep suction at the head",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Insert OPA (no gag reflex); prepare two-person BVM",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Two-person BVM with PEEP 5 cmH2O, 10–12 breaths/min; titrate to SpO2 94–98%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check blood glucose to rule out hypoglycemia as AMS cause",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply cardiac monitor + continuous waveform capnography during BVM",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish 18g IV antecubital; saline lock; consider 250 mL NS",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Naloxone 0.4 mg IV slow push; titrate to RR and adequate respiratory effort (NOT full alertness)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Keep Yankauer suction in-hand at head; anticipate vomiting on arousal",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue BVM ventilations while naloxone takes effect (1–3 min)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Brief team on withdrawal/agitation risk; plan body positioning for arousal",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Repeat suction with Yankauer; lateral position; assess lung sounds for aspiration",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "NRB at 15 LPM; titrate to SpO2 94–98%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess RR, SpO2, GCS every 5 min; watch for re-narcosis",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Prepare 2nd naloxone 0.4 mg IV PRN if RR<10 or SpO2<92%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to ED for observation; do not honor patient refusal",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document naloxone dose, route, time, and clinical response",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize aspiration event (new crackles + hypoxia after naloxone)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Suction with Yankauer; coach patient; lateral position if tolerated",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "NRB at 15 LPM; target SpO2 ≥94%; consider NIV if tolerated and stable",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Do NOT redose naloxone — RR is now adequate; resist reflex",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Expedite transport; notify ED of aspiration event + naloxone dose/route",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

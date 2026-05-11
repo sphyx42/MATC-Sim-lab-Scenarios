@@ -1,0 +1,308 @@
+{
+  "scenarioId": "M-T1-04",
+  "scenarioName": "Allergic Reaction without Anaphylaxis",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1200,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "Patient is a 38-year-old male who developed diffuse, raised, itchy red welts across his chest, arms, and upper back about 20 minutes ago, while at a family barbecue. Eruption began roughly 30 minutes after eating. He reports the rash started on his forearms and 'spread fast' across his chest. He is itchy but specifically denies any throat tightness, voice change, trouble breathing, chest tightness, lightheadedness, abdominal cramping, nausea, vomiting, or diarrhea. He has never had a reaction like this before but says a cousin mentioned shrimp was in one of the side dishes — he tried to avoid it but is not sure. He took no medications prior to EMS arrival.",
+    "discussion": "",
+    "course": "Initial Contact: Crew arrives to find a 38-year-old male seated at a picnic table, alert and conversational, with diffuse hives across his chest, arms, and upper back. He is itchy and uncomfortable but in NO respiratory distress, voice is normal, no lip or tongue swelling, no stridor, no wheezing, no GI symptoms, no hypotension. Per the MATC Anaphylaxis and Allergic Reaction protocol, this is a single-organ-system (skin only) reaction — a non-anaphylactic allergic reaction. The clinical task is to deliberately work through the anaphylaxis criteria (airway, breathing, circulation, GI, skin) and conclude that the patient does NOT meet criteria, then treat proportionally with diphenhydramine — NOT epinephrine. → Benadryl given: Crew has correctly classified the reaction as non-anaphylactic (single-system, skin only) and administered diphenhydramine per protocol. Over the next 10-15 minutes, itching softens, hives begin to fade, and the patient remains hemodynamically stable with a clear airway and normal breathing. Crew completes the transport with serial reassessments."
+  },
+  "patientInformation": {
+    "patientName": "Marcus Delgado",
+    "patientCondition": "Hives and itching after eating at a family barbecue",
+    "patientAge": 38,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 178,
+    "patientWeight": 82,
+    "patientPhotoId": 46,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 38-year-old male seated at a picnic table, alert and conversational, with diffuse hives across his chest, arms, and upper back. He is itchy and uncomfortable but in NO respiratory distress, voice is normal, no lip or tongue swelling, no stridor, no wheezing, no GI symptoms, no hypotension. Per the MATC Anaphylaxis and Allergic Reaction protocol, this is a single-organ-system (skin only) reaction — a non-anaphylactic allergic reaction. The clinical task is to deliberately work through the anaphylaxis criteria (airway, breathing, circulation, GI, skin) and conclude that the patient does NOT meet criteria, then treat proportionally with diphenhydramine — NOT epinephrine.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 88,
+        "bpSys": 122,
+        "bpDia": 78,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 37,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Scene size-up and BSI; identify likely allergen exposure",
+        "Assess airway for edema, voice change, stridor — none present",
+        "Auscultate lungs and assess work of breathing — clear, no wheeze",
+        "Assess perfusion; obtain full vitals — BP 122/78, HR 88, SpO2 98%",
+        "Directly ask about GI symptoms — denies nausea, vomiting, cramping",
+        "Classify as non-anaphylactic allergic reaction (skin only, single system)",
+        "Apply cardiac monitor and SpO2; obtain 12-lead per local practice"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Benadryl given",
+      "description": "Crew has correctly classified the reaction as non-anaphylactic (single-system, skin only) and administered diphenhydramine per protocol. Over the next 10-15 minutes, itching softens, hives begin to fade, and the patient remains hemodynamically stable with a clear airway and normal breathing. Crew completes the transport with serial reassessments.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 84,
+        "bpSys": 124,
+        "bpDia": 78,
+        "respRate": 14,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 37,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Diphenhydramine 50 mg IV/IM (82 kg × 1 mg/kg = 82 mg → cap at 50 mg max)",
+        "Explicitly DO NOT give epinephrine — patient does not meet criteria",
+        "Reassess airway, breathing, perfusion every 5 minutes en route",
+        "Transport to closest appropriate facility for ED evaluation",
+        "Structured handoff: single-system reaction, Benadryl given, stable"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "IM Epi given without criteria",
+      "description": "Crew administered IM epinephrine 0.3 mg without first working through the anaphylaxis criteria. The patient does not have airway, breathing, perfusion, or GI involvement — this is a single-system (hives only) reaction that should have been treated with diphenhydramine alone. Within minutes of injection, the patient develops the expected catecholamine effects: marked tachycardia, modest hypertension, anxiety, fine tremor, and new chest tightness in an otherwise healthy 38-year-old. He is now MORE uncomfortable than before, with new symptoms iatrogenically produced.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 132,
+        "bpSys": 156,
+        "bpDia": 96,
+        "respRate": 22,
+        "spo2": 98,
+        "etco2": 34,
+        "temp": 37,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Diphenhydramine 50 mg IV/IM (82 kg × 1 mg/kg = 82 mg → cap at 50 mg max)",
+        "Recognize symptoms are catecholamine effects, not anaphylaxis",
+        "Apply 12-lead ECG; monitor for ischemic changes",
+        "Transport with monitoring; document indication for and effects of epi"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Progression missed en route",
+      "description": "Crew correctly identified the initial reaction as non-anaphylactic and administered diphenhydramine. However, they did not perform serial reassessment of airway and breathing during transport. About 12 minutes into transport, the patient quietly developed new wheezing and mild dyspnea. With skin involvement still present and now respiratory compromise emerging, the patient NOW meets two-system anaphylaxis criteria. Because the crew was not actively listening to lung sounds, this transition was missed. The patient is becoming more anxious, breathing faster, and beginning to use accessory muscles.",
+      "monitorType": 0,
+      "trendTime": 55,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 108,
+        "bpSys": 118,
+        "bpDia": 76,
+        "respRate": 24,
+        "spo2": 94,
+        "etco2": 32,
+        "temp": 37,
+        "obstruction": 40,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Reassess and recognize progression to anaphylaxis (skin + respiratory)",
+        "Epinephrine 0.3 mg IM anterolateral thigh (1 mg/mL, adult ≥25 kg)",
+        "Albuterol 2.5 mg nebulized for active wheezing",
+        "Reassess every 5 minutes; repeat IM epi q5-15 min if symptoms persist",
+        "Notify ED of progression to anaphylaxis; update with IM epi given"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Scene size-up and BSI; identify likely allergen exposure",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Assess airway for edema, voice change, stridor — none present",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Auscultate lungs and assess work of breathing — clear, no wheeze",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Assess perfusion; obtain full vitals — BP 122/78, HR 88, SpO2 98%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Directly ask about GI symptoms — denies nausea, vomiting, cramping",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Classify as non-anaphylactic allergic reaction (skin only, single system)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply cardiac monitor and SpO2; obtain 12-lead per local practice",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Diphenhydramine 50 mg IV/IM (82 kg × 1 mg/kg = 82 mg → cap at 50 mg max)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Explicitly DO NOT give epinephrine — patient does not meet criteria",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess airway, breathing, perfusion every 5 minutes en route",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to closest appropriate facility for ED evaluation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Structured handoff: single-system reaction, Benadryl given, stable",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize symptoms are catecholamine effects, not anaphylaxis",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply 12-lead ECG; monitor for ischemic changes",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport with monitoring; document indication for and effects of epi",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess and recognize progression to anaphylaxis (skin + respiratory)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 0.3 mg IM anterolateral thigh (1 mg/mL, adult ≥25 kg)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Albuterol 2.5 mg nebulized for active wheezing",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess every 5 minutes; repeat IM epi q5-15 min if symptoms persist",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Notify ED of progression to anaphylaxis; update with IM epi given",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

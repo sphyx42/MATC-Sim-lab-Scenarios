@@ -1,0 +1,452 @@
+{
+  "meta": {
+    "id": "M-T1-04",
+    "scenarioId": "M-T1-04",
+    "name": "Allergic Reaction without Anaphylaxis",
+    "version": 1,
+    "difficulty": "beginner",
+    "category": "Medical",
+    "protocols": [
+      "medical-anaphylaxis-allergic-reaction"
+    ],
+    "totalTimeSeconds": 1200,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": ["allergic reaction", "hives", "urticaria", "assessment", "anaphylaxis criteria", "diphenhydramine", "Tier 1"]
+  },
+  "patient": {
+    "name": "Marcus Delgado",
+    "age": 38,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 82,
+    "weightLbs": 181,
+    "height": 178,
+    "chiefComplaint": "Hives and itching after eating at a family barbecue",
+    "history": {
+      "hpi": "Patient is a 38-year-old male who developed diffuse, raised, itchy red welts across his chest, arms, and upper back about 20 minutes ago, while at a family barbecue. Eruption began roughly 30 minutes after eating. He reports the rash started on his forearms and 'spread fast' across his chest. He is itchy but specifically denies any throat tightness, voice change, trouble breathing, chest tightness, lightheadedness, abdominal cramping, nausea, vomiting, or diarrhea. He has never had a reaction like this before but says a cousin mentioned shrimp was in one of the side dishes — he tried to avoid it but is not sure. He took no medications prior to EMS arrival.",
+      "pastMedical": [
+        "Seasonal allergic rhinitis",
+        "No prior anaphylaxis",
+        "No asthma"
+      ],
+      "medications": [
+        "Loratadine 10 mg PO PRN seasonal allergies (last dose >1 week ago)"
+      ],
+      "allergies": [
+        "Shellfish (per patient — 'mom told me I had a rash as a kid', never tested or confirmed)",
+        "NKDA"
+      ],
+      "lastOralIntake": "Grilled chicken, pasta salad, and a side dish containing shrimp (suspected) ~50 minutes ago at family barbecue",
+      "events": "Family member called 911 after patient developed widespread hives and persistent itching at a backyard barbecue. Patient is sitting at a picnic table when EMS arrives, scratching his arms and chest, looking uncomfortable but otherwise calm."
+    }
+  },
+  "scene": {
+    "dispatch": "Medic 4, respond Code 2 to 1812 Sycamore Drive for a 38-year-old male with an allergic reaction and hives. Patient is conscious and breathing. Caller is family member.",
+    "location": "Single-family residence, large backyard with a picnic table and a charcoal grill. Patient seated at the picnic table in the shade. Adequate access via a side gate.",
+    "time": "1645 Saturday afternoon, sunny, ~78°F ambient",
+    "safety": "Scene safe. No pets loose, no agitated bystanders. Charcoal grill is at idle but cooling. Family is cooperative.",
+    "bystanders": "Patient's sister (host of the barbecue) — calm, knows patient's history, confirms timing of meal and onset of rash. Several other family members present at a distance, not interfering.",
+    "visualCues": [
+      "Diffuse raised pink/red wheals (urticaria) visible on patient's forearms, upper chest, and neck",
+      "Patient is scratching arms and chest intermittently",
+      "No facial swelling, no lip/tongue swelling, no audible stridor",
+      "Patient is speaking in full sentences without effort",
+      "Plates with leftover food (including a clearly labeled shrimp dish) still on the picnic table"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 38-year-old male seated at a picnic table, alert and conversational, with diffuse hives across his chest, arms, and upper back. He is itchy and uncomfortable but in NO respiratory distress, voice is normal, no lip or tongue swelling, no stridor, no wheezing, no GI symptoms, no hypotension. Per the MATC Anaphylaxis and Allergic Reaction protocol, this is a single-organ-system (skin only) reaction — a non-anaphylactic allergic reaction. The clinical task is to deliberately work through the anaphylaxis criteria (airway, breathing, circulation, GI, skin) and conclude that the patient does NOT meet criteria, then treat proportionally with diphenhydramine — NOT epinephrine.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, self-maintained. No oropharyngeal edema. No lip, tongue, or uvular swelling. Voice clear and normal in pitch — no hoarseness.",
+        "breathing": "Spontaneous, regular, unlabored. No accessory muscle use. Speaking in full sentences. Lung sounds clear and equal bilaterally — no wheezing, no stridor.",
+        "circulation": "Radial pulse strong and regular. Cap refill <2 seconds. No diaphoresis. Skin warm.",
+        "skin": { "color": "pink (with diffuse urticaria)", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL, 4 mm bilaterally",
+        "motorFunction": "Moves all extremities normally; full grip strength bilaterally",
+        "otherFindings": [
+          "Diffuse raised wheals across chest, arms, and upper back",
+          "Active scratching, particularly forearms and chest",
+          "No angioedema (lips, tongue, eyelids all normal)",
+          "No throat tightness reported on direct questioning",
+          "No nausea, vomiting, abdominal cramping, or diarrhea",
+          "No lightheadedness, syncope, or chest tightness"
+        ],
+        "patientSpeech": "Speaking calmly in full sentences: 'I'm just really itchy. My throat feels normal, I can breathe fine — I just want this rash to stop.'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 88,
+        "bpSys": 122,
+        "bpDia": 78,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 102,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-scene-bsi",
+          "shortAction": "Scene size-up and BSI; identify likely allergen exposure",
+          "protocolExcerpt": "Key Considerations: History of Present Illness — Onset and location; Insect sting or bite; Food allergy/exposure; New clothing, soap, detergent; Past history of reactions; Medication history.",
+          "priority": "critical",
+          "rationale": "Establishes exposure history (shrimp at barbecue ~50 minutes prior) — anchors the differential and guides anaphylaxis-criteria check.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "act-airway-assess",
+          "shortAction": "Assess airway for edema, voice change, stridor — none present",
+          "protocolExcerpt": "Assessment: Evaluate for patent airway and presence of oropharyngeal edema.",
+          "priority": "critical",
+          "rationale": "First anaphylaxis criterion to rule out. Negative finding is what differentiates this from anaphylaxis.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "act-breathing-assess",
+          "shortAction": "Auscultate lungs and assess work of breathing — clear, no wheeze",
+          "protocolExcerpt": "Assessment: Auscultate for wheezing and assess level of respiratory effort.",
+          "priority": "critical",
+          "rationale": "Second anaphylaxis criterion to rule out. Wheezing or distress would escalate to IM epinephrine; their absence supports the non-anaphylactic pathway.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "act-perfusion-assess",
+          "shortAction": "Assess perfusion; obtain full vitals — BP 122/78, HR 88, SpO2 98%",
+          "protocolExcerpt": "Assessment: Assess for adequacy of perfusion.",
+          "priority": "critical",
+          "rationale": "Third anaphylaxis criterion. BP <90 systolic in adults would meet anaphylaxis criteria; normal perfusion here supports non-anaphylactic classification.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "act-gi-assessment",
+          "shortAction": "Directly ask about GI symptoms — denies nausea, vomiting, cramping",
+          "protocolExcerpt": "Anaphylaxis – More severe and is characterized by an acute onset involving: Two or more of the following occurring rapidly after exposure to a likely allergen: Skin and/or mucosal involvement; Respiratory compromise; Persistent gastrointestinal symptoms (vomiting, abdominal pain, diarrhea); Hypotension or associated symptoms.",
+          "priority": "important",
+          "rationale": "Persistent GI symptoms are one of the four criteria that, combined with skin involvement, would meet the 'two-or-more-systems' definition of anaphylaxis. Their absence keeps the patient in the single-system (skin only) category.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "act-classify-reaction",
+          "shortAction": "Classify as non-anaphylactic allergic reaction (skin only, single system)",
+          "protocolExcerpt": "Non-anaphylactic Allergic Reaction: Signs involving only one organ system (e.g., localized angioedema that does not compromise the airway, or not associated with vomiting; hives alone).",
+          "priority": "critical",
+          "rationale": "Central teaching point. Recognizing this as single-system (skin only) directs treatment to diphenhydramine, NOT epinephrine.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "act-monitor-vitals",
+          "shortAction": "Apply cardiac monitor and SpO2; obtain 12-lead per local practice",
+          "protocolExcerpt": "Transport as soon as possible, and perform ongoing assessment as indicated. Cardiac monitoring is not required, but should be considered for those with known heart problems or who received multiple doses of epinephrine.",
+          "priority": "supplemental",
+          "rationale": "Baseline monitoring is reasonable; not mandatory for non-anaphylactic reactions per protocol but supports ongoing reassessment.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "benadryl-given",
+          "if": "Anaphylaxis ruled out; Benadryl given",
+          "condition": "Crew completes the full anaphylaxis-criteria assessment (airway clear, breathing unlabored with clear lungs, perfusion normal, no GI symptoms, skin only involved), correctly classifies as a non-anaphylactic allergic reaction, and administers diphenhydramine per protocol without giving epinephrine.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["act-classify-reaction"]
+        },
+        {
+          "targetPhaseId": "epi-given-inappropriately",
+          "if": "IM Epi given without anaphylaxis criteria",
+          "condition": "Crew reflexively administers IM epinephrine 0.3 mg for 'allergic reaction' without working through the anaphylaxis criteria. Patient does not meet criteria — there is no airway/breathing/perfusion compromise and no GI involvement. Epinephrine produces predictable beta-1 and alpha effects in a normotensive patient: tachycardia, hypertension, tremor, anxiety, and chest discomfort.",
+          "conditionType": "action_taken"
+        },
+        {
+          "targetPhaseId": "missed-progression",
+          "if": "Benadryl given but no reassessment en route",
+          "condition": "Crew correctly identifies non-anaphylactic reaction and gives diphenhydramine, but fails to perform serial reassessments during transport. Patient progresses to mild bronchospasm (new wheezing, mild dyspnea) — now meeting two-system anaphylaxis criteria (skin + respiratory) — and the crew misses it.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["act-breathing-assess"]
+        }
+      ]
+    },
+    {
+      "id": "benadryl-given",
+      "name": "Benadryl given",
+      "description": "Crew has correctly classified the reaction as non-anaphylactic (single-system, skin only) and administered diphenhydramine per protocol. Over the next 10-15 minutes, itching softens, hives begin to fade, and the patient remains hemodynamically stable with a clear airway and normal breathing. Crew completes the transport with serial reassessments.",
+      "triggerCondition": "Crew worked through the anaphylaxis criteria, found the patient meets none of them (no airway compromise, no respiratory distress, no hypotension, no GI symptoms — skin involvement only), and chose the protocol-appropriate treatment: diphenhydramine for urticaria/pruritus, no epinephrine.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent. No oropharyngeal edema. Voice normal.",
+        "breathing": "Spontaneous, unlabored. Lungs clear bilaterally. Speaking in full sentences.",
+        "circulation": "Radial pulse strong and regular. Cap refill <2 seconds.",
+        "skin": { "color": "pink (urticaria fading)", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL, 4 mm",
+        "motorFunction": "Moves all extremities normally",
+        "otherFindings": [
+          "Hives notably less raised and pink than on initial contact",
+          "Itching reported as 'much better — maybe a 3 out of 10'",
+          "Patient drowsy from diphenhydramine but easily arousable and conversant",
+          "No new symptoms: still no throat tightness, no SOB, no GI complaints"
+        ],
+        "patientSpeech": "'Yeah, that medicine helped a lot. The itching is way down. My throat still feels fine.'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 84,
+        "bpSys": 124,
+        "bpDia": 78,
+        "respRate": 14,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 102,
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-diphenhydramine",
+          "shortAction": "Diphenhydramine 50 mg IV/IM (82 kg × 1 mg/kg = 82 mg → cap at 50 mg max)",
+          "protocolExcerpt": "For urticaria or pruritus, administer a diphenhydramine 1 mg/kg, up to maximum dose of 50 mg IM, IV, or PO). The IV route is preferred for the patient in severe symptoms.",
+          "priority": "critical",
+          "rationale": "Per-kg calculation (82 × 1 = 82 mg) exceeds the protocol maximum, so dose is capped at 50 mg. IM is appropriate here given the patient is not in severe symptoms; IV is acceptable if access is established.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "act-no-epi",
+          "shortAction": "Explicitly DO NOT give epinephrine — patient does not meet criteria",
+          "protocolExcerpt": "If signs of allergic reaction without signs of anaphylaxis, go to Step 8.",
+          "priority": "critical",
+          "rationale": "Step 8 is the diphenhydramine step. The protocol explicitly skips the epinephrine step (Step 2) when anaphylaxis is not present. Restraint is the correct clinical action.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "act-reassess",
+          "shortAction": "Reassess airway, breathing, perfusion every 5 minutes en route",
+          "protocolExcerpt": "Transport as soon as possible, and perform ongoing assessment as indicated. Constant monitoring of the patient's airway and breathing is essential.",
+          "priority": "critical",
+          "rationale": "Allergic reactions can progress to anaphylaxis. Serial reassessment is the safety net that catches escalation before it becomes critical.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "act-transport",
+          "shortAction": "Transport to closest appropriate facility for ED evaluation",
+          "protocolExcerpt": "Transport as soon as possible, and perform ongoing assessment as indicated.",
+          "priority": "important",
+          "rationale": "Even non-anaphylactic reactions warrant ED evaluation given the possibility of biphasic or delayed progression.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "act-handoff",
+          "shortAction": "Structured handoff: single-system reaction, Benadryl given, stable",
+          "protocolExcerpt": "Key Documentation Elements: Medications given; Dose and concentration of epinephrine given; Route of epinephrine administration; Time of epinephrine administration; Signs and symptoms of the patient.",
+          "priority": "important",
+          "rationale": "Hand off the reasoning (criteria checked, none met, Benadryl chosen) so the ED knows the differential was worked, not skipped.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "epi-given-inappropriately",
+      "name": "IM Epi given without criteria",
+      "description": "Crew administered IM epinephrine 0.3 mg without first working through the anaphylaxis criteria. The patient does not have airway, breathing, perfusion, or GI involvement — this is a single-system (hives only) reaction that should have been treated with diphenhydramine alone. Within minutes of injection, the patient develops the expected catecholamine effects: marked tachycardia, modest hypertension, anxiety, fine tremor, and new chest tightness in an otherwise healthy 38-year-old. He is now MORE uncomfortable than before, with new symptoms iatrogenically produced.",
+      "triggerCondition": "Crew reached for IM epinephrine reflexively as soon as 'allergic reaction' was on the dispatch, without taking 60-90 seconds to confirm whether anaphylaxis criteria were actually met. Patient does NOT meet criteria — he has skin involvement only and no respiratory, circulatory, or GI signs. The drug produced its expected pharmacologic effects in a normotensive patient.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, no edema, voice normal",
+        "breathing": "Spontaneous and regular but slightly faster; lungs clear",
+        "circulation": "Radial pulse strong, rapid, regular; cap refill <2 seconds",
+        "skin": { "color": "pink (hives fading independently)", "temperature": "warm", "moisture": "mildly diaphoretic" },
+        "pupils": "PERRL, 4 mm",
+        "motorFunction": "Fine tremor of bilateral hands; full strength",
+        "otherFindings": [
+          "Patient now reports 'my heart is pounding' and 'I feel really anxious'",
+          "New complaint of mild chest tightness/pressure — not present before epi",
+          "Fine bilateral hand tremor (catecholamine effect)",
+          "Hives are still present but no worse than baseline",
+          "Crew now realizing the symptoms developed AFTER the injection"
+        ],
+        "patientSpeech": "'Was that shot supposed to make me feel like this? My chest feels weird and my heart is racing.'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 132,
+        "bpSys": 156,
+        "bpDia": 96,
+        "respRate": 22,
+        "spo2": 98,
+        "etco2": 34,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 102,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-recognize-iatrogenic",
+          "shortAction": "Recognize symptoms are catecholamine effects, not anaphylaxis",
+          "protocolExcerpt": "Non-anaphylactic Allergic Reaction: Signs involving only one organ system (e.g., localized angioedema that does not compromise the airway, or not associated with vomiting; hives alone).",
+          "priority": "critical",
+          "rationale": "Tachycardia, hypertension, tremor, and anxiety in a previously stable patient with single-system urticaria are pharmacologic side effects of unnecessary epinephrine — NOT progression of allergic disease.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "act-monitor-ecg",
+          "shortAction": "Apply 12-lead ECG; monitor for ischemic changes",
+          "protocolExcerpt": "Cardiac monitoring is not required, but should be considered for those with known heart problems or who received multiple doses of epinephrine.",
+          "priority": "critical",
+          "rationale": "New chest tightness post-epi warrants ECG to screen for demand-induced ischemia, especially in any patient with cardiac risk factors.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "act-diphenhydramine-late",
+          "shortAction": "Diphenhydramine 50 mg IV/IM (82 kg × 1 mg/kg = 82 mg → cap at 50 mg max)",
+          "protocolExcerpt": "For urticaria or pruritus, administer a diphenhydramine 1 mg/kg, up to maximum dose of 50 mg IM, IV, or PO).",
+          "priority": "important",
+          "rationale": "Treat the actual reaction (hives/itching) — diphenhydramine was indicated all along.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "act-transport-monitor",
+          "shortAction": "Transport with monitoring; document indication for and effects of epi",
+          "protocolExcerpt": "Key Documentation Elements: Medications given; Dose and concentration of epinephrine given; Route of epinephrine administration; Time of epinephrine administration; Signs and symptoms of the patient.",
+          "priority": "important",
+          "rationale": "Documentation must reflect why epi was given and the patient's response — critical for medical direction review and ED handoff.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "missed-progression",
+      "name": "Progression missed en route",
+      "description": "Crew correctly identified the initial reaction as non-anaphylactic and administered diphenhydramine. However, they did not perform serial reassessment of airway and breathing during transport. About 12 minutes into transport, the patient quietly developed new wheezing and mild dyspnea. With skin involvement still present and now respiratory compromise emerging, the patient NOW meets two-system anaphylaxis criteria. Because the crew was not actively listening to lung sounds, this transition was missed. The patient is becoming more anxious, breathing faster, and beginning to use accessory muscles.",
+      "triggerCondition": "Crew chose the correct initial treatment (diphenhydramine) but failed to reassess airway and breathing en route. Patient progressed from single-system (skin) to two-system (skin + respiratory) involvement — now meeting anaphylaxis criteria — and the crew has not noticed because lung sounds were not rechecked after the initial assessment.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, but voice slightly tight; no overt edema yet",
+        "breathing": "Faster, mildly labored; expiratory wheezing now audible bilaterally; mild accessory muscle use",
+        "circulation": "Radial pulse rapid; cap refill <2 seconds",
+        "skin": { "color": "pink (hives still present)", "temperature": "warm", "moisture": "mildly diaphoretic" },
+        "pupils": "PERRL, 4 mm",
+        "motorFunction": "Full strength",
+        "otherFindings": [
+          "New diffuse expiratory wheeze on auscultation (would be heard if checked)",
+          "Patient now leaning forward slightly, using subtle accessory muscles",
+          "Patient reports 'a little harder to take a deep breath now' if asked",
+          "Hives still present; itching no better despite Benadryl",
+          "Two-system involvement (skin + respiratory) — anaphylaxis criteria now met"
+        ],
+        "patientSpeech": "'I feel like my chest is getting kind of tight... is that normal?'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 108,
+        "bpSys": 118,
+        "bpDia": 76,
+        "respRate": 24,
+        "spo2": 94,
+        "etco2": 32,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 40,
+        "glucose": 102,
+        "trendTimeSeconds": 55,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-recognize-escalation",
+          "shortAction": "Reassess and recognize progression to anaphylaxis (skin + respiratory)",
+          "protocolExcerpt": "Anaphylaxis – More severe and is characterized by an acute onset involving: Two or more of the following occurring rapidly after exposure to a likely allergen: Skin and/or mucosal involvement (urticaria, itchy, swollen tongue/lips); Respiratory compromise (dyspnea, wheezing, stridor, hypoxemia).",
+          "priority": "critical",
+          "rationale": "Skin + wheezing/dyspnea = two-system involvement = anaphylaxis by criteria. Recognition triggers the escalation to IM epinephrine — the lifesaver missed up to this point.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "act-im-epi-now",
+          "shortAction": "Epinephrine 0.3 mg IM anterolateral thigh (1 mg/mL, adult ≥25 kg)",
+          "protocolExcerpt": "Epinephrine administration is the primary treatment for anaphylaxis. If signs of anaphylaxis, administer epinephrine 1 mg/mL at the following dose and route: Adult (25 kg or more) 0.3 mg IM in the anterolateral thigh.",
+          "priority": "critical",
+          "rationale": "Now indicated. Adult fixed dose 0.3 mg IM in the anterolateral thigh, 1 mg/mL concentration.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "act-albuterol",
+          "shortAction": "Albuterol 2.5 mg nebulized for active wheezing",
+          "protocolExcerpt": "If respiratory distress with wheezing is present, consider administering Albuterol 2.5–5 mg nebulized AND/OR Epinephrine 1 mg/mL, 5 mL nebulized.",
+          "priority": "important",
+          "rationale": "Treats the bronchospasm component alongside the systemic IM epi.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "act-reassess-post-epi",
+          "shortAction": "Reassess every 5 minutes; repeat IM epi q5-15 min if symptoms persist",
+          "protocolExcerpt": "If signs of anaphylaxis and hypoperfusion persist following the first dose of epinephrine, additional IM epinephrine can be repeated q5–15 minutes at above noted doses.",
+          "priority": "critical",
+          "rationale": "Anaphylaxis often requires repeat dosing. Now-active reassessment prevents further missed progression.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        },
+        {
+          "id": "act-notify-ed",
+          "shortAction": "Notify ED of progression to anaphylaxis; update with IM epi given",
+          "protocolExcerpt": "Key Documentation Elements: Medications given; Dose and concentration of epinephrine given; Route of epinephrine administration; Time of epinephrine administration; Signs and symptoms of the patient.",
+          "priority": "important",
+          "rationale": "ED needs to know the trajectory (single-system → anaphylaxis) and the time/dose of IM epi for ongoing management.",
+          "protocolReference": "MATC: Anaphylaxis and Allergic Reaction"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

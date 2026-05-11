@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seizure Progressing to Status Epilepticus — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Seizure Progressing to Status Epilepticus</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Marcus Delgado</strong></span><span class="patient-chip">38 years male</span><span class="patient-chip">176 lbs (80 kg)</span><span class="patient-chip">5'10"</span><span class="patient-chip">CC: Witnessed generalized tonic-clonic seizure</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Medic 14, respond Code 3 to 1850 Corporate Drive, Suite 300, for a 38-year-old male, witnessed seizure, now reportedly stopped. Caller is a coworker.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Third floor of a corporate office building. Patient supine on carpeted floor of an open cubicle area. Adequate space and lighting; coworkers have cleared furniture back from the patient.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">1019 weekday morning</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. No environmental hazards. No weapons. Bystanders cooperative and stepped back to give crew room.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Coworker who witnessed the event (primary historian) — calm and able to give a clear account. States patient has epilepsy and 'mentioned last week he was almost out of his pills.' No family on scene; coworker is calling the patient's spouse.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Patient supine on carpet, slightly diaphoretic, with damp area near mouth from frothing</li><li>Small abrasion on left elbow from the fall</li><li>Empty Keppra prescription bottle visible in the patient's open desk drawer — last filled 25 days ago</li><li>No incontinence visible; no tongue laceration on quick inspection</li><li>Coworker holding a stopwatch app on their phone — has been timing</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">38-year-old male with known epilepsy was working at his desk when his coworker heard him fall to the floor. Coworker found him on the floor with generalized tonic-clonic activity that lasted approximately 3 minutes before stopping spontaneously just as EMS arrived. Patient is now post-ictal — eyes open to voice, mumbling, GCS 11 and slowly improving. Coworker states the patient has a long history of seizures and recently ran out of his Keppra (levetiracetam) about 5 days ago and has not refilled it. No reported trauma to the head during the fall — coworker saw him slump rather than fall hard. No fever, no recent illness, no alcohol or drug use known. While the crew is setting up monitoring, the patient has a SECOND generalized tonic-clonic seizure that does not stop after 2 minutes of continuous activity — meeting status epilepticus criteria.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">NKDA</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Levetiracetam (Keppra) 1000 mg PO BID — RAN OUT 5 days ago, not refilled, Lorazepam 1 mg PO PRN anxiety (rare use)</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Epilepsy (generalized tonic-clonic), diagnosed age 19, Mild anxiety, No diabetes, no cardiac history</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Coffee and a bagel at 0800 this morning; nothing since</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Coworker in adjacent cubicle heard a soft thud at approximately 1015 and went to check. Found patient on the floor, eyes open and deviated to the right, with generalized tonic-clonic shaking of all four extremities, frothing at the mouth. Coworker called 911, cleared the area around the patient, did not place anything in his mouth. Seizure lasted approximately 3 minutes and stopped spontaneously just as EMS arrived on scene at 1019.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">Crew arrives 4 minutes after dispatch to find a 38-year-old male supine on the office floor in a post-ictal state. Coworker reports the seizure was generalized tonic-clonic, lasted about 3 minutes, and stopped just as EMS pulled up. Patient is mumbling, opens eyes to voice, GCS 11 and slowly trending up. Vitals are stable. While the crew is mid-assessment — taking baseline vitals, applying SpO2, asking about meds — the patient suddenly stiffens and begins another generalized tonic-clonic seizure. This is now a recurrent seizure without recovery between, and as it continues past 2 minutes of unrelenting activity the crew is in status epilepticus territory per protocol definition. The decision-dense window opens here: airway protection, oxygenation, IV/IO vs IM/IN benzo, and the dose math all need to happen simultaneously while the patient is convulsing.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">118</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">148/92</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">94%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">22</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">32</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">99.3°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">96</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Inappropriate words</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">11</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent post-ictally; mild frothy oral secretions, no tongue laceration visible</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous, regular, slightly deep post-ictal pattern; lungs clear bilaterally</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse strong and regular; warm, well perfused</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL, 4 mm bilaterally</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Initially flaccid post-ictal; then abruptly stiffens and begins generalized tonic-clonic activity of all four extremities approximately 90 seconds into crew contact</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Mumbled, garbled; cannot answer orientation questions clearly during initial post-ictal state; then loses speech entirely as second seizure begins"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Coworker confirms first seizure was ~3 minutes, generalized tonic-clonic</li><li>Empty Keppra bottle in desk drawer — last refilled 25 days ago</li><li>Patient mumbling, eyes opening to voice — clearly post-ictal at first contact</li><li>Second tonic-clonic seizure begins approximately 90 seconds into crew assessment</li><li>Second seizure continues past the 2-minute mark with no recovery between — meets status epilepticus criteria</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Obtain seizure history: duration, onset, meds, anticonvulsant compliance</div></div>
+        <div class="action-excerpt">History: Duration of current seizure. Prior history of seizures, diabetes, or hypoglycemia. Typical appearance of seizures. Baseline seizure frequency and duration. Current medications, including anticonvulsants. Recent dose changes or non-compliance with anticonvulsants.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Position airway, suction frothy secretions, NPA if gag present — NO bite block</div></div>
+        <div class="action-excerpt">If signs of airway obstruction are present and a chin-lift, jaw thrust, positioning, and/or suctioning does not alleviate it, place oropharyngeal airway (if gag reflex is absent) or nasopharyngeal airway.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Apply SpO2 and waveform capnography; high-flow O2 via NRB</div></div>
+        <div class="action-excerpt">Place pulse oximeter and/or waveform capnography to monitor oxygenation/ventilation. Administer oxygen as appropriate with a target of achieving 94–98% saturation. Use bag-valve-mask (BVM) ventilation if oxygenation/ventilation are compromised.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Finger-stick glucose — rule out hypoglycemia as seizure cause</div></div>
+        <div class="action-excerpt">Glucometry: If still actively seizing, check blood glucose level. If less than 60 mg/dL, treat per the Hypoglycemia Guideline.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize recurrent seizure / status epilepticus — treat NOW, don't wait</div></div>
+        <div class="action-excerpt">Inclusion Criteria: Seizure activity upon arrival of prehospital personnel or new/recurrent seizure activity lasting greater than 5 minutes.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Choose route — IM/IN preferred if no IV; do not delay benzo for IV attempts</div></div>
+        <div class="action-excerpt">Routes for treatment: IN/IM routes are preferred over IV or IO routes (if not already established) and rectal (PR) route as an alternative. IV placement is not necessary for treatment of seizures, but could be obtained if needed for other reasons.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Midazolam 10 mg IM (80 kg × 0.2 mg/kg = 16 mg → cap at 10 mg max)</div></div>
+        <div class="action-excerpt">Anticonvulsant Treatment — If vascular access is absent: Midazolam 0.2 mg/kg (maximum dose 10 mg), IM preferred, or IN.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">If IV already in place: Midazolam 4 mg IV (80 kg × 0.1 mg/kg = 8 mg → cap at 4 mg)</div></div>
+        <div class="action-excerpt">Anticonvulsant Treatment — If vascular access (IV or IO) is present: Diazepam 0.2 mg/kg IV or IO, maximum 10 mg; Lorazepam 0.1 mg/kg IV or IO, maximum 4 mg; Midazolam 0.1 mg/kg IV or IO, maximum 4 mg.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Benzo given; seizure stops</div>
+        <div class="phase-trigger">Trigger: Midazolam 10 mg IM was given within ~2 minutes of recurrent seizure recognition. Convulsive activity stopped at approximately 90 seconds post-injection. Patient is now post-ictal with respiratory depression — the combined effect of post-ictal CNS suppression and the IM benzo onboard — and requires BVM-assisted ventilation.</div>
+        <div class="phase-desc">Crew gave midazolam 10 mg IM promptly. Convulsive activity terminates approximately 90 seconds after the injection. Patient is now post-ictal again, but more deeply suppressed than after the first seizure — GCS 9, respirations slowing to 8/min, SpO2 trending down to 90% on room air. This is the expected post-benzo + post-ictal respiratory depression. Crew must now BVM-assist ventilations, maintain airway adjunct, establish IV access in a non-seizing patient, and prepare for possible recurrence (second dose may be needed). Transport is initiated.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">104</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">138/86</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">96%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">8</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">44</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">99.3°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">96</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg sel-p">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To pain</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Incomprehensible sounds</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">9</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent with NPA in place; pooling oropharyngeal secretions cleared with suction</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Slow and shallow at 8/min; BVM-assist initiated to maintain rate and tidal volume</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong radial pulse; warm well-perfused skin</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL, 4 mm — slightly sluggish</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid post-ictal; withdraws only to noxious stimuli</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Non-verbal; occasional groan to noxious stimuli"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Convulsive activity terminated at ~90 seconds post midazolam IM</li><li>Respiratory rate dropped from 22 (during seizure) to 8 (post-benzo + post-ictal)</li><li>SpO2 trended from 94% to 90% before BVM-assist initiated</li><li>IV access now obtained in the now-still patient</li><li>Crew preparing midazolam 10 mg IM second dose in case of recurrence</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">BVM-assist ventilations at 10-12/min with PEEP; titrate to SpO2 94-98%</div></div>
+        <div class="action-excerpt">Use bag-valve-mask (BVM) ventilation in the setting of respiratory failure or arrest. Rate — Adult: 10–12 breaths/minute. PEEP should be used with BVM. 5 cmH2O is generally an appropriate initial PEEP setting. Ventilate with just enough volume to see chest rise, approximately 6–8 mL/kg ideal body weight.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continuous waveform capnography; target EtCO2 35-40 mmHg</div></div>
+        <div class="action-excerpt">Continuous wave-form capnography monitoring should be placed in line. In patients without primary pulmonary pathology, maintain EtCO2 of no less than 35 and up to 40 mmHg. Continuously monitor EtCO2 to guide tidal volume and minute ventilation.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Establish IV access NOW that patient is still — prep for potential redose</div></div>
+        <div class="action-excerpt">IV placement is not necessary for treatment of seizures, but could be obtained if needed for other reasons.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Prep second midazolam dose; redose if seizure recurs (max 2 benzo doses)</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Trained personnel should be able to give medication without contacting medical direction, however, more than two doses of benzodiazepines are associated with high-risk of airway compromise. Use caution, weigh risks/benefits of deferring treatment until hospital, and/or consider consultation with medical direction if patient has received two doses of benzodiazepines by bystanders and/or prehospital clinicians.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Initiate transport; reassess en route; notify ED of status epilepticus</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Actively seizing during transport and time of seizure onset/cessation. Medication amounts/routes given by bystanders or prehospital clinicians. Neurologic status (GCS, nystagmus, pupil size, focal neurologic deficit, or signs of stroke).</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Stable to ED</div>
+        <div class="phase-trigger">Trigger: Patient transported with BVM support after successful midazolam 10 mg IM termination of status epilepticus. No recurrence en route. Handoff delivered to ED for ongoing antiepileptic management and search for the underlying provocateur (medication non-compliance identified).</div>
+        <div class="phase-desc">Patient delivered to the ED with BVM-assisted ventilation, NPA in place, IV established, and no further seizure activity. Crew gives a clean handoff to the ED team — they took an obvious 'IV access in a convulsing patient' bait and chose the IM route, recognized status epilepticus by the 2-minute mark of the recurrent seizure, gave the right dose by the right route, and managed the predictable post-benzo respiratory depression with BVM and capnography. The teaching points sit cleanly: recurrent-without-recovery meets status criteria; IM/IN before IV in the seizing patient; post-benzo respiratory monitoring is mandatory.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Rhythm</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">92</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">132/82</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">98%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">14</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">99.1°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">94</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Inappropriate words</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">11</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">NPA still in place; patient tolerating; gag returning</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous at 14/min, supported intermittently with BVM as benzo effect wears</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong radial pulse, warm and dry</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL, 4 mm — reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moving all extremities to noxious stimulus; spontaneous purposeful movement returning</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Mumbled single-word responses; cooperating with handoff exam"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Mental status slowly returning — opens eyes to voice, mumbling appropriately</li><li>No seizure recurrence during 12-minute transport</li><li>ED team accepts patient; neurology consult requested</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Structured handoff: recurrent seizure, status met, midazolam 10 mg IM, response</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Actively seizing during transport and time of seizure onset/cessation. Onset, focality, direction of eye deviation. Medication amounts/routes given by bystanders or prehospital clinicians. Neurologic status (GCS, nystagmus, pupil size, focal neurologic deficit, or signs of stroke). Blood glucose level.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Document glucose, full vitals, time of seizure onset/cessation, and meds given</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Blood glucose level. Medication amounts/routes given by bystanders or prehospital clinicians.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">IV chase; seizure continues</div>
+        <div class="phase-trigger">Trigger: Crew chose to chase IV access on the actively convulsing patient instead of giving an IM/IN benzodiazepine. The seizure has now continued for ~6 minutes without termination. Airway is becoming compromised; cyanosis is developing. This branch demonstrates the cost of ignoring the protocol's explicit IM/IN preference.</div>
+        <div class="phase-desc">Crew attempts repeated IV sticks on a convulsing patient. The muscle activity wrecks every attempt; the patient continues seizing for 4 more minutes — now ~6 minutes total of unrelenting convulsive activity. SpO2 drifts down to 84%, skin cyanotic around lips, oral secretions pooling. The crew has effectively chosen the worst path: no benzo given, no IV obtained, airway worsening. Recovery requires abandoning the IV attempt, giving an IM/IN dose immediately, and aggressive airway management with BVM and high-flow O2.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">142</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">168/104</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">84%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">28</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">58</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">100°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">92</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Flexion (decorticate)</span><span class="gcs-score">3</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">5</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Compromised — copious frothy secretions, cyanosis around mouth, jaw clenched</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Irregular, ineffective tonic-clonic breathing pattern; tidal volume poor</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Tachycardic, strong radial pulse; skin warm but increasingly mottled</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">cyanotic · warm · diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Mid-position, sluggish</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Continuous generalized tonic-clonic activity entering 6th minute</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Non-verbal — no purposeful sound"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Three failed IV attempts during active seizure</li><li>Patient still convulsing — no benzo administered yet</li><li>SpO2 dropped to 84%, EtCO2 climbing to 58</li><li>Visible cyanosis around mouth and nail beds</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Stop chasing IV; switch to IM/IN route per protocol preference</div></div>
+        <div class="action-excerpt">Routes for treatment: IN/IM routes are preferred over IV or IO routes (if not already established) and rectal (PR) route as an alternative.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Midazolam 10 mg IM NOW (80 kg × 0.2 mg/kg = 16 mg → cap at 10 mg max)</div></div>
+        <div class="action-excerpt">Anticonvulsant Treatment — If vascular access is absent: Midazolam 0.2 mg/kg (maximum dose 10 mg), IM preferred, or IN.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Suction airway, NPA, high-flow O2; prep BVM-assist as seizure terminates</div></div>
+        <div class="action-excerpt">If signs of airway obstruction are present and a chin-lift, jaw thrust, positioning, and/or suctioning does not alleviate it, place oropharyngeal airway (if gag reflex is absent) or nasopharyngeal airway. Use bag-valve-mask (BVM) ventilation if oxygenation/ventilation are compromised.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Recognize benzo more than two doses risk; consult medical direction if needed</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Trained personnel should be able to give medication without contacting medical direction, however, more than two doses of benzodiazepines are associated with high-risk of airway compromise. Use caution, weigh risks/benefits of deferring treatment until hospital, and/or consider consultation with medical direction if patient has received two doses of benzodiazepines by bystanders and/or prehospital clinicians.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Underdosed IM benzo</div>
+        <div class="phase-trigger">Trigger: Crew administered midazolam 4 mg IM — confusing the IV/IO ceiling dose (4 mg) with the IM ceiling (10 mg). Seizure continues at 4 minutes post-dose with no effect. The undertreatment is the teaching point: route and ceiling are not interchangeable.</div>
+        <div class="phase-desc">Crew correctly recognized the need for IM benzo and skipped the IV attempt — but pulled the wrong dose math, giving only 4 mg IM (the IV/IO ceiling dose) instead of the IM ceiling of 10 mg. Seizure does not terminate. After waiting 3-4 minutes for an effect that never comes, the crew must recognize the dosing error, redose to make up the deficit (an additional 6 mg IM to reach the IM ceiling), and accept they will likely hit the protocol's two-dose ceiling — meaning the second dose decision needs to be deliberate and well-documented.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">132</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">158/98</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">88%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">26</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">50</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">99.7°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">94</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Flexion (decorticate)</span><span class="gcs-score">3</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">5</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent with NPA in place; oral secretions; suction in use</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Tonic-clonic pattern, tidal volume marginal</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Tachycardic, strong pulse</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale · warm · diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Mid-position, sluggish</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Continuous generalized tonic-clonic activity at 4 minutes post under-dose</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Non-verbal"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Midazolam 4 mg IM was given 4 minutes ago — IV/IO dose by IM route</li><li>Seizure has not terminated</li><li>Crew now recognizing the dosing error</li><li>SpO2 88%, EtCO2 50</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize underdosing: IM ceiling is 10 mg, not the IV 4 mg</div></div>
+        <div class="action-excerpt">Anticonvulsant Treatment — If vascular access is absent: Midazolam 0.2 mg/kg (maximum dose 10 mg), IM preferred, or IN. If vascular access (IV or IO) is present: Midazolam 0.1 mg/kg IV or IO, maximum 4 mg.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Midazolam additional 6 mg IM to reach 10 mg total IM ceiling</div></div>
+        <div class="action-excerpt">Anticonvulsant Treatment — If vascular access is absent: Midazolam 0.2 mg/kg (maximum dose 10 mg), IM preferred, or IN.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Suction, NPA, high-flow O2, BVM-assist for hypoxia</div></div>
+        <div class="action-excerpt">Place pulse oximeter and/or waveform capnography to monitor oxygenation/ventilation. Administer oxygen as appropriate with a target of achieving 94–98% saturation. Use bag-valve-mask (BVM) ventilation if oxygenation/ventilation are compromised.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Document both doses, times, routes; flag the under-dose for QA review</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Medication amounts/routes given by bystanders or prehospital clinicians.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

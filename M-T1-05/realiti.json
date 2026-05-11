@@ -1,0 +1,314 @@
+{
+  "scenarioId": "M-T1-05",
+  "scenarioName": "Diabetic Ketoacidosis, Early Recognition",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1500,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "Patient is a 19-year-old female with type 1 diabetes (diagnosed at age 11). For the last three days she has had a flu-like illness — sore throat, low-grade fever, and progressive nausea and vomiting. Because she 'couldn't keep anything down,' she stopped taking her insulin two days ago, reasoning that she 'wasn't eating, so she didn't need it.' Over the last 24 hours she has developed diffuse, cramping abdominal pain (now 7/10), worsening fatigue, increased thirst, and urinating 'constantly — every 30 minutes.' She vomited three times overnight and once this morning. Her roommate found her this morning curled up in bed, breathing fast and deep, and confused-sounding. The roommate called 911 because she was 'just not acting right and breathing weird.' Patient denies chest pain, recent travel, sick contacts beyond a roommate with a cold, sexual activity in the last 6 months, or pregnancy possibility.",
+    "discussion": "",
+    "course": "Initial Contact: Crew arrives to find a 19-year-old female curled on her side in bed, complaining of diffuse abdominal pain and feeling 'really sick.' She is alert and oriented but tired-appearing, with deep and rapid (Kussmaul) respirations that are easy to miss if you anchor on 'abd pain.' Skin is warm and dry with poor turgor; mucous membranes are visibly dry. A faint fruity odor is noticeable on her breath. Vitals show tachycardia and tachypnea with borderline-low BP. Roommate is at bedside with a clear history: type 1 diabetic, three days of flu-like illness with vomiting, and the patient stopped her insulin because she 'wasn't eating.' This patient looks like a routine 'abd pain / vomiting' call at first glance — the catchable findings are the deep-rapid breathing pattern, dry mucous membranes, the fruity breath, and the missed-insulin history. A finger-stick glucose seals the diagnosis. → DKA recognized; fluids started: Crew has named DKA, opened a large-bore IV, and is moving the patient to the cot. The next deliverable is a normal saline bolus per the Hyperglycemia protocol — 20 mL/kg at 1000 mL/hr — and reassessment. Vitals are essentially unchanged on initial reassessment but the patient is now packaged and en route. → En route — reassess and handoff: Patient is en route to the ED with a 1-liter normal saline bolus running. On reassessment partway through transport she is slightly improved — mucous membranes are still dry but she is more conversant and her HR has come down a few points. Respiratory rate is still elevated (Kussmaul respirations are appropriate compensation and will persist until the acidosis is corrected at the receiving facility). Bedside handoff highlights the diagnosis, fluid given, and remaining concerns."
+  },
+  "patientInformation": {
+    "patientName": "Hailey Brennan",
+    "patientCondition": "Diffuse abdominal pain with nausea and vomiting",
+    "patientAge": 19,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 2,
+    "patientHeight": 165,
+    "patientWeight": 50,
+    "patientPhotoId": 23,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 19-year-old female curled on her side in bed, complaining of diffuse abdominal pain and feeling 'really sick.' She is alert and oriented but tired-appearing, with deep and rapid (Kussmaul) respirations that are easy to miss if you anchor on 'abd pain.' Skin is warm and dry with poor turgor; mucous membranes are visibly dry. A faint fruity odor is noticeable on her breath. Vitals show tachycardia and tachypnea with borderline-low BP. Roommate is at bedside with a clear history: type 1 diabetic, three days of flu-like illness with vomiting, and the patient stopped her insulin because she 'wasn't eating.' This patient looks like a routine 'abd pain / vomiting' call at first glance — the catchable findings are the deep-rapid breathing pattern, dry mucous membranes, the fruity breath, and the missed-insulin history. A finger-stick glucose seals the diagnosis.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 122,
+        "bpSys": 102,
+        "bpDia": 66,
+        "respRate": 28,
+        "spo2": 99,
+        "etco2": 18,
+        "temp": 37.6,
+        "obstruction": 0,
+        "custMeasure1": 520,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Primary survey (ABC); note deep/rapid breathing pattern",
+        "Focused HPI — diabetic history, insulin compliance, fluid intake/output",
+        "Focused abdominal exam — rule out surgical abdomen",
+        "Finger-stick blood glucose — result 520 mg/dL",
+        "Recognize DKA constellation (hyperglycemia + Kussmaul + dehydration + fruity breath)",
+        "O2 prn — titrate to SpO2 94–98% (likely no supplemental needed)",
+        "Cardiac monitor + 12-lead EKG (screen for hyperkalemia / ACS)",
+        "Establish large-bore IV access (anticipate fluid resuscitation)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "DKA recognized; fluids started",
+      "description": "Crew has named DKA, opened a large-bore IV, and is moving the patient to the cot. The next deliverable is a normal saline bolus per the Hyperglycemia protocol — 20 mL/kg at 1000 mL/hr — and reassessment. Vitals are essentially unchanged on initial reassessment but the patient is now packaged and en route.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 124,
+        "bpSys": 100,
+        "bpDia": 64,
+        "respRate": 28,
+        "spo2": 99,
+        "etco2": 18,
+        "temp": 37.6,
+        "obstruction": 0,
+        "custMeasure1": 520,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Normal saline 1000 mL IV bolus (50 kg × 20 mL/kg = 1000 mL) at 1000 mL/hr",
+        "Ondansetron 4 mg IV (fixed adult dose) for ongoing nausea",
+        "Reassess vitals, mental status, lung sounds q5 min during bolus",
+        "Monitor for cerebral edema (mental status changes, headache, ICP signs)",
+        "Transport priority — high acuity; advance notification to receiving facility"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "En route — reassess and handoff",
+      "description": "Patient is en route to the ED with a 1-liter normal saline bolus running. On reassessment partway through transport she is slightly improved — mucous membranes are still dry but she is more conversant and her HR has come down a few points. Respiratory rate is still elevated (Kussmaul respirations are appropriate compensation and will persist until the acidosis is corrected at the receiving facility). Bedside handoff highlights the diagnosis, fluid given, and remaining concerns.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 114,
+        "bpSys": 108,
+        "bpDia": 68,
+        "respRate": 26,
+        "spo2": 99,
+        "etco2": 20,
+        "temp": 37.5,
+        "obstruction": 0,
+        "custMeasure1": 510,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Reassess vitals + glucose + mental status every 5 min en route",
+        "Consider second NS bolus if signs of hypovolemic shock persist",
+        "Structured ED handoff — DKA, glucose 520, 1L NS given, vitals trend"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Anchored on abd pain; glucose not checked",
+      "description": "Crew treats the call as a routine abdominal pain / vomiting workup. They do not obtain a finger-stick glucose, do not specifically note the Kussmaul breathing pattern (chalking the tachypnea up to 'she's uncomfortable'), and proceed with an antiemetic and transport. No IV fluids are given because the BP is technically not hypotensive. En route the patient becomes more lethargic, the respiratory rate climbs, and the underlying volume deficit and acidosis go untreated — a sicker-than-she-looks patient gets worse instead of better.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 134,
+        "bpSys": 92,
+        "bpDia": 58,
+        "respRate": 32,
+        "spo2": 98,
+        "etco2": 14,
+        "temp": 37.6,
+        "obstruction": 0,
+        "custMeasure1": 580,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Late finger-stick glucose — result HI (>600 mg/dL)",
+        "Recognize DKA — declare the diagnosis out loud and escalate care",
+        "Normal saline 1000 mL IV bolus (50 kg × 20 mL/kg) — start now",
+        "Upgrade to high-acuity transport; advance notification to ED",
+        "Debrief — discuss anchoring bias and the 3 I's framework"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Primary survey (ABC); note deep/rapid breathing pattern",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Focused HPI — diabetic history, insulin compliance, fluid intake/output",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Focused abdominal exam — rule out surgical abdomen",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Finger-stick blood glucose — result 520 mg/dL",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize DKA constellation (hyperglycemia + Kussmaul + dehydration + fruity breath)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "O2 prn — titrate to SpO2 94–98% (likely no supplemental needed)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Cardiac monitor + 12-lead EKG (screen for hyperkalemia / ACS)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish large-bore IV access (anticipate fluid resuscitation)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Normal saline 1000 mL IV bolus (50 kg × 20 mL/kg = 1000 mL) at 1000 mL/hr",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Ondansetron 4 mg IV (fixed adult dose) for ongoing nausea",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess vitals, mental status, lung sounds q5 min during bolus",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Monitor for cerebral edema (mental status changes, headache, ICP signs)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport priority — high acuity; advance notification to receiving facility",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess vitals + glucose + mental status every 5 min en route",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Consider second NS bolus if signs of hypovolemic shock persist",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Structured ED handoff — DKA, glucose 520, 1L NS given, vitals trend",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Late finger-stick glucose — result HI (>600 mg/dL)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize DKA — declare the diagnosis out loud and escalate care",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Normal saline 1000 mL IV bolus (50 kg × 20 mL/kg) — start now",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Upgrade to high-acuity transport; advance notification to ED",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Debrief — discuss anchoring bias and the 3 I's framework",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

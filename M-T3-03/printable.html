@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Severe Sepsis Progressing to Septic Shock — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Severe Sepsis Progressing to Septic Shock</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Eleanor Vasquez</strong></span><span class="patient-chip">72 years female</span><span class="patient-chip">132 lbs (60 kg)</span><span class="patient-chip">5'3"</span><span class="patient-chip">CC: Weakness, fever, 'not herself' per daughter; sick x3 days</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Engine 7 and Medic 22, respond to 1815 Greenfield Ave Apartment 3B for a 72-year-old female, weakness and fever, family member reports patient 'not acting like herself.' Non-emergent traffic — wait, upgrading to emergent at family request.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Second-floor walk-up apartment in a quiet residential neighborhood at 0945 on a Tuesday. Patient is in a recliner in a warm living room (thermostat reads 76°F). Light scattering of tissues and an empty water glass on the side table. Bottle of unfilled prescription on the counter with the urgent care discharge paperwork beside it. Stairs down to the rig are 14 steps, narrow turn at the bottom — will need a stair chair.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Tuesday, 09:45</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene is safe. BSI required — patient is febrile, possibly bacteremic. Universal precautions plus mask for respiratory protection given tachypnea and unknown infectious source. No environmental hazards. Daughter is calm, cooperative, and serves as historian.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Adult daughter (mid-40s) at bedside. She is the patient's primary caregiver and knows the medication list cold. She has the urgent care discharge paperwork from 3 days ago with the UTI diagnosis and the never-filled antibiotic prescription. Brought all medication bottles to the living room for EMS.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Patient slumped in recliner, eyes half-open, head lolled to one side</li><li>Skin is visibly flushed, especially face and chest; sheen of sweat on the forehead</li><li>Rapid, shallow breathing visible from across the room — counted ~28/min before touching the patient</li><li>Patient does not look up or react when EMS enters the room</li><li>Bottle of cefpodoxime (cap intact, full bottle) and urgent care discharge paperwork on the kitchen counter</li><li>Empty water glass and used tissues on side table; no food in sight</li><li>Patient's pull-up is saturated with concentrated, foul-smelling urine — strong ammonia odor noted</li><li>Pulse oximeter applied: reads 91% on room air with poor waveform</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">72-year-old female found on her recliner by her adult daughter, who states 'Mom isn't herself.' Per daughter, patient was diagnosed with a urinary tract infection at urgent care 3 days ago and given a prescription for an oral antibiotic but never picked it up. Over the past 24 hours she has become progressively weaker, complaining of subjective fever and chills, decreased oral intake, and increasing confusion. This morning the daughter found her slumped in the recliner, warm to the touch, breathing fast, and only oriented to person. No chest pain, no obvious shortness of breath complaint, no focal neuro deficits per daughter. On EMS arrival the patient appears markedly ill — hot, flushed, breathing rapidly, with delayed capillary refill and obvious altered mentation. qSOFA criteria are met (altered mentation, RR ≥ 22, SBP ≤ 100). This patient is septic on arrival and is going to get worse during the call.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">Sulfa drugs (rash)</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Insulin glargine 22 units SQ qHS, Insulin lispro sliding scale with meals, Lisinopril 20 mg PO daily, Metoprolol succinate 50 mg PO daily, Atorvastatin 40 mg PO qHS, Cefpodoxime 200 mg PO BID x 7 days — prescribed 3 days ago, never picked up</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Type 2 diabetes mellitus (insulin-dependent x 6 years), Chronic kidney disease stage 3 (baseline creatinine ~1.6), Hypertension, Recurrent urinary tract infections, Osteoarthritis</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Few sips of water this morning per daughter; has barely eaten or drunk for 24 hours; last full meal was dinner two nights ago.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Daughter visited this morning, found patient 'not herself' — slumped, hot, breathing fast, only oriented to person. Daughter called 911. Patient has had a UTI for 3 days with worsening dysuria, flank pain, low-grade fever progressing to high-grade fever, and now altered mental status. Antibiotic prescription never filled.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">EMS arrives to find a 72-year-old female who is clearly already sick. qSOFA is positive on first look: she is altered (A&amp;Ox2, down from her baseline A&amp;Ox3 per daughter), RR is 28, and SBP is 84. She is febrile (102.8°F), tachycardic at 124, and SpO2 is 91% on room air. Skin is warm, flushed, and diaphoretic. Capillary refill is delayed at 3-4 seconds. This is severe sepsis with a urinary source — the patient is not impending shock, she IS in distributive shock. The clock starts now: the crew needs IV access x 2, a 30 mL/kg crystalloid bolus, supplemental O2, continuous monitoring, and a transport decision. Glucose is 138 (no hypoglycemia). Lactate, if pulled, would be 4.8. This is the front door of a multi-system failure case.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">124</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">84/52</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">91%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">28</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">30</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">102.7°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">138</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">13</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent and self-maintained; no secretions; no stridor; speaks in 3-4 word phrases between rapid breaths</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Tachypneic at 28/min, shallow, with mildly increased work of breathing; lungs clear to auscultation bilaterally — no rales, no wheezes; no accessory muscle use yet</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Tachycardic at 124; radial pulse is rapid, weak, and thready; carotid pulse strong; capillary refill 3-4 seconds; peripheral skin warm and flushed (distributive pattern)</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Flushed, especially face and upper chest · Hot to the touch · Diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">4 mm, equal, sluggishly reactive bilaterally</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all four extremities to command but weakly; no focal deficit</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Mumbles, 'I'm so tired... I just want to sleep.' Knows her name. Does not know the month or the year. Says she's at 'the store.'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>qSOFA positive: altered mentation + RR ≥ 22 + SBP ≤ 100</li><li>Strong ammonia odor from saturated pull-up — suspected urinary source</li><li>Baseline A&amp;Ox3 per daughter; today only oriented to person</li><li>Mucous membranes dry; tongue dry and tacky</li><li>Capillary refill prolonged despite warm, flushed extremities (early distributive)</li><li>No JVD; no peripheral edema; no rales; no rashes</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Rapid primary survey (ABC); recognize sepsis/distributive shock on qSOFA</div></div>
+        <div class="action-excerpt">Inclusion Criteria: Signs of poor perfusion (due to a medical cause) such as one or more of the following: Altered mental status; Delayed capillary refill (&gt; 3 seconds); Flash capillary refill (&gt; 1 second) seen in early septic shock; Decreased urine output; Respiratory rate greater than 20 breaths per minute in adults; Hypotension for age (greater than 10 years old: 90); Tachycardia or bradycardia for age, out of proportion to temperature.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Apply NRB at 15 L/min; target SpO2 94-98%</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Administer oxygen as appropriate with a target of achieving 94-98% saturation.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Cardiac monitor, SpO2, waveform EtCO2 (low EtCO2 = poor perfusion)</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Cardiac monitor. Pulse oximetry and EtCO2 (reading of less than 25 mmHg may be sign of poor perfusion).</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Two large-bore IVs (18g preferred); IO if no IV in 2 attempts/90s</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Check blood glucose; correct only if &lt;60 mg/dL (this patient: 138)</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Check blood sugar, and correct if less than 60 mg/dL.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Draw POC lactate if available (&gt;2 mmol/L abnormal; this patient: 4.8)</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Check lactate, if available (greater than 2 mmol/L is abnormal).</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">NS 1800 mL bolus (60 kg × 30 mL/kg) pressure-infused, in 500 mL aliquots over &lt;15 min each</div></div>
+        <div class="action-excerpt">IV fluid volume goal attained by giving boluses that are pressure infused over less than 15 minutes each based on patient's condition and clinical impression. Adult: Physiologic target: MAP goal 65 mmHg. Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Acquire 12-lead EKG (rule out cardiogenic etiology)</div></div>
+        <div class="action-excerpt">Treatment and Interventions: EKG.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Septic shock alert / advance notification to receiving ED</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Provide advanced notification to the hospital.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Fluid-refractory shock</div>
+        <div class="phase-trigger">Trigger: Patient received the full 30 mL/kg crystalloid bolus per protocol. Hemodynamics have not corrected — SBP 86, MAP ~ 65 transiently, then drifting back to 60. This is the definition of fluid-refractory shock and the trigger to escalate to vasopressors.</div>
+        <div class="phase-desc">Full 30 mL/kg is in (1800 mL). BP has barely moved — 86/54 with MAP 65 at best, sliding back to 60 between cycles. Mentation is unchanged. Lactate would still be high. This patient meets the definition of fluid-refractory septic shock: she needs a vasopressor NOW. The standard move is to bridge with push-dose epinephrine (10 mcg q3-5 min) while the second crew member draws up and primes a norepinephrine infusion. Norepi is the first-line pressor for distributive/septic shock per the protocol. Stress-dose steroids (hydrocortisone) are reasonable for fluid-refractory shock per protocol #10. The crew should also be watching the respiratory system — RR is climbing, EtCO2 is dropping further as the metabolic acidosis deepens.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">128</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">86/54</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">90%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">32</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">26</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">102.9°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">142</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Inappropriate words</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">11</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Still patent; secretions starting to pool; intermittent gurgle on inspiration</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 32 and labored; shallow tidal volumes; mild intercostal retractions; lungs still clear bilaterally — no rales (no fluid overload)</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR 128; radial weak/thready; capillary refill now 4-5 seconds; extremities still warm but mottling beginning on knees</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Flushed centrally; early mottling on knees and elbows · Warm centrally, cool distally · Diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">4 mm, sluggish bilaterally</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves to command but slower; localizes to pain (M5)</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"'...tired...' Eyes close between questions. Will open them to a loud voice."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>MAP 64-65 transiently, drifting to 60</li><li>Mottling beginning at knees — shock index continues to rise</li><li>EtCO2 has dropped from 30 to 26 — deepening metabolic acidosis</li><li>Patient now answering only one-word responses</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize fluid-refractory shock after 30 mL/kg; escalate to pressor</div></div>
+        <div class="action-excerpt">Vasopressors (shock unresponsive to IV fluids) titrated to physiologic targets.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Push-dose epi 10 mcg IV (1 mL of 10 mcg/mL dilution) q3-5 min while norepi prepared</div></div>
+        <div class="action-excerpt">Epinephrine, 0.05-0.3 mcg/kg/minute. Alternative to a drip, push dose epinephrine may be administered: Prepare 10 mcg/mL by diluting 1 mL of epinephrine 0.1 mg/mL (1:10,000) in 9 mL of normal saline. Administer 0.01 mg/kg (0.1 mL/kg) up to a maximum single dose of 10 mcg (1 mL) q 3-5 minutes titrated to maintain goal MAP.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Norepinephrine infusion 3-30 mcg/min (60 kg × 0.05-0.5 mcg/kg/min); start at 5 mcg/min, titrate to MAP ≥ 65</div></div>
+        <div class="action-excerpt">Vasopressors (shock unresponsive to IV fluids) titrated to physiologic targets. Cardiogenic, hypovolemic, obstructive shock and distributive shock: Norepinephrine 0.05-0.5 mcg/kg/minute. Preference in both neurogenic and infectious (sepsis) causes of distributive shock.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Hydrocortisone 100 mg IV (60 kg × 2 mg/kg = 120 mg → cap at 100 mg max)</div></div>
+        <div class="action-excerpt">If there is a history of adrenal insufficiency, long-term steroid dependence, or fluid-refractory shock requiring vasopressors give: Hydrocortisone succinate, 2 mg/kg (maximum 100 mg) IV/IM (preferred).</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">Acetaminophen 1000 mg PO/PR (15 mg/kg × 60 kg = 900 mg → round to 1 g max)</div></div>
+        <div class="action-excerpt">Antipyretics for fever - nonsteroidal anti-inflammatory agents are contraindicated in infants less than 6 months of age. Acetaminophen (15 mg/kg; maximum dose of 1000 mg).</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Reassess full vitals/neuro q5 min during pressor titration; document each change</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Full vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) with reassessment q 15 minutes or more frequently as appropriate.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Respiratory failure / pre-RSI</div>
+        <div class="phase-trigger">Trigger: Patient on norepi infusion with MAP supported, but respiratory drive is failing: RR 36, SpO2 88% on NRB, EtCO2 24, GCS 11. Tachypnea is exhausting respiratory reserve and the patient can no longer compensate for her metabolic acidosis. RSI is now indicated.</div>
+        <div class="phase-desc">Compensation has run out. Despite pressor support, the patient's respiratory drive is no longer enough to clear the metabolic acidosis — RR is 36, shallow, SpO2 is 88% on NRB, EtCO2 is 24, GCS is 11 (E3 V3 M5). She cannot protect her airway much longer, she cannot oxygenate, and she cannot ventilate enough to keep up with her acidosis. This is the indication for RSI. The catch in this patient: induction agent choice matters enormously. Ketamine (1-2 mg/kg IV) preserves sympathetic tone and is the preferred induction in shock. Etomidate is on the protocol but causes adrenal suppression and predictably worsens shock post-intubation. The crew must pre-oxygenate with BVM + PEEP, optimize positioning, push fentanyl + ketamine + rocuronium, and intubate in one careful pass.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">132</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">96/54</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">88%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">36</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">24</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">102.9°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">142</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Inappropriate words</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">11</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent but at risk; intermittent gurgling on inspiration; gag present but diminished</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 36, shallow, with visible accessory muscle use and intercostal retractions; lungs still clear — this is not a fluid problem, this is a drive/work-of-breathing problem; EtCO2 24 reflects continued (but failing) compensation for metabolic acidosis</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">On norepi at 8 mcg/min; HR 132; MAP 68; radial pulse weak; capillary refill 4 seconds; mottling now to mid-thigh</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Flushed face, mottled lower extremities · Warm centrally, cool peripherally · Diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">4 mm, sluggish</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Localizes to pain only (M5); no purposeful response to voice</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Inarticulate moan when stimulated. No words."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>GCS 11 — not yet unresponsive but trending down</li><li>Mottling has progressed proximally — worsening tissue hypoperfusion</li><li>EtCO2 24 is ominously low: compensation is failing</li><li>Patient cannot keep eyes open even with stimulation</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize impending respiratory failure (low EtCO2 + tachypnea + drop in GCS)</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Normal EtCO2 (35-45 mmHg) with tachypnea and respiratory distress is an indicator of impending respiratory failure.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Pre-oxygenate 2+ min: BVM with PEEP 5 + apneic NC at 15 L/min</div></div>
+        <div class="action-excerpt">Rapid/Delayed Sequence Intubation: Patient should be pre-oxygenated with high flow oxygen, and positive pressure ventilation for a minimum of two minutes prior to the procedure.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Fentanyl 60 mcg IV (60 kg × 1 mcg/kg) 2-3 min before laryngoscopy</div></div>
+        <div class="action-excerpt">Rapid/Delayed Sequence Intubation: Consider pre-medication with Fentanyl, 1 mcg/kg, 2-3 minutes prior to intubation attempt.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Ketamine 90 mg IV push (60 kg × 1.5 mg/kg) — preferred induction in shock</div></div>
+        <div class="action-excerpt">Rapid/Delayed Sequence Intubation: Administer induction sedative agent: Etomidate IV push, 0.2-0.3 mg/kg OR Ketamine IV push, 1-2 mg/kg OR Midazolam IV push, 0.05-0.10 mg/kg.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Rocuronium 60 mg IV push (60 kg × 1 mg/kg) for paralysis</div></div>
+        <div class="action-excerpt">Rapid/Delayed Sequence Intubation: Administer paralytic agent: Succinylcholine IV push, 1-2 mg/kg OR Rocuronium IV push, 1 mg/kg OR Vecuronium IV push, 0.1 mg/kg.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Intubate (7.5 mm ETT); confirm with waveform EtCO2 + bilateral breath sounds</div></div>
+        <div class="action-excerpt">Endotracheal intubation: Attempt intubation, limiting attempts to 15 seconds, or a desaturation below 90%, whichever occurs first. Post-intubation management: Confirm placement of advanced airway (endotracheal tube, SGA) with waveform capnography (most reliable), absent gastric sounds, and bilateral breath sounds.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Post-RSI transport</div>
+        <div class="phase-trigger">Trigger: Endotracheal tube confirmed by waveform capnography. Patient is now mechanically ventilated, on norepi, sedated, and ready to transport.</div>
+        <div class="phase-desc">Patient is intubated, oxygenating, ventilating, and on a norepi infusion. The crew has stabilized — not fixed — three failing systems (cardiovascular, respiratory, neurologic) and now has to maintain that stability on the way to a sepsis-capable ED. Mechanical ventilation if available; PEEP 5 to start; target EtCO2 30-35 to allow respiratory compensation for metabolic acidosis (do NOT normalize EtCO2 to 35-45 — it would worsen the systemic acidosis); continue sedation with fentanyl + midazolam; gastric decompression with NG/OG; reassess MAP, lactate, and norepi rate every few minutes; advance notify the ED with the full picture — septic shock, fluid-refractory, on norepi at X mcg/min, intubated. This is the 'support the systems and hand off' phase.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">116</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">104/56</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">96%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">14</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">32</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">102.4°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">138</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Secured ETT, depth 22 cm at the teeth, cuff inflated, waveform capnograph in line, square waveform present</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Ventilated at 14/min, TV ~ 420 mL (7 mL/kg IBW), PEEP 5; bilateral breath sounds equal, no rales; SpO2 96% on FiO2 1.0</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR 116; norepi titrated to 10 mcg/min holding MAP 68-72; capillary refill 3 seconds; mottling slowly receding from knees back toward feet</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Less flushed; mottling regressing peripherally · Warm centrally, cool distally · Still diaphoretic, drying with cooling and antipyretic effect</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">4 mm, equal, sluggish (post-paralytic)</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Paralyzed; no spontaneous movement</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"None (intubated/paralyzed)"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Sedation maintained with fentanyl/midazolam infusion or repeat boluses</li><li>OG tube placed for gastric decompression</li><li>Norepi running on a second IV; first IV running maintenance NS at TKO</li><li>Ventilator target EtCO2 30-35 (NOT 35-45) — preserve respiratory compensation for metabolic acidosis</li><li>Patient packaged for stair-chair extrication, then stretcher</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Ventilate 14/min, TV 6-8 mL/kg IBW (~420 mL), PEEP 5; target EtCO2 30-35</div></div>
+        <div class="action-excerpt">Post-intubation management: Tidal volume: Ventilate with just enough volume to see chest rise, approximately 6-8 mL/kg ideal body weight. Rate: Adult: 10-12 breaths/minute. PEEP should be used with BVM. 5 cmH2O is generally an appropriate initial PEEP setting. Patients with specific disease processes such as acute acid-base disorders (i.e., DKA, lactic acidosis due to severe sepsis or trauma), acute respiratory failure due to primary pulmonary pathology, or post-cardiac arrest will have different EtCO2 parameters due to their underlying disease.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Post-intubation sedation: fentanyl 60-120 mcg + midazolam 1-2 mg IV (titrate)</div></div>
+        <div class="action-excerpt">Post-intubation management: Consider sedation with sedative and/or opioid medications if agitated: Fentanyl 1-2 mcg/kg And Midazolam 0.02 mg/kg OR Ketamine IV push, 0.5-1 mg/kg.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Place OG/NG tube for gastric decompression</div></div>
+        <div class="action-excerpt">Gastric decompression can improve oxygenation and ventilation, so it should be strongly considered in any patient with an advanced airway and positive pressure ventilation.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Titrate norepi q2-3 min to MAP ≥ 65 (currently 10 mcg/min, range 3-30 mcg/min)</div></div>
+        <div class="action-excerpt">Vasopressors (shock unresponsive to IV fluids) titrated to physiologic targets. Norepinephrine 0.05-0.5 mcg/kg/minute.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continuous waveform EtCO2; reconfirm placement after every movement</div></div>
+        <div class="action-excerpt">Post-intubation management: Continuously monitor correct airway placement with waveform capnography during treatment and transport, paying particular attention to reassessing after each patient movement.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Update receiving ED: septic shock, intubated, norepi 10 mcg/min, ETA</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Provide advanced notification to the hospital.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Fluids alone (no pressor)</div>
+        <div class="phase-trigger">Trigger: After the initial 30 mL/kg failed to correct hemodynamics, the crew administered an additional 1500-2000 mL of NS without initiating a vasopressor. BP remains 86/54. Bibasilar rales have developed. The patient now has septic shock with superimposed iatrogenic pulmonary edema on a CKD baseline.</div>
+        <div class="phase-desc">Crew anchors on volume. The MAP didn't come up after 30 mL/kg, so they hang another liter. Then another. By the time the rig pulls into the bay, 4 L of NS has gone in and the BP is barely different from when it started — 86/54. The lungs that were clear on arrival now have rales in the bases. The patient's mentation hasn't improved, her urine output is still nothing, and her CKD-baseline kidneys are now sitting in a fluid-overloaded body that still can't perfuse. This is the iatrogenic complication of fluid-anchoring in fluid-refractory septic shock: distributive shock PLUS pulmonary edema, on top of CKD. Now the crew has to add CPAP/BiPAP support to fix the iatrogenic edema while still trying to get a pressor going.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">130</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">86/54</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">86%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">36</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">28</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">102.9°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">140</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Incomprehensible sounds</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">10</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, mildly wet-sounding</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 36, increasing work of breathing, audible crackles bilaterally at the bases now extending mid-zone; SpO2 dropped to 86% on NRB despite added oxygen</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR 130; radial weak; capillary refill 4-5 seconds; mottling spreading; JVD now appearing at 8 cm with the patient at 30 degrees</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Flushed centrally, mottled peripherally · Warm centrally, cool distally · Diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">4 mm, sluggish</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Localizes weakly (M5)</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Single-word groans only"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Rales now bibasilar, extending up the posterior fields</li><li>New-onset JVD — fluid overload sign</li><li>Lactate continues to climb (now 5.6) despite massive volume</li><li>Pink-tinged frothy secretions at the corners of the mouth</li><li>Patient given 4 L NS total with essentially no MAP improvement</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Stop further crystalloid bolus; recognize cardiogenic/pulmonary edema overlay</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Recognition of cardiogenic shock - If the patient condition deteriorates after fluid administration, rales or hepatomegaly develop, then consider cardiogenic shock and withholding further fluid administration.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Start norepinephrine 3-30 mcg/min (60 kg × 0.05-0.5 mcg/kg/min); begin 5 mcg/min</div></div>
+        <div class="action-excerpt">Vasopressors (shock unresponsive to IV fluids) titrated to physiologic targets. Norepinephrine 0.05-0.5 mcg/kg/minute. Preference in both neurogenic and infectious (sepsis) causes of distributive shock.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Initiate CPAP/BiPAP for iatrogenic pulmonary edema</div></div>
+        <div class="action-excerpt">Adults with suspected pulmonary edema due to acute heart failure or fluid overload (such as dialysis noncompliance): Restoration of adequate oxygenation and ventilation should precede or be accomplished simultaneously with other medication therapies below: CPAP/BiPAP: See Airway Management Guideline for goals of care and escalation of interventions.</div>
+        <div class="action-ref">↳ MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Expedite transport; advance notify ED that fluids alone failed</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Provide advanced notification to the hospital.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Etomidate-induced post-RSI hypotension</div>
+        <div class="phase-trigger">Trigger: Etomidate 0.2-0.3 mg/kg was selected as the RSI induction agent. The tube placed fine, but within 2-3 minutes the MAP dropped from 68 to 48, requiring rescue with push-dose epi and rapid norepi up-titration.</div>
+        <div class="phase-desc">Crew chose etomidate 0.2-0.3 mg/kg as the induction agent. Etomidate is on the protocol list. The intubation itself goes fine — first pass, capnography confirms, tube secured. But within 2-3 minutes the BP crashes: SBP 64, MAP 48, despite the norepi infusion that was already running. Etomidate causes adrenal suppression via 11-beta-hydroxylase inhibition, and in a patient who is already fluid-refractory and depending on stress steroids to make catecholamines, that suppression cracks the floor out from under the BP. The crew now has to rescue: push-dose epi boluses, up-titrate the norepi, give hydrocortisone (if not already given), and accept that this patient is now going to need more pressor than would have been required with ketamine.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">138</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">78/44</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">95%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">14</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">30</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">102.4°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">138</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Secured ETT, depth 22 cm, cuff inflated, capnograph in line</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Ventilated 14/min, PEEP 5, SpO2 95%; vent is fine — the problem is downstream</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR 138; norepi up-titrated from 10 to 20 mcg/min; MAP 48 climbing back toward 60 with push-dose epi boluses; capillary refill 5+ seconds</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Mottled to mid-thigh, returning toward groin · Cool peripherally, warm core · Diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">4 mm, sluggish (post-paralytic)</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Paralyzed</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"None"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>MAP dropped from 68 to 48 within 3 min of etomidate administration</li><li>Required two push-dose epi boluses (10 mcg each) to bridge</li><li>Norepi up-titrated from 10 to 20 mcg/min to recapture MAP ≥ 65</li><li>Hydrocortisone 100 mg IV given as rescue if not already on board</li><li>Etomidate adrenal-suppression effect explains the disproportionate drop</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Rescue push-dose epi 10 mcg IV q3-5 min until norepi catches up</div></div>
+        <div class="action-excerpt">Alternative to a drip, push dose epinephrine may be administered: Prepare 10 mcg/mL by diluting 1 mL of epinephrine 0.1 mg/mL (1:10,000) in 9 mL of normal saline. Administer 0.01 mg/kg (0.1 mL/kg) up to a maximum single dose of 10 mcg (1 mL) q 3-5 minutes titrated to maintain goal MAP.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Up-titrate norepi to 20-30 mcg/min (still within 60 kg × 0.5 mcg/kg/min cap)</div></div>
+        <div class="action-excerpt">Norepinephrine 0.05-0.5 mcg/kg/minute. Preference in both neurogenic and infectious (sepsis) causes of distributive shock.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Hydrocortisone 100 mg IV if not already given (etomidate adrenal suppression)</div></div>
+        <div class="action-excerpt">Notes/Educational Pearls: Patients with no reported history of adrenal axis dysfunction may have adrenal suppression due to their acute illness, and hydrocortisone should be considered for any patient showing signs of treatment-resistant shock.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Document peri-intubation hypotension event and rescue interventions</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Occurrence of peri-intubation hypoxia (less than 90% SPO2), bradycardia (per age), hypotension (SBP less than 90mmHg or lowest age-appropriate SBP) or cardiac arrest. The peri-intubation period encompasses the time from sedative administration to up to 10 minutes post any invasive airway attempt.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

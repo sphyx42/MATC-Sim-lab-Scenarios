@@ -1,0 +1,370 @@
+{
+  "scenarioId": "M-T2-02",
+  "scenarioName": "Stroke Mimic",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1500,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "64-year-old female found by her husband this morning in their bedroom with right-sided weakness, mild facial droop, and slurred speech. Husband woke around 0640 and found her 'not acting right' — speech thick, right arm weak, right corner of mouth drooping. He called 911 immediately stating 'I think she's having a stroke.' On further questioning, husband recalls being woken briefly around 0200 by 'shaking' in the bed beside him; he assumed she was 'just having a bad dream' and went back to sleep. He cannot specifically say when she was 'last known well' — she was normal at bedtime around 2230 last night. Patient has known focal epilepsy diagnosed 4 years ago, on levetiracetam (Keppra) 1000 mg PO BID, with admitted inconsistent compliance — husband states she 'sometimes skips doses' and her last witnessed seizure was approximately 3 months ago (focal motor seizure of right arm, post-ictal weakness lasted about 90 minutes per the ED note he describes). No reported headache, no neck pain, no recent trauma, no chest pain, no fever. No anticoagulant medications. Patient mildly confused and dysarthric on EMS arrival but answering simple questions; weakness is fluctuating on serial exam and mental status appears to be improving over the first few minutes of contact.",
+    "discussion": "",
+    "course": "Initial Contact: Crew arrives to find a 64-year-old female sitting on the edge of her bed with her husband supporting her. Right facial droop, right arm drift, mildly slurred speech. GCS 14 (E4 V4 M6). LAMS scores 3 (face 1, arm 1, grip 1). On the surface this looks like a textbook acute stroke — and the husband is already saying 'she's having a stroke.' But there are flags: the husband cannot give a precise 'last known well,' he recalls overnight 'shaking' that he dismissed, the patient is on Keppra for known focal epilepsy with inconsistent compliance, her mental status seems to be slowly improving even during the primary survey, and her arm strength is fluctuating between repeat exams. Glucose, anticoagulant status, exact onset, and seizure history all need to be worked. → Mimic recognized: Crew has worked the differential. Glucose normal at 96 mg/dL. True last known well is bedtime ~2230 the night before, which the husband — under direct questioning — confirms, and he now also remembers being woken around 0200 by 'shaking' in the bed that he had dismissed as a dream. On serial exam over the last ~5 minutes the right arm has gone from drifting to ~45 degrees to holding at 4/5 with effort; speech is becoming clearer. The pattern — known focal epilepsy on Keppra with admitted non-compliance, witnessed overnight nocturnal shaking, fluctuating-and-improving focal deficit, normal glucose — fits post-ictal Todd's paralysis far better than acute large-vessel stroke. Crew packages for transport, but as a low-acuity neurology evaluation rather than a thrombectomy alert, and pre-notifies the receiving ED accordingly. → Transport — symptoms resolving: Approximately 8 minutes into transport, serial neuro reassessment shows right arm strength back to 5/5, grip strength symmetric, speech clear with no residual dysarthria, facial droop resolved. LAMS now 0. Patient is fully alert, oriented to person/place/time/event, and asking what happened. The trajectory — resolution of focal deficit over ~30 minutes from EMS contact — is incompatible with an acute LVO and definitive for Todd's paralysis. Crew updates the receiving facility to expect a post-ictal patient, not a stroke alert, and continues monitoring for seizure recurrence en route."
+  },
+  "patientInformation": {
+    "patientName": "Margaret Holloway",
+    "patientCondition": "Right-sided weakness and slurred speech",
+    "patientAge": 64,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 2,
+    "patientHeight": 165,
+    "patientWeight": 72,
+    "patientPhotoId": 77,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 64-year-old female sitting on the edge of her bed with her husband supporting her. Right facial droop, right arm drift, mildly slurred speech. GCS 14 (E4 V4 M6). LAMS scores 3 (face 1, arm 1, grip 1). On the surface this looks like a textbook acute stroke — and the husband is already saying 'she's having a stroke.' But there are flags: the husband cannot give a precise 'last known well,' he recalls overnight 'shaking' that he dismissed, the patient is on Keppra for known focal epilepsy with inconsistent compliance, her mental status seems to be slowly improving even during the primary survey, and her arm strength is fluctuating between repeat exams. Glucose, anticoagulant status, exact onset, and seizure history all need to be worked.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 88,
+        "bpSys": 152,
+        "bpDia": 88,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 96,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Primary survey ABCs; airway patent, no immediate threats",
+        "Perform validated stroke scale (Cincinnati/LAMS); document findings",
+        "Check blood glucose — finger-stick (rule out hypoglycemia mimic)",
+        "Determine exact 'last known well' time and source",
+        "Actively screen stroke mimics: hypoglycemia, seizure, sepsis, migraine, intox",
+        "Ask about recent seizure activity and anti-epileptic compliance",
+        "Screen anticoagulant use and recent trauma/surgery/hemorrhage",
+        "Run AEIOU-TIPS differential for AMS; document considerations",
+        "Titrate O2 to 94-98% SpO2 (currently 97% room air, no O2 needed)",
+        "Place on cardiac monitor; acquire 12-lead EKG if possible",
+        "Do not treat the BP of 152/88 — permissive hypertension"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Mimic recognized",
+      "description": "Crew has worked the differential. Glucose normal at 96 mg/dL. True last known well is bedtime ~2230 the night before, which the husband — under direct questioning — confirms, and he now also remembers being woken around 0200 by 'shaking' in the bed that he had dismissed as a dream. On serial exam over the last ~5 minutes the right arm has gone from drifting to ~45 degrees to holding at 4/5 with effort; speech is becoming clearer. The pattern — known focal epilepsy on Keppra with admitted non-compliance, witnessed overnight nocturnal shaking, fluctuating-and-improving focal deficit, normal glucose — fits post-ictal Todd's paralysis far better than acute large-vessel stroke. Crew packages for transport, but as a low-acuity neurology evaluation rather than a thrombectomy alert, and pre-notifies the receiving ED accordingly.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 84,
+        "bpSys": 148,
+        "bpDia": 86,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 36.9,
+        "obstruction": 0,
+        "custMeasure1": 96,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize stroke mimic — likely Todd's paralysis post-focal seizure",
+        "No active seizure; no benzodiazepine indicated (post-ictal only)",
+        "Elevate head of stretcher 15-30 degrees (BP >100 systolic)",
+        "Protect the weak right arm during packaging and transport",
+        "Single IV attempt only; avoid multiple sticks",
+        "Transport as low-priority neurology eval — NOT thrombectomy alert",
+        "Pre-notify ED: post-ictal/Todd's paralysis suspected, not stroke alert"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Transport — symptoms resolving",
+      "description": "Approximately 8 minutes into transport, serial neuro reassessment shows right arm strength back to 5/5, grip strength symmetric, speech clear with no residual dysarthria, facial droop resolved. LAMS now 0. Patient is fully alert, oriented to person/place/time/event, and asking what happened. The trajectory — resolution of focal deficit over ~30 minutes from EMS contact — is incompatible with an acute LVO and definitive for Todd's paralysis. Crew updates the receiving facility to expect a post-ictal patient, not a stroke alert, and continues monitoring for seizure recurrence en route.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 78,
+        "bpSys": 138,
+        "bpDia": 82,
+        "respRate": 14,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 36.9,
+        "obstruction": 0,
+        "custMeasure1": 94,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Repeat neuro exam and LAMS; document improvement trajectory",
+        "Update receiving ED on full symptom resolution and trajectory",
+        "Continuous monitoring for seizure recurrence during transport",
+        "Maintain lateral recumbent or HOB-elevated positioning",
+        "Document LKW 2230, witnessed nocturnal seizure ~0200, Keppra non-compliance"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Stroke alert without differential",
+      "description": "Crew anchors on the husband's 'she's having a stroke' and the LAMS 3 score and calls a thrombectomy-capable stroke alert without doing the mimic differential. Glucose was not yet drawn, exact LKW was not pressed (crew has '0640' on the chart as time of onset, not bedtime), and the husband's overnight 'shaking' recall was never elicited because the seizure-history question was skipped. On arrival the ED activates the stroke/thrombectomy team and rolls the patient straight to CT — CTA protocol — bumping a STEMI being worked up in the next bay. By the time the neurology fellow sees the patient at the scanner, her right arm is back to 5/5 and her speech is clear: a textbook Todd's paralysis. The thrombectomy team stands down, the CTA is unnecessary, and the AED-compliance/EEG workup that should have started in the first 15 minutes is delayed by ~40 minutes. No direct patient harm — but the wrong resources were used, real stroke alerts in the queue were delayed, and the missed differential is the documented teaching point at debrief.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 82,
+        "bpSys": 144,
+        "bpDia": 84,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 36.9,
+        "obstruction": 0,
+        "custMeasure1": 96,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Missed: active mimic screen (hypoglycemia, seizure, sepsis, migraine, intox)",
+        "Missed: recent-seizure history question and AED compliance check",
+        "Missed: exact LKW (bedtime ~2230) — used 'found at 0640' instead",
+        "Missed: blood glucose check before stroke alert",
+        "Consequence: unnecessary thrombectomy team activation and CTA",
+        "Consequence: delayed AED-level/EEG workup for true diagnosis"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Primary survey ABCs; airway patent, no immediate threats",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Perform validated stroke scale (Cincinnati/LAMS); document findings",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check blood glucose — finger-stick (rule out hypoglycemia mimic)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Determine exact 'last known well' time and source",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Actively screen stroke mimics: hypoglycemia, seizure, sepsis, migraine, intox",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Ask about recent seizure activity and anti-epileptic compliance",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Screen anticoagulant use and recent trauma/surgery/hemorrhage",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Run AEIOU-TIPS differential for AMS; document considerations",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Titrate O2 to 94-98% SpO2 (currently 97% room air, no O2 needed)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place on cardiac monitor; acquire 12-lead EKG if possible",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Do not treat the BP of 152/88 — permissive hypertension",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize stroke mimic — likely Todd's paralysis post-focal seizure",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "No active seizure; no benzodiazepine indicated (post-ictal only)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Elevate head of stretcher 15-30 degrees (BP >100 systolic)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Protect the weak right arm during packaging and transport",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Single IV attempt only; avoid multiple sticks",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport as low-priority neurology eval — NOT thrombectomy alert",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Pre-notify ED: post-ictal/Todd's paralysis suspected, not stroke alert",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Repeat neuro exam and LAMS; document improvement trajectory",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Update receiving ED on full symptom resolution and trajectory",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous monitoring for seizure recurrence during transport",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Maintain lateral recumbent or HOB-elevated positioning",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document LKW 2230, witnessed nocturnal seizure ~0200, Keppra non-compliance",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Missed: active mimic screen (hypoglycemia, seizure, sepsis, migraine, intox)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Missed: recent-seizure history question and AED compliance check",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Missed: exact LKW (bedtime ~2230) — used 'found at 0640' instead",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Missed: blood glucose check before stroke alert",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Consequence: unnecessary thrombectomy team activation and CTA",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Consequence: delayed AED-level/EEG workup for true diagnosis",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

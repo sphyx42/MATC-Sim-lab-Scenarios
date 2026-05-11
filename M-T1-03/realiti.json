@@ -1,0 +1,418 @@
+{
+  "scenarioId": "M-T1-03",
+  "scenarioName": "Simple Febrile Seizure (Adult), Post-Ictal",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1200,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "Patient is a 34-year-old male with no prior seizure history who became unwell over the past 3 days with a flu-like illness — subjective fever, chills, body aches, headache, and a sore throat that started yesterday. He stayed home from work today, took acetaminophen this morning, and was reportedly drinking less than usual. At approximately 1410, his roommate heard a thump from the living room and found the patient on the floor, generalized stiffening then rhythmic shaking of all four extremities, with eyes rolled up and lips bluish. The roommate timed the convulsion at roughly 3 minutes; afterward the patient was limp and snoring, slowly becoming more responsive. EMS was called immediately. By EMS arrival (≈8 minutes after seizure end), patient is post-ictal — eyes open to voice, confused, words mumbled but improving. He is warm to the touch and visibly diaphoretic. There is no witnessed history of trauma during the fall; the roommate moved a coffee table out of the way but is uncertain whether the patient struck his head on it as he fell.",
+    "discussion": "",
+    "course": "Initial Contact: Crew arrives ~8 minutes after a witnessed 3-minute generalized tonic-clonic seizure. Patient is post-ictal: opens eyes to voice, confused, mumbling but words are starting to come back. He is warm and visibly diaphoretic. Roommate describes 3 days of fever, headache, sore throat, and body aches. The teaching focus here is a thorough post-ictal assessment — confirm the seizure has actually ended, run the full neuro/airway exam, get a glucose, get a temperature, and recognize that fever + new-onset seizure + flu-like prodrome is a sepsis/meningitis screen as much as a seizure call. → Thorough workup performed: Crew has run the full post-ictal assessment. Patient is improving — GCS now 13-14, vital signs stable, glucose normal, fever confirmed at 102.8 °F. Working impression: simple post-ictal phase following a first-ever generalized tonic-clonic seizure provoked by a febrile illness. Differential remains broad — meningitis, encephalitis, and sepsis must be ruled out in the ED. Management is supportive: recovery position, O2 to keep SpO2 ≥94 %, small NS fluid bolus for the tachycardia and insensible losses, antipyretic per protocol, sepsis-aware transport with ED advance notification. → Transport, improving: Patient continues to improve en route. GCS now 14-15, oriented x3, vitals trending toward normal, no seizure recurrence. ED is expecting a possible meningitis/sepsis workup. Handoff is clean: witnessed first-ever generalized tonic-clonic seizure, ~3 minutes, in the setting of a 3-day febrile illness; assessment unremarkable for focal deficit or trauma; supportive management given with NS bolus and acetaminophen."
+  },
+  "patientInformation": {
+    "patientName": "Marcus Delaney",
+    "patientCondition": "Witnessed generalized seizure, now post-ictal with fever",
+    "patientAge": 34,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 180,
+    "patientWeight": 82,
+    "patientPhotoId": 41,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "Crew arrives ~8 minutes after a witnessed 3-minute generalized tonic-clonic seizure. Patient is post-ictal: opens eyes to voice, confused, mumbling but words are starting to come back. He is warm and visibly diaphoretic. Roommate describes 3 days of fever, headache, sore throat, and body aches. The teaching focus here is a thorough post-ictal assessment — confirm the seizure has actually ended, run the full neuro/airway exam, get a glucose, get a temperature, and recognize that fever + new-onset seizure + flu-like prodrome is a sepsis/meningitis screen as much as a seizure call.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 118,
+        "bpSys": 124,
+        "bpDia": 76,
+        "respRate": 20,
+        "spo2": 96,
+        "etco2": 38,
+        "temp": 39.3,
+        "obstruction": 0,
+        "custMeasure1": 104,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Scene size-up and BSI; survey environment for trauma, toxins, infection clues",
+        "Confirm seizure has ended — check for subtle status (eye deviation, focal twitching, nystagmus)",
+        "Assess airway patency; suction prn; place NPA if needed; O2 to keep SpO2 94-98%",
+        "Place patient in recovery (lateral) position; clear oral secretions",
+        "Place SpO2, EtCO2, and cardiac monitor; full set of vitals q5 min",
+        "Obtain finger-stick blood glucose — rule out hypoglycemia-induced seizure",
+        "Measure temperature — document fever (102.8 °F / 39.3 °C)",
+        "Document GCS and AVPU; note focal deficits, pupils, neck stiffness",
+        "Obtain SAMPLE from roommate; characterize seizure (onset, duration, focality)",
+        "Inspect head/mouth for trauma — tongue/lip injury, scalp lacerations, occult fall trauma",
+        "Screen for sepsis — fever + tachycardia + tachypnea = SIRS; alert ED of possible meningitis/sepsis",
+        "Establish IV access (saline lock or NS TKO)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Thorough workup performed",
+      "description": "Crew has run the full post-ictal assessment. Patient is improving — GCS now 13-14, vital signs stable, glucose normal, fever confirmed at 102.8 °F. Working impression: simple post-ictal phase following a first-ever generalized tonic-clonic seizure provoked by a febrile illness. Differential remains broad — meningitis, encephalitis, and sepsis must be ruled out in the ED. Management is supportive: recovery position, O2 to keep SpO2 ≥94 %, small NS fluid bolus for the tachycardia and insensible losses, antipyretic per protocol, sepsis-aware transport with ED advance notification.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 112,
+        "bpSys": 120,
+        "bpDia": 74,
+        "respRate": 18,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 39.2,
+        "obstruction": 0,
+        "custMeasure1": 104,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Maintain supportive care — recovery position, O2 prn, continuous monitoring",
+        "NS 500 mL IV bolus for tachycardia, fever, and reduced PO intake",
+        "Acetaminophen 1000 mg PO/IV (15 mg/kg × 82 kg = 1230 mg → cap at 1000 mg)",
+        "Remove excess clothing; apply cool compresses for passive cooling",
+        "Acquire 12-lead ECG — screen for cardiac cause of new-onset seizure",
+        "Reassess GCS, vitals, and for seizure recurrence every 5 minutes",
+        "Advance notification to ED — first-ever seizure with fever; possible meningitis/sepsis"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Transport, improving",
+      "description": "Patient continues to improve en route. GCS now 14-15, oriented x3, vitals trending toward normal, no seizure recurrence. ED is expecting a possible meningitis/sepsis workup. Handoff is clean: witnessed first-ever generalized tonic-clonic seizure, ~3 minutes, in the setting of a 3-day febrile illness; assessment unremarkable for focal deficit or trauma; supportive management given with NS bolus and acetaminophen.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 102,
+        "bpSys": 122,
+        "bpDia": 76,
+        "respRate": 16,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 39,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Structured ED handoff — first-ever seizure, febrile illness, sepsis screen positive",
+        "Continue monitoring for seizure recurrence and hemodynamic change until handoff"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Subtle status missed",
+      "description": "Crew accepted the post-ictal label at face value and never confirmed that seizure activity had truly ended. Subtle right gaze preference and intermittent right thumb twitching, present on arrival, were not appreciated. No benzodiazepine was given. Approximately 6 minutes into transport, the patient progresses into an overt generalized tonic-clonic seizure — clenched jaw, rhythmic four-extremity convulsion, eyes deviated, SpO2 dropping. Crew now must manage active seizure activity in a moving ambulance, with the airway compromised and a much narrower margin for error.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 142,
+        "bpSys": 148,
+        "bpDia": 92,
+        "respRate": 28,
+        "spo2": 88,
+        "etco2": 52,
+        "temp": 39.4,
+        "obstruction": 30,
+        "custMeasure1": 98,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize recurrent seizure; reclassify as status epilepticus (continuous >5 min or recurrent)",
+        "Position airway, suction, BVM with O2 if hypoventilating",
+        "Midazolam 4 mg IV (82 kg × 0.1 mg/kg = 8.2 mg → cap at 4 mg max per dose; may repeat)",
+        "If IV lost or unavailable: Midazolam 10 mg IM (82 kg × 0.2 mg/kg = 16.4 mg → cap at 10 mg max)",
+        "Monitor for benzo-induced respiratory depression; be ready to BVM post-administration",
+        "Update ED — patient now in status epilepticus, benzo given, ETA"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Sepsis screen missed",
+      "description": "Crew treats this as a simple seizure call. The fever is noted in passing but not framed as part of a sepsis/meningitis picture. No NS bolus is given for the tachycardia and reduced PO intake, no antipyretic is offered, and the ED is told only that 'we have a seizure post-ictal.' Over the next 10-15 minutes, the patient's vitals drift in the wrong direction — HR climbs, BP softens, EtCO2 trends low, skin becomes mottled at the extremities. The ED is now seeing an undifferentiated septic patient who arrives without a head start.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 132,
+        "bpSys": 102,
+        "bpDia": 56,
+        "respRate": 26,
+        "spo2": 95,
+        "etco2": 28,
+        "temp": 39.5,
+        "obstruction": 0,
+        "custMeasure1": 98,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Acetaminophen 1000 mg PO/IV (15 mg/kg × 82 kg = 1230 mg → cap at 1000 mg)",
+        "Recognize sepsis picture — SIRS + suspected infection source; reframe priorities",
+        "NS 500 mL IV bolus now; reassess; repeat up to 30 mL/kg (≈2.5 L for 82 kg) as needed",
+        "Upgrade ED notification — possible sepsis/meningitis; request resus bay",
+        "Reassess vitals and mental status after each 500 mL bolus"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Scene size-up and BSI; survey environment for trauma, toxins, infection clues",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Confirm seizure has ended — check for subtle status (eye deviation, focal twitching, nystagmus)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Assess airway patency; suction prn; place NPA if needed; O2 to keep SpO2 94-98%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place patient in recovery (lateral) position; clear oral secretions",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place SpO2, EtCO2, and cardiac monitor; full set of vitals q5 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Obtain finger-stick blood glucose — rule out hypoglycemia-induced seizure",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Measure temperature — document fever (102.8 °F / 39.3 °C)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document GCS and AVPU; note focal deficits, pupils, neck stiffness",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Obtain SAMPLE from roommate; characterize seizure (onset, duration, focality)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Inspect head/mouth for trauma — tongue/lip injury, scalp lacerations, occult fall trauma",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Screen for sepsis — fever + tachycardia + tachypnea = SIRS; alert ED of possible meningitis/sepsis",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access (saline lock or NS TKO)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Maintain supportive care — recovery position, O2 prn, continuous monitoring",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "NS 500 mL IV bolus for tachycardia, fever, and reduced PO intake",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Acetaminophen 1000 mg PO/IV (15 mg/kg × 82 kg = 1230 mg → cap at 1000 mg)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Remove excess clothing; apply cool compresses for passive cooling",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Acquire 12-lead ECG — screen for cardiac cause of new-onset seizure",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess GCS, vitals, and for seizure recurrence every 5 minutes",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Advance notification to ED — first-ever seizure with fever; possible meningitis/sepsis",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Structured ED handoff — first-ever seizure, febrile illness, sepsis screen positive",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue monitoring for seizure recurrence and hemodynamic change until handoff",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize recurrent seizure; reclassify as status epilepticus (continuous >5 min or recurrent)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Position airway, suction, BVM with O2 if hypoventilating",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Midazolam 4 mg IV (82 kg × 0.1 mg/kg = 8.2 mg → cap at 4 mg max per dose; may repeat)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "If IV lost or unavailable: Midazolam 10 mg IM (82 kg × 0.2 mg/kg = 16.4 mg → cap at 10 mg max)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Monitor for benzo-induced respiratory depression; be ready to BVM post-administration",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Update ED — patient now in status epilepticus, benzo given, ETA",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize sepsis picture — SIRS + suspected infection source; reframe priorities",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "NS 500 mL IV bolus now; reassess; repeat up to 30 mL/kg (≈2.5 L for 82 kg) as needed",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Upgrade ED notification — possible sepsis/meningitis; request resus bay",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess vitals and mental status after each 500 mL bolus",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

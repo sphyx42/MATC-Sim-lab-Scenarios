@@ -1,0 +1,776 @@
+{
+  "meta": {
+    "id": "M-T3-04",
+    "name": "Beta-Blocker/Calcium Channel Blocker Overdose",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Medical / Toxicology",
+    "protocols": [
+      "tox-beta-blocker-poisoning-overdose",
+      "tox-calcium-channel-blocker-poisoning-overdose",
+      "tox-poisoning-overdose-universal",
+      "cv-bradycardia",
+      "medical-shock",
+      "resus-cardiac-arrest"
+    ],
+    "totalTimeSeconds": 1800,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "toxicology",
+      "overdose",
+      "beta-blocker",
+      "calcium-channel-blocker",
+      "bradycardia",
+      "shock",
+      "glucagon",
+      "calcium-chloride",
+      "atropine-resistant",
+      "high-dose-insulin",
+      "push-dose-pressor",
+      "pacing",
+      "cardiac-arrest",
+      "tier-3",
+      "high-acuity",
+      "antidote-therapy"
+    ]
+  },
+  "patient": {
+    "name": "Daniel Hutchinson",
+    "age": 38,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 82,
+    "weightLbs": 180,
+    "height": 178,
+    "chiefComplaint": "Intentional overdose with prescription medications, found altered by spouse",
+    "history": {
+      "hpi": "38-year-old male with history of depression and hypertension, found altered by spouse approximately 30 minutes ago. Spouse states Daniel had been increasingly withdrawn over the past two weeks following a job loss and a recent argument about finances. She left for a 90-minute grocery run, returned to find him slumped on the couch, slow to respond, slurring his words. She immediately noticed two prescription bottles open and empty on the coffee table — metoprolol tartrate 50 mg and amlodipine 10 mg. Both bottles had been refilled within the past week per her recollection. She estimates the ingestion occurred shortly after she left, roughly 90 minutes prior to EMS contact. No alcohol bottles visible. Patient slurring 'I'm tired… leave me alone…' on arrival. No witnessed seizure activity, no chest pain reported, no vomiting. Spouse denies any other medications, illicit drug use, or prior overdose attempts.",
+      "pastMedical": [
+        "Major depressive disorder — diagnosed 5 years ago, currently between providers",
+        "Essential hypertension — diagnosed 2 years ago, controlled on combination therapy",
+        "No prior overdose attempts on record",
+        "No cardiac history other than HTN",
+        "No diabetes, no renal disease"
+      ],
+      "medications": [
+        "Metoprolol tartrate 50 mg PO BID (recently refilled — bottle now empty)",
+        "Amlodipine 10 mg PO daily (recently refilled — bottle now empty)",
+        "Sertraline 100 mg PO daily (bottle present, appears unchanged)"
+      ],
+      "allergies": ["NKDA"],
+      "lastOralIntake": "Per spouse, approximately 90 minutes prior to EMS contact — likely the contents of both pill bottles with water. No food intake reported since breakfast (~6 hours ago).",
+      "events": "Spouse left for grocery store at ~1830. Returned at ~2000, found Daniel slumped on couch, slow to respond, slurring speech. Two empty prescription bottles (metoprolol and amlodipine) open on the coffee table. Called 911 immediately. EMS arrived at ~2010."
+    }
+  },
+  "scene": {
+    "dispatch": "38-year-old male, intentional overdose, altered mental status, single-family residence. Spouse on scene. PD en route. No CPR in progress, breathing reported.",
+    "location": "Single-family two-story home, living room. Patient on a sectional couch in a semi-reclined position. Coffee table directly in front with two open prescription bottles, a half-empty water glass, and the patient's cell phone. Good lighting. Adequate working space.",
+    "time": "Tuesday, 2010 — overcast spring evening",
+    "safety": "Scene secured by PD on arrival. No weapons identified. Spouse cooperative but tearful. No pets in the immediate area. No active hazards.",
+    "bystanders": "Spouse (mid-30s) present and providing history. Reports finding the patient ~10 minutes ago, called 911 immediately. Confirms both pill bottles were 'almost full' two days ago. Denies suicide note found so far. PD officer at the doorway taking statement.",
+    "visualCues": [
+      "Patient supine-semi-recumbent on couch, eyes half-closed, slow to respond to verbal stimulus",
+      "Two open Rx bottles on coffee table — metoprolol tartrate 50 mg (empty) and amlodipine 10 mg (empty); labels clearly visible to crew",
+      "Half-empty glass of water on coffee table; no vomit, no pills on the floor",
+      "Skin pale, slightly cool to the touch; no diaphoresis on initial inspection",
+      "No obvious external trauma; no track marks, no paraphernalia",
+      "Spouse holding cell phone, pacing, repeats 'I should have come home sooner'",
+      "No suicide note immediately visible; PD officer surveying the kitchen"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial",
+      "name": "Initial Contact",
+      "description": "Crew arrives to a 38-year-old male intentional overdose ~90 minutes post-ingestion of metoprolol and amlodipine. He is alert to voice but sluggish, GCS 11 (E3 V3 M5), slurred speech, skin pale and cool. Monitor on the patient reveals sinus bradycardia at 38 with hypotension 76/42 — a textbook toxic bradycardia + hypotension combination from BB/CCB co-ingestion. Glucose is 102 (normal, but watch for BB-induced hypoglycemia drift). Both pill bottles are visible to crew. Key recognition: this is NOT routine bradycardia — atropine alone will not fix the underlying receptor blockade.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 3, "motor": 5 },
+        "airway": "Patent, self-maintained. No vomiting, no secretions. Slurred but intelligible.",
+        "breathing": "RR 16, even, non-labored. Lung sounds clear bilaterally. SpO2 95% on room air.",
+        "circulation": "Carotid pulse weak, regular, slow. Radial pulse barely palpable, regular. Cap refill ~3-4 seconds. No JVD, no peripheral edema.",
+        "skin": { "color": "pale", "temperature": "cool", "moisture": "dry" },
+        "pupils": "Mid-position ~3-4 mm, equal, sluggishly reactive bilaterally",
+        "motorFunction": "Moves all four extremities to command but slow; no focal deficits; localizes to painful stimuli",
+        "otherFindings": [
+          "Empty metoprolol tartrate 50 mg and amlodipine 10 mg bottles on coffee table — labels confirm patient's name",
+          "Spouse confirms ingestion ~90 minutes ago — both bottles 'almost full' two days ago",
+          "No vomiting, no seizure activity, no incontinence",
+          "Patient mumbles 'leave me alone, I'm tired' when stimulated",
+          "Glucose 102 mg/dL on fingerstick",
+          "12-lead pending — sinus brady, no obvious ischemic changes on initial monitor strip"
+        ],
+        "patientSpeech": "'Mmm… I'm tired… leave me alone… I just want to sleep…' (slurred, slow)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Bradycardia",
+        "ecgWaveform": 9,
+        "hr": 38,
+        "bpSys": 76,
+        "bpDia": 42,
+        "respRate": 16,
+        "spo2": 95,
+        "etco2": 38,
+        "temp": 36.4,
+        "tempF": 97.5,
+        "obstruction": 0,
+        "glucose": 102,
+        "customMeasures": [],
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "init-1",
+          "shortAction": "Scene safety, BSI, recognize intentional ingestion with bottles available",
+          "protocolExcerpt": "Make sure the scene is safe. Consider body substance isolation (BSI) or appropriate PPE. When indicated, identify specific medication taken (including immediate release vs sustained release), time of ingestion, dose, and quantity. When appropriate, bring all medications (prescribed and not prescribed) found in the environment.",
+          "priority": "critical",
+          "rationale": "Bringing the bottles to ED and confirming agents is the cornerstone of OD care.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "init-2",
+          "shortAction": "Primary survey ABCDs; airway patent, support breathing PRN",
+          "protocolExcerpt": "Assess ABCDs and if indicated expose and then cover to assure retention of body heat. Early airway protection is required as patients may have rapid mental status deterioration.",
+          "priority": "critical",
+          "rationale": "BB/CCB OD patients can deteriorate rapidly — anticipate airway compromise.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "init-3",
+          "shortAction": "Apply monitor, 12-lead; identify toxic bradycardia + hypotension pattern",
+          "protocolExcerpt": "Apply a cardiac monitor, examine rhythm strip for arrhythmias, and consider obtaining a 12-lead EKG.",
+          "priority": "critical",
+          "rationale": "Wide QRS or AV block on 12-lead suggests propranolol or severe CCB; drives sodium bicarb decision.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "init-4",
+          "shortAction": "Check glucose (102 mg/dL — normal, recheck en route per protocol)",
+          "protocolExcerpt": "Check blood glucose level on all patients but especially on pediatric patients as beta-blockers can cause hypoglycemia in pediatric population.",
+          "priority": "important",
+          "rationale": "BB OD can cause hypoglycemia even in adults — serial glucose checks indicated on long transport.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "init-5",
+          "shortAction": "Establish 2 large-bore IVs; IO if access fails within 90 sec",
+          "protocolExcerpt": "Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle.",
+          "priority": "critical",
+          "rationale": "Need reliable access for antidote therapy; this patient will need fluids, calcium, glucagon, possibly pressors.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "init-6",
+          "shortAction": "Obtain ingestion history: agent, time, quantity, formulation (IR vs SR)",
+          "protocolExcerpt": "Identify specific medication taken (noting immediate release vs. sustained release formulations), time of ingestion, and quantity.",
+          "priority": "critical",
+          "rationale": "Sustained-release CCB (Norvasc IS long-acting) means delayed peak — patient will get worse, not better. Drives transport decision and ED prep.",
+          "protocolReference": "MATC: Calcium Channel Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "init-7",
+          "shortAction": "O2 to maintain SpO2 94-98%; capnography continuous",
+          "protocolExcerpt": "Administer oxygen as appropriate with a target of achieving 94–98% saturation. Monitor pulse oximetry and EtCO2 for respiratory decompensation.",
+          "priority": "important",
+          "rationale": "EtCO2 will be the early warning sign of respiratory or perfusion decompensation.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "init-8",
+          "shortAction": "Atropine 1 mg IV — initial trial for symptomatic bradycardia",
+          "protocolExcerpt": "Consider atropine sulfate for symptomatic bradycardia. Adult: Atropine 1 mg IV q 5 minutes to maximum of 3 mg.",
+          "priority": "critical",
+          "rationale": "Protocol-directed initial therapy. Likely to fail in BB/CCB OD but must be attempted before escalating to antidotes.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "atropine-failed",
+          "if": "Atropine ineffective, escalate to antidotes",
+          "condition": "Atropine 1 mg IV administered with no clinically meaningful change in HR or BP within 3-5 minutes. Crew recognizes the BB/CCB receptor blockade is unresponsive to vagolytic therapy and prepares to escalate to specific antidotes (glucagon, calcium chloride) and a fluid bolus.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["init-8"]
+        },
+        {
+          "targetPhaseId": "atropine-loop",
+          "if": "Atropine repeated to max without escalation",
+          "condition": "Crew gives atropine 1 mg, then 1 mg, then 1 mg (total 3 mg) over 10-15 minutes with no effect, without moving to specific antidote therapy. Time wasted; patient deteriorates.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["init-8"]
+        }
+      ]
+    },
+    {
+      "id": "atropine-failed",
+      "name": "Atropine failed",
+      "description": "Atropine 1 mg IV pushed — no change. HR still 36-40, BP still 70s/40s. Mental status now declining: GCS dropping to 9 (E2 V2 M5), patient harder to rouse. The crew now must move to the specific antidotes: fluid challenge, glucagon (BB antidote), calcium chloride (CCB antidote), and prepare push-dose pressors. This is the teaching beat — atropine is a vagolytic, but the BB and CCB blockade is at the receptor and post-receptor level, so atropine has nothing to act on.",
+      "triggerCondition": "Atropine 1 mg IV given with no clinical response (HR and BP unchanged). Patient continues to decline; crew recognizes specific antidote therapy is required.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 2, "verbal": 2, "motor": 5 },
+        "airway": "Patent; gag intact but diminished. Mild pooling of secretions.",
+        "breathing": "RR 14, slightly shallower. SpO2 93% on room air, 96% on 4 LPM NC.",
+        "circulation": "Carotid weak, regular, slow. Radial barely palpable. Cap refill 4-5 seconds.",
+        "skin": { "color": "pale", "temperature": "cool", "moisture": "slightly diaphoretic" },
+        "pupils": "Mid-position, sluggish",
+        "motorFunction": "Withdraws to pain, no longer follows commands consistently",
+        "otherFindings": [
+          "Post-atropine HR change: 38 → 40 transient, then back to 36-38 within 60 seconds",
+          "BP unchanged: 74/40",
+          "12-lead: sinus brady, PR ~220 ms (first-degree AV prolongation), QRS ~100 ms (borderline), no ST elevation",
+          "Patient less responsive to voice; spouse increasingly distressed"
+        ],
+        "patientSpeech": "(mumbled, mostly incomprehensible — 'mmm…')"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Bradycardia",
+        "ecgWaveform": 9,
+        "hr": 36,
+        "bpSys": 72,
+        "bpDia": 40,
+        "respRate": 14,
+        "spo2": 93,
+        "etco2": 36,
+        "temp": 36.3,
+        "tempF": 97.3,
+        "obstruction": 0,
+        "glucose": 98,
+        "customMeasures": [],
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "atr-1",
+          "shortAction": "Recognize atropine failure — pivot to specific antidote therapy",
+          "protocolExcerpt": "Atropine may have little or no effect (likely to be more helpful in mild overdoses) — the hypotension and bradycardia may be mutually exclusive, and the blood pressure may not respond to correction of bradycardia.",
+          "priority": "critical",
+          "rationale": "Recognizing the failure quickly is the teaching pearl — repeating atropine to 3 mg max wastes 10+ minutes.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "atr-2",
+          "shortAction": "Normal saline 1640 mL bolus (82 kg × 20 mL/kg) wide open",
+          "protocolExcerpt": "Consider fluid challenge (20 mL/kg) for hypotension with associated bradycardia.",
+          "priority": "critical",
+          "rationale": "Fluid is the foundation before vasopressors. Watch for pulmonary edema in cardiogenic shock — reassess lung sounds frequently.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "atr-3",
+          "shortAction": "Glucagon 5 mg IV push — BB-specific antidote",
+          "protocolExcerpt": "For symptomatic patients with cardiac effects (e.g., hypotension, bradycardia) consider: Adult: Glucagon initial dose 5 mg IVP — this can be repeated in 5–10 minutes for a total of 10 mg.",
+          "priority": "critical",
+          "rationale": "Glucagon activates cardiac adenylate cyclase bypassing the blocked beta-receptor; first-line BB antidote.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "atr-4",
+          "shortAction": "Calcium chloride 1 g slow IV push over 10 min — CCB antidote",
+          "protocolExcerpt": "Calcium chloride — Adult: Calcium chloride 0.5–1 g slow IVP (50 mg/minute).",
+          "priority": "critical",
+          "rationale": "Calcium overcomes the CCB-mediated L-type calcium channel blockade. Always run through reliable IV — extravasation causes tissue necrosis.",
+          "protocolReference": "MATC: Calcium Channel Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "atr-5",
+          "shortAction": "Ondansetron 4 mg IV — prophylaxis for glucagon-induced emesis",
+          "protocolExcerpt": "Glucagon has a side effect of increased vomiting at these doses and ondansetron prophylaxis may be considered.",
+          "priority": "important",
+          "rationale": "Glucagon causes profound nausea/vomiting — preventing aspiration in this declining patient is critical.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "atr-6",
+          "shortAction": "Reassess airway; prepare for BVM/advanced airway as GCS drops",
+          "protocolExcerpt": "Early airway protection is required as patients may have rapid mental status deterioration.",
+          "priority": "critical",
+          "rationale": "GCS now 9 and falling; aspiration risk high with glucagon emesis. Suction ready, BVM ready, supraglottic ready.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "atr-7",
+          "shortAction": "Contact medical control — HIE/HIET therapy and ED prep",
+          "protocolExcerpt": "The regional poison center should be engaged as early as reasonably possible to aid in appropriate therapy and to track patient outcomes to improve knowledge of toxic effects.",
+          "priority": "important",
+          "rationale": "High-dose insulin euglycemia therapy is gold-standard in-hospital treatment — early notification allows ED to draw up insulin/D10 drips before arrival.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "antidotes-given-still-shocked",
+          "if": "Antidotes given, refractory shock",
+          "condition": "Glucagon 5 mg IV and calcium chloride 1 g IV administered with fluid bolus underway. Patient shows minimal improvement — HR up to 44, BP 80/46 — but remains profoundly hypotensive and bradycardic. Time to escalate to vasopressors and consider pacing.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["atr-3", "atr-4"]
+        }
+      ]
+    },
+    {
+      "id": "antidotes-given-still-shocked",
+      "name": "Antidotes given, still shocked",
+      "description": "Glucagon 5 mg IV and calcium chloride 1 g IV pushed. Fluid bolus continuing. HR has crept up modestly to 44 but BP still 80/46 — patient remains in cardiogenic shock from the CCB-induced myocardial depression. Crew now escalates to push-dose pressors and prepares transcutaneous pacing as a bridge. Mental status borderline — GCS 9, may need airway protection if drops further. Critical to keep moving — repeat glucagon and consider second calcium dose if no response.",
+      "triggerCondition": "Glucagon 5 mg IV and calcium chloride 1 g IV given. HR responded modestly (38 → 44) but BP remains hypotensive at 80/46 despite ongoing fluid resuscitation. Patient still in cardiogenic/toxic shock.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 2, "verbal": 2, "motor": 5 },
+        "airway": "Patent; one episode of vomiting after glucagon (managed with suction and lateral positioning).",
+        "breathing": "RR 14, SpO2 96% on 4 LPM NC. EtCO2 32 — trending down, suggesting worsening perfusion.",
+        "circulation": "Carotid weak but slightly stronger than initial. Radial faintly palpable. Cap refill ~3-4 seconds.",
+        "skin": { "color": "pale", "temperature": "cool", "moisture": "diaphoretic" },
+        "pupils": "Mid-position, sluggish",
+        "motorFunction": "Withdraws to pain, no follow-commands",
+        "otherFindings": [
+          "Post-glucagon: HR 38 → 44 within 3 minutes",
+          "Post-CaCl: minimal change in BP",
+          "One episode of emesis post-glucagon — small volume, managed",
+          "Fluid bolus ~1 L in, lung sounds still clear",
+          "EtCO2 trend: 38 → 36 → 32 (concerning)"
+        ],
+        "patientSpeech": "(occasional moan to painful stimulus, no speech)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Bradycardia",
+        "ecgWaveform": 9,
+        "hr": 44,
+        "bpSys": 80,
+        "bpDia": 46,
+        "respRate": 14,
+        "spo2": 96,
+        "etco2": 32,
+        "temp": 36.2,
+        "tempF": 97.2,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "esc-1",
+          "shortAction": "Push-dose epi 10 mcg IV q3-5 min titrated to MAP >65",
+          "protocolExcerpt": "Epinephrine by push dose (dilute boluses): for example, prepare 10 mcg/mL by adding 1 mL of 0.1 mg/mL epinephrine to 9 mL of normal saline, then administer 10–20 mcg boluses (1–2 mL) q 2 minutes titrated MAP greater than 65 mmHg.",
+          "priority": "critical",
+          "rationale": "Push-dose epi is the bridge to drip — provides immediate inotropic and chronotropic support while drip is being prepared.",
+          "protocolReference": "MATC: Bradycardia"
+        },
+        {
+          "id": "esc-2",
+          "shortAction": "Repeat glucagon 5 mg IV — second dose (total 10 mg)",
+          "protocolExcerpt": "Adult: Glucagon initial dose 5 mg IVP — this can be repeated in 5–10 minutes for a total of 10 mg.",
+          "priority": "critical",
+          "rationale": "BB receptor blockade may require cumulative glucagon dosing; repeat at 5-10 minutes if response inadequate.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "esc-3",
+          "shortAction": "Prepare norepinephrine drip 0.05-0.5 mcg/kg/min — bridge to ED",
+          "protocolExcerpt": "Norepinephrine 0.02–0.4 mcg/kg/minute IV titrated to a MAP greater than 65 mmHg.",
+          "priority": "important",
+          "rationale": "Push-dose epi is a bridge; sustained infusion is the durable solution. Spike, line, pump for transport.",
+          "protocolReference": "MATC: Bradycardia"
+        },
+        {
+          "id": "esc-4",
+          "shortAction": "Apply pacing pads; ready transcutaneous pacing at 70 bpm",
+          "protocolExcerpt": "Consider transcutaneous pacing if refractory to initial pharmacologic interventions.",
+          "priority": "critical",
+          "rationale": "Pacing is the next escalation if HR doesn't respond to pharmacology. Pads on, threshold set, ready to capture.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "esc-5",
+          "shortAction": "Sedation/analgesia if pacing initiated (e.g., fentanyl 50 mcg IV)",
+          "protocolExcerpt": "Transcutaneous Pacing – If pacing is performed, consider sedation or pain control.",
+          "priority": "important",
+          "rationale": "Pacing is painful in a conscious patient — even an altered patient may have pain awareness.",
+          "protocolReference": "MATC: Bradycardia"
+        },
+        {
+          "id": "esc-6",
+          "shortAction": "Reassess lung sounds before pushing additional fluid",
+          "protocolExcerpt": "Recognition of cardiogenic shock - If the patient condition deteriorates after fluid administration, rales or hepatomegaly develop, then consider cardiogenic shock and withholding further fluid administration.",
+          "priority": "important",
+          "rationale": "BB/CCB OD causes cardiogenic shock — too much fluid will flood the lungs.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "esc-7",
+          "shortAction": "Frequent reassessment q2-3 min; document trend",
+          "protocolExcerpt": "Frequent reassessment is essential as patient deterioration can be rapid and catastrophic.",
+          "priority": "important",
+          "rationale": "Sustained-release amlodipine peak is still ahead — patient can crash even after partial response.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "transport-stabilizing",
+          "if": "Pressors + pacing bridge to ED",
+          "condition": "Push-dose epi given (HR up to 56, BP up to 92/56), pacing pads applied with backup capture at 70 bpm available, norepi drip running at 0.1 mcg/kg/min, second glucagon given, transport initiated. Patient stabilized enough to move with continued antidote/pressor support.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["esc-1", "esc-2", "esc-3", "esc-4"]
+        },
+        {
+          "targetPhaseId": "pea-arrest",
+          "if": "Decompensation to PEA arrest",
+          "condition": "Despite glucagon and calcium, HR drops to 28 with junctional escape, BP 56/palp, then loss of pulses → PEA arrest at HR 24 with no organized perfusion. Sustained-release amlodipine peaking; receptor blockade overwhelming the antidote dose given so far.",
+          "conditionType": "vital_threshold",
+          "triggerActionIds": []
+        }
+      ]
+    },
+    {
+      "id": "transport-stabilizing",
+      "name": "Transport stabilizing",
+      "description": "Patient transported with norepinephrine infusion at 0.1 mcg/kg/min, second glucagon dose given, pacing pads ready (not capturing — HR maintained ~58 on pressors), GCS borderline 10. Spouse with PD following separately. ED notified of HIE/HIET need — they have insulin/D10 drips spiking. The teaching beat for this final phase: this isn't a save in the field — it's a bridge. Continued antidote therapy, vigilance for redeterioration from delayed-release amlodipine peak, and clean handoff are the goals.",
+      "triggerCondition": "Pressors initiated (HR 58, BP 92/56), pacing pads on standby, repeat glucagon administered, norepinephrine drip running. Crew transporting to a tertiary ED prepared for HIE/HIET initiation.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 2, "motor": 5 },
+        "airway": "Patent, gag intact. No further emesis. Continuous suction at the head.",
+        "breathing": "RR 16 assisted with O2 4 LPM NC, SpO2 97%, EtCO2 35.",
+        "circulation": "Carotid stronger on pressors. Radial palpable. Cap refill 2-3 seconds.",
+        "skin": { "color": "pale-pink improving", "temperature": "cool", "moisture": "dry" },
+        "pupils": "3 mm, equal, sluggishly reactive",
+        "motorFunction": "Withdraws to pain, occasional eye opening",
+        "otherFindings": [
+          "Norepi 0.1 mcg/kg/min running on infusion pump",
+          "Pacing pads on chest, capture threshold confirmed at 70 mA — backup ready",
+          "Repeat 12-lead: sinus brady-borderline 58, PR ~220, QRS 100 ms",
+          "ED has been notified — HIE/HIET preparation underway at receiving facility",
+          "Glucose now 152 mg/dL (mild post-CCB/glucagon hyperglycemia — expected)"
+        ],
+        "patientSpeech": "(moans to painful stimulus, no coherent speech)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Bradycardia",
+        "ecgWaveform": 9,
+        "hr": 58,
+        "bpSys": 92,
+        "bpDia": 56,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 35,
+        "temp": 36.2,
+        "tempF": 97.2,
+        "obstruction": 0,
+        "glucose": 152,
+        "customMeasures": [],
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "trans-1",
+          "shortAction": "Continuous monitor + reassessment q5 min en route",
+          "protocolExcerpt": "Repeat evaluation and documentation of signs and symptoms and vital signs as patient clinical conditions may deteriorate rapidly.",
+          "priority": "critical",
+          "rationale": "Sustained-release amlodipine peak is delayed — patient can re-crash mid-transport.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "trans-2",
+          "shortAction": "Titrate norepi to MAP >65 (current MAP ~68)",
+          "protocolExcerpt": "Norepinephrine 0.02–0.4 mcg/kg/minute IV titrated to a MAP greater than 65 mmHg.",
+          "priority": "critical",
+          "rationale": "Goal-directed pressor titration — not a fixed dose, titrate to perfusion target.",
+          "protocolReference": "MATC: Bradycardia"
+        },
+        {
+          "id": "trans-3",
+          "shortAction": "Recheck glucose q15 min — BB-induced hypoglycemia can develop",
+          "protocolExcerpt": "Blood glucose checks (serial if long transport, especially in children).",
+          "priority": "important",
+          "rationale": "Even though current glucose is high, glucagon stores deplete and BB can cause hypoglycemia later.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "trans-4",
+          "shortAction": "Bring all medication bottles + history to ED handoff",
+          "protocolExcerpt": "When indicated, identify specific medication taken (including immediate release vs sustained release), time of ingestion, dose, and quantity. When appropriate, bring all medications (prescribed and not prescribed) found in the environment.",
+          "priority": "critical",
+          "rationale": "ED needs the bottles for toxicology, dose estimation, and HIE/HIET dosing decisions.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "trans-5",
+          "shortAction": "Pacing pads remain on; ready capture if HR drops <50",
+          "protocolExcerpt": "Consider transcutaneous pacing if refractory to initial pharmacologic interventions.",
+          "priority": "important",
+          "rationale": "Pre-positioned pacing means seconds to capture if patient redecompensates.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "trans-6",
+          "shortAction": "Clean ED handoff: agents, times, doses, response, current drips",
+          "protocolExcerpt": "Therapy and response to therapy.",
+          "priority": "critical",
+          "rationale": "ED inherits an unstable patient — handoff quality directly affects continuity of antidote therapy.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "atropine-loop",
+      "name": "Atropine looped to 3 mg",
+      "description": "Crew gives atropine 1 mg → no effect → waits 5 min → atropine 1 mg → still no effect → waits 5 min → atropine 1 mg (now at max 3 mg). 12-15 minutes have elapsed since arrival with no specific antidote therapy. Sustained-release amlodipine is still absorbing. HR has drifted from 38 down to 28 with a junctional escape; BP is now 56/palp. Patient now unresponsive. Crew must recognize the wasted time, abandon the atropine pathway, and rapidly escalate to glucagon + calcium chloride + push-dose pressors + pacing. This is a recoverable error if recognized quickly — but if delayed further the patient will arrest.",
+      "triggerCondition": "Crew gave atropine 1 mg, repeated to total 3 mg over ~10-15 minutes without escalating to glucagon or calcium chloride. Atropine never produced a response because the BB/CCB blockade is at the receptor/post-receptor level, not vagal tone.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 1, "verbal": 2, "motor": 4 },
+        "airway": "Snoring respirations — partial upper airway obstruction. Jaw thrust improves. Risk of aspiration high.",
+        "breathing": "RR 10, shallow. SpO2 88% on room air, 93% on BVM-assisted ventilation. EtCO2 50 (rising — hypoventilation).",
+        "circulation": "Carotid weak, slow, irregular. Radial absent. Cap refill 5+ seconds.",
+        "skin": { "color": "pale-grey", "temperature": "cool", "moisture": "diaphoretic" },
+        "pupils": "Mid-position, sluggish to fixed",
+        "motorFunction": "Localizes weakly to deep pain; otherwise flaccid",
+        "otherFindings": [
+          "12-15 minutes elapsed without specific antidote",
+          "Total atropine 3 mg given — no chronotropic response at any point",
+          "ECG: junctional bradycardia at 28, narrow complex, no P waves visible",
+          "EtCO2 rising from hypoventilation",
+          "Patient now unresponsive to verbal stimulus"
+        ],
+        "patientSpeech": "(unresponsive)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Accelerated Junctional Rhythm",
+        "ecgWaveform": 79,
+        "hr": 28,
+        "bpSys": 56,
+        "bpDia": 32,
+        "respRate": 10,
+        "spo2": 88,
+        "etco2": 50,
+        "temp": 36.0,
+        "tempF": 96.8,
+        "obstruction": 0,
+        "glucose": 94,
+        "customMeasures": [],
+        "trendTimeSeconds": 55,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "loop-1",
+          "shortAction": "Recognize wasted time — atropine ineffective in BB/CCB blockade",
+          "protocolExcerpt": "Atropine may have little or no effect (likely to be more helpful in mild overdoses) — the hypotension and bradycardia may be mutually exclusive, and the blood pressure may not respond to correction of bradycardia.",
+          "priority": "critical",
+          "rationale": "Self-correction is the lesson — naming the error verbally with the partner is part of high-performing crew behavior.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "loop-2",
+          "shortAction": "Aggressive airway: jaw thrust, OPA, BVM-assist, prep for advanced",
+          "protocolExcerpt": "Early airway protection is required as patients may have rapid mental status deterioration.",
+          "priority": "critical",
+          "rationale": "Patient now beyond the recoverable window for oral activated charcoal — airway is the limiting factor.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "loop-3",
+          "shortAction": "Glucagon 5 mg IV NOW (catch-up dose for BB blockade)",
+          "protocolExcerpt": "Adult: Glucagon initial dose 5 mg IVP — this can be repeated in 5–10 minutes for a total of 10 mg.",
+          "priority": "critical",
+          "rationale": "Already late — push the full 5 mg now and prep the second dose immediately.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "loop-4",
+          "shortAction": "Calcium chloride 1 g slow IVP (CCB blockade — catch-up dose)",
+          "protocolExcerpt": "Calcium chloride — Adult: Calcium chloride 0.5–1 g slow IVP (50 mg/minute).",
+          "priority": "critical",
+          "rationale": "Already late — CCB peak still ahead with sustained-release amlodipine.",
+          "protocolReference": "MATC: Calcium Channel Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "loop-5",
+          "shortAction": "Push-dose epi 10-20 mcg IV — emergency chronotropic support",
+          "protocolExcerpt": "Epinephrine by push dose (dilute boluses): for example, prepare 10 mcg/mL by adding 1 mL of 0.1 mg/mL epinephrine to 9 mL of normal saline, then administer 10–20 mcg boluses (1–2 mL) q 2 minutes titrated MAP greater than 65 mmHg.",
+          "priority": "critical",
+          "rationale": "Closing the gap fast — push-dose epi while drawing up the drip.",
+          "protocolReference": "MATC: Bradycardia"
+        },
+        {
+          "id": "loop-6",
+          "shortAction": "Transcutaneous pacing at 70 bpm — capture confirmation required",
+          "protocolExcerpt": "Consider transcutaneous pacing if refractory to initial pharmacologic interventions. Transcutaneous pacing may not always capture nor correct hypotension when capture is successful.",
+          "priority": "critical",
+          "rationale": "Pacing buys time while antidotes work. Confirm electrical AND mechanical capture (pulse).",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "pea-arrest",
+          "if": "Continued delay → PEA arrest",
+          "condition": "Despite catch-up therapy, sustained-release amlodipine continues to peak. HR 28 → 22 → loss of mechanical capture → PEA arrest. The crew did not recover the lost time.",
+          "conditionType": "time_elapsed",
+          "timeoutSeconds": 180,
+          "triggerActionIds": []
+        }
+      ]
+    },
+    {
+      "id": "pea-arrest",
+      "name": "PEA arrest — toxic etiology",
+      "description": "Patient progresses to PEA arrest from continued CCB receptor blockade with sustained-release peak. CPR initiated, pads in place. CRITICAL TEACHING BEAT: standard ACLS with epi 1 mg q3-5 min ALONE will not produce ROSC because the underlying toxin is still actively blocking calcium channels and beta receptors. The arrest must be treated with continued glucagon, repeat calcium chloride, and consideration of high-dose insulin per medical control — IN ADDITION TO standard CPR and epi. Sodium bicarbonate 1-2 mEq/kg considered for any QRS widening.",
+      "triggerCondition": "Patient deteriorates from junctional bradycardia/severe shock to PEA arrest from continued unaddressed BB/CCB toxicity. Pulses lost; CPR initiated.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "Supraglottic airway placed during code; ventilations via BVM at 10/min.",
+        "breathing": "Apneic; assisted ventilation only.",
+        "circulation": "No spontaneous pulses. CPR in progress. ETCO2 12 mmHg (poor perfusion despite compressions — toxic etiology).",
+        "skin": { "color": "grey-cyanotic", "temperature": "cool", "moisture": "diaphoretic" },
+        "pupils": "Fixed, mid-position",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "Monitor: organized narrow-complex rhythm at 30-40 with no pulses (PEA)",
+          "ETCO2 12 mmHg — poor compression perfusion AND toxic depression",
+          "Pill bottles confirmed: metoprolol + amlodipine (both sustained activity at this hour post-ingestion)",
+          "Medical control contacted re: high-dose insulin and lipid emulsion options",
+          "Spouse following separately with PD"
+        ],
+        "patientSpeech": "(pulseless, no speech)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Pulseless Electrical Activity (PEA)",
+        "ecgWaveform": 9,
+        "hr": 30,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 12,
+        "temp": 35.9,
+        "tempF": 96.6,
+        "obstruction": 0,
+        "glucose": 88,
+        "customMeasures": [],
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "arr-1",
+          "shortAction": "High-quality CPR 100-120/min, depth 2-2.4 in, full recoil",
+          "protocolExcerpt": "A rate of greater than 100 and less than 120 compressions/minute. Depth of at least 2 inches (5 cm) and less than 2.4 inches (6 cm) for adults and children. Allow for complete chest recoil (avoid leaning). Minimize interruptions in compressions.",
+          "priority": "critical",
+          "rationale": "Foundation of arrest care regardless of etiology.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "arr-2",
+          "shortAction": "Epinephrine 1 mg IV q3-5 min during compressions",
+          "protocolExcerpt": "Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms.",
+          "priority": "critical",
+          "rationale": "Standard ACLS dose; do not delay or substitute for antidote therapy.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "arr-3",
+          "shortAction": "Continue glucagon — repeat 5 mg IV (BB blockade still present)",
+          "protocolExcerpt": "Adult: Glucagon initial dose 5 mg IVP — this can be repeated in 5–10 minutes for a total of 10 mg.",
+          "priority": "critical",
+          "rationale": "TEACHING BEAT: arrest does not stop the toxin. Glucagon must continue through the code or ROSC will not happen.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "arr-4",
+          "shortAction": "Repeat calcium chloride 1 g IV — CCB blockade still active",
+          "protocolExcerpt": "Calcium chloride — Adult: Calcium chloride 0.5–1 g slow IVP (50 mg/minute).",
+          "priority": "critical",
+          "rationale": "Calcium must continue through arrest — toxin is still bound to L-type channels.",
+          "protocolReference": "MATC: Calcium Channel Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "arr-5",
+          "shortAction": "Sodium bicarb 82 mEq IV (82 kg × 1 mEq/kg) if QRS widens",
+          "protocolExcerpt": "If widened QRS (100 msec or greater), consider sodium bicarbonate 1–2 mEq/kg IV. This can be repeated as needed to narrow QRS.",
+          "priority": "important",
+          "rationale": "Propranolol/metoprolol can produce TCA-like sodium channel effects; widened QRS responds to bicarb.",
+          "protocolReference": "MATC: Beta Blocker Poisoning/Overdose"
+        },
+        {
+          "id": "arr-6",
+          "shortAction": "EtCO2 monitoring — target >10; reassess compression quality",
+          "protocolExcerpt": "Quantitative end-tidal capnography (EtCO2) should be used to monitor effectiveness of chest compressions. If EtCO2 less than 10 mmHg during the initial phases of resuscitation, attempt to improve chest compression quality.",
+          "priority": "important",
+          "rationale": "EtCO2 12 is borderline — push for better compression depth/rate and watch for a sudden ETCO2 rise indicating ROSC.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "arr-7",
+          "shortAction": "Contact medical control for HIE/HIET + lipid emulsion guidance",
+          "protocolExcerpt": "The regional poison center should be engaged as early as reasonably possible to aid in appropriate therapy and to track patient outcomes to improve knowledge of toxic effects.",
+          "priority": "critical",
+          "rationale": "HIE/HIET is gold-standard; lipid emulsion is rescue therapy in some systems. Both require medical control direction.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "arr-8",
+          "shortAction": "Reversible causes (H's & T's) — Toxins addressed; consider hypovolemia",
+          "protocolExcerpt": "Consider reversible causes of cardiac arrest which include the following: Hypovolemia. Additions to care include normal saline 2 L IV.",
+          "priority": "important",
+          "rationale": "Continue fluids through code unless overt pulmonary edema; toxin cause is identified.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

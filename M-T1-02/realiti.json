@@ -1,0 +1,307 @@
+{
+  "scenarioId": "M-T1-02",
+  "scenarioName": "CVA/Stroke with Clear Onset Time",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1200,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "Patient was sitting at the breakfast table with her husband at approximately 0810, eating toast and reading the newspaper, when she suddenly dropped her coffee cup and could not pick it up with her right hand. Her husband noticed her face 'pulled to one side' and that her speech became garbled — she could understand him but could not form words clearly. She tried to stand but her right leg gave out. Husband helped her into a recliner and called 911 immediately. Husband states symptoms began abruptly at exactly 0810 — he checked the kitchen clock when it happened. No headache, no chest pain, no recent fall, no preceding warning symptoms. She has been awake since 0645 and was completely normal until 0810.",
+    "discussion": "",
+    "course": "Initial Contact: Crew arrives to find a 67-year-old female with sudden-onset right-sided weakness, right facial droop, and expressive aphasia witnessed by her husband at exactly 0810 — approximately 25 minutes ago. The history is clean and the LKW is precise. The presentation looks like a classic stroke, but the protocol still requires ruling out hypoglycemia as a stroke mimic before activating the stroke pathway. This scenario rewards systematic assessment: stroke scale, finger-stick glucose, anticoagulant history, BP both arms, 12-lead to screen for atrial fibrillation, and precise documentation of LKW. → Stroke alert activated: Systematic assessment confirms: positive stroke scale (3/3), positive severity findings (expressive aphasia, right-sided neglect of affected limbs), glucose 102 mg/dL (hypoglycemia ruled out), apixaban on board with last dose at 0700, atrial fibrillation on the 12-lead, LKW exactly 0810. Crew activates a stroke alert with the receiving thrombectomy-capable center, documents LKW precisely, elevates head of stretcher 15-30 degrees, avoids treating the hypertension and avoids aspirin (cannot distinguish ischemic vs hemorrhagic in the field), and minimizes scene time."
+  },
+  "patientInformation": {
+    "patientName": "Margaret Ellsworth",
+    "patientCondition": "Sudden right-sided weakness and difficulty speaking",
+    "patientAge": 67,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 2,
+    "patientHeight": 165,
+    "patientWeight": 72,
+    "patientPhotoId": 81,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 67-year-old female with sudden-onset right-sided weakness, right facial droop, and expressive aphasia witnessed by her husband at exactly 0810 — approximately 25 minutes ago. The history is clean and the LKW is precise. The presentation looks like a classic stroke, but the protocol still requires ruling out hypoglycemia as a stroke mimic before activating the stroke pathway. This scenario rewards systematic assessment: stroke scale, finger-stick glucose, anticoagulant history, BP both arms, 12-lead to screen for atrial fibrillation, and precise documentation of LKW.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 38,
+        "hr": 88,
+        "bpSys": 178,
+        "bpDia": 96,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Scene size-up, BSI, and rapid primary survey (ABC)",
+        "Perform validated stroke scale (Cincinnati: face/arm/speech)",
+        "Perform stroke severity screen (vision, neglect, aphasia) for LVO",
+        "Document precise last-known-well time and source (husband: 0810)",
+        "Obtain finger-stick blood glucose to rule out hypoglycemic stroke mimic",
+        "Identify anticoagulant use (apixaban) and document last dose",
+        "Obtain blood pressure in both arms; cardiac monitor on",
+        "Acquire 12-lead EKG — screen for atrial fibrillation and STEMI",
+        "Apply SpO2; supplemental O2 only if SpO2 < 94%"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Stroke alert activated",
+      "description": "Systematic assessment confirms: positive stroke scale (3/3), positive severity findings (expressive aphasia, right-sided neglect of affected limbs), glucose 102 mg/dL (hypoglycemia ruled out), apixaban on board with last dose at 0700, atrial fibrillation on the 12-lead, LKW exactly 0810. Crew activates a stroke alert with the receiving thrombectomy-capable center, documents LKW precisely, elevates head of stretcher 15-30 degrees, avoids treating the hypertension and avoids aspirin (cannot distinguish ischemic vs hemorrhagic in the field), and minimizes scene time.",
+      "monitorType": 0,
+      "trendTime": 25,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 38,
+        "hr": 88,
+        "bpSys": 176,
+        "bpDia": 94,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Activate stroke alert with thrombectomy-capable receiving facility",
+        "Elevate head of stretcher 15-30 degrees; neutral neck alignment",
+        "Do NOT treat the hypertension — permissive HTN preserves penumbra",
+        "Do NOT give aspirin — cannot distinguish ischemic vs hemorrhagic prehospital",
+        "Establish IV access; avoid multiple attempts",
+        "Minimize scene time; package and transport without delay",
+        "Structured handoff: LKW 0810, Cincinnati 3/3, glucose 102, apixaban 0700"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Stroke alert, no glucose checked",
+      "description": "Crew anchors on the obvious deficits, calls a stroke alert, and transports without performing a finger-stick blood glucose at the scene. The patient does have a true stroke, but skipping the protocol-mandated hypoglycemia rule-out is a documentation and competency failure. On arrival the stroke team takes the patient straight to CT — but because the prehospital glucose was never recorded, the receiving facility delays activation by 4-6 minutes while their own finger-stick is performed and resulted. In a hypoglycemic-mimic patient this same shortcut would have meant a stroke bay was occupied and treatment was withheld. The lesson: the glucose check is non-negotiable on every AMS / stroke patient.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 38,
+        "hr": 90,
+        "bpSys": 180,
+        "bpDia": 98,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize missed hypoglycemia rule-out; perform finger-stick en route",
+        "Add glucose result to handoff so ED does not duplicate the test"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Stroke alert without precise LKW",
+      "description": "Crew packages quickly and transports without obtaining a precise last-known-well time from the husband — the PCR will document only 'found this way' or 'symptoms this morning.' On arrival, the ED stroke team cannot establish whether the patient is inside the 4.5-hour thrombolytic window, and without a clear LKW from a witness, thrombolytic therapy is held until a more definitive history can be obtained — by which point the window may close. The husband was on scene with the answer. Taking 30 seconds to ask 'When exactly did this start?' would have preserved her chance at intervention.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 38,
+        "hr": 90,
+        "bpSys": 178,
+        "bpDia": 96,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Radio husband's phone or back to scene for precise LKW (0810)",
+        "Update receiving facility with corrected LKW and source"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Scene size-up, BSI, and rapid primary survey (ABC)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Perform validated stroke scale (Cincinnati: face/arm/speech)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Perform stroke severity screen (vision, neglect, aphasia) for LVO",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document precise last-known-well time and source (husband: 0810)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Obtain finger-stick blood glucose to rule out hypoglycemic stroke mimic",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Identify anticoagulant use (apixaban) and document last dose",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Obtain blood pressure in both arms; cardiac monitor on",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Acquire 12-lead EKG — screen for atrial fibrillation and STEMI",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply SpO2; supplemental O2 only if SpO2 < 94%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Activate stroke alert with thrombectomy-capable receiving facility",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Elevate head of stretcher 15-30 degrees; neutral neck alignment",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Do NOT treat the hypertension — permissive HTN preserves penumbra",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Do NOT give aspirin — cannot distinguish ischemic vs hemorrhagic prehospital",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access; avoid multiple attempts",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Minimize scene time; package and transport without delay",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Structured handoff: LKW 0810, Cincinnati 3/3, glucose 102, apixaban 0700",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize missed hypoglycemia rule-out; perform finger-stick en route",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Add glucose result to handoff so ED does not duplicate the test",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Radio husband's phone or back to scene for precise LKW (0810)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Update receiving facility with corrected LKW and source",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

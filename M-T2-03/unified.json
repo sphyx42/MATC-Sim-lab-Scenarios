@@ -1,0 +1,523 @@
+{
+  "meta": {
+    "id": "M-T2-03",
+    "scenarioId": "M-T2-03",
+    "name": "Seizure Progressing to Status Epilepticus",
+    "version": 1,
+    "difficulty": "intermediate",
+    "category": "Medical",
+    "protocols": [
+      "medical-seizures",
+      "resp-airway-management",
+      "medical-altered-mental-status"
+    ],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": ["seizure", "status epilepticus", "benzodiazepine", "airway", "Tier 2", "decision-dense"]
+  },
+  "patient": {
+    "name": "Marcus Delgado",
+    "age": 38,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 80,
+    "weightLbs": 176,
+    "height": 178,
+    "chiefComplaint": "Witnessed generalized tonic-clonic seizure",
+    "history": {
+      "hpi": "38-year-old male with known epilepsy was working at his desk when his coworker heard him fall to the floor. Coworker found him on the floor with generalized tonic-clonic activity that lasted approximately 3 minutes before stopping spontaneously just as EMS arrived. Patient is now post-ictal — eyes open to voice, mumbling, GCS 11 and slowly improving. Coworker states the patient has a long history of seizures and recently ran out of his Keppra (levetiracetam) about 5 days ago and has not refilled it. No reported trauma to the head during the fall — coworker saw him slump rather than fall hard. No fever, no recent illness, no alcohol or drug use known. While the crew is setting up monitoring, the patient has a SECOND generalized tonic-clonic seizure that does not stop after 2 minutes of continuous activity — meeting status epilepticus criteria.",
+      "pastMedical": [
+        "Epilepsy (generalized tonic-clonic), diagnosed age 19",
+        "Mild anxiety",
+        "No diabetes, no cardiac history"
+      ],
+      "medications": [
+        "Levetiracetam (Keppra) 1000 mg PO BID — RAN OUT 5 days ago, not refilled",
+        "Lorazepam 1 mg PO PRN anxiety (rare use)"
+      ],
+      "allergies": ["NKDA"],
+      "lastOralIntake": "Coffee and a bagel at 0800 this morning; nothing since",
+      "events": "Coworker in adjacent cubicle heard a soft thud at approximately 1015 and went to check. Found patient on the floor, eyes open and deviated to the right, with generalized tonic-clonic shaking of all four extremities, frothing at the mouth. Coworker called 911, cleared the area around the patient, did not place anything in his mouth. Seizure lasted approximately 3 minutes and stopped spontaneously just as EMS arrived on scene at 1019."
+    }
+  },
+  "scene": {
+    "dispatch": "Medic 14, respond Code 3 to 1850 Corporate Drive, Suite 300, for a 38-year-old male, witnessed seizure, now reportedly stopped. Caller is a coworker.",
+    "location": "Third floor of a corporate office building. Patient supine on carpeted floor of an open cubicle area. Adequate space and lighting; coworkers have cleared furniture back from the patient.",
+    "time": "1019 weekday morning",
+    "safety": "Scene safe. No environmental hazards. No weapons. Bystanders cooperative and stepped back to give crew room.",
+    "bystanders": "Coworker who witnessed the event (primary historian) — calm and able to give a clear account. States patient has epilepsy and 'mentioned last week he was almost out of his pills.' No family on scene; coworker is calling the patient's spouse.",
+    "visualCues": [
+      "Patient supine on carpet, slightly diaphoretic, with damp area near mouth from frothing",
+      "Small abrasion on left elbow from the fall",
+      "Empty Keppra prescription bottle visible in the patient's open desk drawer — last filled 25 days ago",
+      "No incontinence visible; no tongue laceration on quick inspection",
+      "Coworker holding a stopwatch app on their phone — has been timing"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial",
+      "name": "Initial Contact",
+      "description": "Crew arrives 4 minutes after dispatch to find a 38-year-old male supine on the office floor in a post-ictal state. Coworker reports the seizure was generalized tonic-clonic, lasted about 3 minutes, and stopped just as EMS pulled up. Patient is mumbling, opens eyes to voice, GCS 11 and slowly trending up. Vitals are stable. While the crew is mid-assessment — taking baseline vitals, applying SpO2, asking about meds — the patient suddenly stiffens and begins another generalized tonic-clonic seizure. This is now a recurrent seizure without recovery between, and as it continues past 2 minutes of unrelenting activity the crew is in status epilepticus territory per protocol definition. The decision-dense window opens here: airway protection, oxygenation, IV/IO vs IM/IN benzo, and the dose math all need to happen simultaneously while the patient is convulsing.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 3, "motor": 5 },
+        "airway": "Patent post-ictally; mild frothy oral secretions, no tongue laceration visible",
+        "breathing": "Spontaneous, regular, slightly deep post-ictal pattern; lungs clear bilaterally",
+        "circulation": "Radial pulse strong and regular; warm, well perfused",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "diaphoretic" },
+        "pupils": "PERRL, 4 mm bilaterally",
+        "motorFunction": "Initially flaccid post-ictal; then abruptly stiffens and begins generalized tonic-clonic activity of all four extremities approximately 90 seconds into crew contact",
+        "otherFindings": [
+          "Coworker confirms first seizure was ~3 minutes, generalized tonic-clonic",
+          "Empty Keppra bottle in desk drawer — last refilled 25 days ago",
+          "Patient mumbling, eyes opening to voice — clearly post-ictal at first contact",
+          "Second tonic-clonic seizure begins approximately 90 seconds into crew assessment",
+          "Second seizure continues past the 2-minute mark with no recovery between — meets status epilepticus criteria"
+        ],
+        "patientSpeech": "Mumbled, garbled; cannot answer orientation questions clearly during initial post-ictal state; then loses speech entirely as second seizure begins"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 118,
+        "bpSys": 148,
+        "bpDia": 92,
+        "respRate": 22,
+        "spo2": 94,
+        "etco2": 32,
+        "temp": 37.4,
+        "tempF": 99.3,
+        "obstruction": 20,
+        "glucose": 96,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-scene-history",
+          "shortAction": "Obtain seizure history: duration, onset, meds, anticonvulsant compliance",
+          "protocolExcerpt": "History: Duration of current seizure. Prior history of seizures, diabetes, or hypoglycemia. Typical appearance of seizures. Baseline seizure frequency and duration. Current medications, including anticonvulsants. Recent dose changes or non-compliance with anticonvulsants.",
+          "priority": "critical",
+          "rationale": "Anticonvulsant non-compliance (ran out of Keppra 5 days ago) is the proximate cause and points away from new-onset etiologies.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-airway-positioning",
+          "shortAction": "Position airway, suction frothy secretions, NPA if gag present — NO bite block",
+          "protocolExcerpt": "If signs of airway obstruction are present and a chin-lift, jaw thrust, positioning, and/or suctioning does not alleviate it, place oropharyngeal airway (if gag reflex is absent) or nasopharyngeal airway.",
+          "priority": "critical",
+          "rationale": "Airway protection during/after seizure without forcing anything between clenched teeth. NPA tolerated with gag intact; OPA only if gag absent.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-monitor-spo2-etco2",
+          "shortAction": "Apply SpO2 and waveform capnography; high-flow O2 via NRB",
+          "protocolExcerpt": "Place pulse oximeter and/or waveform capnography to monitor oxygenation/ventilation. Administer oxygen as appropriate with a target of achieving 94–98% saturation. Use bag-valve-mask (BVM) ventilation if oxygenation/ventilation are compromised.",
+          "priority": "critical",
+          "rationale": "Capnography is the best tool for catching hypoventilation that follows both seizing activity and benzo administration.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-glucose-check",
+          "shortAction": "Finger-stick glucose — rule out hypoglycemia as seizure cause",
+          "protocolExcerpt": "Glucometry: If still actively seizing, check blood glucose level. If less than 60 mg/dL, treat per the Hypoglycemia Guideline.",
+          "priority": "critical",
+          "rationale": "Hypoglycemia is a reversible seizure cause; protocol explicitly requires glucometry on actively seizing patients.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-recognize-status",
+          "shortAction": "Recognize recurrent seizure / status epilepticus — treat NOW, don't wait",
+          "protocolExcerpt": "Inclusion Criteria: Seizure activity upon arrival of prehospital personnel or new/recurrent seizure activity lasting greater than 5 minutes.",
+          "priority": "critical",
+          "rationale": "Recurrent seizure without recovery between OR ongoing ≥5 minutes meets the protocol inclusion for treatment. Recognition is the gating decision.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-route-decision",
+          "shortAction": "Choose route — IM/IN preferred if no IV; do not delay benzo for IV attempts",
+          "protocolExcerpt": "Routes for treatment: IN/IM routes are preferred over IV or IO routes (if not already established) and rectal (PR) route as an alternative. IV placement is not necessary for treatment of seizures, but could be obtained if needed for other reasons.",
+          "priority": "critical",
+          "rationale": "Protocol explicitly prefers IM/IN over chasing IV in a seizing patient — the core decision point of this scenario.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-midaz-im",
+          "shortAction": "Midazolam 10 mg IM (80 kg × 0.2 mg/kg = 16 mg → cap at 10 mg max)",
+          "protocolExcerpt": "Anticonvulsant Treatment — If vascular access is absent: Midazolam 0.2 mg/kg (maximum dose 10 mg), IM preferred, or IN.",
+          "priority": "critical",
+          "rationale": "Preferred no-IV pathway. Calculated dose exceeds max so capped at protocol ceiling of 10 mg.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-midaz-iv-alt",
+          "shortAction": "If IV already in place: Midazolam 4 mg IV (80 kg × 0.1 mg/kg = 8 mg → cap at 4 mg)",
+          "protocolExcerpt": "Anticonvulsant Treatment — If vascular access (IV or IO) is present: Diazepam 0.2 mg/kg IV or IO, maximum 10 mg; Lorazepam 0.1 mg/kg IV or IO, maximum 4 mg; Midazolam 0.1 mg/kg IV or IO, maximum 4 mg.",
+          "priority": "important",
+          "rationale": "Only if vascular access is already established — do not delay benzo to obtain it. Alternative dose math for the IV route.",
+          "protocolReference": "MATC: Seizures"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "benzo-given",
+          "if": "IM/IN benzo given promptly",
+          "condition": "Crew recognizes the recurrent seizure as status epilepticus, skips chasing IV access in the convulsing patient, and administers midazolam 10 mg IM (80 kg × 0.2 mg/kg, capped at protocol max) within ~2 minutes of the second seizure starting.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["act-recognize-status", "act-route-decision", "act-midaz-im"]
+        },
+        {
+          "targetPhaseId": "iv-chase-delay",
+          "if": "IV access chased during active seizure",
+          "condition": "Crew attempts to establish IV access on the actively seizing patient before administering any benzodiazepine, repeatedly missing due to muscle activity. Seizure continues uninterrupted; no IM/IN dose given. Status worsens toward airway compromise and hypoxia.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["act-route-decision", "act-midaz-im"]
+        },
+        {
+          "targetPhaseId": "underdosed-im",
+          "if": "Underdosed IM benzo given",
+          "condition": "Crew administers an inappropriately small IM dose of midazolam (e.g., 4 mg IM — the IV/IO ceiling dose given by the wrong route). Seizure continues because the patient is undertreated; crew must reassess and redose.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["act-midaz-im"]
+        }
+      ]
+    },
+    {
+      "id": "benzo-given",
+      "name": "Benzo given; seizure stops",
+      "description": "Crew gave midazolam 10 mg IM promptly. Convulsive activity terminates approximately 90 seconds after the injection. Patient is now post-ictal again, but more deeply suppressed than after the first seizure — GCS 9, respirations slowing to 8/min, SpO2 trending down to 90% on room air. This is the expected post-benzo + post-ictal respiratory depression. Crew must now BVM-assist ventilations, maintain airway adjunct, establish IV access in a non-seizing patient, and prepare for possible recurrence (second dose may be needed). Transport is initiated.",
+      "triggerCondition": "Midazolam 10 mg IM was given within ~2 minutes of recurrent seizure recognition. Convulsive activity stopped at approximately 90 seconds post-injection. Patient is now post-ictal with respiratory depression — the combined effect of post-ictal CNS suppression and the IM benzo onboard — and requires BVM-assisted ventilation.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 2, "verbal": 2, "motor": 5 },
+        "airway": "Patent with NPA in place; pooling oropharyngeal secretions cleared with suction",
+        "breathing": "Slow and shallow at 8/min; BVM-assist initiated to maintain rate and tidal volume",
+        "circulation": "Strong radial pulse; warm well-perfused skin",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "diaphoretic" },
+        "pupils": "PERRL, 4 mm — slightly sluggish",
+        "motorFunction": "Flaccid post-ictal; withdraws only to noxious stimuli",
+        "otherFindings": [
+          "Convulsive activity terminated at ~90 seconds post midazolam IM",
+          "Respiratory rate dropped from 22 (during seizure) to 8 (post-benzo + post-ictal)",
+          "SpO2 trended from 94% to 90% before BVM-assist initiated",
+          "IV access now obtained in the now-still patient",
+          "Crew preparing midazolam 10 mg IM second dose in case of recurrence"
+        ],
+        "patientSpeech": "Non-verbal; occasional groan to noxious stimuli"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 104,
+        "bpSys": 138,
+        "bpDia": 86,
+        "respRate": 8,
+        "spo2": 96,
+        "etco2": 44,
+        "temp": 37.4,
+        "tempF": 99.3,
+        "obstruction": 10,
+        "glucose": 96,
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-bvm-assist",
+          "shortAction": "BVM-assist ventilations at 10-12/min with PEEP; titrate to SpO2 94-98%",
+          "protocolExcerpt": "Use bag-valve-mask (BVM) ventilation in the setting of respiratory failure or arrest. Rate — Adult: 10–12 breaths/minute. PEEP should be used with BVM. 5 cmH2O is generally an appropriate initial PEEP setting. Ventilate with just enough volume to see chest rise, approximately 6–8 mL/kg ideal body weight.",
+          "priority": "critical",
+          "rationale": "Benzo-induced + post-ictal respiratory depression. Protocol-specific rate, PEEP, and tidal volume target.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "act-capno-monitor",
+          "shortAction": "Continuous waveform capnography; target EtCO2 35-40 mmHg",
+          "protocolExcerpt": "Continuous wave-form capnography monitoring should be placed in line. In patients without primary pulmonary pathology, maintain EtCO2 of no less than 35 and up to 40 mmHg. Continuously monitor EtCO2 to guide tidal volume and minute ventilation.",
+          "priority": "critical",
+          "rationale": "Best objective measure of BVM adequacy post-benzo and post-seizure.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "act-iv-now",
+          "shortAction": "Establish IV access NOW that patient is still — prep for potential redose",
+          "protocolExcerpt": "IV placement is not necessary for treatment of seizures, but could be obtained if needed for other reasons.",
+          "priority": "important",
+          "rationale": "Patient no longer convulsing — safe and fast to obtain IV for potential second dose, fluids, and other needs.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-redose-ready",
+          "shortAction": "Prep second midazolam dose; redose if seizure recurs (max 2 benzo doses)",
+          "protocolExcerpt": "Patient Safety Considerations: Trained personnel should be able to give medication without contacting medical direction, however, more than two doses of benzodiazepines are associated with high-risk of airway compromise. Use caution, weigh risks/benefits of deferring treatment until hospital, and/or consider consultation with medical direction if patient has received two doses of benzodiazepines by bystanders and/or prehospital clinicians.",
+          "priority": "critical",
+          "rationale": "Anticipates recurrence; sets a protocol-driven ceiling on field benzo dosing.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-transport-decision",
+          "shortAction": "Initiate transport; reassess en route; notify ED of status epilepticus",
+          "protocolExcerpt": "Key Documentation Elements: Actively seizing during transport and time of seizure onset/cessation. Medication amounts/routes given by bystanders or prehospital clinicians. Neurologic status (GCS, nystagmus, pupil size, focal neurologic deficit, or signs of stroke).",
+          "priority": "important",
+          "rationale": "Status epilepticus is a time-critical neurologic emergency; ED needs early notification for ongoing antiepileptic therapy.",
+          "protocolReference": "MATC: Seizures"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "handoff",
+          "if": "Stable to ED with BVM support",
+          "condition": "Patient remains post-ictal with assisted ventilation en route. No seizure recurrence. SpO2 maintained 94-98% on BVM with supplemental O2 and PEEP. GCS slowly improving by handoff. Crew gives structured report including dose, route, time of seizure cessation, and current support.",
+          "conditionType": "time_elapsed",
+          "triggerActionIds": ["act-bvm-assist", "act-transport-decision"]
+        }
+      ]
+    },
+    {
+      "id": "handoff",
+      "name": "Stable to ED",
+      "description": "Patient delivered to the ED with BVM-assisted ventilation, NPA in place, IV established, and no further seizure activity. Crew gives a clean handoff to the ED team — they took an obvious 'IV access in a convulsing patient' bait and chose the IM route, recognized status epilepticus by the 2-minute mark of the recurrent seizure, gave the right dose by the right route, and managed the predictable post-benzo respiratory depression with BVM and capnography. The teaching points sit cleanly: recurrent-without-recovery meets status criteria; IM/IN before IV in the seizing patient; post-benzo respiratory monitoring is mandatory.",
+      "triggerCondition": "Patient transported with BVM support after successful midazolam 10 mg IM termination of status epilepticus. No recurrence en route. Handoff delivered to ED for ongoing antiepileptic management and search for the underlying provocateur (medication non-compliance identified).",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 3, "motor": 5 },
+        "airway": "NPA still in place; patient tolerating; gag returning",
+        "breathing": "Spontaneous at 14/min, supported intermittently with BVM as benzo effect wears",
+        "circulation": "Strong radial pulse, warm and dry",
+        "skin": { "color": "pink", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL, 4 mm — reactive",
+        "motorFunction": "Moving all extremities to noxious stimulus; spontaneous purposeful movement returning",
+        "otherFindings": [
+          "Mental status slowly returning — opens eyes to voice, mumbling appropriately",
+          "No seizure recurrence during 12-minute transport",
+          "ED team accepts patient; neurology consult requested"
+        ],
+        "patientSpeech": "Mumbled single-word responses; cooperating with handoff exam"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 92,
+        "bpSys": 132,
+        "bpDia": 82,
+        "respRate": 14,
+        "spo2": 98,
+        "etco2": 38,
+        "temp": 37.3,
+        "tempF": 99.1,
+        "obstruction": 5,
+        "glucose": 94,
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-handoff-report",
+          "shortAction": "Structured handoff: recurrent seizure, status met, midazolam 10 mg IM, response",
+          "protocolExcerpt": "Key Documentation Elements: Actively seizing during transport and time of seizure onset/cessation. Onset, focality, direction of eye deviation. Medication amounts/routes given by bystanders or prehospital clinicians. Neurologic status (GCS, nystagmus, pupil size, focal neurologic deficit, or signs of stroke). Blood glucose level.",
+          "priority": "critical",
+          "rationale": "ED needs precise timing, route, dose, and response data to guide next-line antiepileptics.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-document-glucose",
+          "shortAction": "Document glucose, full vitals, time of seizure onset/cessation, and meds given",
+          "protocolExcerpt": "Key Documentation Elements: Blood glucose level. Medication amounts/routes given by bystanders or prehospital clinicians.",
+          "priority": "important",
+          "rationale": "Required documentation elements per protocol; supports continuity of care.",
+          "protocolReference": "MATC: Seizures"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "iv-chase-delay",
+      "name": "IV chase; seizure continues",
+      "description": "Crew attempts repeated IV sticks on a convulsing patient. The muscle activity wrecks every attempt; the patient continues seizing for 4 more minutes — now ~6 minutes total of unrelenting convulsive activity. SpO2 drifts down to 84%, skin cyanotic around lips, oral secretions pooling. The crew has effectively chosen the worst path: no benzo given, no IV obtained, airway worsening. Recovery requires abandoning the IV attempt, giving an IM/IN dose immediately, and aggressive airway management with BVM and high-flow O2.",
+      "triggerCondition": "Crew chose to chase IV access on the actively convulsing patient instead of giving an IM/IN benzodiazepine. The seizure has now continued for ~6 minutes without termination. Airway is becoming compromised; cyanosis is developing. This branch demonstrates the cost of ignoring the protocol's explicit IM/IN preference.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 3 },
+        "airway": "Compromised — copious frothy secretions, cyanosis around mouth, jaw clenched",
+        "breathing": "Irregular, ineffective tonic-clonic breathing pattern; tidal volume poor",
+        "circulation": "Tachycardic, strong radial pulse; skin warm but increasingly mottled",
+        "skin": { "color": "cyanotic", "temperature": "warm", "moisture": "diaphoretic" },
+        "pupils": "Mid-position, sluggish",
+        "motorFunction": "Continuous generalized tonic-clonic activity entering 6th minute",
+        "otherFindings": [
+          "Three failed IV attempts during active seizure",
+          "Patient still convulsing — no benzo administered yet",
+          "SpO2 dropped to 84%, EtCO2 climbing to 58",
+          "Visible cyanosis around mouth and nail beds"
+        ],
+        "patientSpeech": "Non-verbal — no purposeful sound"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 142,
+        "bpSys": 168,
+        "bpDia": 104,
+        "respRate": 28,
+        "spo2": 84,
+        "etco2": 58,
+        "temp": 37.8,
+        "tempF": 100.0,
+        "obstruction": 45,
+        "glucose": 92,
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-stop-iv-chase",
+          "shortAction": "Stop chasing IV; switch to IM/IN route per protocol preference",
+          "protocolExcerpt": "Routes for treatment: IN/IM routes are preferred over IV or IO routes (if not already established) and rectal (PR) route as an alternative.",
+          "priority": "critical",
+          "rationale": "The protocol explicitly prefers IM/IN in absence of established access — recognize and pivot.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-midaz-im-rescue",
+          "shortAction": "Midazolam 10 mg IM NOW (80 kg × 0.2 mg/kg = 16 mg → cap at 10 mg max)",
+          "protocolExcerpt": "Anticonvulsant Treatment — If vascular access is absent: Midazolam 0.2 mg/kg (maximum dose 10 mg), IM preferred, or IN.",
+          "priority": "critical",
+          "rationale": "Definitive treatment delayed too long; needs the IM dose without further delay.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-aggressive-airway",
+          "shortAction": "Suction airway, NPA, high-flow O2; prep BVM-assist as seizure terminates",
+          "protocolExcerpt": "If signs of airway obstruction are present and a chin-lift, jaw thrust, positioning, and/or suctioning does not alleviate it, place oropharyngeal airway (if gag reflex is absent) or nasopharyngeal airway. Use bag-valve-mask (BVM) ventilation if oxygenation/ventilation are compromised.",
+          "priority": "critical",
+          "rationale": "Hypoxia is the immediate threat; airway-first while the IM dose takes effect.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-recognize-failure",
+          "shortAction": "Recognize benzo more than two doses risk; consult medical direction if needed",
+          "protocolExcerpt": "Patient Safety Considerations: Trained personnel should be able to give medication without contacting medical direction, however, more than two doses of benzodiazepines are associated with high-risk of airway compromise. Use caution, weigh risks/benefits of deferring treatment until hospital, and/or consider consultation with medical direction if patient has received two doses of benzodiazepines by bystanders and/or prehospital clinicians.",
+          "priority": "important",
+          "rationale": "Sets the ceiling on field benzo dosing and the consultation point.",
+          "protocolReference": "MATC: Seizures"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "underdosed-im",
+      "name": "Underdosed IM benzo",
+      "description": "Crew correctly recognized the need for IM benzo and skipped the IV attempt — but pulled the wrong dose math, giving only 4 mg IM (the IV/IO ceiling dose) instead of the IM ceiling of 10 mg. Seizure does not terminate. After waiting 3-4 minutes for an effect that never comes, the crew must recognize the dosing error, redose to make up the deficit (an additional 6 mg IM to reach the IM ceiling), and accept they will likely hit the protocol's two-dose ceiling — meaning the second dose decision needs to be deliberate and well-documented.",
+      "triggerCondition": "Crew administered midazolam 4 mg IM — confusing the IV/IO ceiling dose (4 mg) with the IM ceiling (10 mg). Seizure continues at 4 minutes post-dose with no effect. The undertreatment is the teaching point: route and ceiling are not interchangeable.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 3 },
+        "airway": "Patent with NPA in place; oral secretions; suction in use",
+        "breathing": "Tonic-clonic pattern, tidal volume marginal",
+        "circulation": "Tachycardic, strong pulse",
+        "skin": { "color": "pale", "temperature": "warm", "moisture": "diaphoretic" },
+        "pupils": "Mid-position, sluggish",
+        "motorFunction": "Continuous generalized tonic-clonic activity at 4 minutes post under-dose",
+        "otherFindings": [
+          "Midazolam 4 mg IM was given 4 minutes ago — IV/IO dose by IM route",
+          "Seizure has not terminated",
+          "Crew now recognizing the dosing error",
+          "SpO2 88%, EtCO2 50"
+        ],
+        "patientSpeech": "Non-verbal"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 132,
+        "bpSys": 158,
+        "bpDia": 98,
+        "respRate": 26,
+        "spo2": 88,
+        "etco2": 50,
+        "temp": 37.6,
+        "tempF": 99.7,
+        "obstruction": 30,
+        "glucose": 94,
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "act-recognize-underdose",
+          "shortAction": "Recognize underdosing: IM ceiling is 10 mg, not the IV 4 mg",
+          "protocolExcerpt": "Anticonvulsant Treatment — If vascular access is absent: Midazolam 0.2 mg/kg (maximum dose 10 mg), IM preferred, or IN. If vascular access (IV or IO) is present: Midazolam 0.1 mg/kg IV or IO, maximum 4 mg.",
+          "priority": "critical",
+          "rationale": "The two dose ceilings (10 mg IM, 4 mg IV) are commonly confused; recognizing the mismatch is the core recovery step.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-second-dose-im",
+          "shortAction": "Midazolam additional 6 mg IM to reach 10 mg total IM ceiling",
+          "protocolExcerpt": "Anticonvulsant Treatment — If vascular access is absent: Midazolam 0.2 mg/kg (maximum dose 10 mg), IM preferred, or IN.",
+          "priority": "critical",
+          "rationale": "Bring patient up to the protocol-allowed IM ceiling without exceeding it.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-airway-support-under",
+          "shortAction": "Suction, NPA, high-flow O2, BVM-assist for hypoxia",
+          "protocolExcerpt": "Place pulse oximeter and/or waveform capnography to monitor oxygenation/ventilation. Administer oxygen as appropriate with a target of achieving 94–98% saturation. Use bag-valve-mask (BVM) ventilation if oxygenation/ventilation are compromised.",
+          "priority": "critical",
+          "rationale": "SpO2 88% with ongoing seizure activity requires immediate airway support.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "act-document-dosing",
+          "shortAction": "Document both doses, times, routes; flag the under-dose for QA review",
+          "protocolExcerpt": "Key Documentation Elements: Medication amounts/routes given by bystanders or prehospital clinicians.",
+          "priority": "important",
+          "rationale": "Honest documentation supports both downstream clinical decision-making and QA learning.",
+          "protocolReference": "MATC: Seizures"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

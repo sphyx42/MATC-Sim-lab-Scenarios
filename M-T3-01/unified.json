@@ -1,0 +1,662 @@
+{
+  "meta": {
+    "id": "M-T3-01",
+    "name": "Polysubstance Overdose with Hemodynamic Collapse",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Medical",
+    "protocols": [
+      "tox-opioid-poisoning-overdose",
+      "tox-poisoning-overdose-universal",
+      "tox-stimulant-poisoning-overdose",
+      "medical-altered-mental-status",
+      "medical-shock",
+      "resp-airway-management"
+    ],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "tier-3",
+      "high-acuity",
+      "polysubstance",
+      "toxicology",
+      "shock",
+      "airway",
+      "competing-toxidromes",
+      "naloxone",
+      "tca-like",
+      "sodium-bicarb",
+      "push-dose-epi"
+    ]
+  },
+  "patient": {
+    "name": "Danielle Voss",
+    "age": 31,
+    "ageUnit": "years",
+    "sex": "female",
+    "weight": 68,
+    "weightLbs": 150,
+    "height": 165,
+    "chiefComplaint": "Unresponsive, suspected polysubstance overdose",
+    "history": {
+      "hpi": "31-year-old female found unresponsive on her living room couch by her roommate, who returned home from a closing shift around 02:10. Roommate reports the patient was 'partying' earlier in the evening with an ex-boyfriend who left several hours ago. The patient has a known history of anxiety, chronic back pain, and prior cocaine use; the roommate has 'gotten her to the ER' twice in the past year for overdoses. On the coffee table next to the patient are an open bottle of alprazolam 1 mg (prescribed, last filled 2 weeks ago, mostly empty), a partially full bottle of oxycodone 10 mg (prescribed to ex-boyfriend per roommate), a glass with residue, a rolled bill, and white powdery residue on a hand mirror. A capped syringe is on the floor. The patient is supine on the couch, GCS 6, breathing shallowly with cyanotic lips. Pupils are 4 mm and sluggish — not the pinpoint pupils the roommate 'expected,' which is a clue this is NOT a pure opioid overdose.",
+      "pastMedical": [
+        "Generalized anxiety disorder",
+        "Chronic low-back pain",
+        "Cocaine use disorder (per roommate)",
+        "Two prior ED visits for overdose in the last year",
+        "Depression"
+      ],
+      "medications": [
+        "Alprazolam 1 mg PO TID PRN anxiety (prescribed)",
+        "Sertraline 100 mg PO daily",
+        "Cyclobenzaprine 10 mg PO TID PRN spasm",
+        "Oxycodone — NOT prescribed to patient (bottle on table prescribed to ex-boyfriend)"
+      ],
+      "allergies": [
+        "NKDA per roommate"
+      ],
+      "lastOralIntake": "Unknown solids; roommate states patient was drinking alcohol earlier in the evening (empty wine bottle on counter)",
+      "events": "Roommate left for work at 18:00 with patient acting normally. Patient hosted ex-boyfriend at the apartment from approximately 20:00 onward; multiple drugs were used per roommate's description of the table contents. Roommate returned at 02:10, found patient unresponsive on the couch, shook her with no response, called 911 immediately. No bystander naloxone administered."
+    }
+  },
+  "scene": {
+    "dispatch": "Medic 7 and Engine 22, respond to 1418 W Mitchell Street, apartment 3B, for a 31-year-old female, possible overdose, unresponsive. Caller is the roommate. PD en route.",
+    "location": "Second-floor walk-up apartment in a residential neighborhood at 02:15. Dim living room lit by a single floor lamp. Patient on a low couch with cluttered coffee table directly in front. Working space is tight between the couch, the coffee table, and a TV stand. Stairs to access — no elevator. Indoor temperature comfortable, approximately 21°C.",
+    "time": "Saturday, 02:15",
+    "safety": "Scene declared safe by PD on arrival. BSI required. A capped syringe is on the floor near the couch and white powdery residue is on a mirror on the table — handle with care, sharps risk. Roommate is calm, cooperative, distressed but answering questions. No other parties in the apartment. Ex-boyfriend has left scene; PD will follow up.",
+    "bystanders": "Roommate (housemate, female, 29) is the historian. Reports patient was 'partying' with ex-boyfriend, who left around 23:00 per neighbor. Roommate states the patient 'always does this with him' and confirms a history of mixing cocaine, benzos, and pain pills. No bystander naloxone given. No CPR or rescue breathing performed.",
+    "visualCues": [
+      "Open alprazolam 1 mg bottle on the coffee table — appears mostly empty",
+      "Oxycodone 10 mg bottle (prescribed to a male name) — partially full",
+      "White powdery residue on a hand mirror with a rolled $20 bill alongside",
+      "Empty wine bottle on the kitchen counter",
+      "Capped syringe on the floor next to the couch",
+      "Patient supine on couch, cyanotic lips, jaw slack, shallow snoring respirations",
+      "Pupils visibly mid-sized (approximately 4 mm) on initial inspection — NOT pinpoint",
+      "No vomit, no obvious trauma, no medical alert jewelry"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a 31-year-old female on the couch, unresponsive, with shallow respirations and visible cyanosis around the lips. The scene strongly suggests overdose — drug paraphernalia on the coffee table — but the picture is mixed: pupils are 4 mm and sluggish (NOT pinpoint), heart rate is 124, blood pressure is 78/52, and the monitor shows a wide-complex sinus tachycardia with QRS measured at 130 ms. This is the teaching beat of this scenario: pure opioid overdose produces miosis, bradypnea, AND bradycardia/hypotension with NORMAL QRS. Tachycardia plus wide QRS plus mid-sized pupils points to a polysubstance picture — likely cocaine (sympathomimetic, sodium-channel-blocking) plus benzodiazepine plus opioid. The crew must resist the reflex to push naloxone first and instead manage airway, breathing, circulation, and start working through the competing toxidromes individually.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 4 },
+        "airway": "Patent but at risk — snoring respirations with jaw slack; no vomit at this time; tongue posterior; SpO2 84%",
+        "breathing": "Shallow, slow respirations at 8/min; minimal chest rise; lung sounds clear bilaterally but air movement is poor",
+        "circulation": "Carotid pulse rapid and weak at 124/min; radial pulse thready; cap refill 3 seconds; skin cool to touch",
+        "skin": { "color": "Pale with peri-oral cyanosis", "temperature": "Cool", "moisture": "Diaphoretic on chest and forehead" },
+        "pupils": "4 mm bilaterally, sluggishly reactive — NOT pinpoint (key clue)",
+        "motorFunction": "Flaccid; withdraws weakly to sternal rub (motor 4); no posturing; no focal deficits",
+        "otherFindings": [
+          "No track marks on antecubital fossae; one healed scar over right deltoid",
+          "Cyanotic lips and nail beds",
+          "Diaphoresis on chest and forehead despite cool skin",
+          "No signs of trauma to head, torso, or extremities",
+          "Drug paraphernalia (alprazolam bottle, oxycodone bottle, cocaine residue, syringe) visible within arm's reach"
+        ],
+        "patientSpeech": "None — unresponsive"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 124,
+        "bpSys": 78,
+        "bpDia": 52,
+        "respRate": 8,
+        "spo2": 84,
+        "etco2": 58,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 92,
+        "customMeasures": [
+          { "label": "QRS duration (ms)", "value": 130 }
+        ],
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "scene-safety-bsi",
+          "shortAction": "Scene safety, BSI, secure sharps; identify all substances on scene",
+          "protocolExcerpt": "Make sure the scene is safe. Use environmental Carbon Monoxide (CO) detector on 'first in' bag if possible. Consider body substance isolation (BSI) or appropriate PPE. Check for needle marks, paraphernalia, bites, bottles, or evidence of agent involved in exposure, self-inflicted injury, or trauma. When indicated, identify specific medication taken (including immediate release vs sustained release), time of ingestion, dose, and quantity. When appropriate, bring all medications (prescribed and not prescribed) found in the environment.",
+          "priority": "critical",
+          "rationale": "Polysubstance ingestion is a forensic and clinical priority — knowing what is on the table changes the receiving ED's tox plan. Sharps are immediately adjacent to the patient.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "primary-survey",
+          "shortAction": "Rapid primary survey (ABCDE); recognize impending respiratory failure",
+          "protocolExcerpt": "Assess the patient's airway, breathing, circulation, and mental status. Support the patient's airway by positioning, oxygen administration, and ventilator assistance with a bag valve mask if necessary. Assess the patient for other etiologies of altered mental status including hypoxia (pulse oximetry less than 94%), hypoglycemia, hypotension, and traumatic head injury.",
+          "priority": "critical",
+          "rationale": "Sets the priority of airway/breathing over reflex naloxone administration.",
+          "protocolReference": "MATC: Opioid Poisoning/Overdose"
+        },
+        {
+          "id": "airway-suction-opa",
+          "shortAction": "Suction prn, open airway, insert OPA",
+          "protocolExcerpt": "Open and maintain patent airway. If needed, provide head tilt/chin lift, or jaw thrust if concern for potential spinal injury. Suction airway: for significantly contaminated airways, consider utilizing a suction assisted laryngeal airway decontamination (SALAD) technique. Oropharyngeal airways (OPA) or nasopharyngeal airways (NPA) can be placed if needed to maintain a patent airway and make BVM ventilation more effective. OPA are used for patients without gag reflex.",
+          "priority": "critical",
+          "rationale": "Patient is GCS 6 with no gag — OPA is appropriate. Suction available for emesis risk.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "bvm-with-peep",
+          "shortAction": "Two-person BVM with PEEP 5 cmH2O at 10–12 breaths/min, titrate to SpO2 94–98%",
+          "protocolExcerpt": "Use bag-valve-mask (BVM) ventilation in the setting of respiratory failure or arrest. Whenever possible, the patient's head should be elevated up to 30 degrees. Two-person, two-thumbs-up BVM ventilation is preferred. PEEP should be used with BVM. 5 cmH2O is generally an appropriate initial PEEP setting. Rate — Adult: 10–12 breaths/minute. Ventilate with just enough volume to see chest rise, approximately 6–8 mL/kg ideal body weight.",
+          "priority": "critical",
+          "rationale": "Hypoventilation is the immediate killer. PEEP supports oxygenation in a patient with shunt physiology.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "monitor-12-lead",
+          "shortAction": "Cardiac monitor + 12-lead ECG; note wide QRS = 130 ms",
+          "protocolExcerpt": "Attach cardiac monitor and examine rhythm strip for arrhythmias (consider 12-lead EKG). Monitor pulse oximetry and end-tidal capnography (EtCO2) for respiratory decompensation. Cocaine has sodium channel blocking effects and can cause significant cardiac conduction abnormalities with a widened QRS. Treatment is with sodium bicarbonate similar to a tricyclic antidepressant. Check a 12-lead EKG to assess for these complications.",
+          "priority": "critical",
+          "rationale": "The wide QRS is THE diagnostic clue that this isn't pure opioid — must capture it early.",
+          "protocolReference": "MATC: Stimulant Poisoning/Overdose"
+        },
+        {
+          "id": "glucose-check",
+          "shortAction": "Blood glucose: 92 mg/dL (rules out hypoglycemia)",
+          "protocolExcerpt": "Check blood glucose level. Assess the patient for other etiologies of altered mental status including hypoxia (pulse oximetry less than 94%), hypoglycemia, hypotension, and traumatic head injury.",
+          "priority": "important",
+          "rationale": "AEIOU-TIPS — rule out the easily reversible.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "iv-access",
+          "shortAction": "Establish IV access x2 (large bore preferred)",
+          "protocolExcerpt": "Initiate IV access for infusion of treatment medication and/or lactated Ringer's or normal saline if indicated, and obtain blood samples if EMS management might change based upon the value (e.g., glucose, lactate, cyanide). Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle.",
+          "priority": "critical",
+          "rationale": "Need access for fluids, naloxone trial, bicarb, push-dose epi.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "recognize-mixed-toxidrome",
+          "shortAction": "Recognize mixed toxidrome: opioids + stimulant + benzo (not pure opioid)",
+          "protocolExcerpt": "Toxidromes are constellations of signs and symptoms that aid in the identification of certain classes of medications and their toxic manifestations. These toxidrome constellations may be masked or obscured in polypharmacy events due to counteracting effects of the toxins. Opioids — Respiratory depression, Miosis (pinpoint pupils), Altered mental status, Decreased bowel sounds. Stimulants (Sympathomimetic) — Tachycardia, tachydysrhythmias; Hypertension; Diaphoresis; Delusions/paranoia; Seizures; Hyperthermia; Mydriasis (dilated pupils).",
+          "priority": "critical",
+          "rationale": "Naming the picture out loud anchors the right treatment plan. The teaching beat of this scenario.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "supported-ventilation",
+          "if": "Airway managed, BVM started, mixed picture recognized",
+          "condition": "Crew suctions, places OPA, begins two-person BVM with PEEP 5 cmH2O at 12/min, establishes IV access, gets 12-lead showing wide QRS, and explicitly verbalizes that the mid-sized pupils + tachycardia + wide QRS picture is NOT consistent with isolated opioid OD.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["airway-suction-opa", "bvm-with-peep", "iv-access", "monitor-12-lead", "recognize-mixed-toxidrome"]
+        },
+        {
+          "targetPhaseId": "naloxone-anchored",
+          "if": "Naloxone given first without airway/BVM support",
+          "condition": "Crew anchors on the opioid component, pushes naloxone IV/IN as the first intervention without first establishing definitive airway support or recognizing the wide QRS / tachycardia / mid-sized pupils that argue against a pure opioid picture. They focus on chasing alertness with escalating naloxone doses rather than managing the parallel toxidromes.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["airway-suction-opa", "bvm-with-peep", "recognize-mixed-toxidrome"]
+        }
+      ]
+    },
+    {
+      "id": "supported-ventilation",
+      "name": "Airway supported, BVM started",
+      "description": "With two-person BVM, PEEP 5 cmH2O, and an OPA in place, the patient's SpO2 climbs from 84% to 92% over the next 90 seconds and EtCO2 falls from 58 to 48 mmHg. Heart rate remains 120, blood pressure has not improved — 80/54 with a MAP of 63. QRS still 128 ms on the rhythm strip. The patient is still GCS 6, no improvement in mentation. This is the window where the crew must work the hypotension and the wide-complex rhythm as their own problems rather than waiting for naloxone to fix the picture.",
+      "triggerCondition": "Crew has secured airway with OPA, begun effective two-person BVM with PEEP, established IV access, captured a 12-lead, and explicitly named this as a mixed polysubstance picture. Oxygenation improves but hemodynamics and conduction abnormality remain.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 4 },
+        "airway": "Patent — OPA in place, BVM seal intact, two-person technique, no vomit",
+        "breathing": "BVM-assisted at 12/min with PEEP 5 cmH2O; good chest rise; bilateral breath sounds clear",
+        "circulation": "Carotid rapid and thready at 120; radial weak; cap refill still 3 seconds; cool diaphoretic skin",
+        "skin": { "color": "Improving — cyanosis resolving with oxygenation", "temperature": "Cool", "moisture": "Diaphoretic" },
+        "pupils": "4 mm sluggish bilaterally — unchanged",
+        "motorFunction": "Flaccid; minimal withdrawal to sternal rub; no purposeful movement",
+        "otherFindings": [
+          "SpO2 climbing on BVM with PEEP",
+          "EtCO2 trending down toward 45 mmHg",
+          "Wide QRS persists on monitor — clearly visible 12-lead complex on strip",
+          "No improvement in BP or mentation despite oxygenation"
+        ],
+        "patientSpeech": "None — unresponsive"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 120,
+        "bpSys": 80,
+        "bpDia": 54,
+        "respRate": 12,
+        "spo2": 92,
+        "etco2": 48,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 92,
+        "customMeasures": [
+          { "label": "QRS duration (ms)", "value": 128 }
+        ],
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "naloxone-titrated-trial",
+          "shortAction": "Naloxone 0.4 mg IV slow push, titrate to respiratory effort (not alertness)",
+          "protocolExcerpt": "If the patient has respiratory depression from a confirmed or suspected opioid overdose, consider naloxone administration. The administration of the initial dose or subsequent doses can be incrementally titrated until respiratory depression is reversed. Adults: The typical initial adult dose ranges between Naloxone 0.4–2 mg IV, IM, up to a dose of 4 mg IN or 5 mg ETT. The administration of naloxone can be titrated until adequate respiratory effort is achieved if administered with a syringe IV, IM, IN, or ETT.",
+          "priority": "critical",
+          "rationale": "Low-dose titration after airway support — avoids precipitating withdrawal in a hemodynamically fragile patient. Goal is respiratory effort, not full reversal.",
+          "protocolReference": "MATC: Opioid Poisoning/Overdose"
+        },
+        {
+          "id": "fluid-bolus-shock",
+          "shortAction": "NS 1.4 L bolus (68 kg × 20 mL/kg = 1360 mL), reassess after each 500 mL",
+          "protocolExcerpt": "Consider fluid bolus (20 mL/kg) if evidence of hypoperfusion. Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops. Physiologic target: MAP goal 65 mmHg.",
+          "priority": "critical",
+          "rationale": "Distributive/mixed shock from polysubstance — fluids before pressors.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "sodium-bicarb-wide-qrs",
+          "shortAction": "Sodium bicarbonate 68–136 mEq IV (68 kg × 1–2 mEq/kg) for wide QRS",
+          "protocolExcerpt": "Tricyclic Antidepressant (TCA)/Sodium Channel Blocker Overdose — Consider early airway management. If widened QRS (100 msec or greater), consider sodium bicarbonate 1–2 mEq/kg IV, this can be repeated as needed to narrow QRS and improve blood pressure. Cocaine has sodium channel blocking effects and can cause significant cardiac conduction abnormalities with a widened QRS. Treatment is with sodium bicarbonate similar to a tricyclic antidepressant.",
+          "priority": "critical",
+          "rationale": "QRS 130 ms from cocaine's sodium-channel blockade — bicarb is the treatment, NOT antiarrhythmics. May repeat.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "reassess-vitals",
+          "shortAction": "Reassess vitals, GCS, QRS, EtCO2 every 3–5 min",
+          "protocolExcerpt": "Repeat vital signs often. Monitor patient airway, breathing, pulse oximetry, EtCO2 for adequate ventilation as they may change over time. Monitor level of consciousness. Monitor EKG with special attention to rate, rhythm, QRS and QT duration. Frequent reassessment is essential as patient deterioration can be rapid and catastrophic.",
+          "priority": "critical",
+          "rationale": "Polysubstance OD deteriorates fast — bicarb response, naloxone wear-off, and rebound stimulant effects all reshape the picture.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "avoid-flumazenil",
+          "shortAction": "DO NOT give flumazenil — risk of seizures in mixed OD",
+          "protocolExcerpt": "Flumazenil is not indicated in a suspected benzodiazepine overdose as it can precipitate refractory/intractable seizures if the patient is a benzodiazepine dependent patient.",
+          "priority": "critical",
+          "rationale": "Especially dangerous here — the wide QRS suggests sodium-channel blockade. Flumazenil + TCA-like rhythm = catastrophic seizures.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "fluid-refractory",
+          "if": "Fluids + bicarb given, BP remains <90 systolic",
+          "condition": "After 1 L NS bolus and 100 mEq sodium bicarbonate, QRS narrows to 110 ms and SpO2 stays at 96% on BVM, but blood pressure remains 84/56 with a MAP of 65 — borderline. Patient remains unresponsive. The crew now needs to consider push-dose pressors.",
+          "conditionType": "vital_threshold",
+          "triggerActionIds": ["fluid-bolus-shock", "sodium-bicarb-wide-qrs"]
+        },
+        {
+          "targetPhaseId": "flumazenil-given",
+          "if": "Flumazenil given for 'benzo component'",
+          "condition": "Crew gives flumazenil 0.2 mg IV thinking it will reverse the benzodiazepine component of the overdose and 'wake the patient up.' Within 90 seconds the patient seizes — tonic-clonic activity in the setting of cocaine-induced sodium channel blockade and unopposed sympathomimetic drive. Catastrophic branch.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["avoid-flumazenil"]
+        }
+      ]
+    },
+    {
+      "id": "fluid-refractory",
+      "name": "Fluid-refractory hypotension",
+      "description": "After 1 L of NS and sodium bicarbonate 100 mEq IV, the QRS has narrowed to 110 ms and SpO2 is 96% on BVM, but the blood pressure has only crept up to 84/56 (MAP 65). Heart rate 116. The patient remains GCS 6 with shallow respirations between BVM-delivered breaths. This is the moment to add push-dose epinephrine while continuing fluid resuscitation and preparing for transport. Reassess for additional bicarb if QRS widens again.",
+      "triggerCondition": "After full first-bolus fluid resuscitation (approximately 1 L) and sodium bicarbonate 1–2 mEq/kg, the patient's QRS has narrowed but blood pressure remains borderline with a MAP at 65 mmHg. Fluid-refractory distributive shock from polysubstance toxicity.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 4 },
+        "airway": "Patent — OPA in place, BVM with PEEP, no aspiration",
+        "breathing": "BVM-assisted at 12/min; chest rise good; bilateral breath sounds clear; no rales",
+        "circulation": "Carotid rapid at 116; radial palpable but weak; cap refill 2–3 seconds",
+        "skin": { "color": "Improved — cyanosis resolved", "temperature": "Cool", "moisture": "Diaphoretic, less pronounced" },
+        "pupils": "4 mm bilaterally, sluggish",
+        "motorFunction": "Flaccid; trace withdrawal to sternal rub",
+        "otherFindings": [
+          "QRS narrowed from 130 to 110 ms after bicarb",
+          "No rales — fluid still appropriate",
+          "EtCO2 stable at 42 mmHg",
+          "Patient still requires assisted ventilation"
+        ],
+        "patientSpeech": "None — unresponsive"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 116,
+        "bpSys": 84,
+        "bpDia": 56,
+        "respRate": 12,
+        "spo2": 96,
+        "etco2": 42,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 0,
+        "glucose": 92,
+        "customMeasures": [
+          { "label": "QRS duration (ms)", "value": 110 }
+        ],
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "push-dose-epi",
+          "shortAction": "Push-dose epi 10 mcg IV (1 mL of 10 mcg/mL dilution) q3–5 min, titrate to MAP ≥65",
+          "protocolExcerpt": "Vasopressors (shock unresponsive to IV fluids) titrated to physiologic targets. Epinephrine, 0.05–0.3 mcg/kg/minute. Alternative to a drip, push dose epinephrine may be administered: Prepare 10 mcg/mL by diluting 1 mL of epinephrine 0.1 mg/mL (1:10,000) in 9 mL of normal saline. Administer 0.01 mg/kg (0.1 mL/kg) up to a maximum single dose of 10 mcg (1 mL) q 3–5 minutes titrated to maintain goal MAP.",
+          "priority": "critical",
+          "rationale": "Fluid-refractory shock after appropriate volume — pressor is the next move. Epinephrine preferred over dopamine in stimulant-tox shock per protocol.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "second-fluid-bolus",
+          "shortAction": "Continue NS to ~30 mL/kg (~2 L total), reassess for rales",
+          "protocolExcerpt": "Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops. Recognition of cardiogenic shock — If the patient condition deteriorates after fluid administration, rales or hepatomegaly develop, then consider cardiogenic shock and withholding further fluid administration.",
+          "priority": "important",
+          "rationale": "Continue volume to MAP target with watchful eye for fluid overload.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "repeat-bicarb-if-wide",
+          "shortAction": "If QRS rewidens >100 ms, repeat sodium bicarb 68–136 mEq IV (1–2 mEq/kg)",
+          "protocolExcerpt": "If widened QRS (100 msec or greater), consider sodium bicarbonate 1–2 mEq/kg IV, this can be repeated as needed to narrow QRS and improve blood pressure.",
+          "priority": "important",
+          "rationale": "Cocaine/sodium-channel effects can rebound — keep bicarb on the table.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "early-transport-notification",
+          "shortAction": "Early transport with advanced ED notification (polysubstance, wide-QRS, on pressors)",
+          "protocolExcerpt": "Provide advanced notification to the hospital. The regional poison center should be engaged as early as reasonably possible to aid in appropriate therapy and to track patient outcomes to improve knowledge of toxic effects.",
+          "priority": "critical",
+          "rationale": "Receiving facility needs head-up — tox consult, potential intubation, possible ICU.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "monitor-naloxone-wearoff",
+          "shortAction": "Monitor for recurrent respiratory depression as naloxone wears off",
+          "protocolExcerpt": "Clinical duration of naloxone — The clinical opioid reversal effect of naloxone is limited and may end within an hour whereas opioids often have a duration of 4 hours or longer. Monitor the patient for recurrent respiratory depression and decreased mental status.",
+          "priority": "important",
+          "rationale": "Naloxone half-life is shorter than oxycodone — re-dose may be needed mid-transport.",
+          "protocolReference": "MATC: Opioid Poisoning/Overdose"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "stabilized-transport",
+          "if": "Push-dose epi given, MAP ≥65, transport initiated",
+          "condition": "Push-dose epinephrine 10 mcg IV brings the blood pressure to 96/62 within 2 minutes. QRS remains 108 ms. SpO2 96% on BVM. Crew has notified the receiving ED and is loading the patient for transport, with a second IV running NS at a maintenance rate and the patient on the monitor.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["push-dose-epi", "early-transport-notification"]
+        }
+      ]
+    },
+    {
+      "id": "stabilized-transport",
+      "name": "Stabilized, en route to ED",
+      "description": "Patient is loaded and en route to the receiving emergency department. BP has come up to 96/62 after push-dose epinephrine, QRS is 108 ms, SpO2 96% on BVM. The patient remains GCS 6 but is being adequately oxygenated and ventilated. Crew continues to reassess vitals every 5 minutes, watch for naloxone wear-off, watch for QRS rewidening, and is prepared to re-dose bicarb or push-dose epi en route. The polysubstance picture has been managed by treating each component individually rather than chasing a single antidote.",
+      "triggerCondition": "Push-dose epinephrine has brought MAP to target. Patient is hemodynamically stable enough for transport with ongoing BVM ventilation, IV fluids, and monitor. ED notified and expecting a polysubstance overdose with wide-QRS and hemodynamic instability.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 4 },
+        "airway": "Patent — OPA in place, BVM with PEEP, monitor placed",
+        "breathing": "BVM-assisted at 12/min; bilateral breath sounds clear; chest rise good",
+        "circulation": "Carotid steady at 108; radial palpable; cap refill 2 seconds",
+        "skin": { "color": "Pink, no cyanosis", "temperature": "Warming", "moisture": "Less diaphoretic" },
+        "pupils": "4 mm bilaterally, slightly more reactive",
+        "motorFunction": "Flaccid; trace withdrawal",
+        "otherFindings": [
+          "Stable on monitor in back of ambulance",
+          "Receiving facility has acknowledged the call and is preparing the resus bay",
+          "QRS 108 ms — borderline but narrower than initial",
+          "Ready to re-dose bicarb or epi if vitals trend back"
+        ],
+        "patientSpeech": "None — unresponsive"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 108,
+        "bpSys": 96,
+        "bpDia": 62,
+        "respRate": 12,
+        "spo2": 96,
+        "etco2": 40,
+        "temp": 36.9,
+        "tempF": 98.4,
+        "obstruction": 0,
+        "glucose": 92,
+        "customMeasures": [
+          { "label": "QRS duration (ms)", "value": 108 }
+        ],
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "continuous-reassessment",
+          "shortAction": "Continuous reassessment q5 min en route; document vitals + QRS",
+          "protocolExcerpt": "Repeat vital signs often. Monitor patient airway, breathing, pulse oximetry, EtCO2 for adequate ventilation as they may change over time. Frequent reassessment is essential as patient deterioration can be rapid and catastrophic.",
+          "priority": "critical",
+          "rationale": "Polysubstance pictures shift mid-transport — naloxone wears off, bicarb effect fades, push-dose epi has short duration.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "handoff-ed",
+          "shortAction": "Structured handoff: agents involved, timeline, doses given, response",
+          "protocolExcerpt": "Identification of possible etiology of poisoning. Time of symptoms onset and time of initiation of exposure-specific treatments. Repeat evaluation and documentation of signs and symptoms as patient clinical conditions may deteriorate rapidly.",
+          "priority": "critical",
+          "rationale": "ED needs the substances on the table, the naloxone dose, the bicarb dose, the QRS trend, and the pressor titration.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        }
+      ]
+    },
+    {
+      "id": "naloxone-anchored",
+      "name": "Naloxone-anchored: escalating doses, missed picture",
+      "description": "Crew anchors on the opioid component and pushes naloxone before securing the airway or recognizing the wide-complex tachycardia. They give 0.4 mg, then 2 mg, then 4 mg IN, chasing alertness while the patient remains hypotensive at 76/50 with a QRS that widens to 140 ms. SpO2 drops to 80% because no one has been managing the airway. The hypotension and wide QRS are completely untreated. This is a Tier-3 teaching branch: an antidote-only mindset misses parallel toxidromes and the patient deteriorates toward arrest.",
+      "triggerCondition": "Crew gave escalating naloxone doses (0.4 mg IV → 2 mg IN → 4 mg IN) as the first-line intervention without establishing BVM ventilation, without obtaining a 12-lead, without addressing the wide QRS, and without managing the hypotension with fluids. The cocaine and TCA-like effects continue untreated; oxygenation deteriorates because nobody is ventilating.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 2 },
+        "airway": "Partially obstructed — tongue posterior, no adjunct placed, snoring respirations",
+        "breathing": "Slow, shallow, agonal at 4/min; minimal chest rise; lungs clear but air movement poor",
+        "circulation": "Carotid weak and rapid at 134; radial absent; cap refill 4 seconds; cold mottled skin",
+        "skin": { "color": "Mottled, cyanotic centrally and peripherally", "temperature": "Cold", "moisture": "Cool diaphoresis" },
+        "pupils": "4 mm bilaterally, sluggish — naloxone has not changed pupil size",
+        "motorFunction": "Flaccid; no withdrawal to sternal rub",
+        "otherFindings": [
+          "Three doses of naloxone given over 8 minutes — no response in mentation",
+          "QRS now 140 ms — wider than at arrival",
+          "No BVM, no OPA, no IV fluids running",
+          "SpO2 dropping despite naloxone — because nobody is ventilating",
+          "Crew is preparing a fourth naloxone dose"
+        ],
+        "patientSpeech": "None — unresponsive"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 134,
+        "bpSys": 76,
+        "bpDia": 50,
+        "respRate": 4,
+        "spo2": 80,
+        "etco2": 65,
+        "temp": 36.7,
+        "tempF": 98.1,
+        "obstruction": 0,
+        "glucose": 92,
+        "customMeasures": [
+          { "label": "QRS duration (ms)", "value": 140 }
+        ],
+        "trendTimeSeconds": 25,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "stop-anchoring",
+          "shortAction": "STOP escalating naloxone; recognize this is not pure opioid",
+          "protocolExcerpt": "Regardless of the doses of naloxone administered, airway management with provision of adequate oxygenation and ventilation is the primary goal in patients with confirmed or suspected opioid overdose. Naloxone is used as therapeutic intervention, not a diagnostic tool.",
+          "priority": "critical",
+          "rationale": "More naloxone does not fix sodium-channel blockade or distributive shock. The protocol explicitly states naloxone is a therapeutic, not a diagnostic.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "rescue-airway",
+          "shortAction": "Rescue airway: suction, OPA, two-person BVM with PEEP",
+          "protocolExcerpt": "Critical resuscitation (opening and/or maintaining the airway, provision of oxygen, ensuring adequate circulation) should be performed prior to naloxone administration. EMS clinicians should be prepared to initiate airway management before, during, and after naloxone administration and to provide appropriate airway support until the patient has adequate respiratory effort.",
+          "priority": "critical",
+          "rationale": "The thing that should have been done first must be done now.",
+          "protocolReference": "MATC: Opioid Poisoning/Overdose"
+        },
+        {
+          "id": "rescue-bicarb",
+          "shortAction": "Sodium bicarb 68–136 mEq IV (68 kg × 1–2 mEq/kg) for QRS 140 ms",
+          "protocolExcerpt": "If widened QRS (100 msec or greater), consider sodium bicarbonate 1–2 mEq/kg IV, this can be repeated as needed to narrow QRS and improve blood pressure.",
+          "priority": "critical",
+          "rationale": "The widening QRS is the immediate threat — patient is trending toward dysrhythmic arrest.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "rescue-fluids-pressor",
+          "shortAction": "NS bolus + push-dose epi 10 mcg IV for refractory hypotension",
+          "protocolExcerpt": "Consider fluid challenge (20 mL/kg) for hypotension. Consider vasopressors after adequate fluid resuscitation (1–2 liters of crystalloid in adult) for the hypotensive patient. Push dose epinephrine may be administered: Prepare 10 mcg/mL by diluting 1 mL of epinephrine 0.1 mg/mL (1:10,000) in 9 mL of normal saline. Administer 0.01 mg/kg (0.1 mL/kg) up to a maximum single dose of 10 mcg (1 mL) q 3–5 minutes titrated to maintain goal MAP.",
+          "priority": "critical",
+          "rationale": "Late but necessary — hemodynamic collapse will arrest the patient if not corrected.",
+          "protocolReference": "MATC: Shock"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "flumazenil-given",
+      "name": "Flumazenil given → seizures",
+      "description": "Crew gives flumazenil 0.2 mg IV thinking it will reverse the benzodiazepine component. Within 90 seconds the patient develops a tonic-clonic seizure. The combination of unmasking the proconvulsant effect of cocaine, removing the benzodiazepine's anticonvulsant brake, and the existing sodium-channel blockade produces a refractory seizure picture. SpO2 crashes during the seizure, QRS widens further to 150 ms. This is a catastrophic, protocol-violating branch — flumazenil is explicitly contraindicated in mixed overdose.",
+      "triggerCondition": "Crew administers flumazenil 0.2 mg IV believing it will reverse the benzodiazepine component of a polysubstance overdose. Within 60–90 seconds the patient seizes — flumazenil unmasks the proconvulsant effects of cocaine and tricyclic-like sodium-channel blockade, with no benzodiazepine on board to suppress seizure activity.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 3 },
+        "airway": "Compromised — actively seizing, clenched jaw, BVM seal lost; risk of aspiration",
+        "breathing": "Apneic during tonic phase, irregular during clonic phase; no effective ventilation",
+        "circulation": "Carotid rapid at 140; radial absent; cap refill 4 seconds; centrally cyanotic",
+        "skin": { "color": "Cyanotic centrally during seizure", "temperature": "Warm", "moisture": "Diaphoretic" },
+        "pupils": "Deviated, sluggish; eyes rolled back during tonic phase",
+        "motorFunction": "Tonic-clonic activity of all four extremities",
+        "otherFindings": [
+          "Seizure activity ongoing 90+ seconds — status epilepticus territory",
+          "QRS widened to 150 ms during seizure",
+          "SpO2 dropped to 76% during tonic phase",
+          "Flumazenil reversed any benzo brake — no anticonvulsant on board",
+          "Crew now scrambling to secure airway and abort seizure"
+        ],
+        "patientSpeech": "None — seizing"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 140,
+        "bpSys": 72,
+        "bpDia": 48,
+        "respRate": 0,
+        "spo2": 76,
+        "etco2": 70,
+        "temp": 37.4,
+        "tempF": 99.3,
+        "obstruction": 0,
+        "glucose": 92,
+        "customMeasures": [
+          { "label": "QRS duration (ms)", "value": 150 }
+        ],
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-flumazenil-error",
+          "shortAction": "Recognize flumazenil error; do NOT repeat the dose",
+          "protocolExcerpt": "Flumazenil is not indicated in a suspected benzodiazepine overdose as it can precipitate refractory/intractable seizures if the patient is a benzodiazepine dependent patient.",
+          "priority": "critical",
+          "rationale": "Crew must verbalize the protocol violation and stop the harm.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "abort-seizure",
+          "shortAction": "Midazolam 5 mg IV (68 kg × 0.1 mg/kg = 6.8 mg → cap at 5 mg max single dose)",
+          "protocolExcerpt": "Adult: midazolam 0.1 mg/kg in 2 mg increments slow IV push over one to two minutes per increment with maximum single dose 5 mg.",
+          "priority": "critical",
+          "rationale": "Benzodiazepine is the only available rescue for flumazenil-induced seizures — reload the receptor that flumazenil just blocked.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "rescue-airway-seizure",
+          "shortAction": "Secure airway during seizure: suction, OPA when jaw relaxes, BVM with PEEP",
+          "protocolExcerpt": "Open and maintain patent airway. Suction airway: for significantly contaminated airways, consider utilizing a suction assisted laryngeal airway decontamination (SALAD) technique. Two-person, two-thumbs-up BVM ventilation is preferred. PEEP should be used with BVM. 5 cmH2O is generally an appropriate initial PEEP setting.",
+          "priority": "critical",
+          "rationale": "Hypoxia during prolonged seizure drives the QRS even wider and progresses to arrest.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "bicarb-rescue-seizure",
+          "shortAction": "Sodium bicarb 136 mEq IV (68 kg × 2 mEq/kg) for QRS 150 ms",
+          "protocolExcerpt": "If widened QRS (100 msec or greater), consider sodium bicarbonate 1–2 mEq/kg IV, this can be repeated as needed to narrow QRS and improve blood pressure.",
+          "priority": "critical",
+          "rationale": "Higher-end dosing — patient is deteriorating toward dysrhythmic arrest.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

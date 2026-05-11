@@ -1,0 +1,608 @@
+{
+  "meta": {
+    "id": "M-T2-04",
+    "name": "Tricyclic Antidepressant Overdose",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Medical",
+    "protocols": [
+      "tox-poisoning-overdose-universal",
+      "medical-altered-mental-status",
+      "medical-shock",
+      "cv-tachycardia",
+      "medical-seizures"
+    ],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "medical",
+      "toxicology",
+      "tca",
+      "amitriptyline",
+      "sodium-bicarbonate",
+      "wide-qrs",
+      "anticholinergic",
+      "intentional-overdose",
+      "decision-dense",
+      "tier-2"
+    ]
+  },
+  "patient": {
+    "name": "Hannah Mercer",
+    "age": 28,
+    "ageUnit": "years",
+    "sex": "female",
+    "weight": 65,
+    "weightLbs": 143,
+    "height": 165,
+    "chiefComplaint": "Unresponsive — found at home by roommate; suspected intentional overdose",
+    "history": {
+      "hpi": "28-year-old female with a history of chronic low-back pain and major depressive disorder, found unresponsive in her bedroom by her roommate. Per the roommate, the patient has been increasingly withdrawn over the past two weeks and texted a 'goodbye' message about an hour before being found. Two prescription bottles on the nightstand: an empty 100-tablet bottle of amitriptyline 50 mg (filled 4 days ago) and a near-empty bottle of ibuprofen. No vomiting noted. No witnessed seizure. Time of ingestion unknown but estimated within the last 2-3 hours based on the goodbye text timeline.",
+      "pastMedical": [
+        "Major depressive disorder",
+        "Chronic low-back pain",
+        "Generalized anxiety disorder",
+        "One prior psychiatric admission 14 months ago (suicidal ideation, no attempt)"
+      ],
+      "medications": [
+        "Amitriptyline 50 mg PO QHS (prescribed for chronic pain and depression)",
+        "Sertraline 100 mg PO daily",
+        "Ibuprofen 400 mg PO PRN",
+        "Multivitamin"
+      ],
+      "allergies": ["NKDA"],
+      "lastOralIntake": "Unknown — roommate reports she did not eat dinner; coffee mug on the nightstand half-full.",
+      "events": "Roommate came home from work, found pt unresponsive on the bed, called 911 immediately. Two pill bottles on the nightstand; phone next to pt with an unsent draft message visible. No signs of trauma, no obvious vomitus, no needles, no alcohol bottles."
+    }
+  },
+  "scene": {
+    "dispatch": "28-year-old female, found unresponsive, possible overdose. Roommate on scene. Breathing reported but not waking up.",
+    "location": "Second-floor bedroom of a two-bedroom apartment. Patient supine on bed, fully clothed. Room dim, curtains drawn. Stretcher access via narrow hallway and one staircase.",
+    "time": "Saturday afternoon, 14:38",
+    "safety": "Scene safe. Law enforcement en route per dispatch for unattended overdose. No weapons reported. No environmental hazards. No pets in room.",
+    "bystanders": "Roommate (24F) — distraught but coherent. Provides medication bottles and shows the goodbye text on her phone. States patient has been depressed and recently 'said weird things' about not waking up.",
+    "visualCues": [
+      "Empty amitriptyline 50 mg bottle on the nightstand (Rx filled 4 days ago, originally 100 tablets)",
+      "Near-empty ibuprofen 400 mg bottle next to it",
+      "Phone face-up on the bed with a draft 'goodbye' text visible",
+      "No vomitus, no needles, no alcohol bottles",
+      "Pt appears flushed, dry skin, mouth slightly open",
+      "Foley not present; abdomen visibly distended at the suprapubic region"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 28-year-old female unresponsive on her bed. Roommate hands the crew two pill bottles — an empty amitriptyline 50 mg bottle (filled 4 days ago, 100 tabs) and a near-empty ibuprofen bottle. Patient is flushed, dry-skinned, with sluggish dilated pupils and a palpably distended bladder. Monitor shows sinus tachycardia at 122 with a visibly widened QRS (138 ms). BP 86/52. This is the diagnostic moment: anticholinergic toxidrome (red, dry, mad, blind, hot, full, tachy) PLUS wide QRS + hypotension = TCA overdose. Sodium bicarbonate is the antidote — but only if the toxidrome is recognized.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 2, "verbal": 2, "motor": 4 },
+        "airway": "Patent for now, snoring respirations, no gag elicited with NPA placement attempt",
+        "breathing": "RR 10, shallow, lungs clear bilaterally, no accessory muscle use",
+        "circulation": "Radial pulse weak and rapid; carotid bounding; cap refill 3 sec; warm, dry, flushed skin",
+        "skin": { "color": "flushed/ruddy", "temperature": "warm", "moisture": "dry" },
+        "pupils": "6 mm bilaterally, sluggish to light",
+        "motorFunction": "Withdraws to noxious stimuli only; no purposeful movement; no posturing",
+        "otherFindings": [
+          "Dry mucous membranes — tongue and oral mucosa parched",
+          "Bladder palpably distended (urinary retention)",
+          "Bowel sounds diminished",
+          "No needle marks; no trauma",
+          "Monitor shows sinus tach with VISIBLY WIDE QRS — measure: 138 ms",
+          "12-lead pending; on quick look, QRS broad with terminal R in aVR (classic TCA finding)",
+          "Roommate confirms only amitriptyline and ibuprofen accessible; no alcohol, no other meds known"
+        ],
+        "patientSpeech": "Moans to sternal rub; no coherent speech"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 122,
+        "bpSys": 86,
+        "bpDia": 52,
+        "respRate": 10,
+        "spo2": 94,
+        "etco2": 38,
+        "temp": 37.9,
+        "tempF": 100.2,
+        "obstruction": 0,
+        "glucose": 108,
+        "customMeasures": [
+          { "label": "QRS (ms)", "value": 138 }
+        ],
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "primary-survey",
+          "shortAction": "Rapid primary survey (ABCD); note AMS, hypotension, wide-complex tachycardia",
+          "protocolExcerpt": "Assessment: Assess ABCD and, if indicated, expose patient for assessment and then re-cover to assure retention of body heat. Vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) temperature, and O2 saturation including temperature. Attach cardiac monitor and examine rhythm strip for arrhythmias (consider 12-lead EKG).",
+          "priority": "critical",
+          "rationale": "Anchors the structured assessment. Identifying the trio (AMS + hypotension + wide QRS) is what drives recognition of TCA toxicity.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "airway-support",
+          "shortAction": "Position airway; NPA; assist ventilations BVM with O2 to SpO2 94-98% and EtCO2 35-40",
+          "protocolExcerpt": "Treatment and Interventions: Assure a patent airway. Administer oxygen as appropriate with a target of achieving 94–98% saturation, and if there is hypoventilation noted, support breathing.",
+          "priority": "critical",
+          "rationale": "Pt is hypoventilating (RR 10, shallow) and at risk of rapid deterioration. Mild hyperventilation will also be used therapeutically once TCA recognized (target pH ~7.50).",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "glucose-check",
+          "shortAction": "Check blood glucose (rule out hypoglycemia as AMS driver) — 108 mg/dL, not hypoglycemic",
+          "protocolExcerpt": "Assessment: Check blood glucose level.",
+          "priority": "important",
+          "rationale": "Standard AMS workup; rules out a treatable cause before chasing the toxidrome.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "iv-access",
+          "shortAction": "Establish 2 large-bore IVs (18g antecubital); draw blood for ED",
+          "protocolExcerpt": "Treatment and Interventions: Initiate IV access for infusion of treatment medication and/or lactated Ringer's or normal saline if indicated, and obtain blood samples if EMS management might change based upon the value (e.g., glucose, lactate, cyanide).",
+          "priority": "critical",
+          "rationale": "Two lines: one for sodium bicarb (incompatible with most other meds), one for fluids/midazolam if seizes.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "ingestion-hx",
+          "shortAction": "Obtain ingestion history; collect bottles; identify amitriptyline (TCA) and dose/quantity",
+          "protocolExcerpt": "Assessment: When indicated, identify specific medication taken (including immediate release vs sustained release), time of ingestion, dose, and quantity. When appropriate, bring all medications (prescribed and not prescribed) found in the environment. Obtain an accurate ingestion history (as patient may become unconscious before arrival at the emergency department (ED)): Time of ingestion or exposure; Route of exposure; Quantity of medication or toxin taken (safely collect all possible medications or agents); Alcohol or other intoxicant taken.",
+          "priority": "critical",
+          "rationale": "The bottles ARE the diagnosis. Anchoring on 'AMS' without checking the nightstand misses the toxidrome.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "recognize-toxidrome",
+          "shortAction": "Recognize anticholinergic toxidrome + wide QRS = TCA / sodium-channel blocker overdose",
+          "protocolExcerpt": "Toxidromes — Anticholinergic: Red as a beet (flushed skin); Dry as a bone (dry skin); Mad as a hatter (altered mental status); Blind as a bat (mydriasis); Hot as a pistol (hyperthermia); Full as a flask (urinary retention); \"Tacky\" like a pink flamingo (tachycardia and hypertension). Tricyclic Antidepressant (TCA)/Sodium Channel Blocker Overdose: Consider early airway management. If widened QRS (100 msec or greater), consider sodium bicarbonate 1–2 mEq/kg IV, this can be repeated as needed to narrow QRS and improve blood pressure.",
+          "priority": "critical",
+          "rationale": "This is the pivot. Without recognition, no bicarb. The combination of empty amitriptyline bottle + anticholinergic signs + QRS 138 ms is pathognomonic for TCA toxicity.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "12-lead",
+          "shortAction": "Obtain 12-lead EKG; document QRS width (138 ms) and any terminal R in aVR",
+          "protocolExcerpt": "Patient Safety Considerations: Monitor EKG with special attention to rate, rhythm, QRS and QT duration.",
+          "priority": "critical",
+          "rationale": "QRS width is the trigger threshold and the response metric for bicarb. Document baseline before and after each bicarb dose.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "bicarb-given",
+          "if": "TCA recognized; bicarb given",
+          "condition": "Crew correctly identifies the anticholinergic toxidrome + wide QRS + hypotension as TCA overdose, establishes IV access, supports the airway, and administers sodium bicarbonate 1 mEq/kg IV bolus (~65 mEq for this 65 kg patient) per the MATC Poisoning/Overdose Universal Care TCA section.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["recognize-toxidrome", "iv-access"]
+        },
+        {
+          "targetPhaseId": "antiarrhythmic-error",
+          "if": "Wide QRS treated as VT; amiodarone given",
+          "condition": "Crew anchors on the wide-complex tachycardia label and applies the tachycardia protocol without recognizing the toxidrome — gives amiodarone 150 mg IV (or another Na-channel-blocking antiarrhythmic). This stacks sodium-channel blockade on top of TCA toxicity and worsens QRS widening, hypotension, and cardiotoxicity.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["recognize-toxidrome"]
+        },
+        {
+          "targetPhaseId": "toxidrome-missed",
+          "if": "Toxidrome missed; no bicarb",
+          "condition": "Crew treats only the surface findings (AMS + hypotension) — gives oxygen and a fluid bolus but never checks the QRS, never asks about prescription bottles, never recognizes the anticholinergic toxidrome. No sodium bicarbonate administered. QRS continues to widen and patient deteriorates into cardiac arrest en route.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["recognize-toxidrome", "ingestion-hx"]
+        }
+      ]
+    },
+    {
+      "id": "bicarb-given",
+      "name": "Bicarb given; QRS narrowing",
+      "description": "Crew identified TCA overdose and administered sodium bicarbonate 65 mEq IV bolus (1 mEq/kg × 65 kg). Within 60-90 seconds, QRS narrows from 138 ms to 108 ms and BP climbs to 102/64. Crew has also started a 1300 mL NS fluid bolus (20 mL/kg) and is gently hyperventilating via BVM targeting EtCO2 30-35 to assist alkalinization (goal pH ~7.50). Patient remains GCS 8. As the crew prepares for transport, the patient develops a brief generalized tonic-clonic seizure (~90 seconds) — a known late TCA effect.",
+      "triggerCondition": "Sodium bicarbonate 1 mEq/kg IV bolus administered. QRS narrows from 138 ms to 108 ms; BP improves to 102/64. Fluid resuscitation underway with 20 mL/kg NS bolus. Mid-transport, the patient has a witnessed generalized tonic-clonic seizure lasting ~90 seconds — anticipated TCA neurotoxicity. Patient remains in TCA toxicity; antidote and supportive care must continue.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 2, "verbal": 2, "motor": 4 },
+        "airway": "Patent post-ictal, NPA in place, BVM at 12/min",
+        "breathing": "Assisted via BVM, lung sounds clear, good chest rise",
+        "circulation": "Radial pulse improving — palpable and regular at 118; cap refill 2 sec; skin still flushed but less dry",
+        "skin": { "color": "flushed", "temperature": "warm", "moisture": "slightly dry" },
+        "pupils": "6 mm, sluggish but reactive",
+        "motorFunction": "Just had a ~90-second generalized tonic-clonic seizure; now post-ictal, flaccid, withdraws to pain",
+        "otherFindings": [
+          "QRS narrowed from 138 ms to 108 ms on monitor after bicarb",
+          "BP improving (102/64) after bicarb + fluids",
+          "EtCO2 32 mmHg (target 30-35 for therapeutic alkalinization)",
+          "Witnessed seizure mid-transport ~90 sec, generalized tonic-clonic",
+          "No incontinence noted (bladder already retained); bit tongue mildly",
+          "Foley not placed but bladder still distended",
+          "Roommate following separately to hospital"
+        ],
+        "patientSpeech": "Moans post-ictally; still no coherent speech"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 118,
+        "bpSys": 102,
+        "bpDia": 64,
+        "respRate": 12,
+        "spo2": 97,
+        "etco2": 32,
+        "temp": 37.9,
+        "tempF": 100.2,
+        "obstruction": 0,
+        "glucose": 108,
+        "customMeasures": [
+          { "label": "QRS (ms)", "value": 108 }
+        ],
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "bicarb-dose",
+          "shortAction": "Sodium bicarbonate 65 mEq IV bolus (65 kg × 1 mEq/kg; range 1-2 mEq/kg; may repeat to narrow QRS)",
+          "protocolExcerpt": "Tricyclic Antidepressant (TCA)/Sodium Channel Blocker Overdose: Consider early airway management. If widened QRS (100 msec or greater), consider sodium bicarbonate 1–2 mEq/kg IV, this can be repeated as needed to narrow QRS and improve blood pressure.",
+          "priority": "critical",
+          "rationale": "The antidote. Sodium loading and alkalinization both reverse TCA sodium-channel blockade. Dose-titrate to QRS width.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "fluid-bolus",
+          "shortAction": "NS 1300 mL IV bolus (65 kg × 20 mL/kg) for hypotension; pressure-infuse over <15 min",
+          "protocolExcerpt": "Tricyclic Antidepressant (TCA)/Sodium Channel Blocker Overdose: Consider fluid challenge (20 mL/kg) for hypotension. Treatment and Interventions: IV fluid volume goal attained by giving boluses that are pressure infused over less than 15 minutes each based on patient's condition and clinical impression. Fluid volume goal to achieve a mean arterial pressure (adults) or other targets (pediatrics).",
+          "priority": "critical",
+          "rationale": "Distributive/vasodilatory component of TCA hypotension responds to volume before vasopressors.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "controlled-hyperventilation",
+          "shortAction": "Gentle hyperventilation via BVM; target EtCO2 30-35 mmHg to assist alkalinization (pH ~7.50)",
+          "protocolExcerpt": "Tricyclic Antidepressant (TCA)/Sodium Channel Blocker Overdose: Consider early airway management.",
+          "priority": "important",
+          "rationale": "Respiratory alkalosis supports the serum alkalinization started by bicarb; combined effect on Na-channel reversal is greater than either alone.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "seizure-recognize",
+          "shortAction": "Recognize TCA-induced seizure; protect airway; continue BVM with O2",
+          "protocolExcerpt": "Inclusion Criteria: Seizure activity upon arrival of prehospital personnel or new/recurrent seizure activity lasting greater than 5 minutes. Treatment and Interventions: If signs of airway obstruction are present and a chin-lift, jaw thrust, positioning, and/or suctioning does not alleviate it, place oropharyngeal airway (if gag reflex is absent) or nasopharyngeal airway. Administer oxygen as appropriate with a target of achieving 94–98% saturation. Use bag-valve-mask (BVM) ventilation if oxygenation/ventilation are compromised.",
+          "priority": "critical",
+          "rationale": "Seizures are an expected TCA neurotoxic effect. Avoid phenytoin (Na-channel blocker — worsens cardiotox). Benzodiazepines are first-line.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "midazolam-seizure",
+          "shortAction": "Midazolam 4 mg IV (65 kg × 0.1 mg/kg = 6.5 mg → cap at 4 mg max per dose)",
+          "protocolExcerpt": "Anticonvulsant Treatment — If vascular access (IV or IO) is present: Diazepam 0.2 mg/kg IV or IO, maximum 10 mg; Lorazepam 0.1 mg/kg IV or IO, maximum 4 mg; Midazolam 0.1 mg/kg IV or IO, maximum 4 mg.",
+          "priority": "critical",
+          "rationale": "TCA seizure cessation; benzo of choice. Per protocol, IV midazolam max is 4 mg per dose.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "avoid-phenytoin",
+          "shortAction": "AVOID phenytoin/Class IA-IC antiarrhythmics (Na-channel blockers worsen TCA cardiotox)",
+          "protocolExcerpt": "Tricyclic Antidepressant (TCA)/Sodium Channel Blocker Overdose: Consider early airway management. If widened QRS (100 msec or greater), consider sodium bicarbonate 1–2 mEq/kg IV, this can be repeated as needed to narrow QRS and improve blood pressure.",
+          "priority": "critical",
+          "rationale": "Teaching point — TCAs ARE sodium-channel blockers; adding another (phenytoin, procainamide, flecainide, amiodarone) stacks toxicity. Use benzos for seizures.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "repeat-qrs-check",
+          "shortAction": "Repeat 12-lead and QRS measurement after bicarb; redose 1 mEq/kg if QRS rewidens",
+          "protocolExcerpt": "Tricyclic Antidepressant (TCA)/Sodium Channel Blocker Overdose: If widened QRS (100 msec or greater), consider sodium bicarbonate 1–2 mEq/kg IV, this can be repeated as needed to narrow QRS and improve blood pressure.",
+          "priority": "critical",
+          "rationale": "Protocol explicitly allows repeat dosing titrated to QRS. Don't stop at one bolus if QRS rewidens or hypotension recurs.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "stabilized-transport",
+          "if": "Seizure controlled; QRS stable",
+          "condition": "Midazolam terminates the seizure within 2-3 minutes. QRS holds at 108 ms (or further narrows with repeat bicarb). BP remains >100 systolic. Patient transported to ED with continued supportive care, alkalinization, and airway monitoring.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["midazolam-seizure", "bicarb-dose"]
+        }
+      ]
+    },
+    {
+      "id": "stabilized-transport",
+      "name": "Stabilized; ED handoff",
+      "description": "Patient is now hemodynamically supported and en route to the ED. Sodium bicarbonate bolus has narrowed the QRS, fluids have restored a systolic in the low 100s, and midazolam has aborted the seizure. Patient remains GCS 8 — airway is being managed with NPA + BVM. Crew provides early notification to the receiving ED with toxidrome identification, time of ingestion, and current status. Continued monitoring for QRS rewidening, recurrent seizure, hypotension, or progression to arrhythmia.",
+      "triggerCondition": "After midazolam 4 mg IV, seizure terminates within ~2 minutes. QRS holds at 108 ms with the bicarb on board; BP holds 100-110 systolic on fluids. Crew is on the way to the ED, performing continuous monitoring and alkalinization, with the antidote, the seizure med, and the receiving facility all aligned.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 2, "verbal": 2, "motor": 4 },
+        "airway": "Patent, NPA in place, BVM-assisted",
+        "breathing": "Assisted 12/min via BVM, good compliance, EtCO2 32, clear lungs",
+        "circulation": "Radial pulse regular at 112, cap refill <2 sec, skin warm and now slightly less flushed",
+        "skin": { "color": "improving — less flushed", "temperature": "warm", "moisture": "slightly moist with the fluid bolus" },
+        "pupils": "5 mm, reactive (improving from 6 mm sluggish)",
+        "motorFunction": "Withdraws to pain, no posturing, no further convulsive activity",
+        "otherFindings": [
+          "No further seizure activity since midazolam",
+          "QRS 108 ms on continuous monitor; will repeat 12-lead at handoff",
+          "Bladder still distended — note for ED to consider Foley",
+          "Receiving ED notified of TCA overdose with quantitative dose estimate (~5 g amitriptyline)",
+          "Crew has both bottles and the goodbye text screenshot for the receiving team"
+        ],
+        "patientSpeech": "Occasional moans to stimulation; no purposeful speech"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 112,
+        "bpSys": 108,
+        "bpDia": 68,
+        "respRate": 12,
+        "spo2": 98,
+        "etco2": 32,
+        "temp": 37.8,
+        "tempF": 100.0,
+        "obstruction": 0,
+        "glucose": 108,
+        "customMeasures": [
+          { "label": "QRS (ms)", "value": 108 }
+        ],
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "continuous-monitoring",
+          "shortAction": "Continuous monitoring of QRS, BP, EtCO2, GCS; reassess q5 min",
+          "protocolExcerpt": "Patient Safety Considerations: Monitor patient airway, breathing, pulse oximetry, EtCO2 for adequate ventilation as they may change over time. Repeat vital signs often. Monitor level of consciousness. Monitor EKG with special attention to rate, rhythm, QRS and QT duration.",
+          "priority": "critical",
+          "rationale": "TCA toxicity is dynamic — peak QT/QRS prolongation and seizures can recur. Frequent reassessment is protocol-mandated.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "repeat-bicarb-prn",
+          "shortAction": "Have second bicarb dose ready (65 mEq, repeat 1 mEq/kg) if QRS rewidens >100 ms",
+          "protocolExcerpt": "Tricyclic Antidepressant (TCA)/Sodium Channel Blocker Overdose: If widened QRS (100 msec or greater), consider sodium bicarbonate 1–2 mEq/kg IV, this can be repeated as needed to narrow QRS and improve blood pressure.",
+          "priority": "important",
+          "rationale": "TCAs redistribute from tissues — recurrent toxicity is the rule. Be prepared for a second dose.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "poison-control",
+          "shortAction": "Contact Poison Control (1-800-222-1222) early for confirmation of TCA dosing strategy",
+          "protocolExcerpt": "Patient Safety Considerations: The regional poison center should be engaged as early as reasonably possible to aid in appropriate therapy and to track patient outcomes to improve knowledge of toxic effects. The national 24-hour toll-free telephone number to poison control centers is (800) 222-1222, and it is a resource for free, confidential expert advice from anywhere in the United States.",
+          "priority": "important",
+          "rationale": "Poison Control can confirm dosing strategy, anticipate complications (lipid emulsion availability, ECMO consultation if available at the receiving center), and document case for surveillance.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "ed-notification",
+          "shortAction": "Early ED notification: TCA overdose, ~5 g amitriptyline, GCS 8, bicarb given, seizure aborted",
+          "protocolExcerpt": "Treatment and Interventions: Provide advanced notification to the hospital.",
+          "priority": "critical",
+          "rationale": "Receiving ED may want to prepare for continued bicarb infusion, RSI, lipid emulsion, and possibly ECMO referral. Early notification saves minutes.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "document-tox",
+          "shortAction": "Document: time of ingestion, quantity, anticholinergic findings, QRS trend, bicarb dose, seizure",
+          "protocolExcerpt": "Key Documentation Elements: Repeat evaluation and documentation of signs and symptoms as patient clinical conditions may deteriorate rapidly. Identification of possible etiology of poisoning. Initiating measures on scene to prevent exposure of bystanders when appropriate/indicated. Time of symptoms onset and time of initiation of exposure-specific treatments.",
+          "priority": "important",
+          "rationale": "QI metric and clinical handoff. Document the QRS trend pre/post bicarb specifically — it's the single best record of therapeutic effect.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "antiarrhythmic-error",
+      "name": "Amiodarone given; cardiotox worsens",
+      "description": "Crew anchored on 'wide-complex tachycardia' and applied the cardiac tachycardia protocol — administered amiodarone 150 mg IV over 10 minutes for presumed regular wide-complex tachycardia. Amiodarone is itself a sodium-channel blocker (Vaughan-Williams Class III with Class I activity); stacking it on top of the TCA's sodium-channel blockade catastrophically worsens cardiotoxicity. Within minutes the QRS widens further (138 → 168 ms), BP drops to 64/38, and the rhythm degenerates toward torsades-like polymorphic VT. Sodium bicarbonate must now be given urgently along with full resuscitation.",
+      "triggerCondition": "Crew labeled the rhythm as wide-complex tachycardia and gave amiodarone 150 mg IV without recognizing the TCA toxidrome. The amiodarone's sodium-channel blockade stacks on the TCA's, widening the QRS further and driving the patient toward polymorphic VT and circulatory collapse.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 2 },
+        "airway": "Patent with NPA; no gag",
+        "breathing": "Agonal — RR 6, shallow; BVM assistance now mandatory",
+        "circulation": "Carotid weakly palpable, irregular; no radial; cap refill >4 sec; cold, mottled",
+        "skin": { "color": "mottled/cyanotic peripherally", "temperature": "cold", "moisture": "now diaphoretic" },
+        "pupils": "6 mm, fixed",
+        "motorFunction": "No movement; no posturing; no response to noxious stimuli",
+        "otherFindings": [
+          "Monitor: QRS now 168 ms, rate 138, intermittent polymorphic complexes",
+          "Crew recognizing too late that amiodarone worsened the picture",
+          "Defib pads being placed; bicarb being pulled urgently",
+          "Roommate has been moved to the front cab — distressed"
+        ],
+        "patientSpeech": "None — unresponsive"
+      },
+      "monitorState": {
+        "ecgRhythm": "Ventricular Tachycardia (Polymorphic)",
+        "ecgWaveform": 12,
+        "hr": 138,
+        "bpSys": 64,
+        "bpDia": 38,
+        "respRate": 6,
+        "spo2": 86,
+        "etco2": 24,
+        "temp": 37.8,
+        "tempF": 100.0,
+        "obstruction": 0,
+        "glucose": 108,
+        "customMeasures": [
+          { "label": "QRS (ms)", "value": 168 }
+        ],
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "rescue-recognize-error",
+          "shortAction": "Recognize amiodarone stacked Na-channel blockade; STOP amiodarone; transition to TCA protocol",
+          "protocolExcerpt": "Tricyclic Antidepressant (TCA)/Sodium Channel Blocker Overdose: If widened QRS (100 msec or greater), consider sodium bicarbonate 1–2 mEq/kg IV, this can be repeated as needed to narrow QRS and improve blood pressure.",
+          "priority": "critical",
+          "rationale": "Anchoring on 'wide-complex tachycardia' missed the toxidrome and led to a sodium-channel-blocking antiarrhythmic. The fix is recognition + bicarb, not more antiarrhythmics.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "rescue-bicarb",
+          "shortAction": "Sodium bicarbonate 130 mEq IV bolus (2 mEq/kg upper-range dose); repeat as needed",
+          "protocolExcerpt": "Tricyclic Antidepressant (TCA)/Sodium Channel Blocker Overdose: If widened QRS (100 msec or greater), consider sodium bicarbonate 1–2 mEq/kg IV, this can be repeated as needed to narrow QRS and improve blood pressure.",
+          "priority": "critical",
+          "rationale": "Upper-range dose given the severity of QRS widening and the iatrogenic insult from amiodarone.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "rescue-magnesium",
+          "shortAction": "Magnesium sulfate 2 g IV over 10 min if polymorphic VT/torsades pattern",
+          "protocolExcerpt": "Irregular Wide Complex Tachycardia – Stable (A-FIB with aberrancy, pre-excited A-FIB, multifocal atrial tachycardia (MAT) or polymorphic VT/torsades de pointes): If torsades, give magnesium 1–2 g IV over 10 minutes.",
+          "priority": "important",
+          "rationale": "Polymorphic VT in the setting of prolonged QT — magnesium is protocol-supported alongside bicarb.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "rescue-pads",
+          "shortAction": "Place defib pads; prepare for synchronized cardioversion or defib if pulseless",
+          "protocolExcerpt": "Irregular Wide Complex Tachycardia – Unstable: Deliver a synchronized shock based on manufacturer's recommendation. For responsive patients, consider sedation.",
+          "priority": "critical",
+          "rationale": "Patient is now profoundly unstable; arrest is imminent and electrical therapy may be needed.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "rescue-debrief-error",
+          "shortAction": "Debrief flag: wide QRS in an OD ≠ VT. Always ask 'what's the toxidrome?' first",
+          "protocolExcerpt": "Toxidromes — Anticholinergic: Red as a beet (flushed skin); Dry as a bone (dry skin); Mad as a hatter (altered mental status); Blind as a bat (mydriasis); Hot as a pistol (hyperthermia); Full as a flask (urinary retention); \"Tacky\" like a pink flamingo (tachycardia and hypertension).",
+          "priority": "supplemental",
+          "rationale": "The pattern — empty TCA bottle + flushed/dry/dilated/retention/wide QRS — should have triggered toxidrome thinking before reflex antiarrhythmic.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "toxidrome-missed",
+      "name": "TCA missed; arrest en route",
+      "description": "Crew treated only the surface findings — supplemental O2, IV access, a fluid bolus — without checking QRS width, without asking the roommate about the pill bottles on the nightstand, and without recognizing the anticholinergic toxidrome. As the TCA continues to absorb, QRS widens, BP fails to respond to fluids, and approximately 8 minutes into transport the patient deteriorates into pulseless wide-complex rhythm — effectively a sodium-channel-blockade-mediated cardiac arrest. CPR is initiated; the antidote (sodium bicarbonate) is now given as part of the arrest algorithm.",
+      "triggerCondition": "Anticholinergic toxidrome and TCA overdose were not recognized. No sodium bicarbonate given. Patient progressed to pulseless wide-complex cardiac arrest en route. Crew must now run a toxicologic arrest with high-dose bicarb and standard ACLS while continuing transport.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "Patent post-intubation or with NPA + BVM; secretions present",
+        "breathing": "Apneic, BVM-ventilated",
+        "circulation": "Pulseless; CPR in progress",
+        "skin": { "color": "ashen/cyanotic", "temperature": "cold", "moisture": "diaphoretic" },
+        "pupils": "6 mm, fixed",
+        "motorFunction": "None — pulseless arrest",
+        "otherFindings": [
+          "Pulseless wide-complex PEA-pattern arrest in setting of TCA",
+          "CPR started; defibrillation not indicated for organized non-shockable rhythm",
+          "Crew now retrospectively recognizing the bottles + anticholinergic signs",
+          "Receiving ED being updated to arrest status; high-dose bicarb being drawn"
+        ],
+        "patientSpeech": "None"
+      },
+      "monitorState": {
+        "ecgRhythm": "Pulseless Electrical Activity (PEA)",
+        "ecgWaveform": 9,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 12,
+        "temp": 37.6,
+        "tempF": 99.7,
+        "obstruction": 0,
+        "glucose": 108,
+        "customMeasures": [
+          { "label": "QRS (ms)", "value": 180 }
+        ],
+        "trendTimeSeconds": 60,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "arrest-cpr",
+          "shortAction": "Begin high-quality CPR; switch compressors q2 min; minimize pauses",
+          "protocolExcerpt": "Treatment and Interventions: Assure a patent airway. Administer oxygen as appropriate with a target of achieving 94–98% saturation, and if there is hypoventilation noted, support breathing.",
+          "priority": "critical",
+          "rationale": "Standard ACLS for non-shockable arrest. Note: in TCA arrest the toxin remains in tissue for hours — extended resuscitation may be warranted.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "arrest-bicarb-high",
+          "shortAction": "Sodium bicarbonate 130 mEq IV bolus (2 mEq/kg); repeat aggressively for toxic arrest",
+          "protocolExcerpt": "Tricyclic Antidepressant (TCA)/Sodium Channel Blocker Overdose: If widened QRS (100 msec or greater), consider sodium bicarbonate 1–2 mEq/kg IV, this can be repeated as needed to narrow QRS and improve blood pressure.",
+          "priority": "critical",
+          "rationale": "In TCA arrest, the antidote is still bicarb. Repeat doses are protocol-supported and may convert PEA to a perfusing rhythm.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "arrest-recognize-late",
+          "shortAction": "Belatedly identify TCA toxidrome from history and bottles; communicate to ED",
+          "protocolExcerpt": "Toxidromes — Anticholinergic: Red as a beet (flushed skin); Dry as a bone (dry skin); Mad as a hatter (altered mental status); Blind as a bat (mydriasis); Hot as a pistol (hyperthermia); Full as a flask (urinary retention); \"Tacky\" like a pink flamingo (tachycardia and hypertension). Tricyclic Antidepressant (TCA)/Sodium Channel Blocker Overdose: Consider early airway management. If widened QRS (100 msec or greater), consider sodium bicarbonate 1–2 mEq/kg IV, this can be repeated as needed to narrow QRS and improve blood pressure.",
+          "priority": "critical",
+          "rationale": "Receiving team must know this is a toxic arrest, not a cardiac arrest — different prognosis, different therapies (lipid emulsion, ECMO consult).",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        },
+        {
+          "id": "arrest-epi",
+          "shortAction": "Epinephrine 1 mg IV/IO q3-5 min per ACLS",
+          "protocolExcerpt": "Treatment and Interventions: Initiate IV access for infusion of treatment medication and/or lactated Ringer's or normal saline if indicated, and obtain blood samples if EMS management might change based upon the value (e.g., glucose, lactate, cyanide).",
+          "priority": "critical",
+          "rationale": "Standard ACLS adjunct in PEA. Vasopressor support during the toxic period.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "arrest-debrief-anchoring",
+          "shortAction": "Debrief flag: failure to perform full toxicology assessment (bottles, QRS, toxidrome)",
+          "protocolExcerpt": "Performance Measures: Early airway management in the rapidly deteriorating patient. Accurate exposure history: Time of ingestion/exposure; Route of exposure; Quantity of medication or toxin taken (safely collect all possible medications or agents); Alcohol or other intoxicant taken. Appropriate protocol selection and management. Multiple frequent documented reassessments.",
+          "priority": "supplemental",
+          "rationale": "The error chain: didn't ask about bottles, didn't measure QRS, didn't catalog anticholinergic findings. Each is a documented protocol performance measure that was missed.",
+          "protocolReference": "MATC: Poisoning/Overdose Universal Care"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

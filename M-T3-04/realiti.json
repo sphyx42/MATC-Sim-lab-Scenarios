@@ -1,0 +1,527 @@
+{
+  "scenarioId": "M-T3-04",
+  "scenarioName": "Beta-Blocker/Calcium Channel Blocker Overdose",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1800,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "38-year-old male with history of depression and hypertension, found altered by spouse approximately 30 minutes ago. Spouse states Daniel had been increasingly withdrawn over the past two weeks following a job loss and a recent argument about finances. She left for a 90-minute grocery run, returned to find him slumped on the couch, slow to respond, slurring his words. She immediately noticed two prescription bottles open and empty on the coffee table — metoprolol tartrate 50 mg and amlodipine 10 mg. Both bottles had been refilled within the past week per her recollection. She estimates the ingestion occurred shortly after she left, roughly 90 minutes prior to EMS contact. No alcohol bottles visible. Patient slurring 'I'm tired… leave me alone…' on arrival. No witnessed seizure activity, no chest pain reported, no vomiting. Spouse denies any other medications, illicit drug use, or prior overdose attempts.",
+    "discussion": "",
+    "course": "Initial Contact: Crew arrives to a 38-year-old male intentional overdose ~90 minutes post-ingestion of metoprolol and amlodipine. He is alert to voice but sluggish, GCS 11 (E3 V3 M5), slurred speech, skin pale and cool. Monitor on the patient reveals sinus bradycardia at 38 with hypotension 76/42 — a textbook toxic bradycardia + hypotension combination from BB/CCB co-ingestion. Glucose is 102 (normal, but watch for BB-induced hypoglycemia drift). Both pill bottles are visible to crew. Key recognition: this is NOT routine bradycardia — atropine alone will not fix the underlying receptor blockade. → Atropine failed: Atropine 1 mg IV pushed — no change. HR still 36-40, BP still 70s/40s. Mental status now declining: GCS dropping to 9 (E2 V2 M5), patient harder to rouse. The crew now must move to the specific antidotes: fluid challenge, glucagon (BB antidote), calcium chloride (CCB antidote), and prepare push-dose pressors. This is the teaching beat — atropine is a vagolytic, but the BB and CCB blockade is at the receptor and post-receptor level, so atropine has nothing to act on. → Antidotes given, still shocked: Glucagon 5 mg IV and calcium chloride 1 g IV pushed. Fluid bolus continuing. HR has crept up modestly to 44 but BP still 80/46 — patient remains in cardiogenic shock from the CCB-induced myocardial depression. Crew now escalates to push-dose pressors and prepares transcutaneous pacing as a bridge. Mental status borderline — GCS 9, may need airway protection if drops further. Critical to keep moving — repeat glucagon and consider second calcium dose if no response. → Transport stabilizing: Patient transported with norepinephrine infusion at 0.1 mcg/kg/min, second glucagon dose given, pacing pads ready (not capturing — HR maintained ~58 on pressors), GCS borderline 10. Spouse with PD following separately. ED notified of HIE/HIET need — they have insulin/D10 drips spiking. The teaching beat for this final phase: this isn't a save in the field — it's a bridge. Continued antidote therapy, vigilance for redeterioration from delayed-release amlodipine peak, and clean handoff are the goals."
+  },
+  "patientInformation": {
+    "patientName": "Daniel Hutchinson",
+    "patientCondition": "Intentional overdose with prescription medications, found altered by spouse",
+    "patientAge": 38,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 178,
+    "patientWeight": 82,
+    "patientPhotoId": 46,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "Crew arrives to a 38-year-old male intentional overdose ~90 minutes post-ingestion of metoprolol and amlodipine. He is alert to voice but sluggish, GCS 11 (E3 V3 M5), slurred speech, skin pale and cool. Monitor on the patient reveals sinus bradycardia at 38 with hypotension 76/42 — a textbook toxic bradycardia + hypotension combination from BB/CCB co-ingestion. Glucose is 102 (normal, but watch for BB-induced hypoglycemia drift). Both pill bottles are visible to crew. Key recognition: this is NOT routine bradycardia — atropine alone will not fix the underlying receptor blockade.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 38,
+        "bpSys": 76,
+        "bpDia": 42,
+        "respRate": 16,
+        "spo2": 95,
+        "etco2": 38,
+        "temp": 36.4,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Scene safety, BSI, recognize intentional ingestion with bottles available",
+        "Primary survey ABCDs; airway patent, support breathing PRN",
+        "Apply monitor, 12-lead; identify toxic bradycardia + hypotension pattern",
+        "Check glucose (102 mg/dL — normal, recheck en route per protocol)",
+        "Establish 2 large-bore IVs; IO if access fails within 90 sec",
+        "Obtain ingestion history: agent, time, quantity, formulation (IR vs SR)",
+        "O2 to maintain SpO2 94-98%; capnography continuous",
+        "Atropine 1 mg IV — initial trial for symptomatic bradycardia"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Atropine failed",
+      "description": "Atropine 1 mg IV pushed — no change. HR still 36-40, BP still 70s/40s. Mental status now declining: GCS dropping to 9 (E2 V2 M5), patient harder to rouse. The crew now must move to the specific antidotes: fluid challenge, glucagon (BB antidote), calcium chloride (CCB antidote), and prepare push-dose pressors. This is the teaching beat — atropine is a vagolytic, but the BB and CCB blockade is at the receptor and post-receptor level, so atropine has nothing to act on.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 36,
+        "bpSys": 72,
+        "bpDia": 40,
+        "respRate": 14,
+        "spo2": 93,
+        "etco2": 36,
+        "temp": 36.3,
+        "obstruction": 0,
+        "custMeasure1": 98,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize atropine failure — pivot to specific antidote therapy",
+        "Normal saline 1640 mL bolus (82 kg × 20 mL/kg) wide open",
+        "Glucagon 5 mg IV push — BB-specific antidote",
+        "Calcium chloride 1 g slow IV push over 10 min — CCB antidote",
+        "Ondansetron 4 mg IV — prophylaxis for glucagon-induced emesis",
+        "Reassess airway; prepare for BVM/advanced airway as GCS drops",
+        "Contact medical control — HIE/HIET therapy and ED prep"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Antidotes given, still shocked",
+      "description": "Glucagon 5 mg IV and calcium chloride 1 g IV pushed. Fluid bolus continuing. HR has crept up modestly to 44 but BP still 80/46 — patient remains in cardiogenic shock from the CCB-induced myocardial depression. Crew now escalates to push-dose pressors and prepares transcutaneous pacing as a bridge. Mental status borderline — GCS 9, may need airway protection if drops further. Critical to keep moving — repeat glucagon and consider second calcium dose if no response.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 44,
+        "bpSys": 80,
+        "bpDia": 46,
+        "respRate": 14,
+        "spo2": 96,
+        "etco2": 32,
+        "temp": 36.2,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Push-dose epi 10 mcg IV q3-5 min titrated to MAP >65",
+        "Repeat glucagon 5 mg IV — second dose (total 10 mg)",
+        "Prepare norepinephrine drip 0.05-0.5 mcg/kg/min — bridge to ED",
+        "Apply pacing pads; ready transcutaneous pacing at 70 bpm",
+        "Sedation/analgesia if pacing initiated (e.g., fentanyl 50 mcg IV)",
+        "Reassess lung sounds before pushing additional fluid",
+        "Frequent reassessment q2-3 min; document trend"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Transport stabilizing",
+      "description": "Patient transported with norepinephrine infusion at 0.1 mcg/kg/min, second glucagon dose given, pacing pads ready (not capturing — HR maintained ~58 on pressors), GCS borderline 10. Spouse with PD following separately. ED notified of HIE/HIET need — they have insulin/D10 drips spiking. The teaching beat for this final phase: this isn't a save in the field — it's a bridge. Continued antidote therapy, vigilance for redeterioration from delayed-release amlodipine peak, and clean handoff are the goals.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 58,
+        "bpSys": 92,
+        "bpDia": 56,
+        "respRate": 16,
+        "spo2": 97,
+        "etco2": 35,
+        "temp": 36.2,
+        "obstruction": 0,
+        "custMeasure1": 152,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Continuous monitor + reassessment q5 min en route",
+        "Titrate norepi to MAP >65 (current MAP ~68)",
+        "Recheck glucose q15 min — BB-induced hypoglycemia can develop",
+        "Bring all medication bottles + history to ED handoff",
+        "Pacing pads remain on; ready capture if HR drops <50",
+        "Clean ED handoff: agents, times, doses, response, current drips"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Atropine looped to 3 mg",
+      "description": "Crew gives atropine 1 mg → no effect → waits 5 min → atropine 1 mg → still no effect → waits 5 min → atropine 1 mg (now at max 3 mg). 12-15 minutes have elapsed since arrival with no specific antidote therapy. Sustained-release amlodipine is still absorbing. HR has drifted from 38 down to 28 with a junctional escape; BP is now 56/palp. Patient now unresponsive. Crew must recognize the wasted time, abandon the atropine pathway, and rapidly escalate to glucagon + calcium chloride + push-dose pressors + pacing. This is a recoverable error if recognized quickly — but if delayed further the patient will arrest.",
+      "monitorType": 0,
+      "trendTime": 55,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 79,
+        "hr": 28,
+        "bpSys": 56,
+        "bpDia": 32,
+        "respRate": 10,
+        "spo2": 88,
+        "etco2": 50,
+        "temp": 36,
+        "obstruction": 0,
+        "custMeasure1": 94,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize wasted time — atropine ineffective in BB/CCB blockade",
+        "Aggressive airway: jaw thrust, OPA, BVM-assist, prep for advanced",
+        "Glucagon 5 mg IV NOW (catch-up dose for BB blockade)",
+        "Calcium chloride 1 g slow IVP (CCB blockade — catch-up dose)",
+        "Push-dose epi 10-20 mcg IV — emergency chronotropic support",
+        "Transcutaneous pacing at 70 bpm — capture confirmation required"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "PEA arrest — toxic etiology",
+      "description": "Patient progresses to PEA arrest from continued CCB receptor blockade with sustained-release peak. CPR initiated, pads in place. CRITICAL TEACHING BEAT: standard ACLS with epi 1 mg q3-5 min ALONE will not produce ROSC because the underlying toxin is still actively blocking calcium channels and beta receptors. The arrest must be treated with continued glucagon, repeat calcium chloride, and consideration of high-dose insulin per medical control — IN ADDITION TO standard CPR and epi. Sodium bicarbonate 1-2 mEq/kg considered for any QRS widening.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 30,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 12,
+        "temp": 35.9,
+        "obstruction": 0,
+        "custMeasure1": 88,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "High-quality CPR 100-120/min, depth 2-2.4 in, full recoil",
+        "Epinephrine 1 mg IV q3-5 min during compressions",
+        "Continue glucagon — repeat 5 mg IV (BB blockade still present)",
+        "Repeat calcium chloride 1 g IV — CCB blockade still active",
+        "Sodium bicarb 82 mEq IV (82 kg × 1 mEq/kg) if QRS widens",
+        "EtCO2 monitoring — target >10; reassess compression quality",
+        "Contact medical control for HIE/HIET + lipid emulsion guidance",
+        "Reversible causes (H's & T's) — Toxins addressed; consider hypovolemia"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Scene safety, BSI, recognize intentional ingestion with bottles available",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Primary survey ABCDs; airway patent, support breathing PRN",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply monitor, 12-lead; identify toxic bradycardia + hypotension pattern",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check glucose (102 mg/dL — normal, recheck en route per protocol)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish 2 large-bore IVs; IO if access fails within 90 sec",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Obtain ingestion history: agent, time, quantity, formulation (IR vs SR)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "O2 to maintain SpO2 94-98%; capnography continuous",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Atropine 1 mg IV — initial trial for symptomatic bradycardia",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize atropine failure — pivot to specific antidote therapy",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Normal saline 1640 mL bolus (82 kg × 20 mL/kg) wide open",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Glucagon 5 mg IV push — BB-specific antidote",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Calcium chloride 1 g slow IV push over 10 min — CCB antidote",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Ondansetron 4 mg IV — prophylaxis for glucagon-induced emesis",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess airway; prepare for BVM/advanced airway as GCS drops",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Contact medical control — HIE/HIET therapy and ED prep",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Push-dose epi 10 mcg IV q3-5 min titrated to MAP >65",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Repeat glucagon 5 mg IV — second dose (total 10 mg)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Prepare norepinephrine drip 0.05-0.5 mcg/kg/min — bridge to ED",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply pacing pads; ready transcutaneous pacing at 70 bpm",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Sedation/analgesia if pacing initiated (e.g., fentanyl 50 mcg IV)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess lung sounds before pushing additional fluid",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Frequent reassessment q2-3 min; document trend",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous monitor + reassessment q5 min en route",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Titrate norepi to MAP >65 (current MAP ~68)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recheck glucose q15 min — BB-induced hypoglycemia can develop",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Bring all medication bottles + history to ED handoff",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Pacing pads remain on; ready capture if HR drops <50",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Clean ED handoff: agents, times, doses, response, current drips",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize wasted time — atropine ineffective in BB/CCB blockade",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Aggressive airway: jaw thrust, OPA, BVM-assist, prep for advanced",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Glucagon 5 mg IV NOW (catch-up dose for BB blockade)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Calcium chloride 1 g slow IVP (CCB blockade — catch-up dose)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Push-dose epi 10-20 mcg IV — emergency chronotropic support",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transcutaneous pacing at 70 bpm — capture confirmation required",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "High-quality CPR 100-120/min, depth 2-2.4 in, full recoil",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 1 mg IV q3-5 min during compressions",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue glucagon — repeat 5 mg IV (BB blockade still present)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Repeat calcium chloride 1 g IV — CCB blockade still active",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Sodium bicarb 82 mEq IV (82 kg × 1 mEq/kg) if QRS widens",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "EtCO2 monitoring — target >10; reassess compression quality",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Contact medical control for HIE/HIET + lipid emulsion guidance",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reversible causes (H's & T's) — Toxins addressed; consider hypovolemia",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

@@ -1,0 +1,692 @@
+{
+  "meta": {
+    "id": "M-T3-03",
+    "name": "Severe Sepsis Progressing to Septic Shock",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Medical",
+    "protocols": [
+      "medical-shock",
+      "resp-respiratory-distress",
+      "resp-airway-management"
+    ],
+    "totalTimeSeconds": 1800,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "tier-3",
+      "high-acuity",
+      "sepsis",
+      "septic-shock",
+      "fluid-refractory",
+      "vasopressors",
+      "norepinephrine",
+      "push-dose-epi",
+      "rsi",
+      "ketamine",
+      "multi-system-failure"
+    ]
+  },
+  "patient": {
+    "name": "Eleanor Vasquez",
+    "age": 72,
+    "ageUnit": "years",
+    "sex": "female",
+    "weight": 60,
+    "weightLbs": 132,
+    "height": 160,
+    "chiefComplaint": "Weakness, fever, 'not herself' per daughter; sick x3 days",
+    "history": {
+      "hpi": "72-year-old female found on her recliner by her adult daughter, who states 'Mom isn't herself.' Per daughter, patient was diagnosed with a urinary tract infection at urgent care 3 days ago and given a prescription for an oral antibiotic but never picked it up. Over the past 24 hours she has become progressively weaker, complaining of subjective fever and chills, decreased oral intake, and increasing confusion. This morning the daughter found her slumped in the recliner, warm to the touch, breathing fast, and only oriented to person. No chest pain, no obvious shortness of breath complaint, no focal neuro deficits per daughter. On EMS arrival the patient appears markedly ill — hot, flushed, breathing rapidly, with delayed capillary refill and obvious altered mentation. qSOFA criteria are met (altered mentation, RR ≥ 22, SBP ≤ 100). This patient is septic on arrival and is going to get worse during the call.",
+      "pastMedical": [
+        "Type 2 diabetes mellitus (insulin-dependent x 6 years)",
+        "Chronic kidney disease stage 3 (baseline creatinine ~1.6)",
+        "Hypertension",
+        "Recurrent urinary tract infections",
+        "Osteoarthritis"
+      ],
+      "medications": [
+        "Insulin glargine 22 units SQ qHS",
+        "Insulin lispro sliding scale with meals",
+        "Lisinopril 20 mg PO daily",
+        "Metoprolol succinate 50 mg PO daily",
+        "Atorvastatin 40 mg PO qHS",
+        "Cefpodoxime 200 mg PO BID x 7 days — prescribed 3 days ago, never picked up"
+      ],
+      "allergies": [
+        "Sulfa drugs (rash)"
+      ],
+      "lastOralIntake": "Few sips of water this morning per daughter; has barely eaten or drunk for 24 hours; last full meal was dinner two nights ago.",
+      "events": "Daughter visited this morning, found patient 'not herself' — slumped, hot, breathing fast, only oriented to person. Daughter called 911. Patient has had a UTI for 3 days with worsening dysuria, flank pain, low-grade fever progressing to high-grade fever, and now altered mental status. Antibiotic prescription never filled."
+    }
+  },
+  "scene": {
+    "dispatch": "Engine 7 and Medic 22, respond to 1815 Greenfield Ave Apartment 3B for a 72-year-old female, weakness and fever, family member reports patient 'not acting like herself.' Non-emergent traffic — wait, upgrading to emergent at family request.",
+    "location": "Second-floor walk-up apartment in a quiet residential neighborhood at 0945 on a Tuesday. Patient is in a recliner in a warm living room (thermostat reads 76°F). Light scattering of tissues and an empty water glass on the side table. Bottle of unfilled prescription on the counter with the urgent care discharge paperwork beside it. Stairs down to the rig are 14 steps, narrow turn at the bottom — will need a stair chair.",
+    "time": "Tuesday, 09:45",
+    "safety": "Scene is safe. BSI required — patient is febrile, possibly bacteremic. Universal precautions plus mask for respiratory protection given tachypnea and unknown infectious source. No environmental hazards. Daughter is calm, cooperative, and serves as historian.",
+    "bystanders": "Adult daughter (mid-40s) at bedside. She is the patient's primary caregiver and knows the medication list cold. She has the urgent care discharge paperwork from 3 days ago with the UTI diagnosis and the never-filled antibiotic prescription. Brought all medication bottles to the living room for EMS.",
+    "visualCues": [
+      "Patient slumped in recliner, eyes half-open, head lolled to one side",
+      "Skin is visibly flushed, especially face and chest; sheen of sweat on the forehead",
+      "Rapid, shallow breathing visible from across the room — counted ~28/min before touching the patient",
+      "Patient does not look up or react when EMS enters the room",
+      "Bottle of cefpodoxime (cap intact, full bottle) and urgent care discharge paperwork on the kitchen counter",
+      "Empty water glass and used tissues on side table; no food in sight",
+      "Patient's pull-up is saturated with concentrated, foul-smelling urine — strong ammonia odor noted",
+      "Pulse oximeter applied: reads 91% on room air with poor waveform"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a 72-year-old female who is clearly already sick. qSOFA is positive on first look: she is altered (A&Ox2, down from her baseline A&Ox3 per daughter), RR is 28, and SBP is 84. She is febrile (102.8°F), tachycardic at 124, and SpO2 is 91% on room air. Skin is warm, flushed, and diaphoretic. Capillary refill is delayed at 3-4 seconds. This is severe sepsis with a urinary source — the patient is not impending shock, she IS in distributive shock. The clock starts now: the crew needs IV access x 2, a 30 mL/kg crystalloid bolus, supplemental O2, continuous monitoring, and a transport decision. Glucose is 138 (no hypoglycemia). Lactate, if pulled, would be 4.8. This is the front door of a multi-system failure case.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 4, "motor": 6 },
+        "airway": "Patent and self-maintained; no secretions; no stridor; speaks in 3-4 word phrases between rapid breaths",
+        "breathing": "Tachypneic at 28/min, shallow, with mildly increased work of breathing; lungs clear to auscultation bilaterally — no rales, no wheezes; no accessory muscle use yet",
+        "circulation": "Tachycardic at 124; radial pulse is rapid, weak, and thready; carotid pulse strong; capillary refill 3-4 seconds; peripheral skin warm and flushed (distributive pattern)",
+        "skin": { "color": "Flushed, especially face and upper chest", "temperature": "Hot to the touch", "moisture": "Diaphoretic" },
+        "pupils": "4 mm, equal, sluggishly reactive bilaterally",
+        "motorFunction": "Moves all four extremities to command but weakly; no focal deficit",
+        "otherFindings": [
+          "qSOFA positive: altered mentation + RR ≥ 22 + SBP ≤ 100",
+          "Strong ammonia odor from saturated pull-up — suspected urinary source",
+          "Baseline A&Ox3 per daughter; today only oriented to person",
+          "Mucous membranes dry; tongue dry and tacky",
+          "Capillary refill prolonged despite warm, flushed extremities (early distributive)",
+          "No JVD; no peripheral edema; no rales; no rashes"
+        ],
+        "patientSpeech": "Mumbles, 'I'm so tired... I just want to sleep.' Knows her name. Does not know the month or the year. Says she's at 'the store.'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 124,
+        "bpSys": 84,
+        "bpDia": 52,
+        "respRate": 28,
+        "spo2": 91,
+        "etco2": 30,
+        "temp": 39.3,
+        "tempF": 102.8,
+        "obstruction": 0,
+        "glucose": 138,
+        "customMeasures": [
+          { "label": "Lactate (POC if available)", "value": 4.8 }
+        ],
+        "trendTimeSeconds": 0,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": true, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "primary-survey",
+          "shortAction": "Rapid primary survey (ABC); recognize sepsis/distributive shock on qSOFA",
+          "protocolExcerpt": "Inclusion Criteria: Signs of poor perfusion (due to a medical cause) such as one or more of the following: Altered mental status; Delayed capillary refill (> 3 seconds); Flash capillary refill (> 1 second) seen in early septic shock; Decreased urine output; Respiratory rate greater than 20 breaths per minute in adults; Hypotension for age (greater than 10 years old: 90); Tachycardia or bradycardia for age, out of proportion to temperature.",
+          "priority": "critical",
+          "rationale": "Recognize this is septic shock on arrival — qSOFA positive (AMS + RR ≥ 22 + SBP ≤ 100). Frames every decision that follows.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "oxygen",
+          "shortAction": "Apply NRB at 15 L/min; target SpO2 94-98%",
+          "protocolExcerpt": "Treatment and Interventions: Administer oxygen as appropriate with a target of achieving 94-98% saturation.",
+          "priority": "critical",
+          "rationale": "Hypoxic at 91% RA; oxygen first while access and monitoring are established.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "monitor-etco2",
+          "shortAction": "Cardiac monitor, SpO2, waveform EtCO2 (low EtCO2 = poor perfusion)",
+          "protocolExcerpt": "Treatment and Interventions: Cardiac monitor. Pulse oximetry and EtCO2 (reading of less than 25 mmHg may be sign of poor perfusion).",
+          "priority": "critical",
+          "rationale": "EtCO2 of 30 with tachypnea = compensatory respiratory alkalosis for metabolic acidosis. Will drop further as shock worsens.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "iv-access-x2",
+          "shortAction": "Two large-bore IVs (18g preferred); IO if no IV in 2 attempts/90s",
+          "protocolExcerpt": "Treatment and Interventions: Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle.",
+          "priority": "critical",
+          "rationale": "Need two access points: one for resuscitation fluids, one for pressors when fluid fails.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "glucose-check",
+          "shortAction": "Check blood glucose; correct only if <60 mg/dL (this patient: 138)",
+          "protocolExcerpt": "Treatment and Interventions: Check blood sugar, and correct if less than 60 mg/dL.",
+          "priority": "important",
+          "rationale": "AMS workup; rules out hypoglycemia. 138 is not the cause here.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "lactate-if-available",
+          "shortAction": "Draw POC lactate if available (>2 mmol/L abnormal; this patient: 4.8)",
+          "protocolExcerpt": "Treatment and Interventions: Check lactate, if available (greater than 2 mmol/L is abnormal).",
+          "priority": "important",
+          "rationale": "Lactate confirms tissue hypoperfusion; communicates severity to receiving hospital.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "ns-bolus-30mlkg",
+          "shortAction": "NS 1800 mL bolus (60 kg × 30 mL/kg) pressure-infused, in 500 mL aliquots over <15 min each",
+          "protocolExcerpt": "IV fluid volume goal attained by giving boluses that are pressure infused over less than 15 minutes each based on patient's condition and clinical impression. Adult: Physiologic target: MAP goal 65 mmHg. Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops.",
+          "priority": "critical",
+          "rationale": "30 mL/kg is the front-loaded sepsis bolus. Pressure-bag the line, reassess after each 500 mL.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "ekg",
+          "shortAction": "Acquire 12-lead EKG (rule out cardiogenic etiology)",
+          "protocolExcerpt": "Treatment and Interventions: EKG.",
+          "priority": "important",
+          "rationale": "Sepsis can unmask demand ischemia; documents baseline before pressors.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "advance-notify",
+          "shortAction": "Septic shock alert / advance notification to receiving ED",
+          "protocolExcerpt": "Treatment and Interventions: Provide advanced notification to the hospital.",
+          "priority": "critical",
+          "rationale": "Triggers ED sepsis bundle, mobilizes pressor pumps, antibiotics, and ICU bed before arrival.",
+          "protocolReference": "MATC: Shock"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "fluid-refractory",
+          "if": "30 mL/kg given, BP not responding",
+          "condition": "Crew has completed appropriate primary care: O2 applied, two IVs placed, glucose checked, monitor on, and the full 30 mL/kg NS bolus (1800 mL) has been pressure-infused. BP shows minimal response (84/52 → 86/54), lactate remains elevated, mentation no better. This is fluid-refractory septic shock — vasopressors are now indicated.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["ns-bolus-30mlkg", "iv-access-x2", "oxygen", "monitor-etco2"]
+        },
+        {
+          "targetPhaseId": "fluids-alone",
+          "if": "Crew keeps bolusing past 30 mL/kg, no pressor",
+          "condition": "Crew anchors on fluids and pushes a second and third liter (now 4 L total NS) without initiating a vasopressor. BP barely budges (86/54), and rales develop in the bases as fluid overload layers on top of distributive shock and a CKD baseline. The patient now has septic shock PLUS iatrogenic pulmonary edema.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["ns-bolus-30mlkg"]
+        }
+      ]
+    },
+    {
+      "id": "fluid-refractory",
+      "name": "Fluid-refractory shock",
+      "description": "Full 30 mL/kg is in (1800 mL). BP has barely moved — 86/54 with MAP 65 at best, sliding back to 60 between cycles. Mentation is unchanged. Lactate would still be high. This patient meets the definition of fluid-refractory septic shock: she needs a vasopressor NOW. The standard move is to bridge with push-dose epinephrine (10 mcg q3-5 min) while the second crew member draws up and primes a norepinephrine infusion. Norepi is the first-line pressor for distributive/septic shock per the protocol. Stress-dose steroids (hydrocortisone) are reasonable for fluid-refractory shock per protocol #10. The crew should also be watching the respiratory system — RR is climbing, EtCO2 is dropping further as the metabolic acidosis deepens.",
+      "triggerCondition": "Patient received the full 30 mL/kg crystalloid bolus per protocol. Hemodynamics have not corrected — SBP 86, MAP ~ 65 transiently, then drifting back to 60. This is the definition of fluid-refractory shock and the trigger to escalate to vasopressors.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 3, "motor": 5 },
+        "airway": "Still patent; secretions starting to pool; intermittent gurgle on inspiration",
+        "breathing": "RR 32 and labored; shallow tidal volumes; mild intercostal retractions; lungs still clear bilaterally — no rales (no fluid overload)",
+        "circulation": "HR 128; radial weak/thready; capillary refill now 4-5 seconds; extremities still warm but mottling beginning on knees",
+        "skin": { "color": "Flushed centrally; early mottling on knees and elbows", "temperature": "Warm centrally, cool distally", "moisture": "Diaphoretic" },
+        "pupils": "4 mm, sluggish bilaterally",
+        "motorFunction": "Moves to command but slower; localizes to pain (M5)",
+        "otherFindings": [
+          "MAP 64-65 transiently, drifting to 60",
+          "Mottling beginning at knees — shock index continues to rise",
+          "EtCO2 has dropped from 30 to 26 — deepening metabolic acidosis",
+          "Patient now answering only one-word responses"
+        ],
+        "patientSpeech": "'...tired...' Eyes close between questions. Will open them to a loud voice."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 128,
+        "bpSys": 86,
+        "bpDia": 54,
+        "respRate": 32,
+        "spo2": 90,
+        "etco2": 26,
+        "temp": 39.4,
+        "tempF": 102.9,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [
+          { "label": "MAP (target ≥ 65)", "value": 65 },
+          { "label": "Lactate", "value": 5.1 }
+        ],
+        "trendTimeSeconds": 45,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": true, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-refractory",
+          "shortAction": "Recognize fluid-refractory shock after 30 mL/kg; escalate to pressor",
+          "protocolExcerpt": "Vasopressors (shock unresponsive to IV fluids) titrated to physiologic targets.",
+          "priority": "critical",
+          "rationale": "Anchoring on more fluids is the most common error here. Once 30 mL/kg is in and MAP is not ≥ 65, the next step is a pressor.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "push-dose-epi",
+          "shortAction": "Push-dose epi 10 mcg IV (1 mL of 10 mcg/mL dilution) q3-5 min while norepi prepared",
+          "protocolExcerpt": "Epinephrine, 0.05-0.3 mcg/kg/minute. Alternative to a drip, push dose epinephrine may be administered: Prepare 10 mcg/mL by diluting 1 mL of epinephrine 0.1 mg/mL (1:10,000) in 9 mL of normal saline. Administer 0.01 mg/kg (0.1 mL/kg) up to a maximum single dose of 10 mcg (1 mL) q 3-5 minutes titrated to maintain goal MAP.",
+          "priority": "critical",
+          "rationale": "Push-dose epi is the bridge while the norepi drip is being mixed and primed. Acts in seconds; effect lasts ~5 min. Adult dose capped at 10 mcg per protocol.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "norepi-infusion",
+          "shortAction": "Norepinephrine infusion 3-30 mcg/min (60 kg × 0.05-0.5 mcg/kg/min); start at 5 mcg/min, titrate to MAP ≥ 65",
+          "protocolExcerpt": "Vasopressors (shock unresponsive to IV fluids) titrated to physiologic targets. Cardiogenic, hypovolemic, obstructive shock and distributive shock: Norepinephrine 0.05-0.5 mcg/kg/minute. Preference in both neurogenic and infectious (sepsis) causes of distributive shock.",
+          "priority": "critical",
+          "rationale": "Norepi is first-line for septic shock per protocol. Titrate up every 2-3 min to MAP ≥ 65.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "stress-dose-steroid",
+          "shortAction": "Hydrocortisone 100 mg IV (60 kg × 2 mg/kg = 120 mg → cap at 100 mg max)",
+          "protocolExcerpt": "If there is a history of adrenal insufficiency, long-term steroid dependence, or fluid-refractory shock requiring vasopressors give: Hydrocortisone succinate, 2 mg/kg (maximum 100 mg) IV/IM (preferred).",
+          "priority": "important",
+          "rationale": "Stress-dose steroid is protocol-indicated for fluid-refractory shock requiring vasopressors. Hydrocortisone preferred over methylpred/dex.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "antipyretic",
+          "shortAction": "Acetaminophen 1000 mg PO/PR (15 mg/kg × 60 kg = 900 mg → round to 1 g max)",
+          "protocolExcerpt": "Antipyretics for fever - nonsteroidal anti-inflammatory agents are contraindicated in infants less than 6 months of age. Acetaminophen (15 mg/kg; maximum dose of 1000 mg).",
+          "priority": "supplemental",
+          "rationale": "Fever increases metabolic demand and oxygen consumption; treating it eases the shock workload. Patient is alert enough at this phase to tolerate PO/PR; defer if airway is compromised.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "reassess-q15",
+          "shortAction": "Reassess full vitals/neuro q5 min during pressor titration; document each change",
+          "protocolExcerpt": "Key Documentation Elements: Full vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) with reassessment q 15 minutes or more frequently as appropriate.",
+          "priority": "important",
+          "rationale": "More frequent than q15 is appropriate during active pressor titration.",
+          "protocolReference": "MATC: Shock"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "respiratory-failure",
+          "if": "RR climbs, SpO2 drops, GCS falls",
+          "condition": "Even with pressor support raising the MAP, the patient's respiratory system is failing. RR climbs to 36, SpO2 drops to 88% on NRB, GCS slips to 11, EtCO2 falls to 24 as metabolic acidosis deepens. Compensation is exhausted. This patient needs definitive airway management — RSI is now indicated.",
+          "conditionType": "vital_threshold",
+          "triggerActionIds": ["push-dose-epi", "norepi-infusion"]
+        },
+        {
+          "targetPhaseId": "etomidate-rsi",
+          "if": "Etomidate chosen as induction agent",
+          "condition": "Crew selects etomidate 0.2-0.3 mg/kg for RSI induction in a septic shock patient. Etomidate is on the MATC protocol list, but it causes adrenal suppression — in a patient who is already fluid-refractory and on pressors, this drops the MAP further. Post-intubation hypotension is severe and requires rescue with push-dose epi boluses and a norepi up-titration.",
+          "conditionType": "action_taken"
+        }
+      ]
+    },
+    {
+      "id": "respiratory-failure",
+      "name": "Respiratory failure / pre-RSI",
+      "description": "Compensation has run out. Despite pressor support, the patient's respiratory drive is no longer enough to clear the metabolic acidosis — RR is 36, shallow, SpO2 is 88% on NRB, EtCO2 is 24, GCS is 11 (E3 V3 M5). She cannot protect her airway much longer, she cannot oxygenate, and she cannot ventilate enough to keep up with her acidosis. This is the indication for RSI. The catch in this patient: induction agent choice matters enormously. Ketamine (1-2 mg/kg IV) preserves sympathetic tone and is the preferred induction in shock. Etomidate is on the protocol but causes adrenal suppression and predictably worsens shock post-intubation. The crew must pre-oxygenate with BVM + PEEP, optimize positioning, push fentanyl + ketamine + rocuronium, and intubate in one careful pass.",
+      "triggerCondition": "Patient on norepi infusion with MAP supported, but respiratory drive is failing: RR 36, SpO2 88% on NRB, EtCO2 24, GCS 11. Tachypnea is exhausting respiratory reserve and the patient can no longer compensate for her metabolic acidosis. RSI is now indicated.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 3, "motor": 5 },
+        "airway": "Patent but at risk; intermittent gurgling on inspiration; gag present but diminished",
+        "breathing": "RR 36, shallow, with visible accessory muscle use and intercostal retractions; lungs still clear — this is not a fluid problem, this is a drive/work-of-breathing problem; EtCO2 24 reflects continued (but failing) compensation for metabolic acidosis",
+        "circulation": "On norepi at 8 mcg/min; HR 132; MAP 68; radial pulse weak; capillary refill 4 seconds; mottling now to mid-thigh",
+        "skin": { "color": "Flushed face, mottled lower extremities", "temperature": "Warm centrally, cool peripherally", "moisture": "Diaphoretic" },
+        "pupils": "4 mm, sluggish",
+        "motorFunction": "Localizes to pain only (M5); no purposeful response to voice",
+        "otherFindings": [
+          "GCS 11 — not yet unresponsive but trending down",
+          "Mottling has progressed proximally — worsening tissue hypoperfusion",
+          "EtCO2 24 is ominously low: compensation is failing",
+          "Patient cannot keep eyes open even with stimulation"
+        ],
+        "patientSpeech": "Inarticulate moan when stimulated. No words."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 132,
+        "bpSys": 96,
+        "bpDia": 54,
+        "respRate": 36,
+        "spo2": 88,
+        "etco2": 24,
+        "temp": 39.4,
+        "tempF": 102.9,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [
+          { "label": "MAP (norepi-supported)", "value": 68 },
+          { "label": "Norepi (mcg/min)", "value": 8 }
+        ],
+        "trendTimeSeconds": 50,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": true, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-resp-failure",
+          "shortAction": "Recognize impending respiratory failure (low EtCO2 + tachypnea + drop in GCS)",
+          "protocolExcerpt": "Patient Safety Considerations: Normal EtCO2 (35-45 mmHg) with tachypnea and respiratory distress is an indicator of impending respiratory failure.",
+          "priority": "critical",
+          "rationale": "EtCO2 24 with RR 36 is the textbook failing-compensation pattern. Don't wait for arrest.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "pre-oxygenate",
+          "shortAction": "Pre-oxygenate 2+ min: BVM with PEEP 5 + apneic NC at 15 L/min",
+          "protocolExcerpt": "Rapid/Delayed Sequence Intubation: Patient should be pre-oxygenated with high flow oxygen, and positive pressure ventilation for a minimum of two minutes prior to the procedure.",
+          "priority": "critical",
+          "rationale": "Septic patients desaturate fast. Adequate pre-O2 is the single biggest predictor of safe RSI.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "fentanyl-pretreat",
+          "shortAction": "Fentanyl 60 mcg IV (60 kg × 1 mcg/kg) 2-3 min before laryngoscopy",
+          "protocolExcerpt": "Rapid/Delayed Sequence Intubation: Consider pre-medication with Fentanyl, 1 mcg/kg, 2-3 minutes prior to intubation attempt.",
+          "priority": "important",
+          "rationale": "Blunts sympathetic response; helpful when sympathetic surge would worsen demand ischemia.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "ketamine-induction",
+          "shortAction": "Ketamine 90 mg IV push (60 kg × 1.5 mg/kg) — preferred induction in shock",
+          "protocolExcerpt": "Rapid/Delayed Sequence Intubation: Administer induction sedative agent: Etomidate IV push, 0.2-0.3 mg/kg OR Ketamine IV push, 1-2 mg/kg OR Midazolam IV push, 0.05-0.10 mg/kg.",
+          "priority": "critical",
+          "rationale": "Ketamine preserves sympathetic tone and BP in shock. Etomidate causes adrenal suppression — bad choice in a fluid-refractory septic patient.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "rocuronium",
+          "shortAction": "Rocuronium 60 mg IV push (60 kg × 1 mg/kg) for paralysis",
+          "protocolExcerpt": "Rapid/Delayed Sequence Intubation: Administer paralytic agent: Succinylcholine IV push, 1-2 mg/kg OR Rocuronium IV push, 1 mg/kg OR Vecuronium IV push, 0.1 mg/kg.",
+          "priority": "critical",
+          "rationale": "Roc is preferred when prolonged paralysis is acceptable and sux contraindications exist (renal/CKD patient — sux risks hyperkalemia).",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "intubate-confirm",
+          "shortAction": "Intubate (7.5 mm ETT); confirm with waveform EtCO2 + bilateral breath sounds",
+          "protocolExcerpt": "Endotracheal intubation: Attempt intubation, limiting attempts to 15 seconds, or a desaturation below 90%, whichever occurs first. Post-intubation management: Confirm placement of advanced airway (endotracheal tube, SGA) with waveform capnography (most reliable), absent gastric sounds, and bilateral breath sounds.",
+          "priority": "critical",
+          "rationale": "Waveform capnography is the most reliable confirmation. 15-second attempt or 90% SpO2 floor — whichever comes first.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "post-rsi-transport",
+          "if": "Tube confirmed with EtCO2",
+          "condition": "Endotracheal tube confirmed in trachea by waveform capnography and bilateral breath sounds. Tube secured. Patient is now oxygenating well on PEEP, ventilating to a target EtCO2 of 30-35 (slightly lower than normal to allow respiratory compensation for ongoing metabolic acidosis). Sedation continued. Norepi still running. Time to package and roll.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["intubate-confirm"]
+        }
+      ]
+    },
+    {
+      "id": "post-rsi-transport",
+      "name": "Post-RSI transport",
+      "description": "Patient is intubated, oxygenating, ventilating, and on a norepi infusion. The crew has stabilized — not fixed — three failing systems (cardiovascular, respiratory, neurologic) and now has to maintain that stability on the way to a sepsis-capable ED. Mechanical ventilation if available; PEEP 5 to start; target EtCO2 30-35 to allow respiratory compensation for metabolic acidosis (do NOT normalize EtCO2 to 35-45 — it would worsen the systemic acidosis); continue sedation with fentanyl + midazolam; gastric decompression with NG/OG; reassess MAP, lactate, and norepi rate every few minutes; advance notify the ED with the full picture — septic shock, fluid-refractory, on norepi at X mcg/min, intubated. This is the 'support the systems and hand off' phase.",
+      "triggerCondition": "Endotracheal tube confirmed by waveform capnography. Patient is now mechanically ventilated, on norepi, sedated, and ready to transport.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "Secured ETT, depth 22 cm at the teeth, cuff inflated, waveform capnograph in line, square waveform present",
+        "breathing": "Ventilated at 14/min, TV ~ 420 mL (7 mL/kg IBW), PEEP 5; bilateral breath sounds equal, no rales; SpO2 96% on FiO2 1.0",
+        "circulation": "HR 116; norepi titrated to 10 mcg/min holding MAP 68-72; capillary refill 3 seconds; mottling slowly receding from knees back toward feet",
+        "skin": { "color": "Less flushed; mottling regressing peripherally", "temperature": "Warm centrally, cool distally", "moisture": "Still diaphoretic, drying with cooling and antipyretic effect" },
+        "pupils": "4 mm, equal, sluggish (post-paralytic)",
+        "motorFunction": "Paralyzed; no spontaneous movement",
+        "otherFindings": [
+          "Sedation maintained with fentanyl/midazolam infusion or repeat boluses",
+          "OG tube placed for gastric decompression",
+          "Norepi running on a second IV; first IV running maintenance NS at TKO",
+          "Ventilator target EtCO2 30-35 (NOT 35-45) — preserve respiratory compensation for metabolic acidosis",
+          "Patient packaged for stair-chair extrication, then stretcher"
+        ],
+        "patientSpeech": "None (intubated/paralyzed)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 116,
+        "bpSys": 104,
+        "bpDia": 56,
+        "respRate": 14,
+        "spo2": 96,
+        "etco2": 32,
+        "temp": 39.1,
+        "tempF": 102.4,
+        "obstruction": 0,
+        "glucose": 138,
+        "customMeasures": [
+          { "label": "MAP (norepi-supported)", "value": 72 },
+          { "label": "Norepi (mcg/min)", "value": 10 },
+          { "label": "FiO2", "value": 100 },
+          { "label": "PEEP (cmH2O)", "value": 5 }
+        ],
+        "trendTimeSeconds": 40,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": true, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "vent-settings",
+          "shortAction": "Ventilate 14/min, TV 6-8 mL/kg IBW (~420 mL), PEEP 5; target EtCO2 30-35",
+          "protocolExcerpt": "Post-intubation management: Tidal volume: Ventilate with just enough volume to see chest rise, approximately 6-8 mL/kg ideal body weight. Rate: Adult: 10-12 breaths/minute. PEEP should be used with BVM. 5 cmH2O is generally an appropriate initial PEEP setting. Patients with specific disease processes such as acute acid-base disorders (i.e., DKA, lactic acidosis due to severe sepsis or trauma), acute respiratory failure due to primary pulmonary pathology, or post-cardiac arrest will have different EtCO2 parameters due to their underlying disease.",
+          "priority": "critical",
+          "rationale": "Septic patients need a lower target EtCO2 (30-35) so the lungs continue to compensate for the metabolic acidosis. Normalizing to 35-45 would acidify them further.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "post-tube-sedation",
+          "shortAction": "Post-intubation sedation: fentanyl 60-120 mcg + midazolam 1-2 mg IV (titrate)",
+          "protocolExcerpt": "Post-intubation management: Consider sedation with sedative and/or opioid medications if agitated: Fentanyl 1-2 mcg/kg And Midazolam 0.02 mg/kg OR Ketamine IV push, 0.5-1 mg/kg.",
+          "priority": "critical",
+          "rationale": "Paralytic alone is awareness without movement — humane sedation is mandatory.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "gastric-decompression",
+          "shortAction": "Place OG/NG tube for gastric decompression",
+          "protocolExcerpt": "Gastric decompression can improve oxygenation and ventilation, so it should be strongly considered in any patient with an advanced airway and positive pressure ventilation.",
+          "priority": "important",
+          "rationale": "PPV inflates the stomach; decompression improves ventilation and reduces aspiration risk on movement.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "titrate-norepi",
+          "shortAction": "Titrate norepi q2-3 min to MAP ≥ 65 (currently 10 mcg/min, range 3-30 mcg/min)",
+          "protocolExcerpt": "Vasopressors (shock unresponsive to IV fluids) titrated to physiologic targets. Norepinephrine 0.05-0.5 mcg/kg/minute.",
+          "priority": "critical",
+          "rationale": "Active titration during transport; document each rate change.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "continuous-etco2",
+          "shortAction": "Continuous waveform EtCO2; reconfirm placement after every movement",
+          "protocolExcerpt": "Post-intubation management: Continuously monitor correct airway placement with waveform capnography during treatment and transport, paying particular attention to reassessing after each patient movement.",
+          "priority": "critical",
+          "rationale": "Tube can dislodge during stair-chair extrication and stretcher transfer. Capnography catches it immediately.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "advance-notify-update",
+          "shortAction": "Update receiving ED: septic shock, intubated, norepi 10 mcg/min, ETA",
+          "protocolExcerpt": "Treatment and Interventions: Provide advanced notification to the hospital.",
+          "priority": "critical",
+          "rationale": "Sepsis-capable ED needs to be ready with antibiotics, blood cultures, and an ICU bed.",
+          "protocolReference": "MATC: Shock"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "fluids-alone",
+      "name": "Fluids alone (no pressor)",
+      "description": "Crew anchors on volume. The MAP didn't come up after 30 mL/kg, so they hang another liter. Then another. By the time the rig pulls into the bay, 4 L of NS has gone in and the BP is barely different from when it started — 86/54. The lungs that were clear on arrival now have rales in the bases. The patient's mentation hasn't improved, her urine output is still nothing, and her CKD-baseline kidneys are now sitting in a fluid-overloaded body that still can't perfuse. This is the iatrogenic complication of fluid-anchoring in fluid-refractory septic shock: distributive shock PLUS pulmonary edema, on top of CKD. Now the crew has to add CPAP/BiPAP support to fix the iatrogenic edema while still trying to get a pressor going.",
+      "triggerCondition": "After the initial 30 mL/kg failed to correct hemodynamics, the crew administered an additional 1500-2000 mL of NS without initiating a vasopressor. BP remains 86/54. Bibasilar rales have developed. The patient now has septic shock with superimposed iatrogenic pulmonary edema on a CKD baseline.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 2, "motor": 5 },
+        "airway": "Patent, mildly wet-sounding",
+        "breathing": "RR 36, increasing work of breathing, audible crackles bilaterally at the bases now extending mid-zone; SpO2 dropped to 86% on NRB despite added oxygen",
+        "circulation": "HR 130; radial weak; capillary refill 4-5 seconds; mottling spreading; JVD now appearing at 8 cm with the patient at 30 degrees",
+        "skin": { "color": "Flushed centrally, mottled peripherally", "temperature": "Warm centrally, cool distally", "moisture": "Diaphoretic" },
+        "pupils": "4 mm, sluggish",
+        "motorFunction": "Localizes weakly (M5)",
+        "otherFindings": [
+          "Rales now bibasilar, extending up the posterior fields",
+          "New-onset JVD — fluid overload sign",
+          "Lactate continues to climb (now 5.6) despite massive volume",
+          "Pink-tinged frothy secretions at the corners of the mouth",
+          "Patient given 4 L NS total with essentially no MAP improvement"
+        ],
+        "patientSpeech": "Single-word groans only"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 130,
+        "bpSys": 86,
+        "bpDia": 54,
+        "respRate": 36,
+        "spo2": 86,
+        "etco2": 28,
+        "temp": 39.4,
+        "tempF": 102.9,
+        "obstruction": 0,
+        "glucose": 140,
+        "customMeasures": [
+          { "label": "MAP", "value": 65 },
+          { "label": "Lactate", "value": 5.6 },
+          { "label": "Total NS infused (mL)", "value": 4000 }
+        ],
+        "trendTimeSeconds": 55,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": true, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "stop-fluids",
+          "shortAction": "Stop further crystalloid bolus; recognize cardiogenic/pulmonary edema overlay",
+          "protocolExcerpt": "Patient Safety Considerations: Recognition of cardiogenic shock - If the patient condition deteriorates after fluid administration, rales or hepatomegaly develop, then consider cardiogenic shock and withholding further fluid administration.",
+          "priority": "critical",
+          "rationale": "Protocol explicitly says STOP fluids when rales develop. Anchoring kills here.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "start-norepi-now",
+          "shortAction": "Start norepinephrine 3-30 mcg/min (60 kg × 0.05-0.5 mcg/kg/min); begin 5 mcg/min",
+          "protocolExcerpt": "Vasopressors (shock unresponsive to IV fluids) titrated to physiologic targets. Norepinephrine 0.05-0.5 mcg/kg/minute. Preference in both neurogenic and infectious (sepsis) causes of distributive shock.",
+          "priority": "critical",
+          "rationale": "Should have been started one liter ago; start now.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "cpap-bipap",
+          "shortAction": "Initiate CPAP/BiPAP for iatrogenic pulmonary edema",
+          "protocolExcerpt": "Adults with suspected pulmonary edema due to acute heart failure or fluid overload (such as dialysis noncompliance): Restoration of adequate oxygenation and ventilation should precede or be accomplished simultaneously with other medication therapies below: CPAP/BiPAP: See Airway Management Guideline for goals of care and escalation of interventions.",
+          "priority": "critical",
+          "rationale": "PEEP recruits flooded alveoli. Buys time before forced RSI.",
+          "protocolReference": "MATC: Respiratory Distress (includes Bronchospasm, Pulmonary Edema)"
+        },
+        {
+          "id": "expedite-transport",
+          "shortAction": "Expedite transport; advance notify ED that fluids alone failed",
+          "protocolExcerpt": "Treatment and Interventions: Provide advanced notification to the hospital.",
+          "priority": "important",
+          "rationale": "ED needs to be ready for a complex resuscitation: pressor, possible RSI, blood cultures, antibiotics.",
+          "protocolReference": "MATC: Shock"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "etomidate-rsi",
+      "name": "Etomidate-induced post-RSI hypotension",
+      "description": "Crew chose etomidate 0.2-0.3 mg/kg as the induction agent. Etomidate is on the protocol list. The intubation itself goes fine — first pass, capnography confirms, tube secured. But within 2-3 minutes the BP crashes: SBP 64, MAP 48, despite the norepi infusion that was already running. Etomidate causes adrenal suppression via 11-beta-hydroxylase inhibition, and in a patient who is already fluid-refractory and depending on stress steroids to make catecholamines, that suppression cracks the floor out from under the BP. The crew now has to rescue: push-dose epi boluses, up-titrate the norepi, give hydrocortisone (if not already given), and accept that this patient is now going to need more pressor than would have been required with ketamine.",
+      "triggerCondition": "Etomidate 0.2-0.3 mg/kg was selected as the RSI induction agent. The tube placed fine, but within 2-3 minutes the MAP dropped from 68 to 48, requiring rescue with push-dose epi and rapid norepi up-titration.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "Secured ETT, depth 22 cm, cuff inflated, capnograph in line",
+        "breathing": "Ventilated 14/min, PEEP 5, SpO2 95%; vent is fine — the problem is downstream",
+        "circulation": "HR 138; norepi up-titrated from 10 to 20 mcg/min; MAP 48 climbing back toward 60 with push-dose epi boluses; capillary refill 5+ seconds",
+        "skin": { "color": "Mottled to mid-thigh, returning toward groin", "temperature": "Cool peripherally, warm core", "moisture": "Diaphoretic" },
+        "pupils": "4 mm, sluggish (post-paralytic)",
+        "motorFunction": "Paralyzed",
+        "otherFindings": [
+          "MAP dropped from 68 to 48 within 3 min of etomidate administration",
+          "Required two push-dose epi boluses (10 mcg each) to bridge",
+          "Norepi up-titrated from 10 to 20 mcg/min to recapture MAP ≥ 65",
+          "Hydrocortisone 100 mg IV given as rescue if not already on board",
+          "Etomidate adrenal-suppression effect explains the disproportionate drop"
+        ],
+        "patientSpeech": "None"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 138,
+        "bpSys": 78,
+        "bpDia": 44,
+        "respRate": 14,
+        "spo2": 95,
+        "etco2": 30,
+        "temp": 39.1,
+        "tempF": 102.4,
+        "obstruction": 0,
+        "glucose": 138,
+        "customMeasures": [
+          { "label": "MAP (post-etomidate)", "value": 55 },
+          { "label": "Norepi (mcg/min)", "value": 20 },
+          { "label": "Push-dose epi boluses given", "value": 2 }
+        ],
+        "trendTimeSeconds": 25,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": true, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "rescue-push-epi",
+          "shortAction": "Rescue push-dose epi 10 mcg IV q3-5 min until norepi catches up",
+          "protocolExcerpt": "Alternative to a drip, push dose epinephrine may be administered: Prepare 10 mcg/mL by diluting 1 mL of epinephrine 0.1 mg/mL (1:10,000) in 9 mL of normal saline. Administer 0.01 mg/kg (0.1 mL/kg) up to a maximum single dose of 10 mcg (1 mL) q 3-5 minutes titrated to maintain goal MAP.",
+          "priority": "critical",
+          "rationale": "Push-dose is the fast bridge; norepi up-titration takes 2-3 minutes to take effect.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "up-titrate-norepi",
+          "shortAction": "Up-titrate norepi to 20-30 mcg/min (still within 60 kg × 0.5 mcg/kg/min cap)",
+          "protocolExcerpt": "Norepinephrine 0.05-0.5 mcg/kg/minute. Preference in both neurogenic and infectious (sepsis) causes of distributive shock.",
+          "priority": "critical",
+          "rationale": "Still within the per-kg range. Higher rates than this would prompt a second pressor (e.g., vasopressin or epi drip).",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "hydrocort-rescue",
+          "shortAction": "Hydrocortisone 100 mg IV if not already given (etomidate adrenal suppression)",
+          "protocolExcerpt": "Notes/Educational Pearls: Patients with no reported history of adrenal axis dysfunction may have adrenal suppression due to their acute illness, and hydrocortisone should be considered for any patient showing signs of treatment-resistant shock.",
+          "priority": "critical",
+          "rationale": "Etomidate inhibits 11-beta-hydroxylase. Replace cortisol exogenously.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "document-event",
+          "shortAction": "Document peri-intubation hypotension event and rescue interventions",
+          "protocolExcerpt": "Key Documentation Elements: Occurrence of peri-intubation hypoxia (less than 90% SPO2), bradycardia (per age), hypotension (SBP less than 90mmHg or lowest age-appropriate SBP) or cardiac arrest. The peri-intubation period encompasses the time from sedative administration to up to 10 minutes post any invasive airway attempt.",
+          "priority": "important",
+          "rationale": "Quality measure; informs receiving ED of recent rescue interventions.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

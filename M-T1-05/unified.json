@@ -1,0 +1,455 @@
+{
+  "meta": {
+    "id": "M-T1-05",
+    "scenarioId": "M-T1-05",
+    "name": "Diabetic Ketoacidosis, Early Recognition",
+    "version": 1,
+    "difficulty": "beginner",
+    "category": "Medical",
+    "protocols": [
+      "medical-hyperglycemia",
+      "medical-abdominal-pain",
+      "medical-shock",
+      "medical-nausea-vomiting"
+    ],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": ["DKA", "hyperglycemia", "abdominal pain", "Kussmaul", "assessment", "Tier 1"]
+  },
+  "patient": {
+    "name": "Hailey Brennan",
+    "age": 19,
+    "ageUnit": "years",
+    "sex": "female",
+    "weight": 50,
+    "weightLbs": 110,
+    "height": 165,
+    "chiefComplaint": "Diffuse abdominal pain with nausea and vomiting",
+    "history": {
+      "hpi": "Patient is a 19-year-old female with type 1 diabetes (diagnosed at age 11). For the last three days she has had a flu-like illness — sore throat, low-grade fever, and progressive nausea and vomiting. Because she 'couldn't keep anything down,' she stopped taking her insulin two days ago, reasoning that she 'wasn't eating, so she didn't need it.' Over the last 24 hours she has developed diffuse, cramping abdominal pain (now 7/10), worsening fatigue, increased thirst, and urinating 'constantly — every 30 minutes.' She vomited three times overnight and once this morning. Her roommate found her this morning curled up in bed, breathing fast and deep, and confused-sounding. The roommate called 911 because she was 'just not acting right and breathing weird.' Patient denies chest pain, recent travel, sick contacts beyond a roommate with a cold, sexual activity in the last 6 months, or pregnancy possibility.",
+      "pastMedical": [
+        "Type 1 diabetes mellitus (insulin-dependent, since age 11)",
+        "No prior DKA admissions reported",
+        "Otherwise healthy"
+      ],
+      "medications": [
+        "Insulin glargine 18 units SQ qHS (held x2 days)",
+        "Insulin aspart sliding scale with meals (held x2 days)"
+      ],
+      "allergies": ["NKDA"],
+      "lastOralIntake": "Sips of water this morning; last solid food ~36 hours ago (toast, did not stay down)",
+      "events": "Three days of flu-like illness with vomiting → patient stopped insulin 'because she wasn't eating.' Polyuria, polydipsia, fatigue, and diffuse abdominal pain progressed over 24–48 hours. Roommate called 911 this morning after finding her breathing fast and deep, confused, and complaining of belly pain."
+    }
+  },
+  "scene": {
+    "dispatch": "Medic 12, respond priority 2 to 882 Greenwood Apartments, Unit 4B, for a 19-year-old female, abdominal pain and vomiting, possibly not feeling well for several days. Caller is the patient's roommate.",
+    "location": "Second-floor apartment bedroom. Patient lying curled on her side on top of the comforter. Adequate lighting; cluttered but accessible.",
+    "time": "0945 Sunday morning",
+    "safety": "Scene safe. No pets, no weapons, no environmental hazards. Roommate is cooperative and present.",
+    "bystanders": "Roommate (22 y/o, primary historian) — anxious but able to give a clear timeline. Reports patient is type 1 diabetic, has been 'sick with the flu' for three days, hasn't been eating, and 'I think she said she stopped her insulin.'",
+    "visualCues": [
+      "An insulin pen and unopened glargine vial sit on the nightstand, untouched",
+      "A small wastebasket beside the bed contains bile-stained emesis",
+      "Patient's water bottle is empty on the floor; an empty 32-oz Gatorade bottle nearby",
+      "Patient is breathing visibly deep and fast — chest rises noticeably with each breath",
+      "Faint sweet/fruity odor noticeable when leaning close to assess airway"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 19-year-old female curled on her side in bed, complaining of diffuse abdominal pain and feeling 'really sick.' She is alert and oriented but tired-appearing, with deep and rapid (Kussmaul) respirations that are easy to miss if you anchor on 'abd pain.' Skin is warm and dry with poor turgor; mucous membranes are visibly dry. A faint fruity odor is noticeable on her breath. Vitals show tachycardia and tachypnea with borderline-low BP. Roommate is at bedside with a clear history: type 1 diabetic, three days of flu-like illness with vomiting, and the patient stopped her insulin because she 'wasn't eating.' This patient looks like a routine 'abd pain / vomiting' call at first glance — the catchable findings are the deep-rapid breathing pattern, dry mucous membranes, the fruity breath, and the missed-insulin history. A finger-stick glucose seals the diagnosis.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, self-maintained; speaking in short sentences between deep breaths",
+        "breathing": "Spontaneous, deep, regular, and rapid — Kussmaul pattern (will be obvious if observed for >15 seconds); lung sounds clear bilaterally; no accessory muscle use",
+        "circulation": "Radial pulse present, rapid and regular; cap refill 3 seconds; cool peripheries with warm core",
+        "skin": { "color": "pale", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL, 4 mm bilaterally",
+        "motorFunction": "Moves all extremities purposefully; grip strength symmetric but weak; no focal deficit",
+        "otherFindings": [
+          "Dry mucous membranes; tongue appears furrowed",
+          "Skin tenting (poor turgor) on forearm",
+          "Faint fruity/acetone odor on breath if examiner leans in close",
+          "Abdomen: diffusely tender to palpation in all four quadrants, soft, no rebound, no guarding, no rigidity, no surgical signs",
+          "No CVA tenderness, no Murphy's sign, no McBurney's point tenderness, no pulsatile mass",
+          "Sunken-appearing eyes per roommate ('she looks different than yesterday')"
+        ],
+        "patientSpeech": "\"My stomach really hurts… everywhere. I've been throwing up for like three days. I'm so thirsty but everything I drink comes right back up. I just want to sleep.\""
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 122,
+        "bpSys": 102,
+        "bpDia": 66,
+        "respRate": 28,
+        "spo2": 99,
+        "etco2": 18,
+        "temp": 37.6,
+        "tempF": 99.7,
+        "obstruction": 0,
+        "glucose": 520,
+        "customMeasures": [],
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "primary-survey",
+          "shortAction": "Primary survey (ABC); note deep/rapid breathing pattern",
+          "protocolExcerpt": "Exam: Airway/breathing (airway edema, rales, wheezing, pulse oximetry, respiratory rate); Circulation (heart rate, blood pressure, capillary refill); Mucous membrane hydration; Skin (turgor, rash); Neurologic (GCS, sensorimotor deficits).",
+          "priority": "critical",
+          "rationale": "The respiratory pattern is the single most catchable physical finding pointing away from a simple GI complaint. If the crew anchors on 'abd pain,' they will miss Kussmaul respirations.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "focused-hpi",
+          "shortAction": "Focused HPI — diabetic history, insulin compliance, fluid intake/output",
+          "protocolExcerpt": "Consider causes for hyperglycemia by thinking about the 3 I's: Insulin: This refers to any medication changes for insulin or oral medications including poor compliance or malfunctioning insulin pump; Ischemia: This refers to hyperglycemia sometimes being an indication of physiologic stress in a patient and can be a clue to myocardial ischemia in particular; Infection: Underlying infection can cause derangements in glucose control.",
+          "priority": "critical",
+          "rationale": "The 3 I's (Insulin, Ischemia, Infection) cue the crew to ask the right questions. The history of held insulin during illness is the trigger for DKA in this case.",
+          "protocolReference": "MATC: Hyperglycemia"
+        },
+        {
+          "id": "abd-exam",
+          "shortAction": "Focused abdominal exam — rule out surgical abdomen",
+          "protocolExcerpt": "Assess for life-threatening causes of abdominal pain, which may include: Signs and symptoms of ischemic, necrotic, or perforated bowel (Severe tenderness; Abdominal pain with motion or palpation of the abdomen; Fever; Bloody stool; Nausea and vomiting; Absence of passage of stool or gas; Abdominal distention, with tympany to percussion); Signs and symptoms of dissecting or ruptured abdominal aortic aneurysm (AAA); Signs and symptoms of ruptured ectopic pregnancy; Signs and symptoms of appendicitis (Focal right lower quadrant tenderness, possibly with rebound and guarding; ... Peri-umbilical or diffuse abdominal tenderness with palpation of the abdomen/pelvis; Fever; Nausea, vomiting; Lack of appetite); Signs and symptoms of acute cholecystitis; Signs and symptoms of pyelonephritis.",
+          "priority": "important",
+          "rationale": "A proper abd exam shows diffuse tenderness without surgical findings (no rebound, no rigidity, no focal RLQ/RUQ point), which de-emphasizes appendicitis/cholecystitis and supports a medical (metabolic) etiology.",
+          "protocolReference": "MATC: Abdominal Pain"
+        },
+        {
+          "id": "fingerstick-glucose",
+          "shortAction": "Finger-stick blood glucose — result 520 mg/dL",
+          "protocolExcerpt": "Monitoring: Check blood glucose level. Performance Measures: When in scope of practice, point of care blood glucose checked for all patients with symptoms of altered level of consciousness, seizure, stroke, or hyperglycemia.",
+          "priority": "critical",
+          "rationale": "This is the diagnostic pivot. A glucose of 520 mg/dL with vomiting and abdominal pain meets the protocol's threshold (>250 mg/dL with symptoms) and locks in DKA as the working diagnosis.",
+          "protocolReference": "MATC: Hyperglycemia"
+        },
+        {
+          "id": "recognize-dka",
+          "shortAction": "Recognize DKA constellation (hyperglycemia + Kussmaul + dehydration + fruity breath)",
+          "protocolExcerpt": "Pertinent Assessment Findings: Concomitant trauma; Abdominal pain, \"fruity breath,\" and rapid-deep respirations (Kussmaul respirations) may be associated with DKA. Key Considerations: New onset DKA in pediatric patients commonly presents with nausea, vomiting, abdominal pain, and/or urinary frequency.",
+          "priority": "critical",
+          "rationale": "Naming the syndrome out loud anchors the rest of the call — fluid-forward, transport with high acuity, not anti-emetic-and-go.",
+          "protocolReference": "MATC: Hyperglycemia"
+        },
+        {
+          "id": "supplemental-o2",
+          "shortAction": "O2 prn — titrate to SpO2 94–98% (likely no supplemental needed)",
+          "protocolExcerpt": "Administer oxygen as appropriate with a target of achieving 94–98% saturation.",
+          "priority": "supplemental",
+          "rationale": "Saturation is already 99% on room air; oxygen is not indicated. Recognizing that the rapid breathing is metabolic (compensatory), not hypoxic, is part of the assessment win.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "cardiac-monitor-12-lead",
+          "shortAction": "Cardiac monitor + 12-lead EKG (screen for hyperkalemia / ACS)",
+          "protocolExcerpt": "Obtain 12-lead EKG to assess for findings consistent with hyperkalemia or acute coronary syndrome.",
+          "priority": "important",
+          "rationale": "DKA drives a potassium shift that can produce peaked T waves on EKG; the protocol explicitly calls for a 12-lead.",
+          "protocolReference": "MATC: Hyperglycemia"
+        },
+        {
+          "id": "iv-access",
+          "shortAction": "Establish large-bore IV access (anticipate fluid resuscitation)",
+          "protocolExcerpt": "Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle.",
+          "priority": "critical",
+          "rationale": "Vascular access is the gateway to fluid therapy — the core DKA intervention available to the field.",
+          "protocolReference": "MATC: Shock"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "dka-recognized",
+          "if": "DKA recognized; fluids started",
+          "condition": "Crew performs a thorough primary and secondary survey, notes Kussmaul respirations, obtains a finger-stick glucose (520 mg/dL), and recognizes the DKA constellation. They establish IV access and prepare a normal saline bolus per the Hyperglycemia and Shock guidelines.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["fingerstick-glucose", "recognize-dka", "iv-access"]
+        },
+        {
+          "targetPhaseId": "anchored-on-abd",
+          "if": "Glucose not checked; treated as routine abd pain",
+          "condition": "Crew anchors on 'abdominal pain / vomiting,' does not obtain a finger-stick glucose, misses the Kussmaul breathing pattern, and proceeds with an antiemetic-and-transport plan without IV fluid resuscitation.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["fingerstick-glucose", "recognize-dka"]
+        }
+      ]
+    },
+    {
+      "id": "dka-recognized",
+      "name": "DKA recognized; fluids started",
+      "description": "Crew has named DKA, opened a large-bore IV, and is moving the patient to the cot. The next deliverable is a normal saline bolus per the Hyperglycemia protocol — 20 mL/kg at 1000 mL/hr — and reassessment. Vitals are essentially unchanged on initial reassessment but the patient is now packaged and en route.",
+      "triggerCondition": "Crew performed a thorough primary/secondary survey, checked finger-stick glucose (520 mg/dL), recognized the DKA constellation (Kussmaul respirations, dehydration, fruity breath, diffuse abd pain in a T1DM with held insulin), and established IV access. The patient now needs guideline-directed fluid resuscitation and high-acuity transport.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, self-maintained",
+        "breathing": "Deep and rapid (Kussmaul) — unchanged from initial",
+        "circulation": "Radial pulse rapid and regular; cap refill 3 seconds",
+        "skin": { "color": "pale", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL, 4 mm bilaterally",
+        "motorFunction": "Moves all extremities; weak grip; no focal deficit",
+        "otherFindings": [
+          "Dry mucous membranes persist",
+          "Patient cooperating with care; verbalizes mild relief at IV placement",
+          "Glucometer displays 520 mg/dL"
+        ],
+        "patientSpeech": "\"I just want this to stop. Can I have something for the nausea?\""
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 124,
+        "bpSys": 100,
+        "bpDia": 64,
+        "respRate": 28,
+        "spo2": 99,
+        "etco2": 18,
+        "temp": 37.6,
+        "tempF": 99.7,
+        "obstruction": 0,
+        "glucose": 520,
+        "customMeasures": [],
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "ns-bolus",
+          "shortAction": "Normal saline 1000 mL IV bolus (50 kg × 20 mL/kg = 1000 mL) at 1000 mL/hr",
+          "protocolExcerpt": "If glucose greater than 250 mg/dL with symptoms of dehydration, vomiting, abdominal pain, or altered level of consciousness: Provide volume expansion with normal saline bolus — Adult: Normal saline 20 mL/kg at rate of 1000 mL/hr; if symptoms of hypovolemic shock, follow Shock Guideline.",
+          "priority": "critical",
+          "rationale": "Fluid is the field treatment for DKA. The protocol specifies 20 mL/kg at 1000 mL/hr; for this 50 kg patient that is a 1-liter bolus.",
+          "protocolReference": "MATC: Hyperglycemia"
+        },
+        {
+          "id": "ondansetron",
+          "shortAction": "Ondansetron 4 mg IV (fixed adult dose) for ongoing nausea",
+          "protocolExcerpt": "Ondansetron (contraindicated for suspected or known diagnosis of prolonged QT syndrome): Adult — 4 mg IV/PO/SL.",
+          "priority": "supplemental",
+          "rationale": "Antiemetic is reasonable comfort care but is supplemental — it does not replace fluid resuscitation. The 12-lead first rules out QT prolongation.",
+          "protocolReference": "MATC: Nausea-Vomiting"
+        },
+        {
+          "id": "reassess-vitals",
+          "shortAction": "Reassess vitals, mental status, lung sounds q5 min during bolus",
+          "protocolExcerpt": "Reassess patient: Reassess vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment), mental status, and signs of dehydration. If mental status changes, reassess blood glucose level and provide appropriate treatment if hypoglycemia has developed.",
+          "priority": "important",
+          "rationale": "Mandatory reassessment per protocol; also screens for the protocol-flagged complication of cerebral edema (worsening mental status) and fluid overload.",
+          "protocolReference": "MATC: Hyperglycemia"
+        },
+        {
+          "id": "monitor-cerebral-edema",
+          "shortAction": "Monitor for cerebral edema (mental status changes, headache, ICP signs)",
+          "protocolExcerpt": "Patient Safety Considerations: Overly aggressive administration of fluid in hyperglycemic patients may cause cerebral edema or dangerous hyponatremia. Cerebral edema is a leading cause of death in children with DKA but is very rare in adults. Closely monitor for signs of altered mental status, increased intracranial pressure, and immediately discontinue IV fluids and elevate head of bed if signs of increased ICP develop.",
+          "priority": "important",
+          "rationale": "Even though cerebral edema is rare in adults, this patient is 19 — close to the adolescent risk bracket. The protocol calls it out explicitly.",
+          "protocolReference": "MATC: Hyperglycemia"
+        },
+        {
+          "id": "high-acuity-transport",
+          "shortAction": "Transport priority — high acuity; advance notification to receiving facility",
+          "protocolExcerpt": "Disposition: Transport to closest appropriate receiving facility. Provide advanced notification to the hospital.",
+          "priority": "critical",
+          "rationale": "DKA needs insulin therapy and lab-guided potassium management — both hospital deliverables. Pre-notification accelerates ED triage to a high-acuity bed.",
+          "protocolReference": "MATC: Hyperglycemia"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "transport",
+          "if": "Bolus running; en route to ED",
+          "condition": "Normal saline 1000 mL bolus is running pressure-infused, vitals are being reassessed, and the patient is en route to the closest appropriate receiving facility with advanced notification given.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["ns-bolus", "high-acuity-transport"]
+        }
+      ]
+    },
+    {
+      "id": "transport",
+      "name": "En route — reassess and handoff",
+      "description": "Patient is en route to the ED with a 1-liter normal saline bolus running. On reassessment partway through transport she is slightly improved — mucous membranes are still dry but she is more conversant and her HR has come down a few points. Respiratory rate is still elevated (Kussmaul respirations are appropriate compensation and will persist until the acidosis is corrected at the receiving facility). Bedside handoff highlights the diagnosis, fluid given, and remaining concerns.",
+      "triggerCondition": "Crew is transporting with active fluid resuscitation underway, having recognized DKA in the field and prenotified the receiving facility.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent, self-maintained",
+        "breathing": "Deep and rapid (Kussmaul) — unchanged; this is expected compensation",
+        "circulation": "Radial pulse strong, rate slowed slightly; cap refill 2 seconds",
+        "skin": { "color": "pale", "temperature": "warm", "moisture": "dry" },
+        "pupils": "PERRL, 4 mm bilaterally",
+        "motorFunction": "Moves all extremities; no focal deficit",
+        "otherFindings": [
+          "Patient more conversational; abdominal pain reported as improved (5/10)",
+          "Mucous membranes still dry but slightly less furrowed",
+          "Roommate has provided emergency contact (patient's mother)"
+        ],
+        "patientSpeech": "\"I feel a tiny bit better. Thank you. Am I going to be okay?\""
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 114,
+        "bpSys": 108,
+        "bpDia": 68,
+        "respRate": 26,
+        "spo2": 99,
+        "etco2": 20,
+        "temp": 37.5,
+        "tempF": 99.5,
+        "obstruction": 0,
+        "glucose": 510,
+        "customMeasures": [],
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "reassess-en-route",
+          "shortAction": "Reassess vitals + glucose + mental status every 5 min en route",
+          "protocolExcerpt": "Reassess patient: Reassess vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment), mental status, and signs of dehydration. If mental status changes, reassess blood glucose level and provide appropriate treatment if hypoglycemia has developed.",
+          "priority": "important",
+          "rationale": "Trend response to the bolus; document improvement (or lack of) for ED handoff.",
+          "protocolReference": "MATC: Hyperglycemia"
+        },
+        {
+          "id": "second-bolus-consideration",
+          "shortAction": "Consider second NS bolus if signs of hypovolemic shock persist",
+          "protocolExcerpt": "Adult: Normal saline 20 mL/kg at rate of 1000 mL/hr; if symptoms of hypovolemic shock, follow Shock Guideline. Fluid goal of up to 30 mL/kg of isotonic fluid by administering rapid, predetermined boluses (e.g., 500 mL) unless the MAP goal is achieved, or pulmonary edema develops.",
+          "priority": "important",
+          "rationale": "If BP and perfusion are still marginal after the first liter, the Shock guideline supports a second bolus toward the 30 mL/kg target.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "handoff",
+          "shortAction": "Structured ED handoff — DKA, glucose 520, 1L NS given, vitals trend",
+          "protocolExcerpt": "Disposition: Transport to closest appropriate receiving facility. Document reassessment of vital signs and mental status after administration of IV fluids. Document glucose level (if in scope of practice) when indicated.",
+          "priority": "important",
+          "rationale": "Clean handoff cements continuity of care and meets the documentation performance measure.",
+          "protocolReference": "MATC: Hyperglycemia"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "anchored-on-abd",
+      "name": "Anchored on abd pain; glucose not checked",
+      "description": "Crew treats the call as a routine abdominal pain / vomiting workup. They do not obtain a finger-stick glucose, do not specifically note the Kussmaul breathing pattern (chalking the tachypnea up to 'she's uncomfortable'), and proceed with an antiemetic and transport. No IV fluids are given because the BP is technically not hypotensive. En route the patient becomes more lethargic, the respiratory rate climbs, and the underlying volume deficit and acidosis go untreated — a sicker-than-she-looks patient gets worse instead of better.",
+      "triggerCondition": "Crew anchored on the dispatched chief complaint ('abd pain / vomiting'), did not perform a finger-stick glucose, did not recognize Kussmaul respirations, and skipped IV fluid resuscitation. The patient is being transported on the antiemetic-and-go plan.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 4, "motor": 6 },
+        "airway": "Patent but provider must reposition periodically; patient is drowsy",
+        "breathing": "Deep, rapid, and now slightly more labored (Kussmaul); RR climbing",
+        "circulation": "Radial pulse present, rapid and thready; cap refill 4 seconds; cool peripheries",
+        "skin": { "color": "pale", "temperature": "warm core / cool peripheries", "moisture": "dry" },
+        "pupils": "PERRL, 4 mm bilaterally",
+        "motorFunction": "Moves all extremities to command but slow; weakness has progressed",
+        "otherFindings": [
+          "Patient is more lethargic and less interactive; slower to answer questions",
+          "Mucous membranes very dry; skin turgor obviously poor",
+          "If anyone now checks glucose, it reads HI (>600 mg/dL on glucometer)",
+          "If anyone now notices the breathing pattern: this is the catchable rescue moment — call it out, get IV access, start fluids"
+        ],
+        "patientSpeech": "\"I just want to sleep… I'm so tired…\""
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 134,
+        "bpSys": 92,
+        "bpDia": 58,
+        "respRate": 32,
+        "spo2": 98,
+        "etco2": 14,
+        "temp": 37.6,
+        "tempF": 99.7,
+        "obstruction": 0,
+        "glucose": 580,
+        "customMeasures": [],
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "rescue-glucose",
+          "shortAction": "Late finger-stick glucose — result HI (>600 mg/dL)",
+          "protocolExcerpt": "Monitoring: Check blood glucose level. Performance Measures: When in scope of practice, point of care blood glucose checked for all patients with symptoms of altered level of consciousness, seizure, stroke, or hyperglycemia.",
+          "priority": "critical",
+          "rationale": "The rescue beat — the moment the crew realizes this is metabolic, not GI. The miss should be debriefed.",
+          "protocolReference": "MATC: Hyperglycemia"
+        },
+        {
+          "id": "rescue-recognize",
+          "shortAction": "Recognize DKA — declare the diagnosis out loud and escalate care",
+          "protocolExcerpt": "Pertinent Assessment Findings: Concomitant trauma; Abdominal pain, \"fruity breath,\" and rapid-deep respirations (Kussmaul respirations) may be associated with DKA.",
+          "priority": "critical",
+          "rationale": "Naming the syndrome (even late) anchors the rest of the call on fluids and prenotification.",
+          "protocolReference": "MATC: Hyperglycemia"
+        },
+        {
+          "id": "rescue-bolus",
+          "shortAction": "Normal saline 1000 mL IV bolus (50 kg × 20 mL/kg) — start now",
+          "protocolExcerpt": "If glucose greater than 250 mg/dL with symptoms of dehydration, vomiting, abdominal pain, or altered level of consciousness: Provide volume expansion with normal saline bolus — Adult: Normal saline 20 mL/kg at rate of 1000 mL/hr; if symptoms of hypovolemic shock, follow Shock Guideline.",
+          "priority": "critical",
+          "rationale": "Late but indicated. With BP now 92/58 and worsening mental status, the Shock guideline also pushes toward 30 mL/kg.",
+          "protocolReference": "MATC: Hyperglycemia"
+        },
+        {
+          "id": "rescue-notify",
+          "shortAction": "Upgrade to high-acuity transport; advance notification to ED",
+          "protocolExcerpt": "Disposition: Transport to closest appropriate receiving facility. Provide advanced notification to the hospital.",
+          "priority": "critical",
+          "rationale": "ED needs to know a previously-coded-routine call is now a DKA with deteriorating mental status.",
+          "protocolReference": "MATC: Hyperglycemia"
+        },
+        {
+          "id": "debrief-anchoring",
+          "shortAction": "Debrief — discuss anchoring bias and the 3 I's framework",
+          "protocolExcerpt": "Key Considerations: Consider causes for hyperglycemia by thinking about the 3 I's: Insulin: This refers to any medication changes for insulin or oral medications including poor compliance or malfunctioning insulin pump; Ischemia: This refers to hyperglycemia sometimes being an indication of physiologic stress in a patient and can be a clue to myocardial ischemia in particular; Infection: Underlying infection can cause derangements in glucose control.",
+          "priority": "supplemental",
+          "rationale": "Teaching point: dispatch information is a starting hypothesis, not a diagnosis. Every patient with abdominal pain / vomiting / altered mental status gets a finger-stick glucose.",
+          "protocolReference": "MATC: Hyperglycemia"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}
