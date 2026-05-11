@@ -1,0 +1,817 @@
+{
+  "meta": {
+    "id": "P-T3-02",
+    "name": "Pediatric Respiratory Failure to Arrest",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Pediatric / Respiratory / Resuscitation",
+    "protocols": [
+      "resp-respiratory-distress",
+      "resp-airway-management",
+      "cv-bradycardia",
+      "resus-cardiac-arrest",
+      "resus-post-rosc"
+    ],
+    "totalTimeSeconds": 1800,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "pediatric",
+      "tier-3",
+      "respiratory failure",
+      "asthma",
+      "status asthmaticus",
+      "PALS",
+      "bradycardia",
+      "PEA arrest",
+      "BVM",
+      "PEEP",
+      "ventilation-first",
+      "hypoxia-driven brady",
+      "magnesium",
+      "epinephrine IM",
+      "weight-based dosing",
+      "post-ROSC"
+    ]
+  },
+  "patient": {
+    "name": "Aria Whitlock",
+    "age": 4,
+    "ageUnit": "years",
+    "sex": "female",
+    "weight": 16,
+    "weightLbs": 35,
+    "height": 102,
+    "chiefComplaint": "Severe respiratory distress progressing to respiratory failure in a 4-year-old with known asthma; 6-hour exacerbation at home with home albuterol no longer effective.",
+    "history": {
+      "hpi": "Aria is a 4-year-old female with known asthma (two prior ED visits in the last year, one overnight admission, never intubated). She developed a runny nose and dry cough two days ago. This morning she began wheezing and using her home albuterol MDI approximately every hour for 6 hours with progressively less relief. Parents finally called 911 when she 'stopped talking' and her lips looked dusky. On EMS arrival she is sitting forward on the couch tripoding, with severe intercostal and supraclavicular retractions, audible wheeze that is becoming quiet (tight chest), and a respiratory rate of only 8 — this is FATIGUE, not improvement. SpO2 is 78% on room air, HR is 168 sinus tachycardia, GCS is 11 and trending down. She is not speaking and barely tracks the crew. This is impending respiratory failure in a hypoxic asthmatic child. Without aggressive ventilatory support she will progress to bradycardic arrest — pediatric brady is almost always hypoxia, and pediatric arrest is almost always respiratory in etiology.",
+      "pastMedical": [
+        "Asthma — diagnosed at age 2",
+        "Two ED visits in the last 12 months for asthma exacerbation",
+        "One overnight hospital admission for asthma (~6 months ago); never intubated, never ICU",
+        "No prior anaphylaxis, no food allergies known",
+        "Full-term birth, no NICU stay, immunizations up to date",
+        "No cardiac, neurologic, or congenital disease"
+      ],
+      "medications": [
+        "Albuterol HFA 90 mcg/actuation MDI — used ~hourly x 6 hours today (>>> baseline)",
+        "Fluticasone HFA 44 mcg/actuation — 2 puffs twice daily (controller; mom unsure if given today)",
+        "Children's acetaminophen 160 mg/5 mL PRN fever — none today"
+      ],
+      "allergies": [
+        "NKDA"
+      ],
+      "lastOralIntake": "About 4 oz of water and half a piece of toast roughly 6 hours ago. Refusing food and drink since this morning.",
+      "events": "Two-day URI evolved this morning into worsening wheeze. Parents gave home albuterol every hour for 6 hours with diminishing effect. They called 911 when Aria 'stopped talking,' her lips looked dusky, and her chest was 'sucking in hard.' She has been progressively quieter and more lethargic over the last 30 minutes."
+    }
+  },
+  "scene": {
+    "dispatch": "Engine 4, Medic 4, respond to 2147 Birch Lane for a 4-year-old female, parents report she can't breathe and is going limp. Patient is awake but not talking. Asthma history.",
+    "location": "Single-family home, living room. Patient is on the couch leaning forward over a pillow. Lights on, room temperature warm. Wide clear path from front door through foyer to the living room.",
+    "time": "Saturday, 18:42. Outside temperature cool, 52°F.",
+    "safety": "Scene safe. No pets in the room. Parents are anxious but cooperative. A 7-year-old sibling has been moved to an upstairs bedroom by a neighbor who arrived just before EMS.",
+    "bystanders": "Mother seated next to Aria on the couch, holding her hand and visibly tearful. Father pacing, will hand the crew the albuterol inhaler and the asthma action plan from the fridge if asked. Both parents will follow direction; mom asks to ride along.",
+    "visualCues": [
+      "Child sitting forward, elbows on knees, head down — classic tripod position",
+      "Severe intercostal, subcostal, and supraclavicular retractions visible through her T-shirt",
+      "Lips and fingertips dusky-blue; nail beds cyanotic",
+      "Respirations slow and shallow — visibly tired, not 'working hard fast' anymore — RR around 8",
+      "Wheeze audible without a stethoscope but QUIETER than parents describe from earlier — tight chest",
+      "Eyes half-closed, head bobbing forward, will look at crew only when spoken to loudly",
+      "Empty albuterol MDI on the coffee table; spacer next to it; second inhaler box (fluticasone) on the side table",
+      "Asthma action plan from the pediatrician magneted to the refrigerator (visible from the kitchen pass-through)",
+      "No drooling, no stridor, no tongue swelling, no rash — picture is severe asthma, not anaphylaxis or epiglottitis"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a 4-year-old female in severe respiratory distress with signs of impending respiratory failure. She is tripoding with severe retractions, dusky lips, and a respiratory rate of only 8 — a slow rate in a child with this much work of breathing is FATIGUE, not improvement, and is the cardinal sign of impending respiratory failure. SpO2 is 78% on room air, HR is 168 sinus tachycardia (compensating for hypoxia), and GCS is 11 and dropping. The teaching beat for this phase: this is a BVM-now patient. Albuterol alone will not rescue her — she is no longer moving enough air to deliver a nebulized drug. The crew must immediately begin assisted BVM ventilation with PEEP and supplemental O2, set up a DuoNeb inline, prepare IM epinephrine and IV magnesium as rescue therapy for impending failure, and anticipate that the next clinical event will be hypoxic bradycardia. Pediatric arrest is almost always respiratory in etiology — ventilation is the primary therapy in every phase that follows.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": {
+          "eye": 3,
+          "verbal": 3,
+          "motor": 5
+        },
+        "airway": "Patent but at risk — head bobbing, decreased tone in the jaw, not protecting well; no foreign body, no stridor, no drooling",
+        "breathing": "Spontaneous but SLOW and shallow — RR 8 with severe intercostal/subcostal/supraclavicular retractions. Air entry markedly diminished bilaterally with quiet end-expiratory wheeze (the 'silent chest' is approaching). Prolonged expiratory phase. No crackles, no asymmetry.",
+        "circulation": "Tachycardic radial pulse, fast and thready but palpable. Capillary refill 3–4 seconds at the fingertips. Skin pale with central and peripheral cyanosis.",
+        "skin": {
+          "color": "Pale with dusky-blue lips, fingertips, and nail beds — central cyanosis",
+          "temperature": "Cool peripherally, warm core",
+          "moisture": "Diaphoretic forehead and upper chest"
+        },
+        "pupils": "PERRL 4 mm bilaterally, slightly slowed reaction",
+        "motorFunction": "Decreased tone, head bobbing forward, not reaching or pushing crew away; will withdraw to a sternal rub",
+        "otherFindings": [
+          "Pediatric Assessment Triangle — APPEARANCE: lethargic, decreased tone, poor interaction; WORK OF BREATHING: severe retractions but SLOWING — fatigue; CIRCULATION TO SKIN: pale with central cyanosis",
+          "Westley/PRAM/PASS not specifically scored but presentation is severe asthma with impending respiratory failure",
+          "RR 8 in a 4-year-old (normal 20–30) is NOT improvement — it is failure",
+          "Quiet/'silent' chest = tight bronchospasm and minimal air movement; wheeze may disappear as patient worsens",
+          "No drooling, no stridor, no tongue swelling — NOT epiglottitis, NOT anaphylaxis, NOT foreign body",
+          "Parents hand over empty albuterol MDI; report ~6 doses in the last 6 hours"
+        ],
+        "patientSpeech": "Not speaking. Will moan softly or open her eyes briefly when her name is called loudly. No 1–2 word phrases."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 168,
+        "bpSys": 96,
+        "bpDia": 58,
+        "respRate": 8,
+        "spo2": 78,
+        "etco2": 62,
+        "temp": 37.1,
+        "tempF": 98.8,
+        "obstruction": 70,
+        "glucose": 104,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "ic-1",
+          "shortAction": "Recognize impending respiratory failure (slow RR + cyanosis + AMS = pre-arrest)",
+          "protocolExcerpt": "Signs of distress include: Apprehension, anxiety, combativeness; Hypoxia (less than 90% oxygen saturation); Intercostal/subcostal/supraclavicular retractions, accessory muscle use; Grunting, stridor, inability to speak full sentences; Nasal flaring; Cyanosis.",
+          "priority": "critical",
+          "rationale": "RR 8 in a 4-year-old with severe retractions, SpO2 78%, and dropping GCS is FAILURE, not improvement. The cardinal teaching point — pediatric arrest is respiratory in etiology, and this patient is on the doorstep.",
+          "protocolReference": "MATC: Respiratory Distress"
+        },
+        {
+          "id": "ic-2",
+          "shortAction": "Begin assisted BVM ventilation with high-flow O2 at 20–30 breaths/min",
+          "protocolExcerpt": "BVM ventilation should be utilized in children with respiratory failure. Use bag-valve-mask (BVM) ventilation in the setting of respiratory failure or arrest. Whenever possible, the patient's head should be elevated up to 30 degrees. Rate: Child: 20–30 breaths/minute.",
+          "priority": "critical",
+          "rationale": "She is not moving enough air to nebulize. Manual ventilatory support with high-flow O2 is the first and primary therapy. Inadequate ventilation is the runway to bradycardic arrest.",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "ic-3",
+          "shortAction": "Two-person, two-thumbs-up BVM with PEEP 5 cmH2O; titrate by 2–3 to effect",
+          "protocolExcerpt": "Two-person, two-thumbs-up BVM ventilation is preferred. PEEP should be used with BVM. 5 cmH2O is generally an appropriate initial PEEP setting. Increase PEEP in stepwise fashion (2–3 cmH2O at a time) as necessary, allowing time for the patient to equilibrate with each change before further adjustments are made.",
+          "priority": "critical",
+          "rationale": "Two-person technique gives a real mask seal; PEEP recruits partially collapsed alveoli and is the single biggest oxygenation tool the crew has in this child.",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "ic-4",
+          "shortAction": "Position of comfort or 30° head-up; do NOT force supine",
+          "protocolExcerpt": "Patient positioning can significantly impact respiratory mechanics. Patients with severe bronchospasm should be left in the position of comfort (perhaps tripod) whenever possible. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics.",
+          "priority": "important",
+          "rationale": "Forcing a tripoding child supine collapses her remaining respiratory mechanics and crashes her SpO2. Keep her upright while BVM is delivered.",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "ic-5",
+          "shortAction": "Continuous SpO2 and waveform EtCO2 (look for shark-fin); reassess after each intervention",
+          "protocolExcerpt": "Patients with significant respiratory distress should have continuous pulse oximetry and waveform capnography monitoring for both assessment and for guiding therapy. A 'shark fin' on waveform capnography suggests significant bronchospasm and obstructive physiology.",
+          "priority": "important",
+          "rationale": "Shark-fin confirms obstructive physiology; EtCO2 trend tracks ventilation. Rising EtCO2 or normal EtCO2 with tachypnea in distress = impending failure.",
+          "protocolReference": "MATC: Respiratory Distress"
+        },
+        {
+          "id": "ic-6",
+          "shortAction": "DuoNeb in-line with BVM: Albuterol 5 mg + Ipratropium 0.5 mg nebulized",
+          "protocolExcerpt": "If indicated, bronchodilators should be administered in line with NIV. Albuterol 5 mg nebulized (or 6 puffs metered dose inhaler) should be administered to all patients in respiratory distress with signs of bronchospasm (e.g., known asthmatics, quiet wheezers). Repeat at this dose with unlimited frequency for ongoing respiratory distress. Ipratropium 0.5 mg nebulized should be given up to 3 doses in conjunction with albuterol.",
+          "priority": "critical",
+          "rationale": "Bronchodilators are mandatory but only effective if she is actually moving air — which is why BVM comes FIRST. DuoNeb runs in-line so we aren't waiting on the drug to start ventilation.",
+          "protocolReference": "MATC: Respiratory Distress"
+        },
+        {
+          "id": "ic-7",
+          "shortAction": "Epinephrine 0.16 mg IM (16 kg × 0.01 mg/kg; max 0.3 mg) 1 mg/mL — impending failure",
+          "protocolExcerpt": "Epinephrine (0.01 mg/kg of 1 mg/mL solution IM, maximum dose of 0.3 mg) should only be administered for impending respiratory failure as adjunctive therapy when there are no clinical signs of improvement with the above treatments.",
+          "priority": "critical",
+          "rationale": "Rescue IM epinephrine is indicated for impending respiratory failure when other therapy is not improving the patient. Sixteen-kg child × 0.01 mg/kg = 0.16 mg, well under the 0.3 mg pediatric max.",
+          "protocolReference": "MATC: Respiratory Distress"
+        },
+        {
+          "id": "ic-8",
+          "shortAction": "Establish IV/IO access (consider IO early given her condition)",
+          "protocolExcerpt": "IV Access and Fluids – IV access should be placed when IV medication administration is indicated, or when there are clinical concerns of dehydration so that IV fluids can be administered.",
+          "priority": "important",
+          "rationale": "Magnesium and steroids are IV. If a peripheral IV is not achievable quickly in this hypoxic, peripherally clamped-down child, proceed to IO (tibial in a child).",
+          "protocolReference": "MATC: Respiratory Distress"
+        },
+        {
+          "id": "ic-9",
+          "shortAction": "Magnesium sulfate 640 mg IV/IO over 10–15 min (16 kg × 40 mg/kg; max 2 g)",
+          "protocolExcerpt": "Magnesium sulfate (40 mg/kg IV, maximum dose of 2 g) over 10–15 minutes should be administered for severe bronchoconstriction and concern for impending respiratory failure.",
+          "priority": "important",
+          "rationale": "Severe bronchoconstriction with impending failure is the indication. Sixteen-kg child × 40 mg/kg = 640 mg, well under the 2 g max. Run over 10–15 minutes to limit hypotension.",
+          "protocolReference": "MATC: Respiratory Distress"
+        },
+        {
+          "id": "ic-10",
+          "shortAction": "Methylprednisolone 32 mg IV (16 kg × 2 mg/kg; max 125 mg)",
+          "protocolExcerpt": "IV steroid options for critically ill patients include: Methylprednisolone (2 mg/kg, maximum dose 125 mg) IV/IM, or Dexamethasone (0.6 mg/kg, maximum dose of 16 mg) IV/IM.",
+          "priority": "important",
+          "rationale": "Steroid effect is hours away but starts the anti-inflammatory cascade. Sixteen-kg × 2 mg/kg = 32 mg, well under the 125 mg max.",
+          "protocolReference": "MATC: Respiratory Distress"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "brady-pre-arrest",
+          "if": "Aggressive BVM + meds started, HR begins to drop",
+          "condition": "Crew immediately begins two-person BVM with PEEP, has DuoNeb in-line, has given IM epinephrine 0.16 mg for impending failure, and is preparing IV magnesium. Despite optimal interventions, the patient's profound hypoxic injury is still in play and her HR begins to drop from 168 toward 60 as a pre-arrest signal — this is the critical teaching window where the crew must recognize the brady is HYPOXIA and not reflexively reach for atropine.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "ic-2",
+            "ic-3",
+            "ic-7"
+          ],
+          "timeoutSeconds": 120
+        },
+        {
+          "targetPhaseId": "atropine-error",
+          "if": "Atropine given for HR 50 (hypoxic brady)",
+          "condition": "As her HR drops the crew reflexively administers atropine for the bradycardia rather than aggressively optimizing ventilation. Atropine does not fix hypoxia. The child continues to deteriorate with no clinical response while the underlying problem — failed oxygenation — remains untreated.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [],
+          "timeoutSeconds": 120
+        }
+      ]
+    },
+    {
+      "id": "brady-pre-arrest",
+      "name": "Hypoxic brady, ventilate harder",
+      "description": "Despite optimal BVM, DuoNeb in-line, and IM epinephrine, the child's profound hypoxic injury manifests as a falling heart rate — HR drops from 168 to 60 over the next minute, then to 42. SpO2 is still in the 70s on BVM. This is PRE-ARREST. The cardinal pediatric teaching beat: bradycardia in a hypoxic child is HYPOXIA, not a vagal/cardiac problem. The treatment is more and better ventilation — re-check mask seal, two-person technique, PEEP titration, head positioning, and chest rise — NOT atropine. If HR remains below 60 with poor perfusion, prepare for chest compressions per PALS. Atropine is reserved for increased vagal tone or cholinergic toxicity, neither of which applies here.",
+      "triggerCondition": "Despite proper BVM ventilation with PEEP, in-line DuoNeb, IM epinephrine, and IV magnesium running, the child's HR drops from 168 to 60 and then to 42 over approximately 60–90 seconds. SpO2 remains in the 70s. This is hypoxic bradycardia — the immediate runway to bradycardic arrest. Per the MATC Pediatric Bradycardia protocol, treatment is only indicated for symptomatic pediatric patients, the first treatment is oxygen and ventilation, and chest compressions are initiated for HR less than 60 BPM with signs of poor perfusion.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": {
+          "eye": 2,
+          "verbal": 2,
+          "motor": 4
+        },
+        "airway": "Maintained by BVM with OPA in place",
+        "breathing": "BVM-assisted at 20–30/min. Chest rise is present but limited — bronchospasm restricts tidal volume. EtCO2 waveform shark-fin shape.",
+        "circulation": "Weak central pulse, slow rate. Skin still pale-cyanotic. Capillary refill >4 seconds. Hypotensive trend developing.",
+        "skin": {
+          "color": "Pale with persistent central cyanosis despite ventilation",
+          "temperature": "Cool centrally and peripherally",
+          "moisture": "Diaphoretic"
+        },
+        "pupils": "PERRL 5 mm, slow reaction",
+        "motorFunction": "Flaccid, only withdraws to deep pain",
+        "otherFindings": [
+          "PAT now: APPEARANCE — obtunded; WORK OF BREATHING — BVM-driven, chest rise limited; CIRCULATION — pale-cyanotic, slow weak pulse",
+          "PALS pre-arrest: HR <60 with poor perfusion → prepare for compressions; ventilation is FIRST",
+          "Atropine is NOT indicated for hypoxic pediatric bradycardia — atropine doesn't fix hypoxia"
+        ],
+        "patientSpeech": "None — obtunded."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Bradycardia",
+        "ecgWaveform": 9,
+        "hr": 42,
+        "bpSys": 72,
+        "bpDia": 44,
+        "respRate": 0,
+        "spo2": 74,
+        "etco2": 58,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 70,
+        "glucose": 104,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "br-1",
+          "shortAction": "Recognize hypoxic brady = pre-arrest; ventilation is the primary therapy",
+          "protocolExcerpt": "Treatment is only indicated for patients who are symptomatic (pale/cyanotic, diaphoretic, altered mental status, hypoxic). Manage airway and assist ventilations as necessary with minimally interrupted chest compressions using a compression-to-ventilation ratio 15:2 (30:2 if single clinician is present). Administer oxygen as appropriate with a target of achieving 94–98% saturation.",
+          "priority": "critical",
+          "rationale": "The single most important pediatric teaching beat: a falling HR in a hypoxic child is HYPOXIA, not a cardiac problem. The fix is better ventilation, not atropine.",
+          "protocolReference": "MATC: Bradycardia"
+        },
+        {
+          "id": "br-2",
+          "shortAction": "Reassess BVM: re-seat mask, two-thumbs-up, jaw thrust, OPA, confirm chest rise",
+          "protocolExcerpt": "Two-person, two-thumbs-up BVM ventilation is preferred. Oropharyngeal airways (OPA) or nasopharyngeal airways (NPA) can be placed if needed to maintain a patent airway and make BVM ventilation more effective. Ventilate with just enough volume to see chest rise, approximately 6–8 mL/kg ideal body weight.",
+          "priority": "critical",
+          "rationale": "Most pediatric arrests are 'fixed' by fixing the BVM. Mask seal, head position, OPA, two-person technique, real chest rise — all before any drug.",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "br-3",
+          "shortAction": "Titrate PEEP up 2–3 cmH2O; watch SpO2 and chest rise response",
+          "protocolExcerpt": "Increase PEEP in stepwise fashion (2–3 cmH2O at a time) as necessary, allowing time for the patient to equilibrate with each change before further adjustments are made. The goal is to reach the lowest PEEP needed to adequately ventilate the patient.",
+          "priority": "important",
+          "rationale": "Stepwise PEEP recruits more alveoli. Watch for hemodynamic effect (>10–15 cmH2O risks dropping preload).",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "br-4",
+          "shortAction": "Do NOT give atropine — peds brady from hypoxia does not respond to atropine",
+          "protocolExcerpt": "Epinephrine may be used for bradycardia and poor perfusion unresponsive to ventilation and oxygenation. It is reasonable to administer atropine for bradycardia caused by increased vagal tone or cholinergic drug toxicity.",
+          "priority": "critical",
+          "rationale": "Atropine is reserved for vagal/cholinergic etiologies. Giving atropine here delays the real fix (better ventilation) and wastes the only minute that matters.",
+          "protocolReference": "MATC: Bradycardia"
+        },
+        {
+          "id": "br-5",
+          "shortAction": "Prepare push-dose epi 0.16 mg (16 kg × 0.01 mg/kg; max single dose 10 mcg per push)",
+          "protocolExcerpt": "Epinephrine by push dose (dilute boluses). For example, prepare 10 mcg/mL by adding 1 mL of 0.1 mg/mL epinephrine to 9 mL of normal saline, then administer 0.01 mg/kg (0.1 mL/kg) maximum single dose 10 mcg (1 mL) q 3–5 minutes titrated to MAP greater than 65 mmHg.",
+          "priority": "important",
+          "rationale": "Push-dose epi is the right second-line move for symptomatic peds brady that is unresponsive to oxygen/ventilation per protocol. Note pediatric per-push max is 10 mcg.",
+          "protocolReference": "MATC: Bradycardia"
+        },
+        {
+          "id": "br-6",
+          "shortAction": "Anticipate arrest — pre-charge nothing (no shock for brady), assign roles, ready compressor",
+          "protocolExcerpt": "For infants and newborns, initiate chest compressions for heart rate less than 60 BPM and signs of poor perfusion (altered mental status, hypoxia, hypotension, weak pulse, delayed capillary refill, cyanosis).",
+          "priority": "important",
+          "rationale": "Pre-arrest is the moment to stage roles, draw up epinephrine for arrest, and plan compressions if HR drops further with poor perfusion.",
+          "protocolReference": "MATC: Bradycardia"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "pea-arrest",
+          "if": "HR continues to fall to PEA arrest despite ventilation",
+          "condition": "Even with optimal BVM and meds the child's hypoxic injury is severe enough that her HR continues to decline through 42 and pulses are lost — PEA arrest. Compressions and continued ventilation begin; ROSC will be achieved primarily by correcting hypoxia.",
+          "conditionType": "vital_threshold",
+          "triggerActionIds": [
+            "br-1",
+            "br-2"
+          ],
+          "timeoutSeconds": 120
+        },
+        {
+          "targetPhaseId": "cpr-no-ventilation-focus",
+          "if": "CPR started, BVM not optimized",
+          "condition": "When the child loses pulses the crew correctly starts chest compressions but fails to optimize the BVM — poor mask seal, no PEEP, ventilation rate too fast, no real chest rise. Hypoxia continues despite CPR. Without addressing the cause of the arrest (failed oxygenation), ROSC will not be achieved.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": [],
+          "timeoutSeconds": 120
+        }
+      ]
+    },
+    {
+      "id": "pea-arrest",
+      "name": "PEA arrest — CPR + ventilate",
+      "description": "The child loses pulses. Monitor shows a narrow-complex rhythm at ~30 with no palpable pulse — pulseless electrical activity. This is the classic pediatric arrest: respiratory in etiology, presenting as PEA after a runway of bradycardia. The protocol is unambiguous: continue high-quality ventilation, start chest compressions at 100–120/min with 15:2 ratio (two rescuers) and depth one-third the AP chest, give epinephrine 0.01 mg/kg IV/IO q 3–5 minutes, and treat the reversible cause — HYPOXIA. Defibrillation is not indicated. Ventilation is the primary therapy. Avoid hyperventilation. ROSC, if it comes, will come from correcting oxygenation.",
+      "triggerCondition": "Despite optimal BVM and meds the child progressed from sinus brady to PEA arrest. The presentation reflects the standard pediatric arrest pattern — respiratory failure → hypoxic bradycardia → bradycardic arrest. The MATC Cardiac Arrest protocol specifies that for pediatric multi-rescuer CPR the compression-to-ventilation ratio is 15:2 and that 'most of the pediatric cardiac arrest occurs due to non-cardiac causes such as respiratory failure (hypoxemia) or shock (hypovolemia).'",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 1
+        },
+        "airway": "Managed by BVM with OPA; consider advanced airway only if BVM ventilation fails — King airways are not appropriate for a 4-year-old; if escalation is needed, ETT is the choice (uncuffed 5.0 or cuffed 4.5)",
+        "breathing": "Apneic; BVM-driven only",
+        "circulation": "Pulseless at carotid and femoral; CPR in progress; no spontaneous circulation",
+        "skin": {
+          "color": "Gray with persistent central cyanosis",
+          "temperature": "Cool",
+          "moisture": "Diaphoretic, cooling"
+        },
+        "pupils": "Fixed at 5 mm, sluggish to nonreactive",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "Monitor: narrow-complex rhythm ~30 with NO palpable pulse — PEA",
+          "Defibrillation is NOT indicated — PEA is a non-shockable rhythm",
+          "Pediatric CPR: compression depth ~one-third AP chest diameter (~4 cm in a 16-kg child), rate 100–120/min, ratio 15:2 with two rescuers",
+          "Most likely reversible cause = HYPOXIA — the entire resuscitation must address oxygenation",
+          "Mother is in the room; assign a crew member or a fire-engine bystander to support her or move her to the next room"
+        ],
+        "patientSpeech": "None — unresponsive."
+      },
+      "monitorState": {
+        "ecgRhythm": "Pulseless Electrical Activity (PEA)",
+        "ecgWaveform": 9,
+        "hr": 30,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 18,
+        "temp": 36.9,
+        "tempF": 98.4,
+        "obstruction": 70,
+        "glucose": 104,
+        "trendTimeSeconds": 15,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "pe-1",
+          "shortAction": "Confirm pulselessness; call arrest; start CPR — peds depth/rate/ratio",
+          "protocolExcerpt": "Chest compressions are usually the most rapidly applied therapy for the patient in cardiac arrest and should be initiated as soon as the patient is noted to be pulseless. Depth of at least 2 inches (5 cm) and less than 2.4 inches (6 cm) for adults and children or 1.5 inches (4 cm) for infants. For multiple rescuer CPR in children, 15:2 is the recommended compression-to-ventilation ratio (30:2 for single rescuer).",
+          "priority": "critical",
+          "rationale": "Compressions with proper depth/rate/ratio are the immediate first action.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        },
+        {
+          "id": "pe-2",
+          "shortAction": "Recognize PEA — non-shockable; do NOT defibrillate; treat the cause (HYPOXIA)",
+          "protocolExcerpt": "The most important therapies for patients suffering from cardiac arrest are prompt cardiac defibrillation for shockable rhythms and minimally interrupted effective chest compressions. Consider reversible causes of cardiac arrest.",
+          "priority": "critical",
+          "rationale": "PEA is non-shockable. The whole arc of this resuscitation is identifying and reversing the cause — and the cause is the hypoxia we have been fighting.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        },
+        {
+          "id": "pe-3",
+          "shortAction": "Continue aggressive BVM with PEEP at 12–20 breaths/min — ventilation IS the therapy",
+          "protocolExcerpt": "Special attention should be applied to the pediatric population and airway management/respiratory support. Given that the most likely cause of cardiac arrest is respiratory, airway management may be considered early in the patient's care. For children with an advanced airway, 1 breath every 3–5 seconds is recommended (equivalent to 12–20 breaths/minute).",
+          "priority": "critical",
+          "rationale": "In pediatric arrest, ventilation is the resuscitation. Do not abandon airway optimization to focus only on compressions and drugs.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        },
+        {
+          "id": "pe-4",
+          "shortAction": "Epinephrine 0.16 mg IV/IO (16 kg × 0.01 mg/kg of 0.1 mg/mL solution) q 3–5 min",
+          "protocolExcerpt": "Administer epinephrine (0.1 mg/kg, maximum dose 1 mg) IV/IO during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms.",
+          "priority": "critical",
+          "rationale": "Sixteen-kg × 0.01 mg/kg = 0.16 mg IV/IO every 3–5 minutes. Early epinephrine is especially emphasized for non-shockable rhythms.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        },
+        {
+          "id": "pe-5",
+          "shortAction": "Avoid hyperventilation; deliver just enough volume for visible chest rise",
+          "protocolExcerpt": "Avoid excessive pressures or tidal volumes during BVM ventilation. The goal is to avoid barotrauma as well as overventilation and related reduction of venous return/preload/cardiac output. Ventilate with just enough volume to see chest rise, approximately 6–8 mL/kg ideal body weight.",
+          "priority": "critical",
+          "rationale": "Overventilation is a top cause of post-resuscitation hypotension and intra-arrest impaired venous return. Slow, controlled breaths with real chest rise.",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "pe-6",
+          "shortAction": "Do NOT place a King — use BVM or ETT (cuffed 4.5/uncuffed 5.0) only if BVM fails",
+          "protocolExcerpt": "Consider the use of an appropriately sized SGA if BVM (with OPA/NPA) alone is not effective in maintaining oxygenation and/or ventilation. This is especially important in children as prehospital endotracheal intubation is an infrequently performed skill in this age group and has not been shown to improve outcomes over prehospital BVM or SGA. Pediatric airway management requires appropriately sized tools and adjuncts based on patient size/age.",
+          "priority": "important",
+          "rationale": "King LT airways are sized for older children/adolescents and adults — not for a 4-year-old. If BVM truly fails, ETT (cuffed 4.5 by formula [age/4]+3.5) is the appropriately sized advanced airway.",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "pe-7",
+          "shortAction": "EtCO2 on the BVM — watch for sudden rise of 10–15 mmHg as ROSC marker",
+          "protocolExcerpt": "Continuous waveform capnography is strongly encouraged in patients in cardiac arrest: to monitor quality of CPR; as an early indicator of ROSC (rapid increase of 10–15 in EtCO2); to assist in evaluating prognosis for survival.",
+          "priority": "important",
+          "rationale": "EtCO2 quality marker for compressions and earliest ROSC signal — often before a pulse can be felt.",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "pe-8",
+          "shortAction": "Rule out reversible causes — primary cause here is HYPOXIA; consider hypovolemia, hypoglycemia",
+          "protocolExcerpt": "Consider reversible causes of cardiac arrest. Hypovolemia. Additions to care include normal saline 2 L IV (or 20 mL/kg, repeated up to 3 times for pediatrics).",
+          "priority": "important",
+          "rationale": "Pediatric Hs and Ts in this case map to a single answer: HYPOXIA. Glucose was checked at initial contact (104). Volume status was preserved. The entire arc is reversing hypoxia.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "post-rosc",
+          "if": "ROSC achieved by addressing hypoxia",
+          "condition": "After approximately 4–6 minutes of high-quality CPR, optimized BVM with PEEP, and one or two doses of epinephrine 0.16 mg IV/IO, EtCO2 jumps from 18 to 35 — return of spontaneous circulation. The rhythm reorganizes to sinus tach at 138 with a palpable pulse and a BP of 78/48. Mental status remains markedly depressed. Focus shifts to post-ROSC care.",
+          "conditionType": "vital_threshold",
+          "triggerActionIds": [
+            "pe-3",
+            "pe-4",
+            "pe-7"
+          ],
+          "timeoutSeconds": 300
+        }
+      ]
+    },
+    {
+      "id": "post-rosc",
+      "name": "ROSC — post-resuscitation care",
+      "description": "ROSC is achieved by correcting the underlying hypoxia. The monitor reorganizes to sinus tach at 138, BP 78/48, EtCO2 35 with continued BVM ventilation, SpO2 climbing into the 90s on supplemental O2. GCS remains 5 — comatose post-arrest. The job now is to NOT undo the resuscitation: do not hyperventilate (a top cause of re-arrest), do not hyperoxygenate, watch for re-arrest, support BP, and transport to an age-appropriate facility capable of pediatric post-resuscitation care. Continue to address the underlying asthma — bronchospasm is still present and a recurrence of failure is a real risk.",
+      "triggerCondition": "After approximately 4–6 minutes of CPR with optimized ventilation and one to two doses of weight-based epinephrine, EtCO2 jumps from 18 to 35 with a palpable central pulse — ROSC. Per the MATC Post-ROSC protocol, the goal now is to secure the airway, target SpO2 94–98% (do NOT hyperoxygenate), maintain EtCO2 35–45 with a ventilation rate of 8–10 (do NOT hyperventilate), support hemodynamics, and transport to age-appropriate post-resuscitation care.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 3
+        },
+        "airway": "BVM-supported with OPA; consider continuing BVM rather than escalating to ETT if oxygenation/ventilation are now adequate",
+        "breathing": "Apneic-to-occasional agonal effort; BVM driven at 12–20/min with PEEP 5",
+        "circulation": "Palpable carotid and femoral pulses returned; weak central pulse; BP 78/48 (low for age 4 — concerning for shock)",
+        "skin": {
+          "color": "Pink centrally with residual peripheral mottling",
+          "temperature": "Cool peripherally, warming",
+          "moisture": "Diaphoretic"
+        },
+        "pupils": "PERRL 4 mm, sluggish — improvement from fixed",
+        "motorFunction": "Withdraws to deep pain; otherwise flaccid",
+        "otherFindings": [
+          "ROSC marker: EtCO2 rose from 18 → 35 within seconds",
+          "Bronchospasm not resolved — wheeze still audible on inspiration with BVM ventilation; continue DuoNeb and magnesium infusion",
+          "Hypotensive for age (SBP 78 in a 4-year-old; minimum age-appropriate SBP ~ 70 + 2×age = ~78 — right at the floor)",
+          "Monitor closely for re-arrest in the first 10 minutes",
+          "Family present — assign a crew member to communicate clearly with parents"
+        ],
+        "patientSpeech": "None — comatose."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 138,
+        "bpSys": 78,
+        "bpDia": 48,
+        "respRate": 18,
+        "spo2": 92,
+        "etco2": 35,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 55,
+        "glucose": 96,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "pr-1",
+          "shortAction": "Target SpO2 94–98%; do NOT hyperoxygenate post-ROSC",
+          "protocolExcerpt": "Administer oxygen as appropriate with a target of achieving 94–98% saturation. Do not hyperoxygenate.",
+          "priority": "critical",
+          "rationale": "Hyperoxia post-ROSC has been associated with worse neurologic outcomes. Titrate FiO2 down once SpO2 is at target.",
+          "protocolReference": "MATC: Adult Post-ROSC Care"
+        },
+        {
+          "id": "pr-2",
+          "shortAction": "Ventilate 8–10/min, target EtCO2 35–45; do NOT hyperventilate",
+          "protocolExcerpt": "Do not hyperventilate. Maintain a ventilation rate of 8–10 breaths per minute, targeting an EtCO2 of 35–45 mmHg. Hyperventilation is a significant cause of hypotension and recurrence of cardiac arrest in the post resuscitation phase and must be avoided.",
+          "priority": "critical",
+          "rationale": "Hyperventilation is the most common ventilator-driven cause of post-arrest hypotension and re-arrest. Slow it down and watch EtCO2.",
+          "protocolReference": "MATC: Adult Post-ROSC Care"
+        },
+        {
+          "id": "pr-3",
+          "shortAction": "Monitor closely for re-arrest (cardiac monitor, EtCO2, pulses)",
+          "protocolExcerpt": "Monitor closely for recurrence of cardiac arrest using clinical and adjunctive criteria such as cardiac monitoring, EtCO2 monitoring, and physical signs of perfusion.",
+          "priority": "critical",
+          "rationale": "Re-arrest in the first 10 minutes after ROSC is common — watch the monitor, watch the EtCO2, keep a finger on the pulse.",
+          "protocolReference": "MATC: Adult Post-ROSC Care"
+        },
+        {
+          "id": "pr-4",
+          "shortAction": "Support BP — 20 mL/kg NS bolus (16 kg × 20 = 320 mL); reassess",
+          "protocolExcerpt": "Hypovolemia. Additions to care include normal saline 2 L IV (or 20 mL/kg, repeated up to 3 times for pediatrics). For hypotension (SBP less than 90 mmHg or MAP less than 65 in adults) see Shock Guideline.",
+          "priority": "important",
+          "rationale": "SBP 78 in a 4-year-old is at the floor of age-appropriate. A weight-based fluid bolus is the first-line move per pediatric protocol; reassess after each 320 mL.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        },
+        {
+          "id": "pr-5",
+          "shortAction": "Continue DuoNeb and magnesium infusion — bronchospasm is not resolved",
+          "protocolExcerpt": "Albuterol 5 mg nebulized should be administered to all patients in respiratory distress with signs of bronchospasm. Repeat at this dose with unlimited frequency for ongoing respiratory distress. Magnesium sulfate (40 mg/kg IV, maximum dose of 2 g) over 10–15 minutes should be administered for severe bronchoconstriction and concern for impending respiratory failure.",
+          "priority": "important",
+          "rationale": "The underlying disease — severe asthma — hasn't been cured by ROSC. Continued bronchodilator/anti-inflammatory therapy is essential to prevent recurrence of failure.",
+          "protocolReference": "MATC: Respiratory Distress"
+        },
+        {
+          "id": "pr-6",
+          "shortAction": "Transport to pediatric-capable facility; pre-alert PED resus team",
+          "protocolExcerpt": "Consider transporting patients to an age-appropriate facility which offers specialized adult or pediatric post-resuscitation care.",
+          "priority": "important",
+          "rationale": "Pediatric post-arrest care benefits from a children's hospital PICU and pediatric resuscitation team. Pre-alert lets them have a bay, drips, and a vent ready.",
+          "protocolReference": "MATC: Adult Post-ROSC Care"
+        },
+        {
+          "id": "pr-7",
+          "shortAction": "Re-check blood glucose; manage hypoglycemia or hyperglycemia",
+          "protocolExcerpt": "Check blood glucose. If hypoglycemic, treat per Hypoglycemia Guideline. If hyperglycemic, notify hospital on arrival.",
+          "priority": "supplemental",
+          "rationale": "Standard post-ROSC reassessment. Stress hyperglycemia and stress hypoglycemia both occur post-arrest.",
+          "protocolReference": "MATC: Adult Post-ROSC Care"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "atropine-error",
+      "name": "Atropine for hypoxic brady",
+      "description": "As the child's HR drops in response to severe hypoxia, the crew reflexively administers atropine for the bradycardia rather than aggressively optimizing the BVM. Atropine does not address the underlying hypoxia. The drug is given, no clinical response follows, and the ventilation problem — the actual cause of the arrest — remains unaddressed. The child continues to deteriorate and progresses to bradycardic arrest with poorer prognosis because the working minute was wasted on the wrong intervention. Recovery from this branch requires recognizing the error, abandoning the atropine path, and returning to ventilation optimization while preparing for arrest.",
+      "triggerCondition": "The crew gave atropine for HR 50 in this hypoxic child. Per MATC Pediatric Bradycardia: 'It is reasonable to administer atropine for bradycardia caused by increased vagal tone or cholinergic drug toxicity.' This child has neither — her bradycardia is caused by hypoxia. The drug fails to improve her HR; meanwhile her BVM is still underperforming and she is now even closer to arrest. The teaching point: atropine does not fix hypoxia.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 2
+        },
+        "airway": "At risk — BVM in place but mask seal is poor, OPA not in",
+        "breathing": "Inadequate — chest rise minimal despite BVM attempts; severe air-trapping",
+        "circulation": "HR remains in the 40s after atropine; weak central pulse; profound peripheral shutdown",
+        "skin": {
+          "color": "Gray with deep central cyanosis",
+          "temperature": "Cool",
+          "moisture": "Diaphoretic"
+        },
+        "pupils": "5 mm, sluggish",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "Atropine has been given — no improvement",
+          "BVM technique is suboptimal — partial mask seal, no PEEP, no OPA, inadequate chest rise",
+          "The next clinical event will be PEA arrest unless ventilation is fixed",
+          "Teaching point: peds brady = hypoxia; atropine is reserved for vagal tone / cholinergic toxicity"
+        ],
+        "patientSpeech": "None."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Bradycardia",
+        "ecgWaveform": 9,
+        "hr": 40,
+        "bpSys": 64,
+        "bpDia": 38,
+        "respRate": 0,
+        "spo2": 70,
+        "etco2": 60,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 70,
+        "glucose": 104,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "ae-1",
+          "shortAction": "Recognize atropine error — this brady is hypoxia, not vagal/cholinergic",
+          "protocolExcerpt": "Also consider atropine 0.01–0.02 mg/kg IV with minimum dose of 0.1 mg if increased vagal tone or cholinergic drug toxicity to maximum initial dose of 0.5 mg (maximum total dose of 3 mg). Epinephrine may be used for bradycardia and poor perfusion unresponsive to ventilation and oxygenation. It is reasonable to administer atropine for bradycardia caused by increased vagal tone or cholinergic drug toxicity.",
+          "priority": "critical",
+          "rationale": "Pediatric atropine is reserved for vagal/cholinergic etiology. This child's brady is hypoxic — atropine cannot fix it.",
+          "protocolReference": "MATC: Bradycardia"
+        },
+        {
+          "id": "ae-2",
+          "shortAction": "Stop the drug-cascade reflex — return to BVM optimization NOW",
+          "protocolExcerpt": "BVM ventilation should be utilized in children with respiratory failure. Two-person, two-thumbs-up BVM ventilation is preferred. Oropharyngeal airways (OPA) or nasopharyngeal airways (NPA) can be placed if needed to maintain a patent airway and make BVM ventilation more effective.",
+          "priority": "critical",
+          "rationale": "The only therapy that addresses hypoxic bradycardia is more and better ventilation. Re-seat the mask, put in an OPA, go two-person, add PEEP, confirm chest rise.",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "ae-3",
+          "shortAction": "Anticipate imminent arrest — assign compressor; draw up arrest-dose epi 0.16 mg",
+          "protocolExcerpt": "For infants and newborns, initiate chest compressions for heart rate less than 60 BPM and signs of poor perfusion. Administer epinephrine (0.1 mg/kg, maximum dose 1 mg) IV/IO during the first or second round of compressions.",
+          "priority": "critical",
+          "rationale": "She is one HR drop away from PEA. Pre-stage the team so the transition to arrest care is seamless.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "pea-arrest",
+          "if": "Crew course-corrects to ventilation, child arrests",
+          "condition": "The crew recognizes the atropine error, returns to aggressive BVM, but the underlying hypoxia is too far progressed. The child arrests in PEA. The path now rejoins the primary arrest phase — ventilation remains the primary therapy.",
+          "conditionType": "vital_threshold",
+          "triggerActionIds": [
+            "ae-2"
+          ],
+          "timeoutSeconds": 120
+        }
+      ]
+    },
+    {
+      "id": "cpr-no-ventilation-focus",
+      "name": "CPR without ventilation focus",
+      "description": "When the child arrested the crew correctly initiated chest compressions but failed to optimize ventilation. The BVM has a poor mask seal, no PEEP, no OPA, and the bagger is going too fast — no real chest rise. Compressions are excellent, drugs are being given, but the actual cause of the arrest (hypoxia) is not being treated. EtCO2 stays low. SpO2 stays absent. Without correcting the airway/ventilation problem, ROSC will not be achieved. This is the second-most-common pediatric arrest error: forgetting that pediatric arrest is respiratory in etiology and that ventilation IS the resuscitation.",
+      "triggerCondition": "Compressions were started promptly when the child arrested, but the BVM is not delivering effective ventilation: poor seal, no OPA, no PEEP, too-fast bagging with no real chest rise. Per the MATC Cardiac Arrest protocol, pediatric arrests are most often respiratory in etiology — without correcting the hypoxia that caused this arrest, ROSC is unlikely. EtCO2 stays in the teens, SpO2 is absent, no ROSC.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 1
+        },
+        "airway": "BVM in place but mask seal is broken — leak around the bridge of the nose; OPA never placed; no jaw thrust",
+        "breathing": "Apneic; BVM-driven but with inadequate tidal volume — no visible chest rise; rate too fast",
+        "circulation": "Pulseless; CPR in progress at correct depth and rate",
+        "skin": {
+          "color": "Gray with deep cyanosis",
+          "temperature": "Cool, cooling",
+          "moisture": "Diaphoretic"
+        },
+        "pupils": "Fixed at 5 mm",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "Compressions: high quality (depth ~4 cm, rate ~110, 15:2)",
+          "Ventilation: low quality (poor seal, no OPA, no PEEP, no visible chest rise, too-fast rate)",
+          "EtCO2 in the teens — not climbing despite good compressions",
+          "ROSC will not occur until ventilation is fixed"
+        ],
+        "patientSpeech": "None."
+      },
+      "monitorState": {
+        "ecgRhythm": "Pulseless Electrical Activity (PEA)",
+        "ecgWaveform": 9,
+        "hr": 28,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 14,
+        "temp": 36.8,
+        "tempF": 98.2,
+        "obstruction": 70,
+        "glucose": 104,
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "cn-1",
+          "shortAction": "Recognize ventilation failure — peds arrest is respiratory; fix the BVM NOW",
+          "protocolExcerpt": "Special attention should be applied to the pediatric population and airway management/respiratory support. Given that the most likely cause of cardiac arrest is respiratory, airway management may be considered early in the patient's care.",
+          "priority": "critical",
+          "rationale": "Excellent compressions cannot rescue a child whose hypoxia is unaddressed. The teaching beat — pediatric arrest is respiratory — applies during the arrest itself.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        },
+        {
+          "id": "cn-2",
+          "shortAction": "Reset the BVM: two-person, OPA in, jaw thrust, PEEP 5, watch chest rise",
+          "protocolExcerpt": "Two-person, two-thumbs-up BVM ventilation is preferred. Oropharyngeal airways (OPA) or nasopharyngeal airways (NPA) can be placed if needed to maintain a patent airway and make BVM ventilation more effective. PEEP should be used with BVM. 5 cmH2O is generally an appropriate initial PEEP setting. Ventilate with just enough volume to see chest rise, approximately 6–8 mL/kg ideal body weight.",
+          "priority": "critical",
+          "rationale": "The whole resuscitation pivots on real chest rise. Stop. Reset the technique. Watch the chest.",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "cn-3",
+          "shortAction": "Slow the bagging rate to 12–20/min with chest rise per breath",
+          "protocolExcerpt": "For children with an advanced airway, 1 breath every 3–5 seconds is recommended (12–20 breaths/minute). Avoid excessive pressures or tidal volumes during BVM ventilation. The goal is to avoid barotrauma as well as overventilation and related reduction of venous return/preload/cardiac output.",
+          "priority": "critical",
+          "rationale": "Too-fast bagging causes air-trapping in this bronchospastic chest and drops preload — directly counterproductive during arrest.",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "cn-4",
+          "shortAction": "Watch EtCO2 rise as ventilation improves — target ≥10 during CPR",
+          "protocolExcerpt": "Quantitative end-tidal capnography (EtCO2) should be used to monitor effectiveness of chest compressions. If EtCO2 less than 10 mmHg during the initial phases of resuscitation, attempt to improve chest compression quality.",
+          "priority": "important",
+          "rationale": "EtCO2 is the real-time feedback loop. As ventilation improves and perfusion follows, EtCO2 climbs — and a jump of 10–15 signals ROSC.",
+          "protocolReference": "MATC: Airway Management"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "post-rosc",
+          "if": "BVM corrected, ROSC achieved",
+          "condition": "The crew identifies the ventilation gap, resets the BVM (OPA in, two-person seal, PEEP 5, chest rise visible, rate slowed to 12–20/min). EtCO2 climbs from 14 to 35 within 60–90 seconds. ROSC follows on the next pulse check. The path now rejoins the primary post-ROSC phase.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "cn-2",
+            "cn-3"
+          ],
+          "timeoutSeconds": 180
+        }
+      ]
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

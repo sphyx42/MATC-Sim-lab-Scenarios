@@ -1,0 +1,286 @@
+{
+  "scenarioId": "P-T2-01",
+  "scenarioName": "Croup with Worsening Stridor",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1500,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "Eli is a previously healthy 3-year-old boy with a two-day URI (rhinorrhea, low-grade fever, hoarse voice). Overnight he developed a harsh, seal-like barky cough. About 6 hours ago his mother noticed audible noisy breathing on inspiration that has worsened steadily. He has been refusing fluids for the past 4 hours and is more clingy than usual. The cough is worse when he gets upset. No drooling, no choking event, no foreign-body history, no tongue or lip swelling, no rash. He has never been intubated and has no prior episodes of croup, asthma, or wheezing.",
+    "discussion": "",
+    "course": "Initial Contact: On arrival, Eli is sitting upright on his mother's lap with audible inspiratory stridor at rest, mild retractions, a hoarse voice, and an intermittent harsh barky cough. He is anxious but interactive — he tracks the crew with his eyes and clings to mom. There is NO drooling, NO tripoding, NO toxic appearance — the picture is moderate croup, not epiglottitis or foreign body. Westley Croup Score is moderate (stridor at rest, mild retractions, normal air entry, no cyanosis, alert). The critical teaching beat in this phase is that agitation worsens stridor: forcing a mask, prying for IV access, or separating him from mom will turbulence-load his airway and crash his SpO2. The right move is to assess from across the room first, let mom hold him, and stage interventions in order of least-invasive-first. → Neb epi given: Crew sets the nebulizer up on mom's lap with the mask held near Eli's face by mom (not strapped on). Epinephrine 5 mg (5 mL of 1 mg/mL) is running. Dexamethasone 9 mg has been given PO mixed in a small amount of juice (or IM in the lateral thigh if PO refused). Eli is still anxious but tolerating the neb because he's still on mom. SpO2 is holding 94–95%, retractions are unchanged so far — the epinephrine effect takes about 2–5 minutes to peak and the steroid hasn't kicked in yet (peak in 1–2 hours). The crew packages for transport. → Stridor improving: About 5 minutes after the nebulized epinephrine finished, Eli's stridor is much softer. Retractions have largely resolved. SpO2 has come up to 96%. He's more relaxed and has dozed off briefly against mom's shoulder. The crew is en route to the pediatric-capable ED. The teaching beat here is the 'rebound' window — nebulized epi has a 1–2 hour effect, but the dexamethasone won't peak for another 60–90 minutes. If the epi wears off before the steroid kicks in, stridor can recur. Crew gives a clear handoff including time of neb, time of dex, and the rebound caution."
+  },
+  "patientInformation": {
+    "patientName": "Eli Navarro",
+    "patientCondition": "Barky cough and noisy breathing — inspiratory stridor at rest",
+    "patientAge": 3,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 1,
+    "patientSex": 1,
+    "patientHeight": 96,
+    "patientWeight": 15,
+    "patientPhotoId": 4,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "On arrival, Eli is sitting upright on his mother's lap with audible inspiratory stridor at rest, mild retractions, a hoarse voice, and an intermittent harsh barky cough. He is anxious but interactive — he tracks the crew with his eyes and clings to mom. There is NO drooling, NO tripoding, NO toxic appearance — the picture is moderate croup, not epiglottitis or foreign body. Westley Croup Score is moderate (stridor at rest, mild retractions, normal air entry, no cyanosis, alert). The critical teaching beat in this phase is that agitation worsens stridor: forcing a mask, prying for IV access, or separating him from mom will turbulence-load his airway and crash his SpO2. The right move is to assess from across the room first, let mom hold him, and stage interventions in order of least-invasive-first.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 138,
+        "bpSys": 98,
+        "bpDia": 60,
+        "respRate": 32,
+        "spo2": 94,
+        "etco2": 36,
+        "temp": 37.9,
+        "obstruction": 30,
+        "custMeasure1": 96,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Pediatric assessment from doorway; let child stay in mom's lap",
+        "Rule out epiglottitis, foreign body, anaphylaxis on exam",
+        "Pulse ox + EtCO2 + full vitals without upsetting child",
+        "Blow-by O2 via mom if SpO2 <94% — escalate NC → mask if tolerated"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Neb epi given",
+      "description": "Crew sets the nebulizer up on mom's lap with the mask held near Eli's face by mom (not strapped on). Epinephrine 5 mg (5 mL of 1 mg/mL) is running. Dexamethasone 9 mg has been given PO mixed in a small amount of juice (or IM in the lateral thigh if PO refused). Eli is still anxious but tolerating the neb because he's still on mom. SpO2 is holding 94–95%, retractions are unchanged so far — the epinephrine effect takes about 2–5 minutes to peak and the steroid hasn't kicked in yet (peak in 1–2 hours). The crew packages for transport.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 142,
+        "bpSys": 100,
+        "bpDia": 62,
+        "respRate": 30,
+        "spo2": 95,
+        "etco2": 35,
+        "temp": 37.9,
+        "obstruction": 25,
+        "custMeasure1": 96,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Epinephrine 5 mg nebulized (5 mL of 1 mg/mL); may repeat q20 min",
+        "Dexamethasone 9 mg PO (15 kg × 0.6 mg/kg; max 16 mg) — IM if PO refused",
+        "Do NOT place IV on stable awake child — protocol-specific exception",
+        "Skip humidified O2 / mist therapy — not indicated",
+        "Transport to pediatric-capable ED; no lights/sirens"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Stridor improving",
+      "description": "About 5 minutes after the nebulized epinephrine finished, Eli's stridor is much softer. Retractions have largely resolved. SpO2 has come up to 96%. He's more relaxed and has dozed off briefly against mom's shoulder. The crew is en route to the pediatric-capable ED. The teaching beat here is the 'rebound' window — nebulized epi has a 1–2 hour effect, but the dexamethasone won't peak for another 60–90 minutes. If the epi wears off before the steroid kicks in, stridor can recur. Crew gives a clear handoff including time of neb, time of dex, and the rebound caution.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 128,
+        "bpSys": 100,
+        "bpDia": 62,
+        "respRate": 26,
+        "spo2": 96,
+        "etco2": 36,
+        "temp": 37.8,
+        "obstruction": 10,
+        "custMeasure1": 96,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Reassess stridor, retractions, SpO2, mental status",
+        "Watch for impending failure: fatigue, pallor, quieter stridor with worsening WOB",
+        "Handoff with time of neb epi + dex + rebound caution to ED"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "IV before soothing",
+      "description": "Crew pulled Eli off mom's lap to the stretcher and attempted IV access in his hand before giving any inhaled medication. He shrieked and fought, mom got upset, and within 60 seconds his stridor went from audible-at-rest to LOUD AND CONTINUOUS, retractions deepened to severe suprasternal and intercostal, his SpO2 dropped to 86% on room air, and his color started to look dusky. This is the predicted physiology — agitation increases turbulent flow through a narrowed subglottis. The teaching beat: in a pediatric airway with reactive obstruction, aggressive invasive procedures BEFORE rapport-building can convert a moderate case into a critical airway emergency.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 168,
+        "bpSys": 102,
+        "bpDia": 64,
+        "respRate": 44,
+        "spo2": 86,
+        "etco2": 32,
+        "temp": 37.9,
+        "obstruction": 65,
+        "custMeasure1": 96,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Abort IV attempt; return child to mom immediately; STOP all stimulation",
+        "Epinephrine 5 mg nebulized (5 mL of 1 mg/mL) via mom-held mask NOW",
+        "Dexamethasone 9 mg IM lateral thigh (15 kg × 0.6 mg/kg; max 16 mg)",
+        "Prep BVM with PEEP and consider CPAP — anticipate failure",
+        "Manage airway with the LEAST invasive method that works"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Pediatric assessment from doorway; let child stay in mom's lap",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Rule out epiglottitis, foreign body, anaphylaxis on exam",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Pulse ox + EtCO2 + full vitals without upsetting child",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Blow-by O2 via mom if SpO2 <94% — escalate NC → mask if tolerated",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 5 mg nebulized (5 mL of 1 mg/mL); may repeat q20 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Dexamethasone 9 mg PO (15 kg × 0.6 mg/kg; max 16 mg) — IM if PO refused",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Do NOT place IV on stable awake child — protocol-specific exception",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Skip humidified O2 / mist therapy — not indicated",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to pediatric-capable ED; no lights/sirens",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess stridor, retractions, SpO2, mental status",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Watch for impending failure: fatigue, pallor, quieter stridor with worsening WOB",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Handoff with time of neb epi + dex + rebound caution to ED",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Abort IV attempt; return child to mom immediately; STOP all stimulation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 5 mg nebulized (5 mL of 1 mg/mL) via mom-held mask NOW",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Dexamethasone 9 mg IM lateral thigh (15 kg × 0.6 mg/kg; max 16 mg)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Prep BVM with PEEP and consider CPAP — anticipate failure",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Manage airway with the LEAST invasive method that works",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

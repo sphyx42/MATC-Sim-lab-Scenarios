@@ -1,0 +1,410 @@
+{
+  "scenarioId": "P-T2-04",
+  "scenarioName": "Foreign Body Airway Obstruction, Progressing",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1200,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 50,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "Previously healthy 2-year-old boy who was eating lunch with his mother and 4-year-old sister at home. Mother witnessed the toddler put a whole green grape in his mouth, immediately clutch his throat, stop making sound, and turn red. She placed him face-down across her forearm and delivered 4-5 firm back blows. After the third blow he gave a single forceful cough, pink color returned to his face, and he began to cry weakly. He has NOT been seen to spit out a grape or piece of grape. Since then — approximately 4 minutes — he has remained in his mother's arms with persistent audible inspiratory stridor, mild intercostal and suprasternal retractions, and weak intermittent crying. He is tracking with his eyes and reaching for her, but has not returned to baseline play. No fever, no preceding URI symptoms, no rash, no vomiting. He has no prior history of choking, croup, or reactive airway disease. The mechanism (witnessed whole-grape aspiration, partial clearance with effective cough now but persistent stridor) is classic for a partially obstructing supraglottic foreign body that can convert to complete obstruction at any moment.",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives to a 2-year-old, ~12 kg, who choked on a whole green grape approximately 5 minutes ago. Mother's back blows produced a forceful cough and pinking up, but the child has persistent audible inspiratory stridor, mild retractions, and weak crying. He is alert, pink (not cyanotic), tracking, and able to cry — this is a PARTIAL airway obstruction with an EFFECTIVE cough. The Tier 2 teaching point: when the child has an effective cough, the right answer is to ENCOURAGE the cough and NOT intervene mechanically. Sit the child upright in the caregiver's lap, offer blow-by oxygen, keep suction / Magill forceps / direct laryngoscopy / BVM at hand, and transport without delay — partial obstruction can convert to complete obstruction without warning. → Complete obstruction en route: Approximately 4-5 minutes into transport, the child suddenly stops crying, becomes silent, develops perioral cyanosis, and goes limp in his mother's arms. The grape has migrated; the partial obstruction has converted to a complete obstruction. SpO2 drops to 78% and falling, HR remains 148 (not yet bradycardic), no spontaneous respirations effective, no audible stridor, no cough. The child is still perfusing but rapidly hypoxic — this is the BLS-priority window: while the child remains conscious enough to retain muscle tone, deliver abdominal thrusts (Heimlich) as the age-appropriate maneuver for FBAO in a child >1 year. If the child goes unconscious or already has, the sequence converts to chest compressions (which generate intrathoracic pressure that can dislodge the foreign body) with airway look-and-retrieve only when the foreign body is visualized. → FB removed, improving: Direct laryngoscopy revealed the whole green grape lodged at the glottic inlet. Crew retrieved it with peds Magill forceps under direct visualization. Two-person BVM now produces good bilateral chest rise; SpO2 climbs from 78% to 96% over 30-60 seconds; EtCO2 normalizes to 38; child grimaces, begins to cry weakly, then more strongly. Color returns. This phase is the post-clearance reassessment and continued transport — the airway is patent but the child has had a significant hypoxic insult and remains at risk for laryngospasm, secondary aspiration of remaining grape fragments, or post-obstructive pulmonary edema."
+  },
+  "patientInformation": {
+    "patientName": "Mateo Alvarez",
+    "patientCondition": "Witnessed choking on a grape ~5 minutes ago. Bystander back blows produced a forceful cough and pinking up, but child still has audible inspiratory stridor, mild retractions, and is in distress.",
+    "patientAge": 2,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 1,
+    "patientSex": 1,
+    "patientHeight": 86,
+    "patientWeight": 12,
+    "patientPhotoId": 3,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives to a 2-year-old, ~12 kg, who choked on a whole green grape approximately 5 minutes ago. Mother's back blows produced a forceful cough and pinking up, but the child has persistent audible inspiratory stridor, mild retractions, and weak crying. He is alert, pink (not cyanotic), tracking, and able to cry — this is a PARTIAL airway obstruction with an EFFECTIVE cough. The Tier 2 teaching point: when the child has an effective cough, the right answer is to ENCOURAGE the cough and NOT intervene mechanically. Sit the child upright in the caregiver's lap, offer blow-by oxygen, keep suction / Magill forceps / direct laryngoscopy / BVM at hand, and transport without delay — partial obstruction can convert to complete obstruction without warning.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 152,
+        "bpSys": 96,
+        "bpDia": 58,
+        "respRate": 38,
+        "spo2": 92,
+        "etco2": 36,
+        "temp": 37,
+        "obstruction": 80,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize partial FBAO with effective cough (stridor + pink + crying = DO NOT intervene mechanically)",
+        "Sit child upright in caregiver's lap; do NOT force supine — position of comfort",
+        "Blow-by O2 via NC or mask held near face — titrate to SpO2 94-98%, do not agitate",
+        "Encourage continued coughing; AVOID blind finger sweeps and back blows while cough is effective",
+        "Pre-stage suction, peds BVM, peds Magill forceps, and DL/VL — be ready for complete obstruction",
+        "Size peds equipment to 12 kg / 2 yr: cuffed ETT 3.5-4.0 (formula 2/4+3.5=4.0), depth ~12 cm, peds Magill, peds BVM, peds suction",
+        "Continuous SpO2 + waveform EtCO2 + cardiac monitor (peds pads pre-placed)",
+        "Rapid transport, child in caregiver's arms upright; do not delay on scene for IV"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Complete obstruction en route",
+      "description": "Approximately 4-5 minutes into transport, the child suddenly stops crying, becomes silent, develops perioral cyanosis, and goes limp in his mother's arms. The grape has migrated; the partial obstruction has converted to a complete obstruction. SpO2 drops to 78% and falling, HR remains 148 (not yet bradycardic), no spontaneous respirations effective, no audible stridor, no cough. The child is still perfusing but rapidly hypoxic — this is the BLS-priority window: while the child remains conscious enough to retain muscle tone, deliver abdominal thrusts (Heimlich) as the age-appropriate maneuver for FBAO in a child >1 year. If the child goes unconscious or already has, the sequence converts to chest compressions (which generate intrathoracic pressure that can dislodge the foreign body) with airway look-and-retrieve only when the foreign body is visualized.",
+      "monitorType": 0,
+      "trendTime": 15,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 148,
+        "bpSys": 88,
+        "bpDia": 52,
+        "respRate": 6,
+        "spo2": 78,
+        "etco2": 18,
+        "temp": 37,
+        "obstruction": 100,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize complete FBAO — silent, no cough, no chest rise on BVM = mechanical intervention NOW",
+        "Communicate to driver — slow / pull over for resuscitation; stop-and-resuscitate decision",
+        "Two-person, two-thumbs-up BVM attempt — confirms complete obstruction if no chest rise despite good seal",
+        "Direct laryngoscopy + peds Magill forceps; remove FB ONLY if visualized; do NOT sweep blindly",
+        "If unresponsive and not perfusing → start peds CPR 15:2 (two-rescuer), compressions 100-120/min, depth ~4 cm (1.5 in)",
+        "After FB removed — BVM 20-30/min (child rate), one breath over 1 sec with 2-sec pause; target SpO2 94-98%, EtCO2 35-45",
+        "Do NOT perform blind finger sweep — only remove FB if VISUALIZED on DL/VL"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "FB removed, improving",
+      "description": "Direct laryngoscopy revealed the whole green grape lodged at the glottic inlet. Crew retrieved it with peds Magill forceps under direct visualization. Two-person BVM now produces good bilateral chest rise; SpO2 climbs from 78% to 96% over 30-60 seconds; EtCO2 normalizes to 38; child grimaces, begins to cry weakly, then more strongly. Color returns. This phase is the post-clearance reassessment and continued transport — the airway is patent but the child has had a significant hypoxic insult and remains at risk for laryngospasm, secondary aspiration of remaining grape fragments, or post-obstructive pulmonary edema.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 144,
+        "bpSys": 94,
+        "bpDia": 56,
+        "respRate": 36,
+        "spo2": 96,
+        "etco2": 38,
+        "temp": 37,
+        "obstruction": 15,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Reassess airway, breathing, mental status after FB removal — bilateral breath sounds, chest rise, SpO2/EtCO2 trend",
+        "Continue BVM-assist PRN if hypoventilating; peds rate 20-30/min, one breath over 1 sec, 2-sec pause; titrate to EtCO2 35-45",
+        "Supplemental O2 (NC, simple mask, or blow-by) — target SpO2 94-98%, do not over-oxygenate",
+        "Continuous SpO2 + waveform EtCO2 + cardiac monitor; watch for laryngospasm, post-obstructive pulmonary edema, re-aspiration",
+        "Transport to pediatric-capable ED; early notification of FBAO requiring DL/Magill retrieval"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Blind sweep — partial converted to complete",
+      "description": "Crew anchored on 'must remove the foreign body now,' separated the toddler from his mother, laid him supine on the couch, and performed a blind finger sweep. The finger did not retrieve the grape — instead it pushed the grape from a partially obstructing supraglottic position into a completely obstructing glottic position. Within seconds the child silences, cyanoses, and goes limp. This is an iatrogenic complete obstruction and the recovery path requires the same BLS-airway sequence as the default-path complete-obstruction phase: two-person BVM to confirm, direct laryngoscopy + peds Magill, and chest compressions if unresponsive.",
+      "monitorType": 0,
+      "trendTime": 15,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 156,
+        "bpSys": 84,
+        "bpDia": 50,
+        "respRate": 4,
+        "spo2": 72,
+        "etco2": 14,
+        "temp": 37,
+        "obstruction": 100,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Name the error — blind sweep on effective-cough child converted partial to complete; resume escalating airway protocol",
+        "Two-person, two-thumbs-up BVM — confirms ongoing complete obstruction (no chest rise)",
+        "Direct laryngoscopy + peds Magill forceps; remove FB only under direct visualization",
+        "If becomes pulseless or severely bradycardic → start peds CPR 15:2 (two-rescuer), 100-120/min, ~4 cm depth; compressions help dislodge FB"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Decompensation to pediatric arrest",
+      "description": "Complete obstruction was not relieved. Hypoxia has now produced bradycardia and pulselessness — this is a pediatric respiratory-etiology cardiac arrest from FBAO. Rhythm on the monitor is bradycardic-to-PEA / asystole-trending. Survival depends on immediate high-quality 15:2 CPR with the airway managed in parallel (direct laryngoscopy + peds Magill if FB visualized), epinephrine 0.1 mg/kg IV/IO (max 1 mg) per the cardiac arrest protocol, and ongoing reversible-cause search (the H — Hypoxia — is the proximate cause and must be reversed by clearing the foreign body).",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 3,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 12,
+        "temp": 37,
+        "obstruction": 100,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "High-quality peds CPR 15:2 (two-rescuer), 100-120/min, depth ~4 cm (1.5 in for infants / ~5 cm for older children), full recoil",
+        "Direct laryngoscopy + peds Magill — remove the grape under visualization NOW (this is the reversible cause)",
+        "Epinephrine 0.12 mg IV/IO (12 kg × 0.01 mg/kg = 0.12 mg; max single dose 1 mg) of 0.1 mg/mL (1:10,000); repeat q3-5 min, prioritize early for non-shockable",
+        "IO access — proximal tibia (peds preferred site); do not interrupt compressions for access",
+        "Respiratory-etiology arrest — manage airway early (DL+Magill + BVM 20-30/min), no passive ventilation",
+        "Continuous waveform EtCO2 — guide CPR quality (target >10 mmHg), watch for ROSC (sudden EtCO2 rise of 10-15)"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Recognize partial FBAO with effective cough (stridor + pink + crying = DO NOT intervene mechanically)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Sit child upright in caregiver's lap; do NOT force supine — position of comfort",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Blow-by O2 via NC or mask held near face — titrate to SpO2 94-98%, do not agitate",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Encourage continued coughing; AVOID blind finger sweeps and back blows while cough is effective",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Pre-stage suction, peds BVM, peds Magill forceps, and DL/VL — be ready for complete obstruction",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Size peds equipment to 12 kg / 2 yr: cuffed ETT 3.5-4.0 (formula 2/4+3.5=4.0), depth ~12 cm, peds Magill, peds BVM, peds suction",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous SpO2 + waveform EtCO2 + cardiac monitor (peds pads pre-placed)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Rapid transport, child in caregiver's arms upright; do not delay on scene for IV",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize complete FBAO — silent, no cough, no chest rise on BVM = mechanical intervention NOW",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Communicate to driver — slow / pull over for resuscitation; stop-and-resuscitate decision",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Two-person, two-thumbs-up BVM attempt — confirms complete obstruction if no chest rise despite good seal",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Direct laryngoscopy + peds Magill forceps; remove FB ONLY if visualized; do NOT sweep blindly",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "If unresponsive and not perfusing → start peds CPR 15:2 (two-rescuer), compressions 100-120/min, depth ~4 cm (1.5 in)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "After FB removed — BVM 20-30/min (child rate), one breath over 1 sec with 2-sec pause; target SpO2 94-98%, EtCO2 35-45",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Do NOT perform blind finger sweep — only remove FB if VISUALIZED on DL/VL",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess airway, breathing, mental status after FB removal — bilateral breath sounds, chest rise, SpO2/EtCO2 trend",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue BVM-assist PRN if hypoventilating; peds rate 20-30/min, one breath over 1 sec, 2-sec pause; titrate to EtCO2 35-45",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Supplemental O2 (NC, simple mask, or blow-by) — target SpO2 94-98%, do not over-oxygenate",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous SpO2 + waveform EtCO2 + cardiac monitor; watch for laryngospasm, post-obstructive pulmonary edema, re-aspiration",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to pediatric-capable ED; early notification of FBAO requiring DL/Magill retrieval",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Name the error — blind sweep on effective-cough child converted partial to complete; resume escalating airway protocol",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Two-person, two-thumbs-up BVM — confirms ongoing complete obstruction (no chest rise)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Direct laryngoscopy + peds Magill forceps; remove FB only under direct visualization",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "If becomes pulseless or severely bradycardic → start peds CPR 15:2 (two-rescuer), 100-120/min, ~4 cm depth; compressions help dislodge FB",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "High-quality peds CPR 15:2 (two-rescuer), 100-120/min, depth ~4 cm (1.5 in for infants / ~5 cm for older children), full recoil",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Direct laryngoscopy + peds Magill — remove the grape under visualization NOW (this is the reversible cause)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 0.12 mg IV/IO (12 kg × 0.01 mg/kg = 0.12 mg; max single dose 1 mg) of 0.1 mg/mL (1:10,000); repeat q3-5 min, prioritize early for non-shockable",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "IO access — proximal tibia (peds preferred site); do not interrupt compressions for access",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Respiratory-etiology arrest — manage airway early (DL+Magill + BVM 20-30/min), no passive ventilation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous waveform EtCO2 — guide CPR quality (target >10 mmHg), watch for ROSC (sudden EtCO2 rise of 10-15)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

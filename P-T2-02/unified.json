@@ -1,0 +1,437 @@
+{
+  "meta": {
+    "id": "P-T2-02",
+    "name": "Pediatric Dehydration with Compensated Shock",
+    "version": 1,
+    "difficulty": "intermediate",
+    "category": "Pediatric",
+    "protocols": [
+      "medical-shock",
+      "medical-nausea-vomiting",
+      "medical-altered-mental-status"
+    ],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": ["pediatric", "tier-2", "decision-dense", "compensated-shock", "dehydration", "fluid-resuscitation", "weight-based-dosing", "IO-access"]
+  },
+  "patient": {
+    "name": "Caleb Ortiz",
+    "age": 5,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 18,
+    "weightLbs": 40,
+    "height": 110,
+    "chiefComplaint": "Three days of vomiting and diarrhea, now lethargic and won't drink",
+    "history": {
+      "hpi": "Caleb is a previously healthy 5-year-old boy who started vomiting and having watery non-bloody diarrhea three days ago after his older sister came home with what mom calls 'the stomach bug.' For the first two days he was tolerating sips of Pedialyte and the occasional cracker. Yesterday afternoon he stopped wanting to drink anything and started 'sleeping all the time.' He has not had anything to eat or drink in roughly 18 hours per mom. He last urinated yesterday afternoon — diaper still dry at change a few hours ago. Mom says he 'just isn't acting like himself' and was hard to wake from his nap; she called 911 when his lips looked 'pale and his eyes looked sunken in.' He has had no fever measured at home today, no rash, no abdominal swelling, no blood in vomit or stool, no recent travel, no new foods, no medications other than children's acetaminophen 2 days ago for low-grade fever.",
+      "pastMedical": ["Otherwise healthy", "Full-term birth, no NICU stay", "Immunizations up to date per mom"],
+      "medications": ["Children's acetaminophen 160 mg/5 mL — last dose ~48 hours ago for low-grade fever"],
+      "allergies": ["NKDA"],
+      "lastOralIntake": "Half a cup of Pedialyte yesterday around noon. Vomited it within 10 minutes. Nothing PO since.",
+      "events": "Three-day viral gastroenteritis with vomiting and watery diarrhea, multiple episodes daily. Decreasing oral intake over the past 48 hours; no PO in last 18 hours. Decreasing urine output — last wet diaper >12 hours ago. Today became progressively lethargic. Mom called 911 when child was difficult to rouse and 'eyes looked sunken.'"
+    }
+  },
+  "scene": {
+    "dispatch": "Engine 9, Medic 9, respond to 2218 Maple Crest for a 5-year-old male, sick child. Mom reports child won't wake up easily and has been vomiting for three days. Cold response.",
+    "location": "Single-family townhouse, child's bedroom upstairs. Child lying on a small twin bed on top of the covers in shorts and a t-shirt. Bedroom is dim, blinds drawn. Trash can next to the bed contains tissues and a plastic emesis bag. Bottle of Pedialyte half-full on the dresser, and a children's acetaminophen bottle on the nightstand.",
+    "time": "Saturday, 14:18. Outside temperature 71°F, mild.",
+    "safety": "Scene safe. Home is clean. Mom and one older sister (~8 yr) present. Dad at work, on the phone with mom. No pets, no hazards.",
+    "bystanders": "Mom is anxious but composed; she has been a careful historian — wrote down vomiting episodes and diaper changes on a sticky note. Older sister is hovering in the doorway, mildly tearful. Mom: 'He just keeps sleeping. I can wake him up but then he just closes his eyes again.'",
+    "visualCues": [
+      "Child looks small and limp on the bed; eyes appear sunken with dark circles",
+      "Lips and tongue look dry and tacky; no drool on the pillow",
+      "Skin tenting visible over the abdomen when mom lifts his shirt",
+      "Emesis bag in trash can with yellow-green bilious-looking residue",
+      "Half-full Pedialyte bottle on the dresser (mom has been trying)",
+      "Diaper bag with several unused diapers nearby — mom mentions she hasn't needed to change one in over 12 hours",
+      "Child rouses briefly to his name but immediately closes his eyes and turns his head away"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "On arrival the crew finds a lethargic 5-year-old boy on his bed. From the doorway PAT: APPEARANCE — abnormal (decreased interactivity, sunken eyes, won't track or reach for mom); WORK OF BREATHING — increased rate but no retractions or abnormal sounds; CIRCULATION TO SKIN — pale, mottled at the knees. Hands-on findings: capillary refill ~4 seconds at the fingertips, dry tacky mucous membranes, tenting skin over the abdomen, weak distal pulses but strong central pulse, tachycardic. Mom hands over a detailed history (vomiting/diarrhea x3 days, no PO x18 hr, no urine output x12+ hr). The trap on this scenario is the blood pressure: 92/58 looks 'fine for age' (lower acceptable SBP per protocol at age 5 = 2×5+70 = 80 mmHg) and may reassure a crew that is otherwise looking at a textbook compensated pediatric shock picture. Pediatric patients compensate with tachycardia and vasoconstriction to the bitter end, then crash — hypotension is a LATE and ominous sign. The protocol calls this out explicitly.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 4, "motor": 5 },
+        "airway": "Patent, self-maintained. No secretions, no posturing.",
+        "breathing": "Spontaneous and regular with mildly increased rate. No retractions, no nasal flaring, lungs clear bilaterally. No abnormal sounds.",
+        "circulation": "Strong central pulse at carotid/brachial; weak, thready distal radial pulses. Capillary refill ~4 seconds at the fingertips. Skin pale with mottling visible over the knees.",
+        "skin": { "color": "Pale; mottled over knees and dependent areas", "temperature": "Cool peripherally, warm centrally", "moisture": "Dry — tenting visible over abdomen and forehead" },
+        "pupils": "PERRL 3 mm bilaterally. No focal deficits.",
+        "motorFunction": "Moves all four extremities to stimulation but spontaneous movement is minimal. Tone slightly decreased. No focal weakness.",
+        "otherFindings": [
+          "Pediatric Assessment Triangle: APPEARANCE abnormal (decreased interactivity, sunken eyes, decreased tone); WORK OF BREATHING normal-to-mildly elevated rate with no retractions; CIRCULATION TO SKIN pale with mottling",
+          "Sunken eyes with dark circles",
+          "Mucous membranes dry, tacky, no saliva pooling",
+          "Capillary refill 4 seconds at fingertips and toes",
+          "Skin tenting over abdomen and forehead",
+          "No bulging fontanelle (closed at age 5)",
+          "No abdominal distention; soft, non-tender, no organomegaly on gentle palpation",
+          "No rash, no petechiae, no purpura on exposed skin",
+          "No neck stiffness with passive movement",
+          "Mom: 'He hasn't peed since yesterday afternoon. His diaper has been dry every time I check.'"
+        ],
+        "patientSpeech": "Whimpers and says 'Mama' softly when stimulated. Answers his name with a slow head-turn and closes his eyes again. Will not engage with crew or toys."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 168,
+        "bpSys": 92,
+        "bpDia": 58,
+        "respRate": 32,
+        "spo2": 99,
+        "etco2": 32,
+        "temp": 37.4,
+        "tempF": 99.4,
+        "obstruction": 0,
+        "glucose": 78,
+        "customMeasures": [],
+        "trendTimeSeconds": 0,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": false, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "pat-doorway",
+          "shortAction": "Pediatric Assessment Triangle from doorway (appearance, WOB, circulation)",
+          "protocolExcerpt": "Exam: Airway/breathing (airway edema, rales, wheezing, pulse oximetry, respiratory rate); Circulation (heart rate, blood pressure, capillary refill); Abdomen (hepatomegaly); Mucous membrane hydration; Skin (turgor, rash); Neurologic (GCS, sensorimotor deficits)",
+          "priority": "critical",
+          "rationale": "Hands-off PAT identifies sick-vs-not-sick before touching the patient and frames the rest of the assessment.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "recognize-compensated-shock",
+          "shortAction": "Recognize compensated shock: tachycardia, cap refill >3 sec, AMS, oliguria",
+          "protocolExcerpt": "Inclusion Criteria: Signs of poor perfusion (due to a medical cause) such as one or more of the following: Altered mental status; Delayed capillary refill (> 3 seconds); Flash capillary refill (> 1 second) seen in early septic shock; Decreased urine output; Respiratory rate greater than 20 breaths per minute in adults or elevated in children; Hypotension for age... Tachycardia or bradycardia for age, out of proportion to temperature; Weak, decreased or bounding pulses; Cool/mottled or flushed/ruddy skin",
+          "priority": "critical",
+          "rationale": "Multiple inclusion criteria are present (delayed cap refill, AMS, decreased UOP, tachycardia, weak distal pulses, mottled skin) — this is shock even though the BP is 'normal-ish.' Do not be reassured by the BP.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "do-not-trust-bp",
+          "shortAction": "Recognize BP is misleading: peds compensate until late hypotensive collapse",
+          "protocolExcerpt": "Key Considerations: In most adults, tachycardia is the first sign of compensated shock, and may persist for hours. Tachycardia can be a late sign of shock in children and a tachycardic child may be close to cardiovascular collapse. Hypotension indicates uncompensated shock, which may progress to cardiopulmonary failure within minutes. Hypotension is a late and ominous sign in pediatric uncompensated shock",
+          "priority": "critical",
+          "rationale": "This is the central learning point of the scenario. A 'normal' BP in a tachycardic, mottled, oliguric child is not reassuring — it is the calm before the cliff.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "targeted-history",
+          "shortAction": "Targeted history: fluid losses, PO intake, urine output, fever, sick contacts",
+          "protocolExcerpt": "History: History of GI bleeding; Cardiac problems; Stroke; Fever; Nausea/vomiting, diarrhea; Frequent or no urination; Syncopal episode; Allergic reaction; Immunocompromise (malignancy, transplant, asplenia); Adrenal insufficiency; Presence of a central line or port; Other risk of infection (spina bifida or other genitourinary anatomic abnormality); Overdose",
+          "priority": "critical",
+          "rationale": "Hx of GI losses with no replacement and oliguria nails the hypovolemic etiology and rules in volume resuscitation as the right move.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "vitals-cardiac-monitor",
+          "shortAction": "Full vital signs + cardiac monitor + SpO2 + EtCO2",
+          "protocolExcerpt": "Treatment and Interventions: Check vital signs; Administer oxygen as appropriate with a target of achieving 94–98% saturation; Cardiac monitor; Pulse oximetry and EtCO2 (reading of less than 25 mmHg may be sign of poor perfusion)",
+          "priority": "critical",
+          "rationale": "EtCO2 <25 is itself a perfusion marker; baseline cardiac monitor catches dysrhythmia from electrolyte derangement.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "blood-sugar",
+          "shortAction": "Check blood glucose (fingerstick); correct if <60 mg/dL",
+          "protocolExcerpt": "Treatment and Interventions: Check blood sugar, and correct if less than 60 mg/dL",
+          "priority": "critical",
+          "rationale": "Hypoglycemia is common in dehydrated/fasting children and must be ruled out as a contributor to AMS.",
+          "protocolReference": "MATC: Shock"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "iv-access-bolus",
+          "if": "Compensated shock recognized; vascular access pursued",
+          "condition": "Crew recognized compensated pediatric shock (tachycardia, delayed capillary refill, AMS, oliguria, dry MM) despite a 'normal-for-age' blood pressure and moved to establish vascular access for fluid resuscitation.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["recognize-compensated-shock", "do-not-trust-bp"]
+        },
+        {
+          "targetPhaseId": "reassured-by-bp",
+          "if": "BP 92/58 deemed reassuring; no IV, no fluids",
+          "condition": "Crew sees a 'normal-for-age' BP of 92/58 and is falsely reassured. They categorize the patient as 'sick but stable,' apply supportive oxygen only, do not establish IV access, do not give fluids, and begin routine transport without recognizing compensated pediatric shock.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["recognize-compensated-shock", "do-not-trust-bp"]
+        }
+      ]
+    },
+    {
+      "id": "iv-access-bolus",
+      "name": "IV access + first bolus",
+      "description": "Crew has recognized compensated shock and moves on vascular access. Two IV attempts in the antecubital and hand fail due to peripheral vasoconstriction and small veins — per protocol, if vascular access is not obtained within 2 attempts or 90 seconds, place an IO. Crew either lands a small-bore peripheral IV on a second-look attempt at the saphenous vein OR proceeds to a proximal tibial IO. A 20 mL/kg bolus of 0.9% NS is calculated: 18 kg × 20 mL/kg = 360 mL, pressure-infused over <15 minutes. Ondansetron is given for ongoing nausea. Glucose was 78 (normal), so no D10 needed. The child is reassessed in real time during the bolus.",
+      "triggerCondition": "Crew recognized compensated pediatric shock despite the misleadingly normal BP, established vascular access (peripheral IV after two attempts or proximal tibial IO per protocol), and initiated a weight-based crystalloid bolus.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 4, "motor": 5 },
+        "airway": "Patent, self-maintained.",
+        "breathing": "Spontaneous, RR slightly elevated, lungs clear, no retractions.",
+        "circulation": "Tachycardic. Distal pulses still weak; central strong. Capillary refill 4 seconds. Skin still pale and mottled at knees.",
+        "skin": { "color": "Pale, mottled at knees and shins", "temperature": "Cool peripherally", "moisture": "Dry mucous membranes; tenting still present over abdomen" },
+        "pupils": "PERRL 3 mm.",
+        "motorFunction": "Minimal spontaneous movement. Withdraws to IV stick but does not pull away vigorously — appropriate for shock.",
+        "otherFindings": [
+          "First IV attempt L AC: vein collapses on stick, no flash",
+          "Second IV attempt R hand: small vein, blown after partial advance",
+          "Per protocol: 2 failed attempts → escalate to IO at proximal tibia (or operator may successfully obtain saphenous IV on next attempt)",
+          "0.9% NS pressure-bagged at 300 mmHg through 22 g peripheral or 15 mm EZ-IO",
+          "Glucose 78 mg/dL — above 60 threshold, no D10 needed",
+          "Mom holds his hand on the unaffected side; he doesn't react much to the IV — a quiet child is a sick child"
+        ],
+        "patientSpeech": "Soft whimper at IV stick; one word: 'no.' Returns to eyes-closed posture."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 164,
+        "bpSys": 94,
+        "bpDia": 60,
+        "respRate": 30,
+        "spo2": 99,
+        "etco2": 33,
+        "temp": 37.4,
+        "tempF": 99.4,
+        "obstruction": 0,
+        "glucose": 78,
+        "customMeasures": [],
+        "trendTimeSeconds": 40,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": false, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "iv-access-with-io-escalation",
+          "shortAction": "IV access; if 2 attempts or 90 sec fail, place proximal tibial IO",
+          "protocolExcerpt": "Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle",
+          "priority": "critical",
+          "rationale": "Do not chase a third or fourth IV in a shocky child — the protocol is explicit. IO is the right answer.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "fluid-bolus-360",
+          "shortAction": "0.9% NS 360 mL IV/IO bolus (18 kg × 20 mL/kg) — pressure-infuse <15 min",
+          "protocolExcerpt": "Pediatric: Physiologic targets: Systolic blood pressure at least fifth percentile for age, strong distal pulses, warm skin perfusion, capillary refill less than 2 seconds and improving mental status. Fluid goal of up to a total of 60 mL/kg or 1 liter of isotonic fluid by giving 20 mL/kg of isotonic fluid by administering rapid boluses (for cardiogenic shock give 10 mL/kg boluses)",
+          "priority": "critical",
+          "rationale": "Weight-based bolus is the cornerstone of pediatric hypovolemic shock resuscitation. Pressure-bag it — gravity won't get it in fast enough.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "ondansetron-pediatric",
+          "shortAction": "Ondansetron 2.7 mg IV (18 kg × 0.15 mg/kg = 2.7 mg; max 4 mg)",
+          "protocolExcerpt": "Ondansetron (contraindicated for suspected or known diagnosis of prolonged QT syndrome) Pediatric (6 months – 14 years old): 0.15 mg/kg IV/PO (maximum dose of 4 mg) OR 2 mg SL for ages 1–5 years old; age 6 and older use 4 mg of the ODT formulation",
+          "priority": "important",
+          "rationale": "Stops ongoing emesis and helps PO challenge later. Note 2 mg SL ODT is also acceptable per protocol for age 1–5.",
+          "protocolReference": "MATC: Nausea-Vomiting"
+        },
+        {
+          "id": "oxygen-target",
+          "shortAction": "Oxygen titrated to SpO2 94–98% (currently 99%, no O2 needed)",
+          "protocolExcerpt": "Administer oxygen as appropriate with a target of achieving 94–98% saturation",
+          "priority": "important",
+          "rationale": "Avoid unnecessary oxygen — current saturation is fine; over-oxygenation is not the answer to perfusion failure.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "ed-notification-early",
+          "shortAction": "Advance notification to receiving ED — pediatric shock, en route",
+          "protocolExcerpt": "Provide advanced notification to the hospital",
+          "priority": "critical",
+          "rationale": "Lets the ED prep peds resus bay, second-line access, labs, and possible vasopressors before arrival.",
+          "protocolReference": "MATC: Shock"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "responds-to-fluids",
+          "if": "Bolus completed; reassess perfusion",
+          "condition": "Crew completed the 360 mL bolus pressure-infused over 5–15 minutes, then performed structured reassessment (HR, BP, cap refill, mental status, distal pulses, skin) to determine response and whether to repeat the bolus.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["fluid-bolus-360"]
+        }
+      ]
+    },
+    {
+      "id": "responds-to-fluids",
+      "name": "Responds to fluids",
+      "description": "After the first 360 mL bolus the child demonstrates clear positive response: HR drops from 168 to 144, capillary refill improves from 4 seconds to 2 seconds, mottling resolves, and he becomes more interactive — opens his eyes when his name is called, takes a sip of water from mom's straw cup without vomiting, and says 'I want my bear.' Pediatric resuscitation targets per protocol are met: strong distal pulses returning, warm skin perfusion improving, capillary refill <2 sec, and improving mental status. Crew documents response, considers a second 20 mL/kg bolus if any criteria remain abnormal (cap refill, AMS, HR still elevated), and continues monitored transport with reassessment q5–15 minutes. Total fluid ceiling per protocol is 60 mL/kg or 1 liter, whichever comes first.",
+      "triggerCondition": "After the first 360 mL bolus of 0.9% NS was pressure-infused over <15 minutes, structured reassessment showed clinical improvement consistent with the protocol's pediatric resuscitation targets (HR trending down, capillary refill <2 sec, improving mental status, strong distal pulses).",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 4, "motor": 6 },
+        "airway": "Patent, self-protecting.",
+        "breathing": "Spontaneous, regular, RR normalizing, lungs clear.",
+        "circulation": "Strong distal pulses, capillary refill 2 seconds, no mottling.",
+        "skin": { "color": "Pink, no mottling", "temperature": "Warm throughout", "moisture": "Still mildly dry MM but no longer tenting; small amount of saliva returning" },
+        "pupils": "PERRL 3 mm.",
+        "motorFunction": "Moves all four extremities spontaneously; reaches for mom's hand and the stuffed bear.",
+        "otherFindings": [
+          "Resuscitation targets met: capillary refill <2 sec, warm skin perfusion, strong distal pulses, improving mental status",
+          "Bolus delivered: 360 mL 0.9% NS pressure-infused in ~10 minutes",
+          "Took 2 oz sips of water on the way out to the rig — held it down",
+          "Lung bases clear — no rales, no hepatomegaly, no signs of fluid overload",
+          "Reassessment q5–15 min planned during transport",
+          "Mom visibly relieved; child says 'I'm thirsty'"
+        ],
+        "patientSpeech": "'I want my bear.' 'Where's mom?' 'I'm thirsty.' Age-appropriate, oriented to mom and surroundings."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 144,
+        "bpSys": 98,
+        "bpDia": 62,
+        "respRate": 26,
+        "spo2": 99,
+        "etco2": 36,
+        "temp": 37.4,
+        "tempF": 99.4,
+        "obstruction": 0,
+        "glucose": 82,
+        "customMeasures": [],
+        "trendTimeSeconds": 60,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": false, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "structured-reassessment",
+          "shortAction": "Reassess full vital signs + perfusion markers post-bolus",
+          "protocolExcerpt": "Key Documentation Elements: Full vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) with reassessment q 15 minutes or more frequently as appropriate",
+          "priority": "critical",
+          "rationale": "Tells you whether the bolus worked and whether you need to give a second one.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "consider-repeat-bolus",
+          "shortAction": "Consider second 360 mL bolus if any target unmet (ceiling 60 mL/kg = 1080 mL)",
+          "protocolExcerpt": "Pediatric: Fluid goal of up to a total of 60 mL/kg or 1 liter of isotonic fluid by giving 20 mL/kg of isotonic fluid by administering rapid boluses (for cardiogenic shock give 10 mL/kg boluses)",
+          "priority": "important",
+          "rationale": "If perfusion markers had stayed abnormal, the protocol explicitly allows repeating 20 mL/kg boluses up to 60 mL/kg total. In THIS patient the targets are met after one bolus.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "monitor-fluid-overload",
+          "shortAction": "Auscultate lungs, check for hepatomegaly between boluses",
+          "protocolExcerpt": "Patient Safety Considerations: Recognition of cardiogenic shock - If the patient condition deteriorates after fluid administration, rales or hepatomegaly develop, then consider cardiogenic shock and withholding further fluid administration",
+          "priority": "important",
+          "rationale": "Catches the rare child who is in cardiogenic rather than hypovolemic shock — fluid would worsen them.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "transport-reassess",
+          "shortAction": "Continue transport; reassess vitals + mental status q5–15 min; document",
+          "protocolExcerpt": "Key Documentation Elements: Medications administered; Full vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) with reassessment q 15 minutes or more frequently as appropriate; Lactate level (if available); Neurologic status assessment; Amount of fluids given",
+          "priority": "critical",
+          "rationale": "Every pediatric shock patient deserves ED-level workup; ongoing reassessment catches recurrence.",
+          "protocolReference": "MATC: Shock"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "reassured-by-bp",
+      "name": "Reassured by BP, no fluids",
+      "description": "Crew sees BP 92/58 and decides the child is 'sick but stable.' They place a non-rebreather, get a perfunctory set of vitals, and load for routine transport WITHOUT establishing IV access, WITHOUT giving a fluid bolus, and WITHOUT advance notification. Tachycardia is dismissed as 'fever' or 'crying.' Roughly 6–8 minutes into transport — exactly the pediatric pattern — the child crashes. He stops responding even to painful stimulus, BP drops precipitously to 64/40, HR climbs further then becomes irregular, and capillary refill is now >5 seconds with mottling to mid-thigh. Crew is now scrambling for IO access in a moving rig under far worse conditions than they had on scene. This phase is the demonstration of why a 'normal' BP in a tachycardic, mottled, oliguric child is NOT reassuring — it is the calm before the cliff.",
+      "triggerCondition": "Crew was falsely reassured by a 'normal-for-age' BP of 92/58 in the face of clear compensated-shock criteria (tachycardia 168, capillary refill 4 sec, AMS, oliguria, dry mucous membranes, mottled skin). They forwent IV access and fluid resuscitation. Mid-transport the patient transitioned from compensated to decompensated shock, which in peds is sudden and severe.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 2, "verbal": 2, "motor": 4 },
+        "airway": "Patent but no longer self-protecting reliably; pooled saliva, no gag with suction probe.",
+        "breathing": "Shallow, irregular, RR 12 — slowing from the previous 32. Lungs clear.",
+        "circulation": "Central pulse present but weak; no palpable distal pulses; capillary refill >5 seconds. Mottling extends to mid-thigh.",
+        "skin": { "color": "Gray-pale with deep mottling on legs and abdomen", "temperature": "Cold to elbows and knees", "moisture": "Mottled and cool" },
+        "pupils": "PERRL 4 mm, slightly sluggish.",
+        "motorFunction": "Withdraws weakly to deep pain only; no spontaneous movement.",
+        "otherFindings": [
+          "Patient crashed ~6–8 minutes into transport in the rig",
+          "Mom is now crying in the captain's chair: 'What's wrong?! He was just sleepy!'",
+          "Crew now attempting IO in a moving ambulance — proximal tibia, EZ-IO, on a wobbling stretcher",
+          "Pressure-bag NS being rigged on the fly; setup is rushed and chaotic",
+          "First IO attempt: operator unfamiliar with peds landmarks, hits growth plate territory — second attempt needed",
+          "Advance ED notification finally going out — should have gone out 15 minutes ago",
+          "Glucose now 62 mg/dL on recheck (was 78) — drifted toward hypoglycemia under stress"
+        ],
+        "patientSpeech": "Moans only. No words. No response to mom's voice."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 188,
+        "bpSys": 64,
+        "bpDia": 40,
+        "respRate": 12,
+        "spo2": 92,
+        "etco2": 22,
+        "temp": 37.2,
+        "tempF": 99.0,
+        "obstruction": 0,
+        "glucose": 62,
+        "customMeasures": [],
+        "trendTimeSeconds": 25,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": true, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "recover-recognize-crash",
+          "shortAction": "Recognize decompensated shock; declare and reset priorities",
+          "protocolExcerpt": "Key Considerations: Hypotension indicates uncompensated shock, which may progress to cardiopulmonary failure within minutes. Hypotension is a late and ominous sign in pediatric uncompensated shock",
+          "priority": "critical",
+          "rationale": "Name what you are looking at out loud; that creates the urgency the team needs.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "recover-io-immediately",
+          "shortAction": "Immediate proximal tibial IO — do not chase peripheral IV",
+          "protocolExcerpt": "Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle",
+          "priority": "critical",
+          "rationale": "In a decompensated, vasoconstricted, hypotensive child, IO is the fastest reliable route. Do not waste another minute on a peripheral.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "recover-rapid-bolus",
+          "shortAction": "0.9% NS 360 mL IO bolus (18 × 20 = 360 mL); pressure-bag; repeat to 1080 mL max",
+          "protocolExcerpt": "Pediatric: Fluid goal of up to a total of 60 mL/kg or 1 liter of isotonic fluid by giving 20 mL/kg of isotonic fluid by administering rapid boluses (for cardiogenic shock give 10 mL/kg boluses)",
+          "priority": "critical",
+          "rationale": "Push the bolus under pressure, reassess, repeat up to the ceiling. Targets are the same — strong distal pulses, cap refill <2 sec, improving mentation.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "recover-glucose-correct",
+          "shortAction": "Recheck glucose; correct if <60 mg/dL per protocol",
+          "protocolExcerpt": "Treatment and Interventions: Check blood sugar, and correct if less than 60 mg/dL",
+          "priority": "important",
+          "rationale": "Glucose has drifted to 62 mg/dL with stress and starvation. Stay ahead of hypoglycemia — recheck in 10 minutes; if it dips below 60, treat per the Hypoglycemia Guideline.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "recover-airway-support",
+          "shortAction": "Airway support: position, suction, BVM if RR or SpO2 drops",
+          "protocolExcerpt": "Treatment and Interventions: Administer oxygen as appropriate with a target of achieving 94–98% saturation",
+          "priority": "critical",
+          "rationale": "With GCS 8 and shallow breathing, the child is now at risk of losing his airway. Be ready.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "recover-late-notification",
+          "shortAction": "Upgrade to emergent; ED notification — peds shock crashing en route",
+          "protocolExcerpt": "Provide advanced notification to the hospital",
+          "priority": "critical",
+          "rationale": "Late notification still helps — the ED needs to be ready with peds resus, vasopressors, and possibly intubation.",
+          "protocolReference": "MATC: Shock"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

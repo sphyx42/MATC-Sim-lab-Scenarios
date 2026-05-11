@@ -1,0 +1,392 @@
+{
+  "meta": {
+    "id": "P-T2-01",
+    "name": "Croup with Worsening Stridor",
+    "version": 1,
+    "difficulty": "intermediate",
+    "category": "Pediatric",
+    "protocols": [
+      "peds-resp-distress-croup",
+      "resp-airway-management"
+    ],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": ["pediatric", "tier-2", "croup", "stridor", "neb-epi", "dexamethasone", "decision-dense", "family-management", "calm-vs-act"]
+  },
+  "patient": {
+    "name": "Eli Navarro",
+    "age": 3,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 15,
+    "weightLbs": 33,
+    "height": 96,
+    "chiefComplaint": "Barky cough and noisy breathing — inspiratory stridor at rest",
+    "history": {
+      "hpi": "Eli is a previously healthy 3-year-old boy with a two-day URI (rhinorrhea, low-grade fever, hoarse voice). Overnight he developed a harsh, seal-like barky cough. About 6 hours ago his mother noticed audible noisy breathing on inspiration that has worsened steadily. He has been refusing fluids for the past 4 hours and is more clingy than usual. The cough is worse when he gets upset. No drooling, no choking event, no foreign-body history, no tongue or lip swelling, no rash. He has never been intubated and has no prior episodes of croup, asthma, or wheezing.",
+      "pastMedical": ["Otherwise healthy", "No prior croup episodes", "No asthma or chronic respiratory disease", "Born full-term, no NICU stay", "Immunizations up to date per mom (including HiB)"],
+      "medications": ["Children's acetaminophen 160 mg/5 mL PRN fever (last dose 6 hours ago)"],
+      "allergies": ["NKDA"],
+      "lastOralIntake": "About 4 ounces of water and a few crackers approximately 4 hours ago. Refusing most fluids since.",
+      "events": "Two-day URI escalated overnight to barky cough. Stridor at rest started this evening and has progressively worsened. Mom called 911 when Eli's breathing started to look 'sucked-in' at the chest and he became more anxious."
+    }
+  },
+  "scene": {
+    "dispatch": "Engine 7, Medic 7, respond to 1822 Lakeview Drive for a 3-year-old male, mother reports child can't breathe well — barking cough and noisy breathing. Patient is awake.",
+    "location": "Single-family home, child's bedroom. Toddler sitting upright on mother's lap on the edge of the bed. Humidifier running in the corner. Tissues and a cup of water on the nightstand.",
+    "time": "Thursday, 22:15. Outside temperature cool, 48°F.",
+    "safety": "Scene safe. Quiet home. No pets in the room. Mother is anxious but cooperative. Father is downstairs keeping a 5-year-old sibling occupied.",
+    "bystanders": "Mother holding Eli upright on her lap, stroking his back. She reports the cough and noisy breathing started overnight and got much worse in the last few hours. No one else in the house is sick beyond a daycare cold going around.",
+    "visualCues": [
+      "Child sitting upright in mom's lap — NOT tripoding, NOT drooling",
+      "Audible harsh inspiratory stridor at rest, worse when he cries",
+      "Mild suprasternal and subcostal retractions",
+      "Hoarse voice, intermittent seal-like barky cough",
+      "Skin pink, eyes engaged, looking warily at strangers",
+      "Humidifier running — mom has been trying steam in the bathroom without much effect"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "On arrival, Eli is sitting upright on his mother's lap with audible inspiratory stridor at rest, mild retractions, a hoarse voice, and an intermittent harsh barky cough. He is anxious but interactive — he tracks the crew with his eyes and clings to mom. There is NO drooling, NO tripoding, NO toxic appearance — the picture is moderate croup, not epiglottitis or foreign body. Westley Croup Score is moderate (stridor at rest, mild retractions, normal air entry, no cyanosis, alert). The critical teaching beat in this phase is that agitation worsens stridor: forcing a mask, prying for IV access, or separating him from mom will turbulence-load his airway and crash his SpO2. The right move is to assess from across the room first, let mom hold him, and stage interventions in order of least-invasive-first.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent but UPPER-airway noise — audible harsh inspiratory stridor at rest. No drooling, no muffled 'hot potato' voice, no tongue swelling. Hoarse phonation. Intermittent seal-like barky cough.",
+        "breathing": "Spontaneous, regular. Mild suprasternal and subcostal retractions. No nasal flaring. Air entry is symmetric and adequate bilaterally. No wheezing, no crackles.",
+        "circulation": "Strong, fast radial pulse. Capillary refill < 2 seconds at the fingertips. Skin pink, warm, dry.",
+        "skin": { "color": "Pink. No cyanosis. No pallor or mottling.", "temperature": "Warm — mildly febrile to touch", "moisture": "Dry" },
+        "pupils": "PERRL 3 mm bilaterally.",
+        "motorFunction": "Moves all extremities, clings to mom, age-appropriate tone.",
+        "otherFindings": [
+          "Pediatric Assessment Triangle — APPEARANCE: alert, anxious but interactive, consoles to mom; WORK OF BREATHING: audible inspiratory stridor at rest, mild retractions; CIRCULATION TO SKIN: pink, warm, dry",
+          "Westley Croup Score (estimate): stridor at rest = 2, mild retractions = 1, air entry normal = 0, no cyanosis = 0, alert = 0 → Score ~3 (moderate)",
+          "No drooling, no tripoding, no muffled voice — picture is NOT epiglottitis",
+          "No choking history, no asymmetric breath sounds — picture is NOT foreign body",
+          "No wheezing, no eczema/atopy history, no exposure history — picture is NOT anaphylaxis or asthma"
+        ],
+        "patientSpeech": "Hoarse, short utterances. 'Mama. Want home.' Brief barky cough between sentences. Will answer mom but not the crew."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 138,
+        "bpSys": 98,
+        "bpDia": 60,
+        "respRate": 32,
+        "spo2": 94,
+        "etco2": 36,
+        "temp": 37.9,
+        "tempF": 100.2,
+        "obstruction": 30,
+        "glucose": 96,
+        "customMeasures": [],
+        "trendTimeSeconds": 0,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": false, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "pat-from-doorway",
+          "shortAction": "Pediatric assessment from doorway; let child stay in mom's lap",
+          "protocolExcerpt": "Exam: Presence of stridor at rest or when agitated; Description of cough; Other signs of distress (grunting, nasal flaring, retracting, use of accessory muscles); Color (pallor, cyanosis, normal); Mental status (alert, tired, lethargic, unresponsive)",
+          "priority": "critical",
+          "rationale": "Agitation worsens stridor by increasing turbulent airflow through a narrowed subglottis. The single most useful early move is to NOT escalate — observe from across the room, keep the child in mom's lap, and avoid mask-forcing, IV sticks, or separation from caregiver.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Croup)"
+        },
+        {
+          "id": "rule-out-mimics",
+          "shortAction": "Rule out epiglottitis, foreign body, anaphylaxis on exam",
+          "protocolExcerpt": "Exclusion Criteria: Presumed underlying cause that includes one of the following: Anaphylaxis; Asthma; Bronchiolitis (wheezing in a patient less than 2 years of age); Foreign body aspiration; Submersion/drowning; Epiglottitis. Key Considerations: Foreign bodies can mimic croup, it is important to ask about a possible choking event.",
+          "priority": "critical",
+          "rationale": "Drooling + tripoding + toxic appearance would point to epiglottitis. Sudden choking history points to foreign body. Hives/lip swelling/exposure points to anaphylaxis. Eli has none of these — picture is croup.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Croup)"
+        },
+        {
+          "id": "vital-signs-spo2-etco2",
+          "shortAction": "Pulse ox + EtCO2 + full vitals without upsetting child",
+          "protocolExcerpt": "Monitoring: Pulse oximetry and EtCO2 should be routinely used as an adjunct to other forms of respiratory monitoring. Exam: Full set of vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) temperature, and O2 saturation.",
+          "priority": "important",
+          "rationale": "Pulse ox on a toe or finger he can keep in mom's lap. EtCO2 by nasal cannula if tolerated. Save BP cuff for transport so the squeeze doesn't trigger crying.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Croup)"
+        },
+        {
+          "id": "blowby-o2-if-tolerated",
+          "shortAction": "Blow-by O2 via mom if SpO2 <94% — escalate NC → mask if tolerated",
+          "protocolExcerpt": "Airway: Give supplemental oxygen. Escalate from a nasal cannula to a simple face mask to a non-breather mask to SpO2 94–98%. Humidified oxygen or mist therapy is not indicated.",
+          "priority": "important",
+          "rationale": "Target SpO2 94–98%. Have mom hold tubing near his face — don't strap anything on if he's resisting. Note the protocol explicitly says humidified/mist therapy is NOT indicated despite the persistent folklore.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Croup)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "neb-epi-given",
+          "if": "Nebulized epi given calmly in mom's lap",
+          "condition": "Crew recognizes moderate croup with stridor at rest, gives nebulized epinephrine 5 mg via mask held by mom while child stays in her lap. Dexamethasone administered PO or IM. No IV attempted on the awake stable child.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["neb-epi", "dexamethasone-po"]
+        },
+        {
+          "targetPhaseId": "iv-attempt-agitation",
+          "if": "IV attempted on screaming child before soothing",
+          "condition": "Crew prioritizes invasive procedures — pulls child off mom and attempts IV access before any soothing measures or inhaled medication. Child cries, stridor turbulence increases, work of breathing escalates.",
+          "conditionType": "action_taken",
+          "triggerActionIds": []
+        }
+      ]
+    },
+    {
+      "id": "neb-epi-given",
+      "name": "Neb epi given",
+      "description": "Crew sets the nebulizer up on mom's lap with the mask held near Eli's face by mom (not strapped on). Epinephrine 5 mg (5 mL of 1 mg/mL) is running. Dexamethasone 9 mg has been given PO mixed in a small amount of juice (or IM in the lateral thigh if PO refused). Eli is still anxious but tolerating the neb because he's still on mom. SpO2 is holding 94–95%, retractions are unchanged so far — the epinephrine effect takes about 2–5 minutes to peak and the steroid hasn't kicked in yet (peak in 1–2 hours). The crew packages for transport.",
+      "triggerCondition": "Crew recognized moderate croup, kept Eli on mom's lap, and delivered nebulized epinephrine 5 mg with dexamethasone 0.6 mg/kg before any invasive procedure. The least-invasive-first approach is paying off — Eli is still cooperative.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent. Inspiratory stridor still present at rest but now competing with the noise of the nebulizer. Hoarse voice, occasional barky cough.",
+        "breathing": "Spontaneous. Mild suprasternal and subcostal retractions persist. Air entry symmetric. Nebulizer mist visible at the mask.",
+        "circulation": "Strong, fast radial pulse. Skin pink, warm, dry.",
+        "skin": { "color": "Pink", "temperature": "Warm", "moisture": "Dry" },
+        "pupils": "PERRL 3 mm bilaterally.",
+        "motorFunction": "Sitting upright on mom, head turned into her shoulder. Moves all extremities.",
+        "otherFindings": [
+          "Mask held by mom about 2 inches from face — Eli accepts it because mom is holding it",
+          "No IV in place — appropriate for a stable awake child per protocol (IVs only for dehydration or IV meds)",
+          "Crew has dexamethasone 9 mg charted as given PO 2 minutes ago",
+          "Transport plan: closest pediatric-capable ED, no lights/sirens"
+        ],
+        "patientSpeech": "Still hoarse, short utterances. Says 'no' to the mask but tolerates it from mom."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 142,
+        "bpSys": 100,
+        "bpDia": 62,
+        "respRate": 30,
+        "spo2": 95,
+        "etco2": 35,
+        "temp": 37.9,
+        "tempF": 100.2,
+        "obstruction": 25,
+        "glucose": 96,
+        "customMeasures": [],
+        "trendTimeSeconds": 30,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": false, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "neb-epi",
+          "shortAction": "Epinephrine 5 mg nebulized (5 mL of 1 mg/mL); may repeat q20 min",
+          "protocolExcerpt": "Inhaled medications should be administered to all children with croup in respiratory distress with signs of stridor at rest—these medications should be repeated at this dose with unlimited frequency for ongoing respiratory distress. Epinephrine 5 mg (5 mL of 1 mg/mL solution) nebulized (may repeat in 20 minutes as needed), or Racemic epinephrine 0.5 mL of 2.25% solution mixed in 2.5 mL NS (may repeat in 20 minutes as needed).",
+          "priority": "critical",
+          "rationale": "Nebulized epi vasoconstricts the inflamed subglottic mucosa and rapidly reduces stridor. Delivered via mask held by mom to avoid agitation. Note this dose is the SAME whether the kid is 10 kg or 30 kg — it's a fixed 5 mg/5 mL nebulized dose.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Croup)"
+        },
+        {
+          "id": "dexamethasone-po",
+          "shortAction": "Dexamethasone 9 mg PO (15 kg × 0.6 mg/kg; max 16 mg) — IM if PO refused",
+          "protocolExcerpt": "Dexamethasone 0.6 mg/kg oral, IV, or IM to maximum dose of 16 mg should be administered to patients with suspected croup.",
+          "priority": "critical",
+          "rationale": "Dose math: 15 kg × 0.6 mg/kg = 9 mg, well under the 16 mg cap. PO is preferred for a stable awake child to avoid an IM needle. IM in the lateral thigh is the backup if he won't swallow. Onset is slow (1–2 hours to peak) but durable (24–48 hours) — this is what prevents the rebound after the epi wears off.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Croup)"
+        },
+        {
+          "id": "no-iv-unless-needed",
+          "shortAction": "Do NOT place IV on stable awake child — protocol-specific exception",
+          "protocolExcerpt": "Utility of IV placement and fluids. IVs should only be placed in children with respiratory distress for clinical concerns of dehydration or when administering IV medications.",
+          "priority": "important",
+          "rationale": "An unnecessary IV stick on a child whose airway is held open by sympathetic tone is a self-inflicted setback. Protocol explicitly excludes routine IV placement in this scenario.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Croup)"
+        },
+        {
+          "id": "no-humidified-mist",
+          "shortAction": "Skip humidified O2 / mist therapy — not indicated",
+          "protocolExcerpt": "Humidified oxygen or mist therapy is not indicated.",
+          "priority": "supplemental",
+          "rationale": "Persistent folklore says steam helps croup. The MATC protocol explicitly says it doesn't. Time spent on a mist tent is time NOT spent on neb epi and dex.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Croup)"
+        },
+        {
+          "id": "transport-no-lights",
+          "shortAction": "Transport to pediatric-capable ED; no lights/sirens",
+          "protocolExcerpt": "Patient Safety Considerations: Routine use of lights and sirens is not recommended during transport. Patients who receive inhaled epinephrine should be transported to definitive care.",
+          "priority": "important",
+          "rationale": "Lights and sirens agitate a kid you just calmed down. Every patient who got neb epi gets transported regardless of how good they look — they need ED observation for rebound.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Croup)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "stridor-improving",
+          "if": "Stridor improves 5 minutes after neb epi",
+          "condition": "Approximately 5 minutes after nebulized epinephrine completes, stridor severity decreases, retractions resolve, and SpO2 improves. Child is calmer in mom's arms. Crew prepares for transport with awareness that steroid has NOT yet peaked and rebound is possible in 1–2 hours.",
+          "conditionType": "time_elapsed",
+          "timeoutSeconds": 300,
+          "triggerActionIds": ["neb-epi"]
+        }
+      ]
+    },
+    {
+      "id": "stridor-improving",
+      "name": "Stridor improving",
+      "description": "About 5 minutes after the nebulized epinephrine finished, Eli's stridor is much softer. Retractions have largely resolved. SpO2 has come up to 96%. He's more relaxed and has dozed off briefly against mom's shoulder. The crew is en route to the pediatric-capable ED. The teaching beat here is the 'rebound' window — nebulized epi has a 1–2 hour effect, but the dexamethasone won't peak for another 60–90 minutes. If the epi wears off before the steroid kicks in, stridor can recur. Crew gives a clear handoff including time of neb, time of dex, and the rebound caution.",
+      "triggerCondition": "Approximately 5 minutes after nebulized epinephrine completed, stridor severity has decreased substantially, retractions have resolved, and SpO2 is up to 96%. Child is comfortable on mom's lap. Crew is en route to definitive care.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 5, "motor": 6 },
+        "airway": "Patent. Stridor much softer — present only with deep inspiration or when he stirs. Hoarse voice still. Barky cough less frequent.",
+        "breathing": "Spontaneous, regular. No retractions. Air entry symmetric, adequate.",
+        "circulation": "Strong radial pulse. Skin pink, warm, dry.",
+        "skin": { "color": "Pink", "temperature": "Warm", "moisture": "Dry" },
+        "pupils": "PERRL 3 mm bilaterally.",
+        "motorFunction": "Resting on mom's shoulder, dozing briefly, rousable easily.",
+        "otherFindings": [
+          "Westley Croup Score reassessment: stridor only with activity = 1, no retractions = 0, normal air entry = 0, no cyanosis = 0, alert = 0 → Score ~1 (mild)",
+          "Continuous SpO2 + cardiac monitoring during transport",
+          "Charting: time of neb epi, time and route of dexamethasone, time of arrival at ED",
+          "Rebound window: epi effect 1–2 hours, dexamethasone peak 1–2 hours — handoff must flag this overlap"
+        ],
+        "patientSpeech": "Murmurs to mom. 'Tired.' Cough is intermittent and softer."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 128,
+        "bpSys": 100,
+        "bpDia": 62,
+        "respRate": 26,
+        "spo2": 96,
+        "etco2": 36,
+        "temp": 37.8,
+        "tempF": 100.0,
+        "obstruction": 10,
+        "glucose": 96,
+        "customMeasures": [],
+        "trendTimeSeconds": 45,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": false, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "reassess-westley",
+          "shortAction": "Reassess stridor, retractions, SpO2, mental status",
+          "protocolExcerpt": "Document key aspects of the exam to assess for a change after each intervention: Respiratory rate; Oxygen saturation; Use of accessory muscles or tracheal tugging; Breath sounds; Air entry; Mental status; Color.",
+          "priority": "critical",
+          "rationale": "Improvement of stridor and retractions confirms the epi worked. Mental status is the canary — a sleepy or limp kid post-treatment may be tiring out, NOT improving.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Croup)"
+        },
+        {
+          "id": "watch-for-impending-failure",
+          "shortAction": "Watch for impending failure: fatigue, pallor, quieter stridor with worsening WOB",
+          "protocolExcerpt": "Key Considerations: Impending respiratory failure is indicated by: Change in mental status such as fatigue and listlessness; Pallor; Dusky appearance; Decreased retractions; Decreased breath sounds with decreasing stridor.",
+          "priority": "critical",
+          "rationale": "Counterintuitive but critical: decreasing stridor PLUS worsening mental status / pallor / decreased breath sounds is a DETERIORATING airway, not an improving one. Treat with neb epi repeat (q20 min as needed) and prepare for BVM.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Croup)"
+        },
+        {
+          "id": "handoff-rebound",
+          "shortAction": "Handoff with time of neb epi + dex + rebound caution to ED",
+          "protocolExcerpt": "Patients who receive inhaled epinephrine should be transported to definitive care.",
+          "priority": "important",
+          "rationale": "Epi effect 1–2 hours; dex peak 1–2 hours. The 'rebound' window is the overlap. ED needs to know exact times to plan disposition.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Croup)"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "iv-attempt-agitation",
+      "name": "IV before soothing",
+      "description": "Crew pulled Eli off mom's lap to the stretcher and attempted IV access in his hand before giving any inhaled medication. He shrieked and fought, mom got upset, and within 60 seconds his stridor went from audible-at-rest to LOUD AND CONTINUOUS, retractions deepened to severe suprasternal and intercostal, his SpO2 dropped to 86% on room air, and his color started to look dusky. This is the predicted physiology — agitation increases turbulent flow through a narrowed subglottis. The teaching beat: in a pediatric airway with reactive obstruction, aggressive invasive procedures BEFORE rapport-building can convert a moderate case into a critical airway emergency.",
+      "triggerCondition": "Crew prioritized invasive procedures, pulling Eli off mom for IV attempt before delivering any inhaled medication. Resulting agitation has dramatically worsened the airway obstruction — stridor is now severe and continuous, SpO2 has fallen, and the child is approaching respiratory failure.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 4, "motor": 6 },
+        "airway": "LOUD continuous inspiratory stridor at rest. Hoarse, screaming voice. No drooling, no foreign body recovery — this is purely agitation-driven worsening of pre-existing croup.",
+        "breathing": "Spontaneous but labored. Severe suprasternal AND intercostal retractions. Nasal flaring. Air entry now decreased — quieter on auscultation despite louder upper airway noise (ominous sign).",
+        "circulation": "Strong, fast radial pulse. Skin now PALE, peripheries cool, dusky lips.",
+        "skin": { "color": "Pale with dusky perioral cyanosis", "temperature": "Cool peripherally, warm core", "moisture": "Diaphoretic" },
+        "pupils": "PERRL 3 mm bilaterally.",
+        "motorFunction": "Fighting and crying, reaching for mom. Tone is normal but he is wearing out.",
+        "otherFindings": [
+          "Westley Croup Score reassessment: stridor at rest LOUD = 2, severe retractions = 2, decreased air entry = 1, dusky/cyanosis with agitation = 4, anxious/distressed = 1 → Score ~10 (severe — impending failure)",
+          "Pulse ox 86% on room air, climbing slowly with blow-by",
+          "Failed IV attempt in the hand — no access established, child now even more distrustful",
+          "Mom is crying and saying 'please stop, please stop' — family rapport damaged"
+        ],
+        "patientSpeech": "Screaming. Cannot phonate full words. Just 'Mama' and crying."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 168,
+        "bpSys": 102,
+        "bpDia": 64,
+        "respRate": 44,
+        "spo2": 86,
+        "etco2": 32,
+        "temp": 37.9,
+        "tempF": 100.2,
+        "obstruction": 65,
+        "glucose": 96,
+        "customMeasures": [],
+        "trendTimeSeconds": 20,
+        "visibility": { "spo2Visible": true, "spo2Attached": true, "rrVisible": true, "etco2Visible": false, "cvpVisible": false }
+      },
+      "expectedActions": [
+        {
+          "id": "abort-iv-return-to-mom",
+          "shortAction": "Abort IV attempt; return child to mom immediately; STOP all stimulation",
+          "protocolExcerpt": "Patient Management — Treatment and Interventions — Airway: Give supplemental oxygen. Utility of IV placement and fluids. IVs should only be placed in children with respiratory distress for clinical concerns of dehydration or when administering IV medications. Key Considerations: Without stridor at rest or other evidence of respiratory distress, inhaled medications may not be necessary.",
+          "priority": "critical",
+          "rationale": "The only way out is to undo the trigger. Stop the IV, hand the child back to mom, blow-by O2, then try a neb epi mask held by mom. This is hard psychologically — crew is geared up for 'doing more' — but the right move is doing less.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Croup)"
+        },
+        {
+          "id": "neb-epi-rescue",
+          "shortAction": "Epinephrine 5 mg nebulized (5 mL of 1 mg/mL) via mom-held mask NOW",
+          "protocolExcerpt": "Inhaled medications should be administered to all children with croup in respiratory distress with signs of stridor at rest—these medications should be repeated at this dose with unlimited frequency for ongoing respiratory distress. Epinephrine 5 mg (5 mL of 1 mg/mL solution) nebulized (may repeat in 20 minutes as needed).",
+          "priority": "critical",
+          "rationale": "Once he's back on mom, push the neb epi through. Same fixed dose. The protocol explicitly allows unlimited frequency for ongoing distress.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Croup)"
+        },
+        {
+          "id": "dexamethasone-im-now",
+          "shortAction": "Dexamethasone 9 mg IM lateral thigh (15 kg × 0.6 mg/kg; max 16 mg)",
+          "protocolExcerpt": "Dexamethasone 0.6 mg/kg oral, IV, or IM to maximum dose of 16 mg should be administered to patients with suspected croup.",
+          "priority": "critical",
+          "rationale": "He's not going to swallow PO at this point. IM in the lateral thigh — quick and decisive while the neb runs. Dose math: 15 × 0.6 = 9 mg.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Croup)"
+        },
+        {
+          "id": "prep-bvm-niv",
+          "shortAction": "Prep BVM with PEEP and consider CPAP — anticipate failure",
+          "protocolExcerpt": "Improvement of oxygenation and/or respiratory distress with non-invasive airway adjuncts: Continuous positive airway pressure (CPAP) should be administered for severe respiratory distress; BVM ventilation should be utilized in children with respiratory failure. Patient Safety Considerations: Pediatric airway management requires appropriately sized tools and adjuncts based on patient size/age.",
+          "priority": "critical",
+          "rationale": "He may not respond fast enough. Have the appropriate-size pediatric BVM with PEEP valve out, mask at the bedside, and prepare for assisted ventilation if he tires out. Supraglottic devices and intubation come ONLY if BVM fails — pediatric ETI has unclear benefit in the prehospital setting per protocol.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "least-invasive-airway",
+          "shortAction": "Manage airway with the LEAST invasive method that works",
+          "protocolExcerpt": "Supraglottic devices and intubation — should be utilized only if BVM ventilation fails. The airway should be managed in the least invasive way possible. Pediatric endotracheal intubation has unclear benefit in the prehospital setting.",
+          "priority": "critical",
+          "rationale": "The protocol is explicit: SGA and ETI are last resorts in pediatric croup. Effective BVM + neb epi + dex is the right algorithm, NOT immediate intubation.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Croup)"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

@@ -1,0 +1,563 @@
+{
+  "meta": {
+    "scenarioId": "P-T1-03",
+    "id": "P-T1-03",
+    "name": "Infant with RSV / Bronchiolitis — Assessment-Driven Supportive Care",
+    "version": 1,
+    "difficulty": "beginner",
+    "category": "Pediatric",
+    "protocols": [
+      "peds-resp-distress-bronchiolitis",
+      "resp-airway-management",
+      "medical-shock"
+    ],
+    "totalTimeSeconds": 900,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "pediatric",
+      "infant",
+      "bronchiolitis",
+      "RSV",
+      "respiratory-distress",
+      "PAT",
+      "pediatric-assessment-triangle",
+      "nasal-suctioning",
+      "supportive-care",
+      "tier-1",
+      "beginner"
+    ]
+  },
+  "patient": {
+    "name": "Mia Alvarez",
+    "age": 6,
+    "ageUnit": "months",
+    "sex": "female",
+    "weight": 7,
+    "weightLbs": 15.4,
+    "height": 66,
+    "chiefComplaint": "6-month-old infant with 3 days of cough and congestion, now working harder to breathe — nasal flaring, grunting, mild retractions.",
+    "history": {
+      "hpi": "Previously healthy 6-month-old female with three days of nasal congestion and dry cough that started after her older brother came home from daycare with a cold. Low-grade fevers (highest 100.8 F by axillary thermometer at home) began on day two. Over the last several hours mom noticed Mia is breathing faster, making a grunting noise on expiration, and 'pulling in' under her ribs. She has been less interested in nursing — last good feed was about 5 hours ago, and she only nursed for 2-3 minutes before pulling off, fussing, and falling back asleep. Mom reports the last wet diaper was about 6 hours ago, which is unusual; she typically wets every 2-3 hours. No vomiting, no diarrhea, no rash. No prior wheezing or breathing problems, no prior ED visits or admissions, no prematurity. Born full-term, vaginal delivery, uncomplicated nursery course.",
+      "pastMedical": [
+        "Born full-term (39 weeks), no NICU",
+        "Up to date on immunizations through 4 months",
+        "No prior wheezing, no prior respiratory illness"
+      ],
+      "medications": [
+        "Infant acetaminophen 0.8 mL (80 mg) PO ~4 hours ago for fever",
+        "Vitamin D drops 400 IU PO daily"
+      ],
+      "allergies": [
+        "NKDA"
+      ],
+      "lastOralIntake": "Last nursing ~5 hours ago — only 2-3 minutes before pulling off (normal feeds are 15-20 minutes every 2-3 hours).",
+      "events": "Sick contact (older brother with URI) → 3 days nasal congestion + cough → low-grade fever day 2 → increased work of breathing and decreased feeding today → mom called 911 when she noticed grunting and retractions."
+    }
+  },
+  "scene": {
+    "dispatch": "Dispatch: 6-month-old female, difficulty breathing, conscious. Mom on scene. Apartment, second floor.",
+    "location": "Second-floor apartment, living room. Warm room temperature. Infant is in mom's arms on the couch wrapped in a thin blanket. Good lighting; clear path to door and stairwell.",
+    "time": "Tuesday, 14:20, cool fall afternoon (active RSV/respiratory viral season)",
+    "safety": "Scene safe. No pets in the room. Mom calm but visibly worried. Older brother (3 yo) playing in adjacent room with grandmother.",
+    "bystanders": "Mother present and providing history in clear English. Has the baby's pediatrician info, immunization card, and a small bag with diapers and a bottle ready to go.",
+    "visualCues": [
+      "Small infant in mom's arms, awake, eyes tracking but quiet and tired-looking",
+      "Visible nasal flaring with each breath; small amount of clear nasal discharge crusted at the nostrils",
+      "Audible expiratory grunting from across the room",
+      "Mild subcostal and intercostal retractions visible when blanket is lowered",
+      "Skin is pink centrally; lips are pink (no cyanosis)",
+      "Bottle of children's acetaminophen and bulb syringe on the side table",
+      "Older sibling in next room with cough and runny nose"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a 6-month-old female in her mother's arms with visible signs of increased work of breathing: nasal flaring, audible expiratory grunting, and mild sub-/intercostal retractions. She is awake and tracking but quiet and tired-looking. This is a Tier 1 assessment scenario — the goal is to step through the Pediatric Assessment Triangle (PAT) from the doorway, then put hands on for a focused exam (vitals, auscultation, hydration, feeding history) BEFORE choosing an intervention. The 'hands-on' work earns the diagnosis: viral bronchiolitis in an obligate-nose-breather infant with congestion. The right interventions are gentle — nasal suctioning and supplemental O2 — not a reflexive nebulizer.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent — clear/thin nasal secretions present at both nares; no stridor; no drooling",
+        "breathing": "RR 60 with nasal flaring, expiratory grunting, mild subcostal and intercostal retractions; diffuse expiratory wheezing and scattered coarse crackles bilaterally; air entry adequate",
+        "circulation": "Strong central pulse (brachial); warm extremities; capillary refill 2-3 seconds",
+        "skin": {
+          "color": "pink centrally, pink lips (no cyanosis)",
+          "temperature": "warm (febrile to touch)",
+          "moisture": "dry"
+        },
+        "pupils": "Equal ~3 mm, briskly reactive",
+        "motorFunction": "Moves all extremities symmetrically; tracks mom and providers with eyes",
+        "otherFindings": [
+          "Anterior fontanel: flat (not bulging, not yet clearly sunken)",
+          "Lips and oral mucosa: slightly tacky",
+          "No tears with fussing (per mom — 'she's not really been crying tears today')",
+          "Crusted thin clear nasal secretions at both nares; obligate nose breather struggling to move air through congested nose",
+          "Patient is interactive but tired — will look at providers but quickly closes eyes and tucks back into mom",
+          "Holding head with reasonable tone; no head bobbing yet"
+        ],
+        "patientSpeech": "Pre-verbal infant; weak, soft cry when stimulated, settles quickly with mom"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 168,
+        "bpSys": 90,
+        "bpDia": 56,
+        "respRate": 60,
+        "spo2": 90,
+        "etco2": 36,
+        "temp": 38.2,
+        "tempF": 100.8,
+        "obstruction": 25,
+        "glucose": 88,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "pat-from-doorway",
+          "shortAction": "Perform Pediatric Assessment Triangle from doorway (appearance, work of breathing, circulation)",
+          "protocolExcerpt": "Exam: Full set of vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) temperature, and O2 saturation; Air entry (normal vs. diminished); Breath sounds (wheezes, crackles, rales, rhonchi, diminished, clear); Signs of distress (grunting, nasal flaring, retracting, accessory muscle use); Weak cry or inability to speak full sentences (sign of shortness of breath); Color (pallor, cyanosis, normal); Mental status (alert, tired, lethargic, unresponsive).",
+          "priority": "critical",
+          "rationale": "The PAT is the across-the-room first impression that drives urgency in peds. Appearance (interactive but tired), Work of Breathing (flaring, grunting, retractions), and Circulation (pink centrally) immediately frames this as respiratory distress, not failure — yet.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Bronchiolitis)"
+        },
+        {
+          "id": "full-vitals-spo2",
+          "shortAction": "Obtain full vitals including SpO2, RR, HR, temp on the infant",
+          "protocolExcerpt": "Exam: Full set of vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) temperature, and O2 saturation. Pulse oximetry and end-tidal capnography (EtCO2) should be routinely used as an adjunct to other forms of respiratory monitoring.",
+          "priority": "critical",
+          "rationale": "Tier 1 assessment scenario — you cannot treat what you have not measured. SpO2 of 90% on room air, RR of 60, and HR of 168 quantify the distress.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Bronchiolitis)"
+        },
+        {
+          "id": "auscultate-lungs",
+          "shortAction": "Auscultate all lung fields; identify diffuse wheezing and crackles",
+          "protocolExcerpt": "Exam: Air entry (normal vs. diminished); Breath sounds (wheezes, crackles, rales, rhonchi, diminished, clear); Signs of distress (grunting, nasal flaring, retracting, accessory muscle use).",
+          "priority": "critical",
+          "rationale": "Diffuse expiratory wheezing + scattered coarse crackles in an infant under 2 with viral URI symptoms is the classic bronchiolitis exam. Auscultating BEFORE choosing a nebulizer is what makes this Tier 1.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Bronchiolitis)"
+        },
+        {
+          "id": "assess-hydration",
+          "shortAction": "Assess hydration: fontanel, mucous membranes, tears, capillary refill",
+          "protocolExcerpt": "Exam: Hydration status (+/- sunken eyes, delayed capillary refill, mucous membranes (moist vs. tacky), fontanel (flat vs. sunken)).",
+          "priority": "important",
+          "rationale": "Decreased feeding plus increased insensible losses from tachypnea and fever puts bronchiolitis infants at real risk of dehydration. A flat fontanel + tacky mucosa + cap refill 2-3 sec + no tears is the early-dehydration picture you must catch.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Bronchiolitis)"
+        },
+        {
+          "id": "feeding-and-diaper-history",
+          "shortAction": "Ask mom about feeding intake and wet-diaper count over last 24 hours",
+          "protocolExcerpt": "History: Change in feeding patterns and/or number of wet diapers.",
+          "priority": "important",
+          "rationale": "Two days of poor feeding and a 6-hour gap between wet diapers (normal is q2-3h) is documented dehydration risk. This is the history finding that escalates concern beyond simple respiratory distress.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Bronchiolitis)"
+        },
+        {
+          "id": "history-onset-sick-contacts",
+          "shortAction": "Take focused history: symptom onset, sick contacts, prior wheezing, prematurity",
+          "protocolExcerpt": "History: Onset of symptoms; Concurrent symptoms (e.g., fever, cough, rhinorrhea, tongue/lip swelling, rash, labored breathing, foreign body aspiration); Sick contacts; History of wheezing; Respiratory and other treatments given; History of prematurity; Family history of asthma, eczema, or allergies.",
+          "priority": "important",
+          "rationale": "3 days of cough/congestion + low-grade fever + sick contact (older sibling with URI) + no prior wheezing/prematurity locks in bronchiolitis as the leading dx and rules out asthma exacerbation (which uses a different protocol).",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Bronchiolitis)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "assessment-complete",
+          "if": "PAT + focused exam completed",
+          "condition": "Crew performs the Pediatric Assessment Triangle from the doorway, obtains full vitals including SpO2, auscultates all lung fields, assesses hydration (fontanel, mucous membranes, tears, cap refill), and takes a focused history including feeding/diaper output and sick contacts. The diagnosis of viral bronchiolitis with mild-to-moderate distress and early dehydration becomes clear.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "pat-from-doorway",
+            "full-vitals-spo2",
+            "auscultate-lungs",
+            "assess-hydration",
+            "feeding-and-diaper-history"
+          ]
+        },
+        {
+          "targetPhaseId": "reflex-neb-given",
+          "if": "Nebulizer started without proper assessment",
+          "condition": "Crew hears wheezing and reflexively reaches for an albuterol nebulizer, treating this like a pediatric asthma exacerbation. Auscultation, hydration assessment, and feeding history are skipped or rushed. Critical opportunity for nasal suctioning is missed because the team is focused on a treatment that the protocol explicitly says does not benefit bronchiolitis.",
+          "conditionType": "action_taken"
+        },
+        {
+          "targetPhaseId": "dehydration-missed",
+          "if": "Hydration + feeding history skipped",
+          "condition": "Crew focuses only on the respiratory exam (auscultation, SpO2, RR), gives oxygen, and prepares for transport without ever assessing fontanel, mucous membranes, tears, or asking about feeding and wet diapers. Early dehydration goes undocumented and untreated, infant continues to lose volume to fever + tachypnea, and HR climbs into the 180s en route as compensated shock starts to declare itself.",
+          "conditionType": "action_not_taken"
+        }
+      ]
+    },
+    {
+      "id": "assessment-complete",
+      "name": "Assessment complete; bronchiolitis recognized",
+      "description": "The crew has completed the PAT and a focused hands-on assessment. The picture: 6-month-old with 3 days of URI symptoms, fever 100.8 F, RR 60 with flaring/grunting/mild retractions, SpO2 90% on room air, diffuse wheezing and crackles, sick contact, no prior wheezing, decreased feeding, decreased wet diapers, flat fontanel, tacky mucosa, cap refill 2-3 sec. This is viral bronchiolitis with mild-to-moderate distress and early dehydration. The right next moves are gentle and supportive: clear the obligate nose breather's nose, give supplemental O2 to a target of 94-98%, position in caregiver's arms, transport without lights and sirens, and reassess.",
+      "triggerCondition": "PAT and focused exam are complete — vitals obtained, lungs auscultated (diffuse wheezing and crackles), hydration assessed (flat fontanel, tacky mucosa, cap refill 2-3 sec, no tears), feeding/diaper history obtained (decreased intake x2 days, last wet diaper 6 hours ago), sick-contact history confirmed. Crew has identified viral bronchiolitis with early dehydration and now moves into supportive care.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent but with thin clear nasal secretions partially obstructing both nares — audible nasal congestion with each breath",
+        "breathing": "RR 58-62, persistent nasal flaring, expiratory grunting, mild retractions; diffuse expiratory wheezing and scattered crackles; air entry adequate bilaterally",
+        "circulation": "Strong brachial pulse, warm extremities, cap refill 2-3 sec",
+        "skin": {
+          "color": "pink centrally and peripherally",
+          "temperature": "warm",
+          "moisture": "dry; tacky mucous membranes"
+        },
+        "pupils": "Equal ~3 mm, briskly reactive",
+        "motorFunction": "Moves all extremities; tracks mom",
+        "otherFindings": [
+          "Anterior fontanel flat",
+          "Mucous membranes tacky",
+          "No tears with crying",
+          "Patient still interactive but quickly tires; tucks into mom"
+        ],
+        "patientSpeech": "Weak intermittent cry, settles with mom"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 170,
+        "bpSys": 88,
+        "bpDia": 54,
+        "respRate": 60,
+        "spo2": 90,
+        "etco2": 37,
+        "temp": 38.2,
+        "tempF": 100.8,
+        "obstruction": 25,
+        "glucose": 88,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "nasal-suction",
+          "shortAction": "Gently suction nose with bulb or soft suction catheter — obligate nose breather",
+          "protocolExcerpt": "Airway: Suction the nose and/or mouth (via bulb or suction catheter) particularly if excessive secretions are present. Key Considerations: Suctioning can be a very effective intervention to alleviate distress since infants are obligate nose breathers.",
+          "priority": "critical",
+          "rationale": "Single highest-yield intervention in this scenario. Infants under ~6 months are obligate nose breathers — clearing the nares often dramatically improves work of breathing and SpO2.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Bronchiolitis)"
+        },
+        {
+          "id": "supplemental-o2",
+          "shortAction": "Supplemental O2 via blow-by or pediatric NC, titrate to SpO2 94-98%",
+          "protocolExcerpt": "Airway: Give supplemental oxygen – escalate from a nasal cannula to a simple face mask to a non-breather mask as needed, to maintain normal oxygenation (goal SpO2 94–98%).",
+          "priority": "critical",
+          "rationale": "SpO2 of 90% on room air is below the protocol target of 94-98%. Start at the least invasive option (blow-by or pediatric NC at 1-2 LPM) and titrate up only if needed.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Bronchiolitis)"
+        },
+        {
+          "id": "position-of-comfort",
+          "shortAction": "Position infant in mom's arms / position of comfort; minimize handling",
+          "protocolExcerpt": "Patient positioning can significantly impact respiratory mechanics. Patients with severe bronchospasm should be left in the position of comfort (perhaps tripod) whenever possible. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics. This can both improve the ability to ventilate and limit aspiration.",
+          "priority": "important",
+          "rationale": "Agitation and crying worsen oxygen demand in infants. Keeping Mia upright in mom's arms reduces work of breathing and avoids the desaturation that comes with forced separation and lying flat on a stretcher.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "continuous-monitoring",
+          "shortAction": "Apply continuous pulse oximetry and EtCO2; reassess after each intervention",
+          "protocolExcerpt": "Treatment and Interventions: Pulse oximetry and end-tidal capnography (EtCO2) should be routinely used as an adjunct to other forms of respiratory monitoring. Pertinent Assessment Findings: Frequent reassessment is necessary to determine if interventions have alleviated signs of respiratory distress.",
+          "priority": "important",
+          "rationale": "Bronchiolitis can deteriorate over minutes. SpO2 + EtCO2 trends tell you whether suctioning + O2 are working or whether you need to escalate.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Bronchiolitis)"
+        },
+        {
+          "id": "no-routine-neb",
+          "shortAction": "Do NOT give routine albuterol; bronchiolitis does not respond to it",
+          "protocolExcerpt": "Key Considerations: Although albuterol and steroids have previously been a consideration, the most recent evidence does not demonstrate a benefit in routine use of albuterol or steroids for bronchiolitis. Ipratropium and other anticholinergic agents should not be given to children with bronchiolitis in the prehospital setting. Steroids are not efficacious and should not be given.",
+          "priority": "critical",
+          "rationale": "Treating bronchiolitis like asthma is the classic error in this age group. The MATC protocol is explicit: routine albuterol is not beneficial; ipratropium should not be given; steroids should not be given.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Bronchiolitis)"
+        },
+        {
+          "id": "transport-no-lights-sirens",
+          "shortAction": "Transport to pediatric-capable ED; lights/sirens not routinely needed",
+          "protocolExcerpt": "Patient Safety Considerations: Routine use of lights and sirens is not recommended during transport.",
+          "priority": "important",
+          "rationale": "Lights and sirens agitate the infant, increase work of breathing, and add no clinical benefit in stable bronchiolitis. Smooth, calm transport with continuous reassessment is the standard.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Bronchiolitis)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "supportive-care-improving",
+          "if": "Nasal suction + O2 given; reassess shows improvement",
+          "condition": "After nasal suctioning, supplemental O2 by blow-by or pediatric NC, and positioning in mom's arms, work of breathing decreases, SpO2 climbs to the mid-90s, RR settles into the low 50s, and HR drifts down. The infant tolerates transport well.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "nasal-suction",
+            "supplemental-o2",
+            "position-of-comfort"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "supportive-care-improving",
+      "name": "Supportive care; infant improving en route",
+      "description": "After nasal suctioning, blow-by/NC oxygen, and positioning in mom's arms, the infant's work of breathing improves: nasal flaring softens, grunting is intermittent rather than continuous, retractions are minimal, SpO2 is now 95% on supplemental O2, RR has come down to 52, and HR is drifting down toward 150. The infant is still tired but more easily consoled. Crew continues continuous monitoring, communicates a clear handoff (HPI, exam, interventions, response, hydration status, feeding history) to a pediatric-capable receiving facility, and transports without lights and sirens.",
+      "triggerCondition": "Crew completed assessment, performed nasal suctioning, applied supplemental O2 (blow-by or pediatric NC), kept the infant in mom's arms, and is reassessing. Work of breathing has eased and SpO2 has climbed above the 94-98% target.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent; nares now clear after suctioning; minimal residual secretions",
+        "breathing": "RR 50-54, intermittent (not continuous) grunting, mild nasal flaring only when fussing, minimal retractions; wheezing softer; air entry good",
+        "circulation": "Strong brachial pulse, warm extremities, cap refill 2 sec",
+        "skin": {
+          "color": "pink",
+          "temperature": "warm",
+          "moisture": "dry"
+        },
+        "pupils": "Equal ~3 mm, briskly reactive",
+        "motorFunction": "Moves all extremities; more interactive with mom",
+        "otherFindings": [
+          "Fontanel flat",
+          "Mucous membranes still slightly tacky — hydration is something for the ED to address",
+          "Patient calmer in mom's arms with blow-by O2 held close"
+        ],
+        "patientSpeech": "Quiet, occasional soft cry, consolable"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 150,
+        "bpSys": 92,
+        "bpDia": 58,
+        "respRate": 52,
+        "spo2": 95,
+        "etco2": 38,
+        "temp": 38.1,
+        "tempF": 100.6,
+        "obstruction": 15,
+        "glucose": 88,
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "reassess-document",
+          "shortAction": "Reassess and document: RR, SpO2, WoB, breath sounds, mental status, color",
+          "protocolExcerpt": "Key Documentation Elements: Document key aspects of the exam to assess for a change after each intervention: Respiratory rate; Oxygen saturation; Use of accessory muscles; Breath sounds; Air entry; Mental status; Color.",
+          "priority": "critical",
+          "rationale": "Tier 1 teaching point — the assessment that drove the treatment is also what proves the treatment worked. Document before/after on every parameter.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Bronchiolitis)"
+        },
+        {
+          "id": "handoff",
+          "shortAction": "Give structured handoff to receiving ED: HPI, exam, interventions, response, feeding/diaper history",
+          "protocolExcerpt": "Key Documentation Elements: Document key aspects of the exam to assess for a change after each intervention: Respiratory rate; Oxygen saturation; Use of accessory muscles; Breath sounds; Air entry; Mental status; Color.",
+          "priority": "important",
+          "rationale": "Feeding/diaper history is the hydration story the ED will use to decide on IV fluids vs PO trial. Don't lose it in transit.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Bronchiolitis)"
+        }
+      ]
+    },
+    {
+      "id": "reflex-neb-given",
+      "name": "Reflex DuoNeb given; no benefit",
+      "description": "Crew heard wheezing and reflexively reached for an albuterol (or albuterol/ipratropium) nebulizer mask, treating this as if it were a pediatric asthma exacerbation. The infant cries and fights the mask, becoming more tachycardic (HR climbs into the high 180s), more tachypneic, and slightly desaturates from the agitation. Five minutes burns on a treatment the protocol explicitly says is not beneficial in bronchiolitis. The obligate-nose-breather nose has not been suctioned. Mom is frustrated. The lesson lands when the student realizes that bronchiolitis is not asthma and that supportive care (suction + O2) is the protocol.",
+      "triggerCondition": "Crew skipped or rushed the focused assessment, identified wheezing on auscultation, and pattern-matched to 'asthma exacerbation,' starting nebulized albuterol/ipratropium. This contradicts the bronchiolitis protocol, wastes 5+ minutes, agitates the infant, and delays the high-yield interventions (nasal suctioning and titrated supplemental O2).",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent; nasal secretions still present and not suctioned",
+        "breathing": "RR 64, persistent nasal flaring, continuous grunting, mild-moderate retractions; wheezing unchanged after neb; air entry slightly diminished from agitation",
+        "circulation": "Strong brachial pulse, warm extremities, cap refill 2-3 sec",
+        "skin": {
+          "color": "pink, slightly flushed from crying",
+          "temperature": "warm",
+          "moisture": "dry"
+        },
+        "pupils": "Equal ~3 mm, briskly reactive",
+        "motorFunction": "Vigorously pulling away from the mask; mom trying to keep it close to her face",
+        "otherFindings": [
+          "Crying continuously when mask is held to face",
+          "Nasal congestion unchanged — nares not suctioned",
+          "Tremor in hands (mild beta-agonist side effect on top of already-high HR)"
+        ],
+        "patientSpeech": "Loud crying when mask held to face; brief consolable moments when mask is pulled away"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 188,
+        "bpSys": 90,
+        "bpDia": 55,
+        "respRate": 64,
+        "spo2": 88,
+        "etco2": 35,
+        "temp": 38.2,
+        "tempF": 100.8,
+        "obstruction": 30,
+        "glucose": 88,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "stop-neb-redirect",
+          "shortAction": "Recognize neb is not helping; stop, suction nares, return to supportive care",
+          "protocolExcerpt": "Key Considerations: Although albuterol and steroids have previously been a consideration, the most recent evidence does not demonstrate a benefit in routine use of albuterol or steroids for bronchiolitis. Ipratropium and other anticholinergic agents should not be given to children with bronchiolitis in the prehospital setting. Airway: Suction the nose and/or mouth (via bulb or suction catheter) particularly if excessive secretions are present.",
+          "priority": "critical",
+          "rationale": "Recognition that the chosen treatment is not working — and that the protocol specifies a different path — is the rescue. Stop the neb, suction the nose, restart the supportive-care pathway.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Bronchiolitis)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "assessment-complete",
+          "if": "Crew recognizes error and redirects to supportive care",
+          "condition": "Crew recognizes that nebulized albuterol is not helping (no change in wheezing, worsening tachycardia, ongoing distress), stops the treatment, suctions the nares, and returns to the bronchiolitis supportive-care pathway.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "stop-neb-redirect"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dehydration-missed",
+      "name": "Dehydration missed; infant deteriorating",
+      "description": "Crew focused on the respiratory exam, applied O2, and loaded for transport without ever assessing hydration status or asking about feeding and wet diapers. En route, the infant becomes less interactive — eyes are open but tracking is sluggish, the cry has gotten weaker, capillary refill has slipped to 3-4 seconds, HR is climbing into the 180s, and SpO2 is drifting back down despite supplemental O2. This is compensated shock declaring itself on top of viral respiratory distress. The lesson: in an infant with respiratory distress, dehydration is the second diagnosis you must catch; if you miss it, the patient deteriorates in the back of the truck.",
+      "triggerCondition": "Crew did not assess fontanel, mucous membranes, tears, or capillary refill; never asked about feeding intake or wet-diaper count. Insensible losses from fever + tachypnea continue uncorrected en route, and compensated hypovolemic shock starts to overlap the respiratory picture.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": {
+          "eye": 3,
+          "verbal": 4,
+          "motor": 5
+        },
+        "airway": "Patent; nasal secretions present",
+        "breathing": "RR 64-68, nasal flaring, grunting, moderate retractions; wheezing and crackles unchanged",
+        "circulation": "Brachial pulse present but thready; extremities cool to the wrists; capillary refill 3-4 seconds",
+        "skin": {
+          "color": "mottled extremities, central pallor developing",
+          "temperature": "cool peripherally, trunk normothermic",
+          "moisture": "clammy on trunk, mucosa dry"
+        },
+        "pupils": "Equal ~3 mm, reactive",
+        "motorFunction": "Less spontaneous movement; weak grasp",
+        "otherFindings": [
+          "Anterior fontanel now mildly sunken",
+          "Mucous membranes dry (no longer just tacky)",
+          "No tears with crying",
+          "Weak, whimpering cry; less interactive with mom",
+          "Cap refill 3-4 sec at the foot"
+        ],
+        "patientSpeech": "Weak whimper, no longer briskly consolable"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 186,
+        "bpSys": 78,
+        "bpDia": 48,
+        "respRate": 66,
+        "spo2": 89,
+        "etco2": 33,
+        "temp": 38.3,
+        "tempF": 100.9,
+        "obstruction": 25,
+        "glucose": 82,
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-shock",
+          "shortAction": "Recognize compensated shock (tachycardia, cap refill >3s, dry mucosa, sunken fontanel)",
+          "protocolExcerpt": "Inclusion Criteria: Signs of poor perfusion (due to a medical cause) such as one or more of the following: Altered mental status; Delayed capillary refill (> 3 seconds); Decreased urine output; Respiratory rate greater than 20 breaths per minute in adults or elevated in children; Tachycardia or bradycardia for age, out of proportion to temperature; Weak, decreased or bounding pulses; Cool/mottled or flushed/ruddy skin.",
+          "priority": "critical",
+          "rationale": "Bronchiolitis with dehydration is a setup for compensated hypovolemic shock. Tachycardia out of proportion to fever, cap refill > 3 sec, cool extremities, dry mucosa, and a sunken fontanel meet the protocol's perfusion criteria.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "iv-io-fluid-bolus",
+          "shortAction": "IV/IO access; isotonic bolus 140 mL (7 kg × 20 mL/kg)",
+          "protocolExcerpt": "Pediatric: Fluid goal of up to a total of 60 mL/kg or 1 liter of isotonic fluid by giving 20 mL/kg of isotonic fluid by administering rapid boluses (for cardiogenic shock give 10 mL/kg boluses). Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle.",
+          "priority": "critical",
+          "rationale": "Pediatric fluid resuscitation is weight-based at 20 mL/kg isotonic. 7 kg × 20 mL/kg = 140 mL bolus. Reassess perfusion after each bolus; may repeat up to 60 mL/kg total (420 mL in this patient).",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "escalate-airway-support",
+          "shortAction": "Escalate airway support: BVM-assist if work of breathing fails",
+          "protocolExcerpt": "Improvement of oxygenation and/or respiratory distress with non-invasive airway adjuncts: Bag-valve-mask ventilation should be utilized in children with respiratory failure or impending respiratory failure.",
+          "priority": "critical",
+          "rationale": "Mental status changes, drifting SpO2 despite O2, and rising work of breathing herald impending respiratory failure. Be ready with BVM-assist using pediatric mask + 2-person two-thumbs technique and rate 20-30/min.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Bronchiolitis)"
+        },
+        {
+          "id": "notify-receiving-upgrade",
+          "shortAction": "Notify receiving facility of deterioration; upgrade transport priority",
+          "protocolExcerpt": "Patient Safety Considerations: Routine use of lights and sirens is not recommended during transport.",
+          "priority": "important",
+          "rationale": "Routine bronchiolitis does not warrant lights/sirens, but a deteriorating infant with compensated shock and impending respiratory failure does. Early notification gets the pediatric team and an IV/IO setup waiting at the door.",
+          "protocolReference": "MATC: Pediatric Respiratory Distress (Bronchiolitis)"
+        }
+      ]
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

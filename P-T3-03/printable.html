@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Critically Ill Neonate/Infant, Undiagnosed — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Critically Ill Neonate/Infant, Undiagnosed</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Baby Boy Hollister</strong></span><span class="patient-chip">5 weeks male</span><span class="patient-chip">9 lbs (4 kg)</span><span class="patient-chip">1'10"</span><span class="patient-chip">CC: 5-week-old male, ~4 kg, full-term, brought to floor by parents after two days of progressively poor feeding and increasing sleepiness. On arrival the infant is floppy, has a weak cry, mottled skin, sunken anterior fontanelle, and is grunting with each breath. Cause is not clinically obvious — differential includes sepsis, congenital heart disease (ductal-dependent lesion), inborn error of metabolism, hypoglycemia, and non-accidental trauma. Field priorities are ABCs, warming, glucose, IV/IO, fluids, and rapid transport to a pediatric-capable facility.</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Dispatch: 5-week-old male, mom says baby is limp and not waking up. Was being taken to the ED for poor feeding. Single-family apartment, second floor, unit 2B.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Second-floor apartment, living room. Infant is on a couch on top of a folded blanket. Parents are nearby, mom holding diaper bag and packed car seat. Apartment is comfortably warm (~72°F); no obvious environmental cold exposure.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Tuesday, 09:45, mild spring morning, outdoor temperature 58°F</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. Both parents present, calm but tearful and cooperative. No signs of intoxication, no household disorder, no obvious concerns for trauma or neglect on initial scan — but maintain differential for non-accidental trauma per MATC pediatric assessment.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Mother (24, healthy, breastfeeding) and father (26). Both give a consistent timeline. Mother brought the discharge paperwork from the 2-week well visit and the infant's vaccination card. A 3-year-old sibling with rhinorrhea is in the next room with a grandmother who arrived just before EMS.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Infant on his back on the couch, eyes half-open, not tracking, not crying spontaneously</li><li>Skin pale with patchy purple-blue mottling across the trunk and extremities</li><li>Anterior fontanelle visibly sunken below the surrounding skull</li><li>Respirations rapid and shallow with audible soft grunting on expiration; mild subcostal retractions</li><li>Extremities cool to the touch; capillary refill on the chest takes &gt;4 seconds</li><li>No rash, no petechiae, no obvious bruising or injury, no facial trauma</li><li>Diaper is dry — parents report only one wet diaper in the last 12 hours</li><li>Mother says, 'He won't even wake up to eat — he's never been like this.'</li><li>No vomit, no stool, no blood anywhere on the infant or his clothes</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">5-week-old, term, previously well male infant. Mother reports he was feeding normally (breast plus supplemental formula, 2–3 oz every 2–3 hours) until 48 hours ago, when he began taking less per feed and 'falling asleep at the breast' after only a minute or two. Over the past 24 hours he has had fewer than three wet diapers, no stool today, and has been increasingly difficult to wake. This morning the parents brought him to a walk-in clinic; the clinic told them to go directly to the ED. While preparing to drive, the father noticed the baby was 'completely limp' in his arms and not responding to voice, and called 911. No reported fever measured at home (no thermometer). No cough, no rash, no vomiting, no diarrhea, no known sick contacts but the 3-year-old sibling has a runny nose. No reported trauma; no falls. Pregnancy was term (40+1), uncomplicated, vaginal delivery, GBS-negative, no NICU stay, discharged home at 36 hours of life. State newborn screen result not yet known to the parents. He has not been seen by a pediatrician since the 2-week visit, where he was well and gaining weight. He is exclusively in the care of his parents.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">NKDA</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Vitamin D drops 400 IU PO daily (per pediatrician recommendation; given inconsistently per mother)</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Term gestation (40+1 weeks), Uncomplicated vaginal delivery, GBS-negative, no NICU stay, Seen at 2-week well-child visit; weight-gaining, normal exam, No known cardiac, respiratory, or genetic conditions</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Approximately 1/2 oz formula, ~3 hours ago — barely roused, latched briefly, fell asleep again within 30 seconds. Prior feed was breast for &lt;2 minutes, ~6 hours ago.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Two days of progressively poor feeding and increasing sleepiness → fewer wet diapers and no stool today → walk-in clinic referred parents to ED → father found infant limp and unresponsive while preparing to drive → 911 called.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">Crew arrives to find a 5-week-old, ~4 kg male infant on a couch — floppy, weak cry, mottled skin, sunken fontanelle, grunting with each breath, mild retractions, cool extremities, and a &gt;4-second cap refill on the chest. Parents are present and cooperative with a clear 48-hour history of progressively poor feeding and increasing sleepiness. The infant looks sick — abnormal appearance, abnormal work of breathing, and abnormal circulation on the Pediatric Assessment Triangle. The cause is NOT clinically obvious. Crew must hold a wide differential — sepsis, congenital heart disease (ductal-dependent lesion now closing at 5 weeks), inborn error of metabolism, severe hypoglycemia, NAT — and treat what they can in the field: ABCs, warming, glucose, IV/IO access, fluids, and emergent transport. Diagnosis is not the goal; stabilization is.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">188</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">62/38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">88%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">70</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">28</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">96.4°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">38</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg sel-p">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To pain</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Incomprehensible sounds</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Withdraws from pain</span><span class="gcs-score">4</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">8</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent but at risk — infant is floppy with poor tone and weak cry; no stridor, no audible obstruction; secretions minimal.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Rapid, shallow, with audible soft expiratory grunting and mild subcostal retractions. Nasal flaring intermittent. Bilateral breath sounds present and equal but with the rapid quiet pattern of compensated respiratory failure.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pale, mottled trunk and extremities. Brachial pulses present but weak. Capillary refill on the chest &gt;4 seconds. Cool extremities. Anterior fontanelle sunken.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pale with patchy purple-blue mottling · Cool · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">3 mm bilaterally, sluggishly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Generalized hypotonia — limbs fall when lifted; no spontaneous purposeful movement; weak, breathy cry only with painful stimulation</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Infant — weak, breathy, intermittent cry only with painful stimulation; no consolable response to caregivers."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Anterior fontanelle sunken — clinical evidence of dehydration</li><li>Eyes half-open, not tracking, not fixing on caregivers</li><li>Diaper dry — one wet diaper in last 12 hours per parents</li><li>No fever palpated to forehead; if measured, temperature is LOW (35.8°C / 96.4°F) — neonatal sepsis often presents with HYPOthermia, not hyperthermia</li><li>No rash, no petechiae, no purpura</li><li>No external signs of trauma or injury</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Pediatric Assessment Triangle: abnormal appearance, work of breathing, and circulation — sick infant</div></div>
+        <div class="action-excerpt">General assessment: Signs of respiratory distress or increased work of breathing (e.g., tachypnea, grunting or other abnormal breath sounds, nasal flaring, retracting, or head bobbing); Color, both central and peripheral (pallor, cyanosis, redness, or normal), capillary refill; Mental status (alert, tired, lethargic, unresponsive, or irritable).</div>
+        <div class="action-ref">↳ MATC: Brief Resolved Unexplained Event (BRUE) &amp; Acute Events in Infants</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Recognize this is NOT a BRUE — infant is acutely ill on arrival; treat and transport</div></div>
+        <div class="action-excerpt">Exclusion Criteria: Any signs or symptoms suggestive of underlying or acute illness or injury present upon EMS evaluation, such as: Abnormal vital signs for age (including fever); Vomiting; Signs of trauma; Noisy or labored breathing. If the infant is not completely well upon EMS arrival, this excludes possible BRUE event: Treat and transport according to local guidelines.</div>
+        <div class="action-ref">↳ MATC: Brief Resolved Unexplained Event (BRUE) &amp; Acute Events in Infants</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Open airway with sniffing position; suction nares only if obstructed</div></div>
+        <div class="action-excerpt">Provide head tilt/chin lift, or jaw thrust if concern for potential spinal injury. Suction airway: for significantly contaminated airways. Patient positioning can significantly impact respiratory mechanics. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Blow-by O2 (or NC at 1–2 L/min); titrate to SpO2 94–98%</div></div>
+        <div class="action-excerpt">Administer oxygen as appropriate with a target of achieving 94–98% saturation.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Aggressive warming: remove damp/cold layers, dry skin, wrap in blanket, cover head, warm ambulance compartment to ≥24°C / 75°F</div></div>
+        <div class="action-excerpt">Prevent further heat loss by removing the patient from the environment and removing wet clothes and drying skin, insulate from the ground, shelter the patient from wind and wet conditions, and insulate the patient with dry clothing or a hypothermia wrap/blanket. Cover the patient with a vapor barrier and, if available, move the patient to a warm environment. Warm the patient compartment of the ambulance to at least 24°C (75.2°F) during transport. Hypothermia is common in newborns and worsens outcomes of nearly all post-natal complications. Ensure heat retention by drying the infant thoroughly, covering the head, and wrapping the baby in dry cloth.</div>
+        <div class="action-ref">↳ MATC: Neonatal Resuscitation</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Full vitals + temperature: HR 188, RR 70, BP 62/38, SpO2 88, EtCO2 28, temp 35.8°C / 96.4°F</div></div>
+        <div class="action-excerpt">Exam: Full set of vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment). Document key aspects of the exam and assess for changes after each intervention: Full set of vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment), temperature, and O2 saturation.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Heel-stick blood glucose: 38 mg/dL — critical hypoglycemia</div></div>
+        <div class="action-excerpt">Check blood sugar, and correct if less than 60 mg/dL. Monitoring (all patients with possible BRUE): Check point-of-care (POC) blood glucose and treat symptomatic hypoglycemia.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">ABCs + warming + glucose done</div>
+        <div class="phase-trigger">Trigger: PAT recognized as sick on all three sides, basic ABC support initiated, aggressive warming begun, and heel-stick glucose returned at 38 mg/dL — crew now needs vascular access to deliver dextrose and a fluid bolus.</div>
+        <div class="phase-desc">Airway opened, blow-by O2 placed, active warming initiated (cabin warm, blanket on, head covered), and a heel-stick glucose of 38 mg/dL is in hand. The infant is still mottled, grunting, tachycardic, and lethargic — but the reversible findings (hypothermia, hypoglycemia) are now on a treatment track. The next move is vascular access for fluids and IV dextrose.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">184</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">64/40</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">92%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">64</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">30</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">96.8°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">38</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg sel-p">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To pain</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Incomprehensible sounds</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Withdraws from pain</span><span class="gcs-score">4</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">8</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, sniffing position with shoulder roll. Suction available, not used. Minimal secretions.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Still tachypneic at ~64 with grunting; SpO2 has crept up to 92% on blow-by O2 — work of breathing slightly improved but still abnormal.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Brachial pulses weak but present; cap refill on chest still 3–4 seconds; trunk still mottled, hands and feet very cool.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pale with patchy mottling, slightly less marked than on arrival · Cool overall, hands and feet very cool · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">3 mm bilaterally, sluggishly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Still hypotonic, weak cry to painful stimulus only</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Weak intermittent cry to painful stimulus only."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Wrapped in dry warm blanket with hat in place</li><li>Ambulance prepped — heat turned up, cabin warming</li><li>Heel-stick glucose card reads 38 mg/dL — confirmed twice</li><li>No vomiting, no new rash, no seizure activity</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Attempt IV access ×2 (or &lt;90 sec); if unsuccessful, place IO (proximal tibia)</div></div>
+        <div class="action-excerpt">Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">D10% 8 mL IV/IO (4 kg × 2 mL/kg = 8 mL of 10% dextrose; newborn dose)</div></div>
+        <div class="action-excerpt">Maximum field pediatric dosing: 0.5–1 g/kg of 10–25% dextrose IV: 5–10 mL/kg of 10% dextrose (newborns 2 mL/kg). For neonates and infants less than 1 month of age, dextrose concentration of no more than 10–12.5% should be used.</div>
+        <div class="action-ref">↳ MATC: Hypoglycemia</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Warmed NS 40 mL IV/IO bolus (4 kg × 10 mL/kg; smaller than the 20 mL/kg standard for septic shock)</div></div>
+        <div class="action-excerpt">Fluid goal of up to a total of 60 mL/kg or 1 liter of isotonic fluid by giving 20 mL/kg of isotonic fluid by administering rapid boluses (for cardiogenic shock give 10 mL/kg boluses). Patient Safety Considerations: Recognition of cardiogenic shock - If the patient condition deteriorates after fluid administration, rales or hepatomegaly develop, then consider cardiogenic shock and withholding further fluid administration. IV fluids, if administered, should be warmed, ideally to 42°C (107.6°F).</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Place cardiac monitor + continuous SpO2 + EtCO2; confirm sinus tach, no SVT or wide complex</div></div>
+        <div class="action-excerpt">Monitoring (all patients with possible BRUE): Continuous cardiac monitor; Continuous pulse oximetry; Serial observations during transport for change in condition. Cardiac monitor. Pulse oximetry and EtCO2 (reading of less than 25 mmHg may be sign of poor perfusion).</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess after fluid + dextrose: vitals, mental status, repeat glucose, listen for rales/hepatomegaly</div></div>
+        <div class="action-excerpt">Reassess patient: Reassess vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) and mental status; Repeat check of blood glucose level if previous hypoglycemia and mental status has not returned to normal. Patient Safety Considerations: Recognition of cardiogenic shock - If the patient condition deteriorates after fluid administration, rales or hepatomegaly develop, then consider cardiogenic shock and withholding further fluid administration.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Warm emergent transport, peds-capable facility</div>
+        <div class="phase-trigger">Trigger: Vascular access obtained, D10 and warmed NS bolus given, no signs of fluid overload, warming maintained — infant shows measurable improvement and crew is en route to definitive care.</div>
+        <div class="phase-desc">IO is in (or a successful IV after 2 quick attempts), D10 8 mL has been pushed, 40 mL warmed NS bolus has gone in over &lt;10 minutes, and reassessment shows modest improvement: HR drifting down toward 170, cap refill improving toward 3 seconds, color slightly less mottled, glucose rechecked at 78 mg/dL, temp climbing toward 36.4°C / 97.5°F. The infant is still sick — but moving in the right direction. Definitive diagnosis (sepsis vs CHD vs metabolic) is the ED's problem. The field crew's job now is to keep the infant warm, keep the fluid trickle going, monitor for deterioration, and get to a pediatric-capable facility with a heads-up call.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">170</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">70/44</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">95%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">52</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">33</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">97.5°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">78</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Inappropriate words</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Withdraws from pain</span><span class="gcs-score">4</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">10</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, no intervention beyond positioning and blow-by O2 required</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR ~52, less grunting, mild retractions only, no nasal flaring; SpO2 95% on blow-by</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Cap refill ~3 seconds (improved); HR drifting down toward 170; brachial pulses stronger; trunk pinking up centrally, extremities still cool</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Less mottled centrally; extremities still cool and dusky · Warming — trunk near-normal, extremities still cool · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">3 mm bilaterally, more briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Slightly improved tone — flexion at the elbows and hips with stimulation; weak cry now sustained for a few seconds</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Weak but more sustained cry with stimulation; brief eye contact with mother during transport."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>IO secured in proximal tibia, flushing well, no extravasation</li><li>Repeat glucose 78 mg/dL after D10</li><li>Cabin compartment 26°C / 79°F; infant wrapped and capped; warmed fluids running</li><li>ED notified — pediatric-capable facility, ED attending and PICU aware on arrival</li><li>No rales, no hepatomegaly developing — continue fluids cautiously</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Transport emergent to pediatric-capable ED; pre-arrival call with vitals, glucose, and interventions</div></div>
+        <div class="action-excerpt">All patients should be transported to facilities with at least baseline pediatric readiness, i.e., appropriate equipment, resources, and trained staff capable of providing initial emergency care and stabilization to pediatric patients prior to hospital admission or interfacility transfer, if feasible. Consider transport to a facility with pediatric critical care capability for patients with any high-risk criteria: Less than 2 months of age. Provide advanced notification to the hospital.</div>
+        <div class="action-ref">↳ MATC: Brief Resolved Unexplained Event (BRUE) &amp; Acute Events in Infants</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Maintain warming through transport: cabin ≥24°C / 75°F, head covered, recheck temp before handoff</div></div>
+        <div class="action-excerpt">Warm the patient compartment of the ambulance to at least 24°C (75.2°F) during transport. Hypothermia is common in newborns and worsens outcomes of nearly all post-natal complications. Ensure heat retention by drying the infant thoroughly, covering the head, and wrapping the baby in dry cloth.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Serial reassessment every 5 min — vitals, mental status, perfusion, glucose, lungs</div></div>
+        <div class="action-excerpt">Full vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) with reassessment q 15 minutes or more frequently as appropriate. Serial observations during transport for change in condition.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Keep the differential open — sepsis, CHD, metabolic, NAT — and hand off thinking, not a diagnosis</div></div>
+        <div class="action-excerpt">Determination of type of shock: Cardiogenic; Distributive (neurogenic, septic, anaphylactic); Hypovolemic; Obstructive (e.g., pulmonary embolism, cardiac tamponade, tension pneumothorax). Considerations for possible child abuse (i.e., multiple/changing versions of the story or reported mechanism of injury does not seem plausible, especially for child's developmental stage).</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Anchored on sepsis, glucose skipped</div>
+        <div class="phase-trigger">Trigger: Crew anchors on a sepsis-only model, prioritizes IV/IO access and fluid bolus, and skips the heel-stick glucose. The hypoglycemia is uncorrected and the infant decompensates despite appropriate fluids.</div>
+        <div class="phase-desc">Crew correctly identifies a sick infant and moves quickly — but the mental model locks early on 'this is sepsis.' Antipyretics aren't indicated (infant is HYPOthermic), warmed fluids and warming are started, vascular access is sought, but the heel-stick glucose check is deferred 'for the ED.' The infant gets 20 mL/kg of warmed NS but no dextrose. Over the next several minutes, the level of consciousness deteriorates despite fluids, the cry becomes weaker, and a brief generalized stiffening episode is observed — a hypoglycemic seizure equivalent in a neonate. Glucose is finally checked: still 34 mg/dL.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">200</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">56/34</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">85%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">38</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">24</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">97.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">34</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Flexion (decorticate)</span><span class="gcs-score">3</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">5</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent but at risk — tone is poor and there is now intermittent shallow breathing with periods of apnea up to 10 seconds</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Periods of apnea 5–10 seconds alternating with shallow tachypnea; SpO2 drifting 84–88% despite blow-by</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Mottling worsening, cap refill 5 seconds, brachial pulses faint</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pale-gray with widespread mottling · Slightly warmer trunk (fluids and blankets working), extremities still very cool · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">3 mm bilaterally, sluggish</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Profound hypotonia; brief generalized stiffening episode (~20 sec) observed before patient went flaccid again — likely hypoglycemic seizure</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"None — no cry, no response to stimulation."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Glucose, finally checked, returns 34 mg/dL — WORSE than initial</li><li>20 mL/kg NS bolus has gone in without obvious fluid overload</li><li>Infant no longer making any sound; eyes are closed</li><li>Crew now recognizes the missed step — but the patient has lost ground</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Stop, check glucose NOW, give D10 8 mL IV/IO (4 kg × 2 mL/kg, newborn dose)</div></div>
+        <div class="action-excerpt">If blood glucose is 60 mg/dL or less administer one of the following: Unconscious patient, or patients who are unable to protect their own airway: Dextrose IV – administer in incremental doses until mental status improves or maximum field dosing is reached (if available, D10% is preferred). Maximum field pediatric dosing: 0.5–1 g/kg of 10–25% dextrose IV: 5–10 mL/kg of 10% dextrose (newborns 2 mL/kg).</div>
+        <div class="action-ref">↳ MATC: Hypoglycemia</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Support ventilation with BVM at 20–30/min if apneic periods continue or SpO2 &lt;90% sustained</div></div>
+        <div class="action-excerpt">Ventilate with just enough volume to see chest rise, approximately 6–8 mL/kg ideal body weight. Rate: Infant: 20–30 breaths/minute. Two-person, two-thumbs-up BVM ventilation is preferred.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Recognize and document the missed step; communicate clearly at handoff</div></div>
+        <div class="action-excerpt">Performance Measures: When in scope of practice, blood glucose is checked for all patients with symptoms of altered level of consciousness, seizure, stroke, or hypoglycemia.</div>
+        <div class="action-ref">↳ MATC: Hypoglycemia</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Cold transport — temp drops further</div>
+        <div class="phase-trigger">Trigger: Crew correctly addresses ABCs, glucose, and fluids but neglects active warming through transport — cool cabin, unwarmed fluids, partial coverage. The infant cools further and the metabolic deterioration accelerates.</div>
+        <div class="phase-desc">Crew completes ABCs, gets access, gives D10 and a fluid bolus — but doesn't aggressively maintain temperature. The ambulance compartment is left at ambient (~68°F / 20°C). The infant is partially uncovered for ongoing reassessment and is in contact with a cool, unblanketed stretcher pad. The IV fluid was not warmed. Over the 15-minute transport, the infant's core temperature drops further to 35.2°C / 95.4°F. Despite the dextrose, blood glucose drifts back down to 52 mg/dL (cold infants burn glucose to shiver and to maintain core temp), perfusion worsens, and the infant arrives at the ED in worse shape than he started.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">196</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">58/36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">88%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">32</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">26</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">95.4°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">52</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg sel-p">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To pain</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Flexion (decorticate)</span><span class="gcs-score">3</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">6</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, sniffing position with blow-by O2; no immediate airway intervention required</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR has slowed to ~32 (a worrying decrease from the compensatory 70 — neonates don't 'tire out' to a normal rate, this is decompensation); SpO2 88%; less grunting (the infant is too weak to grunt)</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Mottling widespread again; cap refill 5 seconds; pulses faint and thready; HR has climbed to 196 in spite of fluids</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pale-gray, widespread mottling, perioral dusky · Cold — extremities and trunk both · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">3 mm bilaterally, sluggish</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">More profound hypotonia than on arrival — limbs flaccid, no withdrawal from painful stimulus</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"None — no cry, weak grimace only with painful stimulus."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Repeat temperature 35.2°C / 95.4°F — DROPPED despite D10 and fluid</li><li>Repeat glucose 52 mg/dL — drifting back down (cold-driven glucose consumption)</li><li>Cabin compartment thermostat reads 68°F / 20°C; back doors opened twice for equipment exchange</li><li>IV fluid bag is room-temperature, not warmed</li><li>Infant's hat is off and was not replaced after auscultation</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Active rewarming NOW: cabin to ≥24°C / 75°F, head covered, dry blanket, swap to warmed fluids</div></div>
+        <div class="action-excerpt">Initiate field-rewarming methods such as placement of large heat packs or heat blankets (chemical or electric if feasible) to the anterior chest or wrapped around the patient's thorax if large enough. Warm the patient compartment of the ambulance to at least 24°C (75.2°F) during transport. IV fluids, if administered, should be warmed, ideally to 42°C (107.6°F).</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recheck glucose (52 mg/dL); repeat D10 8 mL IV/IO if symptomatic</div></div>
+        <div class="action-excerpt">Reassess vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) and mental status. Repeat check of blood glucose level if previous hypoglycemia and mental status has not returned to normal.</div>
+        <div class="action-ref">↳ MATC: Hypoglycemia</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize falling RR with rising HR as decompensation — prepare for BVM and pre-notify ED</div></div>
+        <div class="action-excerpt">In most adults, tachycardia is the first sign of compensated shock, and may persist for hours. Tachycardia can be a late sign of shock in children and a tachycardic child may be close to cardiovascular collapse. Hypotension indicates uncompensated shock, which may progress to cardiopulmonary failure within minutes. Hypotension is a late and ominous sign in pediatric uncompensated shock.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

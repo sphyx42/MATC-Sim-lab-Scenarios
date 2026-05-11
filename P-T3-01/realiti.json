@@ -1,0 +1,429 @@
+{
+  "scenarioId": "P-T3-01",
+  "scenarioName": "Pediatric Cardiac Arrest, Shockable Rhythm",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1500,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 50,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "Healthy 8-year-old male collapsed suddenly during a youth soccer scrimmage approximately 6 minutes prior to EMS arrival. Coach reports the patient was running up the field, suddenly stopped, clutched his chest, and dropped to the ground. No witnessed trauma reported, though a teammate was running near him at the moment of collapse — possible blunt chest impact (commotio cordis) cannot be excluded. Bystander CPR (compression-only) was initiated within 90 seconds by an off-duty nurse. AED was not on the field. Mother on scene; father en route. No prodromal symptoms reported earlier in the day. No prior cardiac history known.",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives on a youth soccer field 6 minutes after a witnessed collapse of an 8-year-old male. Bystander compression-only CPR is in progress by an off-duty nurse. Mother is on scene and visibly distraught; father just arrived. No AED has been applied. Patient appears small for stated age (~25 kg / 55 lb). The crew must rapidly confirm pulselessness/apnea, take over high-quality CPR, and apply the monitor with pediatric pads while assigning a family-liaison role. → First shock at 2 J/kg: After rapid pad placement and confirmation of coarse VF on the monitor, the crew correctly calculates pediatric defibrillation energy (25 kg × 2 J/kg = 50 J on the Zoll X-Series) and delivers the first shock with minimal pre/post-shock compression pauses. CPR resumes immediately for 2 minutes; vascular access is being established (IV first; if unsuccessful in 2 attempts or 90 seconds, proximal tibia IO). Mother is still distraught; family-liaison crew member is updating her in brief, calm sentences. → Peds Epi + 4 J/kg: VF persists on the post-shock rhythm check. Access secured (tibial IO if IV failed). Pediatric-dose epinephrine (0.01 mg/kg = 0.25 mg of 1:10,000 = 2.5 mL) is given via IO during the second 2-minute cycle. Second defibrillation is delivered at 4 J/kg = 100 J on the Zoll. CPR resumes immediately. Capnography is climbing slightly (EtCO2 ~22), suggesting reasonable compression quality. Mother remains on scene; father is now also present and being managed by the liaison crew member. → Amio given; ROSC: Refractory VF after two shocks + epinephrine. Pediatric amiodarone 5 mg/kg IV/IO (25 kg × 5 mg/kg = 125 mg, well under the 300 mg max) is administered slowly into the running IO. CPR continues; the next 2-min cycle completes. Rhythm check now shows organized narrow-complex sinus rhythm with a palpable femoral pulse — ROSC. Patient remains comatose but is now perfusing. Crew transitions to post-ROSC care, controls ventilation to avoid hyperventilation, and prepares for transport to the regional pediatric cardiac center."
+  },
+  "patientInformation": {
+    "patientName": "Mason Carter",
+    "patientCondition": "Pulseless and apneic; collapsed at soccer practice",
+    "patientAge": 8,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 1,
+    "patientSex": 1,
+    "patientHeight": 128,
+    "patientWeight": 25,
+    "patientPhotoId": 10,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives on a youth soccer field 6 minutes after a witnessed collapse of an 8-year-old male. Bystander compression-only CPR is in progress by an off-duty nurse. Mother is on scene and visibly distraught; father just arrived. No AED has been applied. Patient appears small for stated age (~25 kg / 55 lb). The crew must rapidly confirm pulselessness/apnea, take over high-quality CPR, and apply the monitor with pediatric pads while assigning a family-liaison role.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": true,
+      "defibDisarm": false,
+      "parameters": {
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 12,
+        "temp": 36.6,
+        "obstruction": 0,
+        "custMeasure1": 110,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Confirm pulselessness + apnea in <10 sec; take over CPR",
+        "Take over high-quality CPR; rate 100-120/min, depth ~5 cm (2 in), full recoil",
+        "Establish two-rescuer 15:2 compression-to-ventilation ratio with BVM + OPA",
+        "Apply pediatric defibrillation pads; minimize compression interruption",
+        "Designate one crew member as family liaison; brief, calm communication",
+        "Place waveform capnography to monitor CPR quality (target EtCO2 >10 mmHg)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "First shock at 2 J/kg",
+      "description": "After rapid pad placement and confirmation of coarse VF on the monitor, the crew correctly calculates pediatric defibrillation energy (25 kg × 2 J/kg = 50 J on the Zoll X-Series) and delivers the first shock with minimal pre/post-shock compression pauses. CPR resumes immediately for 2 minutes; vascular access is being established (IV first; if unsuccessful in 2 attempts or 90 seconds, proximal tibia IO). Mother is still distraught; family-liaison crew member is updating her in brief, calm sentences.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": true,
+      "defibDisarm": false,
+      "parameters": {
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 18,
+        "temp": 36.6,
+        "obstruction": 0,
+        "custMeasure1": 110,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Defibrillate at 50 J on Zoll X-Series (25 kg × 2 J/kg)",
+        "Resume CPR immediately post-shock; no pulse check for 2 min",
+        "Obtain IV; if no access in 2 attempts/90 sec, place IO in proximal tibia",
+        "BVM ventilations at 15:2 with two rescuers; just enough volume for chest rise",
+        "Use EtCO2 + feedback device; rotate compressor every 2 min"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Peds Epi + 4 J/kg",
+      "description": "VF persists on the post-shock rhythm check. Access secured (tibial IO if IV failed). Pediatric-dose epinephrine (0.01 mg/kg = 0.25 mg of 1:10,000 = 2.5 mL) is given via IO during the second 2-minute cycle. Second defibrillation is delivered at 4 J/kg = 100 J on the Zoll. CPR resumes immediately. Capnography is climbing slightly (EtCO2 ~22), suggesting reasonable compression quality. Mother remains on scene; father is now also present and being managed by the liaison crew member.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": true,
+      "defibDisarm": false,
+      "parameters": {
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 22,
+        "temp": 36.6,
+        "obstruction": 0,
+        "custMeasure1": 110,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Epinephrine 0.25 mg IV/IO of 1:10,000 (25 kg × 0.01 mg/kg = 0.25 mg = 2.5 mL); repeat q3-5 min",
+        "Defibrillate at 100 J on Zoll (25 kg × 4 J/kg) — subsequent shocks",
+        "Pre-charge defibrillator during compressions; hover, don't step away",
+        "Consider reversible causes (Hs/Ts); peds arrest most often respiratory"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Amio given; ROSC",
+      "description": "Refractory VF after two shocks + epinephrine. Pediatric amiodarone 5 mg/kg IV/IO (25 kg × 5 mg/kg = 125 mg, well under the 300 mg max) is administered slowly into the running IO. CPR continues; the next 2-min cycle completes. Rhythm check now shows organized narrow-complex sinus rhythm with a palpable femoral pulse — ROSC. Patient remains comatose but is now perfusing. Crew transitions to post-ROSC care, controls ventilation to avoid hyperventilation, and prepares for transport to the regional pediatric cardiac center.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 110,
+        "bpSys": 88,
+        "bpDia": 54,
+        "respRate": 12,
+        "spo2": 94,
+        "etco2": 38,
+        "temp": 36.5,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Amiodarone 125 mg IV/IO (25 kg × 5 mg/kg; max 300 mg) for refractory VF",
+        "Secure airway; ventilate 12-20/min; target EtCO2 35-45 mmHg",
+        "Titrate O2 to SpO2 94-98%; avoid hyperoxia",
+        "Obtain 12-lead EKG; assess for reversible cause (STEMI, long QT, electrolytes)",
+        "Monitor closely for re-arrest; keep pads on; reassess vitals q3-5 min",
+        "Transport to pediatric-capable cardiac/post-resuscitation center",
+        "Update family on ROSC; offer to allow one parent to ride if appropriate"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Adult energy (200 J) used",
+      "description": "Crew under stress reaches for the adult energy setting and shocks the 25-kg child at 200 J — 4× the indicated 2 J/kg pediatric dose. The shock terminates VF briefly but the patient enters an idioventricular rhythm without a pulse. Capnography drops as compression quality is disrupted by team confusion. Myocardial stunning from excessive energy delivery is now superimposed on the arrest. Crew must recognize the dosing error, recalibrate to weight-based dosing for subsequent shocks (4 J/kg = 100 J), and continue CPR.",
+      "monitorType": 0,
+      "trendTime": 15,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 91,
+        "hr": 28,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 10,
+        "temp": 36.6,
+        "obstruction": 0,
+        "custMeasure1": 110,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize dosing error; recalculate energy as 4 J/kg = 100 J for next shock",
+        "Resume high-quality CPR immediately; do not delay for blame/discussion"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Adult Epi 1 mg given",
+      "description": "Crew, defaulting to adult arrest reflex, pushes 1 mg of 1:10,000 epinephrine IV/IO — 4× the weight-based pediatric dose of 0.25 mg for this 25-kg child. The patient achieves ROSC on the next rhythm check but is now severely hypertensive and tachycardic from epinephrine overdose, with concerning hypertensive crisis findings (BP 168/104, HR 168, EtCO2 50) and signs of coronary spasm risk. Crew must recognize the dosing error, support post-ROSC physiology cautiously, avoid additional vasopressors, and prepare for possible re-arrest from arrhythmia or coronary spasm.",
+      "monitorType": 0,
+      "trendTime": 25,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 168,
+        "bpSys": 168,
+        "bpDia": 104,
+        "respRate": 28,
+        "spo2": 96,
+        "etco2": 50,
+        "temp": 37,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize epi overdose (1 mg vs 0.25 mg weight-based); document and continue support",
+        "Hold further vasopressors; do not repeat epi until pediatric weight-based dose recalculated",
+        "Monitor closely for re-arrest from coronary spasm or arrhythmia; keep pads on",
+        "Early notification to peds receiving facility re: epinephrine overdose"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Confirm pulselessness + apnea in <10 sec; take over CPR",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Take over high-quality CPR; rate 100-120/min, depth ~5 cm (2 in), full recoil",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish two-rescuer 15:2 compression-to-ventilation ratio with BVM + OPA",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply pediatric defibrillation pads; minimize compression interruption",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Designate one crew member as family liaison; brief, calm communication",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place waveform capnography to monitor CPR quality (target EtCO2 >10 mmHg)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Defibrillate at 50 J on Zoll X-Series (25 kg × 2 J/kg)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Resume CPR immediately post-shock; no pulse check for 2 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Obtain IV; if no access in 2 attempts/90 sec, place IO in proximal tibia",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "BVM ventilations at 15:2 with two rescuers; just enough volume for chest rise",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Use EtCO2 + feedback device; rotate compressor every 2 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 0.25 mg IV/IO of 1:10,000 (25 kg × 0.01 mg/kg = 0.25 mg = 2.5 mL); repeat q3-5 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Defibrillate at 100 J on Zoll (25 kg × 4 J/kg) — subsequent shocks",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Pre-charge defibrillator during compressions; hover, don't step away",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Consider reversible causes (Hs/Ts); peds arrest most often respiratory",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Amiodarone 125 mg IV/IO (25 kg × 5 mg/kg; max 300 mg) for refractory VF",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Secure airway; ventilate 12-20/min; target EtCO2 35-45 mmHg",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Titrate O2 to SpO2 94-98%; avoid hyperoxia",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Obtain 12-lead EKG; assess for reversible cause (STEMI, long QT, electrolytes)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Monitor closely for re-arrest; keep pads on; reassess vitals q3-5 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to pediatric-capable cardiac/post-resuscitation center",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Update family on ROSC; offer to allow one parent to ride if appropriate",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize dosing error; recalculate energy as 4 J/kg = 100 J for next shock",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Resume high-quality CPR immediately; do not delay for blame/discussion",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize epi overdose (1 mg vs 0.25 mg weight-based); document and continue support",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Hold further vasopressors; do not repeat epi until pediatric weight-based dose recalculated",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Monitor closely for re-arrest from coronary spasm or arrhythmia; keep pads on",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Early notification to peds receiving facility re: epinephrine overdose",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

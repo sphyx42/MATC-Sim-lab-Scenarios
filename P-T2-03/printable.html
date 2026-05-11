@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pediatric SVT — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Pediatric SVT</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Mia Chen</strong></span><span class="patient-chip">8 months female</span><span class="patient-chip">18 lbs (8 kg)</span><span class="patient-chip">2'4"</span><span class="patient-chip">CC: 8-month-old female, mom says she has been 'breathing fast and looking pale' and 'won't take a bottle' for the past 4 hours. Mom describes the baby as 'fussy at first, then just quiet and not herself.' Baby is awake but flat-affect, pale, breathing rapidly, with a heart rate too fast to count.</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Dispatch: 8-month-old female, breathing funny, won't eat, mom says she looks pale and her heart is racing. Second-floor apartment, mom on scene with the baby and one other adult.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Small second-floor apartment in a four-unit walk-up building. Living room with a couch, infant play mat on the floor, and a folded stroller by the door. The baby is on the couch on top of a thin blanket. Living-room light is on; afternoon sun through the front window.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Tuesday, 13:18, early afternoon, mild spring weather, dry pavement, no wind</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. Walk-up stairs are clear. Two adult occupants — mom and her sister. No pets. Apartment is well-kept and uncluttered. Stair carry will be needed for transport.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Mom (29) is on scene, holding herself together but visibly anxious and asking 'is she going to be okay?' repeatedly. She is a reliable historian and will produce the baby's wellness-visit paperwork from a folder on the bookshelf when asked. Mom's sister (aunt, 32) is also present and helpful — she will move furniture, fetch the diaper bag, and hold the door for the stair carry. No other children in the apartment.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Infant lying flat on the couch in a pink onesie — chest rising visibly and rapidly under the fabric</li><li>Pale skin — mottled pattern across the cheeks and forehead, lips dusky-pink</li><li>Eyes open but flat, tracks slowly toward voices, weak cry when stimulated</li><li>Cool hands and feet to touch; capillary refill visibly delayed when pressed on the forearm</li><li>Anterior fontanel flat and soft — not bulging, not sunken</li><li>Half-full 4-oz bottle on the side table, contents barely touched</li><li>Mom hovering at the baby's head, sister standing at the foot of the couch with the diaper bag</li><li>No vomit, no diaper changes within reach, no obvious source of illness in the room</li><li>No mottling on the trunk; mottling only on the extremities</li><li>Mom keeps saying 'her heart is going so fast, you can see it'</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">8-month-old previously healthy female, full-term, no significant past medical history, brought to her aunt's apartment by mom around midday for a family visit. About 4 hours prior to the 911 call, mom noticed the baby was 'breathing funny' and refused her usual midday bottle — only took about half an ounce before pulling off and crying. She was initially fussy but became quieter and 'just laid there' over the next two hours. Mom states the baby is normally vigorous and feeds 6–8 oz every 3–4 hours. No fever, no vomiting, no diarrhea, no rash, no recent illness in the household, no known sick contacts, no choking event, no foreign body ingestion witnessed, no trauma, no falls. No known cardiac history; mom denies any family history of sudden cardiac death, congenital heart disease, or arrhythmias. The baby was born full-term via uncomplicated vaginal delivery, no NICU stay, all newborn screening was normal, immunizations are up to date. Mom became progressively alarmed over the past hour as the baby grew paler, breathing faster, and 'feeling cold' to her touch. She called 911 when the baby would not look at her and 'her chest was going so fast you could see it through her onesie.'</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">NKDA</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Vitamin D drops 400 IU PO daily, No other prescribed or over-the-counter medications</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Full-term healthy infant — no chronic conditions, Immunizations up to date for 8-month wellness visit, No prior hospitalizations or surgeries</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Breast milk and a small amount of pureed banana at 08:30 this morning. Refused the noon bottle (only took 0.5 oz). Last wet diaper approximately 5 hours ago.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Approximately 4 hours of poor feeding, tachypnea, and pallor in a previously well 8-month-old. Mom describes abrupt onset — 'one minute she was playing, the next she was just breathing too fast.' Progressive lethargy, decreased interactivity, cool extremities. No fever, no vomiting, no preceding URI, no trauma.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">EMS arrives to find an 8-month-old, ~8 kg / 18 lb female on the couch in a pink onesie. She is pale, flat-affect, tracking slowly, with cool extremities and a visibly delayed capillary refill of 3 seconds. Breathing is fast and shallow at RR 60. The radial and brachial pulse are too rapid to count manually. Mom reports 4 hours of poor feeding, pallor, and progressive lethargy in a previously healthy infant. On the monitor: narrow-complex regular tachycardia at HR 252 with no discernible P-waves — classic SVT for the infant age group (rate ≥220 with abrupt onset distinguishes SVT from sinus tachycardia). BP 80/52 (low-normal for age, but borderline given the clinical picture), SpO2 97% on room air, anterior fontanel flat. The student must perform the stable-vs-unstable judgment call: poor feeding + pallor + delayed cap refill + lethargy = SIGNS OF INSTABILITY but not yet decompensated shock. Pediatric SVT protocol: vagal maneuvers AGE-APPROPRIATE first (ice/cold pack to face for infants — NOT carotid massage, NOT adult Valsalva), then IV access, then weight-based adenosine. If truly unstable and no access, synchronized cardioversion 0.5–1 J/kg. The competing priority is to NOT waste time on inappropriate vagal maneuvers, and to NOT miscalculate the weight-based adenosine dose under the stress of working on a small, scared patient.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Supraventricular Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">252</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">80/52</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">97%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">60</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">88</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">13</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent — no secretions, no stridor, no retractions of the trachea. Baby is not crying vigorously but airway is open and self-maintained.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Tachypneic at RR 60, shallow, no nasal flaring at rest, mild subcostal retractions. Lungs clear bilaterally to auscultation, no wheezing, no crackles. Air entry equal.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Brachial pulse rapid, weak, too fast to count manually (~250s on monitor). Skin cool, pale with mottling on the extremities. Capillary refill 3 seconds at the forearm. No active bleeding. BP 80/52 by infant cuff.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pale with mottling on extremities; trunk pale-pink; lips dusky-pink · Cool peripherally, trunk warm · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm bilaterally</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all four extremities to stimulus but with decreased vigor; weak cry; will not reach for a bottle or toy</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Pre-verbal; weak whimper with stimulation, no vigorous cry"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Anterior fontanel flat and soft — not bulging, not sunken</li><li>Weak suck on gloved finger</li><li>Tracks slowly to mom's voice, eyes open but flat</li><li>No rashes, no petechiae, no bruising</li><li>Belly soft, non-distended</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Rapid primary survey; recognize SVT with signs of instability (poor feeding, pallor, delayed cap refill)</div></div>
+        <div class="action-excerpt">Patient Presentation: Patients will manifest elevated heart rate for age and may or may not also present with associated signs or symptoms such as palpitations, dyspnea, chest pain, syncope/near-syncope, hemodynamic compromise, altered mental status, or other signs of end organ malperfusion.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Apply cardiac monitor; obtain 12-lead — narrow-complex regular tachycardia rate 252</div></div>
+        <div class="action-excerpt">Pediatric Management: Initiate monitoring and perform 12-lead EKG.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Manage airway; titrate O2 to SpO2 94–98%</div></div>
+        <div class="action-excerpt">Pediatric Management: Manage airway as necessary. Administer oxygen as appropriate with a target of achieving 94–98% saturation.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Age-appropriate vagal maneuver: ice/cold pack to the face for 15–30 sec (NOT carotid massage, NOT adult Valsalva)</div></div>
+        <div class="action-excerpt">Regular Narrow Complex Tachycardia – Stable (SVT): Perform vagal maneuvers.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Establish IV access (peds, proximal AC or scalp); IO if IV fails after 2 attempts/90 sec</div></div>
+        <div class="action-excerpt">Pediatric Management: Establish IV access.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Check blood glucose (poor feeding × 4 hr in an infant); treat hypoglycemia if found</div></div>
+        <div class="action-excerpt">Pediatric Management: Check blood glucose and treat hypoglycemia per the Hypoglycemia Guideline.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Ice-to-face applied</div>
+        <div class="phase-trigger">Trigger: Ice-to-face vagal maneuver applied for 15–30 seconds AND IV access established. Rhythm transiently slowed but reverted to SVT 252 — partial response confirms vagally-responsive narrow-complex tachycardia. Time to escalate to weight-based adenosine.</div>
+        <div class="phase-desc">Crew applies a cold pack (ice in a glove wrapped in a thin cloth, or a chemical cold pack) firmly across the infant's forehead, eyes, and bridge of the nose for 20 seconds while a second crew member establishes a 24g IV in the right antecubital fossa. The rate slows briefly to 220s during the cold application — visible on the monitor — then climbs back to 252 within 10 seconds of removing the pack. Partial response confirms the rhythm IS vagally responsive (consistent with SVT, not sinus tachycardia at this rate) but the maneuver alone was not enough. IV is now in place. Mom asks 'is it working?' — crew prepares for adenosine as the next escalation. Cap refill remains 3 seconds, BP 78/50, SpO2 97%. The infant is still pale and quiet but has not deteriorated.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Supraventricular Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">252</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">78/50</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">97%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">58</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">88</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">13</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent — unchanged</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 58, shallow, mild subcostal retractions, clear bilaterally</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Rate 252 on monitor, weak but present brachial pulse; skin cool peripherally, cap refill 3 seconds; 24g IV right AC patent with saline lock attached</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pale with mottling on extremities; lips dusky-pink · Cool peripherally · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Weak movement, weak cry, brief grimace when cold pack applied</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Brief grimace and weak cry during cold application; settles afterward"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Brief slowing of monitor rate to 220s during cold application — observed by crew</li><li>Rate returns to 252 within 10 seconds of removing the pack</li><li>Anterior fontanel flat</li><li>24g IV right AC, line flushes easily, no infiltration</li><li>Glucose 88 mg/dL (point-of-care, normal)</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Confirm persistent SVT on rhythm strip; rate transiently slowed then returned</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Initial rhythm and all rhythm changes. Obtain monitor strips after each intervention.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Adenosine 0.8 mg IV rapid push, proximal site, immediate 10 mL NS flush (8 kg × 0.1 mg/kg = 0.8 mg; max 6 mg)</div></div>
+        <div class="action-excerpt">Regular Narrow Complex Tachycardia – Stable (SVT) — Pediatric: Adenosine 0.1 mg/kg (maximum of 6 mg). If unsuccessful, may repeat with 0.2 mg/kg (maximum of 12 mg).</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Pre-set defibrillator to synchronized cardioversion 4 J (8 kg × 0.5 J/kg = 4 J) as backup</div></div>
+        <div class="action-excerpt">Regular Narrow Complex Tachycardia – Unstable — Pediatric: Deliver a synchronized shock: 0.5–1 J/kg for the first dose. Repeat doses should be 2 J/kg.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Have second adenosine dose 1.6 mg ready (8 kg × 0.2 mg/kg = 1.6 mg; max 12 mg)</div></div>
+        <div class="action-excerpt">Regular Narrow Complex Tachycardia – Stable (SVT) — Pediatric: Adenosine 0.1 mg/kg (maximum of 6 mg). If unsuccessful, may repeat with 0.2 mg/kg (maximum of 12 mg).</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Adenosine converted to NSR</div>
+        <div class="phase-trigger">Trigger: Adenosine 0.8 mg IV rapid push with immediate flush. Brief asystolic pause (expected) followed by conversion to sinus rhythm 150. Clinical improvement: warmer skin, brisker cap refill, stronger cry, restored interactivity.</div>
+        <div class="phase-desc">Adenosine 0.8 mg IV rapid push followed by 10 mL flush. Within 6 seconds the monitor shows a brief asystolic pause (expected), then a single junctional escape beat, then conversion to sinus rhythm at HR 150. Within 60 seconds the infant becomes visibly more vigorous — pinks up, makes eye contact with mom, gives a stronger cry, reaches for mom's finger. Capillary refill drops from 3 seconds to 2 seconds. BP rises to 88/58. Mom is crying with relief. Crew confirms a 12-lead post-conversion, places the infant on a manual cardiac monitor for transport, prepares for a smooth stair carry, and transports to the closest pediatric-capable ED for evaluation and disposition. Document time of conversion, dose, response, and reassessment vitals.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">150</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">88/58</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">99%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">36</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">88</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, no secretions</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 36, easy, no retractions, clear bilaterally</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Sinus rhythm 150 on monitor; brachial pulse strong and regular; skin pink and warm; cap refill 2 seconds; BP 88/58; 24g IV right AC patent</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pink, warm · Warm centrally and peripherally · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moving all extremities vigorously, reaches for mom's finger, makes eye contact</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Stronger cry on stimulation; coos when mom speaks"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Brief asystolic pause documented on rhythm strip post-adenosine, expected</li><li>Junctional escape beat noted before sinus resumes</li><li>12-lead post-conversion shows sinus rhythm, no ST changes, no delta waves</li><li>Infant takes a few sucks from a bottle offered by mom</li><li>Anterior fontanel flat</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Document time, dose, brief pause, conversion; obtain post-conversion 12-lead and rhythm strip</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Time, dose, and response to medications given. Obtain monitor strips after each intervention.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess: vitals, mental status, cap refill, color, feeding response</div></div>
+        <div class="action-excerpt">Patient Care Goals: Maintain adequate oxygenation, ventilation, and perfusion. Restore regular sinus rhythm in unstable patient.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Transport to pediatric-capable ED on monitor; keep IV access; reassess en route</div></div>
+        <div class="action-excerpt">Patient Care Goals: Restore regular sinus rhythm in unstable patient. (Implied: transport for definitive evaluation after field conversion.)</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Adult vagal maneuvers attempted</div>
+        <div class="phase-trigger">Trigger: Crew uses inappropriate vagal techniques (adult Valsalva coaching of an infant who cannot follow commands, or carotid sinus massage which is contraindicated in pediatrics). Rhythm persists, time is lost, and the patient drifts further toward decompensation.</div>
+        <div class="phase-desc">Crew attempts adult-style vagal maneuvers on the 8-month-old — coaching the baby to 'bear down' (impossible for a pre-verbal infant) or worse, attempting carotid sinus massage on the side of the neck. Carotid massage is contraindicated in pediatrics — risk of vagal overshoot bradyarrhythmia and pediatric carotid injury. The rhythm persists at 252. Roughly 90 seconds are lost. The infant becomes slightly more lethargic, cap refill stretches to 4 seconds, BP drops to 76/48. Mom is now actively crying. The clinical clock is ticking — every minute in SVT erodes the margin before decompensation. Recovery requires the crew to recognize the wrong technique, switch to ice/cold pack to the face, and continue the protocol path (IV access and weight-based adenosine).</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Supraventricular Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">252</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">76/48</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">96%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">62</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">88</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Inappropriate words</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">11</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 62, shallow, mild subcostal retractions</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Rate 252 unchanged; brachial pulse weak; skin pale and cool; cap refill 4 seconds; BP 76/48</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pale, increased mottling extending to upper extremities · Cool peripherally · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Less vigorous than initial contact — slower to track, weaker cry</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Weaker whimper, no spontaneous cooing"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>No effect on monitor from carotid massage or Valsalva attempts</li><li>Anterior fontanel flat</li><li>Mom asking 'why isn't it working?' — visibly distressed</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize adult vagal maneuvers are inappropriate/contraindicated in infants; stop them</div></div>
+        <div class="action-excerpt">Notes/Educational Pearls: Studies in infants and children have demonstrated the effectiveness of adenosine for the treatment of hemodynamically stable or unstable SVT.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Switch to age-appropriate vagal maneuver: ice/cold pack to forehead and bridge of nose for 15–30 sec</div></div>
+        <div class="action-excerpt">Regular Narrow Complex Tachycardia – Stable (SVT) — Pediatric: Perform vagal maneuvers.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Establish IV (or IO if 2 attempts/90 sec fail); prep adenosine 0.8 mg + flush</div></div>
+        <div class="action-excerpt">Pediatric Management: Establish IV access.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Adenosine dose miscalculated</div>
+        <div class="phase-trigger">Trigger: Crew pushes an incorrect adenosine dose — either an under-dose (adult 'small' dose like 3 mg, or wrong patient weight) producing no conversion, or an over-dose (adult 6 mg into an 8 kg infant) producing a prolonged asystolic pause. Recovery hinges on re-doing the weight-based math correctly.</div>
+        <div class="phase-desc">Crew miscalculates the adenosine dose. Two failure modes — both happen under the stress of working on a small patient. (a) Underdose: defaults to a 'kid-sized' adult dose like 3 mg or uses the wrong weight (e.g., assumes 6 kg instead of 8) — pushes too little, gets no conversion, and the rhythm stays at 252. (b) Overdose: pushes the full adult 6 mg into an 8 kg infant — that's 0.75 mg/kg, more than triple the 0.2 mg/kg max — risk of prolonged asystolic pause and proarrhythmia. In the simulation, the monitor shows either no rhythm change (underdose) or an extended 8-second asystolic pause with bradycardia to 50s before sinus eventually returns at 130 (overdose). Either way, the recovery is the same: recalculate from the patient's actual weight (8 kg), confirm the per-kg formula (0.1 mg/kg first dose = 0.8 mg; 0.2 mg/kg second dose = 1.6 mg), redraw the correct dose, and push it correctly. Crew leader should call out the math out loud and have a second crew member verify the syringe before push.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Supraventricular Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">252</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">76/48</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">96%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">60</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">88</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Inappropriate words</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">11</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 60, shallow</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Either persistent SVT 252 (underdose) OR transient extended asystolic pause then sinus 130 (overdose). Skin pale, cool, cap refill 3–4 seconds. BP 76/48 either way.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pale, mottled extremities · Cool peripherally · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Decreased vigor</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Weak cry"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>If underdose: rhythm strip shows SVT continues with no pause</li><li>If overdose: rhythm strip shows extended asystolic pause (~8 sec) then bradycardia (50s) before recovery — crew must be prepared to support</li><li>Either failure mode loses ~60–90 sec and erodes the clinical margin</li><li>Mom visibly distressed</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize dose error; stop, reconfirm weight (8 kg) and per-kg formula out loud</div></div>
+        <div class="action-excerpt">Performance Measures: Correct medication(s) and dose given for patient condition, age, and weight.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Redraw adenosine 0.8 mg (8 kg × 0.1 mg/kg); push rapidly + 10 mL flush, proximal IV</div></div>
+        <div class="action-excerpt">Regular Narrow Complex Tachycardia – Stable (SVT) — Pediatric: Adenosine 0.1 mg/kg (maximum of 6 mg). If unsuccessful, may repeat with 0.2 mg/kg (maximum of 12 mg).</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">If decompensation continues, synchronized cardioversion 4 J (8 kg × 0.5 J/kg); pads on chest</div></div>
+        <div class="action-excerpt">Regular Narrow Complex Tachycardia – Unstable — Pediatric: Deliver a synchronized shock: 0.5–1 J/kg for the first dose. Repeat doses should be 2 J/kg.</div>
+        <div class="action-ref">↳ MATC: Tachycardia with a Pulse</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

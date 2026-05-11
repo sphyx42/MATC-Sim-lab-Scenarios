@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infant with RSV / Bronchiolitis — Assessment-Driven Supportive Care — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Infant with RSV / Bronchiolitis — Assessment-Driven Supportive Care</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Mia Alvarez</strong></span><span class="patient-chip">6 months female</span><span class="patient-chip">15 lbs (7 kg)</span><span class="patient-chip">2'2"</span><span class="patient-chip">CC: 6-month-old infant with 3 days of cough and congestion, now working harder to breathe — nasal flaring, grunting, mild retractions.</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Dispatch: 6-month-old female, difficulty breathing, conscious. Mom on scene. Apartment, second floor.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Second-floor apartment, living room. Warm room temperature. Infant is in mom's arms on the couch wrapped in a thin blanket. Good lighting; clear path to door and stairwell.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Tuesday, 14:20, cool fall afternoon (active RSV/respiratory viral season)</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. No pets in the room. Mom calm but visibly worried. Older brother (3 yo) playing in adjacent room with grandmother.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Mother present and providing history in clear English. Has the baby's pediatrician info, immunization card, and a small bag with diapers and a bottle ready to go.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Small infant in mom's arms, awake, eyes tracking but quiet and tired-looking</li><li>Visible nasal flaring with each breath; small amount of clear nasal discharge crusted at the nostrils</li><li>Audible expiratory grunting from across the room</li><li>Mild subcostal and intercostal retractions visible when blanket is lowered</li><li>Skin is pink centrally; lips are pink (no cyanosis)</li><li>Bottle of children's acetaminophen and bulb syringe on the side table</li><li>Older sibling in next room with cough and runny nose</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">Previously healthy 6-month-old female with three days of nasal congestion and dry cough that started after her older brother came home from daycare with a cold. Low-grade fevers (highest 100.8 F by axillary thermometer at home) began on day two. Over the last several hours mom noticed Mia is breathing faster, making a grunting noise on expiration, and 'pulling in' under her ribs. She has been less interested in nursing — last good feed was about 5 hours ago, and she only nursed for 2-3 minutes before pulling off, fussing, and falling back asleep. Mom reports the last wet diaper was about 6 hours ago, which is unusual; she typically wets every 2-3 hours. No vomiting, no diarrhea, no rash. No prior wheezing or breathing problems, no prior ED visits or admissions, no prematurity. Born full-term, vaginal delivery, uncomplicated nursery course.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">NKDA</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Infant acetaminophen 0.8 mL (80 mg) PO ~4 hours ago for fever, Vitamin D drops 400 IU PO daily</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Born full-term (39 weeks), no NICU, Up to date on immunizations through 4 months, No prior wheezing, no prior respiratory illness</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Last nursing ~5 hours ago — only 2-3 minutes before pulling off (normal feeds are 15-20 minutes every 2-3 hours).</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Sick contact (older brother with URI) → 3 days nasal congestion + cough → low-grade fever day 2 → increased work of breathing and decreased feeding today → mom called 911 when she noticed grunting and retractions.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">EMS arrives to find a 6-month-old female in her mother's arms with visible signs of increased work of breathing: nasal flaring, audible expiratory grunting, and mild sub-/intercostal retractions. She is awake and tracking but quiet and tired-looking. This is a Tier 1 assessment scenario — the goal is to step through the Pediatric Assessment Triangle (PAT) from the doorway, then put hands on for a focused exam (vitals, auscultation, hydration, feeding history) BEFORE choosing an intervention. The 'hands-on' work earns the diagnosis: viral bronchiolitis in an obligate-nose-breather infant with congestion. The right interventions are gentle — nasal suctioning and supplemental O2 — not a reflexive nebulizer.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">168</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">90/56</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">90%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">60</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">100.8°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">88</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent — clear/thin nasal secretions present at both nares; no stridor; no drooling</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 60 with nasal flaring, expiratory grunting, mild subcostal and intercostal retractions; diffuse expiratory wheezing and scattered coarse crackles bilaterally; air entry adequate</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong central pulse (brachial); warm extremities; capillary refill 2-3 seconds</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink centrally, pink lips (no cyanosis) · warm (febrile to touch) · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal ~3 mm, briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities symmetrically; tracks mom and providers with eyes</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Pre-verbal infant; weak, soft cry when stimulated, settles quickly with mom"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Anterior fontanel: flat (not bulging, not yet clearly sunken)</li><li>Lips and oral mucosa: slightly tacky</li><li>No tears with fussing (per mom — 'she's not really been crying tears today')</li><li>Crusted thin clear nasal secretions at both nares; obligate nose breather struggling to move air through congested nose</li><li>Patient is interactive but tired — will look at providers but quickly closes eyes and tucks back into mom</li><li>Holding head with reasonable tone; no head bobbing yet</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Perform Pediatric Assessment Triangle from doorway (appearance, work of breathing, circulation)</div></div>
+        <div class="action-excerpt">Exam: Full set of vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) temperature, and O2 saturation; Air entry (normal vs. diminished); Breath sounds (wheezes, crackles, rales, rhonchi, diminished, clear); Signs of distress (grunting, nasal flaring, retracting, accessory muscle use); Weak cry or inability to speak full sentences (sign of shortness of breath); Color (pallor, cyanosis, normal); Mental status (alert, tired, lethargic, unresponsive).</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Bronchiolitis)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Obtain full vitals including SpO2, RR, HR, temp on the infant</div></div>
+        <div class="action-excerpt">Exam: Full set of vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) temperature, and O2 saturation. Pulse oximetry and end-tidal capnography (EtCO2) should be routinely used as an adjunct to other forms of respiratory monitoring.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Bronchiolitis)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Auscultate all lung fields; identify diffuse wheezing and crackles</div></div>
+        <div class="action-excerpt">Exam: Air entry (normal vs. diminished); Breath sounds (wheezes, crackles, rales, rhonchi, diminished, clear); Signs of distress (grunting, nasal flaring, retracting, accessory muscle use).</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Bronchiolitis)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Assess hydration: fontanel, mucous membranes, tears, capillary refill</div></div>
+        <div class="action-excerpt">Exam: Hydration status (+/- sunken eyes, delayed capillary refill, mucous membranes (moist vs. tacky), fontanel (flat vs. sunken)).</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Bronchiolitis)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Ask mom about feeding intake and wet-diaper count over last 24 hours</div></div>
+        <div class="action-excerpt">History: Change in feeding patterns and/or number of wet diapers.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Bronchiolitis)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Take focused history: symptom onset, sick contacts, prior wheezing, prematurity</div></div>
+        <div class="action-excerpt">History: Onset of symptoms; Concurrent symptoms (e.g., fever, cough, rhinorrhea, tongue/lip swelling, rash, labored breathing, foreign body aspiration); Sick contacts; History of wheezing; Respiratory and other treatments given; History of prematurity; Family history of asthma, eczema, or allergies.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Bronchiolitis)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Assessment complete; bronchiolitis recognized</div>
+        <div class="phase-trigger">Trigger: PAT and focused exam are complete — vitals obtained, lungs auscultated (diffuse wheezing and crackles), hydration assessed (flat fontanel, tacky mucosa, cap refill 2-3 sec, no tears), feeding/diaper history obtained (decreased intake x2 days, last wet diaper 6 hours ago), sick-contact history confirmed. Crew has identified viral bronchiolitis with early dehydration and now moves into supportive care.</div>
+        <div class="phase-desc">The crew has completed the PAT and a focused hands-on assessment. The picture: 6-month-old with 3 days of URI symptoms, fever 100.8 F, RR 60 with flaring/grunting/mild retractions, SpO2 90% on room air, diffuse wheezing and crackles, sick contact, no prior wheezing, decreased feeding, decreased wet diapers, flat fontanel, tacky mucosa, cap refill 2-3 sec. This is viral bronchiolitis with mild-to-moderate distress and early dehydration. The right next moves are gentle and supportive: clear the obligate nose breather's nose, give supplemental O2 to a target of 94-98%, position in caregiver's arms, transport without lights and sirens, and reassess.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">170</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">88/54</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">90%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">60</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">37</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">100.8°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">88</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent but with thin clear nasal secretions partially obstructing both nares — audible nasal congestion with each breath</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 58-62, persistent nasal flaring, expiratory grunting, mild retractions; diffuse expiratory wheezing and scattered crackles; air entry adequate bilaterally</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong brachial pulse, warm extremities, cap refill 2-3 sec</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink centrally and peripherally · warm · dry; tacky mucous membranes</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal ~3 mm, briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities; tracks mom</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Weak intermittent cry, settles with mom"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Anterior fontanel flat</li><li>Mucous membranes tacky</li><li>No tears with crying</li><li>Patient still interactive but quickly tires; tucks into mom</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Gently suction nose with bulb or soft suction catheter — obligate nose breather</div></div>
+        <div class="action-excerpt">Airway: Suction the nose and/or mouth (via bulb or suction catheter) particularly if excessive secretions are present. Key Considerations: Suctioning can be a very effective intervention to alleviate distress since infants are obligate nose breathers.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Bronchiolitis)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Supplemental O2 via blow-by or pediatric NC, titrate to SpO2 94-98%</div></div>
+        <div class="action-excerpt">Airway: Give supplemental oxygen – escalate from a nasal cannula to a simple face mask to a non-breather mask as needed, to maintain normal oxygenation (goal SpO2 94–98%).</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Bronchiolitis)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Position infant in mom's arms / position of comfort; minimize handling</div></div>
+        <div class="action-excerpt">Patient positioning can significantly impact respiratory mechanics. Patients with severe bronchospasm should be left in the position of comfort (perhaps tripod) whenever possible. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics. This can both improve the ability to ventilate and limit aspiration.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Apply continuous pulse oximetry and EtCO2; reassess after each intervention</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Pulse oximetry and end-tidal capnography (EtCO2) should be routinely used as an adjunct to other forms of respiratory monitoring. Pertinent Assessment Findings: Frequent reassessment is necessary to determine if interventions have alleviated signs of respiratory distress.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Bronchiolitis)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Do NOT give routine albuterol; bronchiolitis does not respond to it</div></div>
+        <div class="action-excerpt">Key Considerations: Although albuterol and steroids have previously been a consideration, the most recent evidence does not demonstrate a benefit in routine use of albuterol or steroids for bronchiolitis. Ipratropium and other anticholinergic agents should not be given to children with bronchiolitis in the prehospital setting. Steroids are not efficacious and should not be given.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Bronchiolitis)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Transport to pediatric-capable ED; lights/sirens not routinely needed</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Routine use of lights and sirens is not recommended during transport.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Bronchiolitis)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Supportive care; infant improving en route</div>
+        <div class="phase-trigger">Trigger: Crew completed assessment, performed nasal suctioning, applied supplemental O2 (blow-by or pediatric NC), kept the infant in mom's arms, and is reassessing. Work of breathing has eased and SpO2 has climbed above the 94-98% target.</div>
+        <div class="phase-desc">After nasal suctioning, blow-by/NC oxygen, and positioning in mom's arms, the infant's work of breathing improves: nasal flaring softens, grunting is intermittent rather than continuous, retractions are minimal, SpO2 is now 95% on supplemental O2, RR has come down to 52, and HR is drifting down toward 150. The infant is still tired but more easily consoled. Crew continues continuous monitoring, communicates a clear handoff (HPI, exam, interventions, response, hydration status, feeding history) to a pediatric-capable receiving facility, and transports without lights and sirens.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">150</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">92/58</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">95%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">52</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">100.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">88</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent; nares now clear after suctioning; minimal residual secretions</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 50-54, intermittent (not continuous) grunting, mild nasal flaring only when fussing, minimal retractions; wheezing softer; air entry good</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong brachial pulse, warm extremities, cap refill 2 sec</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal ~3 mm, briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities; more interactive with mom</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Quiet, occasional soft cry, consolable"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Fontanel flat</li><li>Mucous membranes still slightly tacky — hydration is something for the ED to address</li><li>Patient calmer in mom's arms with blow-by O2 held close</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess and document: RR, SpO2, WoB, breath sounds, mental status, color</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Document key aspects of the exam to assess for a change after each intervention: Respiratory rate; Oxygen saturation; Use of accessory muscles; Breath sounds; Air entry; Mental status; Color.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Bronchiolitis)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Give structured handoff to receiving ED: HPI, exam, interventions, response, feeding/diaper history</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Document key aspects of the exam to assess for a change after each intervention: Respiratory rate; Oxygen saturation; Use of accessory muscles; Breath sounds; Air entry; Mental status; Color.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Bronchiolitis)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Reflex DuoNeb given; no benefit</div>
+        <div class="phase-trigger">Trigger: Crew skipped or rushed the focused assessment, identified wheezing on auscultation, and pattern-matched to 'asthma exacerbation,' starting nebulized albuterol/ipratropium. This contradicts the bronchiolitis protocol, wastes 5+ minutes, agitates the infant, and delays the high-yield interventions (nasal suctioning and titrated supplemental O2).</div>
+        <div class="phase-desc">Crew heard wheezing and reflexively reached for an albuterol (or albuterol/ipratropium) nebulizer mask, treating this as if it were a pediatric asthma exacerbation. The infant cries and fights the mask, becoming more tachycardic (HR climbs into the high 180s), more tachypneic, and slightly desaturates from the agitation. Five minutes burns on a treatment the protocol explicitly says is not beneficial in bronchiolitis. The obligate-nose-breather nose has not been suctioned. Mom is frustrated. The lesson lands when the student realizes that bronchiolitis is not asthma and that supportive care (suction + O2) is the protocol.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">188</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">90/55</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">88%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">64</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">35</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">100.8°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">88</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent; nasal secretions still present and not suctioned</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 64, persistent nasal flaring, continuous grunting, mild-moderate retractions; wheezing unchanged after neb; air entry slightly diminished from agitation</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong brachial pulse, warm extremities, cap refill 2-3 sec</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink, slightly flushed from crying · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal ~3 mm, briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Vigorously pulling away from the mask; mom trying to keep it close to her face</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Loud crying when mask held to face; brief consolable moments when mask is pulled away"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Crying continuously when mask is held to face</li><li>Nasal congestion unchanged — nares not suctioned</li><li>Tremor in hands (mild beta-agonist side effect on top of already-high HR)</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize neb is not helping; stop, suction nares, return to supportive care</div></div>
+        <div class="action-excerpt">Key Considerations: Although albuterol and steroids have previously been a consideration, the most recent evidence does not demonstrate a benefit in routine use of albuterol or steroids for bronchiolitis. Ipratropium and other anticholinergic agents should not be given to children with bronchiolitis in the prehospital setting. Airway: Suction the nose and/or mouth (via bulb or suction catheter) particularly if excessive secretions are present.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Bronchiolitis)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Dehydration missed; infant deteriorating</div>
+        <div class="phase-trigger">Trigger: Crew did not assess fontanel, mucous membranes, tears, or capillary refill; never asked about feeding intake or wet-diaper count. Insensible losses from fever + tachypnea continue uncorrected en route, and compensated hypovolemic shock starts to overlap the respiratory picture.</div>
+        <div class="phase-desc">Crew focused on the respiratory exam, applied O2, and loaded for transport without ever assessing hydration status or asking about feeding and wet diapers. En route, the infant becomes less interactive — eyes are open but tracking is sluggish, the cry has gotten weaker, capillary refill has slipped to 3-4 seconds, HR is climbing into the 180s, and SpO2 is drifting back down despite supplemental O2. This is compensated shock declaring itself on top of viral respiratory distress. The lesson: in an infant with respiratory distress, dehydration is the second diagnosis you must catch; if you miss it, the patient deteriorates in the back of the truck.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">186</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">78/48</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">89%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">66</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">33</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">100.9°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">82</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">12</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent; nasal secretions present</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 64-68, nasal flaring, grunting, moderate retractions; wheezing and crackles unchanged</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Brachial pulse present but thready; extremities cool to the wrists; capillary refill 3-4 seconds</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">mottled extremities, central pallor developing · cool peripherally, trunk normothermic · clammy on trunk, mucosa dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal ~3 mm, reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Less spontaneous movement; weak grasp</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Weak whimper, no longer briskly consolable"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Anterior fontanel now mildly sunken</li><li>Mucous membranes dry (no longer just tacky)</li><li>No tears with crying</li><li>Weak, whimpering cry; less interactive with mom</li><li>Cap refill 3-4 sec at the foot</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize compensated shock (tachycardia, cap refill &gt;3s, dry mucosa, sunken fontanel)</div></div>
+        <div class="action-excerpt">Inclusion Criteria: Signs of poor perfusion (due to a medical cause) such as one or more of the following: Altered mental status; Delayed capillary refill (&gt; 3 seconds); Decreased urine output; Respiratory rate greater than 20 breaths per minute in adults or elevated in children; Tachycardia or bradycardia for age, out of proportion to temperature; Weak, decreased or bounding pulses; Cool/mottled or flushed/ruddy skin.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">IV/IO access; isotonic bolus 140 mL (7 kg × 20 mL/kg)</div></div>
+        <div class="action-excerpt">Pediatric: Fluid goal of up to a total of 60 mL/kg or 1 liter of isotonic fluid by giving 20 mL/kg of isotonic fluid by administering rapid boluses (for cardiogenic shock give 10 mL/kg boluses). Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Escalate airway support: BVM-assist if work of breathing fails</div></div>
+        <div class="action-excerpt">Improvement of oxygenation and/or respiratory distress with non-invasive airway adjuncts: Bag-valve-mask ventilation should be utilized in children with respiratory failure or impending respiratory failure.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Bronchiolitis)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Notify receiving facility of deterioration; upgrade transport priority</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Routine use of lights and sirens is not recommended during transport.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Bronchiolitis)</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

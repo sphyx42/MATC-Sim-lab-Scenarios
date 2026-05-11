@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Croup with Worsening Stridor — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Croup with Worsening Stridor</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Eli Navarro</strong></span><span class="patient-chip">3 years male</span><span class="patient-chip">33 lbs (15 kg)</span><span class="patient-chip">3'2"</span><span class="patient-chip">CC: Barky cough and noisy breathing — inspiratory stridor at rest</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Engine 7, Medic 7, respond to 1822 Lakeview Drive for a 3-year-old male, mother reports child can't breathe well — barking cough and noisy breathing. Patient is awake.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Single-family home, child's bedroom. Toddler sitting upright on mother's lap on the edge of the bed. Humidifier running in the corner. Tissues and a cup of water on the nightstand.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Thursday, 22:15. Outside temperature cool, 48°F.</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. Quiet home. No pets in the room. Mother is anxious but cooperative. Father is downstairs keeping a 5-year-old sibling occupied.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Mother holding Eli upright on her lap, stroking his back. She reports the cough and noisy breathing started overnight and got much worse in the last few hours. No one else in the house is sick beyond a daycare cold going around.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Child sitting upright in mom's lap — NOT tripoding, NOT drooling</li><li>Audible harsh inspiratory stridor at rest, worse when he cries</li><li>Mild suprasternal and subcostal retractions</li><li>Hoarse voice, intermittent seal-like barky cough</li><li>Skin pink, eyes engaged, looking warily at strangers</li><li>Humidifier running — mom has been trying steam in the bathroom without much effect</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">Eli is a previously healthy 3-year-old boy with a two-day URI (rhinorrhea, low-grade fever, hoarse voice). Overnight he developed a harsh, seal-like barky cough. About 6 hours ago his mother noticed audible noisy breathing on inspiration that has worsened steadily. He has been refusing fluids for the past 4 hours and is more clingy than usual. The cough is worse when he gets upset. No drooling, no choking event, no foreign-body history, no tongue or lip swelling, no rash. He has never been intubated and has no prior episodes of croup, asthma, or wheezing.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">NKDA</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Children's acetaminophen 160 mg/5 mL PRN fever (last dose 6 hours ago)</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Otherwise healthy, No prior croup episodes, No asthma or chronic respiratory disease, Born full-term, no NICU stay, Immunizations up to date per mom (including HiB)</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">About 4 ounces of water and a few crackers approximately 4 hours ago. Refusing most fluids since.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Two-day URI escalated overnight to barky cough. Stridor at rest started this evening and has progressively worsened. Mom called 911 when Eli's breathing started to look 'sucked-in' at the chest and he became more anxious.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">On arrival, Eli is sitting upright on his mother's lap with audible inspiratory stridor at rest, mild retractions, a hoarse voice, and an intermittent harsh barky cough. He is anxious but interactive — he tracks the crew with his eyes and clings to mom. There is NO drooling, NO tripoding, NO toxic appearance — the picture is moderate croup, not epiglottitis or foreign body. Westley Croup Score is moderate (stridor at rest, mild retractions, normal air entry, no cyanosis, alert). The critical teaching beat in this phase is that agitation worsens stridor: forcing a mask, prying for IV access, or separating him from mom will turbulence-load his airway and crash his SpO2. The right move is to assess from across the room first, let mom hold him, and stage interventions in order of least-invasive-first.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">138</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">98/60</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">94%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">32</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">100.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">96</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent but UPPER-airway noise — audible harsh inspiratory stridor at rest. No drooling, no muffled 'hot potato' voice, no tongue swelling. Hoarse phonation. Intermittent seal-like barky cough.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous, regular. Mild suprasternal and subcostal retractions. No nasal flaring. Air entry is symmetric and adequate bilaterally. No wheezing, no crackles.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong, fast radial pulse. Capillary refill &lt; 2 seconds at the fingertips. Skin pink, warm, dry.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pink. No cyanosis. No pallor or mottling. · Warm — mildly febrile to touch · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm bilaterally.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities, clings to mom, age-appropriate tone.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Hoarse, short utterances. 'Mama. Want home.' Brief barky cough between sentences. Will answer mom but not the crew."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Pediatric Assessment Triangle — APPEARANCE: alert, anxious but interactive, consoles to mom; WORK OF BREATHING: audible inspiratory stridor at rest, mild retractions; CIRCULATION TO SKIN: pink, warm, dry</li><li>Westley Croup Score (estimate): stridor at rest = 2, mild retractions = 1, air entry normal = 0, no cyanosis = 0, alert = 0 → Score ~3 (moderate)</li><li>No drooling, no tripoding, no muffled voice — picture is NOT epiglottitis</li><li>No choking history, no asymmetric breath sounds — picture is NOT foreign body</li><li>No wheezing, no eczema/atopy history, no exposure history — picture is NOT anaphylaxis or asthma</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Pediatric assessment from doorway; let child stay in mom's lap</div></div>
+        <div class="action-excerpt">Exam: Presence of stridor at rest or when agitated; Description of cough; Other signs of distress (grunting, nasal flaring, retracting, use of accessory muscles); Color (pallor, cyanosis, normal); Mental status (alert, tired, lethargic, unresponsive)</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Croup)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Rule out epiglottitis, foreign body, anaphylaxis on exam</div></div>
+        <div class="action-excerpt">Exclusion Criteria: Presumed underlying cause that includes one of the following: Anaphylaxis; Asthma; Bronchiolitis (wheezing in a patient less than 2 years of age); Foreign body aspiration; Submersion/drowning; Epiglottitis. Key Considerations: Foreign bodies can mimic croup, it is important to ask about a possible choking event.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Croup)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Pulse ox + EtCO2 + full vitals without upsetting child</div></div>
+        <div class="action-excerpt">Monitoring: Pulse oximetry and EtCO2 should be routinely used as an adjunct to other forms of respiratory monitoring. Exam: Full set of vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) temperature, and O2 saturation.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Croup)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Blow-by O2 via mom if SpO2 &lt;94% — escalate NC → mask if tolerated</div></div>
+        <div class="action-excerpt">Airway: Give supplemental oxygen. Escalate from a nasal cannula to a simple face mask to a non-breather mask to SpO2 94–98%. Humidified oxygen or mist therapy is not indicated.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Croup)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Neb epi given</div>
+        <div class="phase-trigger">Trigger: Crew recognized moderate croup, kept Eli on mom's lap, and delivered nebulized epinephrine 5 mg with dexamethasone 0.6 mg/kg before any invasive procedure. The least-invasive-first approach is paying off — Eli is still cooperative.</div>
+        <div class="phase-desc">Crew sets the nebulizer up on mom's lap with the mask held near Eli's face by mom (not strapped on). Epinephrine 5 mg (5 mL of 1 mg/mL) is running. Dexamethasone 9 mg has been given PO mixed in a small amount of juice (or IM in the lateral thigh if PO refused). Eli is still anxious but tolerating the neb because he's still on mom. SpO2 is holding 94–95%, retractions are unchanged so far — the epinephrine effect takes about 2–5 minutes to peak and the steroid hasn't kicked in yet (peak in 1–2 hours). The crew packages for transport.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">142</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">100/62</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">95%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">30</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">35</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">100.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">96</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent. Inspiratory stridor still present at rest but now competing with the noise of the nebulizer. Hoarse voice, occasional barky cough.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous. Mild suprasternal and subcostal retractions persist. Air entry symmetric. Nebulizer mist visible at the mask.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong, fast radial pulse. Skin pink, warm, dry.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pink · Warm · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm bilaterally.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Sitting upright on mom, head turned into her shoulder. Moves all extremities.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Still hoarse, short utterances. Says 'no' to the mask but tolerates it from mom."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Mask held by mom about 2 inches from face — Eli accepts it because mom is holding it</li><li>No IV in place — appropriate for a stable awake child per protocol (IVs only for dehydration or IV meds)</li><li>Crew has dexamethasone 9 mg charted as given PO 2 minutes ago</li><li>Transport plan: closest pediatric-capable ED, no lights/sirens</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Epinephrine 5 mg nebulized (5 mL of 1 mg/mL); may repeat q20 min</div></div>
+        <div class="action-excerpt">Inhaled medications should be administered to all children with croup in respiratory distress with signs of stridor at rest—these medications should be repeated at this dose with unlimited frequency for ongoing respiratory distress. Epinephrine 5 mg (5 mL of 1 mg/mL solution) nebulized (may repeat in 20 minutes as needed), or Racemic epinephrine 0.5 mL of 2.25% solution mixed in 2.5 mL NS (may repeat in 20 minutes as needed).</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Croup)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Dexamethasone 9 mg PO (15 kg × 0.6 mg/kg; max 16 mg) — IM if PO refused</div></div>
+        <div class="action-excerpt">Dexamethasone 0.6 mg/kg oral, IV, or IM to maximum dose of 16 mg should be administered to patients with suspected croup.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Croup)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Do NOT place IV on stable awake child — protocol-specific exception</div></div>
+        <div class="action-excerpt">Utility of IV placement and fluids. IVs should only be placed in children with respiratory distress for clinical concerns of dehydration or when administering IV medications.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Croup)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">Skip humidified O2 / mist therapy — not indicated</div></div>
+        <div class="action-excerpt">Humidified oxygen or mist therapy is not indicated.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Croup)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Transport to pediatric-capable ED; no lights/sirens</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Routine use of lights and sirens is not recommended during transport. Patients who receive inhaled epinephrine should be transported to definitive care.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Croup)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Stridor improving</div>
+        <div class="phase-trigger">Trigger: Approximately 5 minutes after nebulized epinephrine completed, stridor severity has decreased substantially, retractions have resolved, and SpO2 is up to 96%. Child is comfortable on mom's lap. Crew is en route to definitive care.</div>
+        <div class="phase-desc">About 5 minutes after the nebulized epinephrine finished, Eli's stridor is much softer. Retractions have largely resolved. SpO2 has come up to 96%. He's more relaxed and has dozed off briefly against mom's shoulder. The crew is en route to the pediatric-capable ED. The teaching beat here is the 'rebound' window — nebulized epi has a 1–2 hour effect, but the dexamethasone won't peak for another 60–90 minutes. If the epi wears off before the steroid kicks in, stridor can recur. Crew gives a clear handoff including time of neb, time of dex, and the rebound caution.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">128</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">100/62</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">96%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">26</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">100°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">96</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent. Stridor much softer — present only with deep inspiration or when he stirs. Hoarse voice still. Barky cough less frequent.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous, regular. No retractions. Air entry symmetric, adequate.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong radial pulse. Skin pink, warm, dry.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pink · Warm · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm bilaterally.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Resting on mom's shoulder, dozing briefly, rousable easily.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Murmurs to mom. 'Tired.' Cough is intermittent and softer."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Westley Croup Score reassessment: stridor only with activity = 1, no retractions = 0, normal air entry = 0, no cyanosis = 0, alert = 0 → Score ~1 (mild)</li><li>Continuous SpO2 + cardiac monitoring during transport</li><li>Charting: time of neb epi, time and route of dexamethasone, time of arrival at ED</li><li>Rebound window: epi effect 1–2 hours, dexamethasone peak 1–2 hours — handoff must flag this overlap</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess stridor, retractions, SpO2, mental status</div></div>
+        <div class="action-excerpt">Document key aspects of the exam to assess for a change after each intervention: Respiratory rate; Oxygen saturation; Use of accessory muscles or tracheal tugging; Breath sounds; Air entry; Mental status; Color.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Croup)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Watch for impending failure: fatigue, pallor, quieter stridor with worsening WOB</div></div>
+        <div class="action-excerpt">Key Considerations: Impending respiratory failure is indicated by: Change in mental status such as fatigue and listlessness; Pallor; Dusky appearance; Decreased retractions; Decreased breath sounds with decreasing stridor.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Croup)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Handoff with time of neb epi + dex + rebound caution to ED</div></div>
+        <div class="action-excerpt">Patients who receive inhaled epinephrine should be transported to definitive care.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Croup)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">IV before soothing</div>
+        <div class="phase-trigger">Trigger: Crew prioritized invasive procedures, pulling Eli off mom for IV attempt before delivering any inhaled medication. Resulting agitation has dramatically worsened the airway obstruction — stridor is now severe and continuous, SpO2 has fallen, and the child is approaching respiratory failure.</div>
+        <div class="phase-desc">Crew pulled Eli off mom's lap to the stretcher and attempted IV access in his hand before giving any inhaled medication. He shrieked and fought, mom got upset, and within 60 seconds his stridor went from audible-at-rest to LOUD AND CONTINUOUS, retractions deepened to severe suprasternal and intercostal, his SpO2 dropped to 86% on room air, and his color started to look dusky. This is the predicted physiology — agitation increases turbulent flow through a narrowed subglottis. The teaching beat: in a pediatric airway with reactive obstruction, aggressive invasive procedures BEFORE rapport-building can convert a moderate case into a critical airway emergency.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">168</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">102/64</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">86%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">44</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">32</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">100.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">96</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">14</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">LOUD continuous inspiratory stridor at rest. Hoarse, screaming voice. No drooling, no foreign body recovery — this is purely agitation-driven worsening of pre-existing croup.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous but labored. Severe suprasternal AND intercostal retractions. Nasal flaring. Air entry now decreased — quieter on auscultation despite louder upper airway noise (ominous sign).</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong, fast radial pulse. Skin now PALE, peripheries cool, dusky lips.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pale with dusky perioral cyanosis · Cool peripherally, warm core · Diaphoretic</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm bilaterally.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Fighting and crying, reaching for mom. Tone is normal but he is wearing out.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Screaming. Cannot phonate full words. Just 'Mama' and crying."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Westley Croup Score reassessment: stridor at rest LOUD = 2, severe retractions = 2, decreased air entry = 1, dusky/cyanosis with agitation = 4, anxious/distressed = 1 → Score ~10 (severe — impending failure)</li><li>Pulse ox 86% on room air, climbing slowly with blow-by</li><li>Failed IV attempt in the hand — no access established, child now even more distrustful</li><li>Mom is crying and saying 'please stop, please stop' — family rapport damaged</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Abort IV attempt; return child to mom immediately; STOP all stimulation</div></div>
+        <div class="action-excerpt">Patient Management — Treatment and Interventions — Airway: Give supplemental oxygen. Utility of IV placement and fluids. IVs should only be placed in children with respiratory distress for clinical concerns of dehydration or when administering IV medications. Key Considerations: Without stridor at rest or other evidence of respiratory distress, inhaled medications may not be necessary.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Croup)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Epinephrine 5 mg nebulized (5 mL of 1 mg/mL) via mom-held mask NOW</div></div>
+        <div class="action-excerpt">Inhaled medications should be administered to all children with croup in respiratory distress with signs of stridor at rest—these medications should be repeated at this dose with unlimited frequency for ongoing respiratory distress. Epinephrine 5 mg (5 mL of 1 mg/mL solution) nebulized (may repeat in 20 minutes as needed).</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Croup)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Dexamethasone 9 mg IM lateral thigh (15 kg × 0.6 mg/kg; max 16 mg)</div></div>
+        <div class="action-excerpt">Dexamethasone 0.6 mg/kg oral, IV, or IM to maximum dose of 16 mg should be administered to patients with suspected croup.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Croup)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Prep BVM with PEEP and consider CPAP — anticipate failure</div></div>
+        <div class="action-excerpt">Improvement of oxygenation and/or respiratory distress with non-invasive airway adjuncts: Continuous positive airway pressure (CPAP) should be administered for severe respiratory distress; BVM ventilation should be utilized in children with respiratory failure. Patient Safety Considerations: Pediatric airway management requires appropriately sized tools and adjuncts based on patient size/age.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Manage airway with the LEAST invasive method that works</div></div>
+        <div class="action-excerpt">Supraglottic devices and intubation — should be utilized only if BVM ventilation fails. The airway should be managed in the least invasive way possible. Pediatric endotracheal intubation has unclear benefit in the prehospital setting.</div>
+        <div class="action-ref">↳ MATC: Pediatric Respiratory Distress (Croup)</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

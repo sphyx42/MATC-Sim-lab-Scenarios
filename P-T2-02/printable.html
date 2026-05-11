@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pediatric Dehydration with Compensated Shock — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Pediatric Dehydration with Compensated Shock</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Caleb Ortiz</strong></span><span class="patient-chip">5 years male</span><span class="patient-chip">40 lbs (18 kg)</span><span class="patient-chip">3'7"</span><span class="patient-chip">CC: Three days of vomiting and diarrhea, now lethargic and won't drink</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Engine 9, Medic 9, respond to 2218 Maple Crest for a 5-year-old male, sick child. Mom reports child won't wake up easily and has been vomiting for three days. Cold response.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Single-family townhouse, child's bedroom upstairs. Child lying on a small twin bed on top of the covers in shorts and a t-shirt. Bedroom is dim, blinds drawn. Trash can next to the bed contains tissues and a plastic emesis bag. Bottle of Pedialyte half-full on the dresser, and a children's acetaminophen bottle on the nightstand.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Saturday, 14:18. Outside temperature 71°F, mild.</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. Home is clean. Mom and one older sister (~8 yr) present. Dad at work, on the phone with mom. No pets, no hazards.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Mom is anxious but composed; she has been a careful historian — wrote down vomiting episodes and diaper changes on a sticky note. Older sister is hovering in the doorway, mildly tearful. Mom: 'He just keeps sleeping. I can wake him up but then he just closes his eyes again.'</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Child looks small and limp on the bed; eyes appear sunken with dark circles</li><li>Lips and tongue look dry and tacky; no drool on the pillow</li><li>Skin tenting visible over the abdomen when mom lifts his shirt</li><li>Emesis bag in trash can with yellow-green bilious-looking residue</li><li>Half-full Pedialyte bottle on the dresser (mom has been trying)</li><li>Diaper bag with several unused diapers nearby — mom mentions she hasn't needed to change one in over 12 hours</li><li>Child rouses briefly to his name but immediately closes his eyes and turns his head away</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">Caleb is a previously healthy 5-year-old boy who started vomiting and having watery non-bloody diarrhea three days ago after his older sister came home with what mom calls 'the stomach bug.' For the first two days he was tolerating sips of Pedialyte and the occasional cracker. Yesterday afternoon he stopped wanting to drink anything and started 'sleeping all the time.' He has not had anything to eat or drink in roughly 18 hours per mom. He last urinated yesterday afternoon — diaper still dry at change a few hours ago. Mom says he 'just isn't acting like himself' and was hard to wake from his nap; she called 911 when his lips looked 'pale and his eyes looked sunken in.' He has had no fever measured at home today, no rash, no abdominal swelling, no blood in vomit or stool, no recent travel, no new foods, no medications other than children's acetaminophen 2 days ago for low-grade fever.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">NKDA</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Children's acetaminophen 160 mg/5 mL — last dose ~48 hours ago for low-grade fever</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Otherwise healthy, Full-term birth, no NICU stay, Immunizations up to date per mom</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Half a cup of Pedialyte yesterday around noon. Vomited it within 10 minutes. Nothing PO since.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Three-day viral gastroenteritis with vomiting and watery diarrhea, multiple episodes daily. Decreasing oral intake over the past 48 hours; no PO in last 18 hours. Decreasing urine output — last wet diaper &gt;12 hours ago. Today became progressively lethargic. Mom called 911 when child was difficult to rouse and 'eyes looked sunken.'</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">On arrival the crew finds a lethargic 5-year-old boy on his bed. From the doorway PAT: APPEARANCE — abnormal (decreased interactivity, sunken eyes, won't track or reach for mom); WORK OF BREATHING — increased rate but no retractions or abnormal sounds; CIRCULATION TO SKIN — pale, mottled at the knees. Hands-on findings: capillary refill ~4 seconds at the fingertips, dry tacky mucous membranes, tenting skin over the abdomen, weak distal pulses but strong central pulse, tachycardic. Mom hands over a detailed history (vomiting/diarrhea x3 days, no PO x18 hr, no urine output x12+ hr). The trap on this scenario is the blood pressure: 92/58 looks 'fine for age' (lower acceptable SBP per protocol at age 5 = 2×5+70 = 80 mmHg) and may reassure a crew that is otherwise looking at a textbook compensated pediatric shock picture. Pediatric patients compensate with tachycardia and vasoconstriction to the bitter end, then crash — hypotension is a LATE and ominous sign. The protocol calls this out explicitly.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">168</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">92/58</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">99%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">32</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">32</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">99.3°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">78</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">12</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-maintained. No secretions, no posturing.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous and regular with mildly increased rate. No retractions, no nasal flaring, lungs clear bilaterally. No abnormal sounds.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong central pulse at carotid/brachial; weak, thready distal radial pulses. Capillary refill ~4 seconds at the fingertips. Skin pale with mottling visible over the knees.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pale; mottled over knees and dependent areas · Cool peripherally, warm centrally · Dry — tenting visible over abdomen and forehead</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm bilaterally. No focal deficits.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all four extremities to stimulation but spontaneous movement is minimal. Tone slightly decreased. No focal weakness.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Whimpers and says 'Mama' softly when stimulated. Answers his name with a slow head-turn and closes his eyes again. Will not engage with crew or toys."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Pediatric Assessment Triangle: APPEARANCE abnormal (decreased interactivity, sunken eyes, decreased tone); WORK OF BREATHING normal-to-mildly elevated rate with no retractions; CIRCULATION TO SKIN pale with mottling</li><li>Sunken eyes with dark circles</li><li>Mucous membranes dry, tacky, no saliva pooling</li><li>Capillary refill 4 seconds at fingertips and toes</li><li>Skin tenting over abdomen and forehead</li><li>No bulging fontanelle (closed at age 5)</li><li>No abdominal distention; soft, non-tender, no organomegaly on gentle palpation</li><li>No rash, no petechiae, no purpura on exposed skin</li><li>No neck stiffness with passive movement</li><li>Mom: 'He hasn't peed since yesterday afternoon. His diaper has been dry every time I check.'</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Pediatric Assessment Triangle from doorway (appearance, WOB, circulation)</div></div>
+        <div class="action-excerpt">Exam: Airway/breathing (airway edema, rales, wheezing, pulse oximetry, respiratory rate); Circulation (heart rate, blood pressure, capillary refill); Abdomen (hepatomegaly); Mucous membrane hydration; Skin (turgor, rash); Neurologic (GCS, sensorimotor deficits)</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize compensated shock: tachycardia, cap refill &gt;3 sec, AMS, oliguria</div></div>
+        <div class="action-excerpt">Inclusion Criteria: Signs of poor perfusion (due to a medical cause) such as one or more of the following: Altered mental status; Delayed capillary refill (&gt; 3 seconds); Flash capillary refill (&gt; 1 second) seen in early septic shock; Decreased urine output; Respiratory rate greater than 20 breaths per minute in adults or elevated in children; Hypotension for age... Tachycardia or bradycardia for age, out of proportion to temperature; Weak, decreased or bounding pulses; Cool/mottled or flushed/ruddy skin</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize BP is misleading: peds compensate until late hypotensive collapse</div></div>
+        <div class="action-excerpt">Key Considerations: In most adults, tachycardia is the first sign of compensated shock, and may persist for hours. Tachycardia can be a late sign of shock in children and a tachycardic child may be close to cardiovascular collapse. Hypotension indicates uncompensated shock, which may progress to cardiopulmonary failure within minutes. Hypotension is a late and ominous sign in pediatric uncompensated shock</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Targeted history: fluid losses, PO intake, urine output, fever, sick contacts</div></div>
+        <div class="action-excerpt">History: History of GI bleeding; Cardiac problems; Stroke; Fever; Nausea/vomiting, diarrhea; Frequent or no urination; Syncopal episode; Allergic reaction; Immunocompromise (malignancy, transplant, asplenia); Adrenal insufficiency; Presence of a central line or port; Other risk of infection (spina bifida or other genitourinary anatomic abnormality); Overdose</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Full vital signs + cardiac monitor + SpO2 + EtCO2</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Check vital signs; Administer oxygen as appropriate with a target of achieving 94–98% saturation; Cardiac monitor; Pulse oximetry and EtCO2 (reading of less than 25 mmHg may be sign of poor perfusion)</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Check blood glucose (fingerstick); correct if &lt;60 mg/dL</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Check blood sugar, and correct if less than 60 mg/dL</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">IV access + first bolus</div>
+        <div class="phase-trigger">Trigger: Crew recognized compensated pediatric shock despite the misleadingly normal BP, established vascular access (peripheral IV after two attempts or proximal tibial IO per protocol), and initiated a weight-based crystalloid bolus.</div>
+        <div class="phase-desc">Crew has recognized compensated shock and moves on vascular access. Two IV attempts in the antecubital and hand fail due to peripheral vasoconstriction and small veins — per protocol, if vascular access is not obtained within 2 attempts or 90 seconds, place an IO. Crew either lands a small-bore peripheral IV on a second-look attempt at the saphenous vein OR proceeds to a proximal tibial IO. A 20 mL/kg bolus of 0.9% NS is calculated: 18 kg × 20 mL/kg = 360 mL, pressure-infused over &lt;15 minutes. Ondansetron is given for ongoing nausea. Glucose was 78 (normal), so no D10 needed. The child is reassessed in real time during the bolus.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">164</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">94/60</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">99%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">30</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">33</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">99.3°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">78</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">12</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-maintained.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous, RR slightly elevated, lungs clear, no retractions.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Tachycardic. Distal pulses still weak; central strong. Capillary refill 4 seconds. Skin still pale and mottled at knees.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pale, mottled at knees and shins · Cool peripherally · Dry mucous membranes; tenting still present over abdomen</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Minimal spontaneous movement. Withdraws to IV stick but does not pull away vigorously — appropriate for shock.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Soft whimper at IV stick; one word: 'no.' Returns to eyes-closed posture."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>First IV attempt L AC: vein collapses on stick, no flash</li><li>Second IV attempt R hand: small vein, blown after partial advance</li><li>Per protocol: 2 failed attempts → escalate to IO at proximal tibia (or operator may successfully obtain saphenous IV on next attempt)</li><li>0.9% NS pressure-bagged at 300 mmHg through 22 g peripheral or 15 mm EZ-IO</li><li>Glucose 78 mg/dL — above 60 threshold, no D10 needed</li><li>Mom holds his hand on the unaffected side; he doesn't react much to the IV — a quiet child is a sick child</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">IV access; if 2 attempts or 90 sec fail, place proximal tibial IO</div></div>
+        <div class="action-excerpt">Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">0.9% NS 360 mL IV/IO bolus (18 kg × 20 mL/kg) — pressure-infuse &lt;15 min</div></div>
+        <div class="action-excerpt">Pediatric: Physiologic targets: Systolic blood pressure at least fifth percentile for age, strong distal pulses, warm skin perfusion, capillary refill less than 2 seconds and improving mental status. Fluid goal of up to a total of 60 mL/kg or 1 liter of isotonic fluid by giving 20 mL/kg of isotonic fluid by administering rapid boluses (for cardiogenic shock give 10 mL/kg boluses)</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Ondansetron 2.7 mg IV (18 kg × 0.15 mg/kg = 2.7 mg; max 4 mg)</div></div>
+        <div class="action-excerpt">Ondansetron (contraindicated for suspected or known diagnosis of prolonged QT syndrome) Pediatric (6 months – 14 years old): 0.15 mg/kg IV/PO (maximum dose of 4 mg) OR 2 mg SL for ages 1–5 years old; age 6 and older use 4 mg of the ODT formulation</div>
+        <div class="action-ref">↳ MATC: Nausea-Vomiting</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Oxygen titrated to SpO2 94–98% (currently 99%, no O2 needed)</div></div>
+        <div class="action-excerpt">Administer oxygen as appropriate with a target of achieving 94–98% saturation</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Advance notification to receiving ED — pediatric shock, en route</div></div>
+        <div class="action-excerpt">Provide advanced notification to the hospital</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Responds to fluids</div>
+        <div class="phase-trigger">Trigger: After the first 360 mL bolus of 0.9% NS was pressure-infused over &lt;15 minutes, structured reassessment showed clinical improvement consistent with the protocol's pediatric resuscitation targets (HR trending down, capillary refill &lt;2 sec, improving mental status, strong distal pulses).</div>
+        <div class="phase-desc">After the first 360 mL bolus the child demonstrates clear positive response: HR drops from 168 to 144, capillary refill improves from 4 seconds to 2 seconds, mottling resolves, and he becomes more interactive — opens his eyes when his name is called, takes a sip of water from mom's straw cup without vomiting, and says 'I want my bear.' Pediatric resuscitation targets per protocol are met: strong distal pulses returning, warm skin perfusion improving, capillary refill &lt;2 sec, and improving mental status. Crew documents response, considers a second 20 mL/kg bolus if any criteria remain abnormal (cap refill, AMS, HR still elevated), and continues monitored transport with reassessment q5–15 minutes. Total fluid ceiling per protocol is 60 mL/kg or 1 liter, whichever comes first.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">144</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">98/62</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">99%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">26</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">99.3°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">82</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">14</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-protecting.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous, regular, RR normalizing, lungs clear.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong distal pulses, capillary refill 2 seconds, no mottling.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pink, no mottling · Warm throughout · Still mildly dry MM but no longer tenting; small amount of saliva returning</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all four extremities spontaneously; reaches for mom's hand and the stuffed bear.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"'I want my bear.' 'Where's mom?' 'I'm thirsty.' Age-appropriate, oriented to mom and surroundings."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Resuscitation targets met: capillary refill &lt;2 sec, warm skin perfusion, strong distal pulses, improving mental status</li><li>Bolus delivered: 360 mL 0.9% NS pressure-infused in ~10 minutes</li><li>Took 2 oz sips of water on the way out to the rig — held it down</li><li>Lung bases clear — no rales, no hepatomegaly, no signs of fluid overload</li><li>Reassessment q5–15 min planned during transport</li><li>Mom visibly relieved; child says 'I'm thirsty'</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess full vital signs + perfusion markers post-bolus</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Full vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) with reassessment q 15 minutes or more frequently as appropriate</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Consider second 360 mL bolus if any target unmet (ceiling 60 mL/kg = 1080 mL)</div></div>
+        <div class="action-excerpt">Pediatric: Fluid goal of up to a total of 60 mL/kg or 1 liter of isotonic fluid by giving 20 mL/kg of isotonic fluid by administering rapid boluses (for cardiogenic shock give 10 mL/kg boluses)</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Auscultate lungs, check for hepatomegaly between boluses</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Recognition of cardiogenic shock - If the patient condition deteriorates after fluid administration, rales or hepatomegaly develop, then consider cardiogenic shock and withholding further fluid administration</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continue transport; reassess vitals + mental status q5–15 min; document</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Medications administered; Full vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment) with reassessment q 15 minutes or more frequently as appropriate; Lactate level (if available); Neurologic status assessment; Amount of fluids given</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Reassured by BP, no fluids</div>
+        <div class="phase-trigger">Trigger: Crew was falsely reassured by a 'normal-for-age' BP of 92/58 in the face of clear compensated-shock criteria (tachycardia 168, capillary refill 4 sec, AMS, oliguria, dry mucous membranes, mottled skin). They forwent IV access and fluid resuscitation. Mid-transport the patient transitioned from compensated to decompensated shock, which in peds is sudden and severe.</div>
+        <div class="phase-desc">Crew sees BP 92/58 and decides the child is 'sick but stable.' They place a non-rebreather, get a perfunctory set of vitals, and load for routine transport WITHOUT establishing IV access, WITHOUT giving a fluid bolus, and WITHOUT advance notification. Tachycardia is dismissed as 'fever' or 'crying.' Roughly 6–8 minutes into transport — exactly the pediatric pattern — the child crashes. He stops responding even to painful stimulus, BP drops precipitously to 64/40, HR climbs further then becomes irregular, and capillary refill is now &gt;5 seconds with mottling to mid-thigh. Crew is now scrambling for IO access in a moving rig under far worse conditions than they had on scene. This phase is the demonstration of why a 'normal' BP in a tachycardic, mottled, oliguric child is NOT reassuring — it is the calm before the cliff.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">188</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">64/40</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">92%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">12</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">22</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">99°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">62</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg sel-p">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To pain</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Incomprehensible sounds</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Withdraws from pain</span><span class="gcs-score">4</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">8</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent but no longer self-protecting reliably; pooled saliva, no gag with suction probe.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Shallow, irregular, RR 12 — slowing from the previous 32. Lungs clear.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Central pulse present but weak; no palpable distal pulses; capillary refill &gt;5 seconds. Mottling extends to mid-thigh.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Gray-pale with deep mottling on legs and abdomen · Cold to elbows and knees · Mottled and cool</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 4 mm, slightly sluggish.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Withdraws weakly to deep pain only; no spontaneous movement.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Moans only. No words. No response to mom's voice."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Patient crashed ~6–8 minutes into transport in the rig</li><li>Mom is now crying in the captain's chair: 'What's wrong?! He was just sleepy!'</li><li>Crew now attempting IO in a moving ambulance — proximal tibia, EZ-IO, on a wobbling stretcher</li><li>Pressure-bag NS being rigged on the fly; setup is rushed and chaotic</li><li>First IO attempt: operator unfamiliar with peds landmarks, hits growth plate territory — second attempt needed</li><li>Advance ED notification finally going out — should have gone out 15 minutes ago</li><li>Glucose now 62 mg/dL on recheck (was 78) — drifted toward hypoglycemia under stress</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize decompensated shock; declare and reset priorities</div></div>
+        <div class="action-excerpt">Key Considerations: Hypotension indicates uncompensated shock, which may progress to cardiopulmonary failure within minutes. Hypotension is a late and ominous sign in pediatric uncompensated shock</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Immediate proximal tibial IO — do not chase peripheral IV</div></div>
+        <div class="action-excerpt">Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">0.9% NS 360 mL IO bolus (18 × 20 = 360 mL); pressure-bag; repeat to 1080 mL max</div></div>
+        <div class="action-excerpt">Pediatric: Fluid goal of up to a total of 60 mL/kg or 1 liter of isotonic fluid by giving 20 mL/kg of isotonic fluid by administering rapid boluses (for cardiogenic shock give 10 mL/kg boluses)</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Recheck glucose; correct if &lt;60 mg/dL per protocol</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Check blood sugar, and correct if less than 60 mg/dL</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Airway support: position, suction, BVM if RR or SpO2 drops</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Administer oxygen as appropriate with a target of achieving 94–98% saturation</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Upgrade to emergent; ED notification — peds shock crashing en route</div></div>
+        <div class="action-excerpt">Provide advanced notification to the hospital</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

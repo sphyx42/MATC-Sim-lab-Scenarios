@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Foreign Body Airway Obstruction, Progressing — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Foreign Body Airway Obstruction, Progressing</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Mateo Alvarez</strong></span><span class="patient-chip">2 years male</span><span class="patient-chip">26 lbs (12 kg)</span><span class="patient-chip">2'10"</span><span class="patient-chip">CC: Witnessed choking on a grape ~5 minutes ago. Bystander back blows produced a forceful cough and pinking up, but child still has audible inspiratory stridor, mild retractions, and is in distress.</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Dispatch: 2-year-old male, possible choking, swallowed something at lunch, parents say he's breathing but making noise. Single-family home.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Single-family home, kitchen and adjacent living room. Toddler in mother's lap on the couch in the living room. High chair pushed back from the kitchen table; plate with cut cheese, crackers, and a small bowl of whole green grapes visible.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Saturday, 12:35, sunny afternoon</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. Mother is anxious but oriented and able to give a clear history. Older sibling (4) is present and calm with a family friend who answered the door.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Mother — witness to the event, performed back blows. Reports she did NOT see any grape or grape fragment come out of his mouth. Family friend present, able to help with the older sibling so EMS can focus on the patient.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Toddler upright in mother's lap, leaning slightly forward, alert but tearful</li><li>Audible inspiratory stridor from across the room — high-pitched, on inhalation only</li><li>Mild intercostal and suprasternal retractions; nasal flaring intermittent</li><li>Crying is weak and breathy — not a full forceful cry</li><li>Color pink — face, lips, fingertips — perioral area NOT cyanotic</li><li>Bowl of whole green grapes on the kitchen table; plate of remaining lunch nearby</li><li>No drooling, no tripoding, no facial swelling, no urticaria — this is mechanical, not anaphylaxis or croup</li><li>Mother is teary but cooperative; keeps asking 'is the grape still in there?'</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">Previously healthy 2-year-old boy who was eating lunch with his mother and 4-year-old sister at home. Mother witnessed the toddler put a whole green grape in his mouth, immediately clutch his throat, stop making sound, and turn red. She placed him face-down across her forearm and delivered 4-5 firm back blows. After the third blow he gave a single forceful cough, pink color returned to his face, and he began to cry weakly. He has NOT been seen to spit out a grape or piece of grape. Since then — approximately 4 minutes — he has remained in his mother's arms with persistent audible inspiratory stridor, mild intercostal and suprasternal retractions, and weak intermittent crying. He is tracking with his eyes and reaching for her, but has not returned to baseline play. No fever, no preceding URI symptoms, no rash, no vomiting. He has no prior history of choking, croup, or reactive airway disease. The mechanism (witnessed whole-grape aspiration, partial clearance with effective cough now but persistent stridor) is classic for a partially obstructing supraglottic foreign body that can convert to complete obstruction at any moment.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">NKDA</div></div>
+        
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Healthy, full-term delivery, Up to date on immunizations, No prior choking, croup, asthma, or reactive airway disease</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Lunch in progress — grapes, cheese cubes, crackers — choking event occurred mid-meal approximately 5 minutes ago</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Toddler eating whole grapes at lunch → witnessed choking, silent and red → mother performed back blows → forceful cough and color returned → persistent inspiratory stridor, mild retractions, weak crying → mother called 911.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">EMS arrives to a 2-year-old, ~12 kg, who choked on a whole green grape approximately 5 minutes ago. Mother's back blows produced a forceful cough and pinking up, but the child has persistent audible inspiratory stridor, mild retractions, and weak crying. He is alert, pink (not cyanotic), tracking, and able to cry — this is a PARTIAL airway obstruction with an EFFECTIVE cough. The Tier 2 teaching point: when the child has an effective cough, the right answer is to ENCOURAGE the cough and NOT intervene mechanically. Sit the child upright in the caregiver's lap, offer blow-by oxygen, keep suction / Magill forceps / direct laryngoscopy / BVM at hand, and transport without delay — partial obstruction can convert to complete obstruction without warning.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">152</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">96/58</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">92%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">38</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">102</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">14</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent but partially obstructed — high-pitched inspiratory stridor audible across the room; able to phonate (weak cry); no drooling, no tongue/lip swelling, no tripoding</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 38, mild intercostal and suprasternal retractions, intermittent nasal flaring; air movement present bilaterally with transmitted upper-airway sounds; no wheezing on lower-airway auscultation</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR 152, strong radial and brachial pulses, warm pink extremities, cap refill &lt; 2 sec</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink — face, lips, fingertips; NOT cyanotic · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal at 4 mm, briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Spontaneous symmetric movement; reaches for mother; localizes</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Weak, breathy crying; calls 'mama' between coughs"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>High-pitched inspiratory stridor — hallmark of a supraglottic/glottic partial obstruction</li><li>Crying is weak and breathy but PRESENT — a forceful cry/cough indicates an effective cough</li><li>No cyanosis, no drooling, no tripoding, no urticaria</li><li>Mild retractions only — not severe; no head-bobbing, no grunting</li><li>Mother reports back blows produced a forceful cough and color return</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize partial FBAO with effective cough (stridor + pink + crying = DO NOT intervene mechanically)</div></div>
+        <div class="action-excerpt">Physical Examination – Assess for: Ability to speak words/sentences; Quality of air exchange, including depth of respiration and equality of breath sounds; Abnormal breath sounds (e.g., wheezing, rhonchi, rales, or stridor); Cough; Skin color (cyanosis or pallor), presence of diaphoresis; Mental status, including anxiety; Airway obstruction with foreign body or swelling (e.g., angioedema, posterior pharyngeal and laryngeal infections). Inclusion Criteria: Patients with acute foreign body airway obstruction.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Sit child upright in caregiver's lap; do NOT force supine — position of comfort</div></div>
+        <div class="action-excerpt">Patient positioning can significantly impact respiratory mechanics. Patients with severe bronchospasm should be left in the position of comfort (perhaps tripod) whenever possible. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics. This can both improve the ability to ventilate and limit aspiration.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Blow-by O2 via NC or mask held near face — titrate to SpO2 94-98%, do not agitate</div></div>
+        <div class="action-excerpt">Administer oxygen if needed for air hunger or respiratory distress and titrate to a target SPO2 of 94–98%. Depending on patient presentation, this may be accomplished with nasal cannula, nonrebreather, BVM, NIV.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Encourage continued coughing; AVOID blind finger sweeps and back blows while cough is effective</div></div>
+        <div class="action-excerpt">Generally, the approach is to implement the interventions below in an escalating fashion to meet the patient care goals above. Open and maintain patent airway. If needed, Provide head tilt/chin lift, or jaw thrust if concern for potential spinal injury; Suction airway: for significantly contaminated airways, consider utilizing a suction assisted laryngeal airway decontamination (SALAD) technique.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Pre-stage suction, peds BVM, peds Magill forceps, and DL/VL — be ready for complete obstruction</div></div>
+        <div class="action-excerpt">Orotracheal/Endotracheal intubation (ETI): Checklist use and use of protocolized interventions to optimize the patient physically and physiologically have been shown to both improve success rates of orotracheal intubation as well as decrease peri-intubation complications. Preparation should also include a promptly available plan for alternate airway placement if ETI unsuccessful. Suctioning to limit aspiration is a priority, since it is associated with development of hospital acquired pneumonia and related increases in ICU stay and mortality.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Size peds equipment to 12 kg / 2 yr: cuffed ETT 3.5-4.0 (formula 2/4+3.5=4.0), depth ~12 cm, peds Magill, peds BVM, peds suction</div></div>
+        <div class="action-excerpt">Pediatric airway management requires appropriately sized tools and adjuncts based on patient size/age. A method for determining appropriate sizing should be available to all EMS clinicians. Endotracheal tube sizes (cuffed tubes preferred in pediatrics): 15–24 months: Uncuffed 4.5 / Cuffed 3.5. 2–15 years: Uncuffed [age(yrs.)/4]+4 / Cuffed [age(yrs.)/4]+3.5. Approximate depth of insertion = (3) x (endotracheal tube size).</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continuous SpO2 + waveform EtCO2 + cardiac monitor (peds pads pre-placed)</div></div>
+        <div class="action-excerpt">Patients with significant respiratory distress should have continuous pulse oximetry and waveform capnography monitoring for both assessment and for guiding therapy. Pulse oximetry is indicated to assess oxygenation.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Rapid transport, child in caregiver's arms upright; do not delay on scene for IV</div></div>
+        <div class="action-excerpt">Transport to the closest appropriate hospital for airway stabilization when respiratory failure cannot be successfully managed in the prehospital setting.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Complete obstruction en route</div>
+        <div class="phase-trigger">Trigger: Default-path patient on rapid transport, properly assessed and pre-staged; ~4-5 minutes in he suddenly silences, cyanoses perioral, and goes limp — partial FBAO has converted to complete FBAO. SpO2 78%, HR still 148, no air movement, no cry, no cough.</div>
+        <div class="phase-desc">Approximately 4-5 minutes into transport, the child suddenly stops crying, becomes silent, develops perioral cyanosis, and goes limp in his mother's arms. The grape has migrated; the partial obstruction has converted to a complete obstruction. SpO2 drops to 78% and falling, HR remains 148 (not yet bradycardic), no spontaneous respirations effective, no audible stridor, no cough. The child is still perfusing but rapidly hypoxic — this is the BLS-priority window: while the child remains conscious enough to retain muscle tone, deliver abdominal thrusts (Heimlich) as the age-appropriate maneuver for FBAO in a child &gt;1 year. If the child goes unconscious or already has, the sequence converts to chest compressions (which generate intrathoracic pressure that can dislodge the foreign body) with airway look-and-retrieve only when the foreign body is visualized.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">148</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">88/52</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">78%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">6</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">18</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">102</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg sel-p">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To pain</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Incomprehensible sounds</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Withdraws from pain</span><span class="gcs-score">4</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">8</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Completely obstructed — no audible air movement, no stridor (no airflow to make stridor), no cry, no cough; jaw thrust opens airway but reveals nothing on visual inspection from outside</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic effort — chest rises with effort but no air entry on auscultation; no chest rise on attempted BVM ventilation with good seal (high resistance, no compliance)</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR 148, perfusing — central pulse present, brachial pulse palpable, cap refill 3 sec, color now mottled centrally</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">perioral cyanosis, central mottling, peripheries dusky · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal at 4 mm, reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Limp; minimal withdrawal to stimulus</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Silent."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Sudden silencing — was crying weakly, now no sound at all</li><li>Perioral and peripheral cyanosis evolving</li><li>BVM attempt with two-person seal yields NO chest rise — confirms complete obstruction</li><li>No spontaneous cough generated</li><li>Mother visibly panicking</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize complete FBAO — silent, no cough, no chest rise on BVM = mechanical intervention NOW</div></div>
+        <div class="action-excerpt">Physical Examination – Assess for: Quality of air exchange, including depth of respiration and equality of breath sounds; Abnormal breath sounds (e.g., wheezing, rhonchi, rales, or stridor); Cough; Skin color (cyanosis or pallor), presence of diaphoresis; Mental status, including anxiety; Airway obstruction with foreign body or swelling.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Communicate to driver — slow / pull over for resuscitation; stop-and-resuscitate decision</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Performing manual chest compressions in a moving vehicle may pose a clinician safety concern. In addition, manual chest compressions during patient movement are less effective in regard to hands on time, depth, recoil and rate. Ideally, patients should be resuscitated as close to the scene as operationally possible. Risks and benefits should be considered before patient movement in cardiac arrest situations.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Two-person, two-thumbs-up BVM attempt — confirms complete obstruction if no chest rise despite good seal</div></div>
+        <div class="action-excerpt">Use bag-valve-mask (BVM) ventilation in the setting of respiratory failure or arrest. Whenever possible, the patient's head should be elevated up to 30 degrees. Two-person, two-thumbs-up BVM ventilation is preferred.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Direct laryngoscopy + peds Magill forceps; remove FB ONLY if visualized; do NOT sweep blindly</div></div>
+        <div class="action-excerpt">A bougie may be a helpful adjunct to successful airway placement, especially when video laryngoscopy is unavailable and the glottic opening is difficult to visualize with direct laryngoscopy. For experienced EMS clinicians, video laryngoscopy may enhance intubation success rates and should be used when available. Suctioning to limit aspiration is a priority, since it is associated with development of hospital acquired pneumonia and related increases in ICU stay and mortality.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">If unresponsive and not perfusing → start peds CPR 15:2 (two-rescuer), compressions 100-120/min, depth ~4 cm (1.5 in)</div></div>
+        <div class="action-excerpt">Pediatric Consideration: For multiple rescuer CPR in children, 15:2 is the recommended compression-to-ventilation ratio (30:2 for single rescuer). Effective chest compressions are defined as: A rate of greater than 100 and less than 120 compressions/minute; Depth of at least 2 inches (5 cm) and less than 2.4 inches (6 cm) for adults and children or 1.5 inches (4 cm) for infants.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">After FB removed — BVM 20-30/min (child rate), one breath over 1 sec with 2-sec pause; target SpO2 94-98%, EtCO2 35-45</div></div>
+        <div class="action-excerpt">Pediatric – infant/child: Support spontaneous respirations if the patient is hypoventilating. For apnea, provide 1 breath every 2–3 seconds adjusting based on pulse oximetry and digital capnometry or capnography (with the goal of 35–45 mmHg). Rate Child: 20–30 breaths/minute. In children, ventilating breaths should be delivered over one second, with a two second pause between breaths.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Do NOT perform blind finger sweep — only remove FB if VISUALIZED on DL/VL</div></div>
+        <div class="action-excerpt">Patient Care Goals: Maintain a patent airway; Provide effective oxygenation and adequate ventilation using the least invasive possible method to achieve those goals paired with pulse oximetry and end-tidal capnography (EtCO2) data; Anticipate, recognize, and alleviate respiratory distress; Provide necessary interventions quickly and safely to patients with the need for respiratory support.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">FB removed, improving</div>
+        <div class="phase-trigger">Trigger: After two-person BVM confirmed complete obstruction (no chest rise), crew performed direct laryngoscopy, visualized the grape, and removed it with peds Magill forceps. BVM ventilation now produces chest rise; SpO2 climbs; child resumes spontaneous breathing and weak crying.</div>
+        <div class="phase-desc">Direct laryngoscopy revealed the whole green grape lodged at the glottic inlet. Crew retrieved it with peds Magill forceps under direct visualization. Two-person BVM now produces good bilateral chest rise; SpO2 climbs from 78% to 96% over 30-60 seconds; EtCO2 normalizes to 38; child grimaces, begins to cry weakly, then more strongly. Color returns. This phase is the post-clearance reassessment and continued transport — the airway is patent but the child has had a significant hypoxic insult and remains at risk for laryngospasm, secondary aspiration of remaining grape fragments, or post-obstructive pulmonary edema.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">144</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">94/56</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">96%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">36</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">102</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Inappropriate words</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">11</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent — no audible stridor; weak crying audible; no drooling, no swelling</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">RR 36 spontaneous, mild residual retractions, bilateral breath sounds clear, no wheezing, no stridor; BVM-assist available if RR or effort drops</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR 144, strong radial and brachial pulses, warm pink extremities, cap refill &lt; 2 sec</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink — cyanosis resolved · warm · slightly diaphoretic from the event</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal at 4 mm, briskly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Spontaneous symmetric movement returning; reaches for mother weakly</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Weak crying, calls 'mama'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Whole grape retrieved on Magill forceps — single piece, ~2 cm, intact</li><li>Two-person BVM produces good bilateral chest rise (in contrast to flat resistance previously)</li><li>SpO2 trend: 78 → 88 → 94 → 96 over ~60 seconds</li><li>Child grimaces, begins to cry weakly, then audibly louder</li><li>No evidence of post-obstructive pulmonary edema (no crackles, no pink frothy sputum) — reassess every 2-3 minutes</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess airway, breathing, mental status after FB removal — bilateral breath sounds, chest rise, SpO2/EtCO2 trend</div></div>
+        <div class="action-excerpt">Pertinent Assessment Findings: Ongoing assessment is critical when an airway device is in place. Acute worsening of respiratory status or evidence of hypoxemia can be secondary to displacement or obstruction of the airway device, pneumothorax, or equipment failure.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continue BVM-assist PRN if hypoventilating; peds rate 20-30/min, one breath over 1 sec, 2-sec pause; titrate to EtCO2 35-45</div></div>
+        <div class="action-excerpt">In children, ventilating breaths should be delivered over one second, with a two second pause between breaths. Pediatric – infant/child: Support spontaneous respirations if the patient is hypoventilating. For apnea, provide 1 breath every 2–3 seconds adjusting based on pulse oximetry and digital capnometry or capnography (with the goal of 35–45 mmHg).</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Supplemental O2 (NC, simple mask, or blow-by) — target SpO2 94-98%, do not over-oxygenate</div></div>
+        <div class="action-excerpt">Administer oxygen if needed for air hunger or respiratory distress and titrate to a target SPO2 of 94–98%. Depending on patient presentation, this may be accomplished with nasal cannula, nonrebreather, BVM, NIV. Oxygen is a drug with an appropriate dose range and undesirable effects from both too much and too little supplementation.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continuous SpO2 + waveform EtCO2 + cardiac monitor; watch for laryngospasm, post-obstructive pulmonary edema, re-aspiration</div></div>
+        <div class="action-excerpt">Patients with significant respiratory distress should have continuous pulse oximetry and waveform capnography monitoring for both assessment and for guiding therapy. In spontaneously breathing patients, waveform capnography can help with assessment of critically ill patients, for example: assessment of adequacy of ventilation and change in ventilatory status in response to treatment.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Transport to pediatric-capable ED; early notification of FBAO requiring DL/Magill retrieval</div></div>
+        <div class="action-excerpt">Transport to the closest appropriate hospital for airway stabilization when respiratory failure cannot be successfully managed in the prehospital setting.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Blind sweep — partial converted to complete</div>
+        <div class="phase-trigger">Trigger: During the initial-contact phase, crew elected to perform a blind finger sweep on a child who had an effective cough. The sweep did not retrieve the grape; it advanced it from supraglottic to glottic, converting a partial obstruction into a complete one. The child immediately lost his cough, became silent, and developed cyanosis.</div>
+        <div class="phase-desc">Crew anchored on 'must remove the foreign body now,' separated the toddler from his mother, laid him supine on the couch, and performed a blind finger sweep. The finger did not retrieve the grape — instead it pushed the grape from a partially obstructing supraglottic position into a completely obstructing glottic position. Within seconds the child silences, cyanoses, and goes limp. This is an iatrogenic complete obstruction and the recovery path requires the same BLS-airway sequence as the default-path complete-obstruction phase: two-person BVM to confirm, direct laryngoscopy + peds Magill, and chest compressions if unresponsive.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">156</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">84/50</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">72%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">4</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">14</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">102</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg sel-p">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To pain</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Incomprehensible sounds</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Withdraws from pain</span><span class="gcs-score">4</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">8</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Completely obstructed iatrogenically — no air movement, no stridor, no cry; grape now visualized at glottic inlet on DL but inaccessible without forceps</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic effort, no air entry on auscultation, no chest rise on BVM attempt with good seal</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR 156, perfusing — central pulse present, cap refill 3 sec, peripheries dusky</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">perioral and peripheral cyanosis evolving · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Equal at 4 mm, reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Limp; minimal withdrawal</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Silent."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Sudden silencing immediately after sweep attempt</li><li>BVM with good seal yields NO chest rise — high resistance</li><li>Mother visibly distressed; instructor/preceptor opportunity to debrief decision</li><li>Same recovery sequence as default-path 'complete obstruction' applies</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Name the error — blind sweep on effective-cough child converted partial to complete; resume escalating airway protocol</div></div>
+        <div class="action-excerpt">Patient Care Goals: Maintain a patent airway; Provide effective oxygenation and adequate ventilation using the least invasive possible method to achieve those goals. Generally, the approach is to implement the interventions below in an escalating fashion to meet the patient care goals above.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Two-person, two-thumbs-up BVM — confirms ongoing complete obstruction (no chest rise)</div></div>
+        <div class="action-excerpt">Use bag-valve-mask (BVM) ventilation in the setting of respiratory failure or arrest. Whenever possible, the patient's head should be elevated up to 30 degrees. Two-person, two-thumbs-up BVM ventilation is preferred.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Direct laryngoscopy + peds Magill forceps; remove FB only under direct visualization</div></div>
+        <div class="action-excerpt">Orotracheal/Endotracheal intubation (ETI): Checklist use and use of protocolized interventions to optimize the patient physically and physiologically have been shown to both improve success rates of orotracheal intubation as well as decrease peri-intubation complications. Preparation should also include a promptly available plan for alternate airway placement if ETI unsuccessful. Video laryngoscopy may be a useful tool for endotracheal intubation in the hands of a practiced clinician.</div>
+        <div class="action-ref">↳ MATC: Airway Management (Includes RSI)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">If becomes pulseless or severely bradycardic → start peds CPR 15:2 (two-rescuer), 100-120/min, ~4 cm depth; compressions help dislodge FB</div></div>
+        <div class="action-excerpt">Pediatric Consideration: For multiple rescuer CPR in children, 15:2 is the recommended compression-to-ventilation ratio (30:2 for single rescuer). Effective chest compressions are defined as: A rate of greater than 100 and less than 120 compressions/minute; Depth of at least 2 inches (5 cm) and less than 2.4 inches (6 cm) for adults and children or 1.5 inches (4 cm) for infants.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Decompensation to pediatric arrest</div>
+        <div class="phase-trigger">Trigger: Complete obstruction was not relieved — either because the crew stalled in the default 'complete-obstruction en-route' phase, or because the iatrogenic blind-sweep branch was followed by continued mechanical fixation without DL/Magill. Hypoxia drove bradycardia, then asystole. Patient is now pulseless.</div>
+        <div class="phase-desc">Complete obstruction was not relieved. Hypoxia has now produced bradycardia and pulselessness — this is a pediatric respiratory-etiology cardiac arrest from FBAO. Rhythm on the monitor is bradycardic-to-PEA / asystole-trending. Survival depends on immediate high-quality 15:2 CPR with the airway managed in parallel (direct laryngoscopy + peds Magill if FB visualized), epinephrine 0.1 mg/kg IV/IO (max 1 mg) per the cardiac arrest protocol, and ongoing reversible-cause search (the H — Hypoxia — is the proximate cause and must be reversed by clearing the foreign body).</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Asystole</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">0</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">0</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">12</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.6°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">102</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Completely obstructed by grape at the glottic inlet — no air movement</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic; chest rise only with compressions and BVM attempts</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulseless — no central pulse, no peripheral pulse, no spontaneous cardiac activity beyond agonal PEA</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">central cyanosis; mottled / dusky · warm to cool · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Dilated 5-6 mm, sluggishly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Unresponsive."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Pediatric respiratory-etiology cardiac arrest — proximate H is hypoxia from FBAO</li><li>Rhythm on monitor: bradycardia transitioning to asystole / PEA</li><li>Mother actively grieving on scene — keep family liaison in place</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">High-quality peds CPR 15:2 (two-rescuer), 100-120/min, depth ~4 cm (1.5 in for infants / ~5 cm for older children), full recoil</div></div>
+        <div class="action-excerpt">Pediatric Consideration: For multiple rescuer CPR in children, 15:2 is the recommended compression-to-ventilation ratio (30:2 for single rescuer). Effective chest compressions are defined as: A rate of greater than 100 and less than 120 compressions/minute; Depth of at least 2 inches (5 cm) and less than 2.4 inches (6 cm) for adults and children or 1.5 inches (4 cm) for infants; Allow for complete chest recoil (avoid leaning); Minimize interruptions in compressions; Avoid rescuer fatigue by rotating rescuers at least every 2 minutes.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Direct laryngoscopy + peds Magill — remove the grape under visualization NOW (this is the reversible cause)</div></div>
+        <div class="action-excerpt">Consider reversible causes of cardiac arrest which include the following: Hypothermia; The dialysis patient/known hyperkalemic patient; Tricyclic antidepressant overdose; Hypovolemia; If the patient is intubated at the time of arrest, assess for tension pneumothorax and misplaced ETT.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Epinephrine 0.12 mg IV/IO (12 kg × 0.01 mg/kg = 0.12 mg; max single dose 1 mg) of 0.1 mg/mL (1:10,000); repeat q3-5 min, prioritize early for non-shockable</div></div>
+        <div class="action-excerpt">Administer epinephrine (0.1 mg/kg, maximum dose 1 mg) IV/IO during the first or second round of compressions. If feasible, IV or IO access should be obtained. Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">IO access — proximal tibia (peds preferred site); do not interrupt compressions for access</div></div>
+        <div class="action-excerpt">Additional rescuer obtains IO (or IV) access and gives epinephrine. For IO access: The proximal humerus is the preferred site for adults; The tibial site is preferred for infants and children. IO or IV access without interrupting chest compressions.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Respiratory-etiology arrest — manage airway early (DL+Magill + BVM 20-30/min), no passive ventilation</div></div>
+        <div class="action-excerpt">Arrests of respiratory etiology (including drowning). In addition to the above, consider early management of the patient's airway. Passive ventilation with a NRB is not indicated for these patients. Pediatric Considerations: Special attention should be applied to the pediatric population and airway management/respiratory support. Given that the most likely cause of cardiac arrest is respiratory, airway management may be considered early in the patient's care.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continuous waveform EtCO2 — guide CPR quality (target &gt;10 mmHg), watch for ROSC (sudden EtCO2 rise of 10-15)</div></div>
+        <div class="action-excerpt">Quantitative end-tidal capnography (EtCO2) should be used to monitor effectiveness of chest compressions. If EtCO2 less than 10 mmHg during the initial phases of resuscitation, attempt to improve chest compression quality. Continuous waveform capnography is strongly encouraged in patients in cardiac arrest: to monitor quality of CPR; as an early indicator of ROSC (rapid increase of 10–15 in EtCO2); to assist in evaluating prognosis for survival.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

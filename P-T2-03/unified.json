@@ -1,0 +1,580 @@
+{
+  "meta": {
+    "id": "P-T2-03",
+    "name": "Pediatric SVT",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Pediatric",
+    "protocols": [
+      "cv-tachycardia"
+    ],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "pediatric",
+      "SVT",
+      "supraventricular tachycardia",
+      "adenosine",
+      "vagal maneuvers",
+      "ice-to-face",
+      "weight-based dosing",
+      "synchronized cardioversion",
+      "infant",
+      "tier-2",
+      "decision-dense",
+      "competing-priorities",
+      "stable-vs-unstable"
+    ]
+  },
+  "patient": {
+    "name": "Mia Chen",
+    "age": 8,
+    "ageUnit": "months",
+    "sex": "female",
+    "weight": 8,
+    "weightLbs": 18,
+    "height": 70,
+    "chiefComplaint": "8-month-old female, mom says she has been 'breathing fast and looking pale' and 'won't take a bottle' for the past 4 hours. Mom describes the baby as 'fussy at first, then just quiet and not herself.' Baby is awake but flat-affect, pale, breathing rapidly, with a heart rate too fast to count.",
+    "history": {
+      "hpi": "8-month-old previously healthy female, full-term, no significant past medical history, brought to her aunt's apartment by mom around midday for a family visit. About 4 hours prior to the 911 call, mom noticed the baby was 'breathing funny' and refused her usual midday bottle — only took about half an ounce before pulling off and crying. She was initially fussy but became quieter and 'just laid there' over the next two hours. Mom states the baby is normally vigorous and feeds 6–8 oz every 3–4 hours. No fever, no vomiting, no diarrhea, no rash, no recent illness in the household, no known sick contacts, no choking event, no foreign body ingestion witnessed, no trauma, no falls. No known cardiac history; mom denies any family history of sudden cardiac death, congenital heart disease, or arrhythmias. The baby was born full-term via uncomplicated vaginal delivery, no NICU stay, all newborn screening was normal, immunizations are up to date. Mom became progressively alarmed over the past hour as the baby grew paler, breathing faster, and 'feeling cold' to her touch. She called 911 when the baby would not look at her and 'her chest was going so fast you could see it through her onesie.'",
+      "pastMedical": [
+        "Full-term healthy infant — no chronic conditions",
+        "Immunizations up to date for 8-month wellness visit",
+        "No prior hospitalizations or surgeries"
+      ],
+      "medications": [
+        "Vitamin D drops 400 IU PO daily",
+        "No other prescribed or over-the-counter medications"
+      ],
+      "allergies": [
+        "NKDA"
+      ],
+      "lastOralIntake": "Breast milk and a small amount of pureed banana at 08:30 this morning. Refused the noon bottle (only took 0.5 oz). Last wet diaper approximately 5 hours ago.",
+      "events": "Approximately 4 hours of poor feeding, tachypnea, and pallor in a previously well 8-month-old. Mom describes abrupt onset — 'one minute she was playing, the next she was just breathing too fast.' Progressive lethargy, decreased interactivity, cool extremities. No fever, no vomiting, no preceding URI, no trauma."
+    }
+  },
+  "scene": {
+    "dispatch": "Dispatch: 8-month-old female, breathing funny, won't eat, mom says she looks pale and her heart is racing. Second-floor apartment, mom on scene with the baby and one other adult.",
+    "location": "Small second-floor apartment in a four-unit walk-up building. Living room with a couch, infant play mat on the floor, and a folded stroller by the door. The baby is on the couch on top of a thin blanket. Living-room light is on; afternoon sun through the front window.",
+    "time": "Tuesday, 13:18, early afternoon, mild spring weather, dry pavement, no wind",
+    "safety": "Scene safe. Walk-up stairs are clear. Two adult occupants — mom and her sister. No pets. Apartment is well-kept and uncluttered. Stair carry will be needed for transport.",
+    "bystanders": "Mom (29) is on scene, holding herself together but visibly anxious and asking 'is she going to be okay?' repeatedly. She is a reliable historian and will produce the baby's wellness-visit paperwork from a folder on the bookshelf when asked. Mom's sister (aunt, 32) is also present and helpful — she will move furniture, fetch the diaper bag, and hold the door for the stair carry. No other children in the apartment.",
+    "visualCues": [
+      "Infant lying flat on the couch in a pink onesie — chest rising visibly and rapidly under the fabric",
+      "Pale skin — mottled pattern across the cheeks and forehead, lips dusky-pink",
+      "Eyes open but flat, tracks slowly toward voices, weak cry when stimulated",
+      "Cool hands and feet to touch; capillary refill visibly delayed when pressed on the forearm",
+      "Anterior fontanel flat and soft — not bulging, not sunken",
+      "Half-full 4-oz bottle on the side table, contents barely touched",
+      "Mom hovering at the baby's head, sister standing at the foot of the couch with the diaper bag",
+      "No vomit, no diaper changes within reach, no obvious source of illness in the room",
+      "No mottling on the trunk; mottling only on the extremities",
+      "Mom keeps saying 'her heart is going so fast, you can see it'"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find an 8-month-old, ~8 kg / 18 lb female on the couch in a pink onesie. She is pale, flat-affect, tracking slowly, with cool extremities and a visibly delayed capillary refill of 3 seconds. Breathing is fast and shallow at RR 60. The radial and brachial pulse are too rapid to count manually. Mom reports 4 hours of poor feeding, pallor, and progressive lethargy in a previously healthy infant. On the monitor: narrow-complex regular tachycardia at HR 252 with no discernible P-waves — classic SVT for the infant age group (rate ≥220 with abrupt onset distinguishes SVT from sinus tachycardia). BP 80/52 (low-normal for age, but borderline given the clinical picture), SpO2 97% on room air, anterior fontanel flat. The student must perform the stable-vs-unstable judgment call: poor feeding + pallor + delayed cap refill + lethargy = SIGNS OF INSTABILITY but not yet decompensated shock. Pediatric SVT protocol: vagal maneuvers AGE-APPROPRIATE first (ice/cold pack to face for infants — NOT carotid massage, NOT adult Valsalva), then IV access, then weight-based adenosine. If truly unstable and no access, synchronized cardioversion 0.5–1 J/kg. The competing priority is to NOT waste time on inappropriate vagal maneuvers, and to NOT miscalculate the weight-based adenosine dose under the stress of working on a small, scared patient.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": {
+          "eye": 4,
+          "verbal": 4,
+          "motor": 5
+        },
+        "airway": "Patent — no secretions, no stridor, no retractions of the trachea. Baby is not crying vigorously but airway is open and self-maintained.",
+        "breathing": "Tachypneic at RR 60, shallow, no nasal flaring at rest, mild subcostal retractions. Lungs clear bilaterally to auscultation, no wheezing, no crackles. Air entry equal.",
+        "circulation": "Brachial pulse rapid, weak, too fast to count manually (~250s on monitor). Skin cool, pale with mottling on the extremities. Capillary refill 3 seconds at the forearm. No active bleeding. BP 80/52 by infant cuff.",
+        "skin": {
+          "color": "Pale with mottling on extremities; trunk pale-pink; lips dusky-pink",
+          "temperature": "Cool peripherally, trunk warm",
+          "moisture": "Dry"
+        },
+        "pupils": "PERRL 3 mm bilaterally",
+        "motorFunction": "Moves all four extremities to stimulus but with decreased vigor; weak cry; will not reach for a bottle or toy",
+        "otherFindings": [
+          "Anterior fontanel flat and soft — not bulging, not sunken",
+          "Weak suck on gloved finger",
+          "Tracks slowly to mom's voice, eyes open but flat",
+          "No rashes, no petechiae, no bruising",
+          "Belly soft, non-distended"
+        ],
+        "patientSpeech": "Pre-verbal; weak whimper with stimulation, no vigorous cry"
+      },
+      "monitorState": {
+        "ecgRhythm": "Supraventricular Tachycardia",
+        "ecgWaveform": 4,
+        "hr": 252,
+        "bpSys": 80,
+        "bpDia": 52,
+        "respRate": 60,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 88,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "primary-survey",
+          "shortAction": "Rapid primary survey; recognize SVT with signs of instability (poor feeding, pallor, delayed cap refill)",
+          "protocolExcerpt": "Patient Presentation: Patients will manifest elevated heart rate for age and may or may not also present with associated signs or symptoms such as palpitations, dyspnea, chest pain, syncope/near-syncope, hemodynamic compromise, altered mental status, or other signs of end organ malperfusion.",
+          "priority": "critical",
+          "rationale": "The stable-vs-unstable determination drives the entire decision tree. Infant SVT with poor feeding, pallor, delayed cap refill, and lethargy = signs of instability — moves the patient toward adenosine with monitoring, not pure observation, and toward synchronized cardioversion if access fails or decompensation occurs.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "monitor-12-lead",
+          "shortAction": "Apply cardiac monitor; obtain 12-lead — narrow-complex regular tachycardia rate 252",
+          "protocolExcerpt": "Pediatric Management: Initiate monitoring and perform 12-lead EKG.",
+          "priority": "critical",
+          "rationale": "Confirms SVT (rate ≥220 in infants, abrupt onset, no rate variability with stimulation, no discernible P-waves) versus sinus tachycardia. This is the single most important data point for the rest of the algorithm.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "airway-oxygen",
+          "shortAction": "Manage airway; titrate O2 to SpO2 94–98%",
+          "protocolExcerpt": "Pediatric Management: Manage airway as necessary. Administer oxygen as appropriate with a target of achieving 94–98% saturation.",
+          "priority": "important",
+          "rationale": "SpO2 is currently 97% — supplemental O2 not mandatory but airway must remain open and ready. Avoid hyperoxia in a pediatric patient who is not hypoxic.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "vagal-ice",
+          "shortAction": "Age-appropriate vagal maneuver: ice/cold pack to the face for 15–30 sec (NOT carotid massage, NOT adult Valsalva)",
+          "protocolExcerpt": "Regular Narrow Complex Tachycardia – Stable (SVT): Perform vagal maneuvers.",
+          "priority": "critical",
+          "rationale": "For infants, the only safe and effective vagal maneuver is application of a cold stimulus (ice pack or cold wet washcloth) over the forehead, eyes, and bridge of the nose for 15–30 seconds — triggers the diving reflex. Carotid sinus massage is contraindicated in pediatrics, and a cooperative Valsalva is impossible in an 8-month-old.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "iv-io-access",
+          "shortAction": "Establish IV access (peds, proximal AC or scalp); IO if IV fails after 2 attempts/90 sec",
+          "protocolExcerpt": "Pediatric Management: Establish IV access.",
+          "priority": "critical",
+          "rationale": "Adenosine must go through a proximal, large-bore line with rapid push and immediate flush. Stop chasing a peripheral line if it isn't there — IO at the proximal tibia is appropriate in an infant with signs of instability.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "glucose-check",
+          "shortAction": "Check blood glucose (poor feeding × 4 hr in an infant); treat hypoglycemia if found",
+          "protocolExcerpt": "Pediatric Management: Check blood glucose and treat hypoglycemia per the Hypoglycemia Guideline.",
+          "priority": "important",
+          "rationale": "Sustained SVT plus 4 hours of refused feeds in an 8-month-old puts the patient at real risk of hypoglycemia, which by itself can perpetuate the dysrhythmia. Glucose is part of the tachycardia work-up by protocol.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "ice-to-face-applied",
+          "if": "Ice-to-face applied, IV being established",
+          "condition": "Crew correctly identifies infant SVT with signs of instability, applies ice/cold pack over forehead and bridge of nose for 15–30 seconds while a second crew member preps IV access. This is the default protocol-correct path.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "vagal-ice",
+            "iv-io-access"
+          ]
+        },
+        {
+          "targetPhaseId": "adult-vagal-attempted",
+          "if": "Adult vagal maneuvers attempted on infant",
+          "condition": "Crew attempts adult-style vagal maneuvers — coaching the infant to 'bear down' (impossible in an 8-month-old) or, worse, attempts carotid sinus massage (contraindicated in pediatrics). Time is wasted and the rhythm persists.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "vagal-ice"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ice-to-face-applied",
+      "name": "Ice-to-face applied",
+      "description": "Crew applies a cold pack (ice in a glove wrapped in a thin cloth, or a chemical cold pack) firmly across the infant's forehead, eyes, and bridge of the nose for 20 seconds while a second crew member establishes a 24g IV in the right antecubital fossa. The rate slows briefly to 220s during the cold application — visible on the monitor — then climbs back to 252 within 10 seconds of removing the pack. Partial response confirms the rhythm IS vagally responsive (consistent with SVT, not sinus tachycardia at this rate) but the maneuver alone was not enough. IV is now in place. Mom asks 'is it working?' — crew prepares for adenosine as the next escalation. Cap refill remains 3 seconds, BP 78/50, SpO2 97%. The infant is still pale and quiet but has not deteriorated.",
+      "triggerCondition": "Ice-to-face vagal maneuver applied for 15–30 seconds AND IV access established. Rhythm transiently slowed but reverted to SVT 252 — partial response confirms vagally-responsive narrow-complex tachycardia. Time to escalate to weight-based adenosine.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": {
+          "eye": 4,
+          "verbal": 4,
+          "motor": 5
+        },
+        "airway": "Patent — unchanged",
+        "breathing": "RR 58, shallow, mild subcostal retractions, clear bilaterally",
+        "circulation": "Rate 252 on monitor, weak but present brachial pulse; skin cool peripherally, cap refill 3 seconds; 24g IV right AC patent with saline lock attached",
+        "skin": {
+          "color": "Pale with mottling on extremities; lips dusky-pink",
+          "temperature": "Cool peripherally",
+          "moisture": "Dry"
+        },
+        "pupils": "PERRL 3 mm",
+        "motorFunction": "Weak movement, weak cry, brief grimace when cold pack applied",
+        "otherFindings": [
+          "Brief slowing of monitor rate to 220s during cold application — observed by crew",
+          "Rate returns to 252 within 10 seconds of removing the pack",
+          "Anterior fontanel flat",
+          "24g IV right AC, line flushes easily, no infiltration",
+          "Glucose 88 mg/dL (point-of-care, normal)"
+        ],
+        "patientSpeech": "Brief grimace and weak cry during cold application; settles afterward"
+      },
+      "monitorState": {
+        "ecgRhythm": "Supraventricular Tachycardia",
+        "ecgWaveform": 4,
+        "hr": 252,
+        "bpSys": 78,
+        "bpDia": 50,
+        "respRate": 58,
+        "spo2": 97,
+        "etco2": 38,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 88,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "verify-svt-after-vagal",
+          "shortAction": "Confirm persistent SVT on rhythm strip; rate transiently slowed then returned",
+          "protocolExcerpt": "Key Documentation Elements: Initial rhythm and all rhythm changes. Obtain monitor strips after each intervention.",
+          "priority": "critical",
+          "rationale": "Documenting the transient slowing with ice is itself diagnostic — confirms vagally-responsive narrow-complex tachycardia. This is the moment to commit to adenosine.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "adenosine-first-dose",
+          "shortAction": "Adenosine 0.8 mg IV rapid push, proximal site, immediate 10 mL NS flush (8 kg × 0.1 mg/kg = 0.8 mg; max 6 mg)",
+          "protocolExcerpt": "Regular Narrow Complex Tachycardia – Stable (SVT) — Pediatric: Adenosine 0.1 mg/kg (maximum of 6 mg). If unsuccessful, may repeat with 0.2 mg/kg (maximum of 12 mg).",
+          "priority": "critical",
+          "rationale": "First-dose pediatric adenosine is weight-based at 0.1 mg/kg with a hard adult-equivalent cap of 6 mg. For an 8 kg infant, that is 0.8 mg. Push fast through the most proximal site available, immediately followed by a saline flush — the half-life is <10 seconds and any hesitation defeats the dose.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "prep-cardioversion-energy",
+          "shortAction": "Pre-set defibrillator to synchronized cardioversion 4 J (8 kg × 0.5 J/kg = 4 J) as backup",
+          "protocolExcerpt": "Regular Narrow Complex Tachycardia – Unstable — Pediatric: Deliver a synchronized shock: 0.5–1 J/kg for the first dose. Repeat doses should be 2 J/kg.",
+          "priority": "important",
+          "rationale": "If adenosine fails or the patient deteriorates to clear instability, the next step is synchronized cardioversion at 0.5–1 J/kg. Pre-setting the energy (4 J for this 8 kg infant) and confirming the sync function is on takes seconds and saves them later.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "prep-second-adenosine",
+          "shortAction": "Have second adenosine dose 1.6 mg ready (8 kg × 0.2 mg/kg = 1.6 mg; max 12 mg)",
+          "protocolExcerpt": "Regular Narrow Complex Tachycardia – Stable (SVT) — Pediatric: Adenosine 0.1 mg/kg (maximum of 6 mg). If unsuccessful, may repeat with 0.2 mg/kg (maximum of 12 mg).",
+          "priority": "important",
+          "rationale": "Second-dose adenosine doubles to 0.2 mg/kg with a max of 12 mg. For 8 kg that is 1.6 mg. Draw it up now so a second push is not delayed if the first dose fails.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "adenosine-converted",
+          "if": "Correct adenosine 0.8 mg IV rapid push with flush",
+          "condition": "Crew correctly calculates 0.1 mg/kg × 8 kg = 0.8 mg, draws it up, pushes rapidly through the proximal IV with an immediate 10 mL saline flush. Rhythm converts within seconds.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "adenosine-first-dose"
+          ]
+        },
+        {
+          "targetPhaseId": "adenosine-miscalculated",
+          "if": "Adenosine dose miscalculated (adult 6 mg or wrong weight)",
+          "condition": "Crew defaults to the adult adenosine dose (6 mg) or uses an incorrect weight estimate, pushing a markedly under- or over-dosed amount. Underdose: no conversion. Overdose at 6 mg in 8 kg infant = 0.75 mg/kg, well above the 0.2 mg/kg max — prolonged asystolic pause is the risk.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "adenosine-first-dose"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adenosine-converted",
+      "name": "Adenosine converted to NSR",
+      "description": "Adenosine 0.8 mg IV rapid push followed by 10 mL flush. Within 6 seconds the monitor shows a brief asystolic pause (expected), then a single junctional escape beat, then conversion to sinus rhythm at HR 150. Within 60 seconds the infant becomes visibly more vigorous — pinks up, makes eye contact with mom, gives a stronger cry, reaches for mom's finger. Capillary refill drops from 3 seconds to 2 seconds. BP rises to 88/58. Mom is crying with relief. Crew confirms a 12-lead post-conversion, places the infant on a manual cardiac monitor for transport, prepares for a smooth stair carry, and transports to the closest pediatric-capable ED for evaluation and disposition. Document time of conversion, dose, response, and reassessment vitals.",
+      "triggerCondition": "Adenosine 0.8 mg IV rapid push with immediate flush. Brief asystolic pause (expected) followed by conversion to sinus rhythm 150. Clinical improvement: warmer skin, brisker cap refill, stronger cry, restored interactivity.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 5,
+          "motor": 6
+        },
+        "airway": "Patent, no secretions",
+        "breathing": "RR 36, easy, no retractions, clear bilaterally",
+        "circulation": "Sinus rhythm 150 on monitor; brachial pulse strong and regular; skin pink and warm; cap refill 2 seconds; BP 88/58; 24g IV right AC patent",
+        "skin": {
+          "color": "Pink, warm",
+          "temperature": "Warm centrally and peripherally",
+          "moisture": "Dry"
+        },
+        "pupils": "PERRL 3 mm",
+        "motorFunction": "Moving all extremities vigorously, reaches for mom's finger, makes eye contact",
+        "otherFindings": [
+          "Brief asystolic pause documented on rhythm strip post-adenosine, expected",
+          "Junctional escape beat noted before sinus resumes",
+          "12-lead post-conversion shows sinus rhythm, no ST changes, no delta waves",
+          "Infant takes a few sucks from a bottle offered by mom",
+          "Anterior fontanel flat"
+        ],
+        "patientSpeech": "Stronger cry on stimulation; coos when mom speaks"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 150,
+        "bpSys": 88,
+        "bpDia": 58,
+        "respRate": 36,
+        "spo2": 99,
+        "etco2": 36,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 88,
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "document-conversion",
+          "shortAction": "Document time, dose, brief pause, conversion; obtain post-conversion 12-lead and rhythm strip",
+          "protocolExcerpt": "Key Documentation Elements: Time, dose, and response to medications given. Obtain monitor strips after each intervention.",
+          "priority": "critical",
+          "rationale": "Time of conversion, dose, route, and rhythm strips are required documentation. Post-conversion 12-lead may reveal an underlying accessory pathway (WPW) that influences hospital disposition.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "reassess-perfusion",
+          "shortAction": "Reassess: vitals, mental status, cap refill, color, feeding response",
+          "protocolExcerpt": "Patient Care Goals: Maintain adequate oxygenation, ventilation, and perfusion. Restore regular sinus rhythm in unstable patient.",
+          "priority": "critical",
+          "rationale": "Document the clinical improvement that corresponds with the rhythm conversion — warm pink skin, brisk cap refill, stronger cry, restored interactivity, willingness to feed. This is the evidence that conversion translated to perfusion recovery.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "transport-peds-ed",
+          "shortAction": "Transport to pediatric-capable ED on monitor; keep IV access; reassess en route",
+          "protocolExcerpt": "Patient Care Goals: Restore regular sinus rhythm in unstable patient. (Implied: transport for definitive evaluation after field conversion.)",
+          "priority": "critical",
+          "rationale": "Field-converted infant SVT still warrants ED evaluation — recurrence is common, underlying WPW or structural disease must be screened, and discharge from the field is not appropriate. Closest pediatric-capable facility is preferred.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "adult-vagal-attempted",
+      "name": "Adult vagal maneuvers attempted",
+      "description": "Crew attempts adult-style vagal maneuvers on the 8-month-old — coaching the baby to 'bear down' (impossible for a pre-verbal infant) or worse, attempting carotid sinus massage on the side of the neck. Carotid massage is contraindicated in pediatrics — risk of vagal overshoot bradyarrhythmia and pediatric carotid injury. The rhythm persists at 252. Roughly 90 seconds are lost. The infant becomes slightly more lethargic, cap refill stretches to 4 seconds, BP drops to 76/48. Mom is now actively crying. The clinical clock is ticking — every minute in SVT erodes the margin before decompensation. Recovery requires the crew to recognize the wrong technique, switch to ice/cold pack to the face, and continue the protocol path (IV access and weight-based adenosine).",
+      "triggerCondition": "Crew uses inappropriate vagal techniques (adult Valsalva coaching of an infant who cannot follow commands, or carotid sinus massage which is contraindicated in pediatrics). Rhythm persists, time is lost, and the patient drifts further toward decompensation.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": {
+          "eye": 3,
+          "verbal": 3,
+          "motor": 5
+        },
+        "airway": "Patent",
+        "breathing": "RR 62, shallow, mild subcostal retractions",
+        "circulation": "Rate 252 unchanged; brachial pulse weak; skin pale and cool; cap refill 4 seconds; BP 76/48",
+        "skin": {
+          "color": "Pale, increased mottling extending to upper extremities",
+          "temperature": "Cool peripherally",
+          "moisture": "Dry"
+        },
+        "pupils": "PERRL 3 mm",
+        "motorFunction": "Less vigorous than initial contact — slower to track, weaker cry",
+        "otherFindings": [
+          "No effect on monitor from carotid massage or Valsalva attempts",
+          "Anterior fontanel flat",
+          "Mom asking 'why isn't it working?' — visibly distressed"
+        ],
+        "patientSpeech": "Weaker whimper, no spontaneous cooing"
+      },
+      "monitorState": {
+        "ecgRhythm": "Supraventricular Tachycardia",
+        "ecgWaveform": 4,
+        "hr": 252,
+        "bpSys": 76,
+        "bpDia": 48,
+        "respRate": 62,
+        "spo2": 96,
+        "etco2": 38,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 88,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-wrong-vagal",
+          "shortAction": "Recognize adult vagal maneuvers are inappropriate/contraindicated in infants; stop them",
+          "protocolExcerpt": "Notes/Educational Pearls: Studies in infants and children have demonstrated the effectiveness of adenosine for the treatment of hemodynamically stable or unstable SVT.",
+          "priority": "critical",
+          "rationale": "Carotid sinus massage is contraindicated in pediatrics — the carotid is small, the vagal response can overshoot to severe bradycardia, and the patient cannot report symptoms. An 8-month-old cannot cooperate with Valsalva. Time wasted on adult techniques is time the infant can't afford.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "switch-to-ice",
+          "shortAction": "Switch to age-appropriate vagal maneuver: ice/cold pack to forehead and bridge of nose for 15–30 sec",
+          "protocolExcerpt": "Regular Narrow Complex Tachycardia – Stable (SVT) — Pediatric: Perform vagal maneuvers.",
+          "priority": "critical",
+          "rationale": "The diving reflex elicited by cold facial stimulation is the validated infant vagal maneuver. Recover the timeline by applying it immediately while a partner gets IV access.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "iv-access-recovery",
+          "shortAction": "Establish IV (or IO if 2 attempts/90 sec fail); prep adenosine 0.8 mg + flush",
+          "protocolExcerpt": "Pediatric Management: Establish IV access.",
+          "priority": "critical",
+          "rationale": "The clock has lost ground — IV/IO access and pre-drawn adenosine are now the priority. If clinical decompensation continues, the algorithm pivots to synchronized cardioversion 4 J.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "ice-to-face-applied",
+          "if": "Crew switches to ice-to-face and gets IV",
+          "condition": "Crew recognizes the error, applies the cold pack correctly, and establishes IV access. Re-enters the default protocol path with some time lost but no permanent harm.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "switch-to-ice",
+            "iv-access-recovery"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "adenosine-miscalculated",
+      "name": "Adenosine dose miscalculated",
+      "description": "Crew miscalculates the adenosine dose. Two failure modes — both happen under the stress of working on a small patient. (a) Underdose: defaults to a 'kid-sized' adult dose like 3 mg or uses the wrong weight (e.g., assumes 6 kg instead of 8) — pushes too little, gets no conversion, and the rhythm stays at 252. (b) Overdose: pushes the full adult 6 mg into an 8 kg infant — that's 0.75 mg/kg, more than triple the 0.2 mg/kg max — risk of prolonged asystolic pause and proarrhythmia. In the simulation, the monitor shows either no rhythm change (underdose) or an extended 8-second asystolic pause with bradycardia to 50s before sinus eventually returns at 130 (overdose). Either way, the recovery is the same: recalculate from the patient's actual weight (8 kg), confirm the per-kg formula (0.1 mg/kg first dose = 0.8 mg; 0.2 mg/kg second dose = 1.6 mg), redraw the correct dose, and push it correctly. Crew leader should call out the math out loud and have a second crew member verify the syringe before push.",
+      "triggerCondition": "Crew pushes an incorrect adenosine dose — either an under-dose (adult 'small' dose like 3 mg, or wrong patient weight) producing no conversion, or an over-dose (adult 6 mg into an 8 kg infant) producing a prolonged asystolic pause. Recovery hinges on re-doing the weight-based math correctly.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": {
+          "eye": 3,
+          "verbal": 3,
+          "motor": 5
+        },
+        "airway": "Patent",
+        "breathing": "RR 60, shallow",
+        "circulation": "Either persistent SVT 252 (underdose) OR transient extended asystolic pause then sinus 130 (overdose). Skin pale, cool, cap refill 3–4 seconds. BP 76/48 either way.",
+        "skin": {
+          "color": "Pale, mottled extremities",
+          "temperature": "Cool peripherally",
+          "moisture": "Dry"
+        },
+        "pupils": "PERRL 3 mm",
+        "motorFunction": "Decreased vigor",
+        "otherFindings": [
+          "If underdose: rhythm strip shows SVT continues with no pause",
+          "If overdose: rhythm strip shows extended asystolic pause (~8 sec) then bradycardia (50s) before recovery — crew must be prepared to support",
+          "Either failure mode loses ~60–90 sec and erodes the clinical margin",
+          "Mom visibly distressed"
+        ],
+        "patientSpeech": "Weak cry"
+      },
+      "monitorState": {
+        "ecgRhythm": "Supraventricular Tachycardia",
+        "ecgWaveform": 4,
+        "hr": 252,
+        "bpSys": 76,
+        "bpDia": 48,
+        "respRate": 60,
+        "spo2": 96,
+        "etco2": 38,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 88,
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-dose-error",
+          "shortAction": "Recognize dose error; stop, reconfirm weight (8 kg) and per-kg formula out loud",
+          "protocolExcerpt": "Performance Measures: Correct medication(s) and dose given for patient condition, age, and weight.",
+          "priority": "critical",
+          "rationale": "The pediatric weight-based math must be done deliberately under stress. Speak the math aloud — '8 kg times 0.1 mg per kg equals 0.8 milligrams' — and have a partner verify the syringe. This is the closed-loop drug check that prevents the most common pediatric medication error.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "redraw-correct-adenosine",
+          "shortAction": "Redraw adenosine 0.8 mg (8 kg × 0.1 mg/kg); push rapidly + 10 mL flush, proximal IV",
+          "protocolExcerpt": "Regular Narrow Complex Tachycardia – Stable (SVT) — Pediatric: Adenosine 0.1 mg/kg (maximum of 6 mg). If unsuccessful, may repeat with 0.2 mg/kg (maximum of 12 mg).",
+          "priority": "critical",
+          "rationale": "Recovery is to administer the correct first dose 0.8 mg with proper push and flush technique. If still in SVT after 1–2 minutes, escalate to 1.6 mg (0.2 mg/kg).",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        },
+        {
+          "id": "prepare-cardioversion-if-decomp",
+          "shortAction": "If decompensation continues, synchronized cardioversion 4 J (8 kg × 0.5 J/kg); pads on chest",
+          "protocolExcerpt": "Regular Narrow Complex Tachycardia – Unstable — Pediatric: Deliver a synchronized shock: 0.5–1 J/kg for the first dose. Repeat doses should be 2 J/kg.",
+          "priority": "important",
+          "rationale": "If the infant decompensates frankly — loss of consciousness, central pulse weakening further, falling BP — synchronized cardioversion at 0.5–1 J/kg is the protocol next step. For 8 kg that is 4 J first dose, 16 J for any repeats. Pre-stage pads to avoid delay.",
+          "protocolReference": "MATC: Tachycardia with a Pulse"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "adenosine-converted",
+          "if": "Correct 0.8 mg redrawn and pushed",
+          "condition": "Crew identifies the dosing error, recalculates from the patient's actual weight, has the dose verified by a second provider, pushes correctly with flush, and the rhythm converts to sinus.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "redraw-correct-adenosine"
+          ]
+        }
+      ]
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 4,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

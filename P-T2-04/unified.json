@@ -1,0 +1,666 @@
+{
+  "meta": {
+    "scenarioId": "P-T2-04",
+    "id": "P-T2-04",
+    "name": "Foreign Body Airway Obstruction, Progressing",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Pediatric",
+    "protocols": [
+      "resp-airway-management",
+      "resus-cardiac-arrest",
+      "resp-respiratory-distress"
+    ],
+    "totalTimeSeconds": 1200,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "pediatric",
+      "FBAO",
+      "foreign-body-airway-obstruction",
+      "choking",
+      "grape",
+      "toddler",
+      "stridor",
+      "partial-obstruction",
+      "complete-obstruction",
+      "BLS-airway",
+      "Magill-forceps",
+      "direct-laryngoscopy",
+      "pediatric-arrest",
+      "respiratory-arrest",
+      "judgment-error",
+      "blind-finger-sweep",
+      "tier-2",
+      "decision-dense"
+    ]
+  },
+  "patient": {
+    "name": "Mateo Alvarez",
+    "age": 2,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 12,
+    "weightLbs": 26,
+    "height": 86,
+    "chiefComplaint": "Witnessed choking on a grape ~5 minutes ago. Bystander back blows produced a forceful cough and pinking up, but child still has audible inspiratory stridor, mild retractions, and is in distress.",
+    "history": {
+      "hpi": "Previously healthy 2-year-old boy who was eating lunch with his mother and 4-year-old sister at home. Mother witnessed the toddler put a whole green grape in his mouth, immediately clutch his throat, stop making sound, and turn red. She placed him face-down across her forearm and delivered 4-5 firm back blows. After the third blow he gave a single forceful cough, pink color returned to his face, and he began to cry weakly. He has NOT been seen to spit out a grape or piece of grape. Since then — approximately 4 minutes — he has remained in his mother's arms with persistent audible inspiratory stridor, mild intercostal and suprasternal retractions, and weak intermittent crying. He is tracking with his eyes and reaching for her, but has not returned to baseline play. No fever, no preceding URI symptoms, no rash, no vomiting. He has no prior history of choking, croup, or reactive airway disease. The mechanism (witnessed whole-grape aspiration, partial clearance with effective cough now but persistent stridor) is classic for a partially obstructing supraglottic foreign body that can convert to complete obstruction at any moment.",
+      "pastMedical": [
+        "Healthy, full-term delivery",
+        "Up to date on immunizations",
+        "No prior choking, croup, asthma, or reactive airway disease"
+      ],
+      "medications": [],
+      "allergies": [
+        "NKDA"
+      ],
+      "lastOralIntake": "Lunch in progress — grapes, cheese cubes, crackers — choking event occurred mid-meal approximately 5 minutes ago",
+      "events": "Toddler eating whole grapes at lunch → witnessed choking, silent and red → mother performed back blows → forceful cough and color returned → persistent inspiratory stridor, mild retractions, weak crying → mother called 911."
+    }
+  },
+  "scene": {
+    "dispatch": "Dispatch: 2-year-old male, possible choking, swallowed something at lunch, parents say he's breathing but making noise. Single-family home.",
+    "location": "Single-family home, kitchen and adjacent living room. Toddler in mother's lap on the couch in the living room. High chair pushed back from the kitchen table; plate with cut cheese, crackers, and a small bowl of whole green grapes visible.",
+    "time": "Saturday, 12:35, sunny afternoon",
+    "safety": "Scene safe. Mother is anxious but oriented and able to give a clear history. Older sibling (4) is present and calm with a family friend who answered the door.",
+    "bystanders": "Mother — witness to the event, performed back blows. Reports she did NOT see any grape or grape fragment come out of his mouth. Family friend present, able to help with the older sibling so EMS can focus on the patient.",
+    "visualCues": [
+      "Toddler upright in mother's lap, leaning slightly forward, alert but tearful",
+      "Audible inspiratory stridor from across the room — high-pitched, on inhalation only",
+      "Mild intercostal and suprasternal retractions; nasal flaring intermittent",
+      "Crying is weak and breathy — not a full forceful cry",
+      "Color pink — face, lips, fingertips — perioral area NOT cyanotic",
+      "Bowl of whole green grapes on the kitchen table; plate of remaining lunch nearby",
+      "No drooling, no tripoding, no facial swelling, no urticaria — this is mechanical, not anaphylaxis or croup",
+      "Mother is teary but cooperative; keeps asking 'is the grape still in there?'"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives to a 2-year-old, ~12 kg, who choked on a whole green grape approximately 5 minutes ago. Mother's back blows produced a forceful cough and pinking up, but the child has persistent audible inspiratory stridor, mild retractions, and weak crying. He is alert, pink (not cyanotic), tracking, and able to cry — this is a PARTIAL airway obstruction with an EFFECTIVE cough. The Tier 2 teaching point: when the child has an effective cough, the right answer is to ENCOURAGE the cough and NOT intervene mechanically. Sit the child upright in the caregiver's lap, offer blow-by oxygen, keep suction / Magill forceps / direct laryngoscopy / BVM at hand, and transport without delay — partial obstruction can convert to complete obstruction without warning.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": {
+          "eye": 4,
+          "verbal": 4,
+          "motor": 6
+        },
+        "airway": "Patent but partially obstructed — high-pitched inspiratory stridor audible across the room; able to phonate (weak cry); no drooling, no tongue/lip swelling, no tripoding",
+        "breathing": "RR 38, mild intercostal and suprasternal retractions, intermittent nasal flaring; air movement present bilaterally with transmitted upper-airway sounds; no wheezing on lower-airway auscultation",
+        "circulation": "HR 152, strong radial and brachial pulses, warm pink extremities, cap refill < 2 sec",
+        "skin": {
+          "color": "pink — face, lips, fingertips; NOT cyanotic",
+          "temperature": "warm",
+          "moisture": "dry"
+        },
+        "pupils": "Equal at 4 mm, briskly reactive",
+        "motorFunction": "Spontaneous symmetric movement; reaches for mother; localizes",
+        "otherFindings": [
+          "High-pitched inspiratory stridor — hallmark of a supraglottic/glottic partial obstruction",
+          "Crying is weak and breathy but PRESENT — a forceful cry/cough indicates an effective cough",
+          "No cyanosis, no drooling, no tripoding, no urticaria",
+          "Mild retractions only — not severe; no head-bobbing, no grunting",
+          "Mother reports back blows produced a forceful cough and color return"
+        ],
+        "patientSpeech": "Weak, breathy crying; calls 'mama' between coughs"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 152,
+        "bpSys": 96,
+        "bpDia": 58,
+        "respRate": 38,
+        "spo2": 92,
+        "etco2": 36,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 80,
+        "glucose": 102,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-partial-with-effective-cough",
+          "shortAction": "Recognize partial FBAO with effective cough (stridor + pink + crying = DO NOT intervene mechanically)",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Assessment 2c-i and 2e — assess ability to phonate, quality of air exchange, abnormal breath sounds including stridor, and presence of airway obstruction with foreign body. Effective cough + ability to phonate + pink color = partial obstruction; the airway is still moving air and the child is doing the work; mechanical intervention now risks pushing the foreign body deeper.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Physical Examination – Assess for: Ability to speak words/sentences; Quality of air exchange, including depth of respiration and equality of breath sounds; Abnormal breath sounds (e.g., wheezing, rhonchi, rales, or stridor); Cough; Skin color (cyanosis or pallor), presence of diaphoresis; Mental status, including anxiety; Airway obstruction with foreign body or swelling (e.g., angioedema, posterior pharyngeal and laryngeal infections). Inclusion Criteria: Patients with acute foreign body airway obstruction."
+        },
+        {
+          "id": "position-upright-caregiver",
+          "shortAction": "Sit child upright in caregiver's lap; do NOT force supine — position of comfort",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Treatment 3d — patient positioning significantly impacts respiratory mechanics; in upper-airway obstruction the child should be left in a position of comfort (typically upright in caregiver's lap) and the head elevated to optimize the airway. Forcing supine or separating from caregiver agitates the child, can worsen obstruction, and reduces the effectiveness of any cough.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Patient positioning can significantly impact respiratory mechanics. Patients with severe bronchospasm should be left in the position of comfort (perhaps tripod) whenever possible. Elevating the head or padding (shoulders, occiput) can assist with opening airway and respiratory mechanics. This can both improve the ability to ventilate and limit aspiration."
+        },
+        {
+          "id": "blow-by-oxygen",
+          "shortAction": "Blow-by O2 via NC or mask held near face — titrate to SpO2 94-98%, do not agitate",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Treatment 2 / MATC Respiratory Distress Treatment 1a — supplemental O2 titrated to 94-98%, escalated as needed, delivered in the least disruptive way; in a partial FBAO an agitated child is a dangerous child, so blow-by from a caregiver's hand is preferred over a mask strapped to the face.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Administer oxygen if needed for air hunger or respiratory distress and titrate to a target SPO2 of 94–98%. Depending on patient presentation, this may be accomplished with nasal cannula, nonrebreather, BVM, NIV."
+        },
+        {
+          "id": "encourage-cough-no-intervene",
+          "shortAction": "Encourage continued coughing; AVOID blind finger sweeps and back blows while cough is effective",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Treatment 3b / Patient Safety Considerations 1 / Notes Educational Pearls 5 — the least-invasive approach is preferred; an effective cough is the most powerful natural airway-clearance maneuver and the protocol drives interventions in an escalating fashion. Blind finger sweeps are not in the protocol because they convert partial obstructions to complete ones by pushing the foreign body deeper.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Generally, the approach is to implement the interventions below in an escalating fashion to meet the patient care goals above. Open and maintain patent airway. If needed, Provide head tilt/chin lift, or jaw thrust if concern for potential spinal injury; Suction airway: for significantly contaminated airways, consider utilizing a suction assisted laryngeal airway decontamination (SALAD) technique."
+        },
+        {
+          "id": "pre-stage-rescue-equipment",
+          "shortAction": "Pre-stage suction, peds BVM, peds Magill forceps, and DL/VL — be ready for complete obstruction",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Treatment 3b, 4, 6, 7 / Notes 8a — patient may deteriorate to complete obstruction, requiring suction, BVM ventilation, and direct/video laryngoscopy with Magill forceps to remove a visualized foreign body. Pre-procedure preparation is associated with improved success and decreased peri-intubation complications.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Orotracheal/Endotracheal intubation (ETI): Checklist use and use of protocolized interventions to optimize the patient physically and physiologically have been shown to both improve success rates of orotracheal intubation as well as decrease peri-intubation complications. Preparation should also include a promptly available plan for alternate airway placement if ETI unsuccessful. Suctioning to limit aspiration is a priority, since it is associated with development of hospital acquired pneumonia and related increases in ICU stay and mortality."
+        },
+        {
+          "id": "size-equipment-12kg",
+          "shortAction": "Size peds equipment to 12 kg / 2 yr: cuffed ETT 3.5-4.0 (formula 2/4+3.5=4.0), depth ~12 cm, peds Magill, peds BVM, peds suction",
+          "priority": "important",
+          "rationale": "MATC Airway Management Patient Safety 12 / Notes 8b — pediatric airway requires appropriately sized tools; cuffed tubes preferred in pediatrics. Per the protocol table: age 15-24 months → cuffed 3.5; age 2-15 years → [age/4]+3.5 cuffed = 2/4+3.5 = 4.0. Depth ≈ 3 × tube size = 12 cm.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Pediatric airway management requires appropriately sized tools and adjuncts based on patient size/age. A method for determining appropriate sizing should be available to all EMS clinicians. Endotracheal tube sizes (cuffed tubes preferred in pediatrics): 15–24 months: Uncuffed 4.5 / Cuffed 3.5. 2–15 years: Uncuffed [age(yrs.)/4]+4 / Cuffed [age(yrs.)/4]+3.5. Approximate depth of insertion = (3) x (endotracheal tube size)."
+        },
+        {
+          "id": "monitor-spo2-etco2",
+          "shortAction": "Continuous SpO2 + waveform EtCO2 + cardiac monitor (peds pads pre-placed)",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Monitoring 1 — patients with significant respiratory distress should have continuous SpO2 and waveform capnography for both assessment and for guiding therapy.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Patients with significant respiratory distress should have continuous pulse oximetry and waveform capnography monitoring for both assessment and for guiding therapy. Pulse oximetry is indicated to assess oxygenation."
+        },
+        {
+          "id": "rapid-transport",
+          "shortAction": "Rapid transport, child in caregiver's arms upright; do not delay on scene for IV",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Treatment 12 — transport to the closest appropriate hospital when respiratory failure cannot be successfully managed in the prehospital setting. Partial FBAO can convert to complete obstruction at any moment; definitive care (ENT, OR bronchoscopy) lives in the hospital.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Transport to the closest appropriate hospital for airway stabilization when respiratory failure cannot be successfully managed in the prehospital setting."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "complete-obstruction-en-route",
+          "if": "Proper assessment, no mechanical intervention, transporting",
+          "condition": "Crew correctly identifies partial obstruction with effective cough, sits child upright in mother's lap, applies blow-by O2, pre-stages suction/Magill/DL/BVM, places monitor, and begins rapid transport with the child in his mother's arms. Approximately 4-5 minutes into transport, the child suddenly stops crying, becomes silent, develops perioral cyanosis, and goes limp in his mother's arms — the grape has migrated and the partial obstruction has converted to complete obstruction.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "recognize-partial-with-effective-cough",
+            "position-upright-caregiver",
+            "blow-by-oxygen",
+            "encourage-cough-no-intervene",
+            "rapid-transport"
+          ]
+        },
+        {
+          "targetPhaseId": "blind-finger-sweep-iatrogenic",
+          "if": "Blind finger sweep performed",
+          "condition": "Crew anchors on 'must remove the foreign body now,' separates the child from his mother, lays him supine, and performs a blind finger sweep with the index finger. The finger does not retrieve the grape — instead, it pushes the grape from a partially obstructing supraglottic position into a completely obstructing glottic position. The child immediately loses his cough, becomes silent, develops cyanosis, and decompensates within seconds.",
+          "conditionType": "action_taken"
+        }
+      ]
+    },
+    {
+      "id": "complete-obstruction-en-route",
+      "name": "Complete obstruction en route",
+      "description": "Approximately 4-5 minutes into transport, the child suddenly stops crying, becomes silent, develops perioral cyanosis, and goes limp in his mother's arms. The grape has migrated; the partial obstruction has converted to a complete obstruction. SpO2 drops to 78% and falling, HR remains 148 (not yet bradycardic), no spontaneous respirations effective, no audible stridor, no cough. The child is still perfusing but rapidly hypoxic — this is the BLS-priority window: while the child remains conscious enough to retain muscle tone, deliver abdominal thrusts (Heimlich) as the age-appropriate maneuver for FBAO in a child >1 year. If the child goes unconscious or already has, the sequence converts to chest compressions (which generate intrathoracic pressure that can dislodge the foreign body) with airway look-and-retrieve only when the foreign body is visualized.",
+      "triggerCondition": "Default-path patient on rapid transport, properly assessed and pre-staged; ~4-5 minutes in he suddenly silences, cyanoses perioral, and goes limp — partial FBAO has converted to complete FBAO. SpO2 78%, HR still 148, no air movement, no cry, no cough.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": {
+          "eye": 2,
+          "verbal": 2,
+          "motor": 4
+        },
+        "airway": "Completely obstructed — no audible air movement, no stridor (no airflow to make stridor), no cry, no cough; jaw thrust opens airway but reveals nothing on visual inspection from outside",
+        "breathing": "Apneic effort — chest rises with effort but no air entry on auscultation; no chest rise on attempted BVM ventilation with good seal (high resistance, no compliance)",
+        "circulation": "HR 148, perfusing — central pulse present, brachial pulse palpable, cap refill 3 sec, color now mottled centrally",
+        "skin": {
+          "color": "perioral cyanosis, central mottling, peripheries dusky",
+          "temperature": "warm",
+          "moisture": "dry"
+        },
+        "pupils": "Equal at 4 mm, reactive",
+        "motorFunction": "Limp; minimal withdrawal to stimulus",
+        "otherFindings": [
+          "Sudden silencing — was crying weakly, now no sound at all",
+          "Perioral and peripheral cyanosis evolving",
+          "BVM attempt with two-person seal yields NO chest rise — confirms complete obstruction",
+          "No spontaneous cough generated",
+          "Mother visibly panicking"
+        ],
+        "patientSpeech": "Silent."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 148,
+        "bpSys": 88,
+        "bpDia": 52,
+        "respRate": 6,
+        "spo2": 78,
+        "etco2": 18,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 100,
+        "glucose": 102,
+        "trendTimeSeconds": 15,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-complete-obstruction",
+          "shortAction": "Recognize complete FBAO — silent, no cough, no chest rise on BVM = mechanical intervention NOW",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Assessment 2 — air movement, breath sounds, cough, color, mental status. The transition from 'crying weakly' to silence + cyanosis + flat BVM is the diagnostic shift from partial (effective cough) to complete (ineffective) obstruction. Action priority changes: now mechanical clearance is indicated.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Physical Examination – Assess for: Quality of air exchange, including depth of respiration and equality of breath sounds; Abnormal breath sounds (e.g., wheezing, rhonchi, rales, or stridor); Cough; Skin color (cyanosis or pallor), presence of diaphoresis; Mental status, including anxiety; Airway obstruction with foreign body or swelling."
+        },
+        {
+          "id": "stop-vehicle-or-pull-over",
+          "shortAction": "Communicate to driver — slow / pull over for resuscitation; stop-and-resuscitate decision",
+          "priority": "important",
+          "rationale": "MATC Cardiac Arrest Patient Safety 1-4 — manual chest compressions in a moving vehicle are less effective and pose safety concerns; patients should be resuscitated as close to the scene as operationally possible. Same principle applies to BLS airway maneuvers and DL/Magill retrieval.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "Patient Safety Considerations: Performing manual chest compressions in a moving vehicle may pose a clinician safety concern. In addition, manual chest compressions during patient movement are less effective in regard to hands on time, depth, recoil and rate. Ideally, patients should be resuscitated as close to the scene as operationally possible. Risks and benefits should be considered before patient movement in cardiac arrest situations."
+        },
+        {
+          "id": "two-person-bvm-attempt",
+          "shortAction": "Two-person, two-thumbs-up BVM attempt — confirms complete obstruction if no chest rise despite good seal",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Treatment 4a — two-person two-thumbs-up BVM is preferred and is the next step after basic airway maneuvers fail. Failure to achieve chest rise with a confirmed mask seal confirms a complete obstruction rather than a positioning problem.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Use bag-valve-mask (BVM) ventilation in the setting of respiratory failure or arrest. Whenever possible, the patient's head should be elevated up to 30 degrees. Two-person, two-thumbs-up BVM ventilation is preferred."
+        },
+        {
+          "id": "direct-laryngoscopy-magill",
+          "shortAction": "Direct laryngoscopy + peds Magill forceps; remove FB ONLY if visualized; do NOT sweep blindly",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Notes 8a + Patient Safety 1 — preparation includes a promptly available plan for alternate airway placement; suctioning/visualization is a priority; blind sweeps are not in the protocol because they push the foreign body deeper. Direct (or video) laryngoscopy is the only sanctioned way to identify and retrieve a supraglottic/glottic FB.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "A bougie may be a helpful adjunct to successful airway placement, especially when video laryngoscopy is unavailable and the glottic opening is difficult to visualize with direct laryngoscopy. For experienced EMS clinicians, video laryngoscopy may enhance intubation success rates and should be used when available. Suctioning to limit aspiration is a priority, since it is associated with development of hospital acquired pneumonia and related increases in ICU stay and mortality."
+        },
+        {
+          "id": "begin-cpr-if-unresponsive",
+          "shortAction": "If unresponsive and not perfusing → start peds CPR 15:2 (two-rescuer), compressions 100-120/min, depth ~4 cm (1.5 in)",
+          "priority": "critical",
+          "rationale": "MATC Cardiac Arrest Treatment 6c-i / Notes 1b / Notes 2b — pediatric CPR ratio 15:2 for multi-rescuer; depth 1.5 inches (4 cm) for infants, 2 inches for children; rate 100-120. Chest compressions also generate intrathoracic pressure that can dislodge a foreign body — they double as BLS airway-clearance in unresponsive FBAO.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "Pediatric Consideration: For multiple rescuer CPR in children, 15:2 is the recommended compression-to-ventilation ratio (30:2 for single rescuer). Effective chest compressions are defined as: A rate of greater than 100 and less than 120 compressions/minute; Depth of at least 2 inches (5 cm) and less than 2.4 inches (6 cm) for adults and children or 1.5 inches (4 cm) for infants."
+        },
+        {
+          "id": "bvm-after-removal",
+          "shortAction": "After FB removed — BVM 20-30/min (child rate), one breath over 1 sec with 2-sec pause; target SpO2 94-98%, EtCO2 35-45",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Notes 5b-c / Treatment 4e — for child BVM ventilation: 20-30 breaths/min, one breath over 1 second with a 2-second pause; titrate to SpO2 94-98% and EtCO2 35-45.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Pediatric – infant/child: Support spontaneous respirations if the patient is hypoventilating. For apnea, provide 1 breath every 2–3 seconds adjusting based on pulse oximetry and digital capnometry or capnography (with the goal of 35–45 mmHg). Rate Child: 20–30 breaths/minute. In children, ventilating breaths should be delivered over one second, with a two second pause between breaths."
+        },
+        {
+          "id": "no-blind-finger-sweep",
+          "shortAction": "Do NOT perform blind finger sweep — only remove FB if VISUALIZED on DL/VL",
+          "priority": "critical",
+          "rationale": "MATC Airway Management — the protocol authorizes suction, BVM, SGA, ETI, and (by extension) DL/VL with Magill for visualized FB retrieval, but does not authorize blind finger sweeps. Blind sweeps risk pushing a partial obstruction into a complete one and lacerating soft tissue, neither of which is congruent with the patient care goals.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Patient Care Goals: Maintain a patent airway; Provide effective oxygenation and adequate ventilation using the least invasive possible method to achieve those goals paired with pulse oximetry and end-tidal capnography (EtCO2) data; Anticipate, recognize, and alleviate respiratory distress; Provide necessary interventions quickly and safely to patients with the need for respiratory support."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "fb-removed-improving",
+          "if": "FB visualized and removed",
+          "condition": "Crew stops the vehicle (or moves to a safe spot), attempts a two-person BVM which confirms no chest rise (complete obstruction), performs direct laryngoscopy, visualizes the grape at the glottic inlet, and retrieves it with peds Magill forceps. BVM ventilation now produces chest rise; SpO2 climbs into the 90s; child begins to grimace and then cry. Transport resumes with continuous monitoring and BVM support as needed.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "two-person-bvm-attempt",
+            "direct-laryngoscopy-magill",
+            "bvm-after-removal"
+          ]
+        },
+        {
+          "targetPhaseId": "decompensation-to-arrest",
+          "if": "FB not removed, no CPR started",
+          "condition": "Crew recognizes complete obstruction but stalls — repeats BVM attempts without escalating to DL/Magill, or hesitates to start compressions while waiting for the child to 'lose consciousness.' Within 60-90 seconds the child becomes truly unresponsive, bradycardic, and finally pulseless: this is a pediatric respiratory arrest progressing to cardiac arrest from hypoxia.",
+          "conditionType": "action_not_taken"
+        }
+      ]
+    },
+    {
+      "id": "fb-removed-improving",
+      "name": "FB removed, improving",
+      "description": "Direct laryngoscopy revealed the whole green grape lodged at the glottic inlet. Crew retrieved it with peds Magill forceps under direct visualization. Two-person BVM now produces good bilateral chest rise; SpO2 climbs from 78% to 96% over 30-60 seconds; EtCO2 normalizes to 38; child grimaces, begins to cry weakly, then more strongly. Color returns. This phase is the post-clearance reassessment and continued transport — the airway is patent but the child has had a significant hypoxic insult and remains at risk for laryngospasm, secondary aspiration of remaining grape fragments, or post-obstructive pulmonary edema.",
+      "triggerCondition": "After two-person BVM confirmed complete obstruction (no chest rise), crew performed direct laryngoscopy, visualized the grape, and removed it with peds Magill forceps. BVM ventilation now produces chest rise; SpO2 climbs; child resumes spontaneous breathing and weak crying.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": {
+          "eye": 3,
+          "verbal": 3,
+          "motor": 5
+        },
+        "airway": "Patent — no audible stridor; weak crying audible; no drooling, no swelling",
+        "breathing": "RR 36 spontaneous, mild residual retractions, bilateral breath sounds clear, no wheezing, no stridor; BVM-assist available if RR or effort drops",
+        "circulation": "HR 144, strong radial and brachial pulses, warm pink extremities, cap refill < 2 sec",
+        "skin": {
+          "color": "pink — cyanosis resolved",
+          "temperature": "warm",
+          "moisture": "slightly diaphoretic from the event"
+        },
+        "pupils": "Equal at 4 mm, briskly reactive",
+        "motorFunction": "Spontaneous symmetric movement returning; reaches for mother weakly",
+        "otherFindings": [
+          "Whole grape retrieved on Magill forceps — single piece, ~2 cm, intact",
+          "Two-person BVM produces good bilateral chest rise (in contrast to flat resistance previously)",
+          "SpO2 trend: 78 → 88 → 94 → 96 over ~60 seconds",
+          "Child grimaces, begins to cry weakly, then audibly louder",
+          "No evidence of post-obstructive pulmonary edema (no crackles, no pink frothy sputum) — reassess every 2-3 minutes"
+        ],
+        "patientSpeech": "Weak crying, calls 'mama'"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 144,
+        "bpSys": 94,
+        "bpDia": 56,
+        "respRate": 36,
+        "spo2": 96,
+        "etco2": 38,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 15,
+        "glucose": 102,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "reassess-airway-breathing",
+          "shortAction": "Reassess airway, breathing, mental status after FB removal — bilateral breath sounds, chest rise, SpO2/EtCO2 trend",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Notes Pertinent Assessment Findings 1-2 — ongoing assessment is critical; acute worsening can be secondary to displacement, obstruction, pneumothorax, or equipment failure. Same principle applies after FB removal: confirm and continuously verify airway patency.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Pertinent Assessment Findings: Ongoing assessment is critical when an airway device is in place. Acute worsening of respiratory status or evidence of hypoxemia can be secondary to displacement or obstruction of the airway device, pneumothorax, or equipment failure."
+        },
+        {
+          "id": "continued-bvm-prn",
+          "shortAction": "Continue BVM-assist PRN if hypoventilating; peds rate 20-30/min, one breath over 1 sec, 2-sec pause; titrate to EtCO2 35-45",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Notes 5b — child BVM rate 20-30/min, one breath over 1 sec with 2-sec pause, titrated to EtCO2 35-45. Child remains at risk of secondary respiratory compromise (laryngospasm, secretions, post-obstructive pulmonary edema).",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "In children, ventilating breaths should be delivered over one second, with a two second pause between breaths. Pediatric – infant/child: Support spontaneous respirations if the patient is hypoventilating. For apnea, provide 1 breath every 2–3 seconds adjusting based on pulse oximetry and digital capnometry or capnography (with the goal of 35–45 mmHg)."
+        },
+        {
+          "id": "supplemental-o2-blow-by",
+          "shortAction": "Supplemental O2 (NC, simple mask, or blow-by) — target SpO2 94-98%, do not over-oxygenate",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Treatment 2 — supplemental O2 titrated to SpO2 94-98%; oxygen is a drug with a dose range.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Administer oxygen if needed for air hunger or respiratory distress and titrate to a target SPO2 of 94–98%. Depending on patient presentation, this may be accomplished with nasal cannula, nonrebreather, BVM, NIV. Oxygen is a drug with an appropriate dose range and undesirable effects from both too much and too little supplementation."
+        },
+        {
+          "id": "continuous-monitoring-en-route",
+          "shortAction": "Continuous SpO2 + waveform EtCO2 + cardiac monitor; watch for laryngospasm, post-obstructive pulmonary edema, re-aspiration",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Monitoring 1-3 — continuous pulse oximetry and waveform capnography for assessment and guiding therapy; capnography helps assess adequacy of ventilation and change in ventilatory status in response to treatment.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Patients with significant respiratory distress should have continuous pulse oximetry and waveform capnography monitoring for both assessment and for guiding therapy. In spontaneously breathing patients, waveform capnography can help with assessment of critically ill patients, for example: assessment of adequacy of ventilation and change in ventilatory status in response to treatment."
+        },
+        {
+          "id": "transport-pediatric-capable-ed",
+          "shortAction": "Transport to pediatric-capable ED; early notification of FBAO requiring DL/Magill retrieval",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Treatment 12 — transport to the closest appropriate hospital for airway stabilization. Pediatric ENT/bronchoscopy capability is the relevant destination criterion for an aspirated foreign body, as remaining fragments may be in the distal airway.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Transport to the closest appropriate hospital for airway stabilization when respiratory failure cannot be successfully managed in the prehospital setting."
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "blind-finger-sweep-iatrogenic",
+      "name": "Blind sweep — partial converted to complete",
+      "description": "Crew anchored on 'must remove the foreign body now,' separated the toddler from his mother, laid him supine on the couch, and performed a blind finger sweep. The finger did not retrieve the grape — instead it pushed the grape from a partially obstructing supraglottic position into a completely obstructing glottic position. Within seconds the child silences, cyanoses, and goes limp. This is an iatrogenic complete obstruction and the recovery path requires the same BLS-airway sequence as the default-path complete-obstruction phase: two-person BVM to confirm, direct laryngoscopy + peds Magill, and chest compressions if unresponsive.",
+      "triggerCondition": "During the initial-contact phase, crew elected to perform a blind finger sweep on a child who had an effective cough. The sweep did not retrieve the grape; it advanced it from supraglottic to glottic, converting a partial obstruction into a complete one. The child immediately lost his cough, became silent, and developed cyanosis.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": {
+          "eye": 2,
+          "verbal": 2,
+          "motor": 4
+        },
+        "airway": "Completely obstructed iatrogenically — no air movement, no stridor, no cry; grape now visualized at glottic inlet on DL but inaccessible without forceps",
+        "breathing": "Apneic effort, no air entry on auscultation, no chest rise on BVM attempt with good seal",
+        "circulation": "HR 156, perfusing — central pulse present, cap refill 3 sec, peripheries dusky",
+        "skin": {
+          "color": "perioral and peripheral cyanosis evolving",
+          "temperature": "warm",
+          "moisture": "dry"
+        },
+        "pupils": "Equal at 4 mm, reactive",
+        "motorFunction": "Limp; minimal withdrawal",
+        "otherFindings": [
+          "Sudden silencing immediately after sweep attempt",
+          "BVM with good seal yields NO chest rise — high resistance",
+          "Mother visibly distressed; instructor/preceptor opportunity to debrief decision",
+          "Same recovery sequence as default-path 'complete obstruction' applies"
+        ],
+        "patientSpeech": "Silent."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 156,
+        "bpSys": 84,
+        "bpDia": 50,
+        "respRate": 4,
+        "spo2": 72,
+        "etco2": 14,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 100,
+        "glucose": 102,
+        "trendTimeSeconds": 15,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "name-the-error",
+          "shortAction": "Name the error — blind sweep on effective-cough child converted partial to complete; resume escalating airway protocol",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Patient Care Goals + Treatment 1 — the protocol escalates from least to most invasive; a blind sweep is neither in the protocol nor congruent with the goals (maintain a patent airway, alleviate distress, least-invasive method). Naming the error is part of crew resource management and re-anchors decision-making on protocol.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Patient Care Goals: Maintain a patent airway; Provide effective oxygenation and adequate ventilation using the least invasive possible method to achieve those goals. Generally, the approach is to implement the interventions below in an escalating fashion to meet the patient care goals above."
+        },
+        {
+          "id": "two-person-bvm-attempt-iatrogenic",
+          "shortAction": "Two-person, two-thumbs-up BVM — confirms ongoing complete obstruction (no chest rise)",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Treatment 4a — two-person two-thumbs-up BVM ventilation is preferred; failure to achieve chest rise with good seal confirms a complete obstruction, not a positioning/seal problem.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Use bag-valve-mask (BVM) ventilation in the setting of respiratory failure or arrest. Whenever possible, the patient's head should be elevated up to 30 degrees. Two-person, two-thumbs-up BVM ventilation is preferred."
+        },
+        {
+          "id": "dl-magill-rescue",
+          "shortAction": "Direct laryngoscopy + peds Magill forceps; remove FB only under direct visualization",
+          "priority": "critical",
+          "rationale": "MATC Airway Management Notes 8a / Patient Safety 1 — preparation includes a promptly available plan for alternate airway placement; suctioning/visualization is a priority; visualization-directed retrieval is the only sanctioned mechanical FB removal.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)",
+          "protocolExcerpt": "Orotracheal/Endotracheal intubation (ETI): Checklist use and use of protocolized interventions to optimize the patient physically and physiologically have been shown to both improve success rates of orotracheal intubation as well as decrease peri-intubation complications. Preparation should also include a promptly available plan for alternate airway placement if ETI unsuccessful. Video laryngoscopy may be a useful tool for endotracheal intubation in the hands of a practiced clinician."
+        },
+        {
+          "id": "compressions-if-unresponsive-iatrogenic",
+          "shortAction": "If becomes pulseless or severely bradycardic → start peds CPR 15:2 (two-rescuer), 100-120/min, ~4 cm depth; compressions help dislodge FB",
+          "priority": "critical",
+          "rationale": "MATC Cardiac Arrest Treatment 6c-i / Notes 1b — pediatric multi-rescuer CPR 15:2; depth 1.5 inches (4 cm) for infants. Intrathoracic pressure from compressions can dislodge a foreign body — compressions double as airway-clearance in unresponsive FBAO.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "Pediatric Consideration: For multiple rescuer CPR in children, 15:2 is the recommended compression-to-ventilation ratio (30:2 for single rescuer). Effective chest compressions are defined as: A rate of greater than 100 and less than 120 compressions/minute; Depth of at least 2 inches (5 cm) and less than 2.4 inches (6 cm) for adults and children or 1.5 inches (4 cm) for infants."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "fb-removed-improving",
+          "if": "Rescue successful — FB visualized and removed",
+          "condition": "Crew recovers from the judgment error: stops the blind-sweep approach, performs two-person BVM (confirms no chest rise), proceeds to direct laryngoscopy, visualizes the grape now at the glottic inlet, and retrieves it with peds Magill forceps. BVM ventilation now produces chest rise and the child gradually recovers (see fb-removed-improving phase).",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "two-person-bvm-attempt-iatrogenic",
+            "dl-magill-rescue"
+          ]
+        },
+        {
+          "targetPhaseId": "decompensation-to-arrest",
+          "if": "Continued mechanical fixation, no DL/Magill",
+          "condition": "Crew continues to repeat blind sweeps or fixates on a mechanical removal attempt without DL/Magill. Child progresses from complete obstruction → unresponsive → bradycardia → pulseless within 60-90 seconds.",
+          "conditionType": "action_not_taken"
+        }
+      ]
+    },
+    {
+      "id": "decompensation-to-arrest",
+      "name": "Decompensation to pediatric arrest",
+      "description": "Complete obstruction was not relieved. Hypoxia has now produced bradycardia and pulselessness — this is a pediatric respiratory-etiology cardiac arrest from FBAO. Rhythm on the monitor is bradycardic-to-PEA / asystole-trending. Survival depends on immediate high-quality 15:2 CPR with the airway managed in parallel (direct laryngoscopy + peds Magill if FB visualized), epinephrine 0.1 mg/kg IV/IO (max 1 mg) per the cardiac arrest protocol, and ongoing reversible-cause search (the H — Hypoxia — is the proximate cause and must be reversed by clearing the foreign body).",
+      "triggerCondition": "Complete obstruction was not relieved — either because the crew stalled in the default 'complete-obstruction en-route' phase, or because the iatrogenic blind-sweep branch was followed by continued mechanical fixation without DL/Magill. Hypoxia drove bradycardia, then asystole. Patient is now pulseless.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 1
+        },
+        "airway": "Completely obstructed by grape at the glottic inlet — no air movement",
+        "breathing": "Apneic; chest rise only with compressions and BVM attempts",
+        "circulation": "Pulseless — no central pulse, no peripheral pulse, no spontaneous cardiac activity beyond agonal PEA",
+        "skin": {
+          "color": "central cyanosis; mottled / dusky",
+          "temperature": "warm to cool",
+          "moisture": "dry"
+        },
+        "pupils": "Dilated 5-6 mm, sluggishly reactive",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "Pediatric respiratory-etiology cardiac arrest — proximate H is hypoxia from FBAO",
+          "Rhythm on monitor: bradycardia transitioning to asystole / PEA",
+          "Mother actively grieving on scene — keep family liaison in place"
+        ],
+        "patientSpeech": "Unresponsive."
+      },
+      "monitorState": {
+        "ecgRhythm": "Asystole",
+        "ecgWaveform": 3,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 12,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 100,
+        "glucose": 102,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "high-quality-cpr-peds",
+          "shortAction": "High-quality peds CPR 15:2 (two-rescuer), 100-120/min, depth ~4 cm (1.5 in for infants / ~5 cm for older children), full recoil",
+          "priority": "critical",
+          "rationale": "MATC Cardiac Arrest Treatment 6c-i / Notes 1 — pediatric multi-rescuer CPR 15:2; rate 100-120; depth 1.5 in for infants, 2 in for children, full recoil, minimize interruptions, rotate every 2 min.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "Pediatric Consideration: For multiple rescuer CPR in children, 15:2 is the recommended compression-to-ventilation ratio (30:2 for single rescuer). Effective chest compressions are defined as: A rate of greater than 100 and less than 120 compressions/minute; Depth of at least 2 inches (5 cm) and less than 2.4 inches (6 cm) for adults and children or 1.5 inches (4 cm) for infants; Allow for complete chest recoil (avoid leaning); Minimize interruptions in compressions; Avoid rescuer fatigue by rotating rescuers at least every 2 minutes."
+        },
+        {
+          "id": "definitive-fb-removal-arrest",
+          "shortAction": "Direct laryngoscopy + peds Magill — remove the grape under visualization NOW (this is the reversible cause)",
+          "priority": "critical",
+          "rationale": "MATC Cardiac Arrest Treatment 8 — consider reversible causes of cardiac arrest. Hypoxia from FBAO is the proximate H in this arrest; clearing the foreign body is the definitive reversible-cause intervention. MATC Airway Management Notes 8 supports DL/VL + Magill as the visualization-directed retrieval method.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "Consider reversible causes of cardiac arrest which include the following: Hypothermia; The dialysis patient/known hyperkalemic patient; Tricyclic antidepressant overdose; Hypovolemia; If the patient is intubated at the time of arrest, assess for tension pneumothorax and misplaced ETT."
+        },
+        {
+          "id": "epi-peds-arrest",
+          "shortAction": "Epinephrine 0.12 mg IV/IO (12 kg × 0.01 mg/kg = 0.12 mg; max single dose 1 mg) of 0.1 mg/mL (1:10,000); repeat q3-5 min, prioritize early for non-shockable",
+          "priority": "critical",
+          "rationale": "MATC Cardiac Arrest Notes 11 — administer epinephrine 0.1 mg/kg, maximum dose 1 mg, IV/IO during the first or second round of compressions. Note: MATC writes the pediatric arrest epi dose as 0.1 mg/kg (1:10,000 = 0.1 mg/mL, so 0.1 mg/kg = 1 mL/kg of 1:10,000). For 12 kg → 0.12 mg (1.2 mL of 1:10,000). 'Prioritize early administration of epinephrine for non-shockable rhythms.'",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "Administer epinephrine (0.1 mg/kg, maximum dose 1 mg) IV/IO during the first or second round of compressions. If feasible, IV or IO access should be obtained. Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms."
+        },
+        {
+          "id": "io-access-tibial-peds",
+          "shortAction": "IO access — proximal tibia (peds preferred site); do not interrupt compressions for access",
+          "priority": "critical",
+          "rationale": "MATC Cardiac Arrest Notes 14a-iv-1 — for IO access the tibial site is preferred for infants and children; IO/IV access should be obtained without interrupting compressions.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "Additional rescuer obtains IO (or IV) access and gives epinephrine. For IO access: The proximal humerus is the preferred site for adults; The tibial site is preferred for infants and children. IO or IV access without interrupting chest compressions."
+        },
+        {
+          "id": "respiratory-etiology-airway-early",
+          "shortAction": "Respiratory-etiology arrest — manage airway early (DL+Magill + BVM 20-30/min), no passive ventilation",
+          "priority": "critical",
+          "rationale": "MATC Cardiac Arrest Notes 13c / Pediatric Considerations 12e — for arrests of respiratory etiology, manage the airway early; passive ventilation with NRB is not indicated. For pediatrics, airway management may be considered early given that the most likely cause of arrest is respiratory.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "Arrests of respiratory etiology (including drowning). In addition to the above, consider early management of the patient's airway. Passive ventilation with a NRB is not indicated for these patients. Pediatric Considerations: Special attention should be applied to the pediatric population and airway management/respiratory support. Given that the most likely cause of cardiac arrest is respiratory, airway management may be considered early in the patient's care."
+        },
+        {
+          "id": "etco2-quality-monitor",
+          "shortAction": "Continuous waveform EtCO2 — guide CPR quality (target >10 mmHg), watch for ROSC (sudden EtCO2 rise of 10-15)",
+          "priority": "critical",
+          "rationale": "MATC Cardiac Arrest Notes 3 — quantitative EtCO2 monitors CPR quality (improve compressions if EtCO2 <10) and is an early indicator of ROSC (rapid increase of 10-15).",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "Quantitative end-tidal capnography (EtCO2) should be used to monitor effectiveness of chest compressions. If EtCO2 less than 10 mmHg during the initial phases of resuscitation, attempt to improve chest compression quality. Continuous waveform capnography is strongly encouraged in patients in cardiac arrest: to monitor quality of CPR; as an early indicator of ROSC (rapid increase of 10–15 in EtCO2); to assist in evaluating prognosis for survival."
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 50,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

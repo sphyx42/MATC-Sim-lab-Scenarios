@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Febrile Seizure in a Toddler — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Febrile Seizure in a Toddler</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Mason Park</strong></span><span class="patient-chip">2 years male</span><span class="patient-chip">31 lbs (14 kg)</span><span class="patient-chip">2'11"</span><span class="patient-chip">CC: Witnessed generalized seizure, now post-ictal with fever</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Engine 12, Medic 12, respond to 4418 Cherry Lane for a 2-year-old male, child had a seizure. Parents on scene, child no longer seizing per caller.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Single-family home, living room. Toddler lying on the couch wrapped in a fleece blanket. Toys, sippy cup, and bottle of children's acetaminophen on the coffee table. Living room is warm — thermostat reads 76°F.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Tuesday, 19:42. Outside temperature mild, 62°F.</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. Home is clean and well-kept. No pets loose. No environmental hazards.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Mother (very anxious, crying, holding child's hand) and father (asking rapid-fire questions, pacing). One older sibling (~5 yo) watching from the hallway. Mom says, 'Is he going to be okay? Is he going to do it again?' Both parents are cooperative once oriented.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Toddler bundled tightly in a fleece blanket despite warm room</li><li>Bottle of children's acetaminophen open on coffee table</li><li>Tissues and humidifier near couch suggest recent URI</li><li>Child appears flushed, eyes closed, mildly disoriented but rousable to mom's voice</li><li>No vomit, no bowel/bladder soiling visible, no obvious trauma</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">Mason is a previously healthy 2-year-old boy with three days of runny nose, cough, and low-grade fever managed at home with acetaminophen. About 30 minutes ago he felt very warm to mom and became 'glassy-eyed.' His arms and legs then stiffened and jerked symmetrically for approximately 2 minutes with eye-rolling and lip smacking, after which he went limp. He has been sleepy but rousable since. No prior seizures, no head trauma, no recent travel, no sick contacts beyond a daycare cold going around. Immunizations are up to date per mom (including HiB and PCV). He took 5 mL of children's acetaminophen about 4 hours ago.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">NKDA</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Children's acetaminophen 160 mg/5 mL PRN fever (last dose ~4 hours ago)</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Otherwise healthy, No prior seizures, No chronic conditions</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Half a juice box and a few crackers about 2 hours ago. Decreased PO past 24 hours due to fussiness.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Three-day URI with rhinorrhea and cough. Tactile fever escalated this evening. Witnessed generalized tonic-clonic seizure lasting approximately 2 minutes followed by post-ictal lethargy. Parents called 911 mid-seizure; activity had stopped by the time EMS arrived.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">On arrival the toddler is post-ictal on the couch, wrapped in a blanket, flushed and warm to the touch. Eyes closed, but rouses to mom's voice and grimaces with stimulation. Parents are panicked — mom is tearful, dad is firing off questions. The scene is otherwise calm and safe. This phase rewards stepping back to perform a Pediatric Assessment Triangle (PAT) from the doorway BEFORE hands-on touching, because hands-on with a febrile toddler will trigger crying, agitation, and inaccurate vitals. Family management runs in parallel: a calm, narrating approach lowers parental panic and keeps the child cooperative.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">148</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">96/58</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">97%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">28</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">103.3°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">92</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">12</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent. No stridor, no secretions, no posturing. Tongue not bitten.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous, regular, no retractions or accessory muscle use. Lungs clear with mild upper-airway congestion (URI).</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong, fast radial and brachial pulses. Capillary refill &lt; 2 seconds at the fingertips. Skin pink-flushed, warm, dry. No mottling.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Flushed pink, no rash visible on exposed arms/face · Hot to the touch · Dry, no diaphoresis</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm bilaterally. No eye deviation.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all four extremities spontaneously when stimulated. No focal deficit. Mildly hypotonic in keeping with post-ictal state.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Whimpers, says 'Mama' when stimulated. No clear speech otherwise — age-appropriate."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Pediatric Assessment Triangle: APPEARANCE — sleepy but rousable, normal tone, consoles to mom; WORK OF BREATHING — easy, no retractions, no abnormal sounds; CIRCULATION TO SKIN — flushed but not mottled or pale</li><li>Anterior fontanelle already closed (age-appropriate)</li><li>No neck stiffness elicited with passive movement</li><li>No bruising, no signs of trauma anywhere</li><li>Parents report seizure was about 2 minutes, generalized, with eye rolling and bilateral jerking</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Scene size-up; introduce calmly to family; survey environment</div></div>
+        <div class="action-excerpt">Environment: Survey for pills, paraphernalia, substance use, medication patches, medical devices, ambient temperature, social indicators of neglect, carbon monoxide exposures, multiple casualties with same complaint</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Pediatric Assessment Triangle from doorway (appearance, WOB, circulation)</div></div>
+        <div class="action-excerpt">Exam: Airway patency; Breath sounds, respiratory rate, and effectiveness of ventilation; Signs of perfusion (pulses, capillary refill, color); Neurologic status (GCS, nystagmus, pupil size, focal neurologic deficit, or signs of stroke)</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Targeted history: seizure duration, fever course, immunizations, prior seizures</div></div>
+        <div class="action-excerpt">History: Duration of current seizure; Prior history of seizures, diabetes, or hypoglycemia; Typical appearance of seizures; Baseline seizure frequency and duration; Focality of onset, direction of eye deviation; Concurrent symptoms of apnea, cyanosis, vomiting, bowel/bladder incontinence, or fever; Bystander administration of medications to stop the seizure; Current medications, including anticonvulsants; Recent dose changes or non-compliance with anticonvulsants; History of trauma, pregnancy, heat exposure, or toxin exposure</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Reassure parents; explain febrile seizures and what to expect</div></div>
+        <div class="action-excerpt">Key Considerations: History from bystanders and caregivers; Age of the patient; Development age and baseline functional status</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Hands-on exam performed</div>
+        <div class="phase-trigger">Trigger: After a calm doorway PAT and parent interview, the crew transitions to age-appropriate hands-on assessment with the child in mom's arms — checking AVPU, capillary refill, glucose, rectal temperature, and performing a full skin exam to rule out petechial rash.</div>
+        <div class="phase-desc">The toddler tolerates assessment because the crew approached calmly, narrated, and let mom hold him. A focused hands-on exam confirms simple febrile seizure: AVPU V, age-appropriate normal vitals other than fever and a fever-driven sinus tach, capillary refill brisk, glucose normal, and — critically — a full skin exam (clothes off, head to toe) shows NO petechiae, NO purpura, no neck stiffness, no bulging fontanelle. Rectal temperature confirms 103.2°F. This is the moment that distinguishes simple febrile seizure from meningococcemia / bacterial meningitis / sepsis.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">140</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">94/56</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">98%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">26</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">103.3°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">92</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">14</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-maintained.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous, easy, lungs clear with mild URI congestion only.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong central and peripheral pulses, capillary refill &lt; 2 seconds, no mottling.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Flushed pink head and trunk; NO petechiae, NO purpura, NO purpuric rash on trunk, back, axillae, or extremities when fully exposed · Hot, especially trunk · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm bilaterally.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all four extremities spontaneously and symmetrically. No focal deficit. Tone returning toward baseline.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Says 'Mama,' 'no,' and 'down.' Age-appropriate dysarthria, no slurring beyond normal toddler speech."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Rectal temperature 103.2°F (39.6°C)</li><li>Capillary refill brisk (&lt;2 seconds)</li><li>Glucose 92 mg/dL</li><li>No neck stiffness with passive flexion</li><li>No bulging fontanelle (already closed at this age)</li><li>No tongue laceration, no oral trauma, no incontinence noted</li><li>Clear rhinorrhea and mild post-tussive cough consistent with simple URI</li><li>Parents now calmer, answering questions, immunization record on phone — up to date including HiB and PCV</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess AVPU/GCS and pupils after seizure</div></div>
+        <div class="action-excerpt">Exam: Neurologic status (GCS, nystagmus, pupil size, focal neurologic deficit, or signs of stroke)</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Check capillary refill and central/peripheral pulses</div></div>
+        <div class="action-excerpt">Exam: Signs of perfusion (pulses, capillary refill, color)</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Check blood glucose (point-of-care fingerstick)</div></div>
+        <div class="action-excerpt">Glucometry: If still actively seizing, check blood glucose level. If less than 60 mg/dL, treat per the Hypoglycemia Guideline.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Obtain core temperature (rectal preferred; tympanic acceptable)</div></div>
+        <div class="action-excerpt">Extremities/skin: Track marks, hydration, edema, dialysis shunt, temperature to touch (or if able, use a thermometer), signs of trauma</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Full skin exam — clothes off, head to toe, look for petechiae/purpura</div></div>
+        <div class="action-excerpt">Pertinent Assessment Findings: Track marks; Breath odor; Skin temperature; Rash and/or petechiae; Evidence of trauma; Focal neurologic changes; Location</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Check for neck stiffness and signs of meningismus</div></div>
+        <div class="action-excerpt">Neck: Rigidity or pain with range of motion; Signs of infection: Fever, cough, skin changes, dysuria</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Supportive care and transport</div>
+        <div class="phase-trigger">Trigger: Hands-on assessment confirmed simple febrile seizure: normal glucose, brisk capillary refill, no petechiae or meningismus, age 6 months to 6 years, generalized seizure under 15 minutes with full recovery toward baseline. Crew transitions to supportive care, family education, and transport for ED evaluation.</div>
+        <div class="phase-desc">Crew treats this as a simple febrile seizure: recovery position with mom, supplemental O2 only if SpO2 falls (currently 98%), no IV needed for this resolved simple febrile seizure, antipyretic considered (or deferred — last acetaminophen 4 hours ago, ED will dose). Family is counseled that all first-time febrile seizures get evaluated in the ED. Calm, unhurried transport with monitor on, ongoing reassessment q5 minutes. Toddler is now more alert, talking softly with mom, vital signs trending toward baseline.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">132</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">96/58</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">98%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">24</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">102.7°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">92</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Oriented</span><span class="gcs-score">5</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">15</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-protecting.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Easy, regular, lungs clear.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong pulses, brisk capillary refill, no mottling.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pink, flushed from fever but normalizing · Warm/hot, slowly improving · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Normal tone, moving all extremities, sitting up in mom's lap.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Says 'home' and 'Mama' repeatedly. Age-appropriate."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Toddler talking softly with mom, accepting sippy cup of water</li><li>No recurrent seizure activity during transport</li><li>Reassessment every 5 minutes documented</li><li>Family education: simple febrile seizures usually do not cause long-term harm; ED evaluation standard for first-time seizure</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Place patient in recovery position; allow caregiver to hold</div></div>
+        <div class="action-excerpt">Treatment and Interventions: If signs of airway obstruction are present and a chin-lift, jaw thrust, positioning, and/or suctioning does not alleviate it, place oropharyngeal airway (if gag reflex is absent) or nasopharyngeal airway</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Pulse oximetry on; supplement O2 only if SpO2 &lt; 94%</div></div>
+        <div class="action-excerpt">Place pulse oximeter and/or waveform capnography to monitor oxygenation/ventilation. Administer oxygen as appropriate with a target of achieving 94–98% saturation.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">Remove excessive layers (unwrap blanket); allow passive cooling</div></div>
+        <div class="action-excerpt">For febrile seizures, consider the following interventions after stopping the seizure... Removing excessive layers of clothing AND/OR Applying cool compresses to the body</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">Consider acetaminophen 210 mg PO (14 kg × 15 mg/kg; max 650 mg) — defer if recent dose</div></div>
+        <div class="action-excerpt">For febrile seizures, consider the following interventions after stopping the seizure... Acetaminophen 15 mg/kg, maximum dose 650 mg, PR/IV/IO (if unable to swallow) or PO (if able to swallow)</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Transport for ED evaluation; ongoing reassessment q5 min; family riding</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Hypoglycemic patients who are treated in the field for seizure should be transported to hospital, regardless of whether they return to baseline mental status after treatment</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Skipped PAT, agitated toddler</div>
+        <div class="phase-trigger">Trigger: Crew skipped the hands-off Pediatric Assessment Triangle and went straight to invasive hands-on vitals (BP cuff, pulse-ox sticker, thermometer) on a febrile, post-ictal toddler before he was acclimated to them or being held by a caregiver.</div>
+        <div class="phase-desc">Crew bypassed the Pediatric Assessment Triangle and went straight to hands-on assessment — wrapping a BP cuff, attaching pulse-ox, taking a rectal temperature — before engaging mom and letting the toddler get used to them. Predictable result: the child wakes fully, panics, screams, and arches away. He yanks the pulse-ox off, the BP cuff readings are inflated by struggling, and the crew can't reliably hear lungs or palpate a soft abdomen. The crew now has unreliable vitals AND has lost the chance to observe baseline appearance and work of breathing. Mom is even more upset because 'you're scaring him.'</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">178</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">110/70</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">95%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">44</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">32</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">103.3°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">92</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">14</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent but screaming.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Crying, breath-holding spells, RR appears elevated from agitation — cannot accurately count.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulse rapid from crying, BP readings unreliable due to motion artifact.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Flushed red from crying AND fever — hard to tell which · Hot · Diaphoretic from struggling</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm but lots of tearing.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Arching, kicking, pulling away. Hard to assess tone or focal deficits.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Screaming, inconsolable, reaching for mom."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Pulse-ox waveform full of motion artifact; numbers bouncing 88–100%</li><li>BP cuff alarms 'motion error' on three attempts</li><li>Crew has not observed baseline appearance or work of breathing — opportunity lost</li><li>Mom: 'Please, please stop, you're scaring him!'</li><li>No reliable lung auscultation, no soft abdominal exam possible</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Stop, step back, hand patient to mom, restart with PAT</div></div>
+        <div class="action-excerpt">Exam: Airway patency; Breath sounds, respiratory rate, and effectiveness of ventilation; Signs of perfusion (pulses, capillary refill, color); Neurologic status (GCS, nystagmus, pupil size, focal neurologic deficit, or signs of stroke)</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Re-engage parents; narrate every step before touching</div></div>
+        <div class="action-excerpt">Key Considerations: History from bystanders and caregivers; Age of the patient; Development age and baseline functional status</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Skin exam skipped, petechiae missed</div>
+        <div class="phase-trigger">Trigger: Crew left the child bundled in his blanket throughout assessment and transport, never exposed the trunk and back, and therefore failed to identify a petechial/purpuric rash — the hallmark finding of meningococcemia and a major sepsis red flag in a febrile child.</div>
+        <div class="phase-desc">Crew did not perform a clothes-off skin exam — they kept the child wrapped in his blanket through assessment and transport. They never lifted the shirt or unbundled the trunk. As a result they miss a fine petechial rash blossoming across the trunk and axillae — a red-flag finding for meningococcemia and bacterial sepsis. Without that finding the crew categorizes this as a 'simple febrile seizure,' transports routine with no advance ED notification, and the receiving team is caught flat-footed when the rash is discovered at ED triage.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">152</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">88/52</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">96%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">30</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">34</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">103.5°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">90</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">12</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Easy, regular.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulses present, capillary refill 2–3 seconds (subtle — easy to miss), peripheral pulses slightly diminished.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Flushed face. HIDDEN under blanket: fine petechial rash across trunk, back, axillae and proximal extremities — non-blanching with a glass test · Hot · Dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities, post-ictal but rousing.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Whimpers softly, says 'Mama.'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Crew never unbundled the blanket or removed clothing</li><li>Capillary refill subtly delayed (2–3 sec) — missed because crew checked only hand briefly</li><li>No advance notification given to receiving ED</li><li>ED triage nurse uncovers patient, immediately calls a sepsis alert — crew is debriefed on the missed finding</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Stop and perform full clothes-off skin exam now</div></div>
+        <div class="action-excerpt">Pertinent Assessment Findings: Track marks; Breath odor; Skin temperature; Rash and/or petechiae; Evidence of trauma; Focal neurologic changes; Location</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize signs of pediatric sepsis (tachycardia, delayed cap refill, fever)</div></div>
+        <div class="action-excerpt">Inclusion Criteria: Signs of poor perfusion (due to a medical cause) such as one or more of the following: Altered mental status; Delayed capillary refill (&gt; 3 seconds); Flash capillary refill (&gt; 1 second) seen in early septic shock; Decreased urine output; Respiratory rate greater than 20 breaths per minute in adults or elevated in children; Hypotension for age... Tachycardia or bradycardia for age, out of proportion to temperature... Weak, decreased or bounding pulses; Cool/mottled or flushed/ruddy skin</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Establish IV/IO; 20 mL/kg NS bolus = 280 mL (14 kg × 20 mL/kg)</div></div>
+        <div class="action-excerpt">Pediatric: Fluid goal of up to a total of 60 mL/kg or 1 liter of isotonic fluid by giving 20 mL/kg of isotonic fluid by administering rapid boluses (for cardiogenic shock give 10 mL/kg boluses)</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Upgrade transport priority; advance notification to ED — possible sepsis</div></div>
+        <div class="action-excerpt">Provide advanced notification to the hospital</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

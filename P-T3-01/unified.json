@@ -1,0 +1,632 @@
+{
+  "meta": {
+    "id": "P-T3-01",
+    "name": "Pediatric Cardiac Arrest, Shockable Rhythm",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Pediatric / Resuscitation",
+    "protocols": [
+      "resus-cardiac-arrest",
+      "resp-airway-management",
+      "resus-post-rosc"
+    ],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "pediatric",
+      "cardiac-arrest",
+      "vfib",
+      "pals",
+      "shockable",
+      "tier-3"
+    ]
+  },
+  "patient": {
+    "name": "Mason Carter",
+    "age": 8,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 25,
+    "weightLbs": 55,
+    "height": 128,
+    "chiefComplaint": "Pulseless and apneic; collapsed at soccer practice",
+    "history": {
+      "hpi": "Healthy 8-year-old male collapsed suddenly during a youth soccer scrimmage approximately 6 minutes prior to EMS arrival. Coach reports the patient was running up the field, suddenly stopped, clutched his chest, and dropped to the ground. No witnessed trauma reported, though a teammate was running near him at the moment of collapse — possible blunt chest impact (commotio cordis) cannot be excluded. Bystander CPR (compression-only) was initiated within 90 seconds by an off-duty nurse. AED was not on the field. Mother on scene; father en route. No prodromal symptoms reported earlier in the day. No prior cardiac history known.",
+      "pastMedical": [
+        "Healthy; no known cardiac, respiratory, or metabolic disease",
+        "Routine pediatric well-checks up to date",
+        "No prior surgeries"
+      ],
+      "medications": [],
+      "allergies": [
+        "NKDA"
+      ],
+      "lastOralIntake": "Water and a granola bar approximately 45 minutes prior to collapse; full lunch ~3 hours prior",
+      "events": "Collapsed during soccer practice. Bystander compression-only CPR started in <90 sec by an off-duty nurse. EMS arrived 6 minutes after collapse. Parents present and visibly distraught."
+    }
+  },
+  "scene": {
+    "dispatch": "Engine 12 and Medic 7, respond Code 3 to Lincoln Park soccer field, 4100 block of W. Lincoln Ave, for an 8-year-old male unresponsive on the field, bystander CPR in progress.",
+    "location": "Outdoor youth soccer field, grass surface, sideline benches and parents present. Mid-afternoon, dry conditions, ambient temp ~22°C / 72°F.",
+    "time": "Saturday afternoon, approximately 1500 hours, clear and mild.",
+    "safety": "Scene physically safe. Emotional safety threat: mother actively screaming; father arriving and yelling; team of 8-year-olds and their families gathered nearby. Need rapid family-management plan and crowd control by coach/PD.",
+    "bystanders": "Off-duty nurse performing compression-only CPR on patient. Soccer coach controlling team. Mother kneeling beside patient, sobbing and asking 'Is he breathing?' over and over. Father just arrived, demanding answers.",
+    "visualCues": [
+      "Small-statured male on his back in soccer uniform, mid-field grass",
+      "No spontaneous movement; cyanotic lips and nailbeds",
+      "Bystander performing chest compressions; depth appears adequate",
+      "Soccer ball and water bottle nearby; no visible trauma; jersey intact",
+      "Mother on knees beside patient holding his hand and crying"
+    ]
+  },
+  "phases": [
+    {
+      "id": "arrival",
+      "name": "Initial Contact",
+      "description": "EMS arrives on a youth soccer field 6 minutes after a witnessed collapse of an 8-year-old male. Bystander compression-only CPR is in progress by an off-duty nurse. Mother is on scene and visibly distraught; father just arrived. No AED has been applied. Patient appears small for stated age (~25 kg / 55 lb). The crew must rapidly confirm pulselessness/apnea, take over high-quality CPR, and apply the monitor with pediatric pads while assigning a family-liaison role.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "Patent but unprotected; no gag; no spontaneous respirations",
+        "breathing": "Apneic. Bystander ventilations are NOT being given (compression-only CPR).",
+        "circulation": "No palpable central pulse during a brief compression pause. Cyanotic lips and nailbeds. Skin cool.",
+        "skin": { "color": "cyanotic", "temperature": "cool", "moisture": "dry" },
+        "pupils": "Fixed, mid-position, ~4 mm bilaterally; no response to light",
+        "motorFunction": "Flaccid; no spontaneous movement",
+        "otherFindings": [
+          "No external trauma; chest wall intact and symmetric",
+          "Small bruise to anterior left lower chest of uncertain age — raises commotio cordis suspicion",
+          "Soccer uniform clean and intact"
+        ],
+        "patientSpeech": "None — unresponsive"
+      },
+      "monitorState": {
+        "ecgRhythm": "Ventricular Fibrillation (Coarse)",
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 12,
+        "temp": 36.6,
+        "tempF": 97.9,
+        "obstruction": 0,
+        "glucose": 110,
+        "customMeasures": [],
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "confirm-arrest",
+          "shortAction": "Confirm pulselessness + apnea in <10 sec; take over CPR",
+          "protocolExcerpt": "Assessment: The patient in cardiac arrest requires a prompt balance of treatment and assessment. In cases of cardiac arrest, assessments should be focused and limited to obtaining enough information to reveal the patient is pulseless. Once pulselessness is discovered, treatment should be initiated immediately, and any further history must be obtained by bystanders while treatment is ongoing.",
+          "priority": "critical",
+          "rationale": "Rapid recognition of arrest avoids treatment delay; do not waste >10 sec on pulse check.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "high-quality-cpr",
+          "shortAction": "Take over high-quality CPR; rate 100-120/min, depth ~5 cm (2 in), full recoil",
+          "protocolExcerpt": "Key Considerations: Effective chest compressions are defined as: A rate of greater than 100 and less than 120 compressions/minute; Depth of at least 2 inches (5 cm) and less than 2.4 inches (6 cm) for adults and children or 1.5 inches (4 cm) for infants; adolescents who have entered puberty should receive the same depth of chest compressions as an adult; Allow for complete chest recoil (avoid leaning); Minimize interruptions in compressions.",
+          "priority": "critical",
+          "rationale": "Effective compressions and prompt defibrillation are the most important interventions in arrest.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "two-rescuer-ratio",
+          "shortAction": "Establish two-rescuer 15:2 compression-to-ventilation ratio with BVM + OPA",
+          "protocolExcerpt": "Pediatric Consideration: For multiple rescuer CPR in children, 15:2 is the recommended compression-to-ventilation ratio (30:2 for single rescuer).",
+          "priority": "critical",
+          "rationale": "Pediatric CPR ratio differs from adult — easily forgotten under stress with parents on scene.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "apply-peds-pads",
+          "shortAction": "Apply pediatric defibrillation pads; minimize compression interruption",
+          "protocolExcerpt": "Key Considerations: Chest compressions are usually the most rapidly applied therapy for the patient in cardiac arrest and should be initiated as soon as the patient is noted to be pulseless. If the patient is being monitored with pads in place at the time of arrest, immediate defibrillation should take precedence over all other therapies. However, if there is any delay in defibrillation (e.g., in order to place pads), chest compressions should be initiated while the defibrillator is being applied.",
+          "priority": "critical",
+          "rationale": "Use pediatric-size pads if available; do not pause compressions to place them.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "family-liaison",
+          "shortAction": "Designate one crew member as family liaison; brief, calm communication",
+          "protocolExcerpt": "Patient Safety Considerations: Performing manual chest compressions in a moving vehicle may pose a clinician safety concern. Ideally, patients should be resuscitated as close to the scene as operationally possible. Risks and benefits should be considered before patient movement in cardiac arrest situations.",
+          "priority": "important",
+          "rationale": "Parents on scene during pediatric arrest are a known scene-management hazard; clear role assignment protects team focus and supports family.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "etco2-on",
+          "shortAction": "Place waveform capnography to monitor CPR quality (target EtCO2 >10 mmHg)",
+          "protocolExcerpt": "Key Considerations: Quantitative end-tidal capnography (EtCO2) should be used to monitor effectiveness of chest compressions. If EtCO2 less than 10 mmHg during the initial phases of resuscitation, attempt to improve chest compression quality.",
+          "priority": "important",
+          "rationale": "Objective feedback on compression quality; also early ROSC indicator.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "first-shock",
+          "if": "Peds defib at 2 J/kg = 50 J",
+          "condition": "Crew correctly calculates weight-based first-shock energy (25 kg × 2 J/kg = 50 J) and delivers shock using pediatric-size pads with minimal compression interruption.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "high-quality-cpr",
+            "apply-peds-pads"
+          ]
+        },
+        {
+          "targetPhaseId": "adult-energy-shock",
+          "if": "Adult energy (200 J) used on child",
+          "condition": "Crew forgets weight-based pediatric defibrillation dosing and selects an adult energy level (e.g., 200 J on the Zoll), failing to calculate 2 J/kg.",
+          "conditionType": "action_taken"
+        }
+      ]
+    },
+    {
+      "id": "first-shock",
+      "name": "First shock at 2 J/kg",
+      "description": "After rapid pad placement and confirmation of coarse VF on the monitor, the crew correctly calculates pediatric defibrillation energy (25 kg × 2 J/kg = 50 J on the Zoll X-Series) and delivers the first shock with minimal pre/post-shock compression pauses. CPR resumes immediately for 2 minutes; vascular access is being established (IV first; if unsuccessful in 2 attempts or 90 seconds, proximal tibia IO). Mother is still distraught; family-liaison crew member is updating her in brief, calm sentences.",
+      "triggerCondition": "Crew applied pediatric pads, identified coarse VF, calculated 2 J/kg × 25 kg = 50 J on the Zoll X-Series, and delivered first shock with compressions resuming immediately afterward.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "Patent with OPA in place; BVM-assisted ventilations at 15:2",
+        "breathing": "Apneic; receiving BVM ventilation at 15:2 ratio with two rescuers, sufficient volume to see chest rise",
+        "circulation": "Pulseless; compressions ongoing at 110/min with full recoil",
+        "skin": { "color": "cyanotic", "temperature": "cool", "moisture": "dry" },
+        "pupils": "Fixed, ~4 mm",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "Bystander nurse stepped back; crew rotating compressors every 2 minutes",
+          "IV attempt #1 in left AC unsuccessful; second attempt now in progress",
+          "Family-liaison crew member kneeling with mother on sideline, explaining the team is doing CPR and shocking the heart"
+        ],
+        "patientSpeech": "None — unresponsive"
+      },
+      "monitorState": {
+        "ecgRhythm": "Ventricular Fibrillation (Coarse)",
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 18,
+        "temp": 36.6,
+        "tempF": 97.9,
+        "obstruction": 0,
+        "glucose": 110,
+        "customMeasures": [],
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "calc-first-shock",
+          "shortAction": "Defibrillate at 50 J on Zoll X-Series (25 kg × 2 J/kg)",
+          "protocolExcerpt": "Treatment and Interventions: Defibrillation dosing should follow manufacturer's recommendation in the case of biphasic defibrillators. Zoll: Peds – 2 J/kg, 4 J/kg. Lifepack: Peds – 2 J/kg, 4 J/kg.",
+          "priority": "critical",
+          "rationale": "Pediatric weight-based defibrillation; first shock 2 J/kg, subsequent at 4 J/kg. Adult energies risk myocardial injury.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "resume-cpr-immediately",
+          "shortAction": "Resume CPR immediately post-shock; no pulse check for 2 min",
+          "protocolExcerpt": "Treatment and Interventions: Chest compressions should resume immediately after defibrillation attempts with no pauses for pulse checks for 2 minutes regardless of the rhythm displayed on the cardiac monitor.",
+          "priority": "critical",
+          "rationale": "Minimizing peri-shock pause is the single biggest modifier of resuscitation success.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "iv-io-access",
+          "shortAction": "Obtain IV; if no access in 2 attempts/90 sec, place IO in proximal tibia",
+          "protocolExcerpt": "Pit Crew: Additional rescuer obtains IO (or IV) access and gives epinephrine. For IO access: The proximal humerus is the preferred site for adults. The tibial site is preferred for infants and children.",
+          "priority": "critical",
+          "rationale": "Vascular access enables epinephrine and antiarrhythmics; tibial IO is preferred peds site.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "ventilate-peds-rate",
+          "shortAction": "BVM ventilations at 15:2 with two rescuers; just enough volume for chest rise",
+          "protocolExcerpt": "Pediatric Considerations: Ventilations should be delivered with only sufficient volume to achieve chest rise. Overventilation is undesirable. In children, ventilating breaths should be delivered over one second, with a two second pause between breaths. Pediatric – infant/child: For apnea, provide 1 breath every 2–3 seconds adjusting based on pulse oximetry and digital capnometry or capnography (with the goal of 35–45 mmHg).",
+          "priority": "critical",
+          "rationale": "Hyperventilation reduces venous return and worsens outcomes; pediatric rates differ from adult.",
+          "protocolReference": "MATC: Airway Management (Includes RSI)"
+        },
+        {
+          "id": "monitor-cpr-quality",
+          "shortAction": "Use EtCO2 + feedback device; rotate compressor every 2 min",
+          "protocolExcerpt": "Key Considerations: Avoid rescuer fatigue by rotating rescuers at least every 2 minutes. Some EMS pit crew approaches use a clinician on either side of the chest, alternating compressions every minute or every 100 compressions to avoid fatigue.",
+          "priority": "important",
+          "rationale": "Compression quality deteriorates with fatigue; objective monitoring prevents drift.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "epi-and-second-shock",
+          "if": "Peds-dose Epi 0.25 mg IO + 4 J/kg",
+          "condition": "Access established (likely tibial IO), pediatric-dose epinephrine 0.01 mg/kg IV/IO (25 kg × 0.01 = 0.25 mg of 1:10,000 = 2.5 mL) given during second compression cycle; persistent VF prompts second defibrillation at 4 J/kg = 100 J.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "iv-io-access",
+            "calc-first-shock"
+          ]
+        },
+        {
+          "targetPhaseId": "adult-epi-given",
+          "if": "Adult Epi 1 mg given on child",
+          "condition": "Crew reverts to adult arrest reflex and pushes 1 mg of 1:10,000 epinephrine (4× the weight-based pediatric dose) IV/IO; weight-based math missed.",
+          "conditionType": "action_taken"
+        }
+      ]
+    },
+    {
+      "id": "epi-and-second-shock",
+      "name": "Peds Epi + 4 J/kg",
+      "description": "VF persists on the post-shock rhythm check. Access secured (tibial IO if IV failed). Pediatric-dose epinephrine (0.01 mg/kg = 0.25 mg of 1:10,000 = 2.5 mL) is given via IO during the second 2-minute cycle. Second defibrillation is delivered at 4 J/kg = 100 J on the Zoll. CPR resumes immediately. Capnography is climbing slightly (EtCO2 ~22), suggesting reasonable compression quality. Mother remains on scene; father is now also present and being managed by the liaison crew member.",
+      "triggerCondition": "After the first 2-min CPR cycle post-shock, rhythm check shows persistent coarse VF; pediatric weight-based epinephrine 0.25 mg IV/IO was given during compressions, and second shock delivered at 4 J/kg (100 J).",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "OPA in place; BVM ventilations effective with chest rise",
+        "breathing": "Apneic; receiving 15:2 BVM ventilations",
+        "circulation": "Pulseless; high-quality compressions at 110/min ongoing",
+        "skin": { "color": "cyanotic", "temperature": "cool", "moisture": "dry" },
+        "pupils": "Fixed, ~4 mm",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "Tibial IO confirmed with flush",
+          "Epinephrine 0.25 mg IV/IO documented and timed for q3-5 min redose",
+          "Second shock delivered 100 J biphasic; CPR resumed within 5 seconds"
+        ],
+        "patientSpeech": "None — unresponsive"
+      },
+      "monitorState": {
+        "ecgRhythm": "Ventricular Fibrillation (Coarse)",
+        "ecgWaveform": 18,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 22,
+        "temp": 36.6,
+        "tempF": 97.9,
+        "obstruction": 0,
+        "glucose": 110,
+        "customMeasures": [],
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "peds-epi",
+          "shortAction": "Epinephrine 0.25 mg IV/IO of 1:10,000 (25 kg × 0.01 mg/kg = 0.25 mg = 2.5 mL); repeat q3-5 min",
+          "protocolExcerpt": "Key Considerations: Administer epinephrine (0.1 mg/kg, maximum dose 1 mg) IV/IO during the first or second round of compressions.",
+          "priority": "critical",
+          "rationale": "Per MATC peds guidance the standard pediatric arrest dose is 0.01 mg/kg of 1:10,000 IV/IO every 3-5 minutes (the MATC note above lists max 1 mg per dose). Adult 1-mg push on a 25-kg child = 4× overdose.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "second-shock-4jkg",
+          "shortAction": "Defibrillate at 100 J on Zoll (25 kg × 4 J/kg) — subsequent shocks",
+          "protocolExcerpt": "Treatment and Interventions: Defibrillation dosing should follow manufacturer's recommendation in the case of biphasic defibrillators. Zoll: Peds – 2 J/kg, 4 J/kg. Lifepack: Peds – 2 J/kg, 4 J/kg.",
+          "priority": "critical",
+          "rationale": "Second and subsequent pediatric shocks escalate to 4 J/kg per MATC and AHA.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "pre-charge-defib",
+          "shortAction": "Pre-charge defibrillator during compressions; hover, don't step away",
+          "protocolExcerpt": "Treatment and Interventions: All attempts should be made to prevent avoidable interruptions in chest compressions, such as pre-charging the defibrillator and hovering over the chest, rather than stepping away during defibrillations.",
+          "priority": "important",
+          "rationale": "Pre-charging keeps peri-shock pause <5 seconds.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "consider-reversibles",
+          "shortAction": "Consider reversible causes (Hs/Ts); peds arrest most often respiratory",
+          "protocolExcerpt": "Pediatric Considerations: Special attention should be applied to the pediatric population and airway management/respiratory support. Given that the most likely cause of cardiac arrest is respiratory, airway management may be considered early in the patient's care.",
+          "priority": "important",
+          "rationale": "Although this patient is shockable (suggesting primary cardiac/arrhythmogenic — possibly commotio cordis or long QT), most peds arrests are respiratory-driven and the airway/ventilation strategy must be aggressive.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "amiodarone-and-rosc",
+          "if": "Peds Amio 125 mg given for refractory VF",
+          "condition": "VF remains refractory after second shock + epinephrine; crew administers pediatric amiodarone 5 mg/kg IV/IO (25 kg × 5 = 125 mg, well under the 300 mg max) and continues the shock/CPR cycle; ROSC is achieved on the subsequent rhythm check.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "peds-epi",
+            "second-shock-4jkg"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "amiodarone-and-rosc",
+      "name": "Amio given; ROSC",
+      "description": "Refractory VF after two shocks + epinephrine. Pediatric amiodarone 5 mg/kg IV/IO (25 kg × 5 mg/kg = 125 mg, well under the 300 mg max) is administered slowly into the running IO. CPR continues; the next 2-min cycle completes. Rhythm check now shows organized narrow-complex sinus rhythm with a palpable femoral pulse — ROSC. Patient remains comatose but is now perfusing. Crew transitions to post-ROSC care, controls ventilation to avoid hyperventilation, and prepares for transport to the regional pediatric cardiac center.",
+      "triggerCondition": "VF refractory through two shocks and one dose of epinephrine; crew gives pediatric amiodarone 5 mg/kg (125 mg) IV/IO, continues a CPR/shock cycle, and the patient achieves ROSC on the subsequent rhythm check.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 2 },
+        "airway": "Patent with OPA; will transition to BVM-supported spontaneous ventilation or advanced airway based on response",
+        "breathing": "Initiates weak, irregular spontaneous respirations ~8/min; crew continues BVM-assisted ventilations at 12-20/min targeting EtCO2 35-45",
+        "circulation": "Palpable femoral and brachial pulse at ~110/min, weak; BP cuff cycled — 88/54",
+        "skin": { "color": "pale, improving from cyanotic", "temperature": "cool", "moisture": "dry" },
+        "pupils": "~3 mm bilaterally, sluggishly reactive",
+        "motorFunction": "Withdraws minimally to noxious stimulus over the sternum",
+        "otherFindings": [
+          "EtCO2 jumped from 24 to 38 immediately preceding ROSC (early ROSC indicator)",
+          "12-lead post-ROSC EKG: NSR with prolonged QT interval — supports underlying long QT syndrome as arrhythmogenic cause",
+          "Glucose 102 mg/dL — within range",
+          "Mother sobbing with relief; father informed transport will be to the regional pediatric cardiac center"
+        ],
+        "patientSpeech": "None — unresponsive"
+      },
+      "monitorState": {
+        "ecgRhythm": "Normal Sinus Rhythm",
+        "ecgWaveform": 9,
+        "hr": 110,
+        "bpSys": 88,
+        "bpDia": 54,
+        "respRate": 12,
+        "spo2": 94,
+        "etco2": 38,
+        "temp": 36.5,
+        "tempF": 97.7,
+        "obstruction": 0,
+        "glucose": 102,
+        "customMeasures": [],
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "peds-amio",
+          "shortAction": "Amiodarone 125 mg IV/IO (25 kg × 5 mg/kg; max 300 mg) for refractory VF",
+          "protocolExcerpt": "Treatment and Interventions: Amiodarone 300mg, followed by 150mg 4-6 min later if still in refractory VF and pulseless VT. Peds (5 mg/kg IV, max of 300 mg) may be considered for VF/pulseless VT that is unresponsive to CPR, defibrillation, and a vasopressor therapy.",
+          "priority": "critical",
+          "rationale": "Pediatric antiarrhythmic dose is weight-based; adult 300 mg push would exceed protocol max for a 25-kg child.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "post-rosc-airway",
+          "shortAction": "Secure airway; ventilate 12-20/min; target EtCO2 35-45 mmHg",
+          "protocolExcerpt": "Assessment, Treatment, and Interventions: Do not hyperventilate. Maintain a ventilation rate of 8–10 breaths per minute, targeting an EtCO2 of 35–45 mmHg.",
+          "priority": "critical",
+          "rationale": "Hyperventilation precipitates re-arrest. Pediatric ventilation rate is higher than the adult 8-10 cited in the protocol's adult-focused section — use 12-20/min for child per airway protocol.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "spo2-target",
+          "shortAction": "Titrate O2 to SpO2 94-98%; avoid hyperoxia",
+          "protocolExcerpt": "Assessment, Treatment, and Interventions: Administer oxygen as appropriate with a target of achieving 94–98% saturation. Do not hyperoxygenate.",
+          "priority": "important",
+          "rationale": "Hyperoxia worsens neurologic outcomes post-ROSC.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "post-rosc-12lead",
+          "shortAction": "Obtain 12-lead EKG; assess for reversible cause (STEMI, long QT, electrolytes)",
+          "protocolExcerpt": "Assessment, Treatment, and Interventions: Perform serial 12-lead EKGs to assess for evidence of reversible cause of arrest such as STEMI or electrolyte derangement (e.g., hyperkalemia).",
+          "priority": "important",
+          "rationale": "Post-ROSC 12-lead in this peds patient may reveal long QT (the likely arrhythmogenic substrate).",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "monitor-rearrest",
+          "shortAction": "Monitor closely for re-arrest; keep pads on; reassess vitals q3-5 min",
+          "protocolExcerpt": "Assessment, Treatment, and Interventions: Monitor closely for recurrence of cardiac arrest using clinical and adjunctive criteria such as cardiac monitoring, EtCO2 monitoring, and physical signs of perfusion.",
+          "priority": "critical",
+          "rationale": "A significant percentage of post-ROSC patients re-arrest; pediatric long QT is particularly unstable.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "peds-receiving-facility",
+          "shortAction": "Transport to pediatric-capable cardiac/post-resuscitation center",
+          "protocolExcerpt": "Assessment, Treatment, and Interventions: Consider transporting patients to an age-appropriate facility which offers specialized adult or pediatric post-resuscitation care.",
+          "priority": "critical",
+          "rationale": "Pediatric post-arrest patients benefit from specialized peds critical care and pediatric cardiology evaluation (e.g., genetic long QT workup).",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "family-update",
+          "shortAction": "Update family on ROSC; offer to allow one parent to ride if appropriate",
+          "protocolExcerpt": "Patient Safety Considerations: Performing manual chest compressions in a moving vehicle may pose a clinician safety concern. Ideally, patients should be resuscitated as close to the scene as operationally possible. Risks and benefits should be considered before patient movement in cardiac arrest situations.",
+          "priority": "supplemental",
+          "rationale": "Family-centered care during peds resuscitation improves outcomes for family and reduces complaints; one parent in the rig if it does not impair care.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "adult-energy-shock",
+      "name": "Adult energy (200 J) used",
+      "description": "Crew under stress reaches for the adult energy setting and shocks the 25-kg child at 200 J — 4× the indicated 2 J/kg pediatric dose. The shock terminates VF briefly but the patient enters an idioventricular rhythm without a pulse. Capnography drops as compression quality is disrupted by team confusion. Myocardial stunning from excessive energy delivery is now superimposed on the arrest. Crew must recognize the dosing error, recalibrate to weight-based dosing for subsequent shocks (4 J/kg = 100 J), and continue CPR.",
+      "triggerCondition": "Crew selected adult biphasic energy (200 J on the Zoll) on the first shock instead of calculating 2 J/kg × 25 kg = 50 J. Weight-based pediatric defibrillation was missed.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "OPA in place; BVM ventilations ongoing",
+        "breathing": "Apneic; receiving BVM ventilations at 15:2",
+        "circulation": "Pulseless; idioventricular rhythm on monitor; perfusion appearing worse than before shock",
+        "skin": { "color": "cyanotic, slightly worse than initial", "temperature": "cool", "moisture": "dry" },
+        "pupils": "Fixed, ~5 mm — slight dilation since shock",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "EtCO2 dropped from 18 to 10 after the over-energy shock — concern for myocardial stunning and worsened compression quality during team confusion",
+          "Lead physician/medic now realizes the dosing error and is calling out 'recalculate: 4 J/kg = 100 J for next shock'"
+        ],
+        "patientSpeech": "None — unresponsive"
+      },
+      "monitorState": {
+        "ecgRhythm": "Idioventricular Rhythm",
+        "ecgWaveform": 91,
+        "hr": 28,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 10,
+        "temp": 36.6,
+        "tempF": 97.9,
+        "obstruction": 0,
+        "glucose": 110,
+        "customMeasures": [],
+        "trendTimeSeconds": 15,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-overenergy",
+          "shortAction": "Recognize dosing error; recalculate energy as 4 J/kg = 100 J for next shock",
+          "protocolExcerpt": "Treatment and Interventions: Defibrillation dosing should follow manufacturer's recommendation in the case of biphasic defibrillators. Zoll: Peds – 2 J/kg, 4 J/kg.",
+          "priority": "critical",
+          "rationale": "Identifying and correcting a dosing error mid-resuscitation is itself a teaching moment; do not silently bury the error.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "continue-cpr-after-error",
+          "shortAction": "Resume high-quality CPR immediately; do not delay for blame/discussion",
+          "protocolExcerpt": "Treatment and Interventions: Chest compressions should resume immediately after defibrillation attempts with no pauses for pulse checks for 2 minutes regardless of the rhythm displayed on the cardiac monitor.",
+          "priority": "critical",
+          "rationale": "Compression continuity remains the dominant determinant of outcome; correction can occur during CPR.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "adult-epi-given",
+      "name": "Adult Epi 1 mg given",
+      "description": "Crew, defaulting to adult arrest reflex, pushes 1 mg of 1:10,000 epinephrine IV/IO — 4× the weight-based pediatric dose of 0.25 mg for this 25-kg child. The patient achieves ROSC on the next rhythm check but is now severely hypertensive and tachycardic from epinephrine overdose, with concerning hypertensive crisis findings (BP 168/104, HR 168, EtCO2 50) and signs of coronary spasm risk. Crew must recognize the dosing error, support post-ROSC physiology cautiously, avoid additional vasopressors, and prepare for possible re-arrest from arrhythmia or coronary spasm.",
+      "triggerCondition": "Crew administered 1 mg of 1:10,000 epinephrine IV/IO (the adult arrest dose) on this 25-kg child instead of the weight-based pediatric 0.01 mg/kg = 0.25 mg dose. ROSC achieved but with severe hypertensive crisis from epi overdose.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 2 },
+        "airway": "OPA in place; spontaneous ventilations now present",
+        "breathing": "Spontaneous, ~28/min, shallow and rapid",
+        "circulation": "Bounding peripheral pulses; HR 168 sinus tach; hypertensive",
+        "skin": { "color": "flushed, ruddy", "temperature": "warm", "moisture": "diaphoretic" },
+        "pupils": "~5 mm bilaterally, sluggishly reactive — mydriatic from catecholamine effect",
+        "motorFunction": "Stiffening; transient extensor posturing observed",
+        "otherFindings": [
+          "Recognized epi overdose 4× weight-based dose",
+          "Concern for coronary vasospasm — 12-lead may show transient ST changes",
+          "Hypertensive crisis raises risk of intracranial hemorrhage in this child",
+          "Mother now panicking again — 'why is he like that?'"
+        ],
+        "patientSpeech": "None"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 168,
+        "bpSys": 168,
+        "bpDia": 104,
+        "respRate": 28,
+        "spo2": 96,
+        "etco2": 50,
+        "temp": 37.0,
+        "tempF": 98.6,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 25,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-epi-overdose",
+          "shortAction": "Recognize epi overdose (1 mg vs 0.25 mg weight-based); document and continue support",
+          "protocolExcerpt": "Key Considerations: Administer epinephrine (0.1 mg/kg, maximum dose 1 mg) IV/IO during the first or second round of compressions.",
+          "priority": "critical",
+          "rationale": "Adult 1-mg push exceeds weight-based pediatric dose by 4×; recognition prevents repeat dosing and informs receiving facility.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)"
+        },
+        {
+          "id": "no-more-pressors",
+          "shortAction": "Hold further vasopressors; do not repeat epi until pediatric weight-based dose recalculated",
+          "protocolExcerpt": "Notes/Educational Pearls — Key Considerations: Many patients experience 'stunning' of the cardiac muscle after ROSC. Hypotension is common, and volume resuscitation or vasopressor support is often required.",
+          "priority": "critical",
+          "rationale": "Patient is hypertensive from overdose — adding more pressor worsens coronary spasm and re-arrest risk.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "monitor-rearrest-overdose",
+          "shortAction": "Monitor closely for re-arrest from coronary spasm or arrhythmia; keep pads on",
+          "protocolExcerpt": "Notes/Educational Pearls — Key Considerations: The condition of post-resuscitation patients fluctuates rapidly and continuously requiring close monitoring. A significant percentage of post-ROSC patients will re-arrest.",
+          "priority": "critical",
+          "rationale": "Epi overdose markedly raises re-arrest risk; defibrillation pads must remain in place.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        },
+        {
+          "id": "notify-receiving-overdose",
+          "shortAction": "Early notification to peds receiving facility re: epinephrine overdose",
+          "protocolExcerpt": "Assessment, Treatment, and Interventions: Consider transporting patients to an age-appropriate facility which offers specialized adult or pediatric post-resuscitation care.",
+          "priority": "important",
+          "rationale": "Receiving team must prepare for hypertensive crisis, possible coronary spasm, and altered post-ROSC trajectory.",
+          "protocolReference": "MATC: Adult Post-ROSC (Return of Spontaneous Circulation) Care"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 50,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

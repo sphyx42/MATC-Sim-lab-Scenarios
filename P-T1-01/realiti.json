@@ -1,0 +1,347 @@
+{
+  "scenarioId": "P-T1-01",
+  "scenarioName": "Febrile Seizure in a Toddler",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1200,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "Mason is a previously healthy 2-year-old boy with three days of runny nose, cough, and low-grade fever managed at home with acetaminophen. About 30 minutes ago he felt very warm to mom and became 'glassy-eyed.' His arms and legs then stiffened and jerked symmetrically for approximately 2 minutes with eye-rolling and lip smacking, after which he went limp. He has been sleepy but rousable since. No prior seizures, no head trauma, no recent travel, no sick contacts beyond a daycare cold going around. Immunizations are up to date per mom (including HiB and PCV). He took 5 mL of children's acetaminophen about 4 hours ago.",
+    "discussion": "",
+    "course": "Initial Contact: On arrival the toddler is post-ictal on the couch, wrapped in a blanket, flushed and warm to the touch. Eyes closed, but rouses to mom's voice and grimaces with stimulation. Parents are panicked — mom is tearful, dad is firing off questions. The scene is otherwise calm and safe. This phase rewards stepping back to perform a Pediatric Assessment Triangle (PAT) from the doorway BEFORE hands-on touching, because hands-on with a febrile toddler will trigger crying, agitation, and inaccurate vitals. Family management runs in parallel: a calm, narrating approach lowers parental panic and keeps the child cooperative. → Hands-on exam performed: The toddler tolerates assessment because the crew approached calmly, narrated, and let mom hold him. A focused hands-on exam confirms simple febrile seizure: AVPU V, age-appropriate normal vitals other than fever and a fever-driven sinus tach, capillary refill brisk, glucose normal, and — critically — a full skin exam (clothes off, head to toe) shows NO petechiae, NO purpura, no neck stiffness, no bulging fontanelle. Rectal temperature confirms 103.2°F. This is the moment that distinguishes simple febrile seizure from meningococcemia / bacterial meningitis / sepsis. → Supportive care and transport: Crew treats this as a simple febrile seizure: recovery position with mom, supplemental O2 only if SpO2 falls (currently 98%), no IV needed for this resolved simple febrile seizure, antipyretic considered (or deferred — last acetaminophen 4 hours ago, ED will dose). Family is counseled that all first-time febrile seizures get evaluated in the ED. Calm, unhurried transport with monitor on, ongoing reassessment q5 minutes. Toddler is now more alert, talking softly with mom, vital signs trending toward baseline."
+  },
+  "patientInformation": {
+    "patientName": "Mason Park",
+    "patientCondition": "Witnessed generalized seizure, now post-ictal with fever",
+    "patientAge": 2,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 1,
+    "patientSex": 1,
+    "patientHeight": 88,
+    "patientWeight": 14,
+    "patientPhotoId": 3,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "On arrival the toddler is post-ictal on the couch, wrapped in a blanket, flushed and warm to the touch. Eyes closed, but rouses to mom's voice and grimaces with stimulation. Parents are panicked — mom is tearful, dad is firing off questions. The scene is otherwise calm and safe. This phase rewards stepping back to perform a Pediatric Assessment Triangle (PAT) from the doorway BEFORE hands-on touching, because hands-on with a febrile toddler will trigger crying, agitation, and inaccurate vitals. Family management runs in parallel: a calm, narrating approach lowers parental panic and keeps the child cooperative.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 148,
+        "bpSys": 96,
+        "bpDia": 58,
+        "respRate": 28,
+        "spo2": 97,
+        "etco2": 36,
+        "temp": 39.6,
+        "obstruction": 0,
+        "custMeasure1": 92,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Scene size-up; introduce calmly to family; survey environment",
+        "Pediatric Assessment Triangle from doorway (appearance, WOB, circulation)",
+        "Targeted history: seizure duration, fever course, immunizations, prior seizures",
+        "Reassure parents; explain febrile seizures and what to expect"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Hands-on exam performed",
+      "description": "The toddler tolerates assessment because the crew approached calmly, narrated, and let mom hold him. A focused hands-on exam confirms simple febrile seizure: AVPU V, age-appropriate normal vitals other than fever and a fever-driven sinus tach, capillary refill brisk, glucose normal, and — critically — a full skin exam (clothes off, head to toe) shows NO petechiae, NO purpura, no neck stiffness, no bulging fontanelle. Rectal temperature confirms 103.2°F. This is the moment that distinguishes simple febrile seizure from meningococcemia / bacterial meningitis / sepsis.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 140,
+        "bpSys": 94,
+        "bpDia": 56,
+        "respRate": 26,
+        "spo2": 98,
+        "etco2": 36,
+        "temp": 39.6,
+        "obstruction": 0,
+        "custMeasure1": 92,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Reassess AVPU/GCS and pupils after seizure",
+        "Check capillary refill and central/peripheral pulses",
+        "Check blood glucose (point-of-care fingerstick)",
+        "Obtain core temperature (rectal preferred; tympanic acceptable)",
+        "Full skin exam — clothes off, head to toe, look for petechiae/purpura",
+        "Check for neck stiffness and signs of meningismus"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Supportive care and transport",
+      "description": "Crew treats this as a simple febrile seizure: recovery position with mom, supplemental O2 only if SpO2 falls (currently 98%), no IV needed for this resolved simple febrile seizure, antipyretic considered (or deferred — last acetaminophen 4 hours ago, ED will dose). Family is counseled that all first-time febrile seizures get evaluated in the ED. Calm, unhurried transport with monitor on, ongoing reassessment q5 minutes. Toddler is now more alert, talking softly with mom, vital signs trending toward baseline.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 132,
+        "bpSys": 96,
+        "bpDia": 58,
+        "respRate": 24,
+        "spo2": 98,
+        "etco2": 36,
+        "temp": 39.3,
+        "obstruction": 0,
+        "custMeasure1": 92,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Place patient in recovery position; allow caregiver to hold",
+        "Pulse oximetry on; supplement O2 only if SpO2 < 94%",
+        "Remove excessive layers (unwrap blanket); allow passive cooling",
+        "Consider acetaminophen 210 mg PO (14 kg × 15 mg/kg; max 650 mg) — defer if recent dose",
+        "Transport for ED evaluation; ongoing reassessment q5 min; family riding"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Skipped PAT, agitated toddler",
+      "description": "Crew bypassed the Pediatric Assessment Triangle and went straight to hands-on assessment — wrapping a BP cuff, attaching pulse-ox, taking a rectal temperature — before engaging mom and letting the toddler get used to them. Predictable result: the child wakes fully, panics, screams, and arches away. He yanks the pulse-ox off, the BP cuff readings are inflated by struggling, and the crew can't reliably hear lungs or palpate a soft abdomen. The crew now has unreliable vitals AND has lost the chance to observe baseline appearance and work of breathing. Mom is even more upset because 'you're scaring him.'",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 178,
+        "bpSys": 110,
+        "bpDia": 70,
+        "respRate": 44,
+        "spo2": 95,
+        "etco2": 32,
+        "temp": 39.6,
+        "obstruction": 0,
+        "custMeasure1": 92,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Stop, step back, hand patient to mom, restart with PAT",
+        "Re-engage parents; narrate every step before touching"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Skin exam skipped, petechiae missed",
+      "description": "Crew did not perform a clothes-off skin exam — they kept the child wrapped in his blanket through assessment and transport. They never lifted the shirt or unbundled the trunk. As a result they miss a fine petechial rash blossoming across the trunk and axillae — a red-flag finding for meningococcemia and bacterial sepsis. Without that finding the crew categorizes this as a 'simple febrile seizure,' transports routine with no advance ED notification, and the receiving team is caught flat-footed when the rash is discovered at ED triage.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 152,
+        "bpSys": 88,
+        "bpDia": 52,
+        "respRate": 30,
+        "spo2": 96,
+        "etco2": 34,
+        "temp": 39.7,
+        "obstruction": 0,
+        "custMeasure1": 90,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Stop and perform full clothes-off skin exam now",
+        "Recognize signs of pediatric sepsis (tachycardia, delayed cap refill, fever)",
+        "Establish IV/IO; 20 mL/kg NS bolus = 280 mL (14 kg × 20 mL/kg)",
+        "Upgrade transport priority; advance notification to ED — possible sepsis"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Scene size-up; introduce calmly to family; survey environment",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Pediatric Assessment Triangle from doorway (appearance, WOB, circulation)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Targeted history: seizure duration, fever course, immunizations, prior seizures",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassure parents; explain febrile seizures and what to expect",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess AVPU/GCS and pupils after seizure",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check capillary refill and central/peripheral pulses",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check blood glucose (point-of-care fingerstick)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Obtain core temperature (rectal preferred; tympanic acceptable)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Full skin exam — clothes off, head to toe, look for petechiae/purpura",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check for neck stiffness and signs of meningismus",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place patient in recovery position; allow caregiver to hold",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Pulse oximetry on; supplement O2 only if SpO2 < 94%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Remove excessive layers (unwrap blanket); allow passive cooling",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Consider acetaminophen 210 mg PO (14 kg × 15 mg/kg; max 650 mg) — defer if recent dose",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport for ED evaluation; ongoing reassessment q5 min; family riding",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Stop, step back, hand patient to mom, restart with PAT",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Re-engage parents; narrate every step before touching",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Stop and perform full clothes-off skin exam now",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize signs of pediatric sepsis (tachycardia, delayed cap refill, fever)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV/IO; 20 mL/kg NS bolus = 280 mL (14 kg × 20 mL/kg)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Upgrade transport priority; advance notification to ED — possible sepsis",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

@@ -1,0 +1,354 @@
+{
+  "scenarioId": "P-T3-03",
+  "scenarioName": "Critically Ill Neonate/Infant, Undiagnosed",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1200,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "5-week-old, term, previously well male infant. Mother reports he was feeding normally (breast plus supplemental formula, 2–3 oz every 2–3 hours) until 48 hours ago, when he began taking less per feed and 'falling asleep at the breast' after only a minute or two. Over the past 24 hours he has had fewer than three wet diapers, no stool today, and has been increasingly difficult to wake. This morning the parents brought him to a walk-in clinic; the clinic told them to go directly to the ED. While preparing to drive, the father noticed the baby was 'completely limp' in his arms and not responding to voice, and called 911. No reported fever measured at home (no thermometer). No cough, no rash, no vomiting, no diarrhea, no known sick contacts but the 3-year-old sibling has a runny nose. No reported trauma; no falls. Pregnancy was term (40+1), uncomplicated, vaginal delivery, GBS-negative, no NICU stay, discharged home at 36 hours of life. State newborn screen result not yet known to the parents. He has not been seen by a pediatrician since the 2-week visit, where he was well and gaining weight. He is exclusively in the care of his parents.",
+    "discussion": "",
+    "course": "Initial Contact: Crew arrives to find a 5-week-old, ~4 kg male infant on a couch — floppy, weak cry, mottled skin, sunken fontanelle, grunting with each breath, mild retractions, cool extremities, and a >4-second cap refill on the chest. Parents are present and cooperative with a clear 48-hour history of progressively poor feeding and increasing sleepiness. The infant looks sick — abnormal appearance, abnormal work of breathing, and abnormal circulation on the Pediatric Assessment Triangle. The cause is NOT clinically obvious. Crew must hold a wide differential — sepsis, congenital heart disease (ductal-dependent lesion now closing at 5 weeks), inborn error of metabolism, severe hypoglycemia, NAT — and treat what they can in the field: ABCs, warming, glucose, IV/IO access, fluids, and emergent transport. Diagnosis is not the goal; stabilization is. → ABCs + warming + glucose done: Airway opened, blow-by O2 placed, active warming initiated (cabin warm, blanket on, head covered), and a heel-stick glucose of 38 mg/dL is in hand. The infant is still mottled, grunting, tachycardic, and lethargic — but the reversible findings (hypothermia, hypoglycemia) are now on a treatment track. The next move is vascular access for fluids and IV dextrose. → Warm emergent transport, peds-capable facility: IO is in (or a successful IV after 2 quick attempts), D10 8 mL has been pushed, 40 mL warmed NS bolus has gone in over <10 minutes, and reassessment shows modest improvement: HR drifting down toward 170, cap refill improving toward 3 seconds, color slightly less mottled, glucose rechecked at 78 mg/dL, temp climbing toward 36.4°C / 97.5°F. The infant is still sick — but moving in the right direction. Definitive diagnosis (sepsis vs CHD vs metabolic) is the ED's problem. The field crew's job now is to keep the infant warm, keep the fluid trickle going, monitor for deterioration, and get to a pediatric-capable facility with a heads-up call."
+  },
+  "patientInformation": {
+    "patientName": "Baby Boy Hollister",
+    "patientCondition": "5-week-old male, ~4 kg, full-term, brought to floor by parents after two days of progressively poor feeding and increasing sleepiness. On arrival the infant is floppy, has a weak cry, mottled skin, sunken anterior fontanelle, and is grunting with each breath. Cause is not clinically obvious — differential includes sepsis, congenital heart disease (ductal-dependent lesion), inborn error of metabolism, hypoglycemia, and non-accidental trauma. Field priorities are ABCs, warming, glucose, IV/IO, fluids, and rapid transport to a pediatric-capable facility.",
+    "patientAge": 5,
+    "patientAgeUnit": "weeks",
+    "patientAgeCategory": 1,
+    "patientSex": 1,
+    "patientHeight": 55,
+    "patientWeight": 4,
+    "patientPhotoId": 6,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 5-week-old, ~4 kg male infant on a couch — floppy, weak cry, mottled skin, sunken fontanelle, grunting with each breath, mild retractions, cool extremities, and a >4-second cap refill on the chest. Parents are present and cooperative with a clear 48-hour history of progressively poor feeding and increasing sleepiness. The infant looks sick — abnormal appearance, abnormal work of breathing, and abnormal circulation on the Pediatric Assessment Triangle. The cause is NOT clinically obvious. Crew must hold a wide differential — sepsis, congenital heart disease (ductal-dependent lesion now closing at 5 weeks), inborn error of metabolism, severe hypoglycemia, NAT — and treat what they can in the field: ABCs, warming, glucose, IV/IO access, fluids, and emergent transport. Diagnosis is not the goal; stabilization is.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 188,
+        "bpSys": 62,
+        "bpDia": 38,
+        "respRate": 70,
+        "spo2": 88,
+        "etco2": 28,
+        "temp": 35.8,
+        "obstruction": 0,
+        "custMeasure1": 38,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Pediatric Assessment Triangle: abnormal appearance, work of breathing, and circulation — sick infant",
+        "Recognize this is NOT a BRUE — infant is acutely ill on arrival; treat and transport",
+        "Open airway with sniffing position; suction nares only if obstructed",
+        "Blow-by O2 (or NC at 1–2 L/min); titrate to SpO2 94–98%",
+        "Aggressive warming: remove damp/cold layers, dry skin, wrap in blanket, cover head, warm ambulance compartment to ≥24°C / 75°F",
+        "Full vitals + temperature: HR 188, RR 70, BP 62/38, SpO2 88, EtCO2 28, temp 35.8°C / 96.4°F",
+        "Heel-stick blood glucose: 38 mg/dL — critical hypoglycemia"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "ABCs + warming + glucose done",
+      "description": "Airway opened, blow-by O2 placed, active warming initiated (cabin warm, blanket on, head covered), and a heel-stick glucose of 38 mg/dL is in hand. The infant is still mottled, grunting, tachycardic, and lethargic — but the reversible findings (hypothermia, hypoglycemia) are now on a treatment track. The next move is vascular access for fluids and IV dextrose.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 184,
+        "bpSys": 64,
+        "bpDia": 40,
+        "respRate": 64,
+        "spo2": 92,
+        "etco2": 30,
+        "temp": 36,
+        "obstruction": 0,
+        "custMeasure1": 38,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Attempt IV access ×2 (or <90 sec); if unsuccessful, place IO (proximal tibia)",
+        "D10% 8 mL IV/IO (4 kg × 2 mL/kg = 8 mL of 10% dextrose; newborn dose)",
+        "Warmed NS 40 mL IV/IO bolus (4 kg × 10 mL/kg; smaller than the 20 mL/kg standard for septic shock)",
+        "Place cardiac monitor + continuous SpO2 + EtCO2; confirm sinus tach, no SVT or wide complex",
+        "Reassess after fluid + dextrose: vitals, mental status, repeat glucose, listen for rales/hepatomegaly"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Warm emergent transport, peds-capable facility",
+      "description": "IO is in (or a successful IV after 2 quick attempts), D10 8 mL has been pushed, 40 mL warmed NS bolus has gone in over <10 minutes, and reassessment shows modest improvement: HR drifting down toward 170, cap refill improving toward 3 seconds, color slightly less mottled, glucose rechecked at 78 mg/dL, temp climbing toward 36.4°C / 97.5°F. The infant is still sick — but moving in the right direction. Definitive diagnosis (sepsis vs CHD vs metabolic) is the ED's problem. The field crew's job now is to keep the infant warm, keep the fluid trickle going, monitor for deterioration, and get to a pediatric-capable facility with a heads-up call.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 170,
+        "bpSys": 70,
+        "bpDia": 44,
+        "respRate": 52,
+        "spo2": 95,
+        "etco2": 33,
+        "temp": 36.4,
+        "obstruction": 0,
+        "custMeasure1": 78,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Transport emergent to pediatric-capable ED; pre-arrival call with vitals, glucose, and interventions",
+        "Maintain warming through transport: cabin ≥24°C / 75°F, head covered, recheck temp before handoff",
+        "Serial reassessment every 5 min — vitals, mental status, perfusion, glucose, lungs",
+        "Keep the differential open — sepsis, CHD, metabolic, NAT — and hand off thinking, not a diagnosis"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Anchored on sepsis, glucose skipped",
+      "description": "Crew correctly identifies a sick infant and moves quickly — but the mental model locks early on 'this is sepsis.' Antipyretics aren't indicated (infant is HYPOthermic), warmed fluids and warming are started, vascular access is sought, but the heel-stick glucose check is deferred 'for the ED.' The infant gets 20 mL/kg of warmed NS but no dextrose. Over the next several minutes, the level of consciousness deteriorates despite fluids, the cry becomes weaker, and a brief generalized stiffening episode is observed — a hypoglycemic seizure equivalent in a neonate. Glucose is finally checked: still 34 mg/dL.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 200,
+        "bpSys": 56,
+        "bpDia": 34,
+        "respRate": 38,
+        "spo2": 85,
+        "etco2": 24,
+        "temp": 36.2,
+        "obstruction": 0,
+        "custMeasure1": 34,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Stop, check glucose NOW, give D10 8 mL IV/IO (4 kg × 2 mL/kg, newborn dose)",
+        "Support ventilation with BVM at 20–30/min if apneic periods continue or SpO2 <90% sustained",
+        "Recognize and document the missed step; communicate clearly at handoff"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Cold transport — temp drops further",
+      "description": "Crew completes ABCs, gets access, gives D10 and a fluid bolus — but doesn't aggressively maintain temperature. The ambulance compartment is left at ambient (~68°F / 20°C). The infant is partially uncovered for ongoing reassessment and is in contact with a cool, unblanketed stretcher pad. The IV fluid was not warmed. Over the 15-minute transport, the infant's core temperature drops further to 35.2°C / 95.4°F. Despite the dextrose, blood glucose drifts back down to 52 mg/dL (cold infants burn glucose to shiver and to maintain core temp), perfusion worsens, and the infant arrives at the ED in worse shape than he started.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 196,
+        "bpSys": 58,
+        "bpDia": 36,
+        "respRate": 32,
+        "spo2": 88,
+        "etco2": 26,
+        "temp": 35.2,
+        "obstruction": 0,
+        "custMeasure1": 52,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Active rewarming NOW: cabin to ≥24°C / 75°F, head covered, dry blanket, swap to warmed fluids",
+        "Recheck glucose (52 mg/dL); repeat D10 8 mL IV/IO if symptomatic",
+        "Recognize falling RR with rising HR as decompensation — prepare for BVM and pre-notify ED"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Pediatric Assessment Triangle: abnormal appearance, work of breathing, and circulation — sick infant",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize this is NOT a BRUE — infant is acutely ill on arrival; treat and transport",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Open airway with sniffing position; suction nares only if obstructed",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Blow-by O2 (or NC at 1–2 L/min); titrate to SpO2 94–98%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Aggressive warming: remove damp/cold layers, dry skin, wrap in blanket, cover head, warm ambulance compartment to ≥24°C / 75°F",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Full vitals + temperature: HR 188, RR 70, BP 62/38, SpO2 88, EtCO2 28, temp 35.8°C / 96.4°F",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Heel-stick blood glucose: 38 mg/dL — critical hypoglycemia",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Attempt IV access ×2 (or <90 sec); if unsuccessful, place IO (proximal tibia)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "D10% 8 mL IV/IO (4 kg × 2 mL/kg = 8 mL of 10% dextrose; newborn dose)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Warmed NS 40 mL IV/IO bolus (4 kg × 10 mL/kg; smaller than the 20 mL/kg standard for septic shock)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place cardiac monitor + continuous SpO2 + EtCO2; confirm sinus tach, no SVT or wide complex",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess after fluid + dextrose: vitals, mental status, repeat glucose, listen for rales/hepatomegaly",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport emergent to pediatric-capable ED; pre-arrival call with vitals, glucose, and interventions",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Maintain warming through transport: cabin ≥24°C / 75°F, head covered, recheck temp before handoff",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Serial reassessment every 5 min — vitals, mental status, perfusion, glucose, lungs",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Keep the differential open — sepsis, CHD, metabolic, NAT — and hand off thinking, not a diagnosis",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Stop, check glucose NOW, give D10 8 mL IV/IO (4 kg × 2 mL/kg, newborn dose)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Support ventilation with BVM at 20–30/min if apneic periods continue or SpO2 <90% sustained",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize and document the missed step; communicate clearly at handoff",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Active rewarming NOW: cabin to ≥24°C / 75°F, head covered, dry blanket, swap to warmed fluids",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recheck glucose (52 mg/dL); repeat D10 8 mL IV/IO if symptomatic",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize falling RR with rising HR as decompensation — prepare for BVM and pre-notify ED",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

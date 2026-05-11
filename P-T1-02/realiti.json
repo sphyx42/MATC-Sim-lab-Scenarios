@@ -1,0 +1,362 @@
+{
+  "scenarioId": "P-T1-02",
+  "scenarioName": "Pediatric Asthma Exacerbation — 7yo Responds to DuoNeb",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 900,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "7-year-old male with known asthma since age 3 developed progressive wheezing and trouble breathing this afternoon while playing at a friend's house (cat in the home, freshly mowed lawn outside). Mom picked him up about an hour ago and noticed he was using his shoulders to breathe. She gave him a home nebulizer treatment with 2.5 mg albuterol about 30 minutes ago — he felt 'a little better' for maybe 10 minutes but then started working harder again. He has used his rescue inhaler twice today before the home neb. Mom is worried because 'he's never needed this many treatments in one day before.' He has been on daily Flovent (inhaled steroid) at home and uses albuterol PRN. Prior ED visits twice in the last year for asthma; no prior ICU admission; never intubated. No fever, no recent illness, no foreign-body event, no rash, no lip/tongue swelling.",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives to find a 7-year-old known asthmatic seated upright on the couch in moderate respiratory distress. The Pediatric Assessment Triangle reads as: APPEARANCE — alert, anxious but interactive, eyes track providers; WORK OF BREATHING — increased, with visible intercostal and subcostal retractions, prolonged expiratory phase, audible expiratory wheeze; CIRCULATION TO SKIN — pink, no cyanosis, no mottling. He speaks in 3-4 word phrases. Mom reports he had a home albuterol neb 30 minutes ago with only partial brief relief. This is the assessment window — the student needs to form the PAT impression FIRST, then put hands and stethoscope on the patient and confirm weight for dosing BEFORE reaching for the nebulizer. Pediatric meds are weight-based; the protocol caps must be applied; reassessment after the first neb is what catches deterioration. → Proper assessment, DuoNeb given: Baseline assessment is documented: PAT — alert/anxious, increased work of breathing with retractions, pink; bilateral diffuse expiratory wheezing; prolonged expiratory phase; RR 32; SpO2 91% on room air; speaking 3-4 word phrases; capnography shark-fin at 33 mmHg; weight 23 kg confirmed. Crew initiates DuoNeb (albuterol 5 mg + ipratropium 0.5 mg nebulized) with O2 driving the neb at 6-8 LPM. Crew gives oral dexamethasone calculated as 0.6 mg/kg × 23 kg = 13.8 mg PO (under the 16 mg cap) — a single dose. IV access is offered but not forced if the child is improving and tolerating PO. The teaching point is that this is the textbook moderate pediatric asthma treatment, AND that the next critical step is to reassess after treatment — not just package the patient. → Reassessed after neb; improved: Post-DuoNeb reassessment is documented: PAT is now appearance — interactive and smiling at mom, work of breathing — minimal retractions and near-normal expiratory phase, circulation — pink and warm. Bilateral air entry has improved, wheezing is now mild and only on end-expiration, RR is down to 22, SpO2 is 97% on the nebulizer flow, EtCO2 waveform has normalized, and the child is speaking in full sentences. Mild albuterol tremor and modestly increased HR are expected. Crew transports on continuous albuterol-as-needed, with documented response, and gives a clean bedside handoff with the full timeline (home neb 30 min before EMS arrival, DuoNeb at scene, dexamethasone PO, reassessment findings)."
+  },
+  "patientInformation": {
+    "patientName": "Liam Reyes",
+    "patientCondition": "Wheezing and increased work of breathing for ~90 minutes; mom gave home neb 30 minutes ago with only partial relief. Known asthmatic.",
+    "patientAge": 7,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 1,
+    "patientSex": 1,
+    "patientHeight": 122,
+    "patientWeight": 23,
+    "patientPhotoId": 9,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives to find a 7-year-old known asthmatic seated upright on the couch in moderate respiratory distress. The Pediatric Assessment Triangle reads as: APPEARANCE — alert, anxious but interactive, eyes track providers; WORK OF BREATHING — increased, with visible intercostal and subcostal retractions, prolonged expiratory phase, audible expiratory wheeze; CIRCULATION TO SKIN — pink, no cyanosis, no mottling. He speaks in 3-4 word phrases. Mom reports he had a home albuterol neb 30 minutes ago with only partial brief relief. This is the assessment window — the student needs to form the PAT impression FIRST, then put hands and stethoscope on the patient and confirm weight for dosing BEFORE reaching for the nebulizer. Pediatric meds are weight-based; the protocol caps must be applied; reassessment after the first neb is what catches deterioration.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 132,
+        "bpSys": 104,
+        "bpDia": 64,
+        "respRate": 32,
+        "spo2": 91,
+        "etco2": 33,
+        "temp": 37.1,
+        "obstruction": 40,
+        "custMeasure1": 110,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Form Pediatric Assessment Triangle impression: appearance / work of breathing / circulation",
+        "Targeted history: onset, triggers, prior inhaler/neb today, prior intubation/ICU, allergies, FB event",
+        "Confirm pediatric weight in kg (mom-reported / length-based tape); use for all dosing",
+        "Auscultate all lung fields (anterior + posterior, upper/middle/lower) BEFORE treatment",
+        "Document work of breathing: speech, retractions, accessory muscle use, mental status",
+        "Apply continuous SpO2 and waveform capnography; document baseline shape and value",
+        "Supplemental O2 (nasal cannula → blow-by → NRB) titrated to SpO2 94–98%",
+        "Allow position of comfort (upright in mom's lap or on cot); do not force supine"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Proper assessment, DuoNeb given",
+      "description": "Baseline assessment is documented: PAT — alert/anxious, increased work of breathing with retractions, pink; bilateral diffuse expiratory wheezing; prolonged expiratory phase; RR 32; SpO2 91% on room air; speaking 3-4 word phrases; capnography shark-fin at 33 mmHg; weight 23 kg confirmed. Crew initiates DuoNeb (albuterol 5 mg + ipratropium 0.5 mg nebulized) with O2 driving the neb at 6-8 LPM. Crew gives oral dexamethasone calculated as 0.6 mg/kg × 23 kg = 13.8 mg PO (under the 16 mg cap) — a single dose. IV access is offered but not forced if the child is improving and tolerating PO. The teaching point is that this is the textbook moderate pediatric asthma treatment, AND that the next critical step is to reassess after treatment — not just package the patient.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 140,
+        "bpSys": 106,
+        "bpDia": 64,
+        "respRate": 30,
+        "spo2": 94,
+        "etco2": 35,
+        "temp": 37.1,
+        "obstruction": 30,
+        "custMeasure1": 110,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Albuterol 5 mg + Ipratropium 0.5 mg nebulized (DuoNeb), O2-driven; albuterol may repeat unlimited frequency, ipratropium up to 3 doses",
+        "Dexamethasone 13.8 mg PO (23 kg × 0.6 mg/kg = 13.8 mg; under 16 mg max); single dose",
+        "Consider IV access (saline lock) if escalation likely; do not force on improving child",
+        "Continuous SpO2, EtCO2, ECG during nebulizer (expect albuterol-induced tachycardia/tremor)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Reassessed after neb; improved",
+      "description": "Post-DuoNeb reassessment is documented: PAT is now appearance — interactive and smiling at mom, work of breathing — minimal retractions and near-normal expiratory phase, circulation — pink and warm. Bilateral air entry has improved, wheezing is now mild and only on end-expiration, RR is down to 22, SpO2 is 97% on the nebulizer flow, EtCO2 waveform has normalized, and the child is speaking in full sentences. Mild albuterol tremor and modestly increased HR are expected. Crew transports on continuous albuterol-as-needed, with documented response, and gives a clean bedside handoff with the full timeline (home neb 30 min before EMS arrival, DuoNeb at scene, dexamethasone PO, reassessment findings).",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 128,
+        "bpSys": 102,
+        "bpDia": 62,
+        "respRate": 22,
+        "spo2": 97,
+        "etco2": 36,
+        "temp": 37.1,
+        "obstruction": 15,
+        "custMeasure1": 110,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Reassess PAT, lung sounds, RR, SpO2, EtCO2, speech, retractions AFTER neb; compare to baseline",
+        "Continue/repeat albuterol 5 mg neb PRN en route; ipratropium up to 3 total doses if ongoing wheeze",
+        "Transport to pediatric-capable ED; bedside handoff with timeline + before/after lung sounds and vitals"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Under-dosed: 2.5 mg albuterol alone",
+      "description": "Crew assumes a 7-year-old gets a 'pediatric' (read: half) dose and gives albuterol 2.5 mg neb alone, omitting ipratropium. The protocol does not actually carve out a smaller dose for children in respiratory distress with bronchospasm signs — the 2.5 mg dose is for mild wheezing without distress, and this child has clear distress, retractions, and bronchospasm. The treatment helps a little, but inadequately for the severity, and the crew has also omitted the second bronchodilator (ipratropium) that the protocol explicitly pairs with albuterol up to 3 doses. The child plateaus rather than improves. This is a 'lucky outcome' branch — child is not deteriorating, but he is also not getting the protocol-correct treatment for his severity.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 134,
+        "bpSys": 104,
+        "bpDia": 64,
+        "respRate": 30,
+        "spo2": 92,
+        "etco2": 34,
+        "temp": 37.1,
+        "obstruction": 38,
+        "custMeasure1": 110,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Dexamethasone 13.8 mg PO (23 kg × 0.6 mg/kg = 13.8 mg; under 16 mg max); single dose",
+        "Recognize under-dose; give full Albuterol 5 mg + Ipratropium 0.5 mg neb (DuoNeb)",
+        "Reassess PAT, lung sounds, RR, SpO2, EtCO2 after corrected treatment; document"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "No reassessment; deterioration missed",
+      "description": "Crew started the DuoNeb and immediately moved to packaging the patient for transport without reassessing. They miss that the child is in fact NOT responding adequately: wheezing is tighter, retractions are deeper (now intercostal + subcostal + supraclavicular), nasal flaring is appearing, RR has climbed to 44, SpO2 is dropping into the high 80s, and breath sounds are becoming quieter — the beginning of a 'silent chest.' This is moderate-to-severe pediatric asthma progressing toward respiratory failure that needs escalation per protocol (continuous neb, IV mag, consider IM epi for impending failure) — and the crew is about to walk a deteriorating child out the front door without knowing it. The teaching point: reassessment after each intervention is what catches deterioration AND what triggers escalation; a quieter chest in a known asthmatic is worse, not better.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 158,
+        "bpSys": 108,
+        "bpDia": 68,
+        "respRate": 44,
+        "spo2": 87,
+        "etco2": 44,
+        "temp": 37.1,
+        "obstruction": 70,
+        "custMeasure1": 110,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize impending failure: rising RR, falling SpO2, normal-rising EtCO2, quieter chest, deeper retractions",
+        "Continuous albuterol 5 mg nebulized (unlimited frequency); ipratropium up to 3 doses",
+        "Establish IV/IO access urgently for magnesium and resuscitation meds",
+        "Magnesium sulfate 920 mg IV (23 kg × 40 mg/kg = 920 mg; under 2 g max) over 10–15 min",
+        "Epinephrine 0.23 mg IM 1 mg/mL (23 kg × 0.01 mg/kg = 0.23 mg; under 0.3 mg max) for impending failure",
+        "Prepare for BVM/NIV; pediatric BVM rate 20–30/min if respiratory failure progresses"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Form Pediatric Assessment Triangle impression: appearance / work of breathing / circulation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Targeted history: onset, triggers, prior inhaler/neb today, prior intubation/ICU, allergies, FB event",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Confirm pediatric weight in kg (mom-reported / length-based tape); use for all dosing",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Auscultate all lung fields (anterior + posterior, upper/middle/lower) BEFORE treatment",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document work of breathing: speech, retractions, accessory muscle use, mental status",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply continuous SpO2 and waveform capnography; document baseline shape and value",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Supplemental O2 (nasal cannula → blow-by → NRB) titrated to SpO2 94–98%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Allow position of comfort (upright in mom's lap or on cot); do not force supine",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Albuterol 5 mg + Ipratropium 0.5 mg nebulized (DuoNeb), O2-driven; albuterol may repeat unlimited frequency, ipratropium up to 3 doses",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Dexamethasone 13.8 mg PO (23 kg × 0.6 mg/kg = 13.8 mg; under 16 mg max); single dose",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Consider IV access (saline lock) if escalation likely; do not force on improving child",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous SpO2, EtCO2, ECG during nebulizer (expect albuterol-induced tachycardia/tremor)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess PAT, lung sounds, RR, SpO2, EtCO2, speech, retractions AFTER neb; compare to baseline",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue/repeat albuterol 5 mg neb PRN en route; ipratropium up to 3 total doses if ongoing wheeze",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to pediatric-capable ED; bedside handoff with timeline + before/after lung sounds and vitals",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize under-dose; give full Albuterol 5 mg + Ipratropium 0.5 mg neb (DuoNeb)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess PAT, lung sounds, RR, SpO2, EtCO2 after corrected treatment; document",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize impending failure: rising RR, falling SpO2, normal-rising EtCO2, quieter chest, deeper retractions",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous albuterol 5 mg nebulized (unlimited frequency); ipratropium up to 3 doses",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV/IO access urgently for magnesium and resuscitation meds",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Magnesium sulfate 920 mg IV (23 kg × 40 mg/kg = 920 mg; under 2 g max) over 10–15 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 0.23 mg IM 1 mg/mL (23 kg × 0.01 mg/kg = 0.23 mg; under 0.3 mg max) for impending failure",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Prepare for BVM/NIV; pediatric BVM rate 20–30/min if respiratory failure progresses",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}
