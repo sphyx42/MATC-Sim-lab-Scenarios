@@ -1,0 +1,432 @@
+{
+  "scenarioId": "B-T2-02",
+  "scenarioName": "Heat Stroke Requiring Aggressive Cooling",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1500,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "28-year-old male marathon runner collapsed approximately 50 meters past the finish line of a city marathon on a 92°F day with 68% relative humidity. Bystanders state he was running strongly at mile 25, then began staggering near the finish. Per witnesses he stopped sweating about a mile back, became visibly red, and stumbled into the finish chute before going down. Course medical staff moved him to a shaded medical tent. He has not been able to give a coherent history. Race timing chip shows ~4 hours 18 minutes on course. Family members at the finish report he trained heavily this summer and was 'pushing for a personal record.' He has had no oral intake at recent water stations per a friend running near him.",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives at the marathon medical tent. Course medical staff hand off a 28-year-old male marathon runner who collapsed shortly past the finish line. He is supine on a cot, flushed, hot, and dry to the touch with no visible sweat. He is agitated, mumbling, and trying to sit up but cannot follow commands consistently. The athletic trainer reports he 'just stopped sweating' in the final mile. Core (rectal) temperature obtained by course medical reads 105.4°F. Bystander vitals: HR 142, BP 102/68, RR 28, SpO2 97% on room air. This is a textbook anhidrotic heat stroke presentation — rapid cooling is the priority intervention. → Active cooling initiated: Crew has clothing off, ice packs to neck/axillae/groin, wet sheet with fans running, and a cool NS bolus running wide open through an 18g IV. Cooling continues continuously — not interrupted to move or to do other tasks. Patient remains agitated but is being monitored continuously. Glucose returned at 88 mg/dL, ruling out hypoglycemia as an AMS cause. Sinus tachycardia persists; BP holding. Crew is loading for transport with cooling continuing in the truck. → Improving, then seizure: After roughly 8 minutes of continuous cooling and ~1 L of cool NS, the core temperature has fallen to 103.2°F and the patient is now A&Ox2 — recognizing the crew and answering simple questions. The trend is the right direction. Mid-transport, however, the patient stiffens and begins a generalized tonic-clonic seizure with eye deviation and clenched jaw. Airway briefly partially obstructed by jaw clench. Cooling is continued throughout. Crew must administer a benzodiazepine, support airway/oxygen, and continue cooling — the seizure does NOT cancel cooling. → Cooled to target, handoff: Midazolam 4 mg IV terminated the seizure within ~90 seconds. Cooling continued and core temperature has reached 102°F — cooling is now discontinued to prevent overshoot. Patient is post-ictal but recovering, GCS improving (E3 V4 M6 = 13), HR coming down, BP stable, SpO2 back to baseline on supplemental O2. Crew delivers a clean, protocolized handoff to the receiving ED: heat stroke with active cooling completed prehospital, 1 L NS infused, brief seizure treated with midazolam, glucose normal throughout."
+  },
+  "patientInformation": {
+    "patientName": "Marcus Whitfield",
+    "patientCondition": "Collapsed near marathon finish line, altered and confused",
+    "patientAge": 28,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 178,
+    "patientWeight": 70,
+    "patientPhotoId": 34,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives at the marathon medical tent. Course medical staff hand off a 28-year-old male marathon runner who collapsed shortly past the finish line. He is supine on a cot, flushed, hot, and dry to the touch with no visible sweat. He is agitated, mumbling, and trying to sit up but cannot follow commands consistently. The athletic trainer reports he 'just stopped sweating' in the final mile. Core (rectal) temperature obtained by course medical reads 105.4°F. Bystander vitals: HR 142, BP 102/68, RR 28, SpO2 97% on room air. This is a textbook anhidrotic heat stroke presentation — rapid cooling is the priority intervention.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 142,
+        "bpSys": 102,
+        "bpDia": 68,
+        "respRate": 28,
+        "spo2": 97,
+        "etco2": 32,
+        "temp": 40.8,
+        "obstruction": 0,
+        "custMeasure1": 88,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize heat stroke: hot, dry, anhidrotic skin + AMS + core >104°F",
+        "Move patient to cool area; shield from sun and heat source",
+        "Remove clothing; loosen restrictive garments",
+        "Confirm core temperature (rectal or tympanic); document 105.4°F",
+        "Begin active cooling NOW: ice packs to neck/groin/axillae + mist + fan (or ice-water immersion if available)",
+        "Prioritize rapid cooling over cardiac monitoring and IV access",
+        "Manage airway as indicated; reassess as mental status changes",
+        "Check blood glucose for AMS (result 88 mg/dL — rules out hypoglycemia)",
+        "Place on cardiac monitor; record ongoing vitals (HR, BP, RR, neuro)",
+        "Establish IV; cool NS bolus 1400 mL (70 kg × 20 mL/kg) — give first 500 mL rapidly",
+        "Anticipate seizure; prep midazolam at the bedside"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Active cooling initiated",
+      "description": "Crew has clothing off, ice packs to neck/axillae/groin, wet sheet with fans running, and a cool NS bolus running wide open through an 18g IV. Cooling continues continuously — not interrupted to move or to do other tasks. Patient remains agitated but is being monitored continuously. Glucose returned at 88 mg/dL, ruling out hypoglycemia as an AMS cause. Sinus tachycardia persists; BP holding. Crew is loading for transport with cooling continuing in the truck.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 134,
+        "bpSys": 108,
+        "bpDia": 70,
+        "respRate": 26,
+        "spo2": 98,
+        "etco2": 33,
+        "temp": 40.1,
+        "obstruction": 0,
+        "custMeasure1": 88,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Continue active cooling throughout transport — do NOT stop to move patient",
+        "Run NS bolus 1400 mL (70 kg × 20 mL/kg); reassess after 1 L",
+        "Recheck core temperature q5 min; track trend",
+        "Monitor for arrhythmia and cardiovascular collapse",
+        "Reassess neuro status q5 min (GCS/AVPU); document trend",
+        "Consider securing devices to protect IV from agitated movement",
+        "Early hospital notification — heat stroke, active cooling, ETA"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Improving, then seizure",
+      "description": "After roughly 8 minutes of continuous cooling and ~1 L of cool NS, the core temperature has fallen to 103.2°F and the patient is now A&Ox2 — recognizing the crew and answering simple questions. The trend is the right direction. Mid-transport, however, the patient stiffens and begins a generalized tonic-clonic seizure with eye deviation and clenched jaw. Airway briefly partially obstructed by jaw clench. Cooling is continued throughout. Crew must administer a benzodiazepine, support airway/oxygen, and continue cooling — the seizure does NOT cancel cooling.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 148,
+        "bpSys": 118,
+        "bpDia": 74,
+        "respRate": 8,
+        "spo2": 88,
+        "etco2": 48,
+        "temp": 39.6,
+        "obstruction": 30,
+        "custMeasure1": 90,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize generalized tonic-clonic seizure; protect from injury",
+        "Support airway: position, suction, NPA, BVM with O2 as needed",
+        "Midazolam 4 mg IV (70 kg × 0.1 mg/kg = 7 mg → cap at 4 mg max IV)",
+        "Continue active cooling through and after the seizure",
+        "Recheck glucose during active seizure (still 90 mg/dL — adequate)",
+        "Stop active cooling when core temp reaches 102°F (39°C) to avoid overshoot"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Cooled to target, handoff",
+      "description": "Midazolam 4 mg IV terminated the seizure within ~90 seconds. Cooling continued and core temperature has reached 102°F — cooling is now discontinued to prevent overshoot. Patient is post-ictal but recovering, GCS improving (E3 V4 M6 = 13), HR coming down, BP stable, SpO2 back to baseline on supplemental O2. Crew delivers a clean, protocolized handoff to the receiving ED: heat stroke with active cooling completed prehospital, 1 L NS infused, brief seizure treated with midazolam, glucose normal throughout.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 112,
+        "bpSys": 124,
+        "bpDia": 78,
+        "respRate": 18,
+        "spo2": 98,
+        "etco2": 36,
+        "temp": 38.9,
+        "obstruction": 0,
+        "custMeasure1": 92,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Confirm cooling stopped at 102°F end-point; document time",
+        "Reduce IV to maintenance/10 mL/kg/hr once vitals stable",
+        "Transport all heat-stroke patients to ED",
+        "Clean ED handoff: temp trend, cooling times, fluids, midazolam, seizure"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Cooling deferred for transport",
+      "description": "Crew elected to prioritize IV access, monitor application, and rapid transport over on-scene cooling — reasoning that 'cooling can be done at the hospital.' Patient remains in race clothing in the ambulance with ambient AC only. Core temperature climbs to 106°F in the back of the truck. Patient becomes obtunded, then has a witnessed tonic-clonic seizure with airway compromise. Dark tea-colored urine is noted in the leg of his shorts (rhabdomyolysis). Crew must now reverse course — aggressive cooling AND seizure management AND airway, all simultaneously, under far worse conditions.",
+      "monitorType": 0,
+      "trendTime": 50,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 156,
+        "bpSys": 96,
+        "bpDia": 76,
+        "respRate": 32,
+        "spo2": 89,
+        "etco2": 28,
+        "temp": 41.1,
+        "obstruction": 25,
+        "custMeasure1": 86,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Midazolam 4 mg IV (70 kg × 0.1 mg/kg = 7 mg → cap at 4 mg max IV)",
+        "Reverse course: strip clothing, ice packs, mist + fan in the truck NOW",
+        "Manage airway aggressively: jaw thrust, NPA, BVM with 100% O2",
+        "Run cool NS bolus 1400 mL (70 kg × 20 mL/kg); protect kidneys from rhabdo",
+        "Continuous ECG — watch for arrhythmia from hyperthermia and hyperkalemia from rhabdo",
+        "Upgrade hospital notification — critical heat stroke, seizing, rhabdo signs"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Recognize heat stroke: hot, dry, anhidrotic skin + AMS + core >104°F",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Move patient to cool area; shield from sun and heat source",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Remove clothing; loosen restrictive garments",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Confirm core temperature (rectal or tympanic); document 105.4°F",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Begin active cooling NOW: ice packs to neck/groin/axillae + mist + fan (or ice-water immersion if available)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Prioritize rapid cooling over cardiac monitoring and IV access",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Manage airway as indicated; reassess as mental status changes",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check blood glucose for AMS (result 88 mg/dL — rules out hypoglycemia)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place on cardiac monitor; record ongoing vitals (HR, BP, RR, neuro)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV; cool NS bolus 1400 mL (70 kg × 20 mL/kg) — give first 500 mL rapidly",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Anticipate seizure; prep midazolam at the bedside",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue active cooling throughout transport — do NOT stop to move patient",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Run NS bolus 1400 mL (70 kg × 20 mL/kg); reassess after 1 L",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recheck core temperature q5 min; track trend",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Monitor for arrhythmia and cardiovascular collapse",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess neuro status q5 min (GCS/AVPU); document trend",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Consider securing devices to protect IV from agitated movement",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Early hospital notification — heat stroke, active cooling, ETA",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize generalized tonic-clonic seizure; protect from injury",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Support airway: position, suction, NPA, BVM with O2 as needed",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Midazolam 4 mg IV (70 kg × 0.1 mg/kg = 7 mg → cap at 4 mg max IV)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue active cooling through and after the seizure",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recheck glucose during active seizure (still 90 mg/dL — adequate)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Stop active cooling when core temp reaches 102°F (39°C) to avoid overshoot",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Confirm cooling stopped at 102°F end-point; document time",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reduce IV to maintenance/10 mL/kg/hr once vitals stable",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport all heat-stroke patients to ED",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Clean ED handoff: temp trend, cooling times, fluids, midazolam, seizure",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reverse course: strip clothing, ice packs, mist + fan in the truck NOW",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Manage airway aggressively: jaw thrust, NPA, BVM with 100% O2",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Run cool NS bolus 1400 mL (70 kg × 20 mL/kg); protect kidneys from rhabdo",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous ECG — watch for arrhythmia from hyperthermia and hyperkalemia from rhabdo",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Upgrade hospital notification — critical heat stroke, seizing, rhabdo signs",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

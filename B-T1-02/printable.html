@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hypothermia, Mild to Moderate — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Hypothermia, Mild to Moderate</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Walter Kovacs</strong></span><span class="patient-chip">58 years male</span><span class="patient-chip">181 lbs (82 kg)</span><span class="patient-chip">5'10"</span><span class="patient-chip">CC: Found confused on park bench in cold weather</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Medic 12, respond priority 1 to Lincoln Park, north pavilion area, for a welfare check on a 58-year-old male, confused, sitting on a park bench. Caller is a bystander. PD en route.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Public park, north pavilion. Patient seated on a wooden park bench under an open shelter. Light snow on the ground; wind 10-15 mph. No nearby buildings. Ambulance can pull within 20 feet.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Tuesday, 0820 hours, late winter morning</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene safe. Police on scene for welfare check. Cold environment is a hazard for both patient and providers — crew should don warm outerwear and limit on-scene exposure time. No combative behavior.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">One bystander who called 911; reports he saw the patient sitting on the bench for at least 30 minutes before approaching. Patient seemed 'out of it' and would only mumble his name.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Ambient air temperature approximately 28°F (-2°C)</li><li>Patient wearing a light unzipped windbreaker, jeans, sneakers — no hat, no gloves</li><li>Light dusting of snow on the patient's shoulders and lap</li><li>Patient is slumped slightly forward on the bench, minimal shivering</li><li>No visible injury, no empty bottles or pill containers nearby</li><li>Speech is slow and slurred when spoken to</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">58-year-old male found by a passerby on a park bench in light clothing. Ambient temperature approximately 28 degrees Fahrenheit; last seen by a friend approximately 2 hours ago at a nearby diner. On contact patient is awake but confused, knows his name only, does not know date or location. Skin is cold to touch, shivering is minimal/intermittent. No obvious trauma. No empty pill bottles or alcohol containers visible. Speech is slurred, movements are slow and clumsy.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">NKDA</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Lisinopril 20 mg PO daily, Sertraline 50 mg PO daily</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Hypertension, Mild depression</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Coffee and a sandwich approximately 3 hours ago per friend at the diner</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Patient left the diner alone approximately 2 hours ago wearing only a light jacket. Friend called for a welfare check when the patient did not arrive home. Bystander found him slumped on a park bench, confused and slow to respond, and called 911.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">Crew arrives to find a 58-year-old male seated on a park bench in cold ambient conditions, inadequately dressed for the weather. He is awake but confused, oriented to person only, with slow slurred speech and minimal shivering. No obvious trauma. Police confirm no witnessed event or assault. Bystander reports the patient has been sitting there at least 30 minutes; friend places him outdoors for roughly 2 hours.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Bradycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">40</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">108/68</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">92%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">91.4°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">96</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">13</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent; speech slow and slurred but no stridor or secretions</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Slow shallow respirations; lung sounds clear bilaterally</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Radial pulse weak, slow, and regular; capillary refill prolonged (&gt;3 seconds) at fingertips</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale · cold · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL, 4 mm, sluggish bilaterally</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities slowly and clumsily; follows simple commands with delay</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Mumbles his first name. When asked the date, location, or what happened, responds with 'I... I don't know.' Speech is slow and slurred."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Minimal intermittent shivering (not vigorous)</li><li>Patient inadequately dressed for ambient temperature</li><li>Light snow on clothing; clothing dry to touch</li><li>No signs of trauma, no track marks, no medical alert tags</li><li>No empty bottles, pills, or paraphernalia visible</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Scene size-up: note cold ambient temp, inadequate clothing, exposure duration</div></div>
+        <div class="action-excerpt">History: along with standard SAMPLE — type history, additional patient history should include: Attention to any associated injury or illness; Duration of cold exposure; Ambient temperature; Treatments initiated before EMS arrival.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Primary survey ABC; check pulse for up to 60 seconds in cold patient</div></div>
+        <div class="action-excerpt">Patient assessment should begin with attention to the primary survey, looking for evidence of circulatory collapse and ensuring effective respirations. The rescuer may need to evaluate the hypothermic patient for a pulse for longer than the normothermic patient (up to 60 seconds).</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Obtain full vital signs including HR, BP, RR, SpO2, and cardiac monitor</div></div>
+        <div class="action-excerpt">Apply cardiac monitor or AED if available. Patients with moderate to severe hypothermia will manifest mental status changes, eventual loss of shivering and progressive bradycardia, hypotension, and decreased respiratory status.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Measure core temperature (epitympanic or rectal) — the key assessment</div></div>
+        <div class="action-excerpt">If possible and reliable, EMS clinicians should perform core body temperature measurements and categorize patients into one of the three follow levels of hypothermia: Mild: 32.1°–35°C/89.8°–95°F; Moderate: 28.1°–32°C/82.5°–89.7°F; Severe: 24°–28°C/75.2°–82.4°F; Profound: less than 24°C (75.2°F). If neither esophageal nor rectal thermometers are available, an epitympanic field thermometer with an isolating ear cap may be used, but is generally less accurate.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Check blood glucose for any altered mental status patient</div></div>
+        <div class="action-excerpt">If alterations in mental status, consider measuring blood glucose and treat as indicated.</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Brief secondary survey for occult trauma/cause; minimize cold exposure</div></div>
+        <div class="action-excerpt">Environment: Survey for pills, paraphernalia, substance use, medication patches, medical devices, ambient temperature, social indicators of neglect, carbon monoxide exposures, multiple casualties with same complaint.</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Hypothermia recognized</div>
+        <div class="phase-trigger">Trigger: Following full primary survey and a core temperature reading of 91.4°F (33°C), the crew correctly attributes the bradycardia and altered mental status to environmental hypothermia. Glucose is normal and there is no evidence of trauma, overdose, or stroke. The patient remains awake but confused, with stable hemodynamics.</div>
+        <div class="phase-desc">Crew has correctly identified moderate hypothermia (core temp 91.4°F / 33°C, technically borderline mild/moderate per MATC). Bradycardia and AMS are attributed to the cold. Now the crew must remove the patient from the environment, prevent further heat loss, handle gently, and begin passive rewarming.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Bradycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">42</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">110/68</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">93%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">91.4°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">96</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">13</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent; speech remains slow but no obstruction</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Slow shallow but adequate; lung sounds clear</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Weak slow regular radial pulse; capillary refill prolonged</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale · cold · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL, sluggish</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Slow clumsy movement; follows commands with delay</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Mumbled, slow. States his name; cannot give date or location."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Patient remains in light clothing; clothing dry</li><li>Minimal shivering</li><li>No new findings on secondary survey</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Move patient from cold environment into warmed ambulance</div></div>
+        <div class="action-excerpt">Remove the patient from the environment and prevent further heat loss by removing wet clothes and drying skin, insulate from the ground, shelter the patient from wind and wet conditions, and insulate the patient with dry clothing or a hypothermia wrap/blanket.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Handle gently, keep horizontal, limit extremity movement</div></div>
+        <div class="action-excerpt">Handle the patient gently. Attempt to keep the patient in the horizontal position, especially limiting motion of the extremities to avoid increasing return of cold blood to the heart. Once in a warm environment, clothing should be cut off (rather than removed by manipulating the extremities). Move the patient only when necessary, such as to remove the patient from the elements.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Warm patient compartment to at least 75°F (24°C)</div></div>
+        <div class="action-excerpt">Warm the patient compartment of the ambulance to at least 24°C (75.2°F) during transport.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Cut off wet/cold clothing, dry skin, apply dry blanket + vapor barrier</div></div>
+        <div class="action-excerpt">Insulate from the ground, shelter the patient from wind and wet conditions, and insulate the patient with dry clothing or a hypothermia wrap/blanket. Cover the patient with a vapor barrier and, if available, move the patient to a warm environment.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Apply heat packs to anterior chest with skin barrier (no direct contact)</div></div>
+        <div class="action-excerpt">Consider field-rewarming methods such as placement of large heat packs or heat blankets (chemical or electric if feasible) to the anterior chest or wrapped around the patient's thorax if large enough. Chemical or electrical heat sources should never be applied directly to the skin. Use a barrier between the skin and heat source to prevent burns.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Establish IV; give warmed isotonic crystalloid bolus (ideally 42°C / 107.6°F)</div></div>
+        <div class="action-excerpt">Establish IV and provide warmed isotonic crystalloid bolus. Repeat as necessary. IV fluids, if administered, should be warmed, ideally to 42°C (107.6°F). Bolus therapy is preferable to continuous drip.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Continuous cardiac monitor; watch for arrhythmia during transport</div></div>
+        <div class="action-excerpt">Apply cardiac monitor or AED if available.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Transport to hospital capable of rewarming; warm cabin maintained</div></div>
+        <div class="action-excerpt">Transport as soon as possible to a hospital capable of resuscitation. Transport to a hospital capable of rewarming the patient.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Slow rewarming, transport</div>
+        <div class="phase-trigger">Trigger: Following correct recognition of hypothermia and initiation of passive rewarming, warmed IV fluids, gentle handling, and warm cabin transport, the patient slowly improves over 10-15 minutes en route. No arrhythmia develops. The student has correctly used assessment to drive treatment.</div>
+        <div class="phase-desc">After 10-15 minutes of passive and active external rewarming in the warmed ambulance, the patient shows gradual improvement: HR rises to the low 50s, mental status climbs from confused to drowsy-but-oriented to person and place, shivering becomes more vigorous, and skin begins to feel less icy. Patient is delivered to the ED for continued rewarming.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Bradycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">54</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">118/72</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">96%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">14</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">93.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">94</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg sel-a">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">Spontaneous</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">14</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent; speech still slightly slow but clearer</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Adequate; rate improving</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Stronger regular radial pulse; capillary refill improving</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale-pink · cool · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL, more brisk</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moving extremities more purposefully; vigorous shivering returns</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Gives his name and recognizes he is in an ambulance. Asks 'How did I get here?' Slightly slow but coherent."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Patient now oriented to person and place; date still unclear</li><li>Vigorous shivering — a positive sign of intact thermoregulation</li><li>Heat packs in place on anterior chest with barrier</li><li>Warmed IV fluids infusing</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Reassess vitals and mental status every 5 minutes during rewarming</div></div>
+        <div class="action-excerpt">Monitor frequently — if temperature or level of consciousness decreases, refer to severe hypothermia.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Continue passive rewarming and warm fluids en route</div></div>
+        <div class="action-excerpt">Repeat as necessary. Transport to a hospital capable of rewarming the patient.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Hand off to ED with exposure duration, ambient temp, core temp, response</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Duration of cold exposure; Ambient temperature and recent range of temperatures; Rewarming attempts or other therapies performed prior to EMS arrival; Patient use of alcohol/drugs.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Atropine/pacing attempted</div>
+        <div class="phase-trigger">Trigger: Crew jumped to symptomatic-bradycardia treatment (atropine 1 mg IV and/or transcutaneous pacing) without checking core temperature or considering hypothermia. In a cold heart, atropine is largely ineffective and aggressive handling/pacing can trigger ventricular ectopy or VFib. Mistake is recoverable if the crew now recognizes the cause and pivots to rewarming.</div>
+        <div class="phase-desc">Crew has anchored on the bradycardia as a primary cardiac problem and attempted atropine and/or transcutaneous pacing without first measuring core temperature or recognizing cold exposure. The cold myocardium does not respond to atropine. Pacing causes the patient discomfort but does not capture reliably. The intervention has not changed the underlying problem and may have precipitated an arrhythmia.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Bradycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">42</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">104/66</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">91%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">91°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">96</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">13</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Slow shallow</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR unchanged after atropine; new PVCs noted on monitor; capillary refill still prolonged</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale · cold · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL, sluggish</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Slow clumsy</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Mumbles in response to pacing discomfort but cannot articulate."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Atropine 1 mg IV given — HR remains 40-42, no response</li><li>If pacing attempted: patient grimaces with each pacer spike; mechanical capture inconsistent</li><li>Frequent PVCs now appearing on monitor</li><li>Core temperature still not measured</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize atropine ineffective in cold heart; check core temperature now</div></div>
+        <div class="action-excerpt">The differential diagnosis includes the following: myocardial infarction (MI), hypoxia, pacemaker failure, hypothermia, sinus bradycardia, athletes, head injury with increased intracranial pressure (ICP), stroke, spinal cord lesion, sick sinus syndrome, AV blocks, overdose, cholinergic nerve agents.</div>
+        <div class="action-ref">↳ MATC: Bradycardia</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Stop pacing; remove from cold; begin passive rewarming and gentle handling</div></div>
+        <div class="action-excerpt">Remove the patient from the environment and prevent further heat loss by removing wet clothes and drying skin, insulate from the ground, shelter the patient from wind and wet conditions, and insulate the patient with dry clothing or a hypothermia wrap/blanket. Handle the patient gently.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Minimize handling; watch monitor for VF; transport gently</div></div>
+        <div class="action-excerpt">Care must be taken not to hyperventilate the patient as hypocarbia may reduce the threshold for ventricular fibrillation in the cold patient. Attempt to keep the patient in the horizontal position, especially limiting motion of the extremities to avoid increasing return of cold blood to the heart.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Stroke/glucose workup, no temp check</div>
+        <div class="phase-trigger">Trigger: Crew anchored on AMS as a stroke or hypoglycemia. Glucose obtained (normal — 96 mg/dL). Stroke scale performed unnecessarily (negative). Core temperature was never measured and the patient remained in the cold environment during the workup, so heat loss continued. The clinical picture is worsening, not improving.</div>
+        <div class="phase-desc">Crew has anchored on altered mental status as a primary neurologic or metabolic problem. Glucose has been checked and is normal. A stroke scale has been performed (negative or equivocal). Core temperature has never been measured. The patient remains in light clothing in cold ambient air during the workup, and continues to lose heat. Mental status drifts down, HR drops further, and the patient develops more pronounced bradycardia.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Bradycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">36</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">100/62</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">90%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">8</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">34</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">90°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">96</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Inappropriate words</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">11</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent; less responsive than initial contact</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Slow shallow; rate now 8/min</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulse weak slow; capillary refill more prolonged</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale-gray · cold · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL, more sluggish</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Withdraws to voice; no longer follows complex commands</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Only moans. No longer states name."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Patient still on park bench or in unwarmed ambulance, in original light clothing</li><li>Shivering now absent</li><li>Stroke scale: equivocal — slow speech, slow movement bilaterally (not actually a stroke)</li><li>Core temperature still not measured</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Note ambient temp, exposure duration, inadequate clothing — survey the environment</div></div>
+        <div class="action-excerpt">Environment: Survey for pills, paraphernalia, substance use, medication patches, medical devices, ambient temperature, social indicators of neglect, carbon monoxide exposures, multiple casualties with same complaint.</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Measure core temperature now (epitympanic or rectal)</div></div>
+        <div class="action-excerpt">If possible and reliable, EMS clinicians should perform core body temperature measurements and categorize patients into one of the three follow levels of hypothermia: Mild: 32.1°–35°C/89.8°–95°F; Moderate: 28.1°–32°C/82.5°–89.7°F.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Active warming or cooling indicated when temperature abnormality is the cause of AMS</div></div>
+        <div class="action-excerpt">Active cooling or warming [See Hypothermia/Cold Exposure Guideline or Hyperthermia/Heat Exposure Guideline].</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

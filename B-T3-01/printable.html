@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hypothermic Cardiac Arrest — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Hypothermic Cardiac Arrest</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Daniel Pavlik</strong></span><span class="patient-chip">52 years male</span><span class="patient-chip">176 lbs (80 kg)</span><span class="patient-chip">5'10"</span><span class="patient-chip">CC: Unresponsive, pulseless after prolonged cold exposure</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Engine 12, Medic 7 — respond to the alley behind 412 South Water Street for a 52-year-old male, person down outside, possible cold exposure. PD en route.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Narrow alley behind a tavern, downtown. Patient supine on bare concrete next to a dumpster. Street-lit but dim. Ambient air 18°F / -7.8°C, light wind, no precipitation.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">0412 hrs, mid-January, pre-dawn</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene secured by PD on arrival. Surface is icy in spots — risk of crew slips. Ambient cold will degrade providers and equipment if extrication is prolonged. No known violence, no weapons. Bystander (passerby who called 911) on scene.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Passerby (the caller) reports finding the patient unresponsive ~10 minutes ago, did not touch or move him. Bartender from the tavern confirms the patient was a regular and left intoxicated around 2300 hrs the prior evening.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Body supine on cold concrete, light jacket and jeans only</li><li>Clothing damp in places (snow melt / spilled drink)</li><li>Empty liquor bottle near right hand</li><li>Patient appears cyanotic and waxy, limbs stiff</li><li>No bystander CPR in progress</li><li>No obvious bleeding or external trauma</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">52-year-old male found by passerby in the alley behind a tavern at 0400 hrs. Ambient temperature 18°F (-7.8°C) with light wind. Last seen leaving the bar at approximately 2300 hrs the night before — roughly 5 hours of exposure. Patient was found supine on cold concrete, dressed in a light jacket and jeans, clothing partially damp. No bystander CPR initiated. On arrival: apneic, no obvious palpable pulse, body cold and rigid throughout. Rectal core temperature (when obtained) 25°C / 77°F — severe hypothermia. Pupils midposition. Cold rigor present (mimics rigor mortis but is reversible). No obvious traumatic injury. Empty liquor bottle near patient.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">NKDA</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Lisinopril 20 mg PO daily (per wallet card, compliance unknown)</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Alcohol use disorder, Hypertension, Prior episodes of public intoxication</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Unknown — last witnessed drinking alcohol at the bar approximately 5 hours ago</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Patient seen leaving tavern intoxicated ~2300 hrs. Discovered at 0400 hrs by passerby walking through alley. 911 called immediately. EMS dispatched for 'person down outside, possibly cold.'</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">EMS arrives in the alley to find a 52-year-old male supine on cold concrete, apneic, body rigid and cold. No bystander CPR. Surroundings are dark, cold, and exposed. The crew must immediately begin a hypothermia-modified primary assessment — including the 60-second pulse check that the protocol specifically requires for suspected hypothermic patients — while simultaneously protecting the patient from further heat loss and preparing for prolonged, gentle resuscitation.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Ventricular Fibrillation (Coarse)</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">0</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">0</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">77°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">62</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent but no spontaneous respirations</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic, no chest rise</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">No palpable carotid or femoral pulse on initial brief check; skin extremely cold to touch throughout torso and extremities</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pale, mottled with cyanotic patches · Cold throughout · Damp clothing, skin cool/dry beneath</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Midposition (~4 mm), sluggishly reactive bilaterally</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Cold rigor — limbs rigid, resistant to passive motion; not true rigor mortis</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"None — unresponsive"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>No ice formation in airway</li><li>Chest wall is depressible (compressions feasible)</li><li>No signs of obvious decapitation or fatal injury</li><li>Dependent lividity not yet established</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Confirm scene safety; PD secured; mind icy surface and ambient cold</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Maintain patient and rescuer safety.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Primary survey with extended 60-second pulse check (cold = slow circulation)</div></div>
+        <div class="action-excerpt">Assessment: Patient assessment should begin with attention to the primary survey, looking for evidence of circulatory collapse and ensuring effective respirations. The rescuer may need to evaluate the hypothermic patient for a pulse for longer than the normothermic patient (up to 60 seconds).</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize severe hypothermia (cold body, rigid, midpos pupils) — not rigor mortis</div></div>
+        <div class="action-excerpt">Considerations in cardiac arrest: Fixed and dilated pupils, apparent rigor mortis, and dependent lividity may not be contraindication for resuscitation in the severely hypothermic patient.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Rule out resuscitation contraindications (no ice in airway, chest depressible, no fatal injury)</div></div>
+        <div class="action-excerpt">Considerations in cardiac arrest: The following are contraindications for initiation of resuscitation in the hypothermic patient: Obvious fatal injuries (such as decapitation); The patient exhibits signs of being frozen (such as ice formation in the airway); Chest wall rigidity such that compressions are impossible; Danger to rescuers or rescuer exhaustion; Avalanche victims buried for 35 minutes or longer with airway obstruction by ice or snow.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Extricate gently to warmed ambulance compartment (≥24°C / 75°F)</div></div>
+        <div class="action-excerpt">Moderate or severe hypothermia: Prevent further heat loss by removing the patient from the environment ... Warm the patient compartment of the ambulance to at least 24°C (75.2°F) during transport.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Gentle CPR, one shock</div>
+        <div class="phase-trigger">Trigger: Crew completed the 60-second hypothermia-modified pulse check, confirmed pulselessness with coarse VFib on monitor, started gentle compressions, and is delivering the single hypothermia-protocol-allowed shock at 200 J before transitioning to compressions + warming.</div>
+        <div class="phase-desc">Pulselessness confirmed after 60-second check. Coarse VFib on the monitor. Crew initiates high-quality but gentle chest compressions (rate same as normothermic: 100–120/min, depth 2–2.4 inches), applies defibrillator pads, and delivers ONE defibrillation attempt at 200 J recognizing the patient's core temperature is below 30°C. Patient is being moved with extreme care — the cold heart is electrically irritable and rough handling can re-trigger VF. Per the protocol, no further shocks will be attempted until the core temperature rises above 30°C (86°F) or the patient has been rewarmed at least 1–2°C.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Ventricular Fibrillation (Coarse)</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">0</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">12</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">77.4°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">62</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">OPA in place, BVM ventilations applied at upstroke between compressions</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic; passive O2 and intermittent BVM</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulseless; CPR in progress; coarse VFib on monitor</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pale, mottled cyanotic · Cold throughout · Wet clothing being cut away</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Midposition, sluggish</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Cold rigor present; handling kept to a minimum</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"None"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Pads placed anterior-lateral, dried skin first</li><li>Wet clothing cut off (not pulled) to avoid extremity manipulation</li><li>Cabin heater on max</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Handle gently; keep horizontal; minimize extremity motion (irritable cold heart)</div></div>
+        <div class="action-excerpt">Moderate or severe hypothermia: Handle the patient gently. Attempt to keep the patient in the horizontal position, especially limiting motion of the extremities to avoid increasing return of cold blood to the heart. Once in a warm environment, clothing should be cut off (rather than removed by manipulating the extremities). Move the patient only when necessary, such as to remove the patient from the elements.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Compressions 100–120/min, depth 2–2.4 in, full recoil — same rate as normothermic</div></div>
+        <div class="action-excerpt">Considerations in cardiac arrest: The mainstay of therapy in severe hypothermia and cardiac arrest should be effective chest compressions and attempts at rewarming. Chest compressions should be provided at the same rate as in normothermic patients.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Obtain core temperature (rectal in warm cabin, or esophageal if intubated)</div></div>
+        <div class="action-excerpt">Moderate or severe hypothermia: Perform ABCs (Airway, Breathing, Circulation), pulse checks for patients suffering hypothermia should be performed for 60 seconds, and obtain core temperature, if possible, for patients exhibiting signs or symptoms of moderate/severe hypothermia. Core temperatures can be measured by esophageal probe, if one is available, the patient's airway is secured, and the clinician has been trained in its insertion and use. Rectal temperatures may also be used, with caution to avoid worsening the hypothermia by undressing the patient (e.g., done in a warm environment such as a heated ambulance).</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Defibrillate ONCE at 200 J; no more shocks until core temp &gt;30°C</div></div>
+        <div class="action-excerpt">Considerations in cardiac arrest: An alternate strategy, per the Wilderness Medical Society, suggests that if the patient's core temperature is below 30°C (86°F), attempt defibrillation once, then wait until the patient has been rewarmed at least 1°–2°C or to 30°C (86°F) before attempting additional shocks.  If defibrillation is unsuccessful and the patient's core temperature is less than 30°C (86°F), do not make further attempts at defibrillation until the core temperature has increased to greater than 30°C (86°F). Continue CPR and attempt to rewarm the patient.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">BVM at 10/min during CPR; do NOT hyperventilate (hypocarbia lowers VF threshold)</div></div>
+        <div class="action-excerpt">Moderate or severe hypothermia: Care must be taken not to hyperventilate the patient as hypocarbia may reduce the threshold for ventricular fibrillation in the cold patient. Indications and contraindications for advanced airway devices are similar in the hypothermic patient as in the normothermic patient.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Cut off wet clothing (do NOT pull); dry skin; insulate with vapor barrier and blanket</div></div>
+        <div class="action-excerpt">Moderate or severe hypothermia: Prevent further heat loss by removing the patient from the environment and removing wet clothes and drying skin, insulate from the ground, shelter the patient from wind and wet conditions, and insulate the patient with dry clothing or a hypothermia wrap/blanket. Cover the patient with a vapor barrier and, if available, move the patient to a warm environment.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Warming, extended ACLS</div>
+        <div class="phase-trigger">Trigger: After the single allowed shock at &lt;30°C did not convert the rhythm, the crew transitions to the steady-state of severe-hypothermic arrest care: ongoing high-quality compressions, no further shocks, aggressive concurrent warming on the torso, and prolonged transport to a rewarming-capable hospital.</div>
+        <div class="phase-desc">Patient is in the warmed ambulance compartment with CPR ongoing. Single hypothermia-protocol defibrillation already delivered without conversion. The crew now runs concurrent aggressive warming and extended-interval ACLS: warmed IV crystalloid bolus, large heat packs with barrier on anterior chest/torso (NOT extremities — cold peripheral blood return triggers VF), forced-air warming if available, cabin heat maxed. Per the Alaska/Wilderness Medical Society interpretation in the hypothermia protocol, medications are withheld below 30°C; if epinephrine is given per AHA, the interval is doubled (every 6–10 min, not q3–5). No further defibrillation attempts will be made until core temperature has risen above 30°C / 86°F. Long transport to ECMO-capable receiving facility is underway. Resuscitation will continue for the duration of transport — patients can survive intact even after prolonged downtime when hypothermic.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Ventricular Fibrillation (Coarse)</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">0</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">14</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">78.8°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">60</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Supraglottic airway placed; ventilations 10/min via BVM, EtCO2 monitored</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic; ventilated 10/min; chest rise adequate</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulseless; high-quality CPR ongoing with mechanical rotation of compressors q2 min; coarse VFib persists on monitor</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pale, mottled cyanosis improving slightly with warming · Cold but warming; torso heat packs in place over barrier · Skin now dry; covered with warm blanket and vapor barrier</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Midposition, sluggishly reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Cold rigor slowly softening; limbs kept horizontal</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"None"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Forced-air warming blanket on torso</li><li>Large heat packs at chest/axillae over a cloth barrier — NOT on extremities</li><li>Warmed IV crystalloid running; second IV obtained</li><li>Cabin temp 26°C</li><li>Mechanical CPR device considered if available</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Warmed isotonic crystalloid IV bolus (ideally 42°C / 107.6°F)</div></div>
+        <div class="action-excerpt">Moderate or severe hypothermia: Establish IV and provide warmed isotonic crystalloid bolus. Repeat as necessary.  Mild hypothermia: IV fluids, if administered, should be warmed, ideally to 42°C (107.6°F). Bolus therapy is preferable to continuous drip.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Large heat packs (with barrier) on anterior chest/torso — NOT extremities</div></div>
+        <div class="action-excerpt">Moderate or severe hypothermia: Initiate field-rewarming methods such as placement of large heat packs or heat blankets (chemical or electric if feasible) to the anterior chest or wrapped around the patient's thorax if large enough. Chemical or electrical heat sources should never be applied directly to the skin. Use a barrier between the skin and heat source to prevent burns. Forced air warming blankets (e.g., Bair Hugger®) can be an effective field rewarming method if available.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">WITHHOLD further defibrillation until core temp &gt;30°C / 86°F</div></div>
+        <div class="action-excerpt">Considerations in cardiac arrest: If defibrillation is unsuccessful and the patient's core temperature is less than 30°C (86°F), do not make further attempts at defibrillation until the core temperature has increased to greater than 30°C (86°F). Continue CPR and attempt to rewarm the patient.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Withhold pressors &lt;30°C, or extend epi to q6–10 min (NOT q3–5) per protocol</div></div>
+        <div class="action-excerpt">Considerations in cardiac arrest: There is little evidence to guide use of medications in severe hypothermia with cardiac arrest, however 2010 AHA updates recommend use of vasopressors according to standard ACLS protocols while the 2014 Alaska guidelines and the Wilderness Medical Society advise medications should be withheld until the patient's core temperature is greater than 30°C (86°F). Above 30°C (86°F), intervals between medication provision should be doubled until the patient reaches 35°C (95°F), at which time, normal medication intervals may be adopted.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Epinephrine 1 mg IV (1:10,000) q6–10 min if given — doubled interval per hypothermia rules</div></div>
+        <div class="action-excerpt">Treatment and Interventions: If feasible, IV or IO access should be obtained. Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms.  Considerations in cardiac arrest: Above 30°C (86°F), intervals between medication provision should be doubled until the patient reaches 35°C (95°F), at which time, normal medication intervals may be adopted.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Continuous EtCO2 to verify compression quality and detect ROSC</div></div>
+        <div class="action-excerpt">Key Considerations: Quantitative end-tidal capnography (EtCO2) should be used to monitor effectiveness of chest compressions. If EtCO2 less than 10 mmHg during the initial phases of resuscitation, attempt to improve chest compression quality.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Transport to ECMO/cardiopulmonary bypass-capable center; continue CPR en route</div></div>
+        <div class="action-excerpt">Moderate or severe hypothermia: Transport as soon as possible to a hospital capable of resuscitation. If cardiac arrest develops consider transport to a center capable of extracorporeal circulation (ECMO) or cardiopulmonary bypass (if feasible).</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continue resus; do NOT terminate for hypothermia (not dead until warm and dead)</div></div>
+        <div class="action-excerpt">Considerations in cardiac arrest: Patients with severe hypothermia and arrest may benefit from resuscitation even after prolonged downtime, and survival with intact neurologic function has been observed even after prolonged resuscitation. Patients should not be considered deceased until rewarming has been attempted.  Exclusion Criteria (Termination): Consider continuing resuscitation for patients in cardiac arrest associated with medical conditions that may have a better outcome despite prolonged resuscitation, including hypothermia (although under certain circumstances, medical direction may order termination of resuscitation in these conditions).</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">ROSC after rewarming</div>
+        <div class="phase-trigger">Trigger: Sustained gentle CPR, warmed IV fluids, torso heat packs, forced-air warming, and a warmed cabin together raised core temperature above 30°C; the now-warmer myocardium responded to a second 200 J defibrillation attempt with conversion to sinus bradycardia and return of a palpable pulse.</div>
+        <div class="phase-desc">Sustained CPR and concurrent warming have raised the core temperature above 30°C. A second defibrillation attempt at 200 J converts the rhythm to a slow sinus bradycardia with a faint, palpable carotid pulse. The patient remains unresponsive, GCS 3, with a weak BP. Post-ROSC care begins: continue warming toward 35°C, secure airway if not already, gentle ventilation guided by EtCO2, support BP, and continue to the ECMO/rewarming-capable facility. Drug intervals remain doubled until 35°C is reached.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Bradycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">58</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">88/56</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">92%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">32</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">86.9°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">64</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Supraglottic airway in place; EtCO2 capnography continuous</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic; ventilated 10/min; gentle, controlled — avoid hyperventilation</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Weak carotid pulse palpable; BP 88/56 by NIBP; warm torso, cool extremities</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pale, less mottled · Torso warming; extremities still cool · Dry under warming blanket</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Midposition, sluggishly reactive bilaterally</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid; cold rigor resolved</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"None"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Forced-air warming continues</li><li>Warmed IV fluids continue</li><li>Single second 200 J shock converted VF</li><li>No spontaneous respirations yet</li><li>Code team alerted at receiving ECMO center</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Transition to Post-ROSC care; continue active rewarming en route</div></div>
+        <div class="action-excerpt">Considerations in cardiac arrest: Upon ROSC, treat per Adult Post-ROSC Care Guideline.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Ventilate 10/min via SGA; titrate to normal EtCO2; do NOT hyperventilate</div></div>
+        <div class="action-excerpt">Considerations in cardiac arrest: In the absence of advanced airways, ventilate the patient at the same rate as a normothermic patient. If the patient has an advanced airway, ventilate at half the rate recommended for a normothermic patient to prevent hyperventilation. If EtCO2 is available, ventilate to maintain normal EtCO2 levels.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Keep doubled drug intervals until core temp &gt;35°C / 95°F</div></div>
+        <div class="action-excerpt">Considerations in cardiac arrest: Above 30°C (86°F), intervals between medication provision should be doubled until the patient reaches 35°C (95°F), at which time, normal medication intervals may be adopted.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Early notification to ECMO-capable receiving facility</div></div>
+        <div class="action-excerpt">Moderate or severe hypothermia: Transport as soon as possible to a hospital capable of resuscitation. If cardiac arrest develops consider transport to a center capable of extracorporeal circulation (ECMO) or cardiopulmonary bypass (if feasible).</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Stacked shocks at &lt;30°C</div>
+        <div class="phase-trigger">Trigger: Crew failed to obtain core temperature and ran AHA standard pattern: shock-CPR-shock-CPR-shock at 200 J. No conversions. Time and energy wasted on an unwinnable defibrillation strategy while the actual problem (cold) was untreated.</div>
+        <div class="phase-desc">BRANCH (judgment error). Crew runs standard normothermic ACLS without recognizing the hypothermic context. Three stacked 200 J defibrillation attempts are delivered with the patient's core temperature at 25°C. None convert. The cold myocardium is refractory to electricity and now further stressed. Crew has expended capacitor charge, time, and provider attention while skipping the actual intervention — warming. Coarse VFib has degraded to fine VFib. EtCO2 is borderline. Teaching point: 'At &lt;30°C, one shock and that's it. Then warm. Cold hearts don't convert.'</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Ventricular Fibrillation (Fine)</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">0</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">9</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">77°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">62</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">OPA, BVM ventilations</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic; ventilated</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulseless; refractory VFib on monitor</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Cyanotic, mottled · Cold throughout — warming not yet started · Wet clothing still in place</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Midposition, sluggish</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Cold rigor</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"None"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Three shocks delivered without rhythm change</li><li>No core temperature obtained</li><li>Patient still in cold ambient (not yet in warm cabin)</li><li>Wet clothing not removed</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize error; STOP further shocks; obtain core temp; pivot to warming</div></div>
+        <div class="action-excerpt">Considerations in cardiac arrest: If defibrillation is unsuccessful and the patient's core temperature is less than 30°C (86°F), do not make further attempts at defibrillation until the core temperature has increased to greater than 30°C (86°F). Continue CPR and attempt to rewarm the patient.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Move to warm cabin; remove wet clothes; warmed IV fluid; torso heat packs</div></div>
+        <div class="action-excerpt">Moderate or severe hypothermia: Prevent further heat loss by removing the patient from the environment and removing wet clothes and drying skin, insulate from the ground, shelter the patient from wind and wet conditions, and insulate the patient with dry clothing or a hypothermia wrap/blanket. Cover the patient with a vapor barrier and, if available, move the patient to a warm environment. Initiate field-rewarming methods such as placement of large heat packs or heat blankets (chemical or electric if feasible) to the anterior chest or wrapped around the patient's thorax if large enough.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Premature termination</div>
+        <div class="phase-trigger">Trigger: After ~20 minutes of resuscitation with persistent shockable/asystolic rhythm, low EtCO2, and no ROSC, crew applies standard adult non-traumatic termination criteria without recognizing that hypothermia is an explicit exclusion from those criteria.</div>
+        <div class="phase-desc">BRANCH (judgment error). Crew applies the standard non-traumatic termination of resuscitation criteria after roughly 20 minutes of CPR with persistent VF/asystole and EtCO2 &lt; 20 mmHg. Online medical control is contacted. The hypothermia exclusion in the termination protocol is missed. Resuscitation is stopped. The patient — who at this point has been resuscitated cold and never warmed past 25–26°C — is pronounced dead in the field. Teaching point: the termination protocol explicitly excludes hypothermia. 'Not dead until warm and dead.' This patient had a recoverable rhythm and a recoverable brain.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Asystole</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">0</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">0</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">8</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">78.8°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">60</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">SGA in place</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulseless; resus efforts being ceased</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pale, mottled cyanosis · Cold — incomplete warming · Dry under blanket</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Midposition, sluggish</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid post-rigor</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"None"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Core temp at termination: ~26°C (still severe hypothermia)</li><li>Warming bundle started but not sustained long enough</li><li>Termination called at ~20 minutes — hypothermia exclusion missed</li><li>Patient now arguably 'cold but not warmed and dead'</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize hypothermia is an EXCLUSION from termination criteria</div></div>
+        <div class="action-excerpt">Exclusion Criteria: Consider continuing resuscitation for patients in cardiac arrest associated with medical conditions that may have a better outcome despite prolonged resuscitation, including hypothermia (although under certain circumstances, medical direction may order termination of resuscitation in these conditions).</div>
+        <div class="action-ref">↳ MATC: Termination of Resuscitative Efforts</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Note: termination requires 'no evidence or suspicion of hypothermia' — does not apply here</div></div>
+        <div class="action-excerpt">Non-traumatic arrest: No evidence or suspicion of hypothermia.</div>
+        <div class="action-ref">↳ MATC: Termination of Resuscitative Efforts</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Resume CPR and warming; contact medical control; transport to ECMO center</div></div>
+        <div class="action-excerpt">Considerations in cardiac arrest: Patients with severe hypothermia and arrest may benefit from resuscitation even after prolonged downtime, and survival with intact neurologic function has been observed even after prolonged resuscitation. Patients should not be considered deceased until rewarming has been attempted.</div>
+        <div class="action-ref">↳ MATC: Hypothermia/Cold Exposure</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

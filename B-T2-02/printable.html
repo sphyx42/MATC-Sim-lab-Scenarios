@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Heat Stroke Requiring Aggressive Cooling — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Heat Stroke Requiring Aggressive Cooling</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Marcus Whitfield</strong></span><span class="patient-chip">28 years male</span><span class="patient-chip">154 lbs (70 kg)</span><span class="patient-chip">5'10"</span><span class="patient-chip">CC: Collapsed near marathon finish line, altered and confused</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Adult male, person down at race / heat collapse, marathon finish area, altered.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Outdoor marathon finish-line area, course medical tent at the city park near the finish chute. Open-air tent, ambient temperature 92°F, humidity 68%, full sun.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Sunday, mid-day (approximately 1130). Hot and humid summer race day.</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene controlled by event medical staff and event security. Large crowd of runners and spectators kept back. No traffic hazards. Heat exposure risk to crew — encourage hydration and rotation. No violence concerns at this time, though patient is agitated.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Course medical staff (RN and athletic trainer) already at patient's side. A running partner is present and provided history. Family members nearby. No bystander medications administered.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Patient supine on tent cot, race bib still pinned to shirt</li><li>Skin visibly flushed red, glistening dry — no sweat despite the heat</li><li>Empty water bottles and discarded sports-drink cups scattered nearby</li><li>Athletic trainer fanning patient with a clipboard</li><li>Bag of ice on the cot but not yet applied</li><li>Digital thermometer on the medical-tent table reading ambient 92°F</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">28-year-old male marathon runner collapsed approximately 50 meters past the finish line of a city marathon on a 92°F day with 68% relative humidity. Bystanders state he was running strongly at mile 25, then began staggering near the finish. Per witnesses he stopped sweating about a mile back, became visibly red, and stumbled into the finish chute before going down. Course medical staff moved him to a shaded medical tent. He has not been able to give a coherent history. Race timing chip shows ~4 hours 18 minutes on course. Family members at the finish report he trained heavily this summer and was 'pushing for a personal record.' He has had no oral intake at recent water stations per a friend running near him.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">NKDA</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">None daily</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">No known chronic conditions, Reports occasional exercise-induced asthma per family but no inhaler use today</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Pasta dinner the night before; small breakfast at 0530; sports drink and gel packs during the race per friend, but skipped the last two water stops</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Hot, humid race day. Patient ran a competitive pace, stopped sweating in the final miles, became confused and collapsed shortly after crossing the finish line. Course medical moved him to the medical tent; EMS dispatched for 'person down at race / heat collapse.'</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">EMS arrives at the marathon medical tent. Course medical staff hand off a 28-year-old male marathon runner who collapsed shortly past the finish line. He is supine on a cot, flushed, hot, and dry to the touch with no visible sweat. He is agitated, mumbling, and trying to sit up but cannot follow commands consistently. The athletic trainer reports he 'just stopped sweating' in the final mile. Core (rectal) temperature obtained by course medical reads 105.4°F. Bystander vitals: HR 142, BP 102/68, RR 28, SpO2 97% on room air. This is a textbook anhidrotic heat stroke presentation — rapid cooling is the priority intervention.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">142</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">102/68</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">97%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">28</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">32</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">105.4°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">88</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Inappropriate words</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">11</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-maintained. Occasional incoherent mumbling. No vomitus, no secretions.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Tachypneic, regular, deep. Lungs clear bilaterally. No retractions.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Tachycardic, regular. Strong central pulses, weak distal pulses. Capillary refill ~3 seconds in the setting of heat redistribution.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Flushed red · Very hot to touch · Dry — no perspiration despite heat (anhidrosis)</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 4 mm bilaterally</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities; agitated and pulling at clothing; cannot follow multi-step commands</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Mumbles 'I'm fine, I'm fine... where's the finish?' then trails off into nonsense. Repeatedly tries to stand."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>A&amp;Ox1 (person only); agitated, restless</li><li>Rectal core temperature 105.4°F per course medical</li><li>Race bib visible; running clothes still on</li><li>No signs of trauma on rapid survey</li><li>Lips and oral mucosa dry</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize heat stroke: hot, dry, anhidrotic skin + AMS + core &gt;104°F</div></div>
+        <div class="action-excerpt">Heat Stroke: occurs when the cooling mechanism of the body ceases due to temperature overload and/or electrolyte imbalances. Patient core temperature is usually greater than 104°F. When no thermometer is available, it is distinguished from heat exhaustion by altered level of consciousness, seizures, or coma.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Move patient to cool area; shield from sun and heat source</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Move victim to a cool area and shield from the sun or any external heat source.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Remove clothing; loosen restrictive garments</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Remove as much clothing as is practical and loosen any restrictive garments.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Confirm core temperature (rectal or tympanic); document 105.4°F</div></div>
+        <div class="action-excerpt">Vital signs: Core temperature: usually 104°F or greater (if thermometer available); Skin: flushed and hot, dry or sweaty, signs of first or second degree burns from sun exposure.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Begin active cooling NOW: ice packs to neck/groin/axillae + mist + fan (or ice-water immersion if available)</div></div>
+        <div class="action-excerpt">If core temperature is greater than 104°F (40°C) or if altered mental status is present, begin active cooling by: Ice bath immersion provides the most rapid cooling mechanism. If ice bath immersion is not available, consider the following: Tarp-assisted cooling with oscillation; Rotating ice water-soaked towels or sheets; Continually misting the exposed skin with tepid water while fanning the victim; Truncal ice packs may be used, but are less effective than evaporation.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Prioritize rapid cooling over cardiac monitoring and IV access</div></div>
+        <div class="action-excerpt">Key Considerations: For patients with signs and symptoms of heat stroke, rapid cooling takes priority over other interventions (e.g., cardiac monitoring, IV access).</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Manage airway as indicated; reassess as mental status changes</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Manage airway as indicated.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Check blood glucose for AMS (result 88 mg/dL — rules out hypoglycemia)</div></div>
+        <div class="action-excerpt">Treatment and Interventions: If altered mental status, check blood glucose level.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Place on cardiac monitor; record ongoing vitals (HR, BP, RR, neuro)</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Place on cardiac monitor and record ongoing vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment).</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Establish IV; cool NS bolus 1400 mL (70 kg × 20 mL/kg) — give first 500 mL rapidly</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Establish IV access for patients suffering from heat stroke — give cool fluids at 20 mL/kg boluses and reduce to 10 mL/kg/hr boluses when vitals are stable.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Anticipate seizure; prep midazolam at the bedside</div></div>
+        <div class="action-excerpt">Treat seizures, per the Seizures Guideline. Heat stroke is associated with cardiac arrhythmias independent of drug ingestion/overdose. Heat stroke has also been associated with cerebral edema.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Active cooling initiated</div>
+        <div class="phase-trigger">Trigger: Crew recognized heat stroke and initiated aggressive multi-modal cooling immediately on patient contact, alongside (not after) airway monitoring, IV placement, glucose check, and cardiac monitor application.</div>
+        <div class="phase-desc">Crew has clothing off, ice packs to neck/axillae/groin, wet sheet with fans running, and a cool NS bolus running wide open through an 18g IV. Cooling continues continuously — not interrupted to move or to do other tasks. Patient remains agitated but is being monitored continuously. Glucose returned at 88 mg/dL, ruling out hypoglycemia as an AMS cause. Sinus tachycardia persists; BP holding. Crew is loading for transport with cooling continuing in the truck.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">134</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">108/70</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">98%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">26</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">33</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">104.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">88</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Inappropriate words</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Localizes pain</span><span class="gcs-score">5</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">11</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-maintained. No vomiting. Maintaining own airway despite agitation.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Tachypneic, regular. Lungs clear. SpO2 holding.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Tachycardic, regular. Skin still hot but now wet from misting. Radials palpable, slightly stronger than initial contact.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Flushed red · Hot but trending down with cooling · Wet from applied mist/sheet (artificially induced)</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 4 mm bilaterally</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all extremities; still pulling at lines and ice packs; requires gentle redirection</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Still confused — 'I have to go back... my time...' Following one-step commands intermittently."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Ice packs at neck, axillae, and groin; wet sheet draped over torso</li><li>Two fans running (event medical + crew portable)</li><li>18g IV right AC; 1 L NS running pressure-bag</li><li>Glucose 88 mg/dL documented</li><li>Continuous core-temp probe placed; trending downward</li><li>Loaded into ambulance with cooling continuing</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continue active cooling throughout transport — do NOT stop to move patient</div></div>
+        <div class="action-excerpt">Cooling efforts should continue until the patient's temperature is less than 102.2°F (39°C) or, if continuous temperature monitoring is not available, until the patient demonstrates improvement in mental status.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Run NS bolus 1400 mL (70 kg × 20 mL/kg); reassess after 1 L</div></div>
+        <div class="action-excerpt">Establish IV access for patients suffering from heat stroke — give cool fluids at 20 mL/kg boluses and reduce to 10 mL/kg/hr boluses when vitals are stable.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Recheck core temperature q5 min; track trend</div></div>
+        <div class="action-excerpt">Place on cardiac monitor and record ongoing vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment).</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Monitor for arrhythmia and cardiovascular collapse</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Monitor for arrhythmia and cardiovascular collapse.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Reassess neuro status q5 min (GCS/AVPU); document trend</div></div>
+        <div class="action-excerpt">Look for treatable causes of altered mental status (AMS): Glasgow Coma Score and/or AVPU.</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-supp">supplemental</span><div class="action-text">Consider securing devices to protect IV from agitated movement</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Consider use of physical securing devices to protect vascular access sites.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Early hospital notification — heat stroke, active cooling, ETA</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Provide advanced notification to the hospital.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Improving, then seizure</div>
+        <div class="phase-trigger">Trigger: After roughly 8 minutes of continuous active cooling and approximately 1 L of cool NS, core temperature has decreased to 103.2°F and the patient's mental status is improving (A&amp;Ox2). En route, the patient then has a generalized tonic-clonic seizure attributed to ongoing hyperthermia and underlying cerebral irritability before reaching the cooling end-point.</div>
+        <div class="phase-desc">After roughly 8 minutes of continuous cooling and ~1 L of cool NS, the core temperature has fallen to 103.2°F and the patient is now A&amp;Ox2 — recognizing the crew and answering simple questions. The trend is the right direction. Mid-transport, however, the patient stiffens and begins a generalized tonic-clonic seizure with eye deviation and clenched jaw. Airway briefly partially obstructed by jaw clench. Cooling is continued throughout. Crew must administer a benzodiazepine, support airway/oxygen, and continue cooling — the seizure does NOT cancel cooling.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">148</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">118/74</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">88%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">8</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">48</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">103.3°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">90</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg sel-p">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Withdraws from pain</span><span class="gcs-score">4</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">6</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Jaw clenched during tonic phase; brief partial obstruction. NPA placed if jaw allows. Suction at hand.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic during tonic phase, then irregular and shallow during clonic phase. BVM at hand. SpO2 dips to mid-80s briefly.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Tachycardic; pulses still strong. BP cuff cycles between convulsions.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Flushed but lighter than initial · Warm — no longer 'on fire' · Wet from continued cooling</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Mid-position, deviated upward during tonic phase</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Generalized tonic-clonic activity — rhythmic jerking of all four extremities; loss of postural tone</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"None — actively seizing"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Seizure onset abrupt while on transport stretcher</li><li>Cooling continued throughout — ice packs and wet sheet remain in place</li><li>IV patent; line protected</li><li>Glucose rechecked at 90 mg/dL — not hypoglycemic</li><li>Approximately 8 minutes of cooling completed; 1 L NS infused</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize generalized tonic-clonic seizure; protect from injury</div></div>
+        <div class="action-excerpt">Inclusion Criteria: Seizure activity upon arrival of prehospital personnel or new/recurrent seizure activity lasting greater than 5 minutes. Seizures due to trauma, pregnancy, hyperthermia, or toxic exposure should be managed according to those condition-specific guidelines.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Support airway: position, suction, NPA, BVM with O2 as needed</div></div>
+        <div class="action-excerpt">If signs of airway obstruction are present and a chin-lift, jaw thrust, positioning, and/or suctioning does not alleviate it, place oropharyngeal airway (if gag reflex is absent) or nasopharyngeal airway. Administer oxygen as appropriate with a target of achieving 94–98% saturation. Use bag-valve-mask (BVM) ventilation if oxygenation/ventilation are compromised.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Midazolam 4 mg IV (70 kg × 0.1 mg/kg = 7 mg → cap at 4 mg max IV)</div></div>
+        <div class="action-excerpt">Anticonvulsant Treatment — If vascular access (IV or IO) is present: Diazepam 0.2 mg/kg IV or IO, maximum 10 mg; Lorazepam 0.1 mg/kg IV or IO, maximum 4 mg; Midazolam 0.1 mg/kg IV or IO, maximum 4 mg.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continue active cooling through and after the seizure</div></div>
+        <div class="action-excerpt">Cooling efforts should continue until the patient's temperature is less than 102.2°F (39°C) or, if continuous temperature monitoring is not available, until the patient demonstrates improvement in mental status.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Recheck glucose during active seizure (still 90 mg/dL — adequate)</div></div>
+        <div class="action-excerpt">Glucometry: If still actively seizing, check blood glucose level. If less than 60 mg/dL, treat per the Hypoglycemia Guideline.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Stop active cooling when core temp reaches 102°F (39°C) to avoid overshoot</div></div>
+        <div class="action-excerpt">Cooling efforts should continue until the patient's temperature is less than 102.2°F (39°C) or, if continuous temperature monitoring is not available, until the patient demonstrates improvement in mental status.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Cooled to target, handoff</div>
+        <div class="phase-trigger">Trigger: Midazolam 4 mg IV terminated the seizure, cooling continued uninterrupted, and core temperature reached the 102°F end-point — cooling was stopped to avoid overshoot. Patient is now post-ictal, hemodynamically stable, and being handed off to the receiving ED.</div>
+        <div class="phase-desc">Midazolam 4 mg IV terminated the seizure within ~90 seconds. Cooling continued and core temperature has reached 102°F — cooling is now discontinued to prevent overshoot. Patient is post-ictal but recovering, GCS improving (E3 V4 M6 = 13), HR coming down, BP stable, SpO2 back to baseline on supplemental O2. Crew delivers a clean, protocolized handoff to the receiving ED: heat stroke with active cooling completed prehospital, 1 L NS infused, brief seizure treated with midazolam, glucose normal throughout.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">112</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">124/78</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">98%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">18</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">102°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">92</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">13</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent. Snoring resolved with positioning. NPA removed once gag returned. Self-protecting.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Regular, unlabored. Lungs clear. On low-flow O2.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">HR trending down. BP stable. Skin now warm (not hot) and dry to mildly diaphoretic — sweating mechanism returning. Pulses strong throughout.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Pink (no longer flushed red) · Warm — normalizing · Mildly diaphoretic — physiologic sweat returning</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 3 mm bilaterally</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all four; weak handgrips bilaterally; oriented x3 by handoff</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"'My head hurts... what happened?' Oriented to self, place (kind of), and date by ED arrival."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Cooling discontinued at core 102°F per protocol end-point</li><li>Total cool NS infused: ~1.2 L</li><li>Midazolam 4 mg IV given once; no repeat needed</li><li>No further seizure activity</li><li>Receiving ED notified — heat stroke, cooled, seized once, treated</li><li>Documentation includes temp trend, cooling start time, glucose values, GCS trend</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Confirm cooling stopped at 102°F end-point; document time</div></div>
+        <div class="action-excerpt">Cooling efforts should continue until the patient's temperature is less than 102.2°F (39°C) or, if continuous temperature monitoring is not available, until the patient demonstrates improvement in mental status.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Reduce IV to maintenance/10 mL/kg/hr once vitals stable</div></div>
+        <div class="action-excerpt">Establish IV access for patients suffering from heat stroke — give cool fluids at 20 mL/kg boluses and reduce to 10 mL/kg/hr boluses when vitals are stable.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Transport all heat-stroke patients to ED</div></div>
+        <div class="action-excerpt">All patients suffering from life threatening heat illness (including heat stroke) should be transported to the hospital.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Clean ED handoff: temp trend, cooling times, fluids, midazolam, seizure</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Cooling interventions considered and implemented; Decision-making regarding monitoring ABCs (Airway, Breathing, Circulation).</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Cooling deferred for transport</div>
+        <div class="phase-trigger">Trigger: Crew prioritized IV access, monitor placement, and rapid transport over initiating on-scene active cooling, allowing core temperature to climb further. Patient deteriorated to obtundation, witnessed seizure, and rhabdomyolysis signs in the back of the ambulance.</div>
+        <div class="phase-desc">Crew elected to prioritize IV access, monitor application, and rapid transport over on-scene cooling — reasoning that 'cooling can be done at the hospital.' Patient remains in race clothing in the ambulance with ambient AC only. Core temperature climbs to 106°F in the back of the truck. Patient becomes obtunded, then has a witnessed tonic-clonic seizure with airway compromise. Dark tea-colored urine is noted in the leg of his shorts (rhabdomyolysis). Crew must now reverse course — aggressive cooling AND seizure management AND airway, all simultaneously, under far worse conditions.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Tachycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">156</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">96/76</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">89%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">32</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">28</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">106°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">86</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg sel-p">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To pain</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Incomprehensible sounds</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Withdraws from pain</span><span class="gcs-score">4</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">8</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Compromised — snoring respirations, jaw lax. Required jaw thrust + NPA. Suctioned vomitus once.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Shallow, irregular. BVM-assisted ventilation initiated. SpO2 89% on NRB before assisted ventilation.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Tachycardic and now narrowing pulse pressure. Capillary refill 4 sec. Skin still hot and dry — anhidrosis persists.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">Deep flushed red · Hotter than initial contact — palpably burning · Dry — anhidrosis unchanged</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">PERRL 5 mm bilaterally — slightly sluggish</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Tonic-clonic seizure x90 seconds in route; now post-ictal flaccid; minimal response to sternal rub</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"None — obtunded/post-ictal"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Dark cola/tea-colored fluid in shorts — rhabdomyolysis until proven otherwise</li><li>Race clothing still on; only partial removal attempted</li><li>No active cooling applied — only ambulance AC and a single ice pack on chest</li><li>Lactate (if obtained) markedly elevated</li><li>Crew now reversing course — initiating cooling in the truck under poor conditions</li><li>ED notified late, sicker patient</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reverse course: strip clothing, ice packs, mist + fan in the truck NOW</div></div>
+        <div class="action-excerpt">Key Considerations: For patients with signs and symptoms of heat stroke, rapid cooling takes priority over other interventions (e.g., cardiac monitoring, IV access).</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Manage airway aggressively: jaw thrust, NPA, BVM with 100% O2</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Manage airway as indicated.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Midazolam 4 mg IV (70 kg × 0.1 mg/kg = 7 mg → cap at 4 mg max IV)</div></div>
+        <div class="action-excerpt">Anticonvulsant Treatment — If vascular access (IV or IO) is present: Diazepam 0.2 mg/kg IV or IO, maximum 10 mg; Lorazepam 0.1 mg/kg IV or IO, maximum 4 mg; Midazolam 0.1 mg/kg IV or IO, maximum 4 mg.</div>
+        <div class="action-ref">↳ MATC: Seizures</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Run cool NS bolus 1400 mL (70 kg × 20 mL/kg); protect kidneys from rhabdo</div></div>
+        <div class="action-excerpt">Establish IV access for patients suffering from heat stroke — give cool fluids at 20 mL/kg boluses and reduce to 10 mL/kg/hr boluses when vitals are stable.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continuous ECG — watch for arrhythmia from hyperthermia and hyperkalemia from rhabdo</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Monitor for arrhythmia and cardiovascular collapse.</div>
+        <div class="action-ref">↳ MATC: Hyperthermia/Heat Exposure</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Upgrade hospital notification — critical heat stroke, seizing, rhabdo signs</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Provide advanced notification to the hospital.</div>
+        <div class="action-ref">↳ MATC: Shock</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

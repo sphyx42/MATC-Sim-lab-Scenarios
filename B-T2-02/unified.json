@@ -1,0 +1,619 @@
+{
+  "meta": {
+    "id": "B-T2-02",
+    "name": "Heat Stroke Requiring Aggressive Cooling",
+    "version": 1,
+    "difficulty": "intermediate",
+    "category": "Environmental",
+    "protocols": [
+      "env-hyperthermia-heat-exposure",
+      "medical-altered-mental-status",
+      "medical-shock",
+      "medical-seizures"
+    ],
+    "totalTimeSeconds": 1500,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": ["heat stroke", "hyperthermia", "cooling", "seizure", "tier-2", "decision-dense", "environmental"]
+  },
+  "patient": {
+    "name": "Marcus Whitfield",
+    "age": 28,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 70,
+    "weightLbs": 154,
+    "height": 178,
+    "chiefComplaint": "Collapsed near marathon finish line, altered and confused",
+    "history": {
+      "hpi": "28-year-old male marathon runner collapsed approximately 50 meters past the finish line of a city marathon on a 92°F day with 68% relative humidity. Bystanders state he was running strongly at mile 25, then began staggering near the finish. Per witnesses he stopped sweating about a mile back, became visibly red, and stumbled into the finish chute before going down. Course medical staff moved him to a shaded medical tent. He has not been able to give a coherent history. Race timing chip shows ~4 hours 18 minutes on course. Family members at the finish report he trained heavily this summer and was 'pushing for a personal record.' He has had no oral intake at recent water stations per a friend running near him.",
+      "pastMedical": ["No known chronic conditions", "Reports occasional exercise-induced asthma per family but no inhaler use today"],
+      "medications": ["None daily"],
+      "allergies": ["NKDA"],
+      "lastOralIntake": "Pasta dinner the night before; small breakfast at 0530; sports drink and gel packs during the race per friend, but skipped the last two water stops",
+      "events": "Hot, humid race day. Patient ran a competitive pace, stopped sweating in the final miles, became confused and collapsed shortly after crossing the finish line. Course medical moved him to the medical tent; EMS dispatched for 'person down at race / heat collapse.'"
+    }
+  },
+  "scene": {
+    "dispatch": "Adult male, person down at race / heat collapse, marathon finish area, altered.",
+    "location": "Outdoor marathon finish-line area, course medical tent at the city park near the finish chute. Open-air tent, ambient temperature 92°F, humidity 68%, full sun.",
+    "time": "Sunday, mid-day (approximately 1130). Hot and humid summer race day.",
+    "safety": "Scene controlled by event medical staff and event security. Large crowd of runners and spectators kept back. No traffic hazards. Heat exposure risk to crew — encourage hydration and rotation. No violence concerns at this time, though patient is agitated.",
+    "bystanders": "Course medical staff (RN and athletic trainer) already at patient's side. A running partner is present and provided history. Family members nearby. No bystander medications administered.",
+    "visualCues": [
+      "Patient supine on tent cot, race bib still pinned to shirt",
+      "Skin visibly flushed red, glistening dry — no sweat despite the heat",
+      "Empty water bottles and discarded sports-drink cups scattered nearby",
+      "Athletic trainer fanning patient with a clipboard",
+      "Bag of ice on the cot but not yet applied",
+      "Digital thermometer on the medical-tent table reading ambient 92°F"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives at the marathon medical tent. Course medical staff hand off a 28-year-old male marathon runner who collapsed shortly past the finish line. He is supine on a cot, flushed, hot, and dry to the touch with no visible sweat. He is agitated, mumbling, and trying to sit up but cannot follow commands consistently. The athletic trainer reports he 'just stopped sweating' in the final mile. Core (rectal) temperature obtained by course medical reads 105.4°F. Bystander vitals: HR 142, BP 102/68, RR 28, SpO2 97% on room air. This is a textbook anhidrotic heat stroke presentation — rapid cooling is the priority intervention.",
+      "isDefault": true,
+      "transitions": [
+        {
+          "targetPhaseId": "active-cooling",
+          "if": "Active cooling initiated immediately",
+          "condition": "Crew recognizes heat stroke, removes clothing, applies ice packs to neck/groin/axillae, begins evaporative cooling (mist + fan) and/or ice-water immersion, and continues cooling while preparing IV access and transport. Cooling is the FIRST and continuous intervention.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["a-recognize-hs", "a-move-cool", "a-remove-clothes", "a-active-cooling"]
+        },
+        {
+          "targetPhaseId": "cooling-deferred",
+          "if": "Cooling deferred for IV and transport",
+          "condition": "Crew prioritizes IV access, monitor application, and rapid transport without initiating active cooling on scene (reasoning that 'cooling can be done at the hospital'). Cooling is delayed beyond 5 minutes from patient contact.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["a-active-cooling"]
+        }
+      ],
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 3, "motor": 5 },
+        "airway": "Patent, self-maintained. Occasional incoherent mumbling. No vomitus, no secretions.",
+        "breathing": "Tachypneic, regular, deep. Lungs clear bilaterally. No retractions.",
+        "circulation": "Tachycardic, regular. Strong central pulses, weak distal pulses. Capillary refill ~3 seconds in the setting of heat redistribution.",
+        "skin": { "color": "Flushed red", "temperature": "Very hot to touch", "moisture": "Dry — no perspiration despite heat (anhidrosis)" },
+        "pupils": "PERRL 4 mm bilaterally",
+        "motorFunction": "Moves all extremities; agitated and pulling at clothing; cannot follow multi-step commands",
+        "otherFindings": [
+          "A&Ox1 (person only); agitated, restless",
+          "Rectal core temperature 105.4°F per course medical",
+          "Race bib visible; running clothes still on",
+          "No signs of trauma on rapid survey",
+          "Lips and oral mucosa dry"
+        ],
+        "patientSpeech": "Mumbles 'I'm fine, I'm fine... where's the finish?' then trails off into nonsense. Repeatedly tries to stand."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 142,
+        "bpSys": 102,
+        "bpDia": 68,
+        "respRate": 28,
+        "spo2": 97,
+        "etco2": 32,
+        "temp": 40.8,
+        "tempF": 105.4,
+        "obstruction": 0,
+        "glucose": 88,
+        "customMeasures": [],
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "a-recognize-hs",
+          "shortAction": "Recognize heat stroke: hot, dry, anhidrotic skin + AMS + core >104°F",
+          "protocolExcerpt": "Heat Stroke: occurs when the cooling mechanism of the body ceases due to temperature overload and/or electrolyte imbalances. Patient core temperature is usually greater than 104°F. When no thermometer is available, it is distinguished from heat exhaustion by altered level of consciousness, seizures, or coma.",
+          "priority": "critical",
+          "rationale": "Anhidrosis (hot/dry skin) with AMS distinguishes heat stroke from heat exhaustion (wet/sweating). This recognition drives the entire treatment priority — cooling FIRST.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-move-cool",
+          "shortAction": "Move patient to cool area; shield from sun and heat source",
+          "protocolExcerpt": "Treatment and Interventions: Move victim to a cool area and shield from the sun or any external heat source.",
+          "priority": "critical",
+          "rationale": "First-line environmental intervention — reduces ongoing heat gain.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-remove-clothes",
+          "shortAction": "Remove clothing; loosen restrictive garments",
+          "protocolExcerpt": "Treatment and Interventions: Remove as much clothing as is practical and loosen any restrictive garments.",
+          "priority": "critical",
+          "rationale": "Maximizes surface area for evaporative and conductive cooling. Race clothing traps heat.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-confirm-core-temp",
+          "shortAction": "Confirm core temperature (rectal or tympanic); document 105.4°F",
+          "protocolExcerpt": "Vital signs: Core temperature: usually 104°F or greater (if thermometer available); Skin: flushed and hot, dry or sweaty, signs of first or second degree burns from sun exposure.",
+          "priority": "critical",
+          "rationale": "Rectal or tympanic core temperature drives cooling decisions and end-points. Axillary/oral temps under-read in heat stroke.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-active-cooling",
+          "shortAction": "Begin active cooling NOW: ice packs to neck/groin/axillae + mist + fan (or ice-water immersion if available)",
+          "protocolExcerpt": "If core temperature is greater than 104°F (40°C) or if altered mental status is present, begin active cooling by: Ice bath immersion provides the most rapid cooling mechanism. If ice bath immersion is not available, consider the following: Tarp-assisted cooling with oscillation; Rotating ice water-soaked towels or sheets; Continually misting the exposed skin with tepid water while fanning the victim; Truncal ice packs may be used, but are less effective than evaporation.",
+          "priority": "critical",
+          "rationale": "Cooling is THE priority. Every minute >104°F worsens organ injury. Cooling continues while other interventions occur — not after.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-cooling-priority",
+          "shortAction": "Prioritize rapid cooling over cardiac monitoring and IV access",
+          "protocolExcerpt": "Key Considerations: For patients with signs and symptoms of heat stroke, rapid cooling takes priority over other interventions (e.g., cardiac monitoring, IV access).",
+          "priority": "critical",
+          "rationale": "Explicitly stated in protocol — cooling is not delayed for line placement or monitor.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-airway",
+          "shortAction": "Manage airway as indicated; reassess as mental status changes",
+          "protocolExcerpt": "Treatment and Interventions: Manage airway as indicated.",
+          "priority": "important",
+          "rationale": "AMS with hyperthermia can deteriorate to seizure or obtundation requiring airway support.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-glucose",
+          "shortAction": "Check blood glucose for AMS (result 88 mg/dL — rules out hypoglycemia)",
+          "protocolExcerpt": "Treatment and Interventions: If altered mental status, check blood glucose level.",
+          "priority": "critical",
+          "rationale": "AMS differential — protocol explicitly directs glucometry. Hypoglycemia is an easily reversible mimic.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-monitor",
+          "shortAction": "Place on cardiac monitor; record ongoing vitals (HR, BP, RR, neuro)",
+          "protocolExcerpt": "Treatment and Interventions: Place on cardiac monitor and record ongoing vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment).",
+          "priority": "important",
+          "rationale": "Heat stroke is associated with cardiac arrhythmias independent of any drug exposure.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-iv-ns-bolus",
+          "shortAction": "Establish IV; cool NS bolus 1400 mL (70 kg × 20 mL/kg) — give first 500 mL rapidly",
+          "protocolExcerpt": "Treatment and Interventions: Establish IV access for patients suffering from heat stroke — give cool fluids at 20 mL/kg boluses and reduce to 10 mL/kg/hr boluses when vitals are stable.",
+          "priority": "critical",
+          "rationale": "Heat stroke patients are volume-depleted and hyperdynamic; cool IV fluids also contribute to internal cooling.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-seizure-precautions",
+          "shortAction": "Anticipate seizure; prep midazolam at the bedside",
+          "protocolExcerpt": "Treat seizures, per the Seizures Guideline. Heat stroke is associated with cardiac arrhythmias independent of drug ingestion/overdose. Heat stroke has also been associated with cerebral edema.",
+          "priority": "important",
+          "rationale": "Hyperthermia is a recognized seizure trigger; having a benzo drawn shortens response time.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        }
+      ]
+    },
+    {
+      "id": "active-cooling",
+      "name": "Active cooling initiated",
+      "description": "Crew has clothing off, ice packs to neck/axillae/groin, wet sheet with fans running, and a cool NS bolus running wide open through an 18g IV. Cooling continues continuously — not interrupted to move or to do other tasks. Patient remains agitated but is being monitored continuously. Glucose returned at 88 mg/dL, ruling out hypoglycemia as an AMS cause. Sinus tachycardia persists; BP holding. Crew is loading for transport with cooling continuing in the truck.",
+      "triggerCondition": "Crew recognized heat stroke and initiated aggressive multi-modal cooling immediately on patient contact, alongside (not after) airway monitoring, IV placement, glucose check, and cardiac monitor application.",
+      "isDefault": true,
+      "transitions": [
+        {
+          "targetPhaseId": "improving-then-seizure",
+          "if": "Cooling continues 8 min + 1 L NS infused",
+          "condition": "After approximately 8 minutes of continuous active cooling and roughly 1 liter of cool NS infused, the patient's core temperature has dropped to 103.2°F and mental status begins to clear (A&Ox2). En route to the hospital the patient then has a brief tonic-clonic seizure attributed to ongoing hyperthermia and underlying cerebral irritability.",
+          "conditionType": "time_elapsed",
+          "timeoutSeconds": 480,
+          "triggerActionIds": ["a-continue-cooling", "a-bolus-running"]
+        }
+      ],
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 3, "motor": 5 },
+        "airway": "Patent, self-maintained. No vomiting. Maintaining own airway despite agitation.",
+        "breathing": "Tachypneic, regular. Lungs clear. SpO2 holding.",
+        "circulation": "Tachycardic, regular. Skin still hot but now wet from misting. Radials palpable, slightly stronger than initial contact.",
+        "skin": { "color": "Flushed red", "temperature": "Hot but trending down with cooling", "moisture": "Wet from applied mist/sheet (artificially induced)" },
+        "pupils": "PERRL 4 mm bilaterally",
+        "motorFunction": "Moves all extremities; still pulling at lines and ice packs; requires gentle redirection",
+        "otherFindings": [
+          "Ice packs at neck, axillae, and groin; wet sheet draped over torso",
+          "Two fans running (event medical + crew portable)",
+          "18g IV right AC; 1 L NS running pressure-bag",
+          "Glucose 88 mg/dL documented",
+          "Continuous core-temp probe placed; trending downward",
+          "Loaded into ambulance with cooling continuing"
+        ],
+        "patientSpeech": "Still confused — 'I have to go back... my time...' Following one-step commands intermittently."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 134,
+        "bpSys": 108,
+        "bpDia": 70,
+        "respRate": 26,
+        "spo2": 98,
+        "etco2": 33,
+        "temp": 40.1,
+        "tempF": 104.2,
+        "obstruction": 0,
+        "glucose": 88,
+        "customMeasures": [],
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "a-continue-cooling",
+          "shortAction": "Continue active cooling throughout transport — do NOT stop to move patient",
+          "protocolExcerpt": "Cooling efforts should continue until the patient's temperature is less than 102.2°F (39°C) or, if continuous temperature monitoring is not available, until the patient demonstrates improvement in mental status.",
+          "priority": "critical",
+          "rationale": "Cooling is not pulse-on / pulse-off; it must be continuous until end-point reached.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-bolus-running",
+          "shortAction": "Run NS bolus 1400 mL (70 kg × 20 mL/kg); reassess after 1 L",
+          "protocolExcerpt": "Establish IV access for patients suffering from heat stroke — give cool fluids at 20 mL/kg boluses and reduce to 10 mL/kg/hr boluses when vitals are stable.",
+          "priority": "critical",
+          "rationale": "Cool fluid contributes to systemic cooling and corrects exertional volume loss.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-recheck-temp",
+          "shortAction": "Recheck core temperature q5 min; track trend",
+          "protocolExcerpt": "Place on cardiac monitor and record ongoing vital signs (pulse, blood pressure, respiratory rate, neurologic status assessment).",
+          "priority": "important",
+          "rationale": "Temperature trend tells you when to stop cooling. Without it you risk overshoot.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-monitor-arrhythmia",
+          "shortAction": "Monitor for arrhythmia and cardiovascular collapse",
+          "protocolExcerpt": "Treatment and Interventions: Monitor for arrhythmia and cardiovascular collapse.",
+          "priority": "important",
+          "rationale": "Heat stroke is independently associated with arrhythmias; rising K+ from rhabdo can precipitate them.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-reassess-neuro",
+          "shortAction": "Reassess neuro status q5 min (GCS/AVPU); document trend",
+          "protocolExcerpt": "Look for treatable causes of altered mental status (AMS): Glasgow Coma Score and/or AVPU.",
+          "priority": "important",
+          "rationale": "Mental-status improvement is the alternative cooling end-point when continuous temp is unavailable.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "a-securing-iv",
+          "shortAction": "Consider securing devices to protect IV from agitated movement",
+          "protocolExcerpt": "Patient Safety Considerations: Consider use of physical securing devices to protect vascular access sites.",
+          "priority": "supplemental",
+          "rationale": "Agitation is common in heat stroke; the IV is the lifeline for fluids and any future midazolam.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-advanced-notify",
+          "shortAction": "Early hospital notification — heat stroke, active cooling, ETA",
+          "protocolExcerpt": "Treatment and Interventions: Provide advanced notification to the hospital.",
+          "priority": "important",
+          "rationale": "Receiving ED needs cooling resources, labs (CK/lytes), and ICU ready.",
+          "protocolReference": "MATC: Shock"
+        }
+      ]
+    },
+    {
+      "id": "improving-then-seizure",
+      "name": "Improving, then seizure",
+      "description": "After roughly 8 minutes of continuous cooling and ~1 L of cool NS, the core temperature has fallen to 103.2°F and the patient is now A&Ox2 — recognizing the crew and answering simple questions. The trend is the right direction. Mid-transport, however, the patient stiffens and begins a generalized tonic-clonic seizure with eye deviation and clenched jaw. Airway briefly partially obstructed by jaw clench. Cooling is continued throughout. Crew must administer a benzodiazepine, support airway/oxygen, and continue cooling — the seizure does NOT cancel cooling.",
+      "triggerCondition": "After roughly 8 minutes of continuous active cooling and approximately 1 L of cool NS, core temperature has decreased to 103.2°F and the patient's mental status is improving (A&Ox2). En route, the patient then has a generalized tonic-clonic seizure attributed to ongoing hyperthermia and underlying cerebral irritability before reaching the cooling end-point.",
+      "isDefault": true,
+      "transitions": [
+        {
+          "targetPhaseId": "cooled-handoff",
+          "if": "Midazolam given; cooling continues; seizure stops",
+          "condition": "Crew administers midazolam IV 4 mg (capped from 70 kg × 0.1 mg/kg = 7 mg → max 4 mg per protocol). Seizure terminates within 2 minutes. Cooling continues uninterrupted. Core temp reaches 102°F — cooling is stopped to avoid overshoot. Patient handed off at the receiving ED.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["a-midazolam-iv", "a-stop-cooling-102"]
+        }
+      ],
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 4 },
+        "airway": "Jaw clenched during tonic phase; brief partial obstruction. NPA placed if jaw allows. Suction at hand.",
+        "breathing": "Apneic during tonic phase, then irregular and shallow during clonic phase. BVM at hand. SpO2 dips to mid-80s briefly.",
+        "circulation": "Tachycardic; pulses still strong. BP cuff cycles between convulsions.",
+        "skin": { "color": "Flushed but lighter than initial", "temperature": "Warm — no longer 'on fire'", "moisture": "Wet from continued cooling" },
+        "pupils": "Mid-position, deviated upward during tonic phase",
+        "motorFunction": "Generalized tonic-clonic activity — rhythmic jerking of all four extremities; loss of postural tone",
+        "otherFindings": [
+          "Seizure onset abrupt while on transport stretcher",
+          "Cooling continued throughout — ice packs and wet sheet remain in place",
+          "IV patent; line protected",
+          "Glucose rechecked at 90 mg/dL — not hypoglycemic",
+          "Approximately 8 minutes of cooling completed; 1 L NS infused"
+        ],
+        "patientSpeech": "None — actively seizing"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 148,
+        "bpSys": 118,
+        "bpDia": 74,
+        "respRate": 8,
+        "spo2": 88,
+        "etco2": 48,
+        "temp": 39.6,
+        "tempF": 103.2,
+        "obstruction": 30,
+        "glucose": 90,
+        "customMeasures": [],
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "a-recognize-seizure",
+          "shortAction": "Recognize generalized tonic-clonic seizure; protect from injury",
+          "protocolExcerpt": "Inclusion Criteria: Seizure activity upon arrival of prehospital personnel or new/recurrent seizure activity lasting greater than 5 minutes. Seizures due to trauma, pregnancy, hyperthermia, or toxic exposure should be managed according to those condition-specific guidelines.",
+          "priority": "critical",
+          "rationale": "Hyperthermic seizure — manage per Hyperthermia guideline which redirects to Seizures guideline for cessation.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "a-airway-seizure",
+          "shortAction": "Support airway: position, suction, NPA, BVM with O2 as needed",
+          "protocolExcerpt": "If signs of airway obstruction are present and a chin-lift, jaw thrust, positioning, and/or suctioning does not alleviate it, place oropharyngeal airway (if gag reflex is absent) or nasopharyngeal airway. Administer oxygen as appropriate with a target of achieving 94–98% saturation. Use bag-valve-mask (BVM) ventilation if oxygenation/ventilation are compromised.",
+          "priority": "critical",
+          "rationale": "Apnea during tonic phase plus jaw clench drops SpO2 — airway support is non-negotiable.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "a-midazolam-iv",
+          "shortAction": "Midazolam 4 mg IV (70 kg × 0.1 mg/kg = 7 mg → cap at 4 mg max IV)",
+          "protocolExcerpt": "Anticonvulsant Treatment — If vascular access (IV or IO) is present: Diazepam 0.2 mg/kg IV or IO, maximum 10 mg; Lorazepam 0.1 mg/kg IV or IO, maximum 4 mg; Midazolam 0.1 mg/kg IV or IO, maximum 4 mg.",
+          "priority": "critical",
+          "rationale": "IV is established. Per-kg calc exceeds protocol cap, so cap applies. Midazolam terminates the seizure and bridges to cooling end-point.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "a-continue-cooling-thru-seizure",
+          "shortAction": "Continue active cooling through and after the seizure",
+          "protocolExcerpt": "Cooling efforts should continue until the patient's temperature is less than 102.2°F (39°C) or, if continuous temperature monitoring is not available, until the patient demonstrates improvement in mental status.",
+          "priority": "critical",
+          "rationale": "Seizure is a symptom of ongoing hyperthermia. Stopping cooling worsens the underlying driver.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-recheck-glucose",
+          "shortAction": "Recheck glucose during active seizure (still 90 mg/dL — adequate)",
+          "protocolExcerpt": "Glucometry: If still actively seizing, check blood glucose level. If less than 60 mg/dL, treat per the Hypoglycemia Guideline.",
+          "priority": "important",
+          "rationale": "Protocol-mandated check during active seizure — already verified above 60 mg/dL.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "a-stop-cooling-102",
+          "shortAction": "Stop active cooling when core temp reaches 102°F (39°C) to avoid overshoot",
+          "protocolExcerpt": "Cooling efforts should continue until the patient's temperature is less than 102.2°F (39°C) or, if continuous temperature monitoring is not available, until the patient demonstrates improvement in mental status.",
+          "priority": "critical",
+          "rationale": "Cooling end-point. Overshoot to hypothermia is a real iatrogenic risk if cooling is left running.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        }
+      ]
+    },
+    {
+      "id": "cooled-handoff",
+      "name": "Cooled to target, handoff",
+      "description": "Midazolam 4 mg IV terminated the seizure within ~90 seconds. Cooling continued and core temperature has reached 102°F — cooling is now discontinued to prevent overshoot. Patient is post-ictal but recovering, GCS improving (E3 V4 M6 = 13), HR coming down, BP stable, SpO2 back to baseline on supplemental O2. Crew delivers a clean, protocolized handoff to the receiving ED: heat stroke with active cooling completed prehospital, 1 L NS infused, brief seizure treated with midazolam, glucose normal throughout.",
+      "triggerCondition": "Midazolam 4 mg IV terminated the seizure, cooling continued uninterrupted, and core temperature reached the 102°F end-point — cooling was stopped to avoid overshoot. Patient is now post-ictal, hemodynamically stable, and being handed off to the receiving ED.",
+      "isDefault": true,
+      "transitions": [],
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 4, "motor": 6 },
+        "airway": "Patent. Snoring resolved with positioning. NPA removed once gag returned. Self-protecting.",
+        "breathing": "Regular, unlabored. Lungs clear. On low-flow O2.",
+        "circulation": "HR trending down. BP stable. Skin now warm (not hot) and dry to mildly diaphoretic — sweating mechanism returning. Pulses strong throughout.",
+        "skin": { "color": "Pink (no longer flushed red)", "temperature": "Warm — normalizing", "moisture": "Mildly diaphoretic — physiologic sweat returning" },
+        "pupils": "PERRL 3 mm bilaterally",
+        "motorFunction": "Moves all four; weak handgrips bilaterally; oriented x3 by handoff",
+        "otherFindings": [
+          "Cooling discontinued at core 102°F per protocol end-point",
+          "Total cool NS infused: ~1.2 L",
+          "Midazolam 4 mg IV given once; no repeat needed",
+          "No further seizure activity",
+          "Receiving ED notified — heat stroke, cooled, seized once, treated",
+          "Documentation includes temp trend, cooling start time, glucose values, GCS trend"
+        ],
+        "patientSpeech": "'My head hurts... what happened?' Oriented to self, place (kind of), and date by ED arrival."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 112,
+        "bpSys": 124,
+        "bpDia": 78,
+        "respRate": 18,
+        "spo2": 98,
+        "etco2": 36,
+        "temp": 38.9,
+        "tempF": 102.0,
+        "obstruction": 0,
+        "glucose": 92,
+        "customMeasures": [],
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "a-stop-cooling",
+          "shortAction": "Confirm cooling stopped at 102°F end-point; document time",
+          "protocolExcerpt": "Cooling efforts should continue until the patient's temperature is less than 102.2°F (39°C) or, if continuous temperature monitoring is not available, until the patient demonstrates improvement in mental status.",
+          "priority": "critical",
+          "rationale": "Explicit protocol end-point; documents end of active cooling.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-reduce-fluids",
+          "shortAction": "Reduce IV to maintenance/10 mL/kg/hr once vitals stable",
+          "protocolExcerpt": "Establish IV access for patients suffering from heat stroke — give cool fluids at 20 mL/kg boluses and reduce to 10 mL/kg/hr boluses when vitals are stable.",
+          "priority": "important",
+          "rationale": "Avoid over-resuscitation once perfusion restored; supports renal protection from rhabdo.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-transport-heatstroke",
+          "shortAction": "Transport all heat-stroke patients to ED",
+          "protocolExcerpt": "All patients suffering from life threatening heat illness (including heat stroke) should be transported to the hospital.",
+          "priority": "critical",
+          "rationale": "Protocol mandates transport regardless of apparent recovery — multi-organ injury can manifest later.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-handoff",
+          "shortAction": "Clean ED handoff: temp trend, cooling times, fluids, midazolam, seizure",
+          "protocolExcerpt": "Key Documentation Elements: Cooling interventions considered and implemented; Decision-making regarding monitoring ABCs (Airway, Breathing, Circulation).",
+          "priority": "important",
+          "rationale": "Documentation of cooling start time, methods, temp trend, glucose, and meds is a protocol-mandated documentation element.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        }
+      ]
+    },
+    {
+      "id": "cooling-deferred",
+      "name": "Cooling deferred for transport",
+      "description": "Crew elected to prioritize IV access, monitor application, and rapid transport over on-scene cooling — reasoning that 'cooling can be done at the hospital.' Patient remains in race clothing in the ambulance with ambient AC only. Core temperature climbs to 106°F in the back of the truck. Patient becomes obtunded, then has a witnessed tonic-clonic seizure with airway compromise. Dark tea-colored urine is noted in the leg of his shorts (rhabdomyolysis). Crew must now reverse course — aggressive cooling AND seizure management AND airway, all simultaneously, under far worse conditions.",
+      "triggerCondition": "Crew prioritized IV access, monitor placement, and rapid transport over initiating on-scene active cooling, allowing core temperature to climb further. Patient deteriorated to obtundation, witnessed seizure, and rhabdomyolysis signs in the back of the ambulance.",
+      "isDefault": false,
+      "transitions": [],
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 2, "verbal": 2, "motor": 4 },
+        "airway": "Compromised — snoring respirations, jaw lax. Required jaw thrust + NPA. Suctioned vomitus once.",
+        "breathing": "Shallow, irregular. BVM-assisted ventilation initiated. SpO2 89% on NRB before assisted ventilation.",
+        "circulation": "Tachycardic and now narrowing pulse pressure. Capillary refill 4 sec. Skin still hot and dry — anhidrosis persists.",
+        "skin": { "color": "Deep flushed red", "temperature": "Hotter than initial contact — palpably burning", "moisture": "Dry — anhidrosis unchanged" },
+        "pupils": "PERRL 5 mm bilaterally — slightly sluggish",
+        "motorFunction": "Tonic-clonic seizure x90 seconds in route; now post-ictal flaccid; minimal response to sternal rub",
+        "otherFindings": [
+          "Dark cola/tea-colored fluid in shorts — rhabdomyolysis until proven otherwise",
+          "Race clothing still on; only partial removal attempted",
+          "No active cooling applied — only ambulance AC and a single ice pack on chest",
+          "Lactate (if obtained) markedly elevated",
+          "Crew now reversing course — initiating cooling in the truck under poor conditions",
+          "ED notified late, sicker patient"
+        ],
+        "patientSpeech": "None — obtunded/post-ictal"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 156,
+        "bpSys": 96,
+        "bpDia": 76,
+        "respRate": 32,
+        "spo2": 89,
+        "etco2": 28,
+        "temp": 41.1,
+        "tempF": 106.0,
+        "obstruction": 25,
+        "glucose": 86,
+        "customMeasures": [],
+        "trendTimeSeconds": 50,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "a-recover-cool",
+          "shortAction": "Reverse course: strip clothing, ice packs, mist + fan in the truck NOW",
+          "protocolExcerpt": "Key Considerations: For patients with signs and symptoms of heat stroke, rapid cooling takes priority over other interventions (e.g., cardiac monitoring, IV access).",
+          "priority": "critical",
+          "rationale": "Cooling should have started 10 minutes ago — start it now. Every minute >104°F is organ injury.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-recover-airway",
+          "shortAction": "Manage airway aggressively: jaw thrust, NPA, BVM with 100% O2",
+          "protocolExcerpt": "Treatment and Interventions: Manage airway as indicated.",
+          "priority": "critical",
+          "rationale": "GCS 8 with obtundation post-seizure — airway is no longer self-protected.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-recover-midazolam",
+          "shortAction": "Midazolam 4 mg IV (70 kg × 0.1 mg/kg = 7 mg → cap at 4 mg max IV)",
+          "protocolExcerpt": "Anticonvulsant Treatment — If vascular access (IV or IO) is present: Diazepam 0.2 mg/kg IV or IO, maximum 10 mg; Lorazepam 0.1 mg/kg IV or IO, maximum 4 mg; Midazolam 0.1 mg/kg IV or IO, maximum 4 mg.",
+          "priority": "critical",
+          "rationale": "Hyperthermic seizure with IV access — protocol-cap IV midazolam.",
+          "protocolReference": "MATC: Seizures"
+        },
+        {
+          "id": "a-recover-fluids",
+          "shortAction": "Run cool NS bolus 1400 mL (70 kg × 20 mL/kg); protect kidneys from rhabdo",
+          "protocolExcerpt": "Establish IV access for patients suffering from heat stroke — give cool fluids at 20 mL/kg boluses and reduce to 10 mL/kg/hr boluses when vitals are stable.",
+          "priority": "critical",
+          "rationale": "Volume resuscitation now serves both cooling and renal protection given rhabdo signs.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-recover-monitor-arrhythmia",
+          "shortAction": "Continuous ECG — watch for arrhythmia from hyperthermia and hyperkalemia from rhabdo",
+          "protocolExcerpt": "Treatment and Interventions: Monitor for arrhythmia and cardiovascular collapse.",
+          "priority": "critical",
+          "rationale": "Heat stroke alone causes arrhythmias; rhabdomyolysis raises K+, which can trigger lethal rhythms.",
+          "protocolReference": "MATC: Hyperthermia/Heat Exposure"
+        },
+        {
+          "id": "a-recover-notify",
+          "shortAction": "Upgrade hospital notification — critical heat stroke, seizing, rhabdo signs",
+          "protocolExcerpt": "Treatment and Interventions: Provide advanced notification to the hospital.",
+          "priority": "critical",
+          "rationale": "ED needs ICU, cooling resources, and renal support ready on arrival.",
+          "protocolReference": "MATC: Shock"
+        }
+      ]
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

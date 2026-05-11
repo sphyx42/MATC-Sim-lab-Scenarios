@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Agitated Patient with Occult Head Injury — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Agitated Patient with Occult Head Injury</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Marcus Hollister</strong></span><span class="patient-chip">48 years male</span><span class="patient-chip">209 lbs (95 kg)</span><span class="patient-chip">5'10"</span><span class="patient-chip">CC: Combative, intoxicated-appearing male after a bar fight; witnessed strike to right side of head</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Medic 12, Engine 12 — respond non-emergency to 814 Main Street, Murphy's Pub, for a 48-year-old male, disorderly subject, possibly intoxicated. PD on scene, one in custody, requesting medical clearance prior to jail transport.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Sidewalk outside Murphy's Pub at closing time. Two patrol units on scene with red/blue lights. Patient is prone on the sidewalk in handcuffs with two officers maintaining hands-on control. Several intoxicated bystanders are watching from across the street.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Saturday, 0215 hrs — bar closing time, ambient temp 58°F</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene declared secure by PD. Patient is in handcuffs but actively combative — yelling, attempting to bite, kicking. Two officers maintaining contact. No weapons identified during PD search. Maintain situational awareness for hostile bystanders. Coordinate with PD before any patient movement.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Two witnesses (the patient's coworker and the bar's bouncer) willing to give a history — they both saw the strike to the right temple and the fall onto the curb. Coworker says 'he was out for like 30 seconds, then he just got up swinging — he's not a mean drunk, this isn't him.'</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Patient prone on sidewalk in PD handcuffs; reposition to supine required for assessment</li><li>Right temple/lateral scalp: faint blood streak in the hair if examined; subtle hematoma developing — catchable only with a deliberate head exam under a flashlight</li><li>Strong odor of ETOH on breath</li><li>Small smear of blood on the curb where head reportedly struck</li><li>No obvious facial fractures or active facial bleeding; no Battle's sign or raccoon eyes yet</li><li>Wallet on scene contains medical card noting hypertension and lisinopril</li><li>No drug paraphernalia visible, no pill bottles</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">48-year-old male outside Murphy's Pub at closing time. According to two witnesses and PD, the patient was in a verbal altercation that escalated to a physical fight. He was struck in the right temple with a closed fist and reportedly fell, striking the right side of his head on the curb. He was briefly 'out cold' for under a minute, then got back up swinging. He has been continuously combative since PD arrival 4 minutes ago — yelling, swinging at officers, attempting to leave. Strong odor of ETOH on his breath. PD has him face-down on the sidewalk with hands cuffed behind his back; they have agreed to roll him supine for EMS assessment.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">NKDA per wallet card</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Lisinopril 20 mg PO daily (per wallet medication card)</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">Hypertension (per wallet card, on lisinopril), Alcohol use disorder (per prior PD contacts, not documented medical record), No known seizure disorder, no known psychiatric history</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">Patient was reportedly drinking beer and shots for the last 3 hours; no food intake known</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Verbal altercation at a bar escalated to a fistfight. Witnessed closed-fist strike to right temple followed by fall with head impact on concrete curb. Brief loss of consciousness &lt;1 minute. Now combative with PD on scene. 911 dispatched as 'disorderly subject / possible intoxication / one in custody.'</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">Crew arrives at a bar closing-time scene to find a 48-year-old male prone in PD handcuffs, combative, yelling, smelling strongly of alcohol. PD and bystanders confirm a fight with a witnessed strike to the right temple and a fall onto the curb. The easy framing is 'drunk, disorderly, medically clear him for jail.' The clinically correct framing — present in plain sight but easy to miss — is 'this man took a blow to the head, was unconscious for under a minute, and is now agitated; agitation in a head-injury patient is an early sign of intracranial deterioration.' All findings to make this distinction (mechanism from witnesses, scalp exam, pupils, glucose) are obtainable but only if the crew chooses to do a structured assessment instead of going straight to chemical restraint.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Normal Sinus Rhythm</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">88</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">152/94</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">97%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">18</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">36</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">102</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">13</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-maintained. Yelling profanity in full sentences; speech is slurred but content is coherent and oriented to person and place — disoriented to time. No stridor, no pooled secretions.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous, slightly fast, unlabored. Lungs clear bilaterally if briefly auscultated. No accessory muscle use.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong radial pulse, regular, rapid. Skin warm, dry, pink. Capillary refill &lt;2 sec.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Subtle anisocoria — LEFT pupil 6 mm, sluggish-to-fixed; RIGHT pupil 4 mm, briskly reactive. Only seen if a flashlight is deliberately used; ambient streetlight will not reveal this.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all four extremities forcefully against PD restraint. No focal weakness. No posturing. Grip strength symmetric when briefly tested.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"'Get these f---ing cuffs off me! I'm fine! I didn't do anything! Where's my wallet? What hospital? I don't need a hospital!' — speech is slurred, loud, repetitive; he is oriented to self and 'the bar' but says it is 'Wednesday' (it is Saturday)."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Right temple: tender, boggy 4 cm hematoma over the squamous portion of the temporal bone (catchable only on deliberate scalp palpation)</li><li>Trace blood streak in the right hair line</li><li>Strong ETOH odor on breath</li><li>No raccoon eyes, no Battle's sign, no CSF rhinorrhea/otorrhea at this point</li><li>Wallet card: HTN, lisinopril 20 mg daily, NKDA</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Confirm scene safe with PD; coordinate hands-on control before approach</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Don PPE. Do not attempt to enter or control a scene where physical violence or weapons are present. Dispatch law enforcement immediately to secure and maintain scene safety.</div>
+        <div class="action-ref">↳ MATC: Agitated or Violent Patient/Behavioral Emergency</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reposition prone-cuffed patient to supine or seated; never transport prone-cuffed</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: The following techniques should be expressly prohibited for use by EMS clinicians: Secure or transport in a prone position with or without hands and feet behind the back (hobbling or 'hog-tying'); 'Sandwiching' patients between backboards; Techniques that constrict the neck or compromise the airway.</div>
+        <div class="action-ref">↳ MATC: Agitated or Violent Patient/Behavioral Emergency</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Obtain mechanism from witnesses BEFORE assuming intoxication</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Etiology of agitated or violent behavior if known; Patient's medical history or other historic factors reported by patient, family, or bystanders; Physical evidence or history of trauma.</div>
+        <div class="action-ref">↳ MATC: Agitated or Violent Patient/Behavioral Emergency</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize agitation from head injury is a protocol EXCLUSION for routine behavioral pathway</div></div>
+        <div class="action-excerpt">Exclusion Criteria: Patients exhibiting agitated or violent behavior due to medical conditions including, but not limited to: Head injury; Metabolic disorders (e.g., hypoglycemia, hypoxia).</div>
+        <div class="action-ref">↳ MATC: Agitated or Violent Patient/Behavioral Emergency</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Deliberate head/scalp exam with light — palpate for hematoma, depression, blood, CSF</div></div>
+        <div class="action-excerpt">Secondary survey pertinent to isolated head injury: Head: Gently palpate skull to evaluate for depressed or open skull fracture; Nose/mouth/ears: evaluate for blood/fluid drainage; Face: evaluate for bony stability.</div>
+        <div class="action-ref">↳ MATC: Head Injury</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Pupil exam with penlight; document size and reactivity bilaterally</div></div>
+        <div class="action-excerpt">Eyes: Evaluate pupil size and reaction to light to establish baseline; Reassess pupils if decrease in mentation.</div>
+        <div class="action-ref">↳ MATC: Head Injury</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Check blood glucose — rule out hypoglycemia as cause of altered behavior</div></div>
+        <div class="action-excerpt">Disability: Evaluate for other causes of altered mental status — check blood glucose during transport. Assessment: Check blood glucose (if possible).</div>
+        <div class="action-ref">↳ MATC: Altered Mental Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Document baseline GCS (E3 V4 M6 = 13) and AVPU</div></div>
+        <div class="action-excerpt">Neurologic: Perform neurologic status assessment (GCS or AVPU). Head injury severity guideline: Mild: GCS 14–15/AVPU = (A); Moderate: GCS 9–13/AVPU = (V); Severe: GCS 3–8/AVPU = (P) or (U).</div>
+        <div class="action-ref">↳ MATC: Head Injury</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Manual cervical stabilization; apply c-collar after head exam</div></div>
+        <div class="action-excerpt">Maintain cervical stabilization. Assume concomitant cervical spine injury in patients with moderate/severe head injury.</div>
+        <div class="action-ref">↳ MATC: Head Injury</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Apply NRB at 15 LPM — prevent secondary brain injury from hypoxia</div></div>
+        <div class="action-excerpt">Airway: Administer high-flow oxygen via NRB (non-rebreather) as a precaution against unanticipated deterioration.</div>
+        <div class="action-ref">↳ MATC: Head Injury</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">TBI recognized</div>
+        <div class="phase-trigger">Trigger: Crew completed structured assessment — obtained mechanism, palpated scalp finding right temple hematoma, identified left-sided anisocoria, ruled out hypoglycemia — and recognized this as moderate TBI rather than simple intoxication. Behavioral-protocol exclusion criteria apply; head-injury pathway now drives management.</div>
+        <div class="phase-desc">The crew has reframed the call. This is no longer 'medical clearance for jail' — this is a 48-year-old with a witnessed mechanism (closed-fist strike + fall onto curb), &lt;1 minute LOC, GCS 13, anisocoria, and a right temple hematoma. The behavioral protocol is excluded; the head-injury protocol drives care. Plan: c-collar, high-flow O2 via NRB, IV access, fluids ready to maintain SBP &gt;110, head of bed elevated 30 degrees when feasible, minimize sedation (or use the lowest effective dose with airway prep) so the neuro exam stays interpretable, and trauma-center pre-alert. Patient remains agitated but is now being managed under a TBI lens.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Normal Sinus Rhythm</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">84</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">158/96</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">99%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">16</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">38</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.2°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">102</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To speech</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Confused</span><span class="gcs-score">4</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">13</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, self-maintained. Slurred but coherent speech continues. Coordinating with PD to keep one hand secured during c-collar placement.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous, regular. SpO2 99% on NRB at 15 LPM. Lungs clear bilaterally.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong radial pulse, regular. Skin warm, dry, pink. IV access established 18g left AC.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">LEFT 6 mm sluggish, RIGHT 4 mm reactive — documented and trended.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Moves all four extremities. No posturing. Grip strength symmetric. Still attempting to pull at IV line and oxygen mask.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Still verbally abusive but less coordinated than initial contact — 'Why am I on the cot? Take this off my neck. Where are you taking me?'"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>C-collar in place; manual stabilization maintained during scoop transfer</li><li>Right temple hematoma noted on PCR, photographed if protocol allows</li><li>Glucose 102 documented</li><li>Trauma center notified of incoming moderate TBI with anisocoria</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Establish IV access (18g preferred); have NS ready for SBP support</div></div>
+        <div class="action-excerpt">Closed head injury: Administer normal saline (NS)/lactated Ringer's (LR) fluid boluses to maintain SBP above threshold. Do not wait until after the patient is already hypotensive—prevent hypotension. Do not delay transport to initiate IV access.</div>
+        <div class="action-ref">↳ MATC: Head Injury</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Target SBP greater than 110 mmHg; bolus NS if SBP drops</div></div>
+        <div class="action-excerpt">Blood pressure: avoid hypotension. Adult (age greater than 10 years): maintain SBP greater than or equal to 110 mmHg.</div>
+        <div class="action-ref">↳ MATC: Head Injury</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Elevate head of bed 30 degrees once c-spine cleared in transport position</div></div>
+        <div class="action-excerpt">Severe head injury – Elevate head of bed 30 degrees.</div>
+        <div class="action-ref">↳ MATC: Head Injury</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Defer chemical restraint if possible; if required, lowest effective dose with airway prep</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: All patients who have received pharmacologic management medications must be monitored closely for the development of hypoventilation and oversedation. Utilize capnography if available.</div>
+        <div class="action-ref">↳ MATC: Agitated or Violent Patient/Behavioral Emergency</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Apply continuous waveform EtCO2; target 35-45 mmHg, never hyperventilate</div></div>
+        <div class="action-excerpt">Monitoring: Moderate/severe head injury: apply continuous waveform EtCO2, if available. Patient Safety Considerations: Do not hyperventilate patients: Maintain all patients in EtCO2 range of 35–45 mmHg.</div>
+        <div class="action-ref">↳ MATC: Head Injury</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Transport to highest level trauma center; AT-MIST pre-alert</div></div>
+        <div class="action-excerpt">Transport destination specific to head trauma: Preferential transport to highest level of care within trauma system: GCS 3–13, P (pain) or U (unresponsive) on AVPU scale; Penetrating head trauma; Open or depressed skull fracture.</div>
+        <div class="action-ref">↳ MATC: Head Injury</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess GCS and pupils every 5 minutes en route</div></div>
+        <div class="action-excerpt">Perform and trend neurologic status assessment (GCS or AVPU scale). Early signs of deterioration: Confusion; Agitation; Drowsiness; Vomiting; Severe headache.</div>
+        <div class="action-ref">↳ MATC: Head Injury</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Lucid interval ends</div>
+        <div class="phase-trigger">Trigger: Approximately 6–8 minutes into transport the patient becomes drowsy after a period of combative lucidity. GCS drops 13 -&gt; 11, HR slows, SBP climbs — Cushing's response forming from an expanding right temporal epidural hematoma compressing the brainstem.</div>
+        <div class="phase-desc">En route to the trauma center, the patient stops yelling. He becomes drowsy, then sluggish to respond. GCS drops from 13 to 11 (E2 V3 M6). HR slows from the 80s to the 60s. SBP rises into the 170s. This is the classic Monro–Kellie / Cushing's response physiology of an expanding epidural hematoma — bradycardia + hypertension + altered respirations form Cushing's triad. The lucid-interval pattern is characteristic of epidural hematoma from middle meningeal artery laceration following a temporal-bone strike. Crew now escalates: confirm pre-alert, accelerate transport if safe, prep advanced airway, AVOID prophylactic hyperventilation.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Bradycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">56</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">178/98</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">96%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">12</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">42</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.1°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">102</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To pain</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Inappropriate words</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">11</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent for now. No longer protecting airway as well — gag reflex sluggish on suction test. No vomiting yet.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous but irregular — periods of deeper breaths alternating with brief pauses (early Cheyne-Stokes-like pattern). SpO2 96% on NRB.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong, slow radial pulse. Skin warm, dry. Cap refill &lt;2 sec.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">LEFT 7 mm fixed (worsened from 6 mm sluggish); RIGHT 4 mm sluggish (worsened from brisk). Anisocoria worsening — concerning for impending uncal herniation.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Localizes to pain (M6 still). No posturing yet. No focal weakness.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Slurred, monosyllabic responses to sternal rub only — 'Stop... what...' then drifts. No spontaneous speech."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>EtCO2 trending 42 mmHg — adequate, do not hyperventilate</li><li>Bradycardia + hypertension + irregular respiration = Cushing's triad forming</li><li>Pre-alert upgraded — trauma center notified of deterioration</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize Cushing's response: bradycardia + hypertension + irregular RR = herniation</div></div>
+        <div class="action-excerpt">Early signs of deterioration: Confusion; Agitation; Drowsiness; Vomiting; Severe headache. Evaluate for clinical signs of traumatic brain injury with herniation including: Unequal pupils; Lateralizing motor signs; Posturing.</div>
+        <div class="action-ref">↳ MATC: Head Injury</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reassess pupils and GCS immediately on mentation change</div></div>
+        <div class="action-excerpt">Reassess pupils if decrease in mentation.</div>
+        <div class="action-ref">↳ MATC: Head Injury</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Maintain normocapnia EtCO2 35-45; do NOT hyperventilate prophylactically</div></div>
+        <div class="action-excerpt">Do not induce hypocapnia through hyper-/overventilation. Patient Safety Considerations: Do not hyperventilate patients: Maintain all patients in EtCO2 range of 35–45 mmHg. Hyperventilation results in vasoconstriction which further decreases blood flow to the brain and worsens the secondary brain injury.</div>
+        <div class="action-ref">↳ MATC: Head Injury</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Prepare advanced airway; BVM ready if GCS drops below 8</div></div>
+        <div class="action-excerpt">Place supraglottic airway or perform endotracheal intubation or if BVM ventilation ineffective in maintaining oxygenation or if airway is continually compromised. Endotracheal intubation (ETI)/supraglottic airway (SGA) should only be used in systems that have continuous EtCO2 monitoring.</div>
+        <div class="action-ref">↳ MATC: Head Injury</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continue NRB; maintain SBP greater than 110 mmHg (currently 178 — do not lower)</div></div>
+        <div class="action-excerpt">Adult (age greater than 10 years): maintain SBP greater than or equal to 110 mmHg. Administer normal saline (NS)/lactated Ringer's (LR) fluid boluses to maintain SBP above threshold. Do not wait until after the patient is already hypotensive—prevent hypotension.</div>
+        <div class="action-ref">↳ MATC: Head Injury</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Update trauma center: GCS drop, anisocoria worsening, Cushing's forming</div></div>
+        <div class="action-excerpt">Transport destination specific to head trauma: Preferential transport to highest level of care within trauma system: GCS 3–13, P (pain) or U (unresponsive) on AVPU scale.</div>
+        <div class="action-ref">↳ MATC: Head Injury</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Confirm head of bed elevated 30 degrees with spinal alignment maintained</div></div>
+        <div class="action-excerpt">Severe head injury – Elevate head of bed 30 degrees.</div>
+        <div class="action-ref">↳ MATC: Head Injury</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Trauma handoff</div>
+        <div class="phase-trigger">Trigger: Arrival at the trauma center after a managed deterioration en route. Pre-alert prepared the team for immediate CT and neurosurgical evaluation of suspected epidural hematoma.</div>
+        <div class="phase-desc">Arrival at the trauma center. AT-MIST handoff to trauma team: 48-year-old male, 0215 mechanism, witnessed strike to right temple plus fall onto curb with &lt;1 minute LOC, found GCS 13 with left-sided anisocoria, deteriorated en route to GCS 11 with worsening anisocoria and Cushing's response. Glucose 102 ruled out hypoglycemia. Maintained airway, NRB, SBP &gt;110, normocapnia. Patient goes directly to CT and neurosurgery is paged from the trauma bay. This is the correct outcome — the deterioration was caught, communicated, and the receiving facility is set up for definitive care.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Bradycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">54</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">176/96</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">96%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">12</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">42</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.1°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">102</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg sel-v">V</div><div class="avpu-seg">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">To pain</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Inappropriate words</span><span class="gcs-score">3</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Obeys commands</span><span class="gcs-score">6</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">11</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent, NRB still on; airway management handed off to trauma team for likely intubation in the bay.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Spontaneous, irregular, SpO2 96%, EtCO2 42.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Bradycardia 54, SBP 176/96. IV 18g L AC, NS at TKO.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">LEFT 7 mm fixed, RIGHT 4 mm sluggish — handed off as documented finding.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">M6 localizes to pain.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"Moans to stimulation. No coherent speech."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Trauma activation upgraded on arrival</li><li>Neurosurgery paged from triage</li><li>CT scanner held for direct walk-in</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Structured AT-MIST handoff to trauma team</div></div>
+        <div class="action-excerpt">Use structured communication tool for patient handoff to higher level care such as AT-MIST: Age; Time of incident or onset of symptoms; Mechanism; Injuries noted; Symptoms/Signs; Treatments provided.</div>
+        <div class="action-ref">↳ MATC: General Trauma Management</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Document serial GCS, pupil sizes, and vital trends on PCR</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Neurological status with vitals: AVPU, GCS; Exams: Neurological and Mental Status Assessment pre- and post-treatment.</div>
+        <div class="action-ref">↳ MATC: Head Injury</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Chemical restraint trap</div>
+        <div class="phase-trigger">Trigger: Crew elected chemical restraint as the primary intervention, bypassed the head exam, pupil exam, and glucose check, and failed to apply the behavioral-protocol exclusion (head injury / metabolic causes). The agitated/violent protocol is being used in a patient who explicitly does not qualify for it.</div>
+        <div class="phase-desc">BRANCH (judgment error). Crew anchored on the alcohol smell and combative behavior, administered IM ketamine 380 mg (95 kg × 4 mg/kg = 380 mg per protocol high-violence option) without first performing the head exam, pupil exam, or glucose check. Within 4 minutes the patient is dissociated, snoring respirations, no longer agitated. Crew is relieved. They never look at the pupils. The hematoma over the right temple is never palpated. The trauma-center triage is downgraded because 'GCS is low only because we sedated him.' The patient arrives at the ED — perhaps the closest community ED rather than the trauma center — sedated, with a fixed left pupil that was never seen prehospitally and never communicated. CT is delayed because no head exam was reported. Neurosurgery is consulted late. The epidural hematoma expands further before evacuation. Outcome: avoidable secondary brain injury from a missed exam.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Sinus Bradycardia</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">52</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">182/102</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">91%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">48</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">98.1°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">102</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg sel-p">P</div><div class="avpu-seg">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">Incomprehensible sounds</span><span class="gcs-score">2</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">Flexion (decorticate)</span><span class="gcs-score">3</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">6</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Partial obstruction from supine positioning post-sedation; snoring respirations. Jaw thrust required intermittently.</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Slow, shallow. SpO2 91% on room air; improves to 96% with NRB and jaw thrust.</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Strong, slow pulse. Skin warm.</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pink · warm · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">LEFT 7 mm fixed, RIGHT 4 mm sluggish — NEVER DOCUMENTED PREHOSPITALLY because pupil exam was skipped.</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid post-ketamine. No purposeful movement.</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"None. Dissociated."</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Right temple hematoma still present — never palpated or documented</li><li>Glucose still 102 — never checked</li><li>Trauma center triage marked 'medical clearance / intoxication' rather than 'TBI alert'</li><li>Crew transports to closest hospital, not trauma center, because they framed this as a behavioral case</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Ketamine 380 mg IM (95 kg x 4 mg/kg) given without head/pupil/glucose exam — DEBRIEF AS ERROR</div></div>
+        <div class="action-excerpt">Dissociative Agents: Ketamine (option for high violence risk). Adults: 4 mg/kg IM; 3–5 minute onset of action. Exclusion Criteria: Patients exhibiting agitated or violent behavior due to medical conditions including, but not limited to: Head injury; Metabolic disorders (e.g., hypoglycemia, hypoxia).</div>
+        <div class="action-ref">↳ MATC: Agitated or Violent Patient/Behavioral Emergency</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continuous capnography and airway monitoring post-sedation</div></div>
+        <div class="action-excerpt">Apply a cardiac monitor as soon as possible, particularly when pharmacologic management medications have been administered. All patients who have received pharmacologic management medications must be monitored closely for the development of hypoventilation and oversedation. Utilize capnography if available.</div>
+        <div class="action-ref">↳ MATC: Agitated or Violent Patient/Behavioral Emergency</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Belated head exam and pupil check — recognize and upgrade trauma alert NOW</div></div>
+        <div class="action-excerpt">Eyes: Evaluate pupil size and reaction to light to establish baseline; Reassess pupils if decrease in mentation. Head: Gently palpate skull to evaluate for depressed or open skull fracture.</div>
+        <div class="action-ref">↳ MATC: Head Injury</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

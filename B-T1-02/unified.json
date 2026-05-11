@@ -1,0 +1,535 @@
+{
+  "meta": {
+    "id": "B-T1-02",
+    "name": "Hypothermia, Mild to Moderate",
+    "version": 1,
+    "difficulty": "beginner",
+    "category": "Environmental",
+    "protocols": [
+      "env-hypothermia-cold-exposure",
+      "medical-altered-mental-status",
+      "cv-bradycardia"
+    ],
+    "totalTimeSeconds": 900,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": ["environmental", "hypothermia", "cold-exposure", "ams", "bradycardia", "assessment", "tier-1"]
+  },
+  "patient": {
+    "name": "Walter Kovacs",
+    "age": 58,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 82,
+    "weightLbs": 181,
+    "height": 178,
+    "chiefComplaint": "Found confused on park bench in cold weather",
+    "history": {
+      "hpi": "58-year-old male found by a passerby on a park bench in light clothing. Ambient temperature approximately 28 degrees Fahrenheit; last seen by a friend approximately 2 hours ago at a nearby diner. On contact patient is awake but confused, knows his name only, does not know date or location. Skin is cold to touch, shivering is minimal/intermittent. No obvious trauma. No empty pill bottles or alcohol containers visible. Speech is slurred, movements are slow and clumsy.",
+      "pastMedical": ["Hypertension", "Mild depression"],
+      "medications": ["Lisinopril 20 mg PO daily", "Sertraline 50 mg PO daily"],
+      "allergies": ["NKDA"],
+      "lastOralIntake": "Coffee and a sandwich approximately 3 hours ago per friend at the diner",
+      "events": "Patient left the diner alone approximately 2 hours ago wearing only a light jacket. Friend called for a welfare check when the patient did not arrive home. Bystander found him slumped on a park bench, confused and slow to respond, and called 911."
+    }
+  },
+  "scene": {
+    "dispatch": "Medic 12, respond priority 1 to Lincoln Park, north pavilion area, for a welfare check on a 58-year-old male, confused, sitting on a park bench. Caller is a bystander. PD en route.",
+    "location": "Public park, north pavilion. Patient seated on a wooden park bench under an open shelter. Light snow on the ground; wind 10-15 mph. No nearby buildings. Ambulance can pull within 20 feet.",
+    "time": "Tuesday, 0820 hours, late winter morning",
+    "safety": "Scene safe. Police on scene for welfare check. Cold environment is a hazard for both patient and providers — crew should don warm outerwear and limit on-scene exposure time. No combative behavior.",
+    "bystanders": "One bystander who called 911; reports he saw the patient sitting on the bench for at least 30 minutes before approaching. Patient seemed 'out of it' and would only mumble his name.",
+    "visualCues": [
+      "Ambient air temperature approximately 28°F (-2°C)",
+      "Patient wearing a light unzipped windbreaker, jeans, sneakers — no hat, no gloves",
+      "Light dusting of snow on the patient's shoulders and lap",
+      "Patient is slumped slightly forward on the bench, minimal shivering",
+      "No visible injury, no empty bottles or pill containers nearby",
+      "Speech is slow and slurred when spoken to"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find a 58-year-old male seated on a park bench in cold ambient conditions, inadequately dressed for the weather. He is awake but confused, oriented to person only, with slow slurred speech and minimal shivering. No obvious trauma. Police confirm no witnessed event or assault. Bystander reports the patient has been sitting there at least 30 minutes; friend places him outdoors for roughly 2 hours.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 4, "motor": 6 },
+        "airway": "Patent; speech slow and slurred but no stridor or secretions",
+        "breathing": "Slow shallow respirations; lung sounds clear bilaterally",
+        "circulation": "Radial pulse weak, slow, and regular; capillary refill prolonged (>3 seconds) at fingertips",
+        "skin": { "color": "pale", "temperature": "cold", "moisture": "dry" },
+        "pupils": "PERRL, 4 mm, sluggish bilaterally",
+        "motorFunction": "Moves all extremities slowly and clumsily; follows simple commands with delay",
+        "otherFindings": [
+          "Minimal intermittent shivering (not vigorous)",
+          "Patient inadequately dressed for ambient temperature",
+          "Light snow on clothing; clothing dry to touch",
+          "No signs of trauma, no track marks, no medical alert tags",
+          "No empty bottles, pills, or paraphernalia visible"
+        ],
+        "patientSpeech": "Mumbles his first name. When asked the date, location, or what happened, responds with 'I... I don't know.' Speech is slow and slurred."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Bradycardia",
+        "ecgWaveform": 9,
+        "hr": 40,
+        "bpSys": 108,
+        "bpDia": 68,
+        "respRate": 10,
+        "spo2": 92,
+        "etco2": 36,
+        "temp": 33,
+        "tempF": 91.4,
+        "obstruction": 0,
+        "glucose": 96,
+        "customMeasures": [],
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "scene-size-up",
+          "shortAction": "Scene size-up: note cold ambient temp, inadequate clothing, exposure duration",
+          "protocolExcerpt": "History: along with standard SAMPLE — type history, additional patient history should include: Attention to any associated injury or illness; Duration of cold exposure; Ambient temperature; Treatments initiated before EMS arrival.",
+          "priority": "critical",
+          "rationale": "Recognizing the cold environment and duration of exposure as the proximate cause prevents anchoring on bradycardia or AMS as a primary cardiac or neurologic problem.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure"
+        },
+        {
+          "id": "primary-survey",
+          "shortAction": "Primary survey ABC; check pulse for up to 60 seconds in cold patient",
+          "protocolExcerpt": "Patient assessment should begin with attention to the primary survey, looking for evidence of circulatory collapse and ensuring effective respirations. The rescuer may need to evaluate the hypothermic patient for a pulse for longer than the normothermic patient (up to 60 seconds).",
+          "priority": "critical",
+          "rationale": "Hypothermic patients have weak and slow pulses; failing to check long enough can result in unnecessary CPR on a perfusing patient.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure"
+        },
+        {
+          "id": "full-vitals",
+          "shortAction": "Obtain full vital signs including HR, BP, RR, SpO2, and cardiac monitor",
+          "protocolExcerpt": "Apply cardiac monitor or AED if available. Patients with moderate to severe hypothermia will manifest mental status changes, eventual loss of shivering and progressive bradycardia, hypotension, and decreased respiratory status.",
+          "priority": "critical",
+          "rationale": "Establishes baseline and confirms bradycardia, normotension, and hypoventilation pattern consistent with hypothermia rather than primary cardiac or neuro pathology.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure"
+        },
+        {
+          "id": "core-temperature",
+          "shortAction": "Measure core temperature (epitympanic or rectal) — the key assessment",
+          "protocolExcerpt": "If possible and reliable, EMS clinicians should perform core body temperature measurements and categorize patients into one of the three follow levels of hypothermia: Mild: 32.1°–35°C/89.8°–95°F; Moderate: 28.1°–32°C/82.5°–89.7°F; Severe: 24°–28°C/75.2°–82.4°F; Profound: less than 24°C (75.2°F). If neither esophageal nor rectal thermometers are available, an epitympanic field thermometer with an isolating ear cap may be used, but is generally less accurate.",
+          "priority": "critical",
+          "rationale": "Core temperature is THE differentiating finding. Without it, the crew cannot categorize hypothermia severity or recognize the environmental etiology.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure"
+        },
+        {
+          "id": "glucose-check",
+          "shortAction": "Check blood glucose for any altered mental status patient",
+          "protocolExcerpt": "If alterations in mental status, consider measuring blood glucose and treat as indicated.",
+          "priority": "important",
+          "rationale": "Hypoglycemia is a reversible cause of AMS and must be ruled out; glucose of 96 mg/dL rules it out here.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "expose-quick-secondary",
+          "shortAction": "Brief secondary survey for occult trauma/cause; minimize cold exposure",
+          "protocolExcerpt": "Environment: Survey for pills, paraphernalia, substance use, medication patches, medical devices, ambient temperature, social indicators of neglect, carbon monoxide exposures, multiple casualties with same complaint.",
+          "priority": "important",
+          "rationale": "Rules out trauma, ingestion, or precipitating medical event (e.g., stroke causing fall and subsequent exposure).",
+          "protocolReference": "MATC: Altered Mental Status"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "assessment-complete",
+          "if": "Core temp checked, hypothermia recognized",
+          "condition": "Crew completes scene size-up, primary survey, full vital signs, and core temperature measurement (91.4°F / 33°C). Hypothermia is correctly identified as the cause of AMS and bradycardia. Crew moves to passive rewarming and gentle handling.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["scene-size-up", "core-temperature", "full-vitals"]
+        },
+        {
+          "targetPhaseId": "anchored-bradycardia",
+          "if": "Atropine or pacing attempted for cold-induced brady",
+          "condition": "Crew anchors on the bradycardia as a primary cardiac problem and attempts atropine or transcutaneous pacing without first checking core temperature or recognizing cold exposure. Cold myocardium is irritable and unresponsive to atropine.",
+          "conditionType": "action_taken"
+        },
+        {
+          "targetPhaseId": "anchored-ams",
+          "if": "Stroke/hypoglycemia workup without temp check",
+          "condition": "Crew anchors on altered mental status as a primary neurologic or metabolic problem. Glucose is checked (normal). Stroke scale is performed unnecessarily. Core temperature is never obtained. Patient continues to lose heat.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["core-temperature"]
+        }
+      ]
+    },
+    {
+      "id": "assessment-complete",
+      "name": "Hypothermia recognized",
+      "description": "Crew has correctly identified moderate hypothermia (core temp 91.4°F / 33°C, technically borderline mild/moderate per MATC). Bradycardia and AMS are attributed to the cold. Now the crew must remove the patient from the environment, prevent further heat loss, handle gently, and begin passive rewarming.",
+      "triggerCondition": "Following full primary survey and a core temperature reading of 91.4°F (33°C), the crew correctly attributes the bradycardia and altered mental status to environmental hypothermia. Glucose is normal and there is no evidence of trauma, overdose, or stroke. The patient remains awake but confused, with stable hemodynamics.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 4, "motor": 6 },
+        "airway": "Patent; speech remains slow but no obstruction",
+        "breathing": "Slow shallow but adequate; lung sounds clear",
+        "circulation": "Weak slow regular radial pulse; capillary refill prolonged",
+        "skin": { "color": "pale", "temperature": "cold", "moisture": "dry" },
+        "pupils": "PERRL, sluggish",
+        "motorFunction": "Slow clumsy movement; follows commands with delay",
+        "otherFindings": [
+          "Patient remains in light clothing; clothing dry",
+          "Minimal shivering",
+          "No new findings on secondary survey"
+        ],
+        "patientSpeech": "Mumbled, slow. States his name; cannot give date or location."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Bradycardia",
+        "ecgWaveform": 9,
+        "hr": 42,
+        "bpSys": 110,
+        "bpDia": 68,
+        "respRate": 10,
+        "spo2": 93,
+        "etco2": 36,
+        "temp": 33,
+        "tempF": 91.4,
+        "obstruction": 0,
+        "glucose": 96,
+        "customMeasures": [],
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "remove-from-cold",
+          "shortAction": "Move patient from cold environment into warmed ambulance",
+          "protocolExcerpt": "Remove the patient from the environment and prevent further heat loss by removing wet clothes and drying skin, insulate from the ground, shelter the patient from wind and wet conditions, and insulate the patient with dry clothing or a hypothermia wrap/blanket.",
+          "priority": "critical",
+          "rationale": "Continued cold exposure prevents any rewarming effort from working.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure"
+        },
+        {
+          "id": "gentle-handling",
+          "shortAction": "Handle gently, keep horizontal, limit extremity movement",
+          "protocolExcerpt": "Handle the patient gently. Attempt to keep the patient in the horizontal position, especially limiting motion of the extremities to avoid increasing return of cold blood to the heart. Once in a warm environment, clothing should be cut off (rather than removed by manipulating the extremities). Move the patient only when necessary, such as to remove the patient from the elements.",
+          "priority": "critical",
+          "rationale": "Rough handling and active movement of extremities can drop core temperature further and precipitate VFib in the cold-irritable myocardium.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure"
+        },
+        {
+          "id": "warm-cabin",
+          "shortAction": "Warm patient compartment to at least 75°F (24°C)",
+          "protocolExcerpt": "Warm the patient compartment of the ambulance to at least 24°C (75.2°F) during transport.",
+          "priority": "important",
+          "rationale": "Establishes the rewarming environment per protocol.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure"
+        },
+        {
+          "id": "passive-rewarming",
+          "shortAction": "Cut off wet/cold clothing, dry skin, apply dry blanket + vapor barrier",
+          "protocolExcerpt": "Insulate from the ground, shelter the patient from wind and wet conditions, and insulate the patient with dry clothing or a hypothermia wrap/blanket. Cover the patient with a vapor barrier and, if available, move the patient to a warm environment.",
+          "priority": "critical",
+          "rationale": "Passive external rewarming is first-line for mild-moderate hypothermia.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure"
+        },
+        {
+          "id": "heat-packs",
+          "shortAction": "Apply heat packs to anterior chest with skin barrier (no direct contact)",
+          "protocolExcerpt": "Consider field-rewarming methods such as placement of large heat packs or heat blankets (chemical or electric if feasible) to the anterior chest or wrapped around the patient's thorax if large enough. Chemical or electrical heat sources should never be applied directly to the skin. Use a barrier between the skin and heat source to prevent burns.",
+          "priority": "important",
+          "rationale": "Active external rewarming of the trunk is appropriate for moderate hypothermia and prevents afterdrop from extremity rewarming.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure"
+        },
+        {
+          "id": "iv-warmed-fluids",
+          "shortAction": "Establish IV; give warmed isotonic crystalloid bolus (ideally 42°C / 107.6°F)",
+          "protocolExcerpt": "Establish IV and provide warmed isotonic crystalloid bolus. Repeat as necessary. IV fluids, if administered, should be warmed, ideally to 42°C (107.6°F). Bolus therapy is preferable to continuous drip.",
+          "priority": "important",
+          "rationale": "Warmed fluids assist core rewarming and treat any underlying volume depletion from cold diuresis.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure"
+        },
+        {
+          "id": "cardiac-monitor",
+          "shortAction": "Continuous cardiac monitor; watch for arrhythmia during transport",
+          "protocolExcerpt": "Apply cardiac monitor or AED if available.",
+          "priority": "important",
+          "rationale": "Cold myocardium is electrically irritable; monitor for VFib, especially with any handling.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure"
+        },
+        {
+          "id": "transport-rewarming-capable",
+          "shortAction": "Transport to hospital capable of rewarming; warm cabin maintained",
+          "protocolExcerpt": "Transport as soon as possible to a hospital capable of resuscitation. Transport to a hospital capable of rewarming the patient.",
+          "priority": "important",
+          "rationale": "Definitive rewarming may require active core rewarming techniques unavailable in the field.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "improving-rewarming",
+          "if": "Rewarming initiated, patient improving",
+          "condition": "Patient is removed from the cold, dried, insulated, placed in a warm ambulance, given warmed IV fluids, and transported gently. Over 10-15 minutes of warming, mental status begins to improve, HR rises toward the 50s, and the patient reaches definitive care.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["remove-from-cold", "passive-rewarming", "warm-cabin", "heat-packs"]
+        }
+      ]
+    },
+    {
+      "id": "improving-rewarming",
+      "name": "Slow rewarming, transport",
+      "description": "After 10-15 minutes of passive and active external rewarming in the warmed ambulance, the patient shows gradual improvement: HR rises to the low 50s, mental status climbs from confused to drowsy-but-oriented to person and place, shivering becomes more vigorous, and skin begins to feel less icy. Patient is delivered to the ED for continued rewarming.",
+      "triggerCondition": "Following correct recognition of hypothermia and initiation of passive rewarming, warmed IV fluids, gentle handling, and warm cabin transport, the patient slowly improves over 10-15 minutes en route. No arrhythmia develops. The student has correctly used assessment to drive treatment.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Alert",
+        "gcs": { "eye": 4, "verbal": 4, "motor": 6 },
+        "airway": "Patent; speech still slightly slow but clearer",
+        "breathing": "Adequate; rate improving",
+        "circulation": "Stronger regular radial pulse; capillary refill improving",
+        "skin": { "color": "pale-pink", "temperature": "cool", "moisture": "dry" },
+        "pupils": "PERRL, more brisk",
+        "motorFunction": "Moving extremities more purposefully; vigorous shivering returns",
+        "otherFindings": [
+          "Patient now oriented to person and place; date still unclear",
+          "Vigorous shivering — a positive sign of intact thermoregulation",
+          "Heat packs in place on anterior chest with barrier",
+          "Warmed IV fluids infusing"
+        ],
+        "patientSpeech": "Gives his name and recognizes he is in an ambulance. Asks 'How did I get here?' Slightly slow but coherent."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Bradycardia",
+        "ecgWaveform": 9,
+        "hr": 54,
+        "bpSys": 118,
+        "bpDia": 72,
+        "respRate": 14,
+        "spo2": 96,
+        "etco2": 38,
+        "temp": 34,
+        "tempF": 93.2,
+        "obstruction": 0,
+        "glucose": 94,
+        "customMeasures": [],
+        "trendTimeSeconds": 60,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "reassess-vitals",
+          "shortAction": "Reassess vitals and mental status every 5 minutes during rewarming",
+          "protocolExcerpt": "Monitor frequently — if temperature or level of consciousness decreases, refer to severe hypothermia.",
+          "priority": "important",
+          "rationale": "Trend identifies response to therapy and any deterioration.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure"
+        },
+        {
+          "id": "continued-rewarming",
+          "shortAction": "Continue passive rewarming and warm fluids en route",
+          "protocolExcerpt": "Repeat as necessary. Transport to a hospital capable of rewarming the patient.",
+          "priority": "important",
+          "rationale": "Rewarming is a gradual process; hand off in the rewarming pathway.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure"
+        },
+        {
+          "id": "ed-handoff",
+          "shortAction": "Hand off to ED with exposure duration, ambient temp, core temp, response",
+          "protocolExcerpt": "Key Documentation Elements: Duration of cold exposure; Ambient temperature and recent range of temperatures; Rewarming attempts or other therapies performed prior to EMS arrival; Patient use of alcohol/drugs.",
+          "priority": "important",
+          "rationale": "Communicates the environmental etiology and prehospital trajectory to the receiving team.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "anchored-bradycardia",
+      "name": "Atropine/pacing attempted",
+      "description": "Crew has anchored on the bradycardia as a primary cardiac problem and attempted atropine and/or transcutaneous pacing without first measuring core temperature or recognizing cold exposure. The cold myocardium does not respond to atropine. Pacing causes the patient discomfort but does not capture reliably. The intervention has not changed the underlying problem and may have precipitated an arrhythmia.",
+      "triggerCondition": "Crew jumped to symptomatic-bradycardia treatment (atropine 1 mg IV and/or transcutaneous pacing) without checking core temperature or considering hypothermia. In a cold heart, atropine is largely ineffective and aggressive handling/pacing can trigger ventricular ectopy or VFib. Mistake is recoverable if the crew now recognizes the cause and pivots to rewarming.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 4, "motor": 6 },
+        "airway": "Patent",
+        "breathing": "Slow shallow",
+        "circulation": "HR unchanged after atropine; new PVCs noted on monitor; capillary refill still prolonged",
+        "skin": { "color": "pale", "temperature": "cold", "moisture": "dry" },
+        "pupils": "PERRL, sluggish",
+        "motorFunction": "Slow clumsy",
+        "otherFindings": [
+          "Atropine 1 mg IV given — HR remains 40-42, no response",
+          "If pacing attempted: patient grimaces with each pacer spike; mechanical capture inconsistent",
+          "Frequent PVCs now appearing on monitor",
+          "Core temperature still not measured"
+        ],
+        "patientSpeech": "Mumbles in response to pacing discomfort but cannot articulate."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Bradycardia",
+        "ecgWaveform": 9,
+        "hr": 42,
+        "bpSys": 104,
+        "bpDia": 66,
+        "respRate": 10,
+        "spo2": 91,
+        "etco2": 36,
+        "temp": 32.8,
+        "tempF": 91.0,
+        "obstruction": 0,
+        "glucose": 96,
+        "customMeasures": [],
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-anchoring-error",
+          "shortAction": "Recognize atropine ineffective in cold heart; check core temperature now",
+          "protocolExcerpt": "The differential diagnosis includes the following: myocardial infarction (MI), hypoxia, pacemaker failure, hypothermia, sinus bradycardia, athletes, head injury with increased intracranial pressure (ICP), stroke, spinal cord lesion, sick sinus syndrome, AV blocks, overdose, cholinergic nerve agents.",
+          "priority": "critical",
+          "rationale": "Recovery from the wrong-turn requires recognizing hypothermia as the cause of the bradycardia.",
+          "protocolReference": "MATC: Bradycardia"
+        },
+        {
+          "id": "pivot-to-rewarming",
+          "shortAction": "Stop pacing; remove from cold; begin passive rewarming and gentle handling",
+          "protocolExcerpt": "Remove the patient from the environment and prevent further heat loss by removing wet clothes and drying skin, insulate from the ground, shelter the patient from wind and wet conditions, and insulate the patient with dry clothing or a hypothermia wrap/blanket. Handle the patient gently.",
+          "priority": "critical",
+          "rationale": "Treating the underlying environmental cause is the only path to resolution.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure"
+        },
+        {
+          "id": "avoid-further-arrhythmia",
+          "shortAction": "Minimize handling; watch monitor for VF; transport gently",
+          "protocolExcerpt": "Care must be taken not to hyperventilate the patient as hypocarbia may reduce the threshold for ventricular fibrillation in the cold patient. Attempt to keep the patient in the horizontal position, especially limiting motion of the extremities to avoid increasing return of cold blood to the heart.",
+          "priority": "critical",
+          "rationale": "Cold myocardium is electrically irritable; rough handling and aggressive interventions can convert PVCs to VFib.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "assessment-complete",
+          "if": "Anchoring error recognized, pivot to rewarming",
+          "condition": "Crew recognizes that atropine and pacing are not working because the underlying problem is hypothermia, checks core temperature, and pivots to the correct hypothermia management pathway.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["recognize-anchoring-error", "pivot-to-rewarming"]
+        }
+      ]
+    },
+    {
+      "id": "anchored-ams",
+      "name": "Stroke/glucose workup, no temp check",
+      "description": "Crew has anchored on altered mental status as a primary neurologic or metabolic problem. Glucose has been checked and is normal. A stroke scale has been performed (negative or equivocal). Core temperature has never been measured. The patient remains in light clothing in cold ambient air during the workup, and continues to lose heat. Mental status drifts down, HR drops further, and the patient develops more pronounced bradycardia.",
+      "triggerCondition": "Crew anchored on AMS as a stroke or hypoglycemia. Glucose obtained (normal — 96 mg/dL). Stroke scale performed unnecessarily (negative). Core temperature was never measured and the patient remained in the cold environment during the workup, so heat loss continued. The clinical picture is worsening, not improving.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 3, "motor": 5 },
+        "airway": "Patent; less responsive than initial contact",
+        "breathing": "Slow shallow; rate now 8/min",
+        "circulation": "Pulse weak slow; capillary refill more prolonged",
+        "skin": { "color": "pale-gray", "temperature": "cold", "moisture": "dry" },
+        "pupils": "PERRL, more sluggish",
+        "motorFunction": "Withdraws to voice; no longer follows complex commands",
+        "otherFindings": [
+          "Patient still on park bench or in unwarmed ambulance, in original light clothing",
+          "Shivering now absent",
+          "Stroke scale: equivocal — slow speech, slow movement bilaterally (not actually a stroke)",
+          "Core temperature still not measured"
+        ],
+        "patientSpeech": "Only moans. No longer states name."
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Bradycardia",
+        "ecgWaveform": 9,
+        "hr": 36,
+        "bpSys": 100,
+        "bpDia": 62,
+        "respRate": 8,
+        "spo2": 90,
+        "etco2": 34,
+        "temp": 32.2,
+        "tempF": 90.0,
+        "obstruction": 0,
+        "glucose": 96,
+        "customMeasures": [],
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-environment",
+          "shortAction": "Note ambient temp, exposure duration, inadequate clothing — survey the environment",
+          "protocolExcerpt": "Environment: Survey for pills, paraphernalia, substance use, medication patches, medical devices, ambient temperature, social indicators of neglect, carbon monoxide exposures, multiple casualties with same complaint.",
+          "priority": "critical",
+          "rationale": "AMS protocol explicitly requires the crew to consider ambient temperature as part of the AEIOU-TIPS workup.",
+          "protocolReference": "MATC: Altered Mental Status"
+        },
+        {
+          "id": "get-core-temp",
+          "shortAction": "Measure core temperature now (epitympanic or rectal)",
+          "protocolExcerpt": "If possible and reliable, EMS clinicians should perform core body temperature measurements and categorize patients into one of the three follow levels of hypothermia: Mild: 32.1°–35°C/89.8°–95°F; Moderate: 28.1°–32°C/82.5°–89.7°F.",
+          "priority": "critical",
+          "rationale": "The missing piece of the puzzle — once obtained, the environmental etiology is obvious.",
+          "protocolReference": "MATC: Hypothermia/Cold Exposure"
+        },
+        {
+          "id": "active-warming",
+          "shortAction": "Active warming or cooling indicated when temperature abnormality is the cause of AMS",
+          "protocolExcerpt": "Active cooling or warming [See Hypothermia/Cold Exposure Guideline or Hyperthermia/Heat Exposure Guideline].",
+          "priority": "critical",
+          "rationale": "AMS protocol explicitly directs to the hypothermia pathway when temperature is implicated.",
+          "protocolReference": "MATC: Altered Mental Status"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "assessment-complete",
+          "if": "Core temp finally obtained, hypothermia recognized",
+          "condition": "Crew belatedly checks core temperature, recognizes hypothermia as the underlying cause of the AMS, and pivots to the hypothermia management pathway with rewarming and gentle handling. Patient is now colder and more obtunded but still recoverable.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["get-core-temp", "active-warming"]
+        }
+      ]
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

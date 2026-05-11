@@ -1,0 +1,403 @@
+{
+  "scenarioId": "B-T2-01",
+  "scenarioName": "Agitated Patient with Occult Head Injury",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1500,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "48-year-old male outside Murphy's Pub at closing time. According to two witnesses and PD, the patient was in a verbal altercation that escalated to a physical fight. He was struck in the right temple with a closed fist and reportedly fell, striking the right side of his head on the curb. He was briefly 'out cold' for under a minute, then got back up swinging. He has been continuously combative since PD arrival 4 minutes ago — yelling, swinging at officers, attempting to leave. Strong odor of ETOH on his breath. PD has him face-down on the sidewalk with hands cuffed behind his back; they have agreed to roll him supine for EMS assessment.",
+    "discussion": "",
+    "course": "Initial Contact: Crew arrives at a bar closing-time scene to find a 48-year-old male prone in PD handcuffs, combative, yelling, smelling strongly of alcohol. PD and bystanders confirm a fight with a witnessed strike to the right temple and a fall onto the curb. The easy framing is 'drunk, disorderly, medically clear him for jail.' The clinically correct framing — present in plain sight but easy to miss — is 'this man took a blow to the head, was unconscious for under a minute, and is now agitated; agitation in a head-injury patient is an early sign of intracranial deterioration.' All findings to make this distinction (mechanism from witnesses, scalp exam, pupils, glucose) are obtainable but only if the crew chooses to do a structured assessment instead of going straight to chemical restraint. → TBI recognized: The crew has reframed the call. This is no longer 'medical clearance for jail' — this is a 48-year-old with a witnessed mechanism (closed-fist strike + fall onto curb), <1 minute LOC, GCS 13, anisocoria, and a right temple hematoma. The behavioral protocol is excluded; the head-injury protocol drives care. Plan: c-collar, high-flow O2 via NRB, IV access, fluids ready to maintain SBP >110, head of bed elevated 30 degrees when feasible, minimize sedation (or use the lowest effective dose with airway prep) so the neuro exam stays interpretable, and trauma-center pre-alert. Patient remains agitated but is now being managed under a TBI lens. → Lucid interval ends: En route to the trauma center, the patient stops yelling. He becomes drowsy, then sluggish to respond. GCS drops from 13 to 11 (E2 V3 M6). HR slows from the 80s to the 60s. SBP rises into the 170s. This is the classic Monro–Kellie / Cushing's response physiology of an expanding epidural hematoma — bradycardia + hypertension + altered respirations form Cushing's triad. The lucid-interval pattern is characteristic of epidural hematoma from middle meningeal artery laceration following a temporal-bone strike. Crew now escalates: confirm pre-alert, accelerate transport if safe, prep advanced airway, AVOID prophylactic hyperventilation. → Trauma handoff: Arrival at the trauma center. AT-MIST handoff to trauma team: 48-year-old male, 0215 mechanism, witnessed strike to right temple plus fall onto curb with <1 minute LOC, found GCS 13 with left-sided anisocoria, deteriorated en route to GCS 11 with worsening anisocoria and Cushing's response. Glucose 102 ruled out hypoglycemia. Maintained airway, NRB, SBP >110, normocapnia. Patient goes directly to CT and neurosurgery is paged from the trauma bay. This is the correct outcome — the deterioration was caught, communicated, and the receiving facility is set up for definitive care."
+  },
+  "patientInformation": {
+    "patientName": "Marcus Hollister",
+    "patientCondition": "Combative, intoxicated-appearing male after a bar fight; witnessed strike to right side of head",
+    "patientAge": 48,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 178,
+    "patientWeight": 95,
+    "patientPhotoId": 58,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "Crew arrives at a bar closing-time scene to find a 48-year-old male prone in PD handcuffs, combative, yelling, smelling strongly of alcohol. PD and bystanders confirm a fight with a witnessed strike to the right temple and a fall onto the curb. The easy framing is 'drunk, disorderly, medically clear him for jail.' The clinically correct framing — present in plain sight but easy to miss — is 'this man took a blow to the head, was unconscious for under a minute, and is now agitated; agitation in a head-injury patient is an early sign of intracranial deterioration.' All findings to make this distinction (mechanism from witnesses, scalp exam, pupils, glucose) are obtainable but only if the crew chooses to do a structured assessment instead of going straight to chemical restraint.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 88,
+        "bpSys": 152,
+        "bpDia": 94,
+        "respRate": 18,
+        "spo2": 97,
+        "etco2": 36,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": false,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Confirm scene safe with PD; coordinate hands-on control before approach",
+        "Reposition prone-cuffed patient to supine or seated; never transport prone-cuffed",
+        "Obtain mechanism from witnesses BEFORE assuming intoxication",
+        "Recognize agitation from head injury is a protocol EXCLUSION for routine behavioral pathway",
+        "Deliberate head/scalp exam with light — palpate for hematoma, depression, blood, CSF",
+        "Pupil exam with penlight; document size and reactivity bilaterally",
+        "Check blood glucose — rule out hypoglycemia as cause of altered behavior",
+        "Document baseline GCS (E3 V4 M6 = 13) and AVPU",
+        "Manual cervical stabilization; apply c-collar after head exam",
+        "Apply NRB at 15 LPM — prevent secondary brain injury from hypoxia"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "TBI recognized",
+      "description": "The crew has reframed the call. This is no longer 'medical clearance for jail' — this is a 48-year-old with a witnessed mechanism (closed-fist strike + fall onto curb), <1 minute LOC, GCS 13, anisocoria, and a right temple hematoma. The behavioral protocol is excluded; the head-injury protocol drives care. Plan: c-collar, high-flow O2 via NRB, IV access, fluids ready to maintain SBP >110, head of bed elevated 30 degrees when feasible, minimize sedation (or use the lowest effective dose with airway prep) so the neuro exam stays interpretable, and trauma-center pre-alert. Patient remains agitated but is now being managed under a TBI lens.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 84,
+        "bpSys": 158,
+        "bpDia": 96,
+        "respRate": 16,
+        "spo2": 99,
+        "etco2": 38,
+        "temp": 36.8,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Establish IV access (18g preferred); have NS ready for SBP support",
+        "Target SBP greater than 110 mmHg; bolus NS if SBP drops",
+        "Elevate head of bed 30 degrees once c-spine cleared in transport position",
+        "Defer chemical restraint if possible; if required, lowest effective dose with airway prep",
+        "Apply continuous waveform EtCO2; target 35-45 mmHg, never hyperventilate",
+        "Transport to highest level trauma center; AT-MIST pre-alert",
+        "Reassess GCS and pupils every 5 minutes en route"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Lucid interval ends",
+      "description": "En route to the trauma center, the patient stops yelling. He becomes drowsy, then sluggish to respond. GCS drops from 13 to 11 (E2 V3 M6). HR slows from the 80s to the 60s. SBP rises into the 170s. This is the classic Monro–Kellie / Cushing's response physiology of an expanding epidural hematoma — bradycardia + hypertension + altered respirations form Cushing's triad. The lucid-interval pattern is characteristic of epidural hematoma from middle meningeal artery laceration following a temporal-bone strike. Crew now escalates: confirm pre-alert, accelerate transport if safe, prep advanced airway, AVOID prophylactic hyperventilation.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 56,
+        "bpSys": 178,
+        "bpDia": 98,
+        "respRate": 12,
+        "spo2": 96,
+        "etco2": 42,
+        "temp": 36.7,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize Cushing's response: bradycardia + hypertension + irregular RR = herniation",
+        "Reassess pupils and GCS immediately on mentation change",
+        "Maintain normocapnia EtCO2 35-45; do NOT hyperventilate prophylactically",
+        "Prepare advanced airway; BVM ready if GCS drops below 8",
+        "Continue NRB; maintain SBP greater than 110 mmHg (currently 178 — do not lower)",
+        "Update trauma center: GCS drop, anisocoria worsening, Cushing's forming",
+        "Confirm head of bed elevated 30 degrees with spinal alignment maintained"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Trauma handoff",
+      "description": "Arrival at the trauma center. AT-MIST handoff to trauma team: 48-year-old male, 0215 mechanism, witnessed strike to right temple plus fall onto curb with <1 minute LOC, found GCS 13 with left-sided anisocoria, deteriorated en route to GCS 11 with worsening anisocoria and Cushing's response. Glucose 102 ruled out hypoglycemia. Maintained airway, NRB, SBP >110, normocapnia. Patient goes directly to CT and neurosurgery is paged from the trauma bay. This is the correct outcome — the deterioration was caught, communicated, and the receiving facility is set up for definitive care.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 54,
+        "bpSys": 176,
+        "bpDia": 96,
+        "respRate": 12,
+        "spo2": 96,
+        "etco2": 42,
+        "temp": 36.7,
+        "obstruction": 0,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Structured AT-MIST handoff to trauma team",
+        "Document serial GCS, pupil sizes, and vital trends on PCR"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Chemical restraint trap",
+      "description": "BRANCH (judgment error). Crew anchored on the alcohol smell and combative behavior, administered IM ketamine 380 mg (95 kg × 4 mg/kg = 380 mg per protocol high-violence option) without first performing the head exam, pupil exam, or glucose check. Within 4 minutes the patient is dissociated, snoring respirations, no longer agitated. Crew is relieved. They never look at the pupils. The hematoma over the right temple is never palpated. The trauma-center triage is downgraded because 'GCS is low only because we sedated him.' The patient arrives at the ED — perhaps the closest community ED rather than the trauma center — sedated, with a fixed left pupil that was never seen prehospitally and never communicated. CT is delayed because no head exam was reported. Neurosurgery is consulted late. The epidural hematoma expands further before evacuation. Outcome: avoidable secondary brain injury from a missed exam.",
+      "monitorType": 0,
+      "trendTime": 25,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 52,
+        "bpSys": 182,
+        "bpDia": 102,
+        "respRate": 10,
+        "spo2": 91,
+        "etco2": 48,
+        "temp": 36.7,
+        "obstruction": 30,
+        "custMeasure1": 102,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Ketamine 380 mg IM (95 kg x 4 mg/kg) given without head/pupil/glucose exam — DEBRIEF AS ERROR",
+        "Continuous capnography and airway monitoring post-sedation",
+        "Belated head exam and pupil check — recognize and upgrade trauma alert NOW"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Confirm scene safe with PD; coordinate hands-on control before approach",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reposition prone-cuffed patient to supine or seated; never transport prone-cuffed",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Obtain mechanism from witnesses BEFORE assuming intoxication",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize agitation from head injury is a protocol EXCLUSION for routine behavioral pathway",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Deliberate head/scalp exam with light — palpate for hematoma, depression, blood, CSF",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Pupil exam with penlight; document size and reactivity bilaterally",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check blood glucose — rule out hypoglycemia as cause of altered behavior",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document baseline GCS (E3 V4 M6 = 13) and AVPU",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Manual cervical stabilization; apply c-collar after head exam",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply NRB at 15 LPM — prevent secondary brain injury from hypoxia",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access (18g preferred); have NS ready for SBP support",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Target SBP greater than 110 mmHg; bolus NS if SBP drops",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Elevate head of bed 30 degrees once c-spine cleared in transport position",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Defer chemical restraint if possible; if required, lowest effective dose with airway prep",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply continuous waveform EtCO2; target 35-45 mmHg, never hyperventilate",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport to highest level trauma center; AT-MIST pre-alert",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess GCS and pupils every 5 minutes en route",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize Cushing's response: bradycardia + hypertension + irregular RR = herniation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess pupils and GCS immediately on mentation change",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Maintain normocapnia EtCO2 35-45; do NOT hyperventilate prophylactically",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Prepare advanced airway; BVM ready if GCS drops below 8",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue NRB; maintain SBP greater than 110 mmHg (currently 178 — do not lower)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Update trauma center: GCS drop, anisocoria worsening, Cushing's forming",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Confirm head of bed elevated 30 degrees with spinal alignment maintained",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Structured AT-MIST handoff to trauma team",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document serial GCS, pupil sizes, and vital trends on PCR",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Ketamine 380 mg IM (95 kg x 4 mg/kg) given without head/pupil/glucose exam — DEBRIEF AS ERROR",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continuous capnography and airway monitoring post-sedation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Belated head exam and pupil check — recognize and upgrade trauma alert NOW",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

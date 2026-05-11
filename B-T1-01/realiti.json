@@ -1,0 +1,307 @@
+{
+  "scenarioId": "B-T1-01",
+  "scenarioName": "Excited Delirium with Occult Hypoglycemia",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1200,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "42-year-old male with longstanding Type 1 Diabetes Mellitus (Omnipod insulin pump on right upper arm). Wife states he completed a 45-minute morning run at 0700, came inside acting 'fine,' then about 20 minutes ago became progressively confused, sweaty, and increasingly agitated. He pushed his wife when she tried to redirect him and is now pacing the kitchen yelling about people in the walls. Wife denies any drug or alcohol use; she states 'he's never been like this.' She thinks he skipped breakfast after the run. The pump 'beeped earlier' but she doesn't know what the alarm was.",
+    "discussion": "",
+    "course": "Initial Contact: Crew arrives to find PD on scene with a 42-year-old male pacing the kitchen, diaphoretic and agitated. Wife reports sudden onset 20 minutes ago after a morning run. Patient is verbally aggressive but not actively assaulting anyone. There are subtle medical tells available to the observant clinician: profuse diaphoresis, an insulin pump on the right upper arm, and a medical alert bracelet for Type 1 Diabetes. → Hypoglycemia identified: Glucose comes back at 38 mg/dL. The clinical picture now resolves: this is symptomatic hypoglycemia presenting as agitation, not a primary behavioral emergency. Patient remains combative and unwilling to take oral glucose; IV access is unsafe while he is agitated. Glucagon IM is the protocol-correct bridge to safely correct glucose and allow further assessment. → Glucose corrected, patient oriented: Glucagon has taken effect. Patient is now oriented x4, embarrassed by his behavior, and cooperative. Glucose now ~92 mg/dL. He is asking what happened. Crew can now establish IV access, give PO complex carbs, and transport for evaluation. Per protocol he should be transported because symptoms were severe and pump malfunction is suspected."
+  },
+  "patientInformation": {
+    "patientName": "Daniel Whitlock",
+    "patientCondition": "Agitation, combativeness, acting 'not himself' for the past 20 minutes",
+    "patientAge": 42,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 180,
+    "patientWeight": 86,
+    "patientPhotoId": 51,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "Crew arrives to find PD on scene with a 42-year-old male pacing the kitchen, diaphoretic and agitated. Wife reports sudden onset 20 minutes ago after a morning run. Patient is verbally aggressive but not actively assaulting anyone. There are subtle medical tells available to the observant clinician: profuse diaphoresis, an insulin pump on the right upper arm, and a medical alert bracelet for Type 1 Diabetes.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 128,
+        "bpSys": 152,
+        "bpDia": 94,
+        "respRate": 24,
+        "spo2": 98,
+        "etco2": 32,
+        "temp": 37.2,
+        "obstruction": 0,
+        "custMeasure1": 38,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": false,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Confirm scene safety with PD; assign partner to safety/egress",
+        "Consider medical causes before labeling 'behavioral' (AEIOU-TIPS)",
+        "Attempt verbal reassurance / de-escalation from a safe distance",
+        "Get history from wife: diabetes, insulin pump, skipped meal, onset",
+        "Note diaphoresis, insulin pump on arm, medic-alert bracelet",
+        "Obtain finger-stick blood glucose (result: 38 mg/dL)"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Hypoglycemia identified",
+      "description": "Glucose comes back at 38 mg/dL. The clinical picture now resolves: this is symptomatic hypoglycemia presenting as agitation, not a primary behavioral emergency. Patient remains combative and unwilling to take oral glucose; IV access is unsafe while he is agitated. Glucagon IM is the protocol-correct bridge to safely correct glucose and allow further assessment.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 124,
+        "bpSys": 150,
+        "bpDia": 92,
+        "respRate": 22,
+        "spo2": 98,
+        "etco2": 33,
+        "temp": 37.2,
+        "obstruction": 0,
+        "custMeasure1": 38,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": false,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Defer oral glucose — patient unable to safely protect airway/cooperate",
+        "Glucagon 1 mg IM (adult fixed dose) — patient cannot safely accept IV/PO",
+        "Have wife stop/disconnect the insulin pump",
+        "Apply SpO2 and cardiac monitor as patient tolerates",
+        "Reassess vitals, mental status, and repeat glucose after glucagon"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Glucose corrected, patient oriented",
+      "description": "Glucagon has taken effect. Patient is now oriented x4, embarrassed by his behavior, and cooperative. Glucose now ~92 mg/dL. He is asking what happened. Crew can now establish IV access, give PO complex carbs, and transport for evaluation. Per protocol he should be transported because symptoms were severe and pump malfunction is suspected.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 88,
+        "bpSys": 132,
+        "bpDia": 80,
+        "respRate": 16,
+        "spo2": 99,
+        "etco2": 38,
+        "temp": 37,
+        "obstruction": 0,
+        "custMeasure1": 92,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Establish IV access now that patient is cooperative",
+        "Offer 25 g oral glucose / complex carbs once airway protected",
+        "Transport — pump malfunction suspected, refusal criteria not met",
+        "Document glucose values, IM glucagon, pump status, mental-status trend"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "IM sedative given, no glucose check",
+      "description": "Crew misread the scene as substance-use or pure behavioral and gave IM ketamine 4 mg/kg or IM midazolam 5 mg without ever checking glucose. Patient is now deeply sedated, but the underlying hypoglycemia is uncorrected and progressing. Sedation is masking the metabolic crisis. Respiratory drive is depressed, glucose continues to fall.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 48,
+        "bpSys": 92,
+        "bpDia": 56,
+        "respRate": 8,
+        "spo2": 86,
+        "etco2": 56,
+        "temp": 36.4,
+        "obstruction": 0,
+        "custMeasure1": 32,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize miss — get the glucose NOW (result: 32 mg/dL)",
+        "Open airway, apply O2, assist ventilations with BVM as needed",
+        "IV D10 — start with 100 mL of 10% dextrose, titrate to mental status",
+        "Stop / disconnect the insulin pump immediately",
+        "Expedite transport; notify receiving facility of iatrogenic over-sedation + hypoglycemia"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Confirm scene safety with PD; assign partner to safety/egress",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Consider medical causes before labeling 'behavioral' (AEIOU-TIPS)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Attempt verbal reassurance / de-escalation from a safe distance",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Get history from wife: diabetes, insulin pump, skipped meal, onset",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Note diaphoresis, insulin pump on arm, medic-alert bracelet",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Obtain finger-stick blood glucose (result: 38 mg/dL)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Defer oral glucose — patient unable to safely protect airway/cooperate",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Glucagon 1 mg IM (adult fixed dose) — patient cannot safely accept IV/PO",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Have wife stop/disconnect the insulin pump",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply SpO2 and cardiac monitor as patient tolerates",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reassess vitals, mental status, and repeat glucose after glucagon",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IV access now that patient is cooperative",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Offer 25 g oral glucose / complex carbs once airway protected",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Transport — pump malfunction suspected, refusal criteria not met",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document glucose values, IM glucagon, pump status, mental-status trend",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize miss — get the glucose NOW (result: 32 mg/dL)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Open airway, apply O2, assist ventilations with BVM as needed",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "IV D10 — start with 100 mL of 10% dextrose, titrate to mental status",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Stop / disconnect the insulin pump immediately",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Expedite transport; notify receiving facility of iatrogenic over-sedation + hypoglycemia",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}
