@@ -1,0 +1,590 @@
+{
+  "scenarioId": "C-T3-05",
+  "scenarioName": "Asystole/Agonal Rhythm with DNR Confusion",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1800,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "84-year-old female with end-stage chronic obstructive pulmonary disease (home O2 2 L/min continuous), severe biventricular congestive heart failure (NYHA Class IV, EF reported around 20%), moderate-stage dementia, chronic atrial fibrillation, and stage 4 chronic kidney disease. Over the past four weeks her family describes progressive bed-bound status, anorexia, somnolence, and increasing oxygen requirements. The pulmonologist and primary care physician had a goals-of-care conversation with the family three weeks ago and recommended hospice; the daughter signed paperwork with a hospice agency 'last Tuesday' but the formal admission visit and packet were not yet completed at the time of this call. The patient was last seen alive and breathing approximately 90 minutes ago when the daughter checked on her after dinner; the daughter went to lie down on the couch and was awakened by the home oxygen concentrator alarming. She found her mother apneic and unresponsive in the hospital bed in the living room. The daughter immediately called 911 — she states 'I panicked, I know she didn't want this, but I just called.' She produces a folded document from a kitchen drawer that she identifies as 'her DNR form from the pulmonologist.' On inspection it is a Wisconsin POLST/DNR-style document with the patient's printed name, date of birth, and current date marked 'comfort measures only — do not resuscitate, do not intubate'; it bears a signature on the 'signature of authorized practitioner' line legibly reading 'J. Henson, NP' followed by 'NP-C, Internal Medicine — for Dr. R. Patel.' The form is a printed photocopy (not the original), bears the correct state form header and color reproduction on copier paper, has not been altered or cut, and is signed and dated within the past 30 days. The crew cannot independently determine from the form alone whether a nurse practitioner signature satisfies the validity requirement — this is the central ambiguity. Per MATC protocol, when there is question about the validity of the form, the best course of action is to PROCEED WITH RESUSCITATION until additional information can be obtained.",
+    "discussion": "",
+    "course": "Initial Contact: EMS arrives in the living room to find an 84-year-old female in a home hospital bed, unresponsive, apneic, with no palpable carotid pulse. The home O2 concentrator is alarming. The daughter (Karen) is tearful, holding what she calls 'mom's DNR' but the form has not yet been examined. None of the standard withholding-resuscitation criteria from MATC determination-of-death are met on inspection — no decapitation, decomposition, transection, incineration, injuries incompatible with life, dependent lividity, or rigor mortis; the patient is warm-cool, not cold-stiff. The form has not yet been verified as a valid exclusion to resuscitation. Per MATC protocol — 'In cases where the patient's status is unclear and the appropriateness of withholding resuscitation efforts is questioned, EMS personnel should initiate CPR immediately and contact medical direction.' The crew must begin compressions while one provider takes the document and starts the validity assessment in parallel. The teaching beat is that clinical care does not stop while validity is being reviewed — and that a verbal report from the family alone ('she didn't want this') is NOT a valid exclusion to resuscitation per MATC. → Resus initiated; document under review: Two minutes into the resuscitation. High-quality compressions are ongoing with rotation between providers. IO is in at the proximal humerus, first dose of epinephrine 1 mg is in, BVM ventilation at 10/min is being performed without interrupting compressions, and waveform capnography shows EtCO2 of 14 mmHg (consistent with adequate-but-not-great compressions in an elderly thin patient with significant cardiopulmonary disease). One provider has now physically examined the document and confirmed: it is a Wisconsin POLST/DNR-style form on the correct state-style header; it is intact; it bears the patient's printed name and date of birth; it is dated within the past 30 days; it is signed and dated; the comfort-measures-only and DNR/DNI boxes are clearly marked. The ONLY ambiguity is the signature line — signed by 'J. Henson, NP-C, Internal Medicine — for Dr. R. Patel.' Per MATC, the POLST must be signed by 'a physician or other empowered medical clinician.' In Wisconsin, advanced-practice nurses CAN sign POLST forms within their scope of practice — but the crew is not expected to know this from memory. Per protocol they must contact medical direction to verify. This is the teaching beat: when validity is uncertain, you do not guess — you keep resuscitating and you make the call. → Document validated; resus ceased; comfort care: Medical direction validates the POLST as a valid exclusion to resuscitation after hearing the verbatim form details. Per MATC DNR/Advance Directives Assessment #2, 'If CPR has been initiated and a valid exclusion to resuscitation has been subsequently verified, CPR may be discontinued, and medical direction contacted as needed.' Crew ceases compressions and ventilations, removes the BVM, leaves the home oxygen in place at the family's preference, and shifts focus entirely to the family. The patient is repositioned with dignity. The brother (Tom) now understands the form was valid. The daughter (Karen) sobs and thanks the crew for 'doing it right.' Crew arranges coroner/medical-examiner contact per local policy (expected natural death of a known terminally ill patient with a valid POLST; in WI, in-home death with a documented terminal illness and DNR usually requires notification but not autopsy), notifies the hospice agency and the patient's PCP per the contact list on the wall, documents the form details and the medical-direction verbatim order, and offers chaplain/family support resources."
+  },
+  "patientInformation": {
+    "patientName": "Margaret Ellen Voss",
+    "patientCondition": "Unresponsive, apneic, pulseless 84-year-old female found in bed by adult daughter. End-stage COPD and CHF with progressive functional decline over the past month; family is not certain whether she was formally enrolled in hospice yet.",
+    "patientAge": 84,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 2,
+    "patientHeight": 160,
+    "patientWeight": 52,
+    "patientPhotoId": 100,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "EMS arrives in the living room to find an 84-year-old female in a home hospital bed, unresponsive, apneic, with no palpable carotid pulse. The home O2 concentrator is alarming. The daughter (Karen) is tearful, holding what she calls 'mom's DNR' but the form has not yet been examined. None of the standard withholding-resuscitation criteria from MATC determination-of-death are met on inspection — no decapitation, decomposition, transection, incineration, injuries incompatible with life, dependent lividity, or rigor mortis; the patient is warm-cool, not cold-stiff. The form has not yet been verified as a valid exclusion to resuscitation. Per MATC protocol — 'In cases where the patient's status is unclear and the appropriateness of withholding resuscitation efforts is questioned, EMS personnel should initiate CPR immediately and contact medical direction.' The crew must begin compressions while one provider takes the document and starts the validity assessment in parallel. The teaching beat is that clinical care does not stop while validity is being reviewed — and that a verbal report from the family alone ('she didn't want this') is NOT a valid exclusion to resuscitation per MATC.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 3,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 0,
+        "temp": 35.8,
+        "obstruction": 0,
+        "custMeasure1": 110,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Primary survey; confirm apneic/pulseless; rule out obvious-death criteria",
+        "Begin CPR immediately — validity of document is unclear; when in doubt, resuscitate",
+        "High-quality compressions — rate 100–120/min, depth 2–2.4 in, full recoil, minimize interruptions",
+        "Apply pads/monitor; confirm asystole in two leads (rule out fine VF)",
+        "Establish IO (proximal humerus preferred adult) or IV access without interrupting compressions",
+        "Epinephrine 1 mg IV/IO (1:10,000) — early because rhythm is non-shockable; repeat q3–5 min",
+        "BVM with high-flow O2 at 10 breaths/min OR 30:2; do not interrupt compressions for airway",
+        "Apply quantitative waveform capnography to monitor compression quality and prognosis",
+        "Consider reversible causes — hypoxia, hypovolemia, hyperK (CKD stage 4), acidosis",
+        "Designate one provider to examine the document in parallel — care continues",
+        "Examine document: state form? intact? patient name + practitioner name?",
+        "Reject verbal-only family report as exclusion — continue CPR until written form validated",
+        "Contact medical direction — NP signature ambiguity; relay form findings verbatim",
+        "Brief, compassionate explanation to family — we're working, we're verifying the form"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Resus initiated; document under review",
+      "description": "Two minutes into the resuscitation. High-quality compressions are ongoing with rotation between providers. IO is in at the proximal humerus, first dose of epinephrine 1 mg is in, BVM ventilation at 10/min is being performed without interrupting compressions, and waveform capnography shows EtCO2 of 14 mmHg (consistent with adequate-but-not-great compressions in an elderly thin patient with significant cardiopulmonary disease). One provider has now physically examined the document and confirmed: it is a Wisconsin POLST/DNR-style form on the correct state-style header; it is intact; it bears the patient's printed name and date of birth; it is dated within the past 30 days; it is signed and dated; the comfort-measures-only and DNR/DNI boxes are clearly marked. The ONLY ambiguity is the signature line — signed by 'J. Henson, NP-C, Internal Medicine — for Dr. R. Patel.' Per MATC, the POLST must be signed by 'a physician or other empowered medical clinician.' In Wisconsin, advanced-practice nurses CAN sign POLST forms within their scope of practice — but the crew is not expected to know this from memory. Per protocol they must contact medical direction to verify. This is the teaching beat: when validity is uncertain, you do not guess — you keep resuscitating and you make the call.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 3,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 14,
+        "temp": 35.8,
+        "obstruction": 0,
+        "custMeasure1": 110,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Continue high-quality CPR throughout document review — do not pause for it",
+        "Rotate compressors at 2 minutes; reassess rhythm during rotation",
+        "Repeat epinephrine 1 mg IV/IO q3–5 min while in arrest",
+        "Apply 3-criteria validity test: state form, intact, names present",
+        "Identify POLST signer requirement — physician or other empowered medical clinician",
+        "Call medical direction NOW: relay form, signer, ambiguity; request validity ruling",
+        "Document form details verbatim — header, signer, date, comfort-care boxes — and photograph if able",
+        "Update family briefly — calling medical direction, will not stop until we know"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Document validated; resus ceased; comfort care",
+      "description": "Medical direction validates the POLST as a valid exclusion to resuscitation after hearing the verbatim form details. Per MATC DNR/Advance Directives Assessment #2, 'If CPR has been initiated and a valid exclusion to resuscitation has been subsequently verified, CPR may be discontinued, and medical direction contacted as needed.' Crew ceases compressions and ventilations, removes the BVM, leaves the home oxygen in place at the family's preference, and shifts focus entirely to the family. The patient is repositioned with dignity. The brother (Tom) now understands the form was valid. The daughter (Karen) sobs and thanks the crew for 'doing it right.' Crew arranges coroner/medical-examiner contact per local policy (expected natural death of a known terminally ill patient with a valid POLST; in WI, in-home death with a documented terminal illness and DNR usually requires notification but not autopsy), notifies the hospice agency and the patient's PCP per the contact list on the wall, documents the form details and the medical-direction verbatim order, and offers chaplain/family support resources.",
+      "monitorType": 0,
+      "trendTime": 25,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 3,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 0,
+        "temp": 35.6,
+        "obstruction": 0,
+        "custMeasure1": 110,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": false,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Cease CPR per validated POLST and medical-direction order; document time",
+        "Comfort measures only — keep O2 if it appears to comfort family; pain meds permitted per POLST",
+        "Shift focus to family — sit with them, explain, offer chaplain/clergy/hospice support",
+        "Notify coroner/medical examiner, PCP, and hospice agency per local policy",
+        "Document form details, medical-direction order verbatim, time of cessation, names/contacts",
+        "Reposition patient with dignity; allow family time at bedside",
+        "Leave scene as-is for coroner/ME; do not remove invasive lines per local policy"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Document NOT validated; resus continues; transport",
+      "description": "Medical direction is unable to validate the form in the moment. The signer's authority cannot be confirmed at 21:50 on a weeknight (e.g., NP's scope or relationship to the patient is not confirmable, or the medical-direction physician requires the original signed-by-physician form, or the photocopy itself is the disqualifier under local policy). Per MATC, when the form cannot be validated, the crew continues full resuscitation. Crew is now in minute 6 of resuscitation. Asystole persists. EtCO2 has drifted from 14 down to 9 mmHg despite ongoing compressions and a second dose of epinephrine — consistent with poor cardiac viability in this elderly multi-morbid patient. The crew must now also explain to the family — compassionately but clearly — that without validation they are obligated to continue, and they must transport. This phase tees up the question of WHEN to transition to termination-of-resuscitation criteria (20 minutes of asystole with EtCO2 < 20 mmHg) or to continued transport based on local policy.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 3,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 9,
+        "temp": 35.7,
+        "obstruction": 0,
+        "custMeasure1": 110,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Continue full resuscitation — form not validated; default is to resuscitate",
+        "Explain to family — without validated form we MUST continue; this is the rule",
+        "Repeat epinephrine 1 mg IV/IO at 3–5 min interval (third dose)",
+        "Consider supraglottic airway or ETT after 3–4 cycles; ventilations 10/min",
+        "Re-screen reversible causes — CKD 4 → hyperK risk → consider calcium + bicarb",
+        "Note EtCO2 trend (14 → 9 mmHg) — poor prognostic indicator",
+        "Evaluate termination criteria — asystole, >20 min, EtCO2 <20; consult med direction again",
+        "Resuscitate on scene; avoid moving compressions if reaching termination criteria",
+        "Document MD non-validation, ongoing CPR, family education, and rationale"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Verbal-only — improper cessation",
+      "description": "Crew accepted the daughter's verbal statement 'she didn't want CPR' as sufficient and either never started compressions or stopped them before validating the written form and contacting medical direction. Per MATC, a verbal report from family alone — without a valid written document (POLST/MOLST/DNR), bracelet, or (state-permitting) explicit healthcare-POA direction — is NOT a valid exclusion to resuscitation. Patient Safety Considerations specifically direct that when the appropriateness of withholding is questioned, initiate CPR and contact medical direction. The brother (Tom) arrives during this phase, has NOT previously seen any document, and disputes the call: 'You're just stopping based on what she said? Did you even look at the form? Are you sure mom wanted that?' The crew now has an unresuscitated patient, a written form they never validated, no medical-direction order, and a family conflict that will become a documentation, QI, and potentially legal/liability event. The teaching beat is severe: the right answer was to RESUSCITATE while reviewing, not to honor a verbal report.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 3,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 0,
+        "temp": 35.5,
+        "obstruction": 0,
+        "custMeasure1": 110,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": false,
+        "etco2Visible": false,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize error — verbal family report alone is NOT a valid exclusion",
+        "Initiate CPR immediately if not already; recover from the error",
+        "Examine the written form now; contact medical direction now",
+        "Document timeline, statements verbatim, who/what/when of the decision",
+        "Notify supervisor; submit for QI review per agency policy",
+        "Address family compassionately about the error — be honest, not defensive"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Valid POLST ignored — improper continued resus",
+      "description": "Crew dismissed the form without performing the validity test or contacting medical direction — common reasons: 'it's just a photocopy,' 'an NP can't sign that,' or 'we don't recognize this form.' They continued full resuscitation despite an intact in-state POLST clearly marked comfort-measures-only and DNR/DNI, with patient name, DOB, date within 30 days, and a signature from an empowered medical clinician acting on behalf of the patient's PCP. The family watches the aggressive resuscitation — chest compressions on their frail dementia-staged mother, IO drill into her humerus, BVM ventilations, repeated epinephrine — and becomes increasingly distraught. The daughter (Karen) sobs: 'I'm watching you do exactly what she said she didn't want.' The brother (Tom), having now read the form, points and says 'It IS signed by her doctor's office, look.' Per MATC the form should have triggered an immediate validity assessment and medical-direction call. The patient's autonomy — her advance directive — has been violated. The teaching beat is the inverse of the verbal-only branch: dismissing a written form without applying the three-criteria test and the medical-direction call is also wrong. The correct response is to STOP, perform the validity test now, contact medical direction now, and cease resuscitation if the form is validated.",
+      "monitorType": 0,
+      "trendTime": 40,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 3,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 12,
+        "temp": 35.7,
+        "obstruction": 0,
+        "custMeasure1": 110,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize error — form was never validated against the 3 criteria",
+        "Pause unnecessary interventions; apply the validity test NOW",
+        "Contact medical direction NOW with form details; request validity ruling",
+        "If MD validates form on this call → cease per Assessment #2",
+        "Acknowledge family — apologize for delay; explain validity process",
+        "Document timeline, missed validity test, recovery actions, MD contact, outcome",
+        "Submit for QI review — agency-level training opportunity on POLST handling"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Primary survey; confirm apneic/pulseless; rule out obvious-death criteria",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Begin CPR immediately — validity of document is unclear; when in doubt, resuscitate",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "High-quality compressions — rate 100–120/min, depth 2–2.4 in, full recoil, minimize interruptions",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply pads/monitor; confirm asystole in two leads (rule out fine VF)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish IO (proximal humerus preferred adult) or IV access without interrupting compressions",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 1 mg IV/IO (1:10,000) — early because rhythm is non-shockable; repeat q3–5 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "BVM with high-flow O2 at 10 breaths/min OR 30:2; do not interrupt compressions for airway",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply quantitative waveform capnography to monitor compression quality and prognosis",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Consider reversible causes — hypoxia, hypovolemia, hyperK (CKD stage 4), acidosis",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Designate one provider to examine the document in parallel — care continues",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Examine document: state form? intact? patient name + practitioner name?",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reject verbal-only family report as exclusion — continue CPR until written form validated",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Contact medical direction — NP signature ambiguity; relay form findings verbatim",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Brief, compassionate explanation to family — we're working, we're verifying the form",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue high-quality CPR throughout document review — do not pause for it",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Rotate compressors at 2 minutes; reassess rhythm during rotation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Repeat epinephrine 1 mg IV/IO q3–5 min while in arrest",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply 3-criteria validity test: state form, intact, names present",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Identify POLST signer requirement — physician or other empowered medical clinician",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Call medical direction NOW: relay form, signer, ambiguity; request validity ruling",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document form details verbatim — header, signer, date, comfort-care boxes — and photograph if able",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Update family briefly — calling medical direction, will not stop until we know",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Cease CPR per validated POLST and medical-direction order; document time",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Comfort measures only — keep O2 if it appears to comfort family; pain meds permitted per POLST",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Shift focus to family — sit with them, explain, offer chaplain/clergy/hospice support",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Notify coroner/medical examiner, PCP, and hospice agency per local policy",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document form details, medical-direction order verbatim, time of cessation, names/contacts",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Reposition patient with dignity; allow family time at bedside",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Leave scene as-is for coroner/ME; do not remove invasive lines per local policy",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue full resuscitation — form not validated; default is to resuscitate",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Explain to family — without validated form we MUST continue; this is the rule",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Repeat epinephrine 1 mg IV/IO at 3–5 min interval (third dose)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Consider supraglottic airway or ETT after 3–4 cycles; ventilations 10/min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Re-screen reversible causes — CKD 4 → hyperK risk → consider calcium + bicarb",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Note EtCO2 trend (14 → 9 mmHg) — poor prognostic indicator",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Evaluate termination criteria — asystole, >20 min, EtCO2 <20; consult med direction again",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Resuscitate on scene; avoid moving compressions if reaching termination criteria",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document MD non-validation, ongoing CPR, family education, and rationale",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize error — verbal family report alone is NOT a valid exclusion",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Initiate CPR immediately if not already; recover from the error",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Examine the written form now; contact medical direction now",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document timeline, statements verbatim, who/what/when of the decision",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Notify supervisor; submit for QI review per agency policy",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Address family compassionately about the error — be honest, not defensive",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Recognize error — form was never validated against the 3 criteria",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Pause unnecessary interventions; apply the validity test NOW",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Contact medical direction NOW with form details; request validity ruling",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "If MD validates form on this call → cease per Assessment #2",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Acknowledge family — apologize for delay; explain validity process",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Document timeline, missed validity test, recovery actions, MD contact, outcome",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Submit for QI review — agency-level training opportunity on POLST handling",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}

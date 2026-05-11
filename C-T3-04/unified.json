@@ -1,0 +1,853 @@
+{
+  "meta": {
+    "id": "C-T3-04",
+    "name": "Cardiogenic Shock with Deterioration to Arrest",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Cardiac",
+    "protocols": [
+      "medical-shock",
+      "cv-chest-pain-acs-stemi",
+      "resp-respiratory-distress",
+      "resus-cardiac-arrest",
+      "resus-post-rosc",
+      "resp-airway-management"
+    ],
+    "totalTimeSeconds": 1800,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "cardiac",
+      "cardiogenic-shock",
+      "stemi",
+      "pulmonary-edema",
+      "pea-arrest",
+      "push-dose-pressors",
+      "norepinephrine",
+      "pre-arrest-management",
+      "tier-3",
+      "high-acuity"
+    ]
+  },
+  "patient": {
+    "name": "Walter Pulaski",
+    "age": 71,
+    "ageUnit": "years",
+    "sex": "male",
+    "weight": 88,
+    "weightLbs": 194,
+    "height": 178,
+    "chiefComplaint": "Trouble breathing, weakness, altered mentation",
+    "history": {
+      "hpi": "71-year-old male with longstanding CAD (3-vessel CABG 8 years ago, two prior PCIs) and heart failure with reduced ejection fraction (last echo EF 25%). Wife states he has gained ~12 lbs over the past two weeks despite a low-salt diet. Today he was 'slower than usual' all morning, then around 1130 became 'not making sense,' couldn't follow conversation, and complained of being short of breath sitting upright in his recliner. Wife noticed his hands and feet looked 'gray' and called 911. No reported chest pain on arrival, but patient cannot reliably answer questions. No fever, no recent illness, no fall, no medication changes, no missed doses per wife.",
+      "pastMedical": [
+        "Coronary artery disease (CABG x3 in 2018)",
+        "Heart failure with reduced ejection fraction (EF 25%, last echo 4 months ago)",
+        "Hypertension",
+        "Hyperlipidemia",
+        "Type 2 diabetes (diet-controlled, no insulin)",
+        "Prior anterior MI (2017) with PCI to LAD",
+        "Chronic kidney disease stage 3"
+      ],
+      "medications": [
+        "Carvedilol 25 mg PO BID",
+        "Lisinopril 20 mg PO daily",
+        "Spironolactone 25 mg PO daily",
+        "Furosemide 40 mg PO daily",
+        "Atorvastatin 80 mg PO nightly",
+        "Aspirin 81 mg PO daily",
+        "Metformin 500 mg PO BID"
+      ],
+      "allergies": ["NKDA"],
+      "lastOralIntake": "Half a cup of coffee and a piece of toast at breakfast around 0800; nothing since",
+      "events": "Wife reports patient was 'fluid-weight gaining' for 2 weeks. This morning he became progressively confused and short of breath at rest. She called 911 when she could not rouse him to answer simple questions and noticed his color was 'gray.'"
+    }
+  },
+  "scene": {
+    "dispatch": "71-year-old male, trouble breathing and weakness, wife states he is 'not acting right.' Single-family home, wife will meet at front door.",
+    "location": "Single-story home, living room. Patient seated upright in a recliner, slumped slightly to one side. Bright midday light through the windows. Easy stretcher access through the front door and across the living room.",
+    "time": "Tuesday, 1148",
+    "safety": "Scene secure. No pets, no weapons. Wife is calm and oriented and able to provide history. Floor is clear; recliner is in the upright position. Plan extrication path early — patient will likely need to be moved with a stair chair or full lift.",
+    "bystanders": "Wife (late 60s) at bedside. Reports the patient 'has been gaining water weight for two weeks' and 'got worse this morning.' Hands you a written medication list and his cardiology folder.",
+    "visualCues": [
+      "Patient slumped in recliner, gray-pale, eyes half open, breathing rapidly with audible wet rales",
+      "Pillows propped behind patient — wife says 'he can't lie flat anymore'",
+      "Pitting edema visible at ankles bilaterally",
+      "Home BP cuff and pulse oximeter on side table; oximeter reads 87%",
+      "Medication bottles on counter including carvedilol and furosemide",
+      "No nitroglycerin tablets visible; no PDE5 inhibitor bottles"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial",
+      "name": "Initial Contact",
+      "description": "On arrival, 71yo male slumped in recliner, gray and diaphoretic, eyes half-open, tachypneic with audible wet rales heard from the doorway. Wife at bedside. Patient barely responsive to voice, withdraws to pain, GCS 12 (E3 V3 M6). First vitals: HR 124 sinus tach, BP 78/52, RR 32 labored, SpO2 88% on room air, bibasilar crackles, cool clammy skin, weak thready radials. This is cardiogenic shock with pulmonary edema until proven otherwise. The 12-lead obtained early shows an anterior STEMI. Crew must recognize the trajectory — this is a patient who will arrest in the next 10-12 minutes if not aggressively stabilized AND simultaneously prepared for arrest.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Verbal",
+        "gcs": { "eye": 3, "verbal": 3, "motor": 6 },
+        "airway": "Patent for now but at risk with declining mentation; pooled secretions audible, no stridor",
+        "breathing": "RR 32, labored, accessory muscle use, tripod-leaning slightly forward in recliner; bibasilar coarse crackles to midfields; pink-tinged frothy sputum at lip corners",
+        "circulation": "Thready radial pulses at HR ~120s; cool clammy skin to elbows and knees; cap refill >4 seconds; bilateral pitting edema to mid-shin; faint JVD visible despite poor light",
+        "skin": { "color": "gray-pale", "temperature": "cool", "moisture": "diaphoretic" },
+        "pupils": "3 mm bilaterally, sluggish but reactive",
+        "motorFunction": "Withdraws to pain, no spontaneous purposeful movement",
+        "otherFindings": [
+          "Audible wet rales heard before stethoscope is applied",
+          "Pitting edema to mid-shin bilaterally",
+          "Patient cannot lie flat — orthopneic",
+          "Wife confirms 12 lb weight gain over 2 weeks",
+          "Home pulse oximeter on side table reading 87%"
+        ],
+        "patientSpeech": "Mumbled, non-sensical responses; will not answer orientation questions"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 124,
+        "bpSys": 78,
+        "bpDia": 52,
+        "respRate": 32,
+        "spo2": 88,
+        "etco2": 28,
+        "temp": 36.4,
+        "tempF": 97.5,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-cardiogenic-shock",
+          "shortAction": "Recognize cardiogenic shock + pulm edema; withhold large fluid boluses",
+          "protocolExcerpt": "Patient Safety Considerations: Recognition of cardiogenic shock - If the patient condition deteriorates after fluid administration, rales or hepatomegaly develop, then consider cardiogenic shock and withholding further fluid administration.",
+          "priority": "critical",
+          "rationale": "The constellation (hypotension + rales + AMS + cool/clammy + HFrEF history) is cardiogenic shock with cardiogenic pulmonary edema. Aggressive crystalloid will drown this patient.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "high-flow-o2",
+          "shortAction": "High-flow O2 via NRB; titrate to SpO2 94-98%",
+          "protocolExcerpt": "Administer oxygen as appropriate with a target of achieving 94–98% saturation.",
+          "priority": "critical",
+          "rationale": "SpO2 88% with pulmonary edema — supplemental O2 is the first respiratory intervention before considering NIV.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "cardiac-monitor-pads",
+          "shortAction": "Cardiac monitor on; place defib pads anticipating arrest",
+          "protocolExcerpt": "Patient Safety Considerations: Consider placing defibrillator pads on high-risk patients. Consider configuring monitor/defibrillator to allow automatic VT/VF alert.",
+          "priority": "critical",
+          "rationale": "High-risk patient (cardiogenic shock, anterior STEMI, AMS) — pads on BEFORE arrest. This is the teaching beat for smooth transition.",
+          "protocolReference": "MATC: Chest Pain/ACS/STEMI"
+        },
+        {
+          "id": "12-lead-ekg",
+          "shortAction": "Obtain 12-lead within 10 minutes; identify anterior STEMI",
+          "protocolExcerpt": "The 12-lead EKG is the primary diagnostic tool that identifies a STEMI; it is imperative that EMS clinicians routinely acquire a 12-lead EKG within 10 minutes for all patients exhibiting signs and symptoms of ACS. Advance notification should be provided to the receiving hospital for patients identified as having a STEMI.",
+          "priority": "critical",
+          "rationale": "Identifying the anterior STEMI changes the destination and confirms the arrest etiology — driving cath lab activation and the differential.",
+          "protocolReference": "MATC: Chest Pain/ACS/STEMI"
+        },
+        {
+          "id": "iv-io-access",
+          "shortAction": "Two large-bore IVs (or IO if 2 attempts/90s fail)",
+          "protocolExcerpt": "Establish IV access. If unable to obtain within two attempts or less than 90 seconds, place an IO needle.",
+          "priority": "critical",
+          "rationale": "Pressors and arrest drugs both require reliable access. Cool clammy peripherals make IV difficult — be ready to escalate to IO early.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "etco2-monitoring",
+          "shortAction": "Apply continuous waveform EtCO2 (low value confirms poor perfusion)",
+          "protocolExcerpt": "Pulse oximetry and EtCO2 (reading of less than 25 mmHg may be sign of poor perfusion).",
+          "priority": "important",
+          "rationale": "EtCO2 28 mmHg corroborates hypoperfusion; trend is more valuable than absolute value and will be the first thing to crater as the patient progresses to PEA.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "check-glucose",
+          "shortAction": "Check blood glucose; correct if <60 mg/dL",
+          "protocolExcerpt": "Check blood sugar, and correct if less than 60 mg/dL.",
+          "priority": "important",
+          "rationale": "AMS workup — rule out hypoglycemia early. Glucose 142, no correction needed, but documentation closes the loop.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "stemi-alert",
+          "shortAction": "STEMI alert to cath-capable facility; transmit 12-lead",
+          "protocolExcerpt": "Advance notification should be provided to the receiving hospital for patients identified as having a STEMI.",
+          "priority": "critical",
+          "rationale": "Anterior STEMI is the reversible cause. Early notification and direct routing to PCI shortens reperfusion time.",
+          "protocolReference": "MATC: Chest Pain/ACS/STEMI"
+        },
+        {
+          "id": "screen-pde5",
+          "shortAction": "Screen for PDE5 inhibitor use in last 48 hr (contraindicates NTG)",
+          "protocolExcerpt": "The use of nitrates should be avoided in any patient who has used a phosphodiesterase inhibitor within the past 48 hours. Examples include sildenafil (Viagra®, Revatio®), vardenafil (Levitra®, Staxyn®), tadalafil (Cialis®, Adcirca®).",
+          "priority": "important",
+          "rationale": "Always ask before NTG. In this case BP is already too low for nitrates, but the question must be asked and documented.",
+          "protocolReference": "MATC: Chest Pain/ACS/STEMI"
+        },
+        {
+          "id": "withhold-aggressive-fluids",
+          "shortAction": "Hold large-volume crystalloid; small 250 mL bolus only if attempted",
+          "protocolExcerpt": "SBP less than 100 mmHg: IV fluid bolus 250–500 mL. Consider vasopressor: Norepinephrine 0.02–2 mcg/kg/min.",
+          "priority": "critical",
+          "rationale": "Per the pulm-edema-with-hypotension pathway, only a small 250-500 mL bolus is appropriate before reaching for pressors. Anything more worsens the edema.",
+          "protocolReference": "MATC: Respiratory Distress"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "preparing-pressors",
+          "if": "Pads on, pressors prepped, no aggressive fluids",
+          "condition": "Crew recognizes cardiogenic shock with pulmonary edema, applies high-flow O2 and defibrillator pads early, obtains 12-lead showing anterior STEMI, establishes access, and begins preparing push-dose epinephrine or a norepinephrine infusion while withholding aggressive crystalloid. This is the prepared default path.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "recognize-cardiogenic-shock",
+            "high-flow-o2",
+            "cardiac-monitor-pads",
+            "12-lead-ekg",
+            "iv-io-access",
+            "withhold-aggressive-fluids"
+          ]
+        },
+        {
+          "targetPhaseId": "aggressive-fluid-branch",
+          "if": "Large-volume fluid bolus given (>500 mL)",
+          "condition": "Crew misreads the picture as undifferentiated shock and hangs 1-2 L NS wide-open. SpO2 drops, rales climb to apices, frothy sputum increases, mental status worsens. Patient is now in worse condition heading into the inevitable arrest.",
+          "conditionType": "action_taken",
+          "triggerActionIds": ["withhold-aggressive-fluids"]
+        },
+        {
+          "targetPhaseId": "unprepared-branch",
+          "if": "No pads on, no pressors prepped (supportive only)",
+          "condition": "Crew provides oxygen and IV access but does not place defibrillator pads, does not prepare pressors, and does not anticipate arrest. Patient continues to deteriorate and will arrest under unprepared conditions.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": ["cardiac-monitor-pads"]
+        }
+      ]
+    },
+    {
+      "id": "preparing-pressors",
+      "name": "Pads on, pressors prepped",
+      "description": "Crew has recognized cardiogenic shock + pulmonary edema, placed pads, started high-flow O2, obtained 12-lead confirming anterior STEMI, transmitted STEMI alert, established IV access, and is now actively preparing pressors. Patient continues to deteriorate physiologically despite the right preparation — BP drifts to 64/42, HR climbs to 132, SpO2 falls to 84%, mentation worsens to GCS 9 (E2 V2 M5). This is the window for push-dose epinephrine and/or initiating a norepinephrine infusion. CPAP may be considered cautiously but the BP is borderline.",
+      "triggerCondition": "Crew correctly identified cardiogenic shock + pulmonary edema, placed pads, withheld aggressive fluids, and transitioned to active pressor preparation. Patient continues to deteriorate physiologically as expected — pre-arrest management now requires hemodynamic support BEFORE arrest occurs.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 2, "verbal": 2, "motor": 5 },
+        "airway": "Patent but increasingly at risk; pooled secretions, occasional gurgle on expiration",
+        "breathing": "RR 36, very labored, retractions visible; crackles now to mid-back; frothy pink sputum at the lips",
+        "circulation": "Radials barely palpable; carotid present; cool mottled extremities to knees/elbows; cap refill >5 sec",
+        "skin": { "color": "mottled-gray", "temperature": "cool", "moisture": "diaphoretic" },
+        "pupils": "3 mm sluggish bilaterally",
+        "motorFunction": "Withdraws to pain only, no localization",
+        "otherFindings": [
+          "Frothy pink sputum increasing at the lips",
+          "Defib pads in place (anterior-lateral)",
+          "12-lead transmitted, STEMI alert acknowledged by receiving facility",
+          "Trajectory clearly worsening despite oxygen and supportive care"
+        ],
+        "patientSpeech": "Moans only, no comprehensible speech"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 132,
+        "bpSys": 64,
+        "bpDia": 42,
+        "respRate": 36,
+        "spo2": 84,
+        "etco2": 24,
+        "temp": 36.2,
+        "tempF": 97.2,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "push-dose-epi",
+          "shortAction": "Push-dose epi 10 mcg IV q3-5 min (dilute 1 mL 1:10,000 in 9 mL NS = 10 mcg/mL; give 1 mL)",
+          "protocolExcerpt": "Alternative to a drip, push dose epinephrine may be administered: Prepare 10 mcg/mL by diluting 1 mL of epinephrine 0.1 mg/mL (1:10,000) in 9 mL of normal saline. Administer 0.01 mg/kg (0.1 mL/kg) up to a maximum single dose of 10 mcg (1 mL) q 3–5 minutes titrated to maintain goal MAP.",
+          "priority": "critical",
+          "rationale": "Rapid temporizing measure to buy MAP while norepinephrine is being mixed/hung. Push-dose works in seconds; infusion takes minutes to prepare.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "norepi-infusion",
+          "shortAction": "Start norepinephrine 0.05-0.5 mcg/kg/min (88 kg → start ~4.4 mcg/min, titrate to MAP 65)",
+          "protocolExcerpt": "Vasopressors (shock unresponsive to IV fluids) titrated to physiologic targets — Cardiogenic, hypovolemic, obstructive shock and distributive shock: Norepinephrine 0.05–0.5 mcg/kg/minute. Preference in both neurogenic and infectious (sepsis) causes of distributive shock.",
+          "priority": "critical",
+          "rationale": "Norepinephrine is the workhorse pressor for cardiogenic shock with hypotension. Goal is MAP ≥65. Push-dose bridges until the infusion is hung.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "small-fluid-bolus",
+          "shortAction": "Small fluid bolus 250 mL NS only; reassess lungs after",
+          "protocolExcerpt": "SBP less than 100 mmHg: IV fluid bolus 250–500 mL. Consider vasopressor: Norepinephrine 0.02–2 mcg/kg/min.",
+          "priority": "important",
+          "rationale": "Protocol explicitly limits the bolus to 250-500 mL when SBP <100 in suspected pulmonary edema, paired with pressors. Reassess lungs after.",
+          "protocolReference": "MATC: Respiratory Distress"
+        },
+        {
+          "id": "cpap-trial-conditional",
+          "shortAction": "CPAP only if SBP supports; remove if mental status worsens",
+          "protocolExcerpt": "Adults with suspected pulmonary edema due to acute heart failure or fluid overload: Restoration of adequate oxygenation and ventilation should precede or be accomplished simultaneously with other medication therapies below. CPAP/BiPAP: See Airway Management Guideline for goals of care and escalation of interventions.",
+          "priority": "supplemental",
+          "rationale": "CPAP is the right tool for cardiogenic pulm edema, but borderline BP and declining mentation make it marginal here. If pressors restore MAP, then CPAP. If mentation worsens, abandon CPAP and prepare to control the airway.",
+          "protocolReference": "MATC: Respiratory Distress"
+        },
+        {
+          "id": "withhold-ntg-low-bp",
+          "shortAction": "Withhold NTG — SBP too low; document rationale",
+          "protocolExcerpt": "Nitroglycerin 0.4 mg sublingual (SL), can repeat q 3–5 minutes if SBP greater than 100 mmHg. Care should always be taken when giving nitroglycerin when the patient's blood pressure is marginal.",
+          "priority": "critical",
+          "rationale": "STEMI protocol allows NTG only if SBP >100. With SBP 64-78, NTG will collapse perfusion. Hard hold and documentation.",
+          "protocolReference": "MATC: Chest Pain/ACS/STEMI"
+        },
+        {
+          "id": "aspirin-asa",
+          "shortAction": "Aspirin 324 mg chewed (if patient can protect airway)",
+          "protocolExcerpt": "Administer aspirin; chewable, non-enteric-coated aspirin preferred (162–325 mg).",
+          "priority": "important",
+          "rationale": "ASA in suspected ACS. With declining mentation, only give if the patient can swallow safely; otherwise document deferral.",
+          "protocolReference": "MATC: Chest Pain/ACS/STEMI"
+        },
+        {
+          "id": "prep-rsi-airway",
+          "shortAction": "Prepare RSI equipment + drugs in anticipation of airway failure",
+          "protocolExcerpt": "Rapid/Delayed Sequence Intubation — Used in circumstances when protective airway reflexes are intact, and the patient requires the placement of an endotracheal tube. There should be a minimum of two experienced airway practitioners at the patient's side for this procedure. Patient should be pre-oxygenated with high flow oxygen, and positive pressure ventilation for a minimum of two minutes prior to the procedure.",
+          "priority": "important",
+          "rationale": "Trajectory points to airway compromise. Setting up equipment, drawing induction/paralytic, and pre-oxygenating now means a controlled airway later — not a scrambled one mid-arrest.",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "draw-arrest-drugs",
+          "shortAction": "Draw epinephrine 1 mg (1:10,000) for IV/IO arrest dose",
+          "protocolExcerpt": "If feasible, IV or IO access should be obtained. Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms.",
+          "priority": "important",
+          "rationale": "Pre-drawing arrest meds is the difference between a smooth transition and a fumbled one. PEA is coming.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "pea-arrest",
+          "if": "Patient progresses to PEA arrest",
+          "condition": "Despite appropriate pre-arrest management, the patient's cardiogenic shock progresses to pulseless electrical activity. The rhythm on the monitor is a slow narrow complex without a palpable pulse. Crew is prepared — pads are on, drugs are drawn, transition is seamless.",
+          "conditionType": "vital_threshold"
+        }
+      ]
+    },
+    {
+      "id": "aggressive-fluid-branch",
+      "name": "Aggressive fluid bolus given",
+      "description": "Crew misread the picture and ran 1-2 L NS wide-open for 'shock.' Pulmonary edema crescendos: rales now to apices, frothy pink sputum pouring from the mouth, SpO2 crashes to 72% even on NRB, BP continues to fall to 58/36, mentation drops to GCS 6. Patient is now in worse condition heading into arrest — refractory pulm edema will make BVM ventilation extremely difficult and any post-ROSC will be brutal.",
+      "triggerCondition": "Crew gave 1-2 L NS wide-open thinking this was undifferentiated shock. Crystalloid worsened the pulmonary edema dramatically — what was a 12-minute window before arrest is now ~5 minutes, and the patient will arrest with grossly soiled airways.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 1, "verbal": 2, "motor": 3 },
+        "airway": "Compromised — copious frothy pink sputum requires near-constant suctioning",
+        "breathing": "RR 40 agonal-quality, severe retractions, rales now to apices bilaterally, BVM ventilation meets stiff resistance",
+        "circulation": "No palpable radials; weak carotid; cap refill >6 sec; cyanosis at lips and fingertips",
+        "skin": { "color": "cyanotic-gray", "temperature": "cold", "moisture": "drenched diaphoretic" },
+        "pupils": "4 mm sluggish bilaterally",
+        "motorFunction": "Decerebrate posturing to deep pain",
+        "otherFindings": [
+          "Frothy pink sputum pouring from the mouth",
+          "BVM meets severe airway resistance — pulmonary edema makes ventilation almost ineffective",
+          "Crew now scrambling to reverse course"
+        ],
+        "patientSpeech": "None"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 138,
+        "bpSys": 58,
+        "bpDia": 36,
+        "respRate": 40,
+        "spo2": 72,
+        "etco2": 18,
+        "temp": 36.0,
+        "tempF": 96.8,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "stop-fluids",
+          "shortAction": "Stop fluids immediately; recognize iatrogenic worsening",
+          "protocolExcerpt": "Patient Safety Considerations: Recognition of cardiogenic shock - If the patient condition deteriorates after fluid administration, rales or hepatomegaly develop, then consider cardiogenic shock and withholding further fluid administration.",
+          "priority": "critical",
+          "rationale": "Protocol directly addresses this scenario: if the patient deteriorates after fluids and develops rales, withhold further fluid. The teaching moment is to recognize the error fast and stop.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "aggressive-suction",
+          "shortAction": "Aggressive suction; SALAD technique for soiled airway",
+          "protocolExcerpt": "Suction airway: for significantly contaminated airways, consider utilizing a suction assisted laryngeal airway decontamination (SALAD) technique.",
+          "priority": "critical",
+          "rationale": "Refractory pulmonary edema means the airway is full of frothy fluid. Without aggressive suction, ventilation is futile.",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "rescue-pressors",
+          "shortAction": "Push-dose epi 10 mcg IV + start norepinephrine infusion now",
+          "protocolExcerpt": "Vasopressors (shock unresponsive to IV fluids) titrated to physiologic targets — Cardiogenic, hypovolemic, obstructive shock and distributive shock: Norepinephrine 0.05–0.5 mcg/kg/minute. Epinephrine, 0.05–0.3 mcg/kg/minute. Alternative to a drip, push dose epinephrine may be administered.",
+          "priority": "critical",
+          "rationale": "Late but still mandatory. The fluid load is already in the lungs; pressors are now the only hemodynamic lever left.",
+          "protocolReference": "MATC: Shock"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "pea-arrest-difficult",
+          "if": "Patient arrests with refractory pulmonary edema",
+          "condition": "Patient progresses to PEA arrest under significantly worse conditions: refractory pulmonary edema, no pre-drawn drugs, scrambled team posture, airway grossly soiled. Resus will be harder and ROSC less likely.",
+          "conditionType": "vital_threshold"
+        }
+      ]
+    },
+    {
+      "id": "unprepared-branch",
+      "name": "No pre-arrest preparation",
+      "description": "Crew is running supportive care: oxygen on, IV established, calmly assessing. No defib pads. No pressors prepared. No arrest drugs drawn. RSI equipment is in the bag, untouched. Patient continues to deteriorate exactly as expected, but now the arrest will be a surprise — pads have to be placed mid-compressions, drugs have to be drawn mid-arrest, and the first dose of epi will be late.",
+      "triggerCondition": "Crew did not anticipate arrest. They are providing reasonable supportive care for a sick patient but are not posturing for the inevitable arrest. When the patient codes, they will scramble — slower pads, slower drugs, slower defibrillation if shockable.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Pain",
+        "gcs": { "eye": 2, "verbal": 2, "motor": 5 },
+        "airway": "Patent but progressively worsening secretions",
+        "breathing": "RR 36, very labored, crackles to mid-back",
+        "circulation": "Radials barely palpable; cool mottled to knees/elbows",
+        "skin": { "color": "mottled-gray", "temperature": "cool", "moisture": "diaphoretic" },
+        "pupils": "3 mm sluggish bilaterally",
+        "motorFunction": "Withdraws to pain only",
+        "otherFindings": [
+          "Defib pads NOT placed",
+          "No pressors mixed",
+          "Arrest drugs NOT drawn",
+          "RSI kit NOT staged"
+        ],
+        "patientSpeech": "Moans only"
+      },
+      "monitorState": {
+        "ecgRhythm": "Sinus Tachycardia",
+        "ecgWaveform": 9,
+        "hr": 134,
+        "bpSys": 62,
+        "bpDia": 40,
+        "respRate": 36,
+        "spo2": 82,
+        "etco2": 22,
+        "temp": 36.2,
+        "tempF": 97.2,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "place-pads-now",
+          "shortAction": "Place defibrillator pads NOW; configure VT/VF alert",
+          "protocolExcerpt": "Patient Safety Considerations: Consider placing defibrillator pads on high-risk patients. Consider configuring monitor/defibrillator to allow automatic VT/VF alert.",
+          "priority": "critical",
+          "rationale": "Recovery action — get pads on before arrest. This is still recoverable if the crew course-corrects.",
+          "protocolReference": "MATC: Chest Pain/ACS/STEMI"
+        },
+        {
+          "id": "start-pressor-now",
+          "shortAction": "Push-dose epi 10 mcg IV; mix norepi infusion",
+          "protocolExcerpt": "Alternative to a drip, push dose epinephrine may be administered: Prepare 10 mcg/mL by diluting 1 mL of epinephrine 0.1 mg/mL (1:10,000) in 9 mL of normal saline. Administer 0.01 mg/kg (0.1 mL/kg) up to a maximum single dose of 10 mcg (1 mL) q 3–5 minutes titrated to maintain goal MAP.",
+          "priority": "critical",
+          "rationale": "Recovery action — start pressors now before arrest. Better late than never.",
+          "protocolReference": "MATC: Shock"
+        },
+        {
+          "id": "draw-arrest-drugs-now",
+          "shortAction": "Pre-draw 1 mg epi (1:10,000) for arrest",
+          "protocolExcerpt": "Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms.",
+          "priority": "important",
+          "rationale": "Get drugs ready now so the transition is at least less scrambled.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "pea-arrest-difficult",
+          "if": "Patient arrests with pads off and drugs not drawn",
+          "condition": "Patient progresses to PEA arrest unprepared. Pads must be placed mid-compressions, the first dose of epinephrine is delayed while it is drawn up, and the team is reactive rather than proactive.",
+          "conditionType": "vital_threshold"
+        }
+      ]
+    },
+    {
+      "id": "pea-arrest",
+      "name": "PEA arrest — prepared team",
+      "description": "Patient is now in PEA arrest. The monitor shows a slow narrow-complex rhythm at ~30 bpm with no palpable pulse. Because the crew anticipated this, the transition is seamless: pads already on, compressions start immediately, the first dose of epinephrine is already drawn and given within 60 seconds, BVM is in line with the existing capnography, and norepinephrine infusion is paused on the pump (or hung wide-open as a vehicle for arrest meds). Anterior STEMI is the working etiology — there will be no shockable rhythm in this branch.",
+      "triggerCondition": "Patient progresses from cardiogenic shock to pulseless electrical activity. Cardiogenic shock with anterior STEMI is the cause — coronary perfusion has failed. Because the crew prepared, the transition into resuscitation is smooth.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "Apneic; OPA in place; BVM with PEEP attached",
+        "breathing": "Apneic — ventilations being delivered by BVM at 10/min asynchronous with compressions",
+        "circulation": "Pulseless; CPR in progress with mechanical or manual compressions at 100-120/min, depth 2-2.4 inches, full recoil",
+        "skin": { "color": "ashen", "temperature": "cool", "moisture": "diaphoretic-then-cooling" },
+        "pupils": "4 mm, fixed",
+        "motorFunction": "None",
+        "otherFindings": [
+          "Pads already in place from pre-arrest phase",
+          "EtCO2 waveform showing compressions ~14-16 mmHg",
+          "Team running 'pit crew' roles smoothly",
+          "Reversible cause already identified — anterior STEMI"
+        ],
+        "patientSpeech": "None"
+      },
+      "monitorState": {
+        "ecgRhythm": "Pulseless Electrical Activity (PEA)",
+        "ecgWaveform": 9,
+        "hr": 30,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 15,
+        "temp": 36.0,
+        "tempF": 96.8,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 15,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": false,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "immediate-compressions",
+          "shortAction": "Start high-quality CPR (100-120/min, depth 2-2.4 in, full recoil)",
+          "protocolExcerpt": "Effective chest compressions are defined as: A rate of greater than 100 and less than 120 compressions/minute. Depth of at least 2 inches (5 cm) and less than 2.4 inches (6 cm) for adults and children. Allow for complete chest recoil (avoid leaning). Minimize interruptions in compressions.",
+          "priority": "critical",
+          "rationale": "Foundation of cardiac arrest care. Quality matters more than any drug.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        },
+        {
+          "id": "epi-arrest-dose",
+          "shortAction": "Epinephrine 1 mg IV/IO (1:10,000) — give within first cycle, repeat q3-5 min",
+          "protocolExcerpt": "If feasible, IV or IO access should be obtained. Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms.",
+          "priority": "critical",
+          "rationale": "PEA is non-shockable — early epi is the highest-yield drug intervention. Already pre-drawn, given fast.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        },
+        {
+          "id": "ventilation-rate",
+          "shortAction": "Ventilate at 10/min via BVM; avoid hyperventilation",
+          "protocolExcerpt": "BVM ventilation at 10 breaths per minute (1 breath every 10 compressions), applied during the upstroke between compressions, without interrupting the compressions.",
+          "priority": "critical",
+          "rationale": "Hyperventilation increases intrathoracic pressure, decreases venous return, and worsens outcomes. 10/min is the target.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        },
+        {
+          "id": "etco2-monitor-cpr",
+          "shortAction": "Monitor EtCO2 for CPR quality (target >10); watch for ROSC spike",
+          "protocolExcerpt": "Quantitative end-tidal capnography (EtCO2) should be used to monitor effectiveness of chest compressions. If EtCO2 less than 10 mmHg during the initial phases of resuscitation, attempt to improve chest compression quality.",
+          "priority": "critical",
+          "rationale": "EtCO2 is the objective measure of compression quality and the earliest indicator of ROSC.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        },
+        {
+          "id": "reversible-causes",
+          "shortAction": "Address reversible cause — anterior STEMI; continue toward PCI center",
+          "protocolExcerpt": "Consider reversible causes of cardiac arrest which include the following: Hypothermia, The dialysis patient/known hyperkalemic patient, Tricyclic antidepressant overdose, Hypovolemia, If the patient is intubated at the time of arrest, assess for tension pneumothorax and misplaced ETT.",
+          "priority": "critical",
+          "rationale": "The Hs and Ts thinking — known anterior STEMI is the precipitant. Continued transport to cath-capable facility while resuscitating may be appropriate per local protocol.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        },
+        {
+          "id": "rhythm-check-2min",
+          "shortAction": "Pulse + rhythm check every 2 min; minimize interruption",
+          "protocolExcerpt": "Continue the cycle of chest compressions for 2 minutes, followed by rhythm analysis and defibrillation of shockable rhythms.",
+          "priority": "critical",
+          "rationale": "Standard cycle. If a shockable rhythm appears (VT/VF develops in the setting of STEMI), defibrillate per manufacturer-recommended energy.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        },
+        {
+          "id": "defibrillate-if-shockable",
+          "shortAction": "If VF/pVT develops: defibrillate at 200 J biphasic (Zoll max)",
+          "protocolExcerpt": "Defibrillation dosing should follow manufacturer's recommendation in the case of biphasic defibrillators. Zoll: Adult – 120 J, 150 J, 200 J.",
+          "priority": "critical",
+          "rationale": "Anterior STEMI patients can deteriorate from PEA into VF/pulseless VT — be ready to shock immediately given pads are already on.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        },
+        {
+          "id": "consider-advanced-airway",
+          "shortAction": "Consider SGA or ETT after first 3-4 cycles (~6-8 min) if needed",
+          "protocolExcerpt": "Passive ventilation: High flow oxygen is applied via a non-rebreather mask with an oropharyngeal airway. This may be applied for the first 3–4 compression cycles (6–8 minutes), after which one may consider BVM ventilation or placement of an advanced airway.",
+          "priority": "important",
+          "rationale": "Don't rush the advanced airway. Compressions first; airway second if BVM is failing or after 3-4 cycles.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "rosc",
+          "if": "ROSC achieved",
+          "condition": "After 2-3 cycles of high-quality CPR with epinephrine and supportive care, EtCO2 spikes from ~15 to >30 mmHg. Pulse check reveals an organized rhythm with palpable carotid. ROSC achieved.",
+          "conditionType": "vital_threshold"
+        }
+      ]
+    },
+    {
+      "id": "pea-arrest-difficult",
+      "name": "PEA arrest — unprepared/refractory",
+      "description": "Patient is in PEA arrest under significantly worse conditions. Pads must be placed mid-compressions OR airway is refractory due to fluid overload. First dose of epinephrine is delayed. EtCO2 is lower (~8-10 mmHg), reflecting either poor compression quality during the scramble or impaired pulmonary gas exchange from edema. ROSC is less likely; if achieved, the patient will be markedly more unstable.",
+      "triggerCondition": "Patient progresses to PEA arrest having either received excessive crystalloid (refractory pulmonary edema) OR without any pre-arrest preparation (no pads, no pressors, no drugs drawn). The resuscitation is now a recovery effort against a stacked deck.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 1 },
+        "airway": "Heavily soiled with frothy edema fluid OR no advanced airway adjuncts staged",
+        "breathing": "Apneic; BVM ventilation meets high resistance from pulmonary edema",
+        "circulation": "Pulseless; CPR in progress but quality variable as team scrambles",
+        "skin": { "color": "cyanotic", "temperature": "cold", "moisture": "drenched" },
+        "pupils": "5 mm fixed",
+        "motorFunction": "None",
+        "otherFindings": [
+          "Pads being placed mid-compressions OR airway full of frothy fluid",
+          "First epi dose 90-120 seconds late vs prepared team",
+          "EtCO2 in single digits initially"
+        ],
+        "patientSpeech": "None"
+      },
+      "monitorState": {
+        "ecgRhythm": "Pulseless Electrical Activity (PEA)",
+        "ecgWaveform": 9,
+        "hr": 24,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 9,
+        "temp": 36.0,
+        "tempF": 96.8,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 15,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": false,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "rescue-compressions",
+          "shortAction": "Establish high-quality compressions and rotate every 2 min",
+          "protocolExcerpt": "Effective chest compressions are defined as: A rate of greater than 100 and less than 120 compressions/minute. Depth of at least 2 inches (5 cm) and less than 2.4 inches (6 cm) for adults. Allow for complete chest recoil. Minimize interruptions. Avoid rescuer fatigue by rotating rescuers at least every 2 minutes.",
+          "priority": "critical",
+          "rationale": "Reset the basics — quality compressions are still the highest-yield intervention.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        },
+        {
+          "id": "rescue-pads",
+          "shortAction": "Place pads emergently; resume compressions immediately after",
+          "protocolExcerpt": "If the patient is being monitored with pads in place at the time of arrest, immediate defibrillation should take precedence over all other therapies. However, if there is any delay in defibrillation (e.g., in order to place pads), chest compressions should be initiated while the defibrillator is being applied.",
+          "priority": "critical",
+          "rationale": "Compressions don't wait for pads. Pads applied during ongoing CPR.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        },
+        {
+          "id": "rescue-epi",
+          "shortAction": "Epinephrine 1 mg IV/IO ASAP; repeat q3-5 min",
+          "protocolExcerpt": "Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms.",
+          "priority": "critical",
+          "rationale": "Late but still mandatory. The delay matters.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        },
+        {
+          "id": "salad-airway",
+          "shortAction": "SALAD suction; consider early ETT for refractory edema airway",
+          "protocolExcerpt": "Suction airway: for significantly contaminated airways, consider utilizing a suction assisted laryngeal airway decontamination (SALAD) technique. Endotracheal intubation — When less-invasive methods (two-person BVM, SGA placement) are ineffective or inappropriate, consider endotracheal intubation to maintain oxygenation and/or ventilation.",
+          "priority": "critical",
+          "rationale": "If pulmonary edema is making BVM ineffective, control the airway. Standard sequence (BVM first) may be bypassed when ventilation is failing.",
+          "protocolReference": "MATC: Airway Management"
+        },
+        {
+          "id": "address-cause-stemi",
+          "shortAction": "Address reversible cause — anterior STEMI; PCI-capable destination",
+          "protocolExcerpt": "Consider reversible causes of cardiac arrest which include the following: Hypothermia, The dialysis patient/known hyperkalemic patient, Tricyclic antidepressant overdose, Hypovolemia, If the patient is intubated at the time of arrest, assess for tension pneumothorax and misplaced ETT.",
+          "priority": "critical",
+          "rationale": "STEMI was identified pre-arrest — still the working etiology. Transport choice matters.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        },
+        {
+          "id": "consider-termination",
+          "shortAction": "If 20+ min refractory, consider termination per protocol/medical control",
+          "protocolExcerpt": "If resuscitation remains ineffective, consider termination of resuscitation.",
+          "priority": "supplemental",
+          "rationale": "Honest call when interventions are not working. Local medical-control criteria apply.",
+          "protocolReference": "MATC: Cardiac Arrest"
+        }
+      ],
+      "transitions": []
+    },
+    {
+      "id": "rosc",
+      "name": "ROSC achieved",
+      "description": "After 2-3 cycles of high-quality CPR with epinephrine, EtCO2 spikes to 32 mmHg and a pulse check reveals an organized narrow-complex rhythm with a palpable carotid. Post-ROSC vitals: NSR at HR 102, BP 88/56, RR 0 (still apneic and being BVM ventilated), SpO2 92% on BVM with high-flow O2, EtCO2 26, GCS 4 (E1 V1 M2). Patient remains in critical condition. Norepinephrine infusion is restarted (or initiated if not previously hung) to support MAP. Serial 12-lead post-ROSC reconfirms anterior STEMI. Transport to PCI-capable facility continues with close monitoring for re-arrest.",
+      "triggerCondition": "ROSC after PEA arrest from cardiogenic shock secondary to anterior STEMI. Patient remains unstable and at high risk for re-arrest. The next 5-10 minutes of post-ROSC care will determine whether the patient survives to PCI.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": { "eye": 1, "verbal": 1, "motor": 2 },
+        "airway": "Apneic — BVM with OPA OR ETT in place post-RSI",
+        "breathing": "Apneic; ventilations 10/min via BVM; some lung compliance has returned with reduced edema burden",
+        "circulation": "NSR HR 102; weak but palpable radials; norepinephrine running at 4-6 mcg/min titrated to MAP 65",
+        "skin": { "color": "pale, less mottled", "temperature": "cool", "moisture": "diaphoretic" },
+        "pupils": "3 mm sluggish bilaterally",
+        "motorFunction": "Extends to deep pain only",
+        "otherFindings": [
+          "EtCO2 spiked from 15 to 32 at moment of ROSC",
+          "Norepinephrine infusion running",
+          "Serial 12-lead reconfirms anterior STEMI",
+          "Pads remain in place ready for re-arrest",
+          "Receiving cath lab notified of ROSC + STEMI"
+        ],
+        "patientSpeech": "None"
+      },
+      "monitorState": {
+        "ecgRhythm": "STEMI Anterior",
+        "ecgWaveform": 23,
+        "hr": 102,
+        "bpSys": 88,
+        "bpDia": 56,
+        "respRate": 10,
+        "spo2": 92,
+        "etco2": 26,
+        "temp": 36.0,
+        "tempF": 96.8,
+        "obstruction": 0,
+        "glucose": 142,
+        "customMeasures": [],
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": true,
+          "spo2Attached": true,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "post-rosc-airway",
+          "shortAction": "Secure airway (ETT or SGA); ventilate 10/min, target EtCO2 35-45",
+          "protocolExcerpt": "Do not hyperventilate. Maintain a ventilation rate of 8–10 breaths per minute, targeting an EtCO2 of 35–45 mmHg.",
+          "priority": "critical",
+          "rationale": "Most post-ROSC patients require airway management. Hyperventilation precipitates re-arrest.",
+          "protocolReference": "MATC: Adult Post-ROSC Care"
+        },
+        {
+          "id": "post-rosc-o2-target",
+          "shortAction": "Titrate O2 to SpO2 94-98%; do not hyperoxygenate",
+          "protocolExcerpt": "Administer oxygen as appropriate with a target of achieving 94–98% saturation. Do not hyperoxygenate.",
+          "priority": "critical",
+          "rationale": "Hyperoxia is harmful post-arrest. Wean from 100% as tolerated.",
+          "protocolReference": "MATC: Adult Post-ROSC Care"
+        },
+        {
+          "id": "post-rosc-pressor",
+          "shortAction": "Continue/start norepinephrine 0.05-0.5 mcg/kg/min; MAP target ≥65",
+          "protocolExcerpt": "For hypotension (SBP less than 90 mmHg or MAP less than 65 in adults) see Shock Guideline. Norepinephrine 0.05–0.5 mcg/kg/minute.",
+          "priority": "critical",
+          "rationale": "BP 88/56 → MAP ~67. Borderline. Pressor support keeps the brain and coronaries perfused.",
+          "protocolReference": "MATC: Adult Post-ROSC Care"
+        },
+        {
+          "id": "post-rosc-12lead",
+          "shortAction": "Repeat 12-lead; reconfirm anterior STEMI; activate cath lab",
+          "protocolExcerpt": "Perform serial 12-lead EKGs to assess for evidence of reversible cause of arrest such as STEMI or electrolyte derangement (e.g., hyperkalemia). Post-cardiac arrest patients with evidence or interpretation consistent with ST elevation myocardial infarction (STEMI/acute MI) should be transported preferably to a facility capable of emergent cardiac catheterization.",
+          "priority": "critical",
+          "rationale": "Confirms the etiology and drives destination. PCI is the definitive therapy.",
+          "protocolReference": "MATC: Adult Post-ROSC Care"
+        },
+        {
+          "id": "monitor-re-arrest",
+          "shortAction": "Watch for re-arrest; pads remain on; drugs stay drawn",
+          "protocolExcerpt": "Monitor closely for recurrence of cardiac arrest using clinical and adjunctive criteria such as cardiac monitoring, EtCO2 monitoring, and physical signs of perfusion.",
+          "priority": "critical",
+          "rationale": "Significant percentage of post-ROSC patients re-arrest. Stay ready.",
+          "protocolReference": "MATC: Adult Post-ROSC Care"
+        },
+        {
+          "id": "avoid-hyperthermia",
+          "shortAction": "Avoid hyperthermia (no warm blankets unless hypothermic)",
+          "protocolExcerpt": "Patient Safety Considerations: Avoid hyperthermia (temperature greater than 37.5° C or 99.5° F) by avoiding excessive environmental heat exposure, warm blankets, etc.",
+          "priority": "important",
+          "rationale": "Hyperthermia worsens neurologic outcome post-arrest.",
+          "protocolReference": "MATC: Adult Post-ROSC Care"
+        },
+        {
+          "id": "transport-pci",
+          "shortAction": "Direct transport to PCI-capable facility; pre-notify cath lab",
+          "protocolExcerpt": "Post-cardiac arrest patients with evidence or interpretation consistent with ST elevation myocardial infarction (STEMI/acute MI) should be transported preferably to a facility capable of emergent cardiac catheterization or, as a secondary option, to a STEMI receiving facility based upon local resources and system of care.",
+          "priority": "critical",
+          "rationale": "STEMI + post-ROSC + cardiogenic shock — definitive care is at a PCI-capable center, not the nearest ED.",
+          "protocolReference": "MATC: Adult Post-ROSC Care"
+        }
+      ],
+      "transitions": []
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

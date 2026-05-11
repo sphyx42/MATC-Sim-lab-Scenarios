@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asystole/Agonal Rhythm with DNR Confusion — Printable</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--card:#fff;--card-border:#d6d3d1;--text:#1c1917;--text-secondary:#44403c;--text-muted:#78716c;--green:#166534;--red:#b91c1c;--red-light:#fef2f2;--red-border:#fecaca;--orange:#c2410c;--yellow:#a16207;--blue:#1e40af;--radius:8px;--radius-sm:6px}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'DM Sans','Helvetica Neue',Arial,sans-serif;background:#f5f5f4;color:var(--text);line-height:1.5;padding:24px;font-size:12pt}
+.sheet{max-width:800px;margin:0 auto;background:#fff;padding:28px 32px;box-shadow:0 1px 4px rgba(0,0,0,.08);border-radius:10px}
+.scenario-name{font-size:11pt;color:var(--text-secondary)}
+.card{background:var(--card);border:1px solid var(--card-border);border-radius:var(--radius);margin-bottom:14px;overflow:hidden;break-inside:avoid}
+.card-title{font-size:9pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-muted);padding:10px 14px 6px;border-bottom:1px solid #f5f5f4}
+.card-content{padding:10px 14px 12px}
+.scene-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:110px 1fr;gap:10px}
+.scene-row:last-child{border-bottom:none}
+.scene-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.scene-value{font-size:11pt;color:var(--text-secondary)}
+.cue-list{list-style:none;margin:0}
+.cue-list li{font-size:11pt;color:var(--text-secondary);padding:3px 0 3px 14px;position:relative}
+.cue-list li::before{content:'→';position:absolute;left:0;color:var(--text-muted);font-size:10pt}
+.sample-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:#e7e5e4}
+.sample-cell{background:#fff;padding:9px 12px}
+.sample-cell:nth-child(1),.sample-cell:nth-child(6){grid-column:1/-1}
+.sample-letter{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--green);margin-right:4px}
+.sample-name{font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted);margin-bottom:3px}
+.sample-text{font-size:10.5pt;color:var(--text-secondary);line-height:1.45}
+.patient-chips{display:flex;gap:8px;flex-wrap:wrap}
+.patient-chip{font-size:10pt;padding:4px 10px;background:#f5f5f4;border-radius:6px;color:var(--text-secondary)}
+.patient-chip strong{color:var(--text);font-weight:700}
+.phase-section{break-before:auto;page-break-before:auto;margin-top:12px}
+.phase-section .phase-card{break-after:avoid;page-break-after:avoid}
+.phase-card{border-left:4px solid var(--text)}
+.phase-card-branch{border-left-color:var(--red)}
+.branch-tag{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--red);background:var(--red-light);padding:2px 8px;border-radius:4px;margin-bottom:6px}
+.phase-title{font-size:16pt;font-weight:700;margin-bottom:4px}
+.phase-trigger{font-family:'DM Mono',ui-monospace,monospace;font-size:9pt;color:var(--yellow);margin-bottom:6px}
+.phase-desc{font-size:11pt;color:var(--text-secondary);line-height:1.5}
+.ecg-label{font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;color:var(--text-secondary);padding:8px 12px;background:#fafaf9;border-bottom:1px solid #f0efec}
+.vitals-grid{display:flex;flex-wrap:wrap;gap:4px 18px;padding:8px 14px}
+.vital-cell{background:transparent;padding:0;text-align:left;display:flex;align-items:baseline;gap:4px}
+.vital-cell.full-width{grid-column:auto}
+.vital-name{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.vital-val{font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text);line-height:1.1}
+.vital-unit{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted)}
+.loc-block{margin-bottom:10px}
+.avpu-bar{display:flex;border:1px solid var(--card-border);border-radius:6px;overflow:hidden;margin-bottom:10px}
+.avpu-seg{flex:1;text-align:center;padding:6px 4px;font-family:'DM Mono',ui-monospace,monospace;font-size:10pt;font-weight:700;color:var(--text-muted);background:#fafaf9}
+.avpu-seg.sel-a{background:#ecfccb;color:var(--green)}
+.avpu-seg.sel-v{background:#fef3c7;color:var(--yellow)}
+.avpu-seg.sel-p{background:#ffedd5;color:var(--orange)}
+.avpu-seg.sel-u{background:var(--red-light);color:var(--red)}
+.gcs-detail{display:flex;flex-wrap:wrap;gap:6px 16px;padding:8px 14px;border:1px solid var(--card-border);border-radius:6px;margin-bottom:10px;align-items:baseline}
+.gcs-item{display:flex;align-items:baseline;gap:4px;padding:0;border:none}
+.gcs-item:last-of-type{border-bottom:none}
+.gcs-part{order:1;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-score{order:2;font-family:'DM Mono',ui-monospace,monospace;font-size:11pt;font-weight:700;color:var(--text)}
+.gcs-desc{order:3;font-size:9.5pt;color:var(--text-muted);font-style:italic}
+.gcs-desc::before{content:'('}
+.gcs-desc::after{content:')'}
+.gcs-total-row{display:flex;align-items:baseline;gap:4px;order:-1;padding:0;margin:0;border:none;font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:600;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.gcs-total-row .gcs-total{font-family:'DM Mono',ui-monospace,monospace;font-size:12pt;font-weight:700;color:var(--text)}
+.finding-row{padding:6px 0;border-bottom:1px solid #f5f5f4;display:grid;grid-template-columns:100px 1fr;gap:10px}
+.finding-row:last-child{border-bottom:none}
+.finding-label{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;font-weight:500;text-transform:uppercase;letter-spacing:.5px;color:var(--text-muted)}
+.finding-value{font-size:10.5pt;color:var(--text-secondary)}
+.finding-speech{font-style:italic;color:var(--text-muted)}
+.findings-notes{list-style:none;margin:0}
+.findings-notes li{font-size:10pt;color:var(--text-secondary);padding:2px 0 2px 12px;position:relative}
+.findings-notes li::before{content:'·';position:absolute;left:2px;font-weight:700;color:var(--text-muted)}
+.action-row{display:flex;gap:10px;padding:10px 0;border-bottom:1px solid #f5f5f4;break-inside:avoid}
+.action-row:last-child{border-bottom:none}
+.action-box{width:14px;height:14px;border:1.5px solid var(--text-muted);border-radius:3px;flex-shrink:0;margin-top:3px}
+.action-body{flex:1;min-width:0}
+.action-head{display:flex;align-items:flex-start;gap:8px;margin-bottom:4px}
+.action-priority{display:inline-block;font-family:'DM Mono',ui-monospace,monospace;font-size:7.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:2px 6px;border-radius:3px;flex-shrink:0;margin-top:2px}
+.p-critical{background:var(--red-light);color:var(--red)}
+.p-important{background:#fff7ed;color:var(--orange)}
+.p-supp{background:#f5f5f4;color:var(--text-muted)}
+.action-text{font-size:11pt;font-weight:600;color:var(--text);line-height:1.35}
+.action-rationale{display:none}
+.action-excerpt{font-size:9.5pt;color:var(--text-secondary);line-height:1.5;font-style:italic;border-left:2px solid var(--card-border);padding:2px 0 2px 9px;margin:5px 0 4px 0}
+.action-ref{font-family:'DM Mono',ui-monospace,monospace;font-size:8pt;color:var(--text-muted);font-weight:600;text-transform:uppercase;letter-spacing:.5px;margin-top:2px}
+.action-head{margin-bottom:0}
+.action-row{padding:8px 0}
+@media print{
+  body{background:#fff;padding:0;font-size:10pt}
+  .sheet{box-shadow:none;max-width:none;padding:0.4in;border-radius:0}
+  .card{break-inside:avoid;margin-bottom:8px}
+  .card-title{padding:6px 10px 3px}
+  .card-content{padding:6px 10px 8px}
+}
+</style>
+</head>
+<body>
+<div class="sheet">
+  <div class="card"><div class="card-title">Scenario</div><div class="card-content"><div class="scenario-name">Asystole/Agonal Rhythm with DNR Confusion</div></div></div>
+  <div class="card"><div class="card-title">Patient</div><div class="card-content"><div class="patient-chips"><span class="patient-chip"><strong>Margaret Ellen Voss</strong></span><span class="patient-chip">84 years female</span><span class="patient-chip">115 lbs (52 kg)</span><span class="patient-chip">5'3"</span><span class="patient-chip">CC: Unresponsive, apneic, pulseless 84-year-old female found in bed by adult daughter. End-stage COPD and CHF with progressive functional decline over the past month; family is not certain whether she was formally enrolled in hospice yet.</span></div></div></div>
+  <div class="card"><div class="card-title">Scene</div><div class="card-content">
+    <div class="scene-row"><div class="scene-label">Dispatch</div><div class="scene-value">Dispatch: 84-year-old female, unresponsive and not breathing, single-family residence. Caller is the patient's daughter, on scene with the patient. Home oxygen in use.</div></div>
+    <div class="scene-row"><div class="scene-label">Location</div><div class="scene-value">Modest single-story home; patient in a rented hospital bed positioned in the living room facing the front window. Living room arranged for end-of-life care — bedside commode, suction unit, wall-mounted oxygen concentrator (still running), small bedside table with medications and a half-empty water cup with a straw. Family photos on the walls. Hospice-style pillow and blanket setup; the bed has guardrails.</div></div>
+    <div class="scene-row"><div class="scene-label">Time</div><div class="scene-value">Tuesday, 21:45, weeknight evening</div></div>
+    <div class="scene-row"><div class="scene-label">Safety</div><div class="scene-value">Scene is safe — quiet single-family home, no pets in the room, adequate space and lighting to work. The oxygen concentrator is running and audible; the alarm chimes intermittently. Front door propped open by the daughter for EMS. No firearms or weapons. Family members are tearful but cooperative.</div></div>
+    <div class="scene-row"><div class="scene-label">Bystanders</div><div class="scene-value">Karen Voss (58, patient's daughter and primary caregiver) — present from the start, tearful, conflicted; she produces a folded document she calls 'mom's DNR' early in the encounter. She says: 'She didn't want any of this. I should have just sat with her, but I panicked and called you.' Tom Voss (62, patient's son) — arrives 3–4 minutes into the call, has not previously seen the form, more skeptical, asks: 'Are you sure that's a real DNR? Should you really be stopping?' Both children agree — verbally — that their mother repeatedly said she did not want CPR or intubation. There is NO additional family documentation beyond the single form Karen produces.</div></div>
+  </div></div><div class="card"><div class="card-title">Visual Cues on Arrival</div><div class="card-content"><ul class="cue-list"><li>Patient in hospital bed, head of bed slightly elevated, eyes closed, mouth slightly open, no respiratory effort</li><li>Home oxygen nasal cannula still in place at 2 L/min; concentrator alarming intermittently</li><li>Skin pale-gray, lips and fingertips cyanotic, jaw beginning to slacken; cheeks cool but no rigor mortis, no dependent lividity</li><li>Bedside table: pill organizer, water cup with straw, hand cream, family photos in frames</li><li>Hospice-style pillow nest and folded blanket at the foot of the bed (not yet under formal hospice care)</li><li>Daughter holding a folded document — visible state form header, comfort-measures-only box checked, signed 'J. Henson, NP-C' for 'Dr. R. Patel' within the past 30 days; printed photocopy on standard paper</li><li>Wall-mounted dry-erase board with hospice-style symptom-tracking notes and an emergency contact list with the pulmonologist's office number</li><li>No pre-existing 911-no-CPR bracelet on either wrist; no visible POLST magnet on the refrigerator</li></ul></div></div>
+  <div class="card">
+    <div class="card-title">SAMPLE History</div>
+    <div class="card-content" style="padding:0">
+      <div class="sample-grid">
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">S</span> Signs &amp; Symptoms</div><div class="sample-text">84-year-old female with end-stage chronic obstructive pulmonary disease (home O2 2 L/min continuous), severe biventricular congestive heart failure (NYHA Class IV, EF reported around 20%), moderate-stage dementia, chronic atrial fibrillation, and stage 4 chronic kidney disease. Over the past four weeks her family describes progressive bed-bound status, anorexia, somnolence, and increasing oxygen requirements. The pulmonologist and primary care physician had a goals-of-care conversation with the family three weeks ago and recommended hospice; the daughter signed paperwork with a hospice agency 'last Tuesday' but the formal admission visit and packet were not yet completed at the time of this call. The patient was last seen alive and breathing approximately 90 minutes ago when the daughter checked on her after dinner; the daughter went to lie down on the couch and was awakened by the home oxygen concentrator alarming. She found her mother apneic and unresponsive in the hospital bed in the living room. The daughter immediately called 911 — she states 'I panicked, I know she didn't want this, but I just called.' She produces a folded document from a kitchen drawer that she identifies as 'her DNR form from the pulmonologist.' On inspection it is a Wisconsin POLST/DNR-style document with the patient's printed name, date of birth, and current date marked 'comfort measures only — do not resuscitate, do not intubate'; it bears a signature on the 'signature of authorized practitioner' line legibly reading 'J. Henson, NP' followed by 'NP-C, Internal Medicine — for Dr. R. Patel.' The form is a printed photocopy (not the original), bears the correct state form header and color reproduction on copier paper, has not been altered or cut, and is signed and dated within the past 30 days. The crew cannot independently determine from the form alone whether a nurse practitioner signature satisfies the validity requirement — this is the central ambiguity. Per MATC protocol, when there is question about the validity of the form, the best course of action is to PROCEED WITH RESUSCITATION until additional information can be obtained.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">A</span> Allergies</div><div class="sample-text">Sulfa drugs — rash, No other known drug allergies</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">M</span> Medications</div><div class="sample-text">Furosemide 40 mg PO daily, Carvedilol 6.25 mg PO BID, Apixaban 2.5 mg PO BID (renal dose), Tiotropium inhaler daily, Albuterol/ipratropium nebulizer q6h PRN, Memantine 10 mg PO BID, Acetaminophen 650 mg PO q6h PRN, Home oxygen 2 L/min nasal cannula continuous</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">P</span> Past Medical</div><div class="sample-text">End-stage COPD — home O2 2 L/min via nasal cannula 24 h/day; multiple admissions over the past 2 years, Biventricular congestive heart failure — NYHA Class IV, EF approximately 20% on most recent echocardiogram, Chronic atrial fibrillation — rate-controlled, on apixaban, Moderate-stage dementia (Alzheimer type) — Mini-Mental ~14; cannot reliably make her own medical decisions, Chronic kidney disease stage 4 — declined dialysis, Hypertension, Osteoporosis with prior vertebral compression fractures, Family states pulmonologist recommended hospice 3 weeks ago; hospice paperwork signed but formal hospice admission not yet completed, Code status discussion documented in the chart per family: patient (when she still had capacity) and family agreed she did NOT want CPR or intubation</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">L</span> Last Intake</div><div class="sample-text">A few spoonfuls of mashed potatoes and applesauce at dinner approximately 3 hours ago; the family says she has been eating only minimally for the past 2 weeks.</div></div>
+        <div class="sample-cell"><div class="sample-name"><span class="sample-letter">E</span> Events</div><div class="sample-text">Daughter (Karen, 58) last saw her mother alive and breathing approximately 90 minutes ago when she helped her settle for the evening in the hospital bed in the living room. Karen lay down on the couch and was awakened by the oxygen concentrator alarming. She found her mother apneic, unresponsive, and cold to the touch on the cheek (but not yet cold throughout). She called 911 reflexively, then remembered the DNR/POLST and dug it out of the kitchen drawer. By the time EMS arrives — approximately 8–10 minutes after the 911 call — Karen is tearful and conflicted: 'I know she said she didn't want this. I have her form. But I called you.' Karen's brother Tom (62) arrives during the call, has not seen the form before, and asks pointed questions about whether the form is valid and whether the crew is obligated to start CPR.</div></div>
+      </div>
+    </div>
+  </div>
+  <section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Initial Contact</div>
+        
+        <div class="phase-desc">EMS arrives in the living room to find an 84-year-old female in a home hospital bed, unresponsive, apneic, with no palpable carotid pulse. The home O2 concentrator is alarming. The daughter (Karen) is tearful, holding what she calls 'mom's DNR' but the form has not yet been examined. None of the standard withholding-resuscitation criteria from MATC determination-of-death are met on inspection — no decapitation, decomposition, transection, incineration, injuries incompatible with life, dependent lividity, or rigor mortis; the patient is warm-cool, not cold-stiff. The form has not yet been verified as a valid exclusion to resuscitation. Per MATC protocol — 'In cases where the patient's status is unclear and the appropriateness of withholding resuscitation efforts is questioned, EMS personnel should initiate CPR immediately and contact medical direction.' The crew must begin compressions while one provider takes the document and starts the validity assessment in parallel. The teaching beat is that clinical care does not stop while validity is being reviewed — and that a verbal report from the family alone ('she didn't want this') is NOT a valid exclusion to resuscitation per MATC.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Asystole</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">0</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">0</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">96.4°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">110</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent but unprotected; jaw slack, mouth slightly open, no gag</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic — no chest rise, no breath sounds; home O2 nasal cannula still in place at 2 L/min</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">No palpable carotid pulse; no femoral pulse; skin pale-gray with mild peripheral cyanosis</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale-gray with cyanotic lips and fingertips · cool · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Mid-position (4 mm), minimally reactive bilaterally</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid, no spontaneous movement, no response to sternal rub</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"(Unresponsive — no speech)"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>No decapitation, decomposition, transection, incineration, or injuries incompatible with life</li><li>No dependent lividity; no rigor mortis (jaw and extremities still mobile)</li><li>Body warm-cool, not cold — consistent with arrest within the last 30–60 minutes</li><li>Daughter producing folded document she identifies as 'mom's DNR' — NOT yet examined for validity</li><li>Family verbal report: 'she didn't want CPR' — NOT a valid exclusion to resuscitation per MATC</li><li>Home oxygen still running; nasal cannula in place</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Primary survey; confirm apneic/pulseless; rule out obvious-death criteria</div></div>
+        <div class="action-excerpt">Resuscitation should be started on all patients who are found apneic and pulseless unless the following conditions exist (does not apply to victims of lightning strikes, drowning, or hypothermia): Medical cause or traumatic injury or body condition clearly indicating biological death (irreversible brain death), limited to: Decapitation; Decomposition or putrefaction; Transection of the torso; Incineration; Injuries incompatible with life; Futile and inhumane attempts as determined by agency policy/protocol; In blunt and penetrating trauma, if the patient is apneic, pulseless, and without other signs of life upon EMS arrival; Nontraumatic arrest with obvious signs of death including dependent lividity or rigor mortis.</div>
+        <div class="action-ref">↳ MATC: Determination of Death/Withholding Resuscitative Efforts</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Begin CPR immediately — validity of document is unclear; when in doubt, resuscitate</div></div>
+        <div class="action-excerpt">If there is question about the validity of the form/instrument, the best course of action is to proceed with the resuscitation until additional information can be obtained to clarify the best course of action. Patient Safety Considerations: In cases where the patient's status is unclear and the appropriateness of withholding resuscitation efforts is questioned, EMS personnel should initiate CPR immediately and contact medical direction.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">High-quality compressions — rate 100–120/min, depth 2–2.4 in, full recoil, minimize interruptions</div></div>
+        <div class="action-excerpt">Effective chest compressions and defibrillation are the most important therapies to the patient in cardiac arrest. Effective chest compressions are defined as: A rate of greater than 100 and less than 120 compressions/minute; Depth of at least 2 inches (5 cm) and less than 2.4 inches (6 cm) for adults and children; Allow for complete chest recoil (avoid leaning); Minimize interruptions in compressions; Avoid rescuer fatigue by rotating rescuers at least every 2 minutes.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Apply pads/monitor; confirm asystole in two leads (rule out fine VF)</div></div>
+        <div class="action-excerpt">Defibrillation dosing should follow manufacturer's recommendation in the case of biphasic defibrillators. Chest compressions should resume immediately after defibrillation attempts with no pauses for pulse checks for 2 minutes regardless of the rhythm displayed on the cardiac monitor.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Establish IO (proximal humerus preferred adult) or IV access without interrupting compressions</div></div>
+        <div class="action-excerpt">If feasible, IV or IO access should be obtained. Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms. Additional rescuer obtains IO (or IV) access and gives epinephrine. For IO access: The proximal humerus is the preferred site for adults; The tibial site is preferred for infants and children.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Epinephrine 1 mg IV/IO (1:10,000) — early because rhythm is non-shockable; repeat q3–5 min</div></div>
+        <div class="action-excerpt">If feasible, IV or IO access should be obtained. Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">BVM with high-flow O2 at 10 breaths/min OR 30:2; do not interrupt compressions for airway</div></div>
+        <div class="action-excerpt">Regardless of the airway management and ventilation strategy, consider the following principles: The airway management strategy should not interrupt compressions. BVM ventilation at 10 breaths per minute (1 breath every 10 compressions), applied during the upstroke between compressions, without interrupting the compressions. BVM ventilation with 30:2 ventilation to compression ratio.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Apply quantitative waveform capnography to monitor compression quality and prognosis</div></div>
+        <div class="action-excerpt">Quantitative end-tidal capnography (EtCO2) should be used to monitor effectiveness of chest compressions. If EtCO2 less than 10 mmHg during the initial phases of resuscitation, attempt to improve chest compression quality.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Consider reversible causes — hypoxia, hypovolemia, hyperK (CKD stage 4), acidosis</div></div>
+        <div class="action-excerpt">Consider reversible causes of cardiac arrest which include the following: Hypothermia; The dialysis patient/known hyperkalemic patient – Additions to care include the following: Calcium gluconate 10% 1 g IV bolus over 2 minutes; OR Calcium chloride 10% 1 g IV bolus over 2 minutes; Sodium bicarbonate 1 mEq/kg IV; Tricyclic antidepressant overdose; Hypovolemia; If the patient is intubated at the time of arrest, assess for tension pneumothorax and misplaced ETT.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Designate one provider to examine the document in parallel — care continues</div></div>
+        <div class="action-excerpt">Assessment: If CPR has been initiated and a valid exclusion to resuscitation has been subsequently verified, CPR may be discontinued, and medical direction contacted as needed. If there is question about the validity of the form/instrument, the best course of action is to proceed with the resuscitation until additional information can be obtained to clarify the best course of action.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Examine document: state form? intact? patient name + practitioner name?</div></div>
+        <div class="action-excerpt">One of the documents above is valid when it meets all the following criteria: Conforms to the state specifications for color and construction; Is intact: it has not been cut, broken or shows signs of being repaired; Displays the patient's name and, if required by state law or regulation, the physician's name. POLST/MOLST – explicitly describes acceptable interventions for the patient in the form of medical orders, must be signed by a physician or other empowered medical clinician to be valid.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Reject verbal-only family report as exclusion — continue CPR until written form validated</div></div>
+        <div class="action-excerpt">Patients must have one of the following documents or a valid alternative (such as identification bracelet indicating wishes) immediately available: Physician Orders for Life Sustaining Treatment (POLST) or Medical Orders for Life Sustaining Treatment (MOLST); Do Not Resuscitate (DNR) order; Advance directives; As specified from state to state, in the absence of formal written directions (MOLST, POLST, DNR, advanced directives), and in the presence of a person with power of attorney for healthcare or healthcare proxy, that person may prescribe limits of treatment.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Contact medical direction — NP signature ambiguity; relay form findings verbatim</div></div>
+        <div class="action-excerpt">Directives should be followed as closely as possible and medical direction contacted as needed. Patient Safety Considerations: In cases where the patient's status is unclear and the appropriateness of withholding resuscitation efforts is questioned, EMS personnel should initiate CPR immediately and contact medical direction.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Brief, compassionate explanation to family — we're working, we're verifying the form</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Focus on continuous, quality CPR that is initiated as soon as possible. Focus attention on the family and/or bystanders. Explain the rationale for termination. Consider support for family members such as other family, friends, clergy, faith leaders, or chaplains.</div>
+        <div class="action-ref">↳ MATC: Termination of Resuscitative Efforts</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Resus initiated; document under review</div>
+        <div class="phase-trigger">Trigger: Crew started high-quality compressions immediately, achieved IO/IV access, gave epinephrine 1 mg, started BVM ventilation, and designated a provider to examine the document and contact medical direction. Two minutes have elapsed. The rhythm remains asystole; EtCO2 is 14 mmHg.</div>
+        <div class="phase-desc">Two minutes into the resuscitation. High-quality compressions are ongoing with rotation between providers. IO is in at the proximal humerus, first dose of epinephrine 1 mg is in, BVM ventilation at 10/min is being performed without interrupting compressions, and waveform capnography shows EtCO2 of 14 mmHg (consistent with adequate-but-not-great compressions in an elderly thin patient with significant cardiopulmonary disease). One provider has now physically examined the document and confirmed: it is a Wisconsin POLST/DNR-style form on the correct state-style header; it is intact; it bears the patient's printed name and date of birth; it is dated within the past 30 days; it is signed and dated; the comfort-measures-only and DNR/DNI boxes are clearly marked. The ONLY ambiguity is the signature line — signed by 'J. Henson, NP-C, Internal Medicine — for Dr. R. Patel.' Per MATC, the POLST must be signed by 'a physician or other empowered medical clinician.' In Wisconsin, advanced-practice nurses CAN sign POLST forms within their scope of practice — but the crew is not expected to know this from memory. Per protocol they must contact medical direction to verify. This is the teaching beat: when validity is uncertain, you do not guess — you keep resuscitating and you make the call.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Asystole</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">0</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">14</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">96.4°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">110</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Managed with BVM, oral airway in place, mask seal good</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic spontaneously; ventilated at 10 breaths/min via BVM with high-flow O2</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulseless on rhythm check at 2 minutes; compressions ongoing with rotation</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale-gray · cool · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Mid-position (4 mm), minimally reactive bilaterally</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"(Unresponsive — no speech)"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Asystole confirmed in two leads at 2-minute rhythm check</li><li>Compressions ongoing, rotated at 2 minutes per protocol</li><li>IO proximal humerus in; epinephrine 1 mg given, second dose due in ~3 minutes</li><li>BVM ventilation 10/min, mask seal good, chest rise visible</li><li>Waveform capnography EtCO2 14 mmHg — adequate but borderline</li><li>Document confirmed: state-style POLST, intact, patient name + DOB present, signed/dated within 30 days, comfort-measures-only and DNR/DNI boxes marked, signed 'J. Henson, NP-C for Dr. R. Patel' — NP signature is the ambiguity</li><li>Daughter (Karen): 'I have her form, please look at it' — has now relaxed slightly seeing that the crew is taking the form seriously</li><li>Brother (Tom): 'Are you sure that NP signature is valid? Should you really stop?'</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continue high-quality CPR throughout document review — do not pause for it</div></div>
+        <div class="action-excerpt">Effective chest compressions and defibrillation are the most important therapies to the patient in cardiac arrest. Minimize interruptions in compressions. All attempts should be made to prevent avoidable interruptions in chest compressions.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Rotate compressors at 2 minutes; reassess rhythm during rotation</div></div>
+        <div class="action-excerpt">Avoid rescuer fatigue by rotating rescuers at least every 2 minutes. Some EMS pit crew approaches use a clinician on either side of the chest, alternating compressions every minute or every 100 compressions to avoid fatigue.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Repeat epinephrine 1 mg IV/IO q3–5 min while in arrest</div></div>
+        <div class="action-excerpt">Administer epinephrine (0.1 mg/kg, maximum dose 1 mg) IV/IO during the first or second round of compressions. Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Apply 3-criteria validity test: state form, intact, names present</div></div>
+        <div class="action-excerpt">One of the documents above is valid when it meets all the following criteria: Conforms to the state specifications for color and construction; Is intact: it has not been cut, broken or shows signs of being repaired; Displays the patient's name and, if required by state law or regulation, the physician's name.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Identify POLST signer requirement — physician or other empowered medical clinician</div></div>
+        <div class="action-excerpt">Physician Orders for Life Sustaining Treatment (POLST) or Medical Orders for Life Sustaining Treatment (MOLST) – explicitly describes acceptable interventions for the patient in the form of medical orders, must be signed by a physician or other empowered medical clinician to be valid.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Call medical direction NOW: relay form, signer, ambiguity; request validity ruling</div></div>
+        <div class="action-excerpt">Directives should be followed as closely as possible and medical direction contacted as needed. If for any reason an intervention that is prohibited by an advanced directive is being considered, medical direction should be contacted. Patient Safety Considerations: In cases where the patient's status is unclear and the appropriateness of withholding resuscitation efforts is questioned, EMS personnel should initiate CPR immediately and contact medical direction.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Document form details verbatim — header, signer, date, comfort-care boxes — and photograph if able</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Detailed description of the valid exclusion to resuscitation documentation used to guide resuscitation including a copy of the document if possible; Names/contact information for significant bystanders.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Update family briefly — calling medical direction, will not stop until we know</div></div>
+        <div class="action-excerpt">Treatment and Interventions: Focus attention on the family and/or bystanders. Explain the rationale for termination. Consider support for family members such as other family, friends, clergy, faith leaders, or chaplains.</div>
+        <div class="action-ref">↳ MATC: Termination of Resuscitative Efforts</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card">
+      <div class="card-content">
+        
+        <div class="phase-title">Document validated; resus ceased; comfort care</div>
+        <div class="phase-trigger">Trigger: Medical direction validated the POLST as a 'valid exclusion to resuscitation' after hearing the form details (state-style form, intact, patient name + DOB, comfort-measures-only and DNR/DNI marked, signed by an empowered medical clinician within scope of WI practice). Order is to cease resuscitation and provide comfort care.</div>
+        <div class="phase-desc">Medical direction validates the POLST as a valid exclusion to resuscitation after hearing the verbatim form details. Per MATC DNR/Advance Directives Assessment #2, 'If CPR has been initiated and a valid exclusion to resuscitation has been subsequently verified, CPR may be discontinued, and medical direction contacted as needed.' Crew ceases compressions and ventilations, removes the BVM, leaves the home oxygen in place at the family's preference, and shifts focus entirely to the family. The patient is repositioned with dignity. The brother (Tom) now understands the form was valid. The daughter (Karen) sobs and thanks the crew for 'doing it right.' Crew arranges coroner/medical-examiner contact per local policy (expected natural death of a known terminally ill patient with a valid POLST; in WI, in-home death with a documented terminal illness and DNR usually requires notification but not autopsy), notifies the hospice agency and the patient's PCP per the contact list on the wall, documents the form details and the medical-direction verbatim order, and offers chaplain/family support resources.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Asystole</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">0</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">0</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">96.1°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">110</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent (passive); BVM removed; nasal cannula remains in place at family preference</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic; no ventilations being provided</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulseless; compressions ceased per medical direction</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale-gray, beginning to mottle · cool, cooling · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Fixed mid-position</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"(Deceased)"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Resuscitation ceased per medical-direction order based on validated POLST</li><li>Patient repositioned with dignity, sheet drawn up, nasal cannula left in place per family preference</li><li>Daughter sobbing but visibly relieved; brother understands the form was valid</li><li>Crew arranging coroner/medical-examiner notification per local policy</li><li>Hospice agency and patient's PCP being notified using contact list on wall</li><li>Time of death per medical-direction order documented</li><li>EtCO2 reading at time of cessation, form details, and verbatim med-direction order all documented in PCR</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Cease CPR per validated POLST and medical-direction order; document time</div></div>
+        <div class="action-excerpt">Assessment: If the patient has a valid exclusion to resuscitation, then no CPR or airway management should be attempted, however this does not exclude comfort measures including medications for pain as appropriate. If CPR has been initiated and a valid exclusion to resuscitation has been subsequently verified, CPR may be discontinued, and medical direction contacted as needed.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Comfort measures only — keep O2 if it appears to comfort family; pain meds permitted per POLST</div></div>
+        <div class="action-excerpt">Assessment: If the patient has a valid exclusion to resuscitation, then no CPR or airway management should be attempted, however this does not exclude comfort measures including medications for pain as appropriate.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Shift focus to family — sit with them, explain, offer chaplain/clergy/hospice support</div></div>
+        <div class="action-excerpt">When cardiac arrest resuscitation becomes futile, the patient's family should become the focus of the EMS clinicians. Families need to be informed of what is being done and that transporting all cardiac arrest patients to the hospital is not supported by evidence. Treatment and Interventions: Focus attention on the family and/or bystanders. Explain the rationale for termination. Consider support for family members such as other family, friends, clergy, faith leaders, or chaplains.</div>
+        <div class="action-ref">↳ MATC: Termination of Resuscitative Efforts</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Notify coroner/medical examiner, PCP, and hospice agency per local policy</div></div>
+        <div class="action-excerpt">Engage with the patient's hospice or end-of-life care team or their primary care physician if possible. If not a viable option, contact medical direction.</div>
+        <div class="action-ref">↳ MATC: End-of-Life Care/Hospice Care</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Document form details, medical-direction order verbatim, time of cessation, names/contacts</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Detailed description of the valid exclusion to resuscitation documentation used to guide resuscitation including a copy of the document if possible; Names/contact information for significant bystanders.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Reposition patient with dignity; allow family time at bedside</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Careful and thorough assessments should be performed to identify complaints not related to the illness for which the patient is receiving hospice or end-of-life care. Care should be delivered with the utmost patience and compassion.</div>
+        <div class="action-ref">↳ MATC: End-of-Life Care/Hospice Care</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Leave scene as-is for coroner/ME; do not remove invasive lines per local policy</div></div>
+        <div class="action-excerpt">Key Considerations: At a likely crime scene, disturb as little potential evidence as possible. Key Documentation Elements: Clinical/situational details that may be available from bystanders/caregivers; Documentation of details surrounding decision to determine death; Time of contact with medical direction; Time of death determination.</div>
+        <div class="action-ref">↳ MATC: Determination of Death/Withholding Resuscitative Efforts</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Document NOT validated; resus continues; transport</div>
+        <div class="phase-trigger">Trigger: Medical direction did NOT validate the form (signer authority not confirmable in the moment, or photocopy non-original, or other local-policy reason). Order is to continue full resuscitation. Crew is now in minute 6, on second dose of epinephrine, asystole persists, EtCO2 has fallen from 14 to 9 mmHg.</div>
+        <div class="phase-desc">Medical direction is unable to validate the form in the moment. The signer's authority cannot be confirmed at 21:50 on a weeknight (e.g., NP's scope or relationship to the patient is not confirmable, or the medical-direction physician requires the original signed-by-physician form, or the photocopy itself is the disqualifier under local policy). Per MATC, when the form cannot be validated, the crew continues full resuscitation. Crew is now in minute 6 of resuscitation. Asystole persists. EtCO2 has drifted from 14 down to 9 mmHg despite ongoing compressions and a second dose of epinephrine — consistent with poor cardiac viability in this elderly multi-morbid patient. The crew must now also explain to the family — compassionately but clearly — that without validation they are obligated to continue, and they must transport. This phase tees up the question of WHEN to transition to termination-of-resuscitation criteria (20 minutes of asystole with EtCO2 &lt; 20 mmHg) or to continued transport based on local policy.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Asystole</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">0</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">9</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">96.3°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">110</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">BVM with oral airway in place; supraglottic airway placement now being considered</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic; BVM at 10/min without interruption of compressions</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulseless; compressions ongoing with rotation</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale-gray, mottling progressing · cool · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Mid-position (4 mm), now minimally reactive — possibly trending toward fixed</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"(Unresponsive — no speech)"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Asystole persistent in two leads at 2-minute checks</li><li>Second epinephrine 1 mg given; third dose due in ~3 minutes</li><li>EtCO2 trend: 14 → 9 mmHg — poor prognostic sign per MATC Cardiac Arrest Key Considerations</li><li>No identifiable reversible cause found on scene (no hypothermia exposure, no obvious volume loss, no tox concern, no evidence of tension pneumo)</li><li>Family informed compassionately that without validated form, crew is obligated to continue</li><li>Daughter visibly distressed: 'But she didn't want this!'</li><li>Brother now also asking crew to stop — but verbal-only is still insufficient</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Continue full resuscitation — form not validated; default is to resuscitate</div></div>
+        <div class="action-excerpt">If there is question about the validity of the form/instrument, the best course of action is to proceed with the resuscitation until additional information can be obtained to clarify the best course of action. If a patient has a valid version of one of the above documents, it will be referred to as a 'valid exclusion to resuscitation' for the purposes of this protocol.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Explain to family — without validated form we MUST continue; this is the rule</div></div>
+        <div class="action-excerpt">When cardiac arrest resuscitation becomes futile, the patient's family should become the focus of the EMS clinicians. Families need to be informed of what is being done and that transporting all cardiac arrest patients to the hospital is not supported by evidence. Most families understand the futility of the situation and are accepting of ceasing resuscitation efforts in the field.</div>
+        <div class="action-ref">↳ MATC: Termination of Resuscitative Efforts</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Repeat epinephrine 1 mg IV/IO at 3–5 min interval (third dose)</div></div>
+        <div class="action-excerpt">Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms. Additional rescuer obtains IO (or IV) access and gives epinephrine.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Consider supraglottic airway or ETT after 3–4 cycles; ventilations 10/min</div></div>
+        <div class="action-excerpt">Advanced airway placement: Either a supraglottic airway or an endotracheal tube may be placed without interruption of compressions. Ventilations are provided at 10 breaths/minute for adults. During the first four cycles of compressions/defibrillation (approximately 10 minutes) avoid advanced airway placement.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Re-screen reversible causes — CKD 4 → hyperK risk → consider calcium + bicarb</div></div>
+        <div class="action-excerpt">The dialysis patient/known hyperkalemic patient – Additions to care include the following: Calcium gluconate 10% 1 g IV bolus over 2 minutes (for pediatrics, the dose is 100 mg/kg which is 1 mL/kg), can repeat the dose if no response OR Calcium chloride 10% 1 g IV bolus over 2 minutes; Sodium bicarbonate 1 mEq/kg IV.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Note EtCO2 trend (14 → 9 mmHg) — poor prognostic indicator</div></div>
+        <div class="action-excerpt">Quantitative EtCO2 measurements of less than 10 mmHg or falling greater than 25% despite resuscitation indicates a poor prognosis and provide additional support for termination.</div>
+        <div class="action-ref">↳ MATC: Termination of Resuscitative Efforts</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Evaluate termination criteria — asystole, &gt;20 min, EtCO2 &lt;20; consult med direction again</div></div>
+        <div class="action-excerpt">Resuscitation may be terminated in asystole and slow wide complex PEA if there is: No return of spontaneous circulation after 20 minutes in the absence of hypothermia AND The EtCO2 is less than 20 mmHg. There is no return of spontaneous pulse and no evidence of neurological function (non-reactive pupils, no response to pain, no spontaneous movement). All EMS clinicians involved in the patient's care agree that discontinuation of the resuscitation is appropriate. Consider contacting medical direction before termination of resuscitative efforts.</div>
+        <div class="action-ref">↳ MATC: Termination of Resuscitative Efforts</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Resuscitate on scene; avoid moving compressions if reaching termination criteria</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Performing manual chest compressions in a moving vehicle may pose a clinician safety concern. In addition, manual chest compressions during patient movement are less effective in regard to hands on time, depth, recoil and rate. Ideally, patients should be resuscitated as close to the scene as operationally possible. Risks and benefits should be considered before patient movement in cardiac arrest situations.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Document MD non-validation, ongoing CPR, family education, and rationale</div></div>
+        <div class="action-excerpt">All items (a–f in Non-traumatic or Traumatic arrest) listed under patient management must be clearly documented in the EMS patient care report in addition to the assessment findings supporting this medical decision making. If resuscitation is continued for special circumstance or despite satisfying the criteria in this guideline, the rationale for such decision making must be documented.</div>
+        <div class="action-ref">↳ MATC: Termination of Resuscitative Efforts</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Verbal-only — improper cessation</div>
+        <div class="phase-trigger">Trigger: Crew accepted the daughter's verbal 'she didn't want CPR' as sufficient to withhold resuscitation, did not examine the written form, did not contact medical direction, and either never started CPR or ceased it within the first minute on verbal grounds alone.</div>
+        <div class="phase-desc">Crew accepted the daughter's verbal statement 'she didn't want CPR' as sufficient and either never started compressions or stopped them before validating the written form and contacting medical direction. Per MATC, a verbal report from family alone — without a valid written document (POLST/MOLST/DNR), bracelet, or (state-permitting) explicit healthcare-POA direction — is NOT a valid exclusion to resuscitation. Patient Safety Considerations specifically direct that when the appropriateness of withholding is questioned, initiate CPR and contact medical direction. The brother (Tom) arrives during this phase, has NOT previously seen any document, and disputes the call: 'You're just stopping based on what she said? Did you even look at the form? Are you sure mom wanted that?' The crew now has an unresuscitated patient, a written form they never validated, no medical-direction order, and a family conflict that will become a documentation, QI, and potentially legal/liability event. The teaching beat is severe: the right answer was to RESUSCITATE while reviewing, not to honor a verbal report.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Asystole</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">0</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">0</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">95.9°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">110</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">Patent (passive); no airway management performed</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic; no ventilations being provided</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulseless; no compressions being provided</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale-gray, mottling progressing · cool, cooling · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Mid-position, becoming fixed</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"(Deceased)"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>No resuscitation initiated OR resuscitation ceased before written form was validated</li><li>No medical-direction contact documented</li><li>Written form NEVER physically examined by crew</li><li>Brother (Tom) arrives, has not seen the form, disputes the cessation</li><li>Daughter (Karen) now also second-guessing: 'I called you guys for a reason …'</li><li>Crew exposed to documentation, QI, and ethical/legal questions</li><li>No coroner/ME or PCP/hospice contact yet — patient died unattended without valid exclusion documentation in hand at the time of decision</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize error — verbal family report alone is NOT a valid exclusion</div></div>
+        <div class="action-excerpt">Patients must have one of the following documents or a valid alternative (such as identification bracelet indicating wishes) immediately available: Physician Orders for Life Sustaining Treatment (POLST) or Medical Orders for Life Sustaining Treatment (MOLST); Do Not Resuscitate (DNR) order; Advance directives; As specified from state to state, in the absence of formal written directions (MOLST, POLST, DNR, advanced directives), and in the presence of a person with power of attorney for healthcare or healthcare proxy, that person may prescribe limits of treatment.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Initiate CPR immediately if not already; recover from the error</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: In cases where the patient's status is unclear and the appropriateness of withholding resuscitation efforts is questioned, EMS personnel should initiate CPR immediately and contact medical direction.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Examine the written form now; contact medical direction now</div></div>
+        <div class="action-excerpt">One of the documents above is valid when it meets all the following criteria: Conforms to the state specifications for color and construction; Is intact: it has not been cut, broken or shows signs of being repaired; Displays the patient's name and, if required by state law or regulation, the physician's name. Directives should be followed as closely as possible and medical direction contacted as needed.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Document timeline, statements verbatim, who/what/when of the decision</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Detailed description of the valid exclusion to resuscitation documentation used to guide resuscitation including a copy of the document if possible; Names/contact information for significant bystanders.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Notify supervisor; submit for QI review per agency policy</div></div>
+        <div class="action-excerpt">The EMS agency must perform a Quality Improvement (QI) review of care and outcome, overseen by the agency medical director, for every patient that receives CPR. The QI should be coordinated with local receiving hospitals to include hospital admission, discharge, and condition information.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Address family compassionately about the error — be honest, not defensive</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Care should be delivered with the utmost patience and compassion. Social interactions with family may affect end-of-life care. Scene safety should be considered when deciding on management.</div>
+        <div class="action-ref">↳ MATC: End-of-Life Care/Hospice Care</div>
+      </div>
+    </div></div>
+  </div>
+  </section><section class="phase-section">
+    <div class="card phase-card phase-card-branch">
+      <div class="card-content">
+        <div class="branch-tag">Improper Care Branch</div>
+        <div class="phase-title">Valid POLST ignored — improper continued resus</div>
+        <div class="phase-trigger">Trigger: Crew dismissed the form without applying the 3-criteria validity test and without contacting medical direction; continued full resuscitation despite an intact in-state POLST marked comfort-measures-only and DNR/DNI signed by an empowered medical clinician.</div>
+        <div class="phase-desc">Crew dismissed the form without performing the validity test or contacting medical direction — common reasons: 'it's just a photocopy,' 'an NP can't sign that,' or 'we don't recognize this form.' They continued full resuscitation despite an intact in-state POLST clearly marked comfort-measures-only and DNR/DNI, with patient name, DOB, date within 30 days, and a signature from an empowered medical clinician acting on behalf of the patient's PCP. The family watches the aggressive resuscitation — chest compressions on their frail dementia-staged mother, IO drill into her humerus, BVM ventilations, repeated epinephrine — and becomes increasingly distraught. The daughter (Karen) sobs: 'I'm watching you do exactly what she said she didn't want.' The brother (Tom), having now read the form, points and says 'It IS signed by her doctor's office, look.' Per MATC the form should have triggered an immediate validity assessment and medical-direction call. The patient's autonomy — her advance directive — has been violated. The teaching beat is the inverse of the verbal-only branch: dismissing a written form without applying the three-criteria test and the medical-direction call is also wrong. The correct response is to STOP, perform the validity test now, contact medical direction now, and cease resuscitation if the form is validated.</div>
+      </div>
+    </div>
+    <div class="card">
+    <div class="card-title">Vital Signs</div>
+    <div class="card-content" style="padding:0">
+      <div class="ecg-label">⏦ Asystole</div>
+      <div class="vitals-grid">
+        <div class="vital-cell"><div class="vital-name">HR</div><div class="vital-val">0</div><div class="vital-unit">bpm</div></div>
+        <div class="vital-cell"><div class="vital-name">BP</div><div class="vital-val">0/0</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">SpO₂</div><div class="vital-val">0%</div></div>
+        <div class="vital-cell"><div class="vital-name">RR</div><div class="vital-val">10</div><div class="vital-unit">/min</div></div>
+        <div class="vital-cell"><div class="vital-name">EtCO₂</div><div class="vital-val">12</div><div class="vital-unit">mmHg</div></div>
+        <div class="vital-cell"><div class="vital-name">Temp</div><div class="vital-val">96.3°</div><div class="vital-unit">F</div></div>
+        <div class="vital-cell full-width"><div class="vital-name">Glucose</div><div class="vital-val">110</div><div class="vital-unit">mg/dL</div></div>
+      </div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Clinical Findings</div>
+    <div class="card-content">
+      
+    <div class="loc-block">
+      <div class="avpu-bar"><div class="avpu-seg">A</div><div class="avpu-seg">V</div><div class="avpu-seg">P</div><div class="avpu-seg sel-u">U</div></div>
+      <div class="gcs-detail">
+    <div class="gcs-item"><span class="gcs-part">Eyes</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Verbal</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-item"><span class="gcs-part">Motor</span><span class="gcs-desc">No response</span><span class="gcs-score">1</span></div>
+    <div class="gcs-total-row">Total GCS <span class="gcs-total">3</span></div>
+  </div>
+    </div>
+      <div class="finding-row"><div class="finding-label">Airway</div><div class="finding-value">BVM with oral airway; supraglottic airway being placed</div></div><div class="finding-row"><div class="finding-label">Breathing</div><div class="finding-value">Apneic; BVM at 10/min</div></div><div class="finding-row"><div class="finding-label">Circulation</div><div class="finding-value">Pulseless; aggressive compressions ongoing</div></div><div class="finding-row"><div class="finding-label">Skin</div><div class="finding-value">pale-gray, bruising developing over sternum from compressions · cool · dry</div></div><div class="finding-row"><div class="finding-label">Pupils</div><div class="finding-value">Mid-position (4 mm), minimally reactive</div></div><div class="finding-row"><div class="finding-label">Motor</div><div class="finding-value">Flaccid</div></div><div class="finding-row"><div class="finding-label">Speech</div><div class="finding-value"><span class="finding-speech">"(Unresponsive — no speech)"</span></div></div><div class="finding-row"><div class="finding-label">Other</div><div class="finding-value"><ul class="findings-notes"><li>Full resuscitation continuing despite presence of in-state POLST</li><li>Form NOT formally examined against 3-criteria test</li><li>Medical direction NOT contacted regarding the form</li><li>Daughter sobbing: 'You're doing exactly what she said she didn't want'</li><li>Brother now reading the form: 'This IS signed by her doctor's office'</li><li>Compression-related rib fractures likely in this 84-yo osteoporotic patient</li><li>Patient's stated wishes are being violated</li></ul></div></div>
+    </div>
+  </div>
+    <div class="card">
+    <div class="card-title">Expected Actions</div>
+    <div class="card-content" style="padding:0 16px 12px"><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Recognize error — form was never validated against the 3 criteria</div></div>
+        <div class="action-excerpt">One of the documents above is valid when it meets all the following criteria: Conforms to the state specifications for color and construction; Is intact: it has not been cut, broken or shows signs of being repaired; Displays the patient's name and, if required by state law or regulation, the physician's name.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Pause unnecessary interventions; apply the validity test NOW</div></div>
+        <div class="action-excerpt">Directives should be followed as closely as possible and medical direction contacted as needed. If for any reason an intervention that is prohibited by an advanced directive is being considered, medical direction should be contacted.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Contact medical direction NOW with form details; request validity ruling</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: In cases where the patient's status is unclear and the appropriateness of withholding resuscitation efforts is questioned, EMS personnel should initiate CPR immediately and contact medical direction.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">If MD validates form on this call → cease per Assessment #2</div></div>
+        <div class="action-excerpt">Assessment: If CPR has been initiated and a valid exclusion to resuscitation has been subsequently verified, CPR may be discontinued, and medical direction contacted as needed.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Acknowledge family — apologize for delay; explain validity process</div></div>
+        <div class="action-excerpt">Patient Safety Considerations: Care should be delivered with the utmost patience and compassion. Social interactions with family may affect end-of-life care.</div>
+        <div class="action-ref">↳ MATC: End-of-Life Care/Hospice Care</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-critical">critical</span><div class="action-text">Document timeline, missed validity test, recovery actions, MD contact, outcome</div></div>
+        <div class="action-excerpt">Key Documentation Elements: Detailed description of the valid exclusion to resuscitation documentation used to guide resuscitation including a copy of the document if possible; Names/contact information for significant bystanders.</div>
+        <div class="action-ref">↳ MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status</div>
+      </div>
+    </div><div class="action-row">
+      <div class="action-box"></div>
+      <div class="action-body">
+        <div class="action-head"><span class="action-priority p-important">important</span><div class="action-text">Submit for QI review — agency-level training opportunity on POLST handling</div></div>
+        <div class="action-excerpt">The EMS agency must perform a Quality Improvement (QI) review of care and outcome, overseen by the agency medical director, for every patient that receives CPR.</div>
+        <div class="action-ref">↳ MATC: Cardiac Arrest (VF/VT/Asystole/PEA)</div>
+      </div>
+    </div></div>
+  </div>
+  </section>
+</div>
+</body>
+</html>

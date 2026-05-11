@@ -1,0 +1,920 @@
+{
+  "meta": {
+    "id": "C-T3-05",
+    "name": "Asystole/Agonal Rhythm with DNR Confusion",
+    "version": 1,
+    "difficulty": "advanced",
+    "category": "Cardiac",
+    "protocols": [
+      "resus-cardiac-arrest",
+      "resus-dnr-advance-directives",
+      "resus-determination-of-death",
+      "resus-termination",
+      "medical-end-of-life-hospice"
+    ],
+    "totalTimeSeconds": 1800,
+    "createdAt": "2026-05-11T00:00:00Z",
+    "tags": [
+      "asystole",
+      "cardiac-arrest",
+      "DNR",
+      "POLST",
+      "advance-directive",
+      "termination-of-resuscitation",
+      "end-of-life",
+      "ethics",
+      "family-dynamics",
+      "medical-direction",
+      "tier-3",
+      "judgment",
+      "decision-dense",
+      "high-acuity"
+    ]
+  },
+  "patient": {
+    "name": "Margaret Ellen Voss",
+    "age": 84,
+    "ageUnit": "years",
+    "sex": "female",
+    "weight": 52,
+    "weightLbs": 115,
+    "height": 160,
+    "chiefComplaint": "Unresponsive, apneic, pulseless 84-year-old female found in bed by adult daughter. End-stage COPD and CHF with progressive functional decline over the past month; family is not certain whether she was formally enrolled in hospice yet.",
+    "history": {
+      "hpi": "84-year-old female with end-stage chronic obstructive pulmonary disease (home O2 2 L/min continuous), severe biventricular congestive heart failure (NYHA Class IV, EF reported around 20%), moderate-stage dementia, chronic atrial fibrillation, and stage 4 chronic kidney disease. Over the past four weeks her family describes progressive bed-bound status, anorexia, somnolence, and increasing oxygen requirements. The pulmonologist and primary care physician had a goals-of-care conversation with the family three weeks ago and recommended hospice; the daughter signed paperwork with a hospice agency 'last Tuesday' but the formal admission visit and packet were not yet completed at the time of this call. The patient was last seen alive and breathing approximately 90 minutes ago when the daughter checked on her after dinner; the daughter went to lie down on the couch and was awakened by the home oxygen concentrator alarming. She found her mother apneic and unresponsive in the hospital bed in the living room. The daughter immediately called 911 — she states 'I panicked, I know she didn't want this, but I just called.' She produces a folded document from a kitchen drawer that she identifies as 'her DNR form from the pulmonologist.' On inspection it is a Wisconsin POLST/DNR-style document with the patient's printed name, date of birth, and current date marked 'comfort measures only — do not resuscitate, do not intubate'; it bears a signature on the 'signature of authorized practitioner' line legibly reading 'J. Henson, NP' followed by 'NP-C, Internal Medicine — for Dr. R. Patel.' The form is a printed photocopy (not the original), bears the correct state form header and color reproduction on copier paper, has not been altered or cut, and is signed and dated within the past 30 days. The crew cannot independently determine from the form alone whether a nurse practitioner signature satisfies the validity requirement — this is the central ambiguity. Per MATC protocol, when there is question about the validity of the form, the best course of action is to PROCEED WITH RESUSCITATION until additional information can be obtained.",
+      "pastMedical": [
+        "End-stage COPD — home O2 2 L/min via nasal cannula 24 h/day; multiple admissions over the past 2 years",
+        "Biventricular congestive heart failure — NYHA Class IV, EF approximately 20% on most recent echocardiogram",
+        "Chronic atrial fibrillation — rate-controlled, on apixaban",
+        "Moderate-stage dementia (Alzheimer type) — Mini-Mental ~14; cannot reliably make her own medical decisions",
+        "Chronic kidney disease stage 4 — declined dialysis",
+        "Hypertension",
+        "Osteoporosis with prior vertebral compression fractures",
+        "Family states pulmonologist recommended hospice 3 weeks ago; hospice paperwork signed but formal hospice admission not yet completed",
+        "Code status discussion documented in the chart per family: patient (when she still had capacity) and family agreed she did NOT want CPR or intubation"
+      ],
+      "medications": [
+        "Furosemide 40 mg PO daily",
+        "Carvedilol 6.25 mg PO BID",
+        "Apixaban 2.5 mg PO BID (renal dose)",
+        "Tiotropium inhaler daily",
+        "Albuterol/ipratropium nebulizer q6h PRN",
+        "Memantine 10 mg PO BID",
+        "Acetaminophen 650 mg PO q6h PRN",
+        "Home oxygen 2 L/min nasal cannula continuous"
+      ],
+      "allergies": [
+        "Sulfa drugs — rash",
+        "No other known drug allergies"
+      ],
+      "lastOralIntake": "A few spoonfuls of mashed potatoes and applesauce at dinner approximately 3 hours ago; the family says she has been eating only minimally for the past 2 weeks.",
+      "events": "Daughter (Karen, 58) last saw her mother alive and breathing approximately 90 minutes ago when she helped her settle for the evening in the hospital bed in the living room. Karen lay down on the couch and was awakened by the oxygen concentrator alarming. She found her mother apneic, unresponsive, and cold to the touch on the cheek (but not yet cold throughout). She called 911 reflexively, then remembered the DNR/POLST and dug it out of the kitchen drawer. By the time EMS arrives — approximately 8–10 minutes after the 911 call — Karen is tearful and conflicted: 'I know she said she didn't want this. I have her form. But I called you.' Karen's brother Tom (62) arrives during the call, has not seen the form before, and asks pointed questions about whether the form is valid and whether the crew is obligated to start CPR."
+    }
+  },
+  "scene": {
+    "dispatch": "Dispatch: 84-year-old female, unresponsive and not breathing, single-family residence. Caller is the patient's daughter, on scene with the patient. Home oxygen in use.",
+    "location": "Modest single-story home; patient in a rented hospital bed positioned in the living room facing the front window. Living room arranged for end-of-life care — bedside commode, suction unit, wall-mounted oxygen concentrator (still running), small bedside table with medications and a half-empty water cup with a straw. Family photos on the walls. Hospice-style pillow and blanket setup; the bed has guardrails.",
+    "time": "Tuesday, 21:45, weeknight evening",
+    "safety": "Scene is safe — quiet single-family home, no pets in the room, adequate space and lighting to work. The oxygen concentrator is running and audible; the alarm chimes intermittently. Front door propped open by the daughter for EMS. No firearms or weapons. Family members are tearful but cooperative.",
+    "bystanders": "Karen Voss (58, patient's daughter and primary caregiver) — present from the start, tearful, conflicted; she produces a folded document she calls 'mom's DNR' early in the encounter. She says: 'She didn't want any of this. I should have just sat with her, but I panicked and called you.' Tom Voss (62, patient's son) — arrives 3–4 minutes into the call, has not previously seen the form, more skeptical, asks: 'Are you sure that's a real DNR? Should you really be stopping?' Both children agree — verbally — that their mother repeatedly said she did not want CPR or intubation. There is NO additional family documentation beyond the single form Karen produces.",
+    "visualCues": [
+      "Patient in hospital bed, head of bed slightly elevated, eyes closed, mouth slightly open, no respiratory effort",
+      "Home oxygen nasal cannula still in place at 2 L/min; concentrator alarming intermittently",
+      "Skin pale-gray, lips and fingertips cyanotic, jaw beginning to slacken; cheeks cool but no rigor mortis, no dependent lividity",
+      "Bedside table: pill organizer, water cup with straw, hand cream, family photos in frames",
+      "Hospice-style pillow nest and folded blanket at the foot of the bed (not yet under formal hospice care)",
+      "Daughter holding a folded document — visible state form header, comfort-measures-only box checked, signed 'J. Henson, NP-C' for 'Dr. R. Patel' within the past 30 days; printed photocopy on standard paper",
+      "Wall-mounted dry-erase board with hospice-style symptom-tracking notes and an emergency contact list with the pulmonologist's office number",
+      "No pre-existing 911-no-CPR bracelet on either wrist; no visible POLST magnet on the refrigerator"
+    ]
+  },
+  "phases": [
+    {
+      "id": "initial-contact",
+      "name": "Initial Contact",
+      "description": "EMS arrives in the living room to find an 84-year-old female in a home hospital bed, unresponsive, apneic, with no palpable carotid pulse. The home O2 concentrator is alarming. The daughter (Karen) is tearful, holding what she calls 'mom's DNR' but the form has not yet been examined. None of the standard withholding-resuscitation criteria from MATC determination-of-death are met on inspection — no decapitation, decomposition, transection, incineration, injuries incompatible with life, dependent lividity, or rigor mortis; the patient is warm-cool, not cold-stiff. The form has not yet been verified as a valid exclusion to resuscitation. Per MATC protocol — 'In cases where the patient's status is unclear and the appropriateness of withholding resuscitation efforts is questioned, EMS personnel should initiate CPR immediately and contact medical direction.' The crew must begin compressions while one provider takes the document and starts the validity assessment in parallel. The teaching beat is that clinical care does not stop while validity is being reviewed — and that a verbal report from the family alone ('she didn't want this') is NOT a valid exclusion to resuscitation per MATC.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 1
+        },
+        "airway": "Patent but unprotected; jaw slack, mouth slightly open, no gag",
+        "breathing": "Apneic — no chest rise, no breath sounds; home O2 nasal cannula still in place at 2 L/min",
+        "circulation": "No palpable carotid pulse; no femoral pulse; skin pale-gray with mild peripheral cyanosis",
+        "skin": {
+          "color": "pale-gray with cyanotic lips and fingertips",
+          "temperature": "cool",
+          "moisture": "dry"
+        },
+        "pupils": "Mid-position (4 mm), minimally reactive bilaterally",
+        "motorFunction": "Flaccid, no spontaneous movement, no response to sternal rub",
+        "otherFindings": [
+          "No decapitation, decomposition, transection, incineration, or injuries incompatible with life",
+          "No dependent lividity; no rigor mortis (jaw and extremities still mobile)",
+          "Body warm-cool, not cold — consistent with arrest within the last 30–60 minutes",
+          "Daughter producing folded document she identifies as 'mom's DNR' — NOT yet examined for validity",
+          "Family verbal report: 'she didn't want CPR' — NOT a valid exclusion to resuscitation per MATC",
+          "Home oxygen still running; nasal cannula in place"
+        ],
+        "patientSpeech": "(Unresponsive — no speech)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Asystole",
+        "ecgWaveform": 3,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 0,
+        "temp": 35.8,
+        "tempF": 96.4,
+        "obstruction": 0,
+        "glucose": 110,
+        "trendTimeSeconds": 0,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "primary-survey-no-death-criteria",
+          "shortAction": "Primary survey; confirm apneic/pulseless; rule out obvious-death criteria",
+          "priority": "critical",
+          "rationale": "MATC Determination-of-Death — resuscitation should be started on all patients found apneic and pulseless UNLESS one of the listed irreversible-death criteria exists. None of those criteria are met here (no decap, no decomposition, no transection, no incineration, no dependent lividity, no rigor mortis).",
+          "protocolReference": "MATC: Determination of Death/Withholding Resuscitative Efforts",
+          "protocolExcerpt": "Resuscitation should be started on all patients who are found apneic and pulseless unless the following conditions exist (does not apply to victims of lightning strikes, drowning, or hypothermia): Medical cause or traumatic injury or body condition clearly indicating biological death (irreversible brain death), limited to: Decapitation; Decomposition or putrefaction; Transection of the torso; Incineration; Injuries incompatible with life; Futile and inhumane attempts as determined by agency policy/protocol; In blunt and penetrating trauma, if the patient is apneic, pulseless, and without other signs of life upon EMS arrival; Nontraumatic arrest with obvious signs of death including dependent lividity or rigor mortis."
+        },
+        {
+          "id": "begin-resus-when-in-doubt",
+          "shortAction": "Begin CPR immediately — validity of document is unclear; when in doubt, resuscitate",
+          "priority": "critical",
+          "rationale": "MATC DNR/Advance Directives — if there is question about the validity of the form/instrument, the best course of action is to proceed with the resuscitation until additional information can be obtained. The form has not yet been validated.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "If there is question about the validity of the form/instrument, the best course of action is to proceed with the resuscitation until additional information can be obtained to clarify the best course of action. Patient Safety Considerations: In cases where the patient's status is unclear and the appropriateness of withholding resuscitation efforts is questioned, EMS personnel should initiate CPR immediately and contact medical direction."
+        },
+        {
+          "id": "high-quality-compressions",
+          "shortAction": "High-quality compressions — rate 100–120/min, depth 2–2.4 in, full recoil, minimize interruptions",
+          "priority": "critical",
+          "rationale": "MATC Cardiac Arrest Key Considerations #1 — effective chest compressions are the most important therapy. Define rate, depth, recoil, and minimize interruptions.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "Effective chest compressions and defibrillation are the most important therapies to the patient in cardiac arrest. Effective chest compressions are defined as: A rate of greater than 100 and less than 120 compressions/minute; Depth of at least 2 inches (5 cm) and less than 2.4 inches (6 cm) for adults and children; Allow for complete chest recoil (avoid leaning); Minimize interruptions in compressions; Avoid rescuer fatigue by rotating rescuers at least every 2 minutes."
+        },
+        {
+          "id": "monitor-pads-rhythm-asystole",
+          "shortAction": "Apply pads/monitor; confirm asystole in two leads (rule out fine VF)",
+          "priority": "critical",
+          "rationale": "MATC Cardiac Arrest — asystole must be confirmed; rule out fine VF that would be shockable. No defibrillation indicated for confirmed asystole.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "Defibrillation dosing should follow manufacturer's recommendation in the case of biphasic defibrillators. Chest compressions should resume immediately after defibrillation attempts with no pauses for pulse checks for 2 minutes regardless of the rhythm displayed on the cardiac monitor."
+        },
+        {
+          "id": "io-iv-access",
+          "shortAction": "Establish IO (proximal humerus preferred adult) or IV access without interrupting compressions",
+          "priority": "critical",
+          "rationale": "MATC Cardiac Arrest step 5 / Key Considerations #14a-iv — IV or IO access; humerus preferred for adults; do not interrupt compressions.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "If feasible, IV or IO access should be obtained. Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms. Additional rescuer obtains IO (or IV) access and gives epinephrine. For IO access: The proximal humerus is the preferred site for adults; The tibial site is preferred for infants and children."
+        },
+        {
+          "id": "epi-first-cycle",
+          "shortAction": "Epinephrine 1 mg IV/IO (1:10,000) — early because rhythm is non-shockable; repeat q3–5 min",
+          "priority": "critical",
+          "rationale": "MATC Cardiac Arrest step 5 — prioritize early epinephrine for non-shockable rhythms. Fixed adult dose 1 mg IV/IO during first or second round of compressions.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "If feasible, IV or IO access should be obtained. Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms."
+        },
+        {
+          "id": "airway-management",
+          "shortAction": "BVM with high-flow O2 at 10 breaths/min OR 30:2; do not interrupt compressions for airway",
+          "priority": "critical",
+          "rationale": "MATC Cardiac Arrest step 6 — airway management should not interrupt compressions; BVM at 10/min upstroke ventilation or 30:2 are protocol options.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "Regardless of the airway management and ventilation strategy, consider the following principles: The airway management strategy should not interrupt compressions. BVM ventilation at 10 breaths per minute (1 breath every 10 compressions), applied during the upstroke between compressions, without interrupting the compressions. BVM ventilation with 30:2 ventilation to compression ratio."
+        },
+        {
+          "id": "etco2-monitoring",
+          "shortAction": "Apply quantitative waveform capnography to monitor compression quality and prognosis",
+          "priority": "important",
+          "rationale": "MATC Cardiac Arrest Key Considerations #3 — quantitative EtCO2 monitors compression effectiveness; <10 mmHg signals poor quality or poor prognosis.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "Quantitative end-tidal capnography (EtCO2) should be used to monitor effectiveness of chest compressions. If EtCO2 less than 10 mmHg during the initial phases of resuscitation, attempt to improve chest compression quality."
+        },
+        {
+          "id": "reversible-causes-Hs-Ts",
+          "shortAction": "Consider reversible causes — hypoxia, hypovolemia, hyperK (CKD stage 4), acidosis",
+          "priority": "important",
+          "rationale": "MATC Cardiac Arrest step 8 — consider reversible causes; this patient has CKD stage 4, raising hyperK risk; chronic respiratory failure raises hypoxia/acidosis.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "Consider reversible causes of cardiac arrest which include the following: Hypothermia; The dialysis patient/known hyperkalemic patient – Additions to care include the following: Calcium gluconate 10% 1 g IV bolus over 2 minutes; OR Calcium chloride 10% 1 g IV bolus over 2 minutes; Sodium bicarbonate 1 mEq/kg IV; Tricyclic antidepressant overdose; Hypovolemia; If the patient is intubated at the time of arrest, assess for tension pneumothorax and misplaced ETT."
+        },
+        {
+          "id": "designate-document-handler",
+          "shortAction": "Designate one provider to examine the document in parallel — care continues",
+          "priority": "critical",
+          "rationale": "MATC DNR/Advance Directives Treatment #2 — if CPR has been initiated and a valid exclusion is subsequently verified, CPR may be discontinued; medical direction contacted as needed. The teaching beat: validity review happens IN PARALLEL with active resuscitation, not in place of it.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "Assessment: If CPR has been initiated and a valid exclusion to resuscitation has been subsequently verified, CPR may be discontinued, and medical direction contacted as needed. If there is question about the validity of the form/instrument, the best course of action is to proceed with the resuscitation until additional information can be obtained to clarify the best course of action."
+        },
+        {
+          "id": "examine-document-three-criteria",
+          "shortAction": "Examine document: state form? intact? patient name + practitioner name?",
+          "priority": "critical",
+          "rationale": "MATC DNR/Advance Directives Inclusion/Exclusion #2 — three validity criteria: conforms to state specifications for color/construction; is intact (not cut/broken/repaired); displays patient name and practitioner name. Reproduced again in Determination-of-Death.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "One of the documents above is valid when it meets all the following criteria: Conforms to the state specifications for color and construction; Is intact: it has not been cut, broken or shows signs of being repaired; Displays the patient's name and, if required by state law or regulation, the physician's name. POLST/MOLST – explicitly describes acceptable interventions for the patient in the form of medical orders, must be signed by a physician or other empowered medical clinician to be valid."
+        },
+        {
+          "id": "reject-verbal-only",
+          "shortAction": "Reject verbal-only family report as exclusion — continue CPR until written form validated",
+          "priority": "critical",
+          "rationale": "MATC DNR/Advance Directives — verbal report from family alone is not on the list of valid documents. Only a POLST/MOLST, DNR order, advance directive, identifying bracelet, or (state-permitting) healthcare POA can serve as the valid exclusion. A daughter saying 'she didn't want this' is not, by itself, a valid exclusion.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "Patients must have one of the following documents or a valid alternative (such as identification bracelet indicating wishes) immediately available: Physician Orders for Life Sustaining Treatment (POLST) or Medical Orders for Life Sustaining Treatment (MOLST); Do Not Resuscitate (DNR) order; Advance directives; As specified from state to state, in the absence of formal written directions (MOLST, POLST, DNR, advanced directives), and in the presence of a person with power of attorney for healthcare or healthcare proxy, that person may prescribe limits of treatment."
+        },
+        {
+          "id": "contact-medical-control-validity",
+          "shortAction": "Contact medical direction — NP signature ambiguity; relay form findings verbatim",
+          "priority": "critical",
+          "rationale": "MATC DNR/Advance Directives Patient Safety + Treatment #1b/2/3 — directives should be followed as closely as possible and medical direction contacted as needed; in cases where status is unclear, initiate CPR immediately AND contact medical direction.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "Directives should be followed as closely as possible and medical direction contacted as needed. Patient Safety Considerations: In cases where the patient's status is unclear and the appropriateness of withholding resuscitation efforts is questioned, EMS personnel should initiate CPR immediately and contact medical direction."
+        },
+        {
+          "id": "family-compassionate-communication",
+          "shortAction": "Brief, compassionate explanation to family — we're working, we're verifying the form",
+          "priority": "important",
+          "rationale": "MATC Termination of Resuscitative Efforts Patient Care Goals #4 — when resuscitation may become futile, family becomes the focus; explain rationale. End-of-life Patient Safety #2 — care delivered with utmost patience and compassion. Begin building this relationship from first contact.",
+          "protocolReference": "MATC: Termination of Resuscitative Efforts",
+          "protocolExcerpt": "Treatment and Interventions: Focus on continuous, quality CPR that is initiated as soon as possible. Focus attention on the family and/or bystanders. Explain the rationale for termination. Consider support for family members such as other family, friends, clergy, faith leaders, or chaplains."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "resus-initiated-document-being-reviewed",
+          "if": "CPR started AND document being reviewed in parallel",
+          "condition": "Crew began high-quality compressions immediately, established IO/IV, gave epinephrine 1 mg, started BVM ventilation, applied capnography, and designated one provider to examine the document and contact medical direction. The form's validity is still under review at the end of the first 2-minute cycle.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "begin-resus-when-in-doubt",
+            "high-quality-compressions",
+            "epi-first-cycle",
+            "designate-document-handler",
+            "examine-document-three-criteria"
+          ]
+        },
+        {
+          "targetPhaseId": "improper-verbal-only-cessation",
+          "if": "Resus withheld based on verbal family report only",
+          "condition": "Crew accepted the daughter's verbal statement 'she didn't want CPR' as sufficient and never started compressions, OR ceased compressions before examining the written form and contacting medical direction. The brother arrives shortly after and disputes the call, escalating the situation into a documentation/liability event.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": [
+            "begin-resus-when-in-doubt",
+            "reject-verbal-only"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "resus-initiated-document-being-reviewed",
+      "name": "Resus initiated; document under review",
+      "description": "Two minutes into the resuscitation. High-quality compressions are ongoing with rotation between providers. IO is in at the proximal humerus, first dose of epinephrine 1 mg is in, BVM ventilation at 10/min is being performed without interrupting compressions, and waveform capnography shows EtCO2 of 14 mmHg (consistent with adequate-but-not-great compressions in an elderly thin patient with significant cardiopulmonary disease). One provider has now physically examined the document and confirmed: it is a Wisconsin POLST/DNR-style form on the correct state-style header; it is intact; it bears the patient's printed name and date of birth; it is dated within the past 30 days; it is signed and dated; the comfort-measures-only and DNR/DNI boxes are clearly marked. The ONLY ambiguity is the signature line — signed by 'J. Henson, NP-C, Internal Medicine — for Dr. R. Patel.' Per MATC, the POLST must be signed by 'a physician or other empowered medical clinician.' In Wisconsin, advanced-practice nurses CAN sign POLST forms within their scope of practice — but the crew is not expected to know this from memory. Per protocol they must contact medical direction to verify. This is the teaching beat: when validity is uncertain, you do not guess — you keep resuscitating and you make the call.",
+      "triggerCondition": "Crew started high-quality compressions immediately, achieved IO/IV access, gave epinephrine 1 mg, started BVM ventilation, and designated a provider to examine the document and contact medical direction. Two minutes have elapsed. The rhythm remains asystole; EtCO2 is 14 mmHg.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 1
+        },
+        "airway": "Managed with BVM, oral airway in place, mask seal good",
+        "breathing": "Apneic spontaneously; ventilated at 10 breaths/min via BVM with high-flow O2",
+        "circulation": "Pulseless on rhythm check at 2 minutes; compressions ongoing with rotation",
+        "skin": {
+          "color": "pale-gray",
+          "temperature": "cool",
+          "moisture": "dry"
+        },
+        "pupils": "Mid-position (4 mm), minimally reactive bilaterally",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "Asystole confirmed in two leads at 2-minute rhythm check",
+          "Compressions ongoing, rotated at 2 minutes per protocol",
+          "IO proximal humerus in; epinephrine 1 mg given, second dose due in ~3 minutes",
+          "BVM ventilation 10/min, mask seal good, chest rise visible",
+          "Waveform capnography EtCO2 14 mmHg — adequate but borderline",
+          "Document confirmed: state-style POLST, intact, patient name + DOB present, signed/dated within 30 days, comfort-measures-only and DNR/DNI boxes marked, signed 'J. Henson, NP-C for Dr. R. Patel' — NP signature is the ambiguity",
+          "Daughter (Karen): 'I have her form, please look at it' — has now relaxed slightly seeing that the crew is taking the form seriously",
+          "Brother (Tom): 'Are you sure that NP signature is valid? Should you really stop?'"
+        ],
+        "patientSpeech": "(Unresponsive — no speech)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Asystole",
+        "ecgWaveform": 3,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 14,
+        "temp": 35.8,
+        "tempF": 96.4,
+        "obstruction": 0,
+        "glucose": 110,
+        "trendTimeSeconds": 30,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "continue-cpr-during-review",
+          "shortAction": "Continue high-quality CPR throughout document review — do not pause for it",
+          "priority": "critical",
+          "rationale": "MATC Cardiac Arrest Key Considerations — minimize interruptions; effective compressions are the most important therapy. The validity discussion must not degrade compressions.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "Effective chest compressions and defibrillation are the most important therapies to the patient in cardiac arrest. Minimize interruptions in compressions. All attempts should be made to prevent avoidable interruptions in chest compressions."
+        },
+        {
+          "id": "rotate-compressors",
+          "shortAction": "Rotate compressors at 2 minutes; reassess rhythm during rotation",
+          "priority": "critical",
+          "rationale": "MATC Cardiac Arrest Key Considerations #1 — rotate at least every 2 minutes to avoid fatigue.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "Avoid rescuer fatigue by rotating rescuers at least every 2 minutes. Some EMS pit crew approaches use a clinician on either side of the chest, alternating compressions every minute or every 100 compressions to avoid fatigue."
+        },
+        {
+          "id": "repeat-epi-3-5",
+          "shortAction": "Repeat epinephrine 1 mg IV/IO q3–5 min while in arrest",
+          "priority": "critical",
+          "rationale": "MATC Cardiac Arrest Key Considerations #11 / step 5 — epinephrine 1 mg IV/IO during first or second round of compressions; standard ACLS dosing repeats q3–5 min.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "Administer epinephrine (0.1 mg/kg, maximum dose 1 mg) IV/IO during the first or second round of compressions. Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms."
+        },
+        {
+          "id": "evaluate-three-validity-criteria",
+          "shortAction": "Apply 3-criteria validity test: state form, intact, names present",
+          "priority": "critical",
+          "rationale": "MATC DNR/Advance Directives Inclusion/Exclusion #2 — three validity criteria for a written document. Cross-referenced in Determination-of-Death section 1b. Form passes form/intact/names; ambiguity is only on signer authority.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "One of the documents above is valid when it meets all the following criteria: Conforms to the state specifications for color and construction; Is intact: it has not been cut, broken or shows signs of being repaired; Displays the patient's name and, if required by state law or regulation, the physician's name."
+        },
+        {
+          "id": "polst-signer-requirement",
+          "shortAction": "Identify POLST signer requirement — physician or other empowered medical clinician",
+          "priority": "critical",
+          "rationale": "MATC DNR/Advance Directives #1a — POLST/MOLST must be signed by 'a physician or other empowered medical clinician' to be valid. 'Empowered medical clinician' covers NP/PA where state law authorizes; this is the ambiguity that drives the medical-control call.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "Physician Orders for Life Sustaining Treatment (POLST) or Medical Orders for Life Sustaining Treatment (MOLST) – explicitly describes acceptable interventions for the patient in the form of medical orders, must be signed by a physician or other empowered medical clinician to be valid."
+        },
+        {
+          "id": "call-medical-control-now",
+          "shortAction": "Call medical direction NOW: relay form, signer, ambiguity; request validity ruling",
+          "priority": "critical",
+          "rationale": "MATC DNR/Advance Directives Patient Safety / Treatment #1b — directives should be followed as closely as possible and medical direction contacted as needed; protocol explicitly directs medical-control contact when status is unclear.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "Directives should be followed as closely as possible and medical direction contacted as needed. If for any reason an intervention that is prohibited by an advanced directive is being considered, medical direction should be contacted. Patient Safety Considerations: In cases where the patient's status is unclear and the appropriateness of withholding resuscitation efforts is questioned, EMS personnel should initiate CPR immediately and contact medical direction."
+        },
+        {
+          "id": "document-form-details-verbatim",
+          "shortAction": "Document form details verbatim — header, signer, date, comfort-care boxes — and photograph if able",
+          "priority": "important",
+          "rationale": "MATC DNR/Advance Directives Key Documentation — detailed description of valid exclusion documentation including a copy of the document if possible.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "Key Documentation Elements: Detailed description of the valid exclusion to resuscitation documentation used to guide resuscitation including a copy of the document if possible; Names/contact information for significant bystanders."
+        },
+        {
+          "id": "family-status-update",
+          "shortAction": "Update family briefly — calling medical direction, will not stop until we know",
+          "priority": "important",
+          "rationale": "MATC Termination Treatment #2 — focus attention on family, explain rationale; End-of-life Patient Safety — care with patience and compassion. Manages family expectation; reduces conflict.",
+          "protocolReference": "MATC: Termination of Resuscitative Efforts",
+          "protocolExcerpt": "Treatment and Interventions: Focus attention on the family and/or bystanders. Explain the rationale for termination. Consider support for family members such as other family, friends, clergy, faith leaders, or chaplains."
+        }
+      ],
+      "transitions": [
+        {
+          "targetPhaseId": "document-validated-resus-ceased",
+          "if": "Medical direction validates POLST → resus ceased",
+          "condition": "After hearing the verbatim form details (state-style POLST, intact, patient name and DOB present, signed and dated within 30 days, comfort-measures-only and DNR/DNI boxes checked, signed by an in-state NP who is an empowered medical clinician under Wisconsin scope of practice and signing on behalf of the patient's identified physician), medical direction validates the form as a 'valid exclusion to resuscitation' and orders cessation. Crew ceases CPR, transitions to comfort care, supports the family, and arranges coroner/medical-examiner and hospice/PCP notification per local policy.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "evaluate-three-validity-criteria",
+            "polst-signer-requirement",
+            "call-medical-control-now",
+            "document-form-details-verbatim"
+          ]
+        },
+        {
+          "targetPhaseId": "document-invalid-resus-continues",
+          "if": "Medical direction rules form invalid → continue resus",
+          "condition": "After hearing the form details, medical direction is unable to validate the form (e.g., signer's authority cannot be confirmed in the moment, copy is a photocopy rather than original, or medical-control online physician requires the original signed-by-physician form). Order is to continue full resuscitation and transport. Crew continues CPR, gives the next epi dose, considers reversible causes, packages for transport, and prepares to explain the decision compassionately to the family.",
+          "conditionType": "action_taken",
+          "triggerActionIds": [
+            "call-medical-control-now",
+            "document-form-details-verbatim",
+            "continue-cpr-during-review"
+          ]
+        },
+        {
+          "targetPhaseId": "valid-polst-ignored",
+          "if": "Form clearly valid but crew continues resus without calling med direction",
+          "condition": "Crew dismissed the form (e.g., 'it's only a photocopy' or 'an NP can't sign that') without contacting medical direction, and continued full resuscitation despite an intact in-state POLST, comfort-measures-only and DNR/DNI marked, signed by an empowered medical clinician. The family becomes increasingly distraught as they watch a patient who explicitly did not want this receive aggressive interventions.",
+          "conditionType": "action_not_taken",
+          "triggerActionIds": [
+            "evaluate-three-validity-criteria",
+            "polst-signer-requirement",
+            "call-medical-control-now"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "document-validated-resus-ceased",
+      "name": "Document validated; resus ceased; comfort care",
+      "description": "Medical direction validates the POLST as a valid exclusion to resuscitation after hearing the verbatim form details. Per MATC DNR/Advance Directives Assessment #2, 'If CPR has been initiated and a valid exclusion to resuscitation has been subsequently verified, CPR may be discontinued, and medical direction contacted as needed.' Crew ceases compressions and ventilations, removes the BVM, leaves the home oxygen in place at the family's preference, and shifts focus entirely to the family. The patient is repositioned with dignity. The brother (Tom) now understands the form was valid. The daughter (Karen) sobs and thanks the crew for 'doing it right.' Crew arranges coroner/medical-examiner contact per local policy (expected natural death of a known terminally ill patient with a valid POLST; in WI, in-home death with a documented terminal illness and DNR usually requires notification but not autopsy), notifies the hospice agency and the patient's PCP per the contact list on the wall, documents the form details and the medical-direction verbatim order, and offers chaplain/family support resources.",
+      "triggerCondition": "Medical direction validated the POLST as a 'valid exclusion to resuscitation' after hearing the form details (state-style form, intact, patient name + DOB, comfort-measures-only and DNR/DNI marked, signed by an empowered medical clinician within scope of WI practice). Order is to cease resuscitation and provide comfort care.",
+      "isDefault": true,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 1
+        },
+        "airway": "Patent (passive); BVM removed; nasal cannula remains in place at family preference",
+        "breathing": "Apneic; no ventilations being provided",
+        "circulation": "Pulseless; compressions ceased per medical direction",
+        "skin": {
+          "color": "pale-gray, beginning to mottle",
+          "temperature": "cool, cooling",
+          "moisture": "dry"
+        },
+        "pupils": "Fixed mid-position",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "Resuscitation ceased per medical-direction order based on validated POLST",
+          "Patient repositioned with dignity, sheet drawn up, nasal cannula left in place per family preference",
+          "Daughter sobbing but visibly relieved; brother understands the form was valid",
+          "Crew arranging coroner/medical-examiner notification per local policy",
+          "Hospice agency and patient's PCP being notified using contact list on wall",
+          "Time of death per medical-direction order documented",
+          "EtCO2 reading at time of cessation, form details, and verbatim med-direction order all documented in PCR"
+        ],
+        "patientSpeech": "(Deceased)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Asystole",
+        "ecgWaveform": 3,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 0,
+        "temp": 35.6,
+        "tempF": 96.1,
+        "obstruction": 0,
+        "glucose": 110,
+        "trendTimeSeconds": 25,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": false,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "cease-cpr-per-validated-polst",
+          "shortAction": "Cease CPR per validated POLST and medical-direction order; document time",
+          "priority": "critical",
+          "rationale": "MATC DNR/Advance Directives Assessment #2 — if CPR has been initiated and a valid exclusion has been subsequently verified, CPR may be discontinued; medical direction contacted as needed.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "Assessment: If the patient has a valid exclusion to resuscitation, then no CPR or airway management should be attempted, however this does not exclude comfort measures including medications for pain as appropriate. If CPR has been initiated and a valid exclusion to resuscitation has been subsequently verified, CPR may be discontinued, and medical direction contacted as needed."
+        },
+        {
+          "id": "comfort-measures-allowed",
+          "shortAction": "Comfort measures only — keep O2 if it appears to comfort family; pain meds permitted per POLST",
+          "priority": "important",
+          "rationale": "MATC DNR/Advance Directives Assessment #1 — valid exclusion does not exclude comfort measures including medications for pain as appropriate. End-of-life — comfort is primary goal.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "Assessment: If the patient has a valid exclusion to resuscitation, then no CPR or airway management should be attempted, however this does not exclude comfort measures including medications for pain as appropriate."
+        },
+        {
+          "id": "family-focused-care",
+          "shortAction": "Shift focus to family — sit with them, explain, offer chaplain/clergy/hospice support",
+          "priority": "critical",
+          "rationale": "MATC Termination Patient Care Goals #4 / Treatment #2-3 — when resuscitation is futile, family becomes the focus; explain rationale; offer support such as family, clergy, faith leaders, or chaplains.",
+          "protocolReference": "MATC: Termination of Resuscitative Efforts",
+          "protocolExcerpt": "When cardiac arrest resuscitation becomes futile, the patient's family should become the focus of the EMS clinicians. Families need to be informed of what is being done and that transporting all cardiac arrest patients to the hospital is not supported by evidence. Treatment and Interventions: Focus attention on the family and/or bystanders. Explain the rationale for termination. Consider support for family members such as other family, friends, clergy, faith leaders, or chaplains."
+        },
+        {
+          "id": "notify-coroner-pcp-hospice",
+          "shortAction": "Notify coroner/medical examiner, PCP, and hospice agency per local policy",
+          "priority": "critical",
+          "rationale": "MATC DNR/Advance Directives Key Documentation — documentation of decision-making; coroner/ME notification per local policy for in-home death of terminally ill patient. End-of-life #2 — engage hospice or PCP.",
+          "protocolReference": "MATC: End-of-Life Care/Hospice Care",
+          "protocolExcerpt": "Engage with the patient's hospice or end-of-life care team or their primary care physician if possible. If not a viable option, contact medical direction."
+        },
+        {
+          "id": "document-form-and-md-order",
+          "shortAction": "Document form details, medical-direction order verbatim, time of cessation, names/contacts",
+          "priority": "critical",
+          "rationale": "MATC DNR/Advance Directives Key Documentation — detailed description of valid exclusion, copy if possible, names/contact for bystanders. Termination Key Documentation — items a-f documented in PCR.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "Key Documentation Elements: Detailed description of the valid exclusion to resuscitation documentation used to guide resuscitation including a copy of the document if possible; Names/contact information for significant bystanders."
+        },
+        {
+          "id": "preserve-dignity",
+          "shortAction": "Reposition patient with dignity; allow family time at bedside",
+          "priority": "important",
+          "rationale": "MATC End-of-life Patient Safety #2 — care delivered with utmost patience and compassion. Termination Patient Care Goals — family begins grieving; in-home setting is often preferable.",
+          "protocolReference": "MATC: End-of-Life Care/Hospice Care",
+          "protocolExcerpt": "Patient Safety Considerations: Careful and thorough assessments should be performed to identify complaints not related to the illness for which the patient is receiving hospice or end-of-life care. Care should be delivered with the utmost patience and compassion."
+        },
+        {
+          "id": "scene-preservation",
+          "shortAction": "Leave scene as-is for coroner/ME; do not remove invasive lines per local policy",
+          "priority": "important",
+          "rationale": "MATC Determination-of-Death Key Considerations — at likely crime scene, disturb as little potential evidence as possible. By extension, for any unattended/in-home death awaiting coroner/ME review, leave lines and equipment per local policy.",
+          "protocolReference": "MATC: Determination of Death/Withholding Resuscitative Efforts",
+          "protocolExcerpt": "Key Considerations: At a likely crime scene, disturb as little potential evidence as possible. Key Documentation Elements: Clinical/situational details that may be available from bystanders/caregivers; Documentation of details surrounding decision to determine death; Time of contact with medical direction; Time of death determination."
+        }
+      ]
+    },
+    {
+      "id": "document-invalid-resus-continues",
+      "name": "Document NOT validated; resus continues; transport",
+      "description": "Medical direction is unable to validate the form in the moment. The signer's authority cannot be confirmed at 21:50 on a weeknight (e.g., NP's scope or relationship to the patient is not confirmable, or the medical-direction physician requires the original signed-by-physician form, or the photocopy itself is the disqualifier under local policy). Per MATC, when the form cannot be validated, the crew continues full resuscitation. Crew is now in minute 6 of resuscitation. Asystole persists. EtCO2 has drifted from 14 down to 9 mmHg despite ongoing compressions and a second dose of epinephrine — consistent with poor cardiac viability in this elderly multi-morbid patient. The crew must now also explain to the family — compassionately but clearly — that without validation they are obligated to continue, and they must transport. This phase tees up the question of WHEN to transition to termination-of-resuscitation criteria (20 minutes of asystole with EtCO2 < 20 mmHg) or to continued transport based on local policy.",
+      "triggerCondition": "Medical direction did NOT validate the form (signer authority not confirmable in the moment, or photocopy non-original, or other local-policy reason). Order is to continue full resuscitation. Crew is now in minute 6, on second dose of epinephrine, asystole persists, EtCO2 has fallen from 14 to 9 mmHg.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 1
+        },
+        "airway": "BVM with oral airway in place; supraglottic airway placement now being considered",
+        "breathing": "Apneic; BVM at 10/min without interruption of compressions",
+        "circulation": "Pulseless; compressions ongoing with rotation",
+        "skin": {
+          "color": "pale-gray, mottling progressing",
+          "temperature": "cool",
+          "moisture": "dry"
+        },
+        "pupils": "Mid-position (4 mm), now minimally reactive — possibly trending toward fixed",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "Asystole persistent in two leads at 2-minute checks",
+          "Second epinephrine 1 mg given; third dose due in ~3 minutes",
+          "EtCO2 trend: 14 → 9 mmHg — poor prognostic sign per MATC Cardiac Arrest Key Considerations",
+          "No identifiable reversible cause found on scene (no hypothermia exposure, no obvious volume loss, no tox concern, no evidence of tension pneumo)",
+          "Family informed compassionately that without validated form, crew is obligated to continue",
+          "Daughter visibly distressed: 'But she didn't want this!'",
+          "Brother now also asking crew to stop — but verbal-only is still insufficient"
+        ],
+        "patientSpeech": "(Unresponsive — no speech)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Asystole",
+        "ecgWaveform": 3,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 9,
+        "temp": 35.7,
+        "tempF": 96.3,
+        "obstruction": 0,
+        "glucose": 110,
+        "trendTimeSeconds": 45,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "continue-full-resus-per-protocol",
+          "shortAction": "Continue full resuscitation — form not validated; default is to resuscitate",
+          "priority": "critical",
+          "rationale": "MATC DNR/Advance Directives Inclusion/Exclusion #3 — if there is question about validity, proceed with resuscitation until additional information can be obtained.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "If there is question about the validity of the form/instrument, the best course of action is to proceed with the resuscitation until additional information can be obtained to clarify the best course of action. If a patient has a valid version of one of the above documents, it will be referred to as a 'valid exclusion to resuscitation' for the purposes of this protocol."
+        },
+        {
+          "id": "compassionate-family-explanation",
+          "shortAction": "Explain to family — without validated form we MUST continue; this is the rule",
+          "priority": "critical",
+          "rationale": "MATC End-of-life Patient Safety #2 / Termination Treatment #2 — explain rationale with patience and compassion. Family needs to understand the rule, not just feel it.",
+          "protocolReference": "MATC: Termination of Resuscitative Efforts",
+          "protocolExcerpt": "When cardiac arrest resuscitation becomes futile, the patient's family should become the focus of the EMS clinicians. Families need to be informed of what is being done and that transporting all cardiac arrest patients to the hospital is not supported by evidence. Most families understand the futility of the situation and are accepting of ceasing resuscitation efforts in the field."
+        },
+        {
+          "id": "third-epi-due",
+          "shortAction": "Repeat epinephrine 1 mg IV/IO at 3–5 min interval (third dose)",
+          "priority": "critical",
+          "rationale": "MATC Cardiac Arrest — epinephrine continues at standard ACLS 3–5 minute interval while in arrest.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "Administer Epinephrine 1mg during the first or second round of compressions. Prioritize early administration of epinephrine for non-shockable rhythms. Additional rescuer obtains IO (or IV) access and gives epinephrine."
+        },
+        {
+          "id": "consider-advanced-airway",
+          "shortAction": "Consider supraglottic airway or ETT after 3–4 cycles; ventilations 10/min",
+          "priority": "important",
+          "rationale": "MATC Cardiac Arrest step 6 — supraglottic or ETT after first 3–4 compression cycles is acceptable; do not interrupt compressions for placement.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "Advanced airway placement: Either a supraglottic airway or an endotracheal tube may be placed without interruption of compressions. Ventilations are provided at 10 breaths/minute for adults. During the first four cycles of compressions/defibrillation (approximately 10 minutes) avoid advanced airway placement."
+        },
+        {
+          "id": "reversible-causes-revisit",
+          "shortAction": "Re-screen reversible causes — CKD 4 → hyperK risk → consider calcium + bicarb",
+          "priority": "important",
+          "rationale": "MATC Cardiac Arrest step 8b — dialysis/known hyperK patient: calcium gluconate or chloride + sodium bicarbonate. Patient is CKD stage 4 not yet dialysis-dependent but at hyperK risk.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "The dialysis patient/known hyperkalemic patient – Additions to care include the following: Calcium gluconate 10% 1 g IV bolus over 2 minutes (for pediatrics, the dose is 100 mg/kg which is 1 mL/kg), can repeat the dose if no response OR Calcium chloride 10% 1 g IV bolus over 2 minutes; Sodium bicarbonate 1 mEq/kg IV."
+        },
+        {
+          "id": "etco2-as-prognostic",
+          "shortAction": "Note EtCO2 trend (14 → 9 mmHg) — poor prognostic indicator",
+          "priority": "important",
+          "rationale": "MATC Cardiac Arrest Key Considerations #3 — EtCO2 < 10 mmHg or falling > 25% indicates poor prognosis; Termination Key Considerations #5 — provides support for termination.",
+          "protocolReference": "MATC: Termination of Resuscitative Efforts",
+          "protocolExcerpt": "Quantitative EtCO2 measurements of less than 10 mmHg or falling greater than 25% despite resuscitation indicates a poor prognosis and provide additional support for termination."
+        },
+        {
+          "id": "evaluate-termination-criteria",
+          "shortAction": "Evaluate termination criteria — asystole, >20 min, EtCO2 <20; consult med direction again",
+          "priority": "critical",
+          "rationale": "MATC Termination Patient Management #1 — non-traumatic arrest in asystole/slow wide-complex PEA may be terminated if no ROSC after 20 minutes AND EtCO2 < 20 mmHg; consider contacting medical direction.",
+          "protocolReference": "MATC: Termination of Resuscitative Efforts",
+          "protocolExcerpt": "Resuscitation may be terminated in asystole and slow wide complex PEA if there is: No return of spontaneous circulation after 20 minutes in the absence of hypothermia AND The EtCO2 is less than 20 mmHg. There is no return of spontaneous pulse and no evidence of neurological function (non-reactive pupils, no response to pain, no spontaneous movement). All EMS clinicians involved in the patient's care agree that discontinuation of the resuscitation is appropriate. Consider contacting medical direction before termination of resuscitative efforts."
+        },
+        {
+          "id": "transport-decision-or-on-scene",
+          "shortAction": "Resuscitate on scene; avoid moving compressions if reaching termination criteria",
+          "priority": "important",
+          "rationale": "MATC Cardiac Arrest Patient Safety #1-3 / Termination Patient Care Goal #3 — compressions in a moving vehicle are less effective and unsafe; resuscitate as close to scene as possible.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "Patient Safety Considerations: Performing manual chest compressions in a moving vehicle may pose a clinician safety concern. In addition, manual chest compressions during patient movement are less effective in regard to hands on time, depth, recoil and rate. Ideally, patients should be resuscitated as close to the scene as operationally possible. Risks and benefits should be considered before patient movement in cardiac arrest situations."
+        },
+        {
+          "id": "document-md-non-validation",
+          "shortAction": "Document MD non-validation, ongoing CPR, family education, and rationale",
+          "priority": "critical",
+          "rationale": "MATC Termination Key Documentation — all items must be clearly documented; if continuation despite criteria, rationale documented. DNR Documentation — names/contacts of bystanders.",
+          "protocolReference": "MATC: Termination of Resuscitative Efforts",
+          "protocolExcerpt": "All items (a–f in Non-traumatic or Traumatic arrest) listed under patient management must be clearly documented in the EMS patient care report in addition to the assessment findings supporting this medical decision making. If resuscitation is continued for special circumstance or despite satisfying the criteria in this guideline, the rationale for such decision making must be documented."
+        }
+      ]
+    },
+    {
+      "id": "improper-verbal-only-cessation",
+      "name": "Verbal-only — improper cessation",
+      "description": "Crew accepted the daughter's verbal statement 'she didn't want CPR' as sufficient and either never started compressions or stopped them before validating the written form and contacting medical direction. Per MATC, a verbal report from family alone — without a valid written document (POLST/MOLST/DNR), bracelet, or (state-permitting) explicit healthcare-POA direction — is NOT a valid exclusion to resuscitation. Patient Safety Considerations specifically direct that when the appropriateness of withholding is questioned, initiate CPR and contact medical direction. The brother (Tom) arrives during this phase, has NOT previously seen any document, and disputes the call: 'You're just stopping based on what she said? Did you even look at the form? Are you sure mom wanted that?' The crew now has an unresuscitated patient, a written form they never validated, no medical-direction order, and a family conflict that will become a documentation, QI, and potentially legal/liability event. The teaching beat is severe: the right answer was to RESUSCITATE while reviewing, not to honor a verbal report.",
+      "triggerCondition": "Crew accepted the daughter's verbal 'she didn't want CPR' as sufficient to withhold resuscitation, did not examine the written form, did not contact medical direction, and either never started CPR or ceased it within the first minute on verbal grounds alone.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 1
+        },
+        "airway": "Patent (passive); no airway management performed",
+        "breathing": "Apneic; no ventilations being provided",
+        "circulation": "Pulseless; no compressions being provided",
+        "skin": {
+          "color": "pale-gray, mottling progressing",
+          "temperature": "cool, cooling",
+          "moisture": "dry"
+        },
+        "pupils": "Mid-position, becoming fixed",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "No resuscitation initiated OR resuscitation ceased before written form was validated",
+          "No medical-direction contact documented",
+          "Written form NEVER physically examined by crew",
+          "Brother (Tom) arrives, has not seen the form, disputes the cessation",
+          "Daughter (Karen) now also second-guessing: 'I called you guys for a reason …'",
+          "Crew exposed to documentation, QI, and ethical/legal questions",
+          "No coroner/ME or PCP/hospice contact yet — patient died unattended without valid exclusion documentation in hand at the time of decision"
+        ],
+        "patientSpeech": "(Deceased)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Asystole",
+        "ecgWaveform": 3,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 0,
+        "temp": 35.5,
+        "tempF": 95.9,
+        "obstruction": 0,
+        "glucose": 110,
+        "trendTimeSeconds": 20,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": false,
+          "etco2Visible": false,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-error-verbal-insufficient",
+          "shortAction": "Recognize error — verbal family report alone is NOT a valid exclusion",
+          "priority": "critical",
+          "rationale": "MATC DNR/Advance Directives Inclusion/Exclusion #1 — patient must have one of the listed documents or a valid alternative (bracelet, or state-permitted POA). Verbal family report alone is not on the list of valid exclusions.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "Patients must have one of the following documents or a valid alternative (such as identification bracelet indicating wishes) immediately available: Physician Orders for Life Sustaining Treatment (POLST) or Medical Orders for Life Sustaining Treatment (MOLST); Do Not Resuscitate (DNR) order; Advance directives; As specified from state to state, in the absence of formal written directions (MOLST, POLST, DNR, advanced directives), and in the presence of a person with power of attorney for healthcare or healthcare proxy, that person may prescribe limits of treatment."
+        },
+        {
+          "id": "initiate-cpr-now",
+          "shortAction": "Initiate CPR immediately if not already; recover from the error",
+          "priority": "critical",
+          "rationale": "MATC DNR/Advance Directives Patient Safety — when status is unclear, EMS personnel should initiate CPR immediately and contact medical direction. Determination-of-Death — resuscitate unless an irreversible-death criterion is met.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "Patient Safety Considerations: In cases where the patient's status is unclear and the appropriateness of withholding resuscitation efforts is questioned, EMS personnel should initiate CPR immediately and contact medical direction."
+        },
+        {
+          "id": "examine-form-and-call-md-now",
+          "shortAction": "Examine the written form now; contact medical direction now",
+          "priority": "critical",
+          "rationale": "MATC DNR/Advance Directives — three validity criteria; medical direction contacted as needed when validity uncertain. Determination-of-Death — clinical death is not confirmed without one of the listed conditions plus, where applicable, a valid form.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "One of the documents above is valid when it meets all the following criteria: Conforms to the state specifications for color and construction; Is intact: it has not been cut, broken or shows signs of being repaired; Displays the patient's name and, if required by state law or regulation, the physician's name. Directives should be followed as closely as possible and medical direction contacted as needed."
+        },
+        {
+          "id": "document-everything-event",
+          "shortAction": "Document timeline, statements verbatim, who/what/when of the decision",
+          "priority": "critical",
+          "rationale": "MATC DNR/Advance Directives Key Documentation — detailed description of valid exclusion (or absence thereof), names/contacts. Termination Key Documentation — items a-f and assessment findings supporting the decision.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "Key Documentation Elements: Detailed description of the valid exclusion to resuscitation documentation used to guide resuscitation including a copy of the document if possible; Names/contact information for significant bystanders."
+        },
+        {
+          "id": "notify-supervisor-qi",
+          "shortAction": "Notify supervisor; submit for QI review per agency policy",
+          "priority": "critical",
+          "rationale": "MATC Cardiac Arrest Key Considerations #15 — agency must perform QI review of care and outcome for every patient who receives (or should have received) CPR. This case requires immediate QI engagement.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "The EMS agency must perform a Quality Improvement (QI) review of care and outcome, overseen by the agency medical director, for every patient that receives CPR. The QI should be coordinated with local receiving hospitals to include hospital admission, discharge, and condition information."
+        },
+        {
+          "id": "compassionate-family-explanation-error",
+          "shortAction": "Address family compassionately about the error — be honest, not defensive",
+          "priority": "important",
+          "rationale": "MATC End-of-life Patient Safety — care with patience and compassion. Termination — family is the focus; explanation owed. Honesty preserves trust and reduces complaint risk.",
+          "protocolReference": "MATC: End-of-Life Care/Hospice Care",
+          "protocolExcerpt": "Patient Safety Considerations: Care should be delivered with the utmost patience and compassion. Social interactions with family may affect end-of-life care. Scene safety should be considered when deciding on management."
+        }
+      ]
+    },
+    {
+      "id": "valid-polst-ignored",
+      "name": "Valid POLST ignored — improper continued resus",
+      "description": "Crew dismissed the form without performing the validity test or contacting medical direction — common reasons: 'it's just a photocopy,' 'an NP can't sign that,' or 'we don't recognize this form.' They continued full resuscitation despite an intact in-state POLST clearly marked comfort-measures-only and DNR/DNI, with patient name, DOB, date within 30 days, and a signature from an empowered medical clinician acting on behalf of the patient's PCP. The family watches the aggressive resuscitation — chest compressions on their frail dementia-staged mother, IO drill into her humerus, BVM ventilations, repeated epinephrine — and becomes increasingly distraught. The daughter (Karen) sobs: 'I'm watching you do exactly what she said she didn't want.' The brother (Tom), having now read the form, points and says 'It IS signed by her doctor's office, look.' Per MATC the form should have triggered an immediate validity assessment and medical-direction call. The patient's autonomy — her advance directive — has been violated. The teaching beat is the inverse of the verbal-only branch: dismissing a written form without applying the three-criteria test and the medical-direction call is also wrong. The correct response is to STOP, perform the validity test now, contact medical direction now, and cease resuscitation if the form is validated.",
+      "triggerCondition": "Crew dismissed the form without applying the 3-criteria validity test and without contacting medical direction; continued full resuscitation despite an intact in-state POLST marked comfort-measures-only and DNR/DNI signed by an empowered medical clinician.",
+      "isDefault": false,
+      "clinicalPresentation": {
+        "avpu": "Unresponsive",
+        "gcs": {
+          "eye": 1,
+          "verbal": 1,
+          "motor": 1
+        },
+        "airway": "BVM with oral airway; supraglottic airway being placed",
+        "breathing": "Apneic; BVM at 10/min",
+        "circulation": "Pulseless; aggressive compressions ongoing",
+        "skin": {
+          "color": "pale-gray, bruising developing over sternum from compressions",
+          "temperature": "cool",
+          "moisture": "dry"
+        },
+        "pupils": "Mid-position (4 mm), minimally reactive",
+        "motorFunction": "Flaccid",
+        "otherFindings": [
+          "Full resuscitation continuing despite presence of in-state POLST",
+          "Form NOT formally examined against 3-criteria test",
+          "Medical direction NOT contacted regarding the form",
+          "Daughter sobbing: 'You're doing exactly what she said she didn't want'",
+          "Brother now reading the form: 'This IS signed by her doctor's office'",
+          "Compression-related rib fractures likely in this 84-yo osteoporotic patient",
+          "Patient's stated wishes are being violated"
+        ],
+        "patientSpeech": "(Unresponsive — no speech)"
+      },
+      "monitorState": {
+        "ecgRhythm": "Asystole",
+        "ecgWaveform": 3,
+        "hr": 0,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 10,
+        "spo2": 0,
+        "etco2": 12,
+        "temp": 35.7,
+        "tempF": 96.3,
+        "obstruction": 0,
+        "glucose": 110,
+        "trendTimeSeconds": 40,
+        "visibility": {
+          "spo2Visible": false,
+          "spo2Attached": false,
+          "rrVisible": true,
+          "etco2Visible": true,
+          "cvpVisible": false
+        }
+      },
+      "expectedActions": [
+        {
+          "id": "recognize-error-form-ignored",
+          "shortAction": "Recognize error — form was never validated against the 3 criteria",
+          "priority": "critical",
+          "rationale": "MATC DNR/Advance Directives Inclusion/Exclusion #2 — three validity criteria define a valid document. Skipping the test and dismissing the form is a failure to apply the protocol.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "One of the documents above is valid when it meets all the following criteria: Conforms to the state specifications for color and construction; Is intact: it has not been cut, broken or shows signs of being repaired; Displays the patient's name and, if required by state law or regulation, the physician's name."
+        },
+        {
+          "id": "stop-and-apply-test",
+          "shortAction": "Pause unnecessary interventions; apply the validity test NOW",
+          "priority": "critical",
+          "rationale": "MATC DNR/Advance Directives — directives should be followed as closely as possible; medical direction contacted as needed. Recovery from this error requires actually performing the validity test.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "Directives should be followed as closely as possible and medical direction contacted as needed. If for any reason an intervention that is prohibited by an advanced directive is being considered, medical direction should be contacted."
+        },
+        {
+          "id": "call-md-now-form-question",
+          "shortAction": "Contact medical direction NOW with form details; request validity ruling",
+          "priority": "critical",
+          "rationale": "MATC DNR/Advance Directives Patient Safety — when status is unclear, contact medical direction. Doing this 8 minutes late is still better than not doing it at all.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "Patient Safety Considerations: In cases where the patient's status is unclear and the appropriateness of withholding resuscitation efforts is questioned, EMS personnel should initiate CPR immediately and contact medical direction."
+        },
+        {
+          "id": "cease-if-validated",
+          "shortAction": "If MD validates form on this call → cease per Assessment #2",
+          "priority": "critical",
+          "rationale": "MATC DNR/Advance Directives Assessment #2 — if CPR has been initiated and a valid exclusion has been subsequently verified, CPR may be discontinued; medical direction contacted as needed.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "Assessment: If CPR has been initiated and a valid exclusion to resuscitation has been subsequently verified, CPR may be discontinued, and medical direction contacted as needed."
+        },
+        {
+          "id": "family-acknowledgment",
+          "shortAction": "Acknowledge family — apologize for delay; explain validity process",
+          "priority": "important",
+          "rationale": "MATC End-of-life / Termination — care with patience and compassion; family is the focus; honest acknowledgment preserves dignity even when the process broke down.",
+          "protocolReference": "MATC: End-of-Life Care/Hospice Care",
+          "protocolExcerpt": "Patient Safety Considerations: Care should be delivered with the utmost patience and compassion. Social interactions with family may affect end-of-life care."
+        },
+        {
+          "id": "document-error-and-recovery",
+          "shortAction": "Document timeline, missed validity test, recovery actions, MD contact, outcome",
+          "priority": "critical",
+          "rationale": "MATC DNR/Advance Directives Key Documentation — detailed description of exclusion documentation; names/contacts. Termination Key Documentation — items a-f and assessment findings.",
+          "protocolReference": "MATC: Do Not Resuscitate Status/Advance Directives/Healthcare Power of Attorney (POA) Status",
+          "protocolExcerpt": "Key Documentation Elements: Detailed description of the valid exclusion to resuscitation documentation used to guide resuscitation including a copy of the document if possible; Names/contact information for significant bystanders."
+        },
+        {
+          "id": "qi-review-form-handling",
+          "shortAction": "Submit for QI review — agency-level training opportunity on POLST handling",
+          "priority": "important",
+          "rationale": "MATC Cardiac Arrest #15 — QI review of every patient that receives CPR; this case is a teaching event for the agency's POLST/DNR handling.",
+          "protocolReference": "MATC: Cardiac Arrest (VF/VT/Asystole/PEA)",
+          "protocolExcerpt": "The EMS agency must perform a Quality Improvement (QI) review of care and outcome, overseen by the agency medical director, for every patient that receives CPR."
+        }
+      ]
+    }
+  ],
+  "realiti": {
+    "scenarioMonitorType": 2,
+    "scenarioDefaultEnergy": 200,
+    "scenarioDefaultPacerThreshold": 55
+  }
+}

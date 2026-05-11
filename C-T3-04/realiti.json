@@ -1,0 +1,581 @@
+{
+  "scenarioId": "C-T3-04",
+  "scenarioName": "Cardiogenic Shock with Deterioration to Arrest",
+  "scenarioType": "Vital Signs",
+  "scenarioVersion": 2,
+  "scenarioTime": 1800,
+  "scenarioMonitorType": 2,
+  "scenarioDefaultEnergy": 200,
+  "scenarioDefaultPacerThreshold": 55,
+  "isDemo": false,
+  "isALSILegacy": false,
+  "scenarioStory": {
+    "history": "71-year-old male with longstanding CAD (3-vessel CABG 8 years ago, two prior PCIs) and heart failure with reduced ejection fraction (last echo EF 25%). Wife states he has gained ~12 lbs over the past two weeks despite a low-salt diet. Today he was 'slower than usual' all morning, then around 1130 became 'not making sense,' couldn't follow conversation, and complained of being short of breath sitting upright in his recliner. Wife noticed his hands and feet looked 'gray' and called 911. No reported chest pain on arrival, but patient cannot reliably answer questions. No fever, no recent illness, no fall, no medication changes, no missed doses per wife.",
+    "discussion": "",
+    "course": "Initial Contact: On arrival, 71yo male slumped in recliner, gray and diaphoretic, eyes half-open, tachypneic with audible wet rales heard from the doorway. Wife at bedside. Patient barely responsive to voice, withdraws to pain, GCS 12 (E3 V3 M6). First vitals: HR 124 sinus tach, BP 78/52, RR 32 labored, SpO2 88% on room air, bibasilar crackles, cool clammy skin, weak thready radials. This is cardiogenic shock with pulmonary edema until proven otherwise. The 12-lead obtained early shows an anterior STEMI. Crew must recognize the trajectory — this is a patient who will arrest in the next 10-12 minutes if not aggressively stabilized AND simultaneously prepared for arrest. → Pads on, pressors prepped: Crew has recognized cardiogenic shock + pulmonary edema, placed pads, started high-flow O2, obtained 12-lead confirming anterior STEMI, transmitted STEMI alert, established IV access, and is now actively preparing pressors. Patient continues to deteriorate physiologically despite the right preparation — BP drifts to 64/42, HR climbs to 132, SpO2 falls to 84%, mentation worsens to GCS 9 (E2 V2 M5). This is the window for push-dose epinephrine and/or initiating a norepinephrine infusion. CPAP may be considered cautiously but the BP is borderline. → PEA arrest — prepared team: Patient is now in PEA arrest. The monitor shows a slow narrow-complex rhythm at ~30 bpm with no palpable pulse. Because the crew anticipated this, the transition is seamless: pads already on, compressions start immediately, the first dose of epinephrine is already drawn and given within 60 seconds, BVM is in line with the existing capnography, and norepinephrine infusion is paused on the pump (or hung wide-open as a vehicle for arrest meds). Anterior STEMI is the working etiology — there will be no shockable rhythm in this branch. → ROSC achieved: After 2-3 cycles of high-quality CPR with epinephrine, EtCO2 spikes to 32 mmHg and a pulse check reveals an organized narrow-complex rhythm with a palpable carotid. Post-ROSC vitals: NSR at HR 102, BP 88/56, RR 0 (still apneic and being BVM ventilated), SpO2 92% on BVM with high-flow O2, EtCO2 26, GCS 4 (E1 V1 M2). Patient remains in critical condition. Norepinephrine infusion is restarted (or initiated if not previously hung) to support MAP. Serial 12-lead post-ROSC reconfirms anterior STEMI. Transport to PCI-capable facility continues with close monitoring for re-arrest."
+  },
+  "patientInformation": {
+    "patientName": "Walter Pulaski",
+    "patientCondition": "Trouble breathing, weakness, altered mentation",
+    "patientAge": 71,
+    "patientAgeUnit": "years",
+    "patientAgeCategory": 0,
+    "patientSex": 1,
+    "patientHeight": 178,
+    "patientWeight": 88,
+    "patientPhotoId": 86,
+    "patientAdmitted": 1
+  },
+  "labs": [],
+  "scenarioEvents": [
+    {
+      "type": "ScenarioEvent",
+      "name": "Initial Contact",
+      "description": "On arrival, 71yo male slumped in recliner, gray and diaphoretic, eyes half-open, tachypneic with audible wet rales heard from the doorway. Wife at bedside. Patient barely responsive to voice, withdraws to pain, GCS 12 (E3 V3 M6). First vitals: HR 124 sinus tach, BP 78/52, RR 32 labored, SpO2 88% on room air, bibasilar crackles, cool clammy skin, weak thready radials. This is cardiogenic shock with pulmonary edema until proven otherwise. The 12-lead obtained early shows an anterior STEMI. Crew must recognize the trajectory — this is a patient who will arrest in the next 10-12 minutes if not aggressively stabilized AND simultaneously prepared for arrest.",
+      "monitorType": 0,
+      "trendTime": 0,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 124,
+        "bpSys": 78,
+        "bpDia": 52,
+        "respRate": 32,
+        "spo2": 88,
+        "etco2": 28,
+        "temp": 36.4,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Recognize cardiogenic shock + pulm edema; withhold large fluid boluses",
+        "High-flow O2 via NRB; titrate to SpO2 94-98%",
+        "Cardiac monitor on; place defib pads anticipating arrest",
+        "Obtain 12-lead within 10 minutes; identify anterior STEMI",
+        "Two large-bore IVs (or IO if 2 attempts/90s fail)",
+        "Apply continuous waveform EtCO2 (low value confirms poor perfusion)",
+        "Check blood glucose; correct if <60 mg/dL",
+        "STEMI alert to cath-capable facility; transmit 12-lead",
+        "Screen for PDE5 inhibitor use in last 48 hr (contraindicates NTG)",
+        "Hold large-volume crystalloid; small 250 mL bolus only if attempted"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Pads on, pressors prepped",
+      "description": "Crew has recognized cardiogenic shock + pulmonary edema, placed pads, started high-flow O2, obtained 12-lead confirming anterior STEMI, transmitted STEMI alert, established IV access, and is now actively preparing pressors. Patient continues to deteriorate physiologically despite the right preparation — BP drifts to 64/42, HR climbs to 132, SpO2 falls to 84%, mentation worsens to GCS 9 (E2 V2 M5). This is the window for push-dose epinephrine and/or initiating a norepinephrine infusion. CPAP may be considered cautiously but the BP is borderline.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 132,
+        "bpSys": 64,
+        "bpDia": 42,
+        "respRate": 36,
+        "spo2": 84,
+        "etco2": 24,
+        "temp": 36.2,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Push-dose epi 10 mcg IV q3-5 min (dilute 1 mL 1:10,000 in 9 mL NS = 10 mcg/mL; give 1 mL)",
+        "Start norepinephrine 0.05-0.5 mcg/kg/min (88 kg → start ~4.4 mcg/min, titrate to MAP 65)",
+        "Small fluid bolus 250 mL NS only; reassess lungs after",
+        "CPAP only if SBP supports; remove if mental status worsens",
+        "Withhold NTG — SBP too low; document rationale",
+        "Aspirin 324 mg chewed (if patient can protect airway)",
+        "Prepare RSI equipment + drugs in anticipation of airway failure",
+        "Draw epinephrine 1 mg (1:10,000) for IV/IO arrest dose"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "PEA arrest — prepared team",
+      "description": "Patient is now in PEA arrest. The monitor shows a slow narrow-complex rhythm at ~30 bpm with no palpable pulse. Because the crew anticipated this, the transition is seamless: pads already on, compressions start immediately, the first dose of epinephrine is already drawn and given within 60 seconds, BVM is in line with the existing capnography, and norepinephrine infusion is paused on the pump (or hung wide-open as a vehicle for arrest meds). Anterior STEMI is the working etiology — there will be no shockable rhythm in this branch.",
+      "monitorType": 0,
+      "trendTime": 15,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 30,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 15,
+        "temp": 36,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": false,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Start high-quality CPR (100-120/min, depth 2-2.4 in, full recoil)",
+        "Epinephrine 1 mg IV/IO (1:10,000) — give within first cycle, repeat q3-5 min",
+        "Ventilate at 10/min via BVM; avoid hyperventilation",
+        "Monitor EtCO2 for CPR quality (target >10); watch for ROSC spike",
+        "Address reversible cause — anterior STEMI; continue toward PCI center",
+        "Pulse + rhythm check every 2 min; minimize interruption",
+        "If VF/pVT develops: defibrillate at 200 J biphasic (Zoll max)",
+        "Consider SGA or ETT after first 3-4 cycles (~6-8 min) if needed"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "ROSC achieved",
+      "description": "After 2-3 cycles of high-quality CPR with epinephrine, EtCO2 spikes to 32 mmHg and a pulse check reveals an organized narrow-complex rhythm with a palpable carotid. Post-ROSC vitals: NSR at HR 102, BP 88/56, RR 0 (still apneic and being BVM ventilated), SpO2 92% on BVM with high-flow O2, EtCO2 26, GCS 4 (E1 V1 M2). Patient remains in critical condition. Norepinephrine infusion is restarted (or initiated if not previously hung) to support MAP. Serial 12-lead post-ROSC reconfirms anterior STEMI. Transport to PCI-capable facility continues with close monitoring for re-arrest.",
+      "monitorType": 0,
+      "trendTime": 20,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 23,
+        "hr": 102,
+        "bpSys": 88,
+        "bpDia": 56,
+        "respRate": 10,
+        "spo2": 92,
+        "etco2": 26,
+        "temp": 36,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Secure airway (ETT or SGA); ventilate 10/min, target EtCO2 35-45",
+        "Titrate O2 to SpO2 94-98%; do not hyperoxygenate",
+        "Continue/start norepinephrine 0.05-0.5 mcg/kg/min; MAP target ≥65",
+        "Repeat 12-lead; reconfirm anterior STEMI; activate cath lab",
+        "Watch for re-arrest; pads remain on; drugs stay drawn",
+        "Avoid hyperthermia (no warm blankets unless hypothermic)",
+        "Direct transport to PCI-capable facility; pre-notify cath lab"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "Aggressive fluid bolus given",
+      "description": "Crew misread the picture and ran 1-2 L NS wide-open for 'shock.' Pulmonary edema crescendos: rales now to apices, frothy pink sputum pouring from the mouth, SpO2 crashes to 72% even on NRB, BP continues to fall to 58/36, mentation drops to GCS 6. Patient is now in worse condition heading into arrest — refractory pulm edema will make BVM ventilation extremely difficult and any post-ROSC will be brutal.",
+      "monitorType": 0,
+      "trendTime": 30,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 138,
+        "bpSys": 58,
+        "bpDia": 36,
+        "respRate": 40,
+        "spo2": 72,
+        "etco2": 18,
+        "temp": 36,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Stop fluids immediately; recognize iatrogenic worsening",
+        "Aggressive suction; SALAD technique for soiled airway",
+        "Push-dose epi 10 mcg IV + start norepinephrine infusion now"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "No pre-arrest preparation",
+      "description": "Crew is running supportive care: oxygen on, IV established, calmly assessing. No defib pads. No pressors prepared. No arrest drugs drawn. RSI equipment is in the bag, untouched. Patient continues to deteriorate exactly as expected, but now the arrest will be a surprise — pads have to be placed mid-compressions, drugs have to be drawn mid-arrest, and the first dose of epi will be late.",
+      "monitorType": 0,
+      "trendTime": 45,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 134,
+        "bpSys": 62,
+        "bpDia": 40,
+        "respRate": 36,
+        "spo2": 82,
+        "etco2": 22,
+        "temp": 36.2,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": true,
+        "spo2Attached": true,
+        "rrVisible": true,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Place defibrillator pads NOW; configure VT/VF alert",
+        "Push-dose epi 10 mcg IV; mix norepi infusion",
+        "Pre-draw 1 mg epi (1:10,000) for arrest"
+      ],
+      "relatedSounds": []
+    },
+    {
+      "type": "ScenarioEvent",
+      "name": "PEA arrest — unprepared/refractory",
+      "description": "Patient is in PEA arrest under significantly worse conditions. Pads must be placed mid-compressions OR airway is refractory due to fluid overload. First dose of epinephrine is delayed. EtCO2 is lower (~8-10 mmHg), reflecting either poor compression quality during the scramble or impaired pulmonary gas exchange from edema. ROSC is less likely; if achieved, the patient will be markedly more unstable.",
+      "monitorType": 0,
+      "trendTime": 15,
+      "jumpTime": 0,
+      "defibShock": false,
+      "defibDisarm": true,
+      "parameters": {
+        "ecgWaveform": 9,
+        "hr": 24,
+        "bpSys": 0,
+        "bpDia": 0,
+        "respRate": 0,
+        "spo2": 0,
+        "etco2": 9,
+        "temp": 36,
+        "obstruction": 0,
+        "custMeasure1": 142,
+        "custMeasureLabel1": "mg/dL",
+        "spo2Visible": false,
+        "spo2Attached": false,
+        "rrVisible": false,
+        "etco2Visible": true,
+        "cvpVisible": false
+      },
+      "relatedMedia": [],
+      "relatedLabs": [],
+      "relatedChecklist": [
+        "Establish high-quality compressions and rotate every 2 min",
+        "Place pads emergently; resume compressions immediately after",
+        "Epinephrine 1 mg IV/IO ASAP; repeat q3-5 min",
+        "SALAD suction; consider early ETT for refractory edema airway",
+        "Address reversible cause — anterior STEMI; PCI-capable destination",
+        "If 20+ min refractory, consider termination per protocol/medical control"
+      ],
+      "relatedSounds": []
+    }
+  ],
+  "checklist": [
+    {
+      "title": "Recognize cardiogenic shock + pulm edema; withhold large fluid boluses",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "High-flow O2 via NRB; titrate to SpO2 94-98%",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Cardiac monitor on; place defib pads anticipating arrest",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Obtain 12-lead within 10 minutes; identify anterior STEMI",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Two large-bore IVs (or IO if 2 attempts/90s fail)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Apply continuous waveform EtCO2 (low value confirms poor perfusion)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Check blood glucose; correct if <60 mg/dL",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "STEMI alert to cath-capable facility; transmit 12-lead",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Screen for PDE5 inhibitor use in last 48 hr (contraindicates NTG)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Hold large-volume crystalloid; small 250 mL bolus only if attempted",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Push-dose epi 10 mcg IV q3-5 min (dilute 1 mL 1:10,000 in 9 mL NS = 10 mcg/mL; give 1 mL)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Start norepinephrine 0.05-0.5 mcg/kg/min (88 kg → start ~4.4 mcg/min, titrate to MAP 65)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Small fluid bolus 250 mL NS only; reassess lungs after",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "CPAP only if SBP supports; remove if mental status worsens",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Withhold NTG — SBP too low; document rationale",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Aspirin 324 mg chewed (if patient can protect airway)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Prepare RSI equipment + drugs in anticipation of airway failure",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Draw epinephrine 1 mg (1:10,000) for IV/IO arrest dose",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Stop fluids immediately; recognize iatrogenic worsening",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Aggressive suction; SALAD technique for soiled airway",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Push-dose epi 10 mcg IV + start norepinephrine infusion now",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place defibrillator pads NOW; configure VT/VF alert",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Push-dose epi 10 mcg IV; mix norepi infusion",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Pre-draw 1 mg epi (1:10,000) for arrest",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Start high-quality CPR (100-120/min, depth 2-2.4 in, full recoil)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 1 mg IV/IO (1:10,000) — give within first cycle, repeat q3-5 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Ventilate at 10/min via BVM; avoid hyperventilation",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Monitor EtCO2 for CPR quality (target >10); watch for ROSC spike",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Address reversible cause — anterior STEMI; continue toward PCI center",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Pulse + rhythm check every 2 min; minimize interruption",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "If VF/pVT develops: defibrillate at 200 J biphasic (Zoll max)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Consider SGA or ETT after first 3-4 cycles (~6-8 min) if needed",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Establish high-quality compressions and rotate every 2 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Place pads emergently; resume compressions immediately after",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Epinephrine 1 mg IV/IO ASAP; repeat q3-5 min",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "SALAD suction; consider early ETT for refractory edema airway",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Address reversible cause — anterior STEMI; PCI-capable destination",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "If 20+ min refractory, consider termination per protocol/medical control",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Secure airway (ETT or SGA); ventilate 10/min, target EtCO2 35-45",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Titrate O2 to SpO2 94-98%; do not hyperoxygenate",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Continue/start norepinephrine 0.05-0.5 mcg/kg/min; MAP target ≥65",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Repeat 12-lead; reconfirm anterior STEMI; activate cath lab",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Watch for re-arrest; pads remain on; drugs stay drawn",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Avoid hyperthermia (no warm blankets unless hypothermic)",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    },
+    {
+      "title": "Direct transport to PCI-capable facility; pre-notify cath lab",
+      "type": "Check",
+      "value": 0,
+      "icon": 1
+    }
+  ],
+  "media": []
+}
